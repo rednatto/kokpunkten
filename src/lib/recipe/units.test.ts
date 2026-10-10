@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatAmount, formatQty, normalizeMetric, scaleAmount, toMetric } from './units';
+import { formatAmount, formatQty, normalizeMetric, scaleAmount, toMetric, toUS } from './units';
 
 describe('units', () => {
 	it('scales ranges', () => {
@@ -30,5 +30,22 @@ describe('units', () => {
 
 	it('handles to-taste', () => {
 		expect(formatAmount({ qty: null, qtyMax: null, unit: 'to-taste' })).toBe('to taste');
+	});
+});
+
+describe('number style and US units', () => {
+	it('shows decimals when asked', () => {
+		expect(formatQty(1.5, 'tbsp', 'decimal')).toBe('1.5');
+		expect(formatQty(0.2, 'cup', 'decimal')).toBe('0.2');
+		expect(formatQty(0.25, 'tsp', 'decimal')).toBe('0.25');
+		expect(formatQty(0.2, 'cup')).toBe('¼');
+	});
+
+	it('converts metric to US cups, spoons, ounces and pounds', () => {
+		expect(formatAmount(toUS({ qty: 2.4, qtyMax: null, unit: 'dl' }))).toBe('1 cup');
+		expect(formatAmount(toUS({ qty: 30, qtyMax: null, unit: 'ml' }))).toBe('2 tbsp');
+		expect(formatAmount(toUS({ qty: 225, qtyMax: null, unit: 'g' }))).toBe('7.9 oz');
+		expect(formatAmount(toUS({ qty: 1, qtyMax: null, unit: 'kg' }))).toBe('2.2 lb');
+		expect(toUS({ qty: 1, qtyMax: null, unit: 'tsp' }).unit).toBe('tsp');
 	});
 });
