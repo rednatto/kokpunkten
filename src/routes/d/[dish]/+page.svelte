@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
 	import UnitControls from '#lib/components/UnitControls.svelte';
-	import { db, type StoredRecipe } from '#lib/db.ts';
+	import { addRecipes, db, type StoredRecipe } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
 	import { amountRange, baseValue, closestVersion, diffRecipes, type DiffRow } from '#lib/recipe/diff.ts';
+	import { mixRecipe } from '#lib/recipe/mix.ts';
 	import type { Amount } from '#lib/recipe/units.ts';
 	import { settings } from '#lib/settings.svelte.ts';
 
@@ -35,16 +37,60 @@
 		const ing = row.ingredients.find((i) => i)!;
 		return showAmount(ing, a).main;
 	}
-	const range = (row: DiffRow) => amount(row, amountRange(row.amounts) ?? row.amounts.find((a) => a) ?? null);
+	/** The spread across versions, or each distinct amount when they can't be compared (1 lemon / 2 tbsp). */
+	function range(row: DiffRow): string {
+		const r = amountRange(row.amounts);
+		if (r) return amount(row, r);
+		return [...new Set(row.amounts.map((a) => amount(row, a)).filter(Boolean))].join(' / ');
+	}
+	/** The version's own name for a row's ingredient, when it differs from the row name (kosher salt in a salt row). */
+	const variantName = (row: DiffRow, v: number) => {
+		const name = row.ingredients[v]?.name;
+		return name && name.toLowerCase() !== row.name.toLowerCase() ? name : null;
+	};
+	const variants = (row: DiffRow) => [...new Set(row.ingredients.map((_, v) => variantName(row, v)).filter(Boolean))];
+
+	// Where "back" goes: the recipe the cook came from, else the first version.
+	const backId = $derived(page.url.searchParams.get('from') ?? rows?.[0]?.id);
+	const backLabel = $derived(rows?.find((r) => r.id === backId)?.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? 'recipe');
 
 	// --- Merge view state: which option per slot, which extras are in.
 	let picks = $state(new Map<string, string>());
 	let extrasOn = $state<Set<string> | null>(null);
-	const chosenExtras = $derived(extrasOn ?? new Set(diff?.extras.filter((r) => r.count > n / 2).map((r) => r.key)));
+	// Until the cook ticks anything, the extras are those of the version closest to the picks,
+	// so the mix starts out as a real recipe rather than one missing the oil it fries in.
+	const defaultExtras = $derived.by(() => {
+		if (!diff) return new Set<string>();
+		const v = closestVersion(diff, effectivePicks, new Set(diff.extras.filter((r) => r.count > n / 2).map((r) => r.key)));
+		return new Set(diff.extras.filter((r) => r.ingredients[v]).map((r) => r.key));
+	});
+	const chosenExtras = $derived(extrasOn ?? defaultExtras);
 	const pickFor = (role: string) =>
 		picks.get(role) ?? diff?.slots.find((s) => s.role === role)?.options.toSorted((a, b) => b.versions.length - a.versions.length)[0].row.key;
 	const effectivePicks = $derived(new Map(diff?.slots.map((s) => [s.role, pickFor(s.role)!]) ?? []));
 	const closest = $derived(diff ? closestVersion(diff, effectivePicks, chosenExtras) : 0);
+
+	// The mixed recipe: the closest version's method with the picks swapped in.
+	let mixAmounts = $state<'base' | 'average'>('average');
+	let saving = $state(false);
+	const mix = $derived(
+		diff
+			? mixRecipe(diff, {
+					picks: effectivePicks,
+					extras: chosenExtras,
+					base: closest,
+					amounts: mixAmounts,
+					labels: versions.map((_, v) => label(v)),
+					title: `${DISH_NAMES[dish] ?? versions[0].title} – my mix`
+				})
+			: null
+	);
+	async function cookMix() {
+		if (!mix || saving) return;
+		saving = true;
+		const [id] = await addRecipes([mix.recipe]);
+		await goto(resolve('/r/[id]', { id }));
+	}
 
 	function pick(role: string, key: string) {
 		picks = new Map(picks).set(role, key);
@@ -100,6 +146,9 @@
 {:else if !diff || n === 0}
 	<p>No versions of this dish. <a href={resolve('/')}>Back to recipes</a></p>
 {:else}
+	{#if backId}
+		<a class="back" href={resolve('/r/[id]', { id: backId })}>← Back to {backLabel}</a>
+	{/if}
 	<h1>{DISH_NAMES[dish] ?? versions[0].title}</h1>
 	<p class="muted meta">Comparing {n} versions: {versions.map((_, v) => label(v)).join(' · ')}</p>
 
@@ -123,7 +172,10 @@
 			<h2>All {n} use</h2>
 			<ul class="plain">
 				{#each diff.common as row (row.key)}
-					<li><strong class="amount">{range(row)}</strong> {row.name}</li>
+					<li>
+						<strong class="amount">{range(row)}</strong> {row.name}
+						{#if variants(row).length}<span class="muted small">({variants(row).join(', ')})</span>{/if}
+					</li>
 				{/each}
 			</ul>
 
@@ -163,16 +215,32 @@
 				</ul>
 			{/if}
 
-			<h2>Method</h2>
+			<h2>Your mix</h2>
 			<p class="muted small">
-				From <strong>{label(closest)}</strong>, the version closest to your picks.
-				<a href={resolve('/r/[id]', { id: rows[closest].id })}>Cook this version →</a>
+				Follows <strong>{label(closest)}</strong>, the version closest to your picks, with your choices swapped in.
+				Steps for ingredients it doesn't have are borrowed from the other versions.
 			</p>
-			<ol class="method">
-				{#each versions[closest].steps as step (step.id)}
-					<li>{step.text}</li>
-				{/each}
-			</ol>
+			<div class="row amounts" role="radiogroup" aria-label="Amounts">
+				<span class="small muted">Amounts:</span>
+				<button class="ghost small" class:on={mixAmounts === 'average'} aria-pressed={mixAmounts === 'average'} onclick={() => (mixAmounts = 'average')}>Middle of all</button>
+				<button class="ghost small" class:on={mixAmounts === 'base'} aria-pressed={mixAmounts === 'base'} onclick={() => (mixAmounts = 'base')}>As in {label(closest)}</button>
+			</div>
+			{#if mix}
+				<ol class="method">
+					{#each mix.steps as step (step.id)}
+						<li>
+							{step.text}
+							{#if step.from}<span class="tag borrowed">from {step.from}</span>{/if}
+							{#if step.changed}<span class="tag changed">{step.changed}</span>{/if}
+						</li>
+					{/each}
+				</ol>
+			{/if}
+			<div class="row cook">
+				<button onclick={cookMix} disabled={saving}>Cook this mix →</button>
+				<a href={resolve('/r/[id]', { id: rows[closest].id })}>or {label(closest)} as written</a>
+			</div>
+			<p class="muted small">Cooking the mix saves it as your own version of the dish, so you can rate it, note changes, or delete it.</p>
 		</section>
 	{:else if settings.compareView === 'table'}
 		<div class="table-wrap">
@@ -193,7 +261,10 @@
 								<span class="dots" aria-label="{row.count} of {n}">{'●'.repeat(row.count)}{'○'.repeat(n - row.count)}</span>
 							</th>
 							{#each row.amounts as a, v}
-								<td class:none={!a}>{a ? amount(row, a) || '✓' : '—'}</td>
+								<td class:none={!a}>
+									{a ? amount(row, a) || '✓' : '—'}
+									{#if variantName(row, v)}<span class="variant">{variantName(row, v)}</span>{/if}
+								</td>
 							{/each}
 						</tr>
 					{/each}
@@ -237,6 +308,46 @@
 {/if}
 
 <style>
+	.back {
+		display: inline-block;
+		margin-bottom: 0.25rem;
+		font-size: 0.9rem;
+	}
+	.amounts {
+		gap: 0.4rem;
+		margin-bottom: 0.5rem;
+	}
+	.amounts .on {
+		background: var(--accent);
+		color: var(--accent-fg);
+	}
+	.tag {
+		display: inline-block;
+		margin-left: 0.3rem;
+		padding: 0 0.45rem;
+		border-radius: 1rem;
+		font-size: 0.75rem;
+		border: 1px solid var(--line);
+	}
+	.tag.borrowed {
+		border-color: var(--warn);
+		color: var(--warn);
+	}
+	.tag.changed {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.cook {
+		gap: 0.75rem;
+		align-items: center;
+		margin-top: 0.75rem;
+	}
+	.variant {
+		display: block;
+		font-size: 0.7rem;
+		color: var(--muted);
+		white-space: normal;
+	}
 	.meta {
 		margin: 0 0 0.75rem;
 	}

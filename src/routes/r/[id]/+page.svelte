@@ -120,7 +120,7 @@
 					{s.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? s.recipe.title}
 				</a>
 			{/each}
-			<a href={resolve('/d/[dish]', { dish: recipe.dish })} class="chip compare">Compare ⇄</a>
+			<a href="{resolve('/d/[dish]', { dish: recipe.dish })}?from={id}" class="chip compare">Compare ⇄</a>
 		</nav>
 	{/if}
 
