@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
@@ -63,14 +64,14 @@
 	async function remove() {
 		if (!confirm('Delete this recipe from this device?')) return;
 		await db.recipes.delete(id);
-		await goto('/');
+		await goto(resolve('/'));
 	}
 </script>
 
 {#if $row === undefined}
 	<p class="muted">Loading…</p>
 {:else if !recipe}
-	<p>Recipe not found. <a href="/">Back to recipes</a></p>
+	<p>Recipe not found. <a href={resolve('/')}>Back to recipes</a></p>
 {:else}
 	<h1>{recipe.title}</h1>
 	<p class="muted meta">

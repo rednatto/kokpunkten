@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import favicon from '#lib/assets/favicon.svg';
 	import type { LayoutProps } from './$types';
 	import './app.css';
@@ -11,8 +12,8 @@
 </svelte:head>
 
 <header class="bar">
-	<a href="/" class="brand">Kokpunkten</a>
-	<a href="/add" class="button small">+ Add</a>
+	<a href={resolve('/')} class="brand">Kokpunkten</a>
+	<a href={resolve('/add')} class="button small">+ Add</a>
 </header>
 
 <main>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { addRecipes } from '#lib/db.ts';
 	import { buildPrompt } from '#lib/recipe/prompt.ts';
@@ -29,7 +30,7 @@
 		errors = [];
 		saving = true;
 		const ids = await addRecipes(res.recipes);
-		await goto(ids.length === 1 ? `/r/${ids[0]}` : '/');
+		await goto(ids.length === 1 ? resolve('/r/[id]', { id: ids[0] }) : resolve('/'));
 	}
 </script>
 

@@ -26,6 +26,12 @@ npm test         # unit tests (vitest)
 npm run check    # type check
 ```
 
+## Deploy
+
+Every push to `main` is tested, built and published to GitHub Pages at https://rednatto.github.io/kokpunkten/ by `.github/workflows/deploy.yml`. Pull requests run the same checks without deploying. Before the first deploy, GitHub Pages must be turned on once: **Settings → Pages → Source: GitHub Actions**.
+
+The app is a static single-page app (`adapter-static`). GitHub Pages answers deep links like `/kokpunkten/r/…` with `404.html`, which is the app shell, so they work, but the first request for a deep link reports status 404.
+
 ## Next
 
 1. Import from a recipe URL (schema.org Recipe JSON-LD, which needs a small server endpoint).
