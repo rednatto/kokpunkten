@@ -15,6 +15,7 @@
 	const id = $derived(page.params.id!);
 	// null = not found; undefined = still loading.
 	let row = $state<StoredRecipe | null | undefined>(undefined);
+	let loadError = $state('');
 	$effect(() => {
 		const current = id; // read here so the effect re-runs when the URL changes
 		return watch(() => db.recipes.get(current), (r) => (row = r ?? null));
@@ -48,7 +49,13 @@
 
 	/** Subscribes to a live database query; the returned cleanup lets $effect re-subscribe when inputs change. */
 	function watch<T>(query: () => Promise<T> | T, set: (value: T) => void) {
-		const sub = liveQuery(query).subscribe({ next: set, error: (e) => console.error(e) });
+		const sub = liveQuery(query).subscribe({
+			next: (v) => ((loadError = ''), set(v)),
+			error: (e: Error) => {
+				console.error(e);
+				loadError = `${e.name}: ${e.message}`;
+			}
+		});
 		return () => sub.unsubscribe();
 	}
 
@@ -96,7 +103,10 @@
 	}
 </script>
 
-{#if row === undefined}
+{#if loadError}
+	<p role="alert">Couldn't read this recipe ({loadError}).</p>
+	<button class="small" onclick={() => location.reload()}>Reload</button>
+{:else if row === undefined}
 	<p class="muted">Loading…</p>
 {:else if row === null || !recipe}
 	<p>Recipe not found. <a href={resolve('/')}>Back to recipes</a></p>

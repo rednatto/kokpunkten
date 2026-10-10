@@ -8,14 +8,21 @@ const CACHE = `kokpunkten-${version}`;
 const BASE = new URL('./', sw.location.href).pathname;
 const SHELL = `${BASE}index.html`;
 const ASSETS = [...immutable, ...assets].map((f) => BASE + f.path.replace(/^\//, '')).concat(SHELL);
+// Files whose name carries a hash of their content never change, so the cache can answer first.
+const IMMUTABLE = new Set(immutable.map((f) => BASE + f.path.replace(/^\//, '')));
 
 sw.addEventListener('install', (event) => {
-	event.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)));
+	// Take over as soon as installed: a phone keeps old tabs alive for days, and waiting for
+	// them to close would keep serving an outdated app (and an outdated database schema).
+	event.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => sw.skipWaiting()));
 });
 
 sw.addEventListener('activate', (event) => {
 	event.waitUntil(
-		caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+		caches
+			.keys()
+			.then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+			.then(() => sw.clients.claim())
 	);
 });
 
@@ -27,7 +34,9 @@ sw.addEventListener('fetch', (event) => {
 	event.respondWith(
 		(async () => {
 			const cache = await caches.open(CACHE);
-			if (ASSETS.includes(url.pathname)) return (await cache.match(url.pathname)) ?? fetch(req);
+			if (IMMUTABLE.has(url.pathname)) return (await cache.match(url.pathname)) ?? fetch(req);
+			// Everything else, the app shell included, comes from the network when there is one,
+			// so an update shows up on the next load; the cache is for cooking offline.
 			try {
 				return await fetch(req);
 			} catch (err) {

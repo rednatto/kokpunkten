@@ -106,3 +106,11 @@ export async function addRecipes(recipes: Recipe[]): Promise<string[]> {
 	await putRecipes(rows);
 	return rows.map((r) => r.id);
 }
+
+// A newer copy of the app (after an update, or in another tab) is upgrading the database.
+// This copy is out of date: close the database so the upgrade can go ahead, and reload into the new version.
+db.on('versionchange', (event) => {
+	db.close();
+	if (event.newVersion !== null) location.reload();
+	return false;
+});
