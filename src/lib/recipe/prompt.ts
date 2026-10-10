@@ -1,4 +1,4 @@
-import { FORMAT, UNITS } from './schema';
+import { FORMAT, HEATS, UNITS } from './schema';
 import { sampleRecipe } from './sample';
 
 export interface PromptOptions {
@@ -29,8 +29,17 @@ Rules:
 - Write "name", step "text" and "notes" in ${language}. Each step is one or two short imperative sentences. No personal stories and no filler.
 - Step "uses" lists the ingredient ids and earlier step ids the step consumes. Every ingredient should be used by some step.
 - Put a step's time in "durationMin" when the source gives one.
+- Step "heat" is the stove level, one of: ${HEATS.join(', ')}. An oven, oil or water temperature goes in "tempC" as a number in °C (200, not "200 °C"); convert °F to °C.
 - "notes": explain the techniques and the chemistry involved (Maillard reaction, emulsions, gelatinisation…) and the spice profile, at most 3 sentences each. Leave a note out rather than guess.
 - "source" must be the real URL or book reference. Never fabricate a source.
+
+Fields (required ones must always be present; leave out or use null for optional ones you don't know):
+- Recipe, required: "format", "dish", "title", "source", "servings" (a number, e.g. 4; if the source gives a range use the lower number; if it gives none, estimate from the amounts), "ingredients" (at least 1), "steps" (at least 1).
+- Recipe, optional: "language", "time" {"prepMin", "cookMin", "totalMin"} as numbers of minutes, "cuisine", "course", "tags", "equipment" as arrays of strings, "notes" {"techniques", "chemistry", "spiceProfile", "variations"}.
+- "source", required: "type" (one of: web, book, personal, ai-generated). Optional: "url", "name", "author", "book" {"title", "author", "isbn", "page"}.
+- Ingredient, required: "id" (unique, e.g. "i1"), "key", "name". Optional: "role", "qty" and "qtyMax" (positive numbers: 1.5, not "1 1/2"; "qtyMax" only for ranges), "unit", "prep", "optional" (true/false), "group", "substitutes", "original".
+- Step, required: "id" (unique, e.g. "s1"), "text". Optional: "uses", "technique" (array of strings), "durationMin" (number), "heat", "tempC" (number), "critical" (what must not go wrong).
+- All numbers are plain JSON numbers without units or quotes.
 
 Example of one recipe object:
 ${JSON.stringify(sampleRecipe, null, 1)}`;

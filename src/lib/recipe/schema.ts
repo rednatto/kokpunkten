@@ -97,16 +97,67 @@ export const ingredientSchema = z.object({
 	original: optText
 });
 
-export const stepSchema = z.object({
-	id,
-	text: z.string().trim().min(1),
-	uses: z.array(id).default([]),
-	technique: z.array(z.string().trim().min(1)).default([]),
-	durationMin: z.number().positive().nullish(),
-	heat: z.enum(['low', 'medium-low', 'medium', 'medium-high', 'high']).nullish(),
-	tempC: z.number().nullish(),
-	critical: optText
-});
+export const HEATS = ['low', 'medium-low', 'medium', 'medium-high', 'high'] as const;
+
+const HEAT_WORDS: Record<string, string> = { med: 'medium', låg: 'low', medel: 'medium', hög: 'high' };
+
+/** "Medium high", "med/high", "medel-hög" → "medium-high". Anything else is left for the enum to reject. */
+function normalizeHeat(v: unknown): unknown {
+	if (typeof v !== 'string') return v;
+	const words = v
+		.trim()
+		.toLowerCase()
+		.replace(/\s*heat$|\s*värme$/, '')
+		.split(/[\s/_-]+|\bto\b/)
+		.filter(Boolean)
+		.map((w) => HEAT_WORDS[w] ?? w);
+	if (words.length === 2 && words[0] === words[1]) return words[0];
+	if (words.length === 2 && words[1] === 'medium') words.reverse();
+	return words.join('-');
+}
+
+/**
+ * Read a temperature such as 200, "200", "200 °C", "200C" or "400 °F" as whole °C.
+ * Returns undefined when the value is not a temperature.
+ */
+export function parseTempC(v: unknown): number | undefined {
+	if (typeof v === 'number') return Number.isFinite(v) ? v : undefined;
+	if (typeof v !== 'string') return undefined;
+	const m = v.trim().match(/^(-?\d+(?:[.,]\d+)?)\s*(?:°|º|degrees?|grader)?\s*(c|f|celsius|fahrenheit)?$/i);
+	if (!m) return undefined;
+	const n = +m[1].replace(',', '.');
+	return m[2] && /^f/i.test(m[2]) ? Math.round(((n - 32) * 5) / 9) : n;
+}
+
+/**
+ * Assistants often put an oven or oil temperature in "heat" ("200 °C") or write "tempC" as a string.
+ * Move temperatures into tempC so only stove levels stay in heat.
+ */
+function normalizeStep(v: unknown): unknown {
+	if (!v || typeof v !== 'object' || Array.isArray(v)) return v;
+	const step = { ...(v as Record<string, unknown>) };
+	const fromHeat = parseTempC(step.heat);
+	if (fromHeat !== undefined) {
+		if (step.tempC == null) step.tempC = fromHeat;
+		delete step.heat;
+	} else step.heat = normalizeHeat(step.heat);
+	if (typeof step.tempC === 'string') step.tempC = parseTempC(step.tempC) ?? step.tempC;
+	return step;
+}
+
+export const stepSchema = z.preprocess(
+	normalizeStep,
+	z.object({
+		id,
+		text: z.string().trim().min(1),
+		uses: z.array(id).default([]),
+		technique: z.array(z.string().trim().min(1)).default([]),
+		durationMin: z.number().positive().nullish(),
+		heat: z.enum(HEATS).nullish(),
+		tempC: z.number().nullish(),
+		critical: optText
+	})
+);
 
 export const sourceSchema = z.object({
 	type: z.enum(['web', 'book', 'personal', 'ai-generated']),
@@ -133,7 +184,11 @@ export const recipeSchema = z
 		title: z.string().trim().min(1),
 		language: z.string().trim().min(2).default('sv'),
 		source: sourceSchema,
-		servings: z.number().positive(),
+		// "4", "4 portions" and "4–6" are read as 4.
+		servings: z.preprocess((v) => {
+			const m = typeof v === 'string' ? v.match(/\d+(?:[.,]\d+)?/) : null;
+			return m ? +m[0].replace(',', '.') : v;
+		}, z.number().positive()),
 		time: z
 			.object({
 				prepMin: z.number().nonnegative().nullish(),
@@ -216,9 +271,15 @@ export function parseRecipes(text: string): ParseResult {
 		if (res.success) recipes.push(res.data);
 		else
 			for (const issue of res.error.issues)
-				errors.push(`${label}${issue.path.join('.') || '(root)'}: ${issue.message}`);
+				errors.push(`${label}${issue.path.join('.') || '(root)'}: ${explain(issue.message)}`);
 	});
 	return errors.length ? { ok: false, errors } : { ok: true, recipes };
+}
+
+/** Zod says "expected number, received undefined" for a missing field; say it plainly. */
+function explain(message: string): string {
+	const missing = message.match(/^Invalid input: expected (\w+), received undefined$/);
+	return missing ? `required field is missing (expected ${missing[1]})` : message;
 }
 
 function extractJson(text: string): string | undefined {
