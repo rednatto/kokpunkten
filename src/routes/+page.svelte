@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { liveQuery } from 'dexie';
-	import { db, type StoredRecipe } from '#lib/db.ts';
+	import { db, type RecipeSummary } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 
-	const recipes = liveQuery(() => db.recipes.orderBy('addedAt').reverse().toArray());
+	// Summaries, not whole recipes: the list only needs names, cuisines and search words.
+	const recipes = liveQuery(() => db.summaries.toArray());
 
 	let query = $state('');
 	let cuisine = $state('');
@@ -13,32 +14,26 @@
 	interface Dish {
 		slug: string;
 		name: string;
-		versions: StoredRecipe[];
+		versions: RecipeSummary[];
 		cuisines: string[];
 		favorite: boolean;
 		/** Lowercased text searched by the filter box: names, cuisines, tags and ingredients. */
 		haystack: string;
 	}
 
-	function toDishes(rows: StoredRecipe[]): Dish[] {
-		const groups = new Map<string, StoredRecipe[]>();
-		for (const r of rows) groups.set(r.recipe.dish, [...(groups.get(r.recipe.dish) ?? []), r]);
+	function toDishes(rows: RecipeSummary[]): Dish[] {
+		const groups = new Map<string, RecipeSummary[]>();
+		for (const r of rows) groups.set(r.dish, [...(groups.get(r.dish) ?? []), r]);
 		return [...groups].map(([slug, group]) => {
 			const versions = group.toSorted((a, b) => a.addedAt - b.addedAt);
-			const cuisines = [...new Set(versions.flatMap((v) => v.recipe.cuisine))];
-			const words = versions.flatMap((v) => [
-				v.recipe.title,
-				...v.recipe.tags,
-				...v.recipe.course,
-				...v.recipe.ingredients.flatMap((i) => [i.name, i.key.replaceAll('-', ' ')])
-			]);
+			const cuisines = [...new Set(versions.flatMap((v) => v.cuisine))];
 			return {
 				slug,
-				name: DISH_NAMES[slug] ?? versions[0].recipe.title,
+				name: DISH_NAMES[slug] ?? versions[0].title,
 				versions,
 				cuisines,
 				favorite: versions.some((v) => v.favorite),
-				haystack: [DISH_NAMES[slug] ?? '', ...cuisines, ...words].join(' ').toLowerCase()
+				haystack: [DISH_NAMES[slug] ?? '', ...cuisines, ...versions.map((v) => v.words)].join(' ').toLowerCase()
 			};
 		});
 	}
@@ -53,7 +48,18 @@
 			.sort((a, b) => Number(b.favorite) - Number(a.favorite) || a.name.localeCompare(b.name));
 	});
 
-	const variant = (r: StoredRecipe) => r.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? r.recipe.title;
+	// Draw the list a page at a time: more cards as the end comes into view.
+	const PAGE = 40;
+	let limit = $state(PAGE);
+	$effect(() => {
+		void [query, cuisine, favoritesOnly];
+		limit = PAGE;
+	});
+	function more(node: HTMLElement) {
+		const io = new IntersectionObserver((e) => e[0].isIntersecting && (limit += PAGE), { rootMargin: '600px' });
+		io.observe(node);
+		return { destroy: () => io.disconnect() };
+	}
 </script>
 
 {#if $recipes === undefined}
@@ -79,7 +85,7 @@
 
 	<p class="muted small">{shown.length} {shown.length === 1 ? 'dish' : 'dishes'}</p>
 	<ul class="list">
-		{#each shown as d (d.slug)}
+		{#each shown.slice(0, limit) as d (d.slug)}
 			<li class="card">
 				<div class="head">
 					<a href={resolve('/r/[id]', { id: d.versions[0].id })} class="title">{d.favorite ? '★ ' : ''}{d.name}</a>
@@ -88,7 +94,7 @@
 				{#if d.versions.length > 1}
 					<div class="row versions">
 						{#each d.versions as v (v.id)}
-							<a href={resolve('/r/[id]', { id: v.id })} class="chip">{v.favorite ? '★ ' : ''}{variant(v)}{#if v.rating} · {v.rating}/5{/if}</a>
+							<a href={resolve('/r/[id]', { id: v.id })} class="chip">{v.favorite ? '★ ' : ''}{v.variant}{#if v.rating} · {v.rating}/5{/if}</a>
 						{/each}
 						<a href={resolve('/d/[dish]', { dish: d.slug })} class="chip compare">Compare ⇄</a>
 					</div>
@@ -98,6 +104,9 @@
 			<li class="muted">Nothing matches.</li>
 		{/each}
 	</ul>
+	{#if shown.length > limit}
+		{#key limit}<div use:more class="muted small">Loading more…</div>{/key}
+	{/if}
 {/if}
 
 <style>
