@@ -1,4 +1,5 @@
 import Dexie, { type EntityTable } from 'dexie';
+import { writable } from 'svelte/store';
 import type { Recipe } from './recipe/schema';
 
 export interface StoredRecipe {
@@ -49,6 +50,42 @@ db.version(3)
 	.upgrade(async (tx) => {
 		await tx.table('summaries').bulkPut((await tx.table<StoredRecipe>('recipes').toArray()).map(summarize));
 	});
+
+/**
+ * Why the database isn't usable, for the layout to show instead of an endless "Loading…".
+ * "blocked": an older copy of the app, open in another tab or in the background, holds the
+ * database and keeps this version from upgrading it.
+ */
+export const dbProblem = writable<{ kind: 'blocked' | 'slow' | 'error'; message: string } | null>(null);
+
+db.on('blocked', () => {
+	dbProblem.set({
+		kind: 'blocked',
+		message: 'An older copy of Kokpunkten is still open, in another tab or in the background. Close it, then reload.'
+	});
+});
+
+/** Opens the database up front, so a failure is shown rather than leaving every query waiting. */
+export function openDb() {
+	const slow = setTimeout(
+		() => dbProblem.update((p) => p ?? { kind: 'slow', message: 'The recipe database is taking unusually long to open.' }),
+		10_000
+	);
+	return db
+		.open()
+		.then(() => dbProblem.set(null))
+		.catch((e: Error) => {
+			console.error('Could not open the database', e);
+			dbProblem.set({ kind: 'error', message: `Could not open the recipe database: ${e.name}: ${e.message}` });
+		})
+		.finally(() => clearTimeout(slow));
+}
+
+/** Last resort when the database can't be opened: start over with an empty one. */
+export async function resetDb() {
+	db.close();
+	await Dexie.delete('kokpunkten');
+}
 
 export const variantName = (r: Recipe) => r.source.name?.replace(/^Kokpunkten – /, '') ?? r.title;
 

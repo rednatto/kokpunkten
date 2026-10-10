@@ -3,13 +3,25 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
 	import { syncLibrary } from '#lib/library.ts';
+	import { dbProblem, openDb, resetDb } from '#lib/db.ts';
 	import type { LayoutProps } from './$types';
 	import './app.css';
 
 	let { children }: LayoutProps = $props();
 
+	async function reset() {
+		if (!confirm('Delete all recipes, favorites, ratings and notes on this device and start over?')) return;
+		await resetDb();
+		location.reload();
+	}
+
 	onMount(() => {
-		syncLibrary().catch((e) => console.error('Could not load the recipe library', e));
+		openDb()
+			.then(syncLibrary)
+			.catch((e: Error) => {
+				console.error('Could not load the recipe library', e);
+				dbProblem.set({ kind: 'error', message: `Could not load the built-in recipes: ${e.name}: ${e.message}` });
+			});
 	});
 </script>
 
@@ -23,6 +35,17 @@
 </header>
 
 <main>
+	{#if $dbProblem}
+		<div class="problem" role="alert">
+			<p>{$dbProblem.message}</p>
+			<div class="row">
+				<button class="small" onclick={() => location.reload()}>Reload</button>
+				{#if $dbProblem.kind !== 'blocked'}
+					<button class="small ghost" onclick={reset}>Reset local data</button>
+				{/if}
+			</div>
+		</div>
+	{/if}
 	{@render children()}
 </main>
 
@@ -43,6 +66,15 @@
 		font-size: 1.1rem;
 		color: var(--fg);
 		text-decoration: none;
+	}
+	.problem {
+		border: 1px solid var(--line);
+		border-radius: 0.5rem;
+		padding: 0.75rem 1rem;
+		margin-bottom: 1rem;
+	}
+	.problem p {
+		margin: 0 0 0.5rem;
 	}
 	main {
 		max-width: 40rem;
