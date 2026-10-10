@@ -9,15 +9,21 @@ export interface StoredRecipe {
 	/** 1–5, or null when not rated. */
 	rating: number | null;
 	note: string;
+	/** Part of the built-in library; refreshed on each app version, keeping the user's own fields. */
+	builtin?: boolean;
 }
 
 /** Everything lives on this device for now. Sign-in and sync come later. */
 export const db = new Dexie('kokpunkten') as Dexie & {
 	recipes: EntityTable<StoredRecipe, 'id'>;
+	meta: EntityTable<{ key: string; value: string }, 'key'>;
 };
 
 db.version(1).stores({
 	recipes: 'id, addedAt, favorite, recipe.dish, *recipe.cuisine'
+});
+db.version(2).stores({
+	meta: 'key'
 });
 
 export async function addRecipes(recipes: Recipe[]): Promise<string[]> {

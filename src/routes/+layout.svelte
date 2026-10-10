@@ -1,10 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import favicon from '#lib/assets/favicon.svg';
+	import { onMount } from 'svelte';
+	import { syncLibrary } from '#lib/library.ts';
 	import type { LayoutProps } from './$types';
 	import './app.css';
 
 	let { children }: LayoutProps = $props();
+
+	onMount(() => {
+		syncLibrary().catch((e) => console.error('Could not load the recipe library', e));
+	});
 </script>
 
 <svelte:head>

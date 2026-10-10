@@ -8,8 +8,9 @@
 	import { displayAmount } from '#lib/recipe/units.ts';
 	import Timer from './Timer.svelte';
 
-	const id = page.params.id!;
-	const row = liveQuery(() => db.recipes.get(id));
+	const id = $derived(page.params.id!);
+	// null = not found; undefined = still loading.
+	const row = $derived(liveQuery(async () => (await db.recipes.get(id)) ?? null));
 
 	let servings = $state<number | null>(null);
 	let metric = $state(true);
@@ -20,6 +21,22 @@
 	const factor = $derived(recipe && servings ? servings / recipe.servings : 1);
 	const ingName = $derived(new Map(recipe?.ingredients.map((i) => [i.id, i.name]) ?? []));
 	const stepNo = $derived(new Map(recipe?.steps.map((s, n) => [s.id, n + 1]) ?? []));
+
+	const dish = $derived(recipe?.dish);
+	const siblings = $derived(
+		liveQuery(() => (dish ? db.recipes.where('recipe.dish').equals(dish).toArray() : []))
+	);
+
+	// Moving between versions reuses this page, so start each recipe fresh.
+	let shownId = '';
+	$effect(() => {
+		if (id !== shownId) {
+			shownId = id;
+			servings = null;
+			haveIng = new Set();
+			doneStep = new Set();
+		}
+	});
 
 	$effect(() => {
 		if (recipe && servings === null) servings = recipe.servings;
@@ -70,7 +87,7 @@
 
 {#if $row === undefined}
 	<p class="muted">Loading…</p>
-{:else if !recipe}
+{:else if $row === null || !recipe}
 	<p>Recipe not found. <a href={resolve('/')}>Back to recipes</a></p>
 {:else}
 	<h1>{recipe.title}</h1>
@@ -83,6 +100,16 @@
 		{#if recipe.time.totalMin}· {recipe.time.totalMin} min{/if}
 		{#if recipe.cuisine.length}· {recipe.cuisine.join(', ')}{/if}
 	</p>
+
+	{#if $siblings && $siblings.length > 1}
+		<nav class="row others" aria-label="Versions of this dish">
+			{#each $siblings as s (s.id)}
+				<a href={resolve('/r/[id]', { id: s.id })} class="chip" class:current={s.id === id} aria-current={s.id === id ? 'page' : undefined}>
+					{s.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? s.recipe.title}
+				</a>
+			{/each}
+		</nav>
+	{/if}
 
 	<div class="row controls">
 		<div class="row stepper" aria-label="Servings">
@@ -172,13 +199,32 @@
 			onchange={(e) => update({ note: e.currentTarget.value })}
 			style="font-family: inherit; font-size: 1rem"
 		></textarea>
-		<button class="ghost small delete" onclick={remove}>Delete recipe</button>
+		{#if !$row.builtin}
+			<button class="ghost small delete" onclick={remove}>Delete recipe</button>
+		{/if}
 	</div>
 {/if}
 
 <style>
 	.meta {
 		margin: 0 0 0.75rem;
+	}
+	.others {
+		gap: 0.4rem;
+		margin-bottom: 0.75rem;
+	}
+	.chip {
+		font-size: 0.85rem;
+		border: 1px solid var(--line);
+		border-radius: 1rem;
+		padding: 0.15rem 0.6rem;
+		color: inherit;
+		text-decoration: none;
+	}
+	.chip.current {
+		border-color: var(--accent);
+		background: var(--accent);
+		color: var(--accent-fg);
 	}
 	.controls {
 		justify-content: space-between;
