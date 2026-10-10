@@ -31,7 +31,13 @@ const SAME_AS: Record<string, string> = {
 	'spanish-onion': 'onion',
 	'parmigiano-reggiano': 'parmesan',
 	'double-cream': 'heavy-cream',
-	'whipping-cream': 'heavy-cream'
+	'whipping-cream': 'heavy-cream',
+	'red-pepper-flakes': 'chili-flakes',
+	'crushed-red-pepper-flakes': 'chili-flakes',
+	'crushed-red-pepper': 'chili-flakes',
+	'red-chili-flakes': 'chili-flakes',
+	'chilli-flakes': 'chili-flakes',
+	'pepper-flakes': 'chili-flakes'
 };
 
 /** Words in front of a key that only say which kind or form of it, e.g. kosher-salt. */

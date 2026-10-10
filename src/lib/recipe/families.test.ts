@@ -10,6 +10,8 @@ import roastPotatoes from '../library/roast-potatoes.json';
 describe('families', () => {
 	it('groups kinds and forms of the same flavouring', () => {
 		expect(familyOf('kosher-salt', 'salt')).toBe('salt');
+		expect(familyOf('crushed-red-pepper-flakes', 'chili')).toBe('chili-flakes');
+		expect(familyOf('dried-chili-flakes', 'spice')).toBe('chili-flakes');
 		expect(familyOf('flaky-sea-salt', 'garnish')).toBe('salt');
 		expect(familyOf('black-peppercorns', 'spice')).toBe('black-pepper');
 		expect(familyOf('flat-leaf-parsley', 'herb')).toBe('parsley');

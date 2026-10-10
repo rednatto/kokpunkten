@@ -1,5 +1,6 @@
-import { meanAmount, type DiffRow, type RecipeDiff } from './diff.ts';
+import { rowMean, type DiffRow, type RecipeDiff } from './diff.ts';
 import { recipeSchema, type Ingredient, type Recipe, type Step } from './schema.ts';
+import { basicGroup } from './table-tree.ts';
 import type { Amount } from './units.ts';
 
 /** Where a mixed ingredient's amount comes from: one version, or the average of all that use it. */
@@ -38,14 +39,18 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 	const ingredients: Ingredient[] = [];
 	const newId = new Map<string, string>(); // `${version}:${oldId}` → new id
 	const rowId = new Map<string, string>(); // row key → new id
+	const rowOf = new Map<string, DiffRow>(); // new id → row
+	const rowIdOf = (v: number, oldId: string) => newId.get(`${v}:${oldId}`)!;
 	chosen.forEach((row, n) => {
 		const from = choice.rows.get(row.key)!;
 		const v = typeof from === 'number' && row.ingredients[from] ? from : row.ingredients[base] ? base : row.ingredients.findIndex((i) => i);
 		const src = row.ingredients[v]!;
 		const id = `i${n + 1}`;
-		const amount = from === 'average' ? average(row) ?? row.amounts[v]! : row.amounts[v]!;
+		const own = row.amounts[v]!;
+		const amount = from === 'average' ? (average(row) ?? own) : own.qty == null ? own : roundAmount(own);
 		ingredients.push({ ...src, id, qty: amount.qty, qtyMax: amount.qtyMax, unit: amount.unit ?? src.unit, group: undefined });
 		rowId.set(row.key, id);
+		rowOf.set(id, row);
 		row.ingredients.forEach((ing, w) => ing && newId.set(`${w}:${ing.id}`, id));
 	});
 
@@ -78,36 +83,95 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 		return id;
 	};
 
-	// Steps borrowed for chosen ingredients the base version doesn't have.
-	const borrowed: { step: Step; v: number }[] = [];
-	for (const row of chosen) {
-		if (row.ingredients[base] || replacedInBase.has(rowId.get(row.key)!)) continue;
-		const v = row.ingredients.findIndex((i) => i);
+	// Chosen ingredients the base version doesn't have go in where their own version adds
+	// them: into the base step that handles the same things (chili flakes with the garlic
+	// and oil), or else as that one step, borrowed.
+	const attach = new Map<string, { id: string; name: string; from: string; with: string }[]>(); // base step id → extras
+	const plans = chosen.flatMap((row) => {
+		if (row.ingredients[base] || replacedInBase.has(rowId.get(row.key)!)) return [];
+		const from = choice.rows.get(row.key);
+		const v = typeof from === 'number' && row.ingredients[from] ? from : row.ingredients.findIndex((i) => i);
 		const ing = row.ingredients[v]!;
-		for (const step of diff.versions[v].steps.filter((s) => s.uses.includes(ing.id))) {
-			if (!borrowed.some((b) => b.v === v && b.step.id === step.id)) borrowed.push({ step, v });
+		const intro = diff.versions[v].steps.find((s) => s.uses.includes(ing.id));
+		// No step of its own uses it (a garnish "to taste"): it goes in at the end.
+		const finish = { step: baseRecipe.steps.at(-1)!, with: '' };
+		return [{ id: rowId.get(row.key)!, v, intro, match: intro ? matchingStep(intro, v, ing.id) : finish }];
+	});
+	// One borrowed step per version step, in that version's order.
+	const borrowed = [...new Map(plans.flatMap((p) => (!p.match && p.intro ? [[`${p.v}:${p.intro.id}`, { step: p.intro, v: p.v }] as const] : []))).values()].toSorted(
+		(a, b) => a.v - b.v || diff.versions[a.v].steps.indexOf(a.step) - diff.versions[b.v].steps.indexOf(b.step)
+	);
+	const name = (id: string) => ingredients.find((i) => i.id === id)!.name;
+	for (const { id, v, intro, match } of plans) {
+		// An ingredient whose own step is borrowed anyway goes in there.
+		if (!match || borrowed.some((b) => b.v === v && b.step === intro)) continue;
+		attach.set(match.step.id, [...(attach.get(match.step.id) ?? []), { id, name: name(id), from: choice.labels[v], with: match.with && name(match.with) }]);
+	}
+
+	/**
+	 * The base step that does the same job as `intro` in version `v`: the one using most of
+	 * the chosen ingredients `intro` uses, directly or through the steps it builds on.
+	 */
+	function matchingStep(intro: Step, v: number, self: string): { step: Step; with: string } | null {
+		const own = diff.versions[v].steps;
+		const inputs = (s: Step) => s.uses.flatMap((u) => (u === self ? [] : (newId.get(`${v}:${u}`) ?? replaced.get(`${v}:${u}`)?.id ?? [])));
+		// Salt and pepper go in everywhere, so they say nothing about where; a main ingredient
+		// (beef) only joins a step that has another main ingredient, not just the oil.
+		const mainSelf = !basicGroup(rowOf.get(rowIdOf(v, self))!);
+		const anchor = (id: string) => {
+			const r = rowOf.get(id)!;
+			const group = basicGroup(r);
+			return group !== 'Salt, pepper and spices' || !/salt|pepper/.test(r.key) ? !mainSelf || !group : false;
+		};
+		let wanted = inputs(intro).filter(anchor);
+		if (!wanted.length) wanted = intro.uses.flatMap((u) => own.find((s) => s.id === u) ?? []).flatMap(inputs).filter(anchor);
+		if (!wanted.length) return null;
+		let best: { step: Step; with: string } | null = null;
+		let bestScore = 0;
+		for (const s of baseRecipe.steps) {
+			const shared = s.uses.flatMap((u) => newId.get(`${base}:${u}`) ?? replaced.get(`${base}:${u}`)?.id ?? []).filter((id) => wanted.includes(id));
+			if (shared.length > bestScore) [best, bestScore] = [{ step: s, with: shared[0] }, shared.length];
 		}
+		return best;
 	}
 
 	const last = baseRecipe.steps.length - 1;
 	baseRecipe.steps.forEach((step, n) => {
+		const extra = attach.get(step.id) ?? [];
+		// "Add the garlic along with the pancetta.", right after the sentence that adds the pancetta.
+		const withExtras = (s: Step): Step => {
+			let text = s.text;
+			for (const [w, xs] of Map.groupBy(extra, (x) => x.with)) {
+				const names = list(xs.map((x) => x.name));
+				const line = w ? `Add the ${names} along with the ${w}.` : `Finish with the ${names}.`;
+				const sentences = text.split(/(?<=[.!?])\s+/);
+				const at = w ? sentences.findIndex((t) => swapName(t, w, '\u0000') !== t) : -1;
+				sentences.splice(at < 0 ? sentences.length : at + 1, 0, line);
+				text = sentences.join(' ');
+			}
+			return { ...s, text };
+		};
+		const tag = (c: Partial<MixedStep>): Partial<MixedStep> => {
+			if (!extra.length) return c;
+			const plus = extra.map((x) => `+ ${x.name} (${x.from})`).join(', ');
+			return { changed: [c.changed, plus].filter(Boolean).join(', ') };
+		};
 		if (n === last) {
 			// Borrowed steps go in before the last step, which then brings them in too.
-			const extraIds = borrowed.map(({ step: s, v }) =>
-				add({ ...rewrite(s, v, false), uses: s.uses.filter((u) => newId.has(`${v}:${u}`)) }, v, { from: choice.labels[v] })
-			);
-			const id = add(rewrite(step, base), base, changes(step));
-			steps.find((s) => s.id === id)!.uses.push(...extraIds);
+			const extraIds = borrowed.map(({ step: s, v }) => add(rewrite(s, v), v, { from: choice.labels[v] }));
+			const id = add(withExtras(rewrite(step, base)), base, tag(changes(step)));
+			steps.find((s) => s.id === id)!.uses.push(...extraIds, ...extra.map((x) => x.id));
 			return;
 		}
-		add(rewrite(step, base), base, changes(step));
+		const id = add(withExtras(rewrite(step, base)), base, tag(changes(step)));
+		steps.find((s) => s.id === id)!.uses.push(...extra.map((x) => x.id));
 	});
 
 	/**
 	 * Swaps picked ingredients into a step's text, wherever the text names them: steps often
 	 * mention an ingredient they don't list ("serve with the rest of the pecorino").
 	 */
-	function rewrite(step: Step, v: number, noteLeftOut = true): Step {
+	function rewrite(step: Step, v: number): Step {
 		let text = step.text;
 		for (const ing of diff.versions[v].ingredients) {
 			const r = replaced.get(`${v}:${ing.id}`);
@@ -115,7 +179,7 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 		}
 		const left = step.uses.flatMap((u) => dropped.get(`${v}:${u}`) ?? []);
 		const onlyLeftOut = left.length === step.uses.length;
-		if (noteLeftOut && left.length) text += onlyLeftOut ? ` (Skip this step: no ${left.join(' or ')}.)` : ` (Leave out the ${left.join(' and ')}.)`;
+		if (left.length) text += onlyLeftOut ? ` (Skip this step: no ${left.join(' or ')}.)` : ` (Leave out the ${list(left)}.)`;
 		return { ...step, text };
 	}
 	function changes(step: Step): Partial<MixedStep> {
@@ -152,13 +216,39 @@ function firstIngredient(row: DiffRow): Ingredient {
 	return row.ingredients.find((i) => i)!;
 }
 
-/** The average of the versions' amounts, when they can be compared; eggs, cloves and cans come whole. */
+/** The average of the versions' amounts in one unit, rounded to what a cook would measure. */
 function average(row: DiffRow): Amount | null {
-	const r = meanAmount(row.amounts);
-	if (!r || r.qty == null) return null;
-	const counted = !r.unit || ['piece', 'clove', 'can', 'bunch'].includes(r.unit);
-	return counted ? { ...r, qty: Math.max(1, Math.round(r.qty)) } : r;
+	const r = rowMean(row);
+	return r && r.qty != null ? roundAmount(r) : null;
 }
+
+const to = (q: number, step: number) => Math.round(q / step) * step;
+
+/** Rounds an amount to kitchen precision: whole cloves, quarter spoons, grams to 5 above 50 g. */
+export function roundAmount(a: Amount): Amount {
+	const q = a.qty!;
+	switch (a.unit) {
+		case 'g':
+			return { ...a, qty: q >= 50 ? to(q, 5) : q >= 10 ? to(q, 1) : Math.max(0.5, to(q, 0.5)) };
+		case 'ml':
+			return { ...a, qty: q >= 100 ? to(q, 10) : to(q, 5) || 5 };
+		case 'tsp':
+			return q < 0.125 ? { unit: 'pinch', qty: 1, qtyMax: null } : { ...a, qty: q < 0.25 ? 0.125 : to(q, 0.25) };
+		case 'tbsp':
+			return { ...a, qty: Math.max(0.25, to(q, 0.25)) };
+		case null:
+		case 'piece':
+		case 'clove':
+		case 'can':
+		case 'bunch':
+		case 'pinch':
+			return { ...a, qty: Math.max(1, Math.round(q)) };
+		default:
+			return { ...a, qty: to(q, 0.25) || q };
+	}
+}
+
+const list = (names: string[]) => (names.length < 2 ? names.join('') : `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`);
 
 /** Swaps an ingredient's name in step text, also matching its last word ("the guanciale" for "guanciale, diced"). */
 function swapName(text: string, from: string, to: string): string {

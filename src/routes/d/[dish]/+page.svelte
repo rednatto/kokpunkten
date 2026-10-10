@@ -7,7 +7,7 @@
 	import { addRecipes, db, type StoredRecipe } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
-	import { amountRange, baseValue, closestTo, diffRecipes, meanAmount, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
+	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
 	import { familyName } from '#lib/recipe/families.ts';
 	import { mixRecipe, type AmountSource } from '#lib/recipe/mix.ts';
 	import { tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
@@ -39,11 +39,22 @@
 		const ing = row.ingredients.find((i) => i)!;
 		return showAmount(ing, a).main;
 	}
-	/** The spread across versions, or each distinct amount when they can't be compared (1 lemon / 2 tbsp). */
+	/** An amount in one unit for a whole row; anything under an eighth of a teaspoon reads as a pinch. */
+	function rowAmount(row: DiffRow, a: Amount): string {
+		const pinch = (q: number | null) => a.unit === 'tsp' && q != null && q < 0.125;
+		if (!pinch(a.qty)) return amount(row, a);
+		if (a.qtyMax == null || pinch(a.qtyMax)) return 'a pinch';
+		return `a pinch – ${amount(row, { ...a, qty: a.qtyMax, qtyMax: null })}`;
+	}
+	/**
+	 * The spread across versions in one unit (0.25–2 tsp), with any amount that can't be
+	 * converted after it (1 lemon or 2 tbsp juice), else each distinct amount.
+	 */
 	function range(row: DiffRow): string {
-		const r = amountRange(row.amounts);
-		if (r) return amount(row, r);
-		return [...new Set(row.amounts.map((a) => amount(row, a)).filter(Boolean))].join(' / ');
+		const r = rowRange(row);
+		const left = r ? row.amounts.filter((a, v) => a?.qty != null && rowValues(row)!.values[v] == null) : row.amounts;
+		const others = [...new Set(left.map((a) => amount(row, a)).filter(Boolean))];
+		return [r ? rowAmount(row, r) : '', ...others].filter(Boolean).join(' or ');
 	}
 	/** The version's own name for a row's ingredient, when it differs from the row name (kosher salt in a salt row). */
 	const variantName = (row: DiffRow, v: number) => {
@@ -72,8 +83,8 @@
 
 	/** The average amount, or each distinct amount when they can't be averaged. */
 	function average(row: DiffRow): string {
-		const mean = meanAmount(row.amounts);
-		return mean ? amount(row, mean) : range(row);
+		const mean = rowMean(row);
+		return mean ? rowAmount(row, mean) : range(row);
 	}
 
 	// Rows whose spread of amounts is open, by key.
@@ -85,25 +96,25 @@
 	}
 	/** Where each version's amount sits between the smallest and largest, and how many use each amount. */
 	function spread(row: DiffRow) {
-		const points = row.amounts.flatMap((a, v) => {
-			const b = baseValue(a);
-			return b ? [{ v, ...b }] : [];
-		});
-		const comparable = points.length > 1 && points.every((p) => p.dim === points[0].dim);
+		const r = rowValues(row);
+		const points = r ? r.values.flatMap((value, v) => (value == null ? [] : [{ v, value }])) : [];
+		const comparable = points.length > 1;
 		const values = points.map((p) => p.value);
 		const [min, max] = [Math.min(...values), Math.max(...values)];
 		const pct = (x: number) => (max === min ? 50 : ((x - min) / (max - min)) * 100);
-		const mean = meanAmount(row.amounts);
+		const mean = values.reduce((s, x) => s + x, 0) / values.length;
+		// Both ends in the unit the whole range reads in.
+		const ends = comparable ? fromBase(r!.dim, min, max) : null;
 		const byText = Map.groupBy(
-			row.amounts.flatMap((a, v) => (a ? [{ v, text: amount(row, a) || 'to taste', value: baseValue(a)?.value ?? 0 }] : [])),
+			row.amounts.flatMap((a, v) => (a ? [{ v, text: amount(row, a) || 'to taste', value: r?.values[v] ?? Infinity }] : [])),
 			(b) => b.text
 		);
 		return {
 			comparable,
 			points: comparable ? points.map((p) => ({ v: p.v, pct: pct(p.value) })) : [],
-			meanPct: comparable && mean ? pct(baseValue(mean)!.value) : null,
-			low: comparable ? amount(row, row.amounts[points[values.indexOf(min)].v]) : '',
-			high: comparable ? amount(row, row.amounts[points[values.indexOf(max)].v]) : '',
+			meanPct: comparable ? pct(mean) : null,
+			low: comparable ? rowAmount(row, { ...ends!, qtyMax: null }) : '',
+			high: comparable ? rowAmount(row, { ...ends!, qty: ends!.qtyMax ?? ends!.qty, qtyMax: null }) : '',
 			buckets: [...byText]
 				.map(([text, list]) => ({ text, count: list.length, value: list[0].value, who: list.map((b) => label(b.v)).join(', ') }))
 				.sort((a, b) => a.value - b.value)
@@ -162,21 +173,36 @@
 	}
 
 	let saving = $state(false);
-	const mix = $derived(
-		diff && chosen.size
-			? mixRecipe(diff, {
-					rows: chosen,
-					base: closest,
-					labels: versions.map((_, v) => label(v)),
-					title: `${DISH_NAMES[dish] ?? versions[0].title} – my mix`
-				})
-			: null
-	);
+	let mixError = $state('');
+	const mixed = $derived.by(() => {
+		if (!diff || !chosen.size) return { mix: null, error: '' };
+		try {
+			const mix = mixRecipe(diff, {
+				rows: chosen,
+				base: closest,
+				labels: versions.map((_, v) => label(v)),
+				title: `${DISH_NAMES[dish] ?? versions[0].title} – my mix`
+			});
+			return { mix, error: '' };
+		} catch (e) {
+			console.error(e);
+			return { mix: null, error: `Couldn't put this mix together (${(e as Error).message.slice(0, 120)}). Try another combination.` };
+		}
+	});
+	const mix = $derived(mixed.mix);
 	async function cookMix() {
 		if (!mix || saving) return;
 		saving = true;
-		const [id] = await addRecipes([mix.recipe]);
-		await goto(resolve('/r/[id]', { id }));
+		mixError = '';
+		try {
+			const [id] = await addRecipes([mix.recipe]);
+			await goto(resolve('/r/[id]', { id }));
+		} catch (e) {
+			console.error(e);
+			mixError = `Couldn't save the mix (${(e as Error).message.slice(0, 120)}).`;
+		} finally {
+			saving = false;
+		}
 	}
 
 	// --- Changes view: one version as the base, the others described against it.
@@ -302,7 +328,7 @@
 			<h2>Your mix</h2>
 			<p class="muted small">
 				Follows <strong>{label(closest)}</strong>, the version closest to your picks, with your choices swapped in.
-				Steps for ingredients it doesn't have are borrowed from the other versions.
+				Ingredients it doesn't have go into the step that handles the same things, or bring their own step from another version.
 			</p>
 			<div class="row amounts" role="radiogroup" aria-label="Amounts">
 				<span class="small muted">Amounts:</span>
@@ -321,6 +347,7 @@
 					{/each}
 				</ol>
 			{/if}
+			{#if mixed.error || mixError}<p class="error" role="alert">{mixed.error || mixError}</p>{/if}
 			<div class="row cook">
 				<button onclick={cookMix} disabled={saving || !mix}>Cook this mix →</button>
 				<a href={resolve('/r/[id]', { id: rows[closest].id })}>or {label(closest)} as written</a>
@@ -433,6 +460,7 @@
 				<strong>{chosen.size}</strong> picked · follows {label(closest)}
 				<button class="link" onclick={() => (settings.compareView = 'merge')}>see the method</button>
 			</span>
+			{#if mixed.error || mixError}<span class="small error" role="alert">{mixed.error || mixError}</span>{/if}
 			<button class="small" onclick={cookMix} disabled={saving || !mix}>Cook this mix →</button>
 		</div>
 	{:else}
@@ -701,6 +729,9 @@
 		display: grid;
 		gap: 0.2rem;
 		font-size: 0.8rem;
+	}
+	.error {
+		color: #b3261e;
 	}
 	.mixbar {
 		position: sticky;

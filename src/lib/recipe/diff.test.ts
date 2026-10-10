@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { amountRange, closestVersion, diffRecipes } from './diff';
+import { amountRange, closestVersion, diffRecipes, rowRange } from './diff';
 import { recipeSchema } from './schema';
 import { sampleRecipe } from './sample';
 
@@ -50,5 +50,27 @@ describe('amountRange', () => {
 	it('spans comparable amounts and gives up on mixed units', () => {
 		expect(amountRange([{ qty: 1, qtyMax: null, unit: 'dl' }, { qty: 150, qtyMax: null, unit: 'ml' }])).toEqual({ qty: 100, qtyMax: 150, unit: 'ml' });
 		expect(amountRange([{ qty: 1, qtyMax: null, unit: 'piece' }, { qty: 100, qtyMax: null, unit: 'g' }])).toBeNull();
+	});
+});
+
+describe('rowRange', () => {
+	const ing = (key: string) => ({ id: 'x', key, name: key.replaceAll('-', ' '), role: 'chili' }) as never;
+	const row = (key: string, amounts: [number, string][]) => ({
+		key,
+		role: 'chili',
+		amounts: amounts.map(([qty, unit]) => ({ qty, qtyMax: null, unit }) as never),
+		ingredients: amounts.map(() => ing(key))
+	});
+
+	it('puts teaspoons, grams and pinches in one unit', () => {
+		const r = rowRange(row('crushed-red-pepper-flakes', [[0.5, 'tsp'], [3, 'g'], [1, 'pinch'], [2, 'tsp'], [1, 'tbsp']]))!;
+		expect(r.unit).toBe('tsp');
+		expect(r.qty).toBeCloseTo(0.31 / 5);
+		expect(r.qtyMax).toBe(3);
+	});
+
+	it('turns grams of garlic into cloves when most versions count cloves', () => {
+		const r = rowRange(row('garlic', [[2, 'clove'], [4, 'clove'], [15, 'g']]))!;
+		expect(r).toEqual({ unit: 'clove', qty: 2, qtyMax: 4 });
 	});
 });
