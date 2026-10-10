@@ -53,3 +53,55 @@ describe('parseRecipes', () => {
 		expect(!res.ok && res.errors[0]).toMatch(/Could not find any JSON/);
 	});
 });
+
+describe('lenient step and servings input', () => {
+	const step = (patch: Record<string, unknown>) => {
+		const r = clone();
+		Object.assign(r.steps[0], patch);
+		return recipeSchema.parse(r).steps[0];
+	};
+
+	it('moves a temperature written as heat into tempC', () => {
+		const s = step({ heat: '200 °C' });
+		expect(s.heat).toBeUndefined();
+		expect(s.tempC).toBe(200);
+		expect(step({ heat: '180C' }).tempC).toBe(180);
+		expect(step({ heat: 175 }).tempC).toBe(175);
+		expect(step({ heat: '400 °F' }).tempC).toBe(204);
+	});
+
+	it('keeps an explicit tempC over a temperature in heat', () => {
+		expect(step({ heat: '200 °C', tempC: 220 }).tempC).toBe(220);
+	});
+
+	it('reads tempC written as a string', () => {
+		expect(step({ heat: null, tempC: '225 °C' }).tempC).toBe(225);
+	});
+
+	it('normalizes heat level spellings', () => {
+		expect(step({ heat: 'Medium high' }).heat).toBe('medium-high');
+		expect(step({ heat: 'high/medium' }).heat).toBe('medium-high');
+		expect(step({ heat: 'low heat' }).heat).toBe('low');
+		expect(step({ heat: 'medel' }).heat).toBe('medium');
+	});
+
+	it('still rejects heat that is neither a level nor a temperature', () => {
+		const r = clone();
+		r.steps[0].heat = 'scorching';
+		expect(recipeSchema.safeParse(r).success).toBe(false);
+	});
+
+	it('reads servings written as text', () => {
+		const r = clone();
+		r.servings = '4–6 portions';
+		expect(recipeSchema.parse(r).servings).toBe(4);
+	});
+
+	it('says plainly when a required field is missing', () => {
+		const r = clone();
+		delete r.servings;
+		const res = parseRecipes(JSON.stringify(r));
+		expect(res.ok).toBe(false);
+		if (!res.ok) expect(res.errors).toEqual(['servings: required field is missing (expected number)']);
+	});
+});
