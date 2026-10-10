@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { liveQuery } from 'dexie';
 	import { db, type StoredRecipe } from '#lib/db.ts';
 
@@ -18,7 +19,7 @@
 	<div class="empty">
 		<h1>No recipes yet</h1>
 		<p class="muted">Ask your AI assistant for a recipe in Kokpunkten's format, then paste the answer here.</p>
-		<a href="/add" class="button">Add your first recipe</a>
+		<a href={resolve('/add')} class="button">Add your first recipe</a>
 	</div>
 {:else}
 	<h1>Recipes</h1>
@@ -26,7 +27,7 @@
 		{#each byDish($recipes) as versions (versions[0].recipe.dish)}
 			<li class="card">
 				{#each versions as v (v.id)}
-					<a href="/r/{v.id}" class="item">
+					<a href={resolve('/r/[id]', { id: v.id })} class="item">
 						<span class="title">{v.favorite ? '★ ' : ''}{v.recipe.title}</span>
 						<span class="muted small">
 							{v.recipe.source.name ?? v.recipe.source.book?.title ?? v.recipe.source.type}
