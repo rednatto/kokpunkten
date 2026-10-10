@@ -8,7 +8,9 @@
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
 	import { amountRange, baseValue, closestVersion, diffRecipes, type DiffRow } from '#lib/recipe/diff.ts';
+	import { familyName } from '#lib/recipe/families.ts';
 	import { mixRecipe } from '#lib/recipe/mix.ts';
+	import { tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
 	import type { Amount } from '#lib/recipe/units.ts';
 	import { settings } from '#lib/settings.svelte.ts';
 
@@ -53,6 +55,19 @@
 	// Where "back" goes: the recipe the cook came from, else the first version.
 	const backId = $derived(page.url.searchParams.get('from') ?? rows?.[0]?.id);
 	const backLabel = $derived(rows?.find((r) => r.id === backId)?.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? 'recipe');
+
+	// --- Table view: a tree of groups; supporting ingredients start folded.
+	const tree = $derived(diff ? tableTree(diff) : []);
+	let flipped = $state(new Set<string>());
+	const isOpen = (g: TreeGroup) => g.basic === flipped.has(g.id);
+	function flip(id: string) {
+		const next = new Set(flipped);
+		if (!next.delete(id)) next.add(id);
+		flipped = next;
+	}
+	/** What a folded group shows per version: the names of the members it uses. */
+	const usedIn = (g: TreeGroup, v: number) => g.leaves.flatMap((l) => l.row.ingredients[v]?.name ?? []).join(', ');
+	const dots = (count: number) => `${'●'.repeat(count)}${'○'.repeat(n - count)}`;
 
 	// --- Merge view state: which option per slot, which extras are in.
 	let picks = $state(new Map<string, string>());
@@ -254,19 +269,43 @@
 					</tr>
 				</thead>
 				<tbody>
-					{#each diff.rows as row (row.key)}
-						<tr class:shared={row.count === n}>
-							<th class="first" scope="row">
-								{row.name}
-								<span class="dots" aria-label="{row.count} of {n}">{'●'.repeat(row.count)}{'○'.repeat(n - row.count)}</span>
-							</th>
-							{#each row.amounts as a, v}
-								<td class:none={!a}>
-									{a ? amount(row, a) || '✓' : '—'}
-									{#if variantName(row, v)}<span class="variant">{variantName(row, v)}</span>{/if}
-								</td>
+					{#each tree as g (g.id)}
+						{@const open = !g.title || isOpen(g)}
+						{#if g.basic && g.id === tree.find((t) => t.basic)?.id}
+							<tr class="section"><th class="first" scope="rowgroup" colspan={n + 1}>Basics</th></tr>
+						{/if}
+						{#if g.title}
+							<tr class="group">
+								<th class="first" scope="rowgroup">
+									<button class="fold" aria-expanded={open} onclick={() => flip(g.id)}>{open ? '▾' : '▸'} {g.title}</button>
+									<span class="dots" aria-label="{g.count} of {n}">{dots(g.count)}</span>
+								</th>
+								{#each versions as _, v}
+									<td class:none={!usedIn(g, v)}>{open ? '' : usedIn(g, v) || '—'}</td>
+								{/each}
+							</tr>
+						{/if}
+						{#if open}
+							{#each g.leaves as { row, subs } (row.key)}
+								<tr class:shared={row.count === n} class:child={!!g.title}>
+									<th class="first" scope="row">
+										{subs.length ? familyName(row.key) : row.name}
+										<span class="dots" aria-label="{row.count} of {n}">{dots(row.count)}</span>
+									</th>
+									{#each row.amounts as a, v}
+										<td class:none={!a}>{subs.length ? '' : a ? amount(row, a) || '✓' : '—'}</td>
+									{/each}
+								</tr>
+								{#each subs as sub (sub.name)}
+									<tr class="sub" class:child={!!g.title}>
+										<th class="first" scope="row">{sub.name}</th>
+										{#each row.amounts as a, v}
+											<td class:none={!sub.versions.includes(v)}>{sub.versions.includes(v) && a ? amount(row, a) || '✓' : ''}</td>
+										{/each}
+									</tr>
+								{/each}
 							{/each}
-						</tr>
+						{/if}
 					{/each}
 					<tr class="totals">
 						<th class="first" scope="row">Total time</th>
@@ -341,12 +380,6 @@
 		gap: 0.75rem;
 		align-items: center;
 		margin-top: 0.75rem;
-	}
-	.variant {
-		display: block;
-		font-size: 0.7rem;
-		color: var(--muted);
-		white-space: normal;
 	}
 	.meta {
 		margin: 0 0 0.75rem;
@@ -477,6 +510,43 @@
 		white-space: normal;
 		min-width: 6.5rem;
 		max-width: 8rem;
+	}
+	.fold {
+		all: unset;
+		cursor: pointer;
+		font-weight: 600;
+	}
+	tr.group td {
+		white-space: normal;
+		max-width: 7rem;
+	}
+	tr.group th,
+	tr.group td {
+		background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	tr.group .first {
+		color: var(--fg);
+	}
+	tr.section .first {
+		position: static;
+		padding-top: 1rem;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--muted);
+	}
+	tr.child .first {
+		padding-left: 1rem;
+	}
+	tr.sub .first {
+		padding-left: 1.6rem;
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	tr.sub.child .first {
+		padding-left: 2.2rem;
 	}
 	tr.shared .first {
 		font-weight: 700;
