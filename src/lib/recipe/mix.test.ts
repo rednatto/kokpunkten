@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { diffRecipes } from './diff';
+import { closestTo, diffRecipes } from './diff';
 import { mixRecipe } from './mix';
 import { recipeSchema } from './schema';
 import carbonara from '../library/spaghetti-carbonara.json';
@@ -33,17 +33,24 @@ describe('mixRecipe', () => {
 		const first = steps[0];
 		expect(first.text).toMatch(/pancetta/i);
 		expect(first.text).not.toMatch(/guanciale/i);
-		expect(first.changed).toBe('pancetta instead of guanciale');
+		expect(first.changed).toMatch(/^pancetta instead of guanciale/);
 	});
 
-	it('borrows the steps that use ingredients the base lacks, before the last step', () => {
+	it('adds an ingredient the base lacks to the step that handles the same things', () => {
 		const garlic = mix.ingredients.find((i) => i.key === 'garlic')!;
-		const borrowed = steps.filter((s) => s.from);
-		expect(borrowed.length).toBeGreaterThan(0);
-		expect(borrowed.every((s) => s.from === 'Pancetta and parmesan')).toBe(true);
-		expect(borrowed.some((s) => s.uses.includes(garlic.id))).toBe(true);
-		const last = steps.at(-1)!;
-		expect(borrowed.every((s) => last.uses.includes(s.id))).toBe(true);
+		const first = steps[0];
+		expect(first.uses).toContain(garlic.id);
+		expect(first.text).toMatch(/Fry the pancetta[^.]*\. Add the garlic along with the pancetta\./);
+		expect(first.changed).toMatch(/\+ garlic \(Pancetta and parmesan\)/);
+		expect(steps.filter((s) => s.from)).toHaveLength(0);
+	});
+
+	it('rounds average amounts to what a cook would measure', () => {
+		for (const i of mix.ingredients) {
+			if (i.unit === 'g') expect(i.qty! % (i.qty! >= 50 ? 5 : 0.5)).toBe(0);
+			if (i.unit === 'tsp' || i.unit === 'tbsp') expect((i.qty! * 8) % 1).toBe(0);
+			if (i.unit === 'piece' || i.unit === 'clove') expect(Number.isInteger(i.qty)).toBe(true);
+		}
 	});
 
 	it('speaks of the picked ingredients everywhere, borrowed steps included', () => {
@@ -55,7 +62,7 @@ describe('mixRecipe', () => {
 		});
 		const text = other.steps.map((s) => s.text).join(' ');
 		expect(text).not.toMatch(/pancetta|pecorino/i);
-		expect(other.steps.some((s) => s.from && /guanciale/.test(s.text))).toBe(true);
+		expect(text).toMatch(/garlic along with the guanciale/);
 	});
 
 	it('takes the middle amount when asked for averages', () => {
@@ -77,5 +84,25 @@ describe('mixRecipe', () => {
 		const { recipe } = mixRecipe(diff, { rows, base: 0, labels, title: 'mix' });
 		const pepper = diff.rows.find((r) => r.key === 'black-pepper')!.amounts[1]!;
 		expect(recipe.ingredients.find((i) => i.key === 'black-pepper')!.qty).toBe(pepper.qty);
+	});
+});
+
+describe('mixRecipe on every dish', () => {
+	const files = import.meta.glob('../library/*.json', { eager: true, import: 'default' }) as Record<string, unknown[]>;
+	it('makes a valid recipe from any choice of rows, with no step borrowed twice', () => {
+		let seed = 7;
+		const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+		for (const json of Object.values(files)) {
+			const versions = json.map((r) => recipeSchema.parse(r));
+			const diff = diffRecipes(versions, 4);
+			for (let t = 0; t < 20; t++) {
+				const rows = new Map<string, number | 'average'>();
+				for (const r of diff.rows) if (rnd() < 0.6) rows.set(r.key, rnd() < 0.5 ? 'average' : r.ingredients.findIndex((i) => i));
+				if (!rows.size) continue;
+				const { steps } = mixRecipe(diff, { rows, base: closestTo(diff, new Set(rows.keys())), labels: versions.map((_, i) => `v${i}`), title: 'm' });
+				const texts = steps.filter((s) => s.from).map((s) => s.text);
+				expect(new Set(texts).size).toBe(texts.length);
+			}
+		}
 	});
 });

@@ -1,5 +1,6 @@
 import type { Ingredient, Recipe, Unit } from './schema.ts';
 import { familyName, familyOf, isLooseFamily, splitCompound } from './families.ts';
+import { gramsPerMl, PIECE_GRAMS } from './measures.ts';
 import { MASS_G, VOLUME_ML, type Amount } from './units.ts';
 
 /** One ingredient key across all versions, with each version's amount scaled to the same servings. */
@@ -105,7 +106,7 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 	};
 }
 
-type Dimension = 'mass' | 'volume' | Unit;
+export type Dimension = 'mass' | 'volume' | Unit;
 
 /** A comparable number for an amount: grams, millilitres, or the count in its own unit. */
 export function baseValue(a: Amount | null): { dim: Dimension; value: number } | null {
@@ -132,6 +133,60 @@ export function meanAmount(amounts: (Amount | null)[]): Amount | null {
 	return fromBase(values[0].dim, values.reduce((sum, v) => sum + v.value, 0) / values.length, null);
 }
 
+const COUNTED = new Set<string>(['piece', 'clove', 'bunch', 'can']);
+/** A pinch, in millilitres: about a sixteenth of a teaspoon. */
+const PINCH_ML = 0.31;
+
+/**
+ * Each version's amount for a row as one number in one dimension, so "1 pinch", "0.5 tsp"
+ * and "3 g" of chili flakes compare. The dimension is the one most versions use; others are
+ * converted through typical weights (a clove of garlic, a tsp of salt), and left null when
+ * there is no sensible conversion. Null overall when nothing has an amount.
+ */
+export function rowValues(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>): { dim: Dimension; values: (number | null)[] } | null {
+	const native = row.amounts.map((a) => (a?.unit === 'pinch' && a.qty != null ? { dim: 'volume' as Dimension, value: mid(a) * PINCH_ML } : baseValue(a)));
+	const counts = Map.groupBy(native.filter((n) => n !== null), (n) => n.dim);
+	if (!counts.size) return null;
+	const dim = [...counts].toSorted((a, b) => b[1].length - a[1].length)[0][0];
+	const keyOf = (v: number) => row.ingredients[v]?.key ?? row.key;
+	const density = (v: number) => gramsPerMl(keyOf(v), row.role) ?? gramsPerMl(row.key, row.role);
+	const pieceG = (v: number) => PIECE_GRAMS[keyOf(v)] ?? PIECE_GRAMS[row.key] ?? null;
+	const grams = (v: number, n: { dim: Dimension; value: number }): number | null => {
+		if (n.dim === 'mass') return n.value;
+		if (n.dim === 'volume') return density(v) == null ? null : n.value * density(v)!;
+		return COUNTED.has(n.dim) && pieceG(v) ? n.value * pieceG(v)! : null;
+	};
+	const values = native.map((n, v) => {
+		if (!n) return null;
+		if (n.dim === dim) return n.value;
+		const g = grams(v, n);
+		if (g == null) return null;
+		if (dim === 'mass') return g;
+		if (dim === 'volume') return density(v) ? g / density(v)! : null;
+		return COUNTED.has(dim) && pieceG(v) ? g / pieceG(v)! : null;
+	});
+	return { dim, values };
+}
+
+/** The spread of a row's amounts in one unit (0.25–2 tsp), or null when they can't be compared. */
+export function rowRange(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>): Amount | null {
+	const r = rowValues(row);
+	const values = r?.values.filter((v) => v !== null) ?? [];
+	if (!r || !values.length) return null;
+	const [min, max] = [Math.min(...values), Math.max(...values)];
+	return fromBase(r.dim, min, max - min < min * 0.05 ? null : max);
+}
+
+/** The mean of a row's amounts in one unit, or null when they can't be compared. */
+export function rowMean(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>): Amount | null {
+	const r = rowValues(row);
+	const values = r?.values.filter((v) => v !== null) ?? [];
+	if (!r || !values.length) return null;
+	return fromBase(r.dim, values.reduce((s, v) => s + v, 0) / values.length, null);
+}
+
+const mid = (a: Amount) => (a.qtyMax == null ? a.qty! : (a.qty! + a.qtyMax) / 2);
+
 /**
  * The version that uses the most of the chosen ingredients and the fewest of the others,
  * so its method fits a hand-picked mix best.
@@ -146,11 +201,12 @@ export function closestTo(diff: RecipeDiff, chosen: Set<string>): number {
 }
 
 /** Turns a base value back into an amount; small volumes read better as spoons than millilitres. */
-function fromBase(dim: Dimension, qty: number, qtyMax: number | null): Amount {
+export function fromBase(dim: Dimension, qty: number, qtyMax: number | null): Amount {
 	if (dim === 'mass') return { unit: 'g', qty, qtyMax };
 	if (dim !== 'volume') return { unit: dim, qty, qtyMax };
 	const top = qtyMax ?? qty;
-	const spoon = top <= 10 ? 5 : top < 60 ? 15 : null;
+	// A range that starts under a teaspoon stays in teaspoons (a pinch – 3 tsp, not 0.02–1 tbsp).
+	const spoon = top <= 10 || (qty < 5 && top <= 30) ? 5 : top < 60 ? 15 : null;
 	if (!spoon) return { unit: 'ml', qty, qtyMax };
 	return { unit: spoon === 5 ? 'tsp' : 'tbsp', qty: qty / spoon, qtyMax: qtyMax == null ? null : qtyMax / spoon };
 }

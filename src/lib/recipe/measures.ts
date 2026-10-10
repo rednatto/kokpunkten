@@ -98,6 +98,26 @@ const GRAMS_PER_DL: Record<string, number> = {
 	polenta: 70
 };
 
+/**
+ * Rough grams per millilitre, for comparing "1 tsp" with "3 g" of the same ingredient.
+ * Null when there is no sensible guess (a cup of pasta is too loose to weigh).
+ */
+export function gramsPerMl(key: string, role?: string | null): number | null {
+	if (GRAMS_PER_DL[key]) return GRAMS_PER_DL[key] / 100;
+	if (/salt$/.test(key)) return 1.2;
+	if (/flakes$/.test(key)) return 0.35;
+	if (/sugar$/.test(key)) return 0.85;
+	if (/flour$/.test(key)) return 0.6;
+	if (/(honey|syrup|molasses)$/.test(key)) return 1.4;
+	if (/(-oil|^oil)$/.test(key)) return 0.92;
+	if (/(butter|ghee|lard)$/.test(key)) return 0.95;
+	if (/(parmesan|pecorino.*|cheese|grana-padano)$/.test(key)) return 0.4;
+	if (/(water|stock|broth|wine|juice|milk|cream|vinegar|sauce|beer)$/.test(key)) return 1;
+	if (/^(spice|seasoning|chili|pepper)$/.test(role ?? '') || /(pepper|paprika|cumin|cinnamon|nutmeg|powder|seeds|ground-.*)$/.test(key)) return 0.5;
+	if (/^(herb|garnish)$/.test(role ?? '')) return 0.2;
+	return null;
+}
+
 const CANNED = /^(canned-|crushed-tomatoes$|coconut-milk$)/;
 const PORTION_GRAMS: Record<string, number> = { pasta: 100, noodles: 90 };
 
