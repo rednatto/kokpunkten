@@ -41,7 +41,7 @@ describe('US volumes for baking staples', () => {
 		const { formatAmount } = await import('./units');
 		expect(formatAmount(usAmount(ing('butter', 'fat'), amt(30, 'g')))).toBe('2 tbsp');
 		expect(formatAmount(usAmount(ing('butter', 'fat'), amt(225, 'g')))).toBe('1 cup');
-		expect(formatAmount(usAmount(ing('all-purpose-flour', 'flour'), amt(250, 'g')))).toBe('1 ¾ cup');
+		expect(formatAmount(usAmount(ing('all-purpose-flour', 'flour'), amt(250, 'g')))).toBe('1 ¾ cups');
 		expect(formatAmount(usAmount(ing('ground-beef', 'meat'), amt(450, 'g')))).toBe('16 oz');
 	});
 });

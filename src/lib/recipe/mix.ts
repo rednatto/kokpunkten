@@ -1,16 +1,15 @@
-import { amountRange, type DiffRow, type RecipeDiff } from './diff.ts';
+import { meanAmount, type DiffRow, type RecipeDiff } from './diff.ts';
 import { recipeSchema, type Ingredient, type Recipe, type Step } from './schema.ts';
 import type { Amount } from './units.ts';
 
+/** Where a mixed ingredient's amount comes from: one version, or the average of all that use it. */
+export type AmountSource = number | 'average';
+
 export interface MixChoice {
-	/** Picked row key per slot role. */
-	picks: Map<string, string>;
-	/** Row keys of the extras to include. */
-	extras: Set<string>;
+	/** The rows to cook with, by row key, each with where its amount comes from. */
+	rows: Map<string, AmountSource>;
 	/** The version whose method the mix follows. */
 	base: number;
-	/** Take each amount from the base version, or the middle of what the versions use. */
-	amounts: 'base' | 'average';
 	/** Version names, for crediting borrowed steps. */
 	labels: string[];
 	title: string;
@@ -33,19 +32,18 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 	const { base } = choice;
 	const baseRecipe = diff.versions[base];
 	const slotOf = new Map(diff.slots.flatMap((s) => s.options.map((o) => [o.row.key, s.role] as const)));
-	const chosen = diff.rows.filter((r) =>
-		r.count === diff.versions.length ? true : slotOf.has(r.key) ? choice.picks.get(slotOf.get(r.key)!) === r.key : choice.extras.has(r.key)
-	);
+	const chosen = diff.rows.filter((r) => choice.rows.has(r.key));
 
 	// New ingredient ids, and a way back from any version's ingredient id to the new one.
 	const ingredients: Ingredient[] = [];
 	const newId = new Map<string, string>(); // `${version}:${oldId}` → new id
 	const rowId = new Map<string, string>(); // row key → new id
 	chosen.forEach((row, n) => {
-		const v = row.ingredients[base] ? base : row.ingredients.findIndex((i) => i);
+		const from = choice.rows.get(row.key)!;
+		const v = typeof from === 'number' && row.ingredients[from] ? from : row.ingredients[base] ? base : row.ingredients.findIndex((i) => i);
 		const src = row.ingredients[v]!;
 		const id = `i${n + 1}`;
-		const amount = choice.amounts === 'average' ? middle(row) ?? row.amounts[v]! : row.amounts[v]!;
+		const amount = from === 'average' ? average(row) ?? row.amounts[v]! : row.amounts[v]!;
 		ingredients.push({ ...src, id, qty: amount.qty, qtyMax: amount.qtyMax, unit: amount.unit ?? src.unit, group: undefined });
 		rowId.set(row.key, id);
 		row.ingredients.forEach((ing, w) => ing && newId.set(`${w}:${ing.id}`, id));
@@ -57,7 +55,8 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 	for (const row of diff.rows) {
 		if (rowId.has(row.key)) continue;
 		const role = slotOf.get(row.key);
-		const pick = role ? diff.rows.find((r) => r.key === choice.picks.get(role)) : undefined;
+		// Another option of the same slot that was chosen takes this one's place in the steps.
+		const pick = role ? chosen.find((r) => slotOf.get(r.key) === role) : undefined;
 		row.ingredients.forEach((ing, v) => {
 			if (!ing) return;
 			if (pick) replaced.set(`${v}:${ing.id}`, { id: rowId.get(pick.key)!, from: ing.name, to: firstIngredient(pick).name });
@@ -115,7 +114,8 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 			if (r) text = swapName(text, r.from, r.to);
 		}
 		const left = step.uses.flatMap((u) => dropped.get(`${v}:${u}`) ?? []);
-		if (noteLeftOut && left.length) text += ` (Leave out the ${left.join(' and ')}.)`;
+		const onlyLeftOut = left.length === step.uses.length;
+		if (noteLeftOut && left.length) text += onlyLeftOut ? ` (Skip this step: no ${left.join(' or ')}.)` : ` (Leave out the ${left.join(' and ')}.)`;
 		return { ...step, text };
 	}
 	function changes(step: Step): Partial<MixedStep> {
@@ -127,7 +127,7 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 		return swaps.length || left.length ? { changed: [...swaps, ...left].join(', ') } : {};
 	}
 
-	const picked = diff.slots.map((s) => firstIngredient(diff.rows.find((r) => r.key === choice.picks.get(s.role))!).name);
+	const picked = chosen.filter((r) => slotOf.has(r.key) && !r.ingredients[base]).map((r) => firstIngredient(r).name);
 	const recipe = {
 		...baseRecipe,
 		title: choice.title,
@@ -152,14 +152,12 @@ function firstIngredient(row: DiffRow): Ingredient {
 	return row.ingredients.find((i) => i)!;
 }
 
-/** The middle of the versions' amounts, when they can be compared. */
-function middle(row: DiffRow): Amount | null {
-	const r = amountRange(row.amounts);
+/** The average of the versions' amounts, when they can be compared; eggs, cloves and cans come whole. */
+function average(row: DiffRow): Amount | null {
+	const r = meanAmount(row.amounts);
 	if (!r || r.qty == null) return null;
-	const mid = r.qtyMax == null ? r.qty : (r.qty + r.qtyMax) / 2;
-	// Eggs, cloves and cans come whole.
 	const counted = !r.unit || ['piece', 'clove', 'can', 'bunch'].includes(r.unit);
-	return { ...r, qty: counted ? Math.max(1, Math.round(mid)) : mid, qtyMax: null };
+	return counted ? { ...r, qty: Math.max(1, Math.round(r.qty)) } : r;
 }
 
 /** Swaps an ingredient's name in step text, also matching its last word ("the guanciale" for "guanciale, diced"). */

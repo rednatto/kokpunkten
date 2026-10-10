@@ -125,6 +125,26 @@ export function amountRange(amounts: (Amount | null)[]): Amount | null {
 	return fromBase(values[0].dim, min, max - min < min * 0.05 ? null : max);
 }
 
+/** The mean of the versions' amounts, when they can be compared (2 to 5 cloves of garlic → 3.5). */
+export function meanAmount(amounts: (Amount | null)[]): Amount | null {
+	const values = amounts.map(baseValue).filter((v) => v !== null);
+	if (!values.length || values.some((v) => v.dim !== values[0].dim)) return null;
+	return fromBase(values[0].dim, values.reduce((sum, v) => sum + v.value, 0) / values.length, null);
+}
+
+/**
+ * The version that uses the most of the chosen ingredients and the fewest of the others,
+ * so its method fits a hand-picked mix best.
+ */
+export function closestTo(diff: RecipeDiff, chosen: Set<string>): number {
+	const score = (v: number) => diff.rows.reduce((s, r) => s + (!!r.ingredients[v] === chosen.has(r.key) ? 1 : 0), 0);
+	let best = 0;
+	diff.versions.forEach((_, v) => {
+		if (score(v) > score(best)) best = v;
+	});
+	return best;
+}
+
 /** Turns a base value back into an amount; small volumes read better as spoons than millilitres. */
 function fromBase(dim: Dimension, qty: number, qtyMax: number | null): Amount {
 	if (dim === 'mass') return { unit: 'g', qty, qtyMax };
