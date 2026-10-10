@@ -8,6 +8,7 @@
 	import { showAmount } from '#lib/display.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
+	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
 	import UnitControls from '#lib/components/UnitControls.svelte';
 	import Timer from './Timer.svelte';
 
@@ -158,6 +159,12 @@
 	</ul>
 
 	<h2>Steps</h2>
+	{#if recipe.steps.length > 1}
+		<details class="diagram">
+			<summary>Diagram</summary>
+			<RecipeDiagram {recipe} done={doneStep} ontoggle={(sid) => setCooking({ done: toggle(doneStep, sid) })} />
+		</details>
+	{/if}
 	<ol class="steps">
 		{#each recipe.steps as step (step.id)}
 			<li class:done={doneStep.has(step.id)}>
@@ -339,6 +346,9 @@
 		border: 1px solid var(--line);
 		border-radius: 1rem;
 		padding: 0 0.5rem;
+	}
+	.diagram {
+		margin-bottom: 0.5rem;
 	}
 	details {
 		border-bottom: 1px solid var(--line);
