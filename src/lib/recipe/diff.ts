@@ -1,4 +1,5 @@
 import type { Ingredient, Recipe, Unit } from './schema.ts';
+import { familyName, familyOf, isLooseFamily, splitCompound } from './families.ts';
 import { MASS_G, VOLUME_ML, type Amount } from './units.ts';
 
 /** One ingredient key across all versions, with each version's amount scaled to the same servings. */
@@ -34,22 +35,26 @@ export interface RecipeDiff {
 
 /** Lines up several versions of a dish by ingredient key and role, scaled to `servings`. */
 export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings ?? 4): RecipeDiff {
+	const perVersion = versions.map((r) => r.ingredients.flatMap(expandCompound));
+	const rowKey = rowKeys(perVersion);
 	const rows = new Map<string, DiffRow>();
-	versions.forEach((r, v) => {
-		const factor = servings / r.servings;
-		for (const ing of r.ingredients) {
-			let row = rows.get(ing.key);
+	perVersion.forEach((ings, v) => {
+		const factor = servings / versions[v].servings;
+		for (const ing of ings) {
+			const key = rowKey(ing);
+			let row = rows.get(key);
 			if (!row) {
 				row = {
-					key: ing.key,
-					name: ing.name,
+					key,
+					name: key === ing.key ? ing.name : familyName(key),
 					role: ing.role ?? 'other',
 					amounts: versions.map(() => null),
 					ingredients: versions.map(() => null),
 					count: 0
 				};
-				rows.set(ing.key, row);
+				rows.set(key, row);
 			}
+			if (key === ing.key && row.name === familyName(key)) row.name = ing.name; // prefer the plain ingredient's own name
 			const amount: Amount = {
 				qty: ing.qty == null ? null : ing.qty * factor,
 				qtyMax: ing.qtyMax == null ? null : ing.qtyMax * factor,
@@ -153,4 +158,40 @@ export function closestVersion(diff: RecipeDiff, picks: Map<string, string>, ext
 		if (score(v) > score(best)) best = v;
 	});
 	return best;
+}
+
+/** "Salt and pepper" as one ingredient becomes two, so each lines up with its own row. */
+function expandCompound(ing: Ingredient): Ingredient[] {
+	const parts = splitCompound(ing.key);
+	if (!parts) return [ing];
+	return parts.map((key) => ({ ...ing, key, name: familyName(key) }));
+}
+
+/**
+ * Decides which row each ingredient goes in. Keys of one family (kosher-salt, salt) share a
+ * row, unless some version uses two of them, which means they do different jobs there
+ * (salt in the dough, flaky salt on top), or unless their roles differ for a family where
+ * that matters (lemon wedges to serve against lemon juice in the sauce).
+ */
+function rowKeys(perVersion: Ingredient[][]): (ing: Ingredient) => string {
+	const members = new Map<string, { keys: Set<string>; roles: Set<string>; clash: boolean }>();
+	for (const ings of perVersion) {
+		const seen = new Map<string, string>();
+		for (const ing of ings) {
+			const fam = familyOf(ing.key, ing.role);
+			const m = members.get(fam) ?? { keys: new Set(), roles: new Set(), clash: false };
+			m.keys.add(ing.key);
+			m.roles.add(ing.role ?? 'other');
+			if (seen.has(fam) && seen.get(fam) !== ing.key) m.clash = true;
+			seen.set(fam, ing.key);
+			members.set(fam, m);
+		}
+	}
+	return (ing) => {
+		const fam = familyOf(ing.key, ing.role);
+		const m = members.get(fam)!;
+		if (m.keys.size < 2) return ing.key;
+		if (m.clash || (!isLooseFamily(fam) && m.roles.size > 1)) return ing.key;
+		return fam;
+	};
 }
