@@ -121,7 +121,9 @@ export const sourceSchema = z.object({
 			page: z.union([z.number(), z.string()]).nullish()
 		})
 		.nullish(),
-	retrievedAt: optText
+	retrievedAt: optText,
+	/** License of the source text, e.g. "Unlicense" or "CC BY-SA 4.0", for imported open datasets. */
+	license: optText
 });
 
 export const recipeSchema = z

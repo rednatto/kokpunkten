@@ -18,6 +18,22 @@ Recipes, straight to the point. A mobile-first web app with no life stories: jus
 - `ingredients[].key` and `role`: a canonical name and the culinary slot the ingredient fills. These let versions be compared, for example guanciale and pancetta both fill `cured-pork`.
 - `steps[].uses`: the ingredients and earlier steps a step consumes. These form a dependency graph for a diagram view.
 
+## Open recipe datasets
+
+Recipes from open datasets ship with the app next to the built-in library and are copied into the on-device database. They join library dishes when the names match, so they show up as extra versions in the compare view.
+
+| Dataset | License | Recipes | Importer |
+|---|---|---|---|
+| [Public Domain Recipes](https://publicdomainrecipes.com) | Unlicense | 411 | `npm run import:pdr` |
+
+The pipeline:
+
+1. An adapter in [`scripts/import/`](scripts/import/) reads the dataset into "raw" recipes: a title, ingredient lines and step texts.
+2. [`src/lib/import/`](src/lib/import/) normalizes them. It parses ingredient lines ("1 ½ cups flour, sifted", "2 dl grädde"), matches ingredients to the keys and roles the library uses, links steps to the ingredients they name, and reads times, temperatures and heat from the steps.
+3. The result is validated against the recipe schema and written to [`src/lib/catalog/`](src/lib/catalog/), one recipe per line, with the license in `source.license`.
+
+The importer prints the ingredients it couldn't match. Adding them to `EVERYDAY` in `vocabulary.ts` improves the next run. The URL importer can reuse the same normalizer, since schema.org recipe data has the same shape.
+
 ## Develop
 
 ```sh
@@ -38,4 +54,5 @@ The app is a static single-page app (`adapter-static`). GitHub Pages answers dee
 1. Import from a recipe URL (schema.org Recipe JSON-LD, which needs a small server endpoint).
 2. Diff view: common ground and alternatives across the versions of one dish.
 3. Diagram view generated from `steps[].uses`.
-4. Optional sign-in and sync (Supabase), and search by cuisine.
+4. Optional sign-in and sync (Supabase Postgres), with a shared cache of imported recipes.
+5. More datasets: Wikibooks Cookbook (CC BY-SA, needs attribution and share-alike).

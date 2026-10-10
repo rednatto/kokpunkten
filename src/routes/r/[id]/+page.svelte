@@ -109,6 +109,7 @@
 		{:else}
 			{recipe.source.name ?? recipe.source.book?.title ?? recipe.source.type}
 		{/if}
+		{#if recipe.source.author && recipe.source.license}· by {recipe.source.author}, {recipe.source.license}{/if}
 		{#if recipe.time.totalMin}· {recipe.time.totalMin} min{/if}
 		{#if recipe.cuisine.length}· {recipe.cuisine.join(', ')}{/if}
 	</p>

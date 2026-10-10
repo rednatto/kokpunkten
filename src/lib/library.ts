@@ -1,4 +1,5 @@
 import { version } from '$app/env';
+import { loadCatalogs } from './catalog.ts';
 import { db, type StoredRecipe } from './db.ts';
 import { recipeSchema, type Recipe } from './recipe/schema.ts';
 
@@ -8,7 +9,8 @@ const files = import.meta.glob<unknown[]>('./library/*.json', { import: 'default
 const libraryId = (dish: string, n: number) => `lib-${dish}-${n + 1}`;
 
 /**
- * Copies the built-in library into the local database once per app version.
+ * Copies the built-in library and the imported open datasets (src/lib/catalog/) into the
+ * local database once per app version.
  * Existing rows keep the user's favorite, rating and note; recipes dropped from the
  * library are removed unless the user has marked them up.
  */
@@ -25,6 +27,7 @@ export async function syncLibrary(): Promise<void> {
 			else console.warn('Skipping invalid library recipe', res.error.issues);
 		});
 	}
+	recipes.push(...(await loadCatalogs()));
 
 	await db.transaction('rw', db.recipes, db.meta, async () => {
 		const existing = new Map((await db.recipes.filter((r) => !!r.builtin).toArray()).map((r) => [r.id, r]));
