@@ -5,10 +5,10 @@
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
 	import { db, type StoredRecipe } from '#lib/db.ts';
-	import { roughAmount, usAmount, weightHint } from '#lib/recipe/measures.ts';
+	import { showAmount } from '#lib/display.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
-	import { convert, formatAmount, ingredientAmount } from '#lib/recipe/units.ts';
-	import { settings } from '#lib/settings.svelte.ts';
+	import { ingredientAmount } from '#lib/recipe/units.ts';
+	import UnitControls from '#lib/components/UnitControls.svelte';
 	import Timer from './Timer.svelte';
 
 	const id = $derived(page.params.id!);
@@ -51,17 +51,7 @@
 		return () => sub.unsubscribe();
 	}
 
-	/** The amount to show, plus a quieter hint (standard weight, or the exact amount behind a rough one). */
-	function amountFor(ing: Ingredient): { main: string; hint: string | null } {
-		const a = ingredientAmount(ing, factor);
-		const shown = settings.units === 'us' ? usAmount(ing, a) : convert(a, settings.units === 'rough' ? 'metric' : settings.units);
-		const exact = formatAmount(shown, settings.numbers);
-		if (settings.units === 'rough') {
-			const rough = roughAmount(ing, a);
-			if (rough) return { main: rough, hint: exact };
-		}
-		return { main: exact, hint: settings.units === 'us' ? null : weightHint(ing, a) };
-	}
+	const amountFor = (ing: Ingredient) => showAmount(ing, ingredientAmount(ing, factor));
 
 	function toggle(set: Set<string>, key: string) {
 		const next = new Set(set);
@@ -129,6 +119,7 @@
 					{s.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? s.recipe.title}
 				</a>
 			{/each}
+			<a href={resolve('/d/[dish]', { dish: recipe.dish })} class="chip compare">Compare ⇄</a>
 		</nav>
 	{/if}
 
@@ -138,15 +129,7 @@
 			<span><strong>{servings}</strong> servings</span>
 			<button class="ghost small" onclick={() => setCooking({ servings: (servings ?? 0) + 1 })} aria-label="More servings">+</button>
 		</div>
-		<select bind:value={settings.units} aria-label="Units" class="units">
-			<option value="original">As written</option>
-			<option value="metric">Metric</option>
-			<option value="us">US cups</option>
-			<option value="rough">Rough (att höfta)</option>
-		</select>
-		<button class="ghost small" onclick={() => (settings.numbers = settings.numbers === 'fraction' ? 'decimal' : 'fraction')} aria-label="Fractions or decimals">
-			{settings.numbers === 'fraction' ? '½ → 0.5' : '0.5 → ½'}
-		</button>
+		<UnitControls />
 		{#if 'wakeLock' in navigator}
 			<button class="ghost small" class:on={awake} onclick={toggleAwake}>{awake ? 'Screen stays on' : 'Keep screen on'}</button>
 		{/if}
@@ -252,6 +235,9 @@
 		color: inherit;
 		text-decoration: none;
 	}
+	.compare {
+		border-style: dashed;
+	}
 	.chip.current {
 		border-color: var(--accent);
 		background: var(--accent);
@@ -268,11 +254,6 @@
 		width: 2.5rem;
 		padding: 0;
 		font-size: 1.2rem;
-	}
-	.units {
-		width: auto;
-		flex: 1;
-		min-width: 9rem;
 	}
 	.hint {
 		font-size: 0.85rem;

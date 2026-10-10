@@ -89,6 +89,7 @@
 						{#each d.versions as v (v.id)}
 							<a href={resolve('/r/[id]', { id: v.id })} class="chip">{v.favorite ? '★ ' : ''}{variant(v)}{#if v.rating} · {v.rating}/5{/if}</a>
 						{/each}
+						<a href={resolve('/d/[dish]', { dish: d.slug })} class="chip compare">Compare ⇄</a>
 					</div>
 				{/if}
 			</li>
@@ -138,6 +139,9 @@
 	.versions {
 		margin-top: 0.5rem;
 		gap: 0.4rem;
+	}
+	.compare {
+		border-style: dashed;
 	}
 	.chip {
 		font-size: 0.85rem;
