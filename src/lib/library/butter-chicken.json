@@ -1,0 +1,767 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "butter-chicken",
+		"title": "Murgh makhani, Delhi classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Delhi classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 300
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"tandoori",
+			"gluten-free"
+		],
+		"equipment": [
+			"bowl",
+			"oven tray with rack",
+			"heavy saucepan",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 800,
+				"unit": "g",
+				"prep": "in large pieces",
+				"group": "marinade",
+				"original": "800 g boneless chicken thighs, in large pieces"
+			},
+			{
+				"id": "i2",
+				"key": "plain-yogurt",
+				"name": "thick plain yogurt",
+				"role": "dairy",
+				"qty": 1.5,
+				"unit": "dl",
+				"group": "marinade",
+				"original": "1.5 dl thick plain yogurt"
+			},
+			{
+				"id": "i3",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"group": "marinade",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "grated",
+				"group": "marinade",
+				"original": "4 cloves garlic, grated"
+			},
+			{
+				"id": "i5",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tsp",
+				"group": "marinade",
+				"original": "2 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i6",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp garam masala"
+			},
+			{
+				"id": "i7",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "marinade",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 75,
+				"unit": "g",
+				"group": "sauce",
+				"original": "75 g butter"
+			},
+			{
+				"id": "i10",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"prep": "roughly chopped",
+				"group": "sauce",
+				"substitutes": [
+					"canned whole tomatoes"
+				],
+				"original": "800 g ripe tomatoes, roughly chopped"
+			},
+			{
+				"id": "i11",
+				"key": "green-cardamom",
+				"name": "green cardamom pods",
+				"role": "spice",
+				"qty": 3,
+				"unit": "piece",
+				"group": "sauce",
+				"original": "3 green cardamom pods"
+			},
+			{
+				"id": "i12",
+				"key": "kasuri-methi",
+				"name": "dried fenugreek leaves (kasuri methi)",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp dried fenugreek leaves (kasuri methi)"
+			},
+			{
+				"id": "i13",
+				"key": "honey",
+				"name": "honey or sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "sauce",
+				"original": "1 tsp honey or sugar"
+			},
+			{
+				"id": "i14",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1.5,
+				"unit": "dl",
+				"group": "sauce",
+				"original": "1.5 dl heavy cream"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the chicken with yogurt, ginger, garlic, chili powder, half the garam masala, lemon juice and half the salt. Marinate in the fridge.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 240
+			},
+			{
+				"id": "s2",
+				"text": "Roast the chicken on a rack under a hot grill or at the top of a 250 °C oven until charred at the edges and cooked to 74 °C.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"roast",
+					"grill"
+				],
+				"durationMin": 15,
+				"tempC": 250
+			},
+			{
+				"id": "s3",
+				"text": "Simmer the tomatoes with the cardamom and a third of the butter until completely soft.",
+				"uses": [
+					"i10",
+					"i11",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Discard the cardamom, blend the tomatoes and push through a sieve for a silky sauce.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Simmer the sauce with the rest of the butter, the remaining salt and garam masala, crushed fenugreek and honey until slightly thickened.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Add the chicken and cream and warm through gently.",
+				"uses": [
+					"s2",
+					"s5",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "low",
+				"critical": "Keep it below a boil after adding cream so the butter and cream stay emulsified."
+			}
+		],
+		"notes": {
+			"techniques": "The chicken is first cooked tandoori-style for char, then finished in a smooth tomato-butter sauce. There is no onion base.",
+			"chemistry": "Yogurt acids and enzymes tenderise the surface of the meat. Butter and cream form an emulsion with the tomato purée, held by gentle heat.",
+			"spiceProfile": "Mild and rich, with colour from Kashmiri chili, aroma from cardamom and garam masala, and the savoury-bitter note of fenugreek leaves.",
+			"variations": "The original restaurant method: tandoori chicken in a strained tomato and butter sauce. Other versions add cashews or onion for body or skip the marinating."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "butter-chicken",
+		"title": "Butter chicken, restaurant style with cashews",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Restaurant cashew gravy"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 45,
+			"totalMin": 95
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"creamy"
+		],
+		"equipment": [
+			"bowl",
+			"frying pan",
+			"heavy pot",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 800,
+				"unit": "g",
+				"prep": "in bite-size pieces",
+				"original": "800 g boneless chicken thighs, in bite-size pieces"
+			},
+			{
+				"id": "i2",
+				"key": "plain-yogurt",
+				"name": "plain yogurt",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl plain yogurt"
+			},
+			{
+				"id": "i3",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i4",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp garam masala"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "roughly chopped",
+				"original": "1 yellow onion, roughly chopped"
+			},
+			{
+				"id": "i8",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i9",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "4 cloves garlic, grated"
+			},
+			{
+				"id": "i10",
+				"key": "canned-tomatoes",
+				"name": "canned whole tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g canned whole tomatoes"
+			},
+			{
+				"id": "i11",
+				"key": "cashew",
+				"name": "raw cashews",
+				"role": "nut",
+				"qty": 50,
+				"unit": "g",
+				"prep": "soaked in hot water for 20 minutes",
+				"original": "50 g raw cashews, soaked in hot water for 20 minutes"
+			},
+			{
+				"id": "i12",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl water"
+			},
+			{
+				"id": "i13",
+				"key": "kasuri-methi",
+				"name": "dried fenugreek leaves (kasuri methi)",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp dried fenugreek leaves (kasuri methi)"
+			},
+			{
+				"id": "i14",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i15",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl heavy cream"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the chicken with yogurt, half the chili powder, 1 tsp garam masala and half the salt, and marinate for at least 30 minutes.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Sear the chicken in a third of the butter in batches until browned. It will finish in the sauce.",
+				"uses": [
+					"s1",
+					"i6"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "In a pot, soften the onion in the rest of the butter, add ginger, garlic and the remaining chili, then the tomatoes, drained cashews and water. Simmer until soft.",
+				"uses": [
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"saute",
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Blend until completely smooth and return to the pot.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"blend"
+				],
+				"critical": "Blend thoroughly; the cashews must disappear to give the velvety texture."
+			},
+			{
+				"id": "s5",
+				"text": "Add the chicken, crushed fenugreek, sugar, remaining garam masala and salt, and simmer until the chicken reaches 74 °C.",
+				"uses": [
+					"s2",
+					"s4",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Stir in the cream and serve with naan or rice.",
+				"uses": [
+					"s5",
+					"i15"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Onion and soaked cashews are blended into the tomato base, giving a thicker, sweeter gravy that does not depend on lots of cream.",
+			"chemistry": "Cashews contain starch and fat, so once blended they emulsify and thicken the sauce in a stable way.",
+			"spiceProfile": "Sweet and mild, with gentle chili warmth, garam masala and fenugreek.",
+			"variations": "Thicker and sweeter than the Delhi original thanks to cashews and onion, and the chicken is seared in a pan instead of grilled."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "butter-chicken",
+		"title": "Butter chicken, one-pan weeknight",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – One-pan weeknight"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 30,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"weeknight",
+			"quick"
+		],
+		"equipment": [
+			"large deep frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 700,
+				"unit": "g",
+				"prep": "in bite-size pieces",
+				"original": "700 g boneless chicken thighs, in bite-size pieces"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "3 cloves garlic, grated"
+			},
+			{
+				"id": "i6",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i7",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp garam masala"
+			},
+			{
+				"id": "i8",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"substitutes": [
+					"paprika plus a pinch of cayenne"
+				],
+				"original": "1 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i9",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i11",
+				"key": "canned-tomatoes",
+				"name": "crushed tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g crushed tomatoes"
+			},
+			{
+				"id": "i12",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i13",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp cilantro, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the chicken with salt and brown it in half the butter. Set aside.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 6,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Soften the onion in the remaining butter, add garlic, ginger, spices and tomato paste and fry for a minute.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"saute",
+					"bloom"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the crushed tomatoes and simmer until thickened.",
+				"uses": [
+					"s2",
+					"i11"
+				],
+				"technique": [
+					"simmer",
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Stir in the cream and chicken and simmer until the chicken reaches 74 °C. Top with cilantro.",
+				"uses": [
+					"s1",
+					"s3",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "No marinating and no blending: everything is done in one pan in about 40 minutes.",
+			"chemistry": "Frying tomato paste caramelises its sugars and deepens the sauce, making up for the shorter cooking time.",
+			"spiceProfile": "Garam masala and cumin with mild chili, all softened by cream.",
+			"variations": "Skips the marinade, grilling and straining of the classic, trading some smoky depth for speed."
+		}
+	}
+]

@@ -1,0 +1,414 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "caesar-salad",
+		"title": "Caesar salad, original style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Original Tijuana style"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 10,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"mexican",
+			"american"
+		],
+		"course": [
+			"side",
+			"main"
+		],
+		"tags": [
+			"salad",
+			"classic"
+		],
+		"equipment": [
+			"large wooden bowl",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "romaine-lettuce",
+				"name": "romaine hearts",
+				"role": "leafy-green",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 romaine hearts, leaves separated"
+			},
+			{
+				"id": "i2",
+				"key": "crusty-bread",
+				"name": "day-old white bread",
+				"role": "bread",
+				"qty": 150,
+				"unit": "g",
+				"prep": "cubed",
+				"original": "150 g bread, cut into 2 cm cubes"
+			},
+			{
+				"id": "i3",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl olive oil (divided)"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic (divided)"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i6",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1 lemon"
+			},
+			{
+				"id": "i7",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Worcestershire sauce"
+			},
+			{
+				"id": "i8",
+				"key": "parmesan",
+				"name": "Parmigiano-Reggiano",
+				"role": "hard-cheese",
+				"qty": 50,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "50 g parmesan, finely grated"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i10",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Crush one garlic clove into 3 tbsp oil, toss with the bread and fry until golden and crisp.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Lower the egg into simmering water for 1 minute to coddle it, then cool briefly.",
+				"uses": [
+					"i5"
+				],
+				"technique": [
+					"coddle"
+				],
+				"durationMin": 1,
+				"critical": "Use very fresh eggs, ideally pasteurised, since the egg stays mostly raw."
+			},
+			{
+				"id": "s3",
+				"text": "Rub the bowl with the other garlic clove. Whisk in lemon, Worcestershire and the coddled egg, then the remaining oil in a stream.",
+				"uses": [
+					"s2",
+					"i4",
+					"i6",
+					"i7",
+					"i3"
+				],
+				"technique": [
+					"emulsify"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add whole leaves and toss well, then add cheese, croutons, salt and pepper and toss again.",
+				"uses": [
+					"s3",
+					"s1",
+					"i1",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Made with whole leaves meant to be eaten by hand. The dressing is mixed straight in the bowl.",
+			"chemistry": "The lightly cooked egg yolk contains lecithin, which emulsifies the oil and lemon into a creamy dressing.",
+			"spiceProfile": "Garlic, Worcestershire and black pepper, with salty parmesan.",
+			"variations": "The original has no anchovy fillets, getting its savouriness from Worcestershire. The modern version blends anchovies into a mayonnaise-style dressing and often adds chicken."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "caesar-salad",
+		"title": "Chicken Caesar salad with anchovy dressing",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Modern with chicken and anchovy"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 20,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"salad",
+			"chicken"
+		],
+		"equipment": [
+			"blender or bowl",
+			"grill pan",
+			"baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-breast",
+				"name": "chicken breasts",
+				"role": "poultry",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 chicken breasts"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i5",
+				"key": "sourdough-bread",
+				"name": "sourdough",
+				"role": "bread",
+				"qty": 150,
+				"unit": "g",
+				"prep": "torn",
+				"original": "150 g sourdough, torn"
+			},
+			{
+				"id": "i6",
+				"key": "anchovies",
+				"name": "anchovy fillets",
+				"role": "umami",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 anchovy fillets"
+			},
+			{
+				"id": "i7",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i8",
+				"key": "egg-yolk",
+				"name": "egg yolk",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg yolk (or 3 tbsp mayonnaise)"
+			},
+			{
+				"id": "i9",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Dijon"
+			},
+			{
+				"id": "i10",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1 lemon"
+			},
+			{
+				"id": "i11",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 120,
+				"unit": "ml",
+				"original": "1.2 dl neutral oil"
+			},
+			{
+				"id": "i12",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 60,
+				"unit": "g",
+				"prep": "grated",
+				"original": "60 g parmesan, grated, plus shavings"
+			},
+			{
+				"id": "i13",
+				"key": "romaine-lettuce",
+				"name": "romaine lettuce",
+				"role": "leafy-green",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 heads romaine, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the bread with 2 tbsp olive oil and salt and bake at 200 °C until crisp.",
+				"uses": [
+					"i5",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 10,
+				"tempC": 200
+			},
+			{
+				"id": "s2",
+				"text": "Season the chicken, brush with oil and grill until 74 °C inside. Rest and slice.",
+				"uses": [
+					"i1",
+					"i4",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"grill",
+					"rest"
+				],
+				"durationMin": 14,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Mash anchovies and garlic to a paste, whisk in yolk, mustard and lemon, then the oil drop by drop until thick. Stir in half the parmesan.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"emulsify"
+				],
+				"critical": "Add the oil slowly at first or the emulsion breaks."
+			},
+			{
+				"id": "s4",
+				"text": "Toss the romaine with dressing, top with chicken, croutons and parmesan shavings.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3",
+					"i13"
+				],
+				"technique": [
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A mayonnaise-style emulsion makes a thick dressing that clings to chopped lettuce.",
+			"chemistry": "Lecithin in the yolk surrounds the oil droplets and keeps them suspended. Adding oil too fast overwhelms it.",
+			"spiceProfile": "Briny anchovy, garlic and lemon.",
+			"variations": "Adds anchovy and chicken and uses chopped lettuce, making it a main course."
+		}
+	}
+]

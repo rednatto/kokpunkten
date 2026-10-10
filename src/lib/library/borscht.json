@@ -1,0 +1,753 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "borscht",
+		"title": "Ukrainian red borscht with beef",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Ukrainian red with beef"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 150,
+			"totalMin": 180
+		},
+		"cuisine": [
+			"ukrainian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"beets",
+			"beef",
+			"hearty"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-shin",
+				"name": "beef on the bone (shin or brisket)",
+				"role": "meat",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g beef on the bone (shin or brisket)"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "l",
+				"original": "3 l water"
+			},
+			{
+				"id": "i3",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 400,
+				"unit": "g",
+				"prep": "diced",
+				"original": "400 g potatoes, diced"
+			},
+			{
+				"id": "i6",
+				"key": "beetroot",
+				"name": "raw beetroots",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "cut in matchsticks",
+				"original": "500 g raw beetroots, cut in matchsticks"
+			},
+			{
+				"id": "i7",
+				"key": "sunflower-oil",
+				"name": "sunflower oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp sunflower oil"
+			},
+			{
+				"id": "i8",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "1 carrot, grated"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i11",
+				"key": "white-wine-vinegar",
+				"name": "vinegar or lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vinegar or lemon juice"
+			},
+			{
+				"id": "i12",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i13",
+				"key": "white-cabbage",
+				"name": "white cabbage",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "400 g white cabbage, shredded"
+			},
+			{
+				"id": "i14",
+				"key": "kidney-beans",
+				"name": "cooked red beans",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"optional": true,
+				"original": "250 g cooked red beans (optional)"
+			},
+			{
+				"id": "i15",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "3 cloves garlic, crushed"
+			},
+			{
+				"id": "i16",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp dill, chopped"
+			},
+			{
+				"id": "i17",
+				"key": "smetana",
+				"name": "smetana or sour cream",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"prep": "to serve",
+				"original": "200 ml smetana or sour cream, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the beef in the water with bay leaves and salt, skimming, until tender.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 90,
+				"heat": "low"
+			},
+			{
+				"id": "s2",
+				"text": "Lift out the beef, strip the meat from the bone and return it to the broth. Add the potatoes and simmer.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Meanwhile fry onion and carrot in the oil, add beetroot, tomato paste, vinegar and sugar, and braise with a ladle of broth until the beets are soft.",
+				"uses": [
+					"i7",
+					"i8",
+					"i9",
+					"i6",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"saute",
+					"braise"
+				],
+				"durationMin": 20,
+				"heat": "medium-low",
+				"critical": "Cook the beets with acid so they keep their deep red colour."
+			},
+			{
+				"id": "s4",
+				"text": "Add the cabbage to the pot, then the beet mixture and beans, and simmer until the cabbage is tender.",
+				"uses": [
+					"s2",
+					"s3",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Stir in garlic and dill, take off the heat and let stand.",
+				"uses": [
+					"s4",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s6",
+				"text": "Serve with a spoonful of smetana.",
+				"uses": [
+					"s5",
+					"i17"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The beets are cooked separately in a sofrito-like zazharka and added near the end.",
+			"chemistry": "Acid stabilises the red betalain pigments in beets; without it, long boiling turns the soup brownish.",
+			"spiceProfile": "Sweet-sour from beets, vinegar and sugar, with garlic and dill at the end.",
+			"variations": "The hearty, meat-based Ukrainian classic; vegetarian versions use mushrooms and beans, and cold borscht is a summer soup with kefir."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "borscht",
+		"title": "Vegetarian borscht with mushrooms and beans",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian with mushrooms"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 60,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"ukrainian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"beets",
+			"vegetarian",
+			"vegan"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan",
+			"small bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-porcini",
+				"name": "dried porcini mushrooms",
+				"role": "umami",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g dried porcini mushrooms"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "hot water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "l",
+				"original": "2 l hot water"
+			},
+			{
+				"id": "i3",
+				"key": "sunflower-oil",
+				"name": "sunflower oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp sunflower oil"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "1 carrot, grated"
+			},
+			{
+				"id": "i6",
+				"key": "beetroot",
+				"name": "raw beetroots",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "grated",
+				"original": "500 g raw beetroots, grated"
+			},
+			{
+				"id": "i7",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i8",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp lemon juice"
+			},
+			{
+				"id": "i9",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 400,
+				"unit": "g",
+				"prep": "diced",
+				"original": "400 g potatoes, diced"
+			},
+			{
+				"id": "i10",
+				"key": "white-cabbage",
+				"name": "white cabbage",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "300 g white cabbage, shredded"
+			},
+			{
+				"id": "i11",
+				"key": "kidney-beans",
+				"name": "cooked red kidney beans",
+				"role": "legume",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g cooked red kidney beans"
+			},
+			{
+				"id": "i12",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i14",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "3 cloves garlic, crushed"
+			},
+			{
+				"id": "i15",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp dill, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the porcini in the hot water, then chop them and keep the soaking liquid.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s2",
+				"text": "Fry onion and carrot in the oil, add beetroot, tomato paste and lemon juice and cook until soft.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute",
+					"braise"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Bring the mushroom liquid and mushrooms to a boil with potatoes, bay leaves and salt and simmer.",
+				"uses": [
+					"s1",
+					"i9",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add cabbage, beans and the beet mixture and simmer until the cabbage is tender.",
+				"uses": [
+					"s2",
+					"s3",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Stir in garlic and dill and rest before serving.",
+				"uses": [
+					"s4",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Dried porcini make a quick broth with real depth instead of meat stock.",
+			"chemistry": "Lemon juice keeps the beet colour bright, the same way vinegar does in the meat version.",
+			"spiceProfile": "Earthy mushroom with sweet-sour beets, garlic and dill.",
+			"variations": "Meat-free, similar to the Lenten borscht eaten on Christmas Eve; vegan if served without sour cream."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "borscht",
+		"title": "Cold summer borscht with kefir",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cold summer"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 120
+		},
+		"cuisine": [
+			"lithuanian",
+			"ukrainian"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"cold",
+			"summer",
+			"vegetarian"
+		],
+		"equipment": [
+			"saucepan",
+			"large bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beetroot",
+				"name": "small beetroots",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g small beetroots"
+			},
+			{
+				"id": "i2",
+				"key": "kefir",
+				"name": "kefir or buttermilk",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "l",
+				"prep": "cold",
+				"original": "1 l kefir or buttermilk, cold"
+			},
+			{
+				"id": "i3",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 cucumber, diced"
+			},
+			{
+				"id": "i4",
+				"key": "radish",
+				"name": "radishes",
+				"role": "vegetable",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "6 radishes, sliced"
+			},
+			{
+				"id": "i5",
+				"key": "scallion",
+				"name": "spring onions",
+				"role": "allium",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "4 spring onions, sliced"
+			},
+			{
+				"id": "i6",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "4 tbsp dill, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i10",
+				"key": "potato",
+				"name": "new potatoes",
+				"role": "starch",
+				"qty": 600,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "600 g new potatoes, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Boil the beetroots until tender, then cool, peel and grate them.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 40
+			},
+			{
+				"id": "s2",
+				"text": "Hard-boil the eggs for 10 minutes, cool in cold water, peel and halve.",
+				"uses": [
+					"i9"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s3",
+				"text": "Boil the potatoes until tender.",
+				"uses": [
+					"i10"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s4",
+				"text": "Stir the beets into the kefir with cucumber, radish, spring onion, dill, lemon juice and salt. Chill well.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix",
+					"chill"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s5",
+				"text": "Serve the bright pink soup with halved eggs and hot potatoes on the side.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Nothing is simmered in the soup itself; the beets are cooked whole and stirred into cold kefir.",
+			"chemistry": "Lactic acid in kefir turns the beet colour bright pink.",
+			"spiceProfile": "Tangy kefir with dill and spring onion.",
+			"variations": "A cold, no-meat summer soup; very different from the hot red borscht but made with the same key vegetable."
+		}
+	}
+]

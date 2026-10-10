@@ -1,0 +1,466 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "bechamel",
+		"title": "Classic béchamel with infused milk",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic infused"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 15,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"mother-sauce",
+			"basic"
+		],
+		"equipment": [
+			"2 saucepans",
+			"whisk",
+			"sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl whole milk"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"original": "½ yellow onion"
+			},
+			{
+				"id": "i3",
+				"key": "cloves",
+				"name": "whole clove",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 whole clove"
+			},
+			{
+				"id": "i4",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g all-purpose flour"
+			},
+			{
+				"id": "i7",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of nutmeg, freshly grated",
+				"prep": "freshly grated"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "white pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pin the bay leaf to the onion with the clove. Bring the milk and onion just to a simmer, then take off the heat and leave to infuse. Remove the onion.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"infuse"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter, stir in the flour and cook, stirring, without letting it colour.",
+				"uses": [
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"roux"
+				],
+				"durationMin": 2,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Whisk the hot milk into the roux a little at a time until smooth.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"whisk"
+				],
+				"critical": "Add the milk gradually and whisk out each lump before adding more."
+			},
+			{
+				"id": "s4",
+				"text": "Simmer, stirring, until thick and no longer floury, then season with nutmeg, salt and pepper.",
+				"uses": [
+					"s3",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "A white roux of equal weights butter and flour thickens infused milk.",
+			"chemistry": "Flour starch granules swell and gelatinise as the sauce comes to the boil, and the fat coating from the roux keeps them from clumping.",
+			"spiceProfile": "Onion, clove and bay in the background, with nutmeg and white pepper.",
+			"variations": "The classic French method with infused milk gives a more aromatic sauce than the quick version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "bechamel",
+		"title": "Quick thick béchamel for lasagne and gratins",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick thick"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 2,
+			"cookMin": 10,
+			"totalMin": 12
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"basic",
+			"quick"
+		],
+		"equipment": [
+			"saucepan",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g all-purpose flour"
+			},
+			{
+				"id": "i3",
+				"key": "whole-milk",
+				"name": "cold whole milk",
+				"role": "dairy",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl cold whole milk"
+			},
+			{
+				"id": "i4",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of nutmeg, freshly grated",
+				"prep": "freshly grated"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter, stir in the flour and cook until it smells nutty but stays pale.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"roux"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Pour in all the cold milk at once and whisk constantly as it comes to the boil.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				],
+				"durationMin": 5,
+				"heat": "medium",
+				"critical": "Whisk continuously, reaching into the corners, until it thickens."
+			},
+			{
+				"id": "s3",
+				"text": "Simmer, stirring, then season with nutmeg and salt.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 3,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Cold milk into a hot roux is the fastest lump-free method because the starch only swells as the milk heats.",
+			"chemistry": "A higher ratio of roux to milk gives a thicker sauce that sets slightly when layered and baked.",
+			"spiceProfile": "Just nutmeg and salt.",
+			"variations": "Thicker and simpler than the classic, with no infusion; made for layering in lasagne or moussaka."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "bechamel",
+		"title": "Mornay sauce (cheese béchamel)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Mornay"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 15,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"cheese",
+			"basic"
+		],
+		"equipment": [
+			"saucepan",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g all-purpose flour"
+			},
+			{
+				"id": "i3",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl whole milk, warmed",
+				"prep": "warmed"
+			},
+			{
+				"id": "i4",
+				"key": "gruyere",
+				"name": "Gruyère",
+				"role": "hard-cheese",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g Gruyère, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i5",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g parmesan, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i6",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of nutmeg, freshly grated",
+				"prep": "freshly grated"
+			},
+			{
+				"id": "i7",
+				"key": "cayenne-pepper",
+				"name": "cayenne pepper",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of cayenne pepper"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter, stir in the flour and cook without colouring.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"roux"
+				],
+				"durationMin": 2,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk in the warm milk gradually and simmer, stirring, until thick.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Take off the heat and stir in the cheeses until melted. Season with nutmeg, cayenne and salt.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"melt"
+				],
+				"critical": "Add the cheese off the heat; boiling makes it grainy and oily."
+			}
+		],
+		"notes": {
+			"techniques": "A finished béchamel with cheese melted in at the end.",
+			"chemistry": "Starch in the béchamel stabilises the melted cheese, but too much heat still tightens the cheese proteins so they squeeze out fat.",
+			"spiceProfile": "Nutty Gruyère and salty parmesan with a pinch of cayenne.",
+			"variations": "A béchamel turned into a cheese sauce for croque monsieur, gratins and macaroni cheese."
+		}
+	}
+]

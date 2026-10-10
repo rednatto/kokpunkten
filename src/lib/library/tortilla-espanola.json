@@ -1,0 +1,461 @@
+[
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "tortilla-espanola",
+  "title": "Spanish tortilla with onion",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Con cebolla, jugosa"
+  },
+  "servings": 6,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 45,
+   "totalMin": 60
+  },
+  "cuisine": [
+   "spanish"
+  ],
+  "course": [
+   "main",
+   "snack"
+  ],
+  "tags": [
+   "eggs",
+   "potato",
+   "tapas",
+   "vegetarian"
+  ],
+  "equipment": [
+   "24 cm nonstick frying pan",
+   "large plate",
+   "bowl"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 400,
+    "unit": "ml",
+    "prep": "for confiting (most is reused)",
+    "original": "400 ml olive oil, for confiting (most is reused)"
+   },
+   {
+    "id": "i2",
+    "key": "potato",
+    "name": "waxy potatoes",
+    "role": "starch",
+    "qty": 700,
+    "unit": "g",
+    "prep": "peeled, thinly sliced",
+    "original": "700 g waxy potatoes, peeled, thinly sliced"
+   },
+   {
+    "id": "i3",
+    "key": "yellow-onion",
+    "name": "yellow onion",
+    "role": "allium",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "thinly sliced",
+    "original": "1 yellow onion, thinly sliced"
+   },
+   {
+    "id": "i4",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1.5,
+    "unit": "tsp",
+    "original": "1½ tsp salt"
+   },
+   {
+    "id": "i5",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 6,
+    "unit": "piece",
+    "original": "6 eggs"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Gently cook the potatoes and onion in the oil over medium-low heat until completely soft but not browned. Salt them.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4"
+    ],
+    "technique": [
+     "confit"
+    ],
+    "durationMin": 25,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s2",
+    "text": "Drain well, keeping the oil. Beat the eggs, fold in the hot potatoes and leave to soak.",
+    "uses": [
+     "s1",
+     "i5"
+    ],
+    "technique": [
+     "whisk",
+     "rest"
+    ],
+    "durationMin": 10
+   },
+   {
+    "id": "s3",
+    "text": "Heat 2 tbsp of the oil in the pan, pour in the mixture and cook over medium heat, shaking, until the base is set and golden.",
+    "uses": [
+     "s2"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 5,
+    "heat": "medium"
+   },
+   {
+    "id": "s4",
+    "text": "Flip onto a plate, slide back in and cook the other side briefly so the centre stays soft.",
+    "uses": [
+     "s3"
+    ],
+    "technique": [
+     "fry",
+     "flip"
+    ],
+    "durationMin": 2,
+    "heat": "medium",
+    "critical": "Flip in one confident move, with the plate held tight against the pan."
+   },
+   {
+    "id": "s5",
+    "text": "Rest a few minutes and serve warm or at room temperature.",
+    "uses": [
+     "s4"
+    ],
+    "technique": [
+     "rest"
+    ],
+    "durationMin": 5
+   }
+  ],
+  "notes": {
+   "techniques": "Potatoes are poached slowly in oil, not fried; soaking them in the egg before cooking gives a cohesive, creamy tortilla.",
+   "chemistry": "Eggs set at different temperatures; a short cook on the second side leaves the centre just set and juicy.",
+   "spiceProfile": "Just salt and sweet, soft onion.",
+   "variations": "With onion and runny in the middle (jugosa), the most common style; others leave out the onion or cook it firm."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "tortilla-espanola",
+  "title": "Spanish tortilla without onion, well set",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Sin cebolla, firm"
+  },
+  "servings": 6,
+  "time": {
+   "prepMin": 10,
+   "cookMin": 40,
+   "totalMin": 65
+  },
+  "cuisine": [
+   "spanish"
+  ],
+  "course": [
+   "main",
+   "snack"
+  ],
+  "tags": [
+   "eggs",
+   "potato",
+   "picnic",
+   "vegetarian"
+  ],
+  "equipment": [
+   "24 cm nonstick frying pan",
+   "large plate"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 300,
+    "unit": "ml",
+    "original": "300 ml olive oil"
+   },
+   {
+    "id": "i2",
+    "key": "potato",
+    "name": "floury-waxy potatoes",
+    "role": "starch",
+    "qty": 800,
+    "unit": "g",
+    "prep": "peeled, cut in thin chips",
+    "original": "800 g floury-waxy potatoes, peeled, cut in thin chips"
+   },
+   {
+    "id": "i3",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1.5,
+    "unit": "tsp",
+    "original": "1½ tsp salt"
+   },
+   {
+    "id": "i4",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 6,
+    "unit": "piece",
+    "original": "6 eggs"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Cook the potatoes in the oil over medium heat until tender and lightly golden at the edges. Drain and salt.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 20,
+    "heat": "medium"
+   },
+   {
+    "id": "s2",
+    "text": "Mix the potatoes into the beaten eggs.",
+    "uses": [
+     "s1",
+     "i4"
+    ],
+    "technique": [
+     "mix"
+    ]
+   },
+   {
+    "id": "s3",
+    "text": "Cook in an oiled pan over medium-low heat until set underneath.",
+    "uses": [
+     "s2"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 8,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s4",
+    "text": "Flip and cook the second side until fully set all the way through.",
+    "uses": [
+     "s3"
+    ],
+    "technique": [
+     "flip",
+     "fry"
+    ],
+    "durationMin": 6,
+    "heat": "medium-low",
+    "critical": "Lower heat for the longer cook so the outside does not burn."
+   },
+   {
+    "id": "s5",
+    "text": "Cool before slicing into wedges.",
+    "uses": [
+     "s4"
+    ],
+    "technique": [
+     "rest"
+    ],
+    "durationMin": 15
+   }
+  ],
+  "notes": {
+   "techniques": "Longer, gentler cooking on both sides sets the tortilla firm so it slices cleanly.",
+   "chemistry": "Light browning of the potatoes adds a little Maillard flavour.",
+   "variations": "No onion and cooked through; the purist version and the best for sandwiches (bocadillos) and picnics."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "tortilla-espanola",
+  "title": "Spanish tortilla with chorizo and peppers",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – With peppers and chorizo"
+  },
+  "servings": 6,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 40,
+   "totalMin": 55
+  },
+  "cuisine": [
+   "spanish"
+  ],
+  "course": [
+   "main"
+  ],
+  "tags": [
+   "eggs",
+   "potato",
+   "chorizo"
+  ],
+  "equipment": [
+   "24 cm nonstick frying pan",
+   "large plate"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 250,
+    "unit": "ml",
+    "original": "250 ml olive oil"
+   },
+   {
+    "id": "i2",
+    "key": "potato",
+    "name": "waxy potatoes",
+    "role": "starch",
+    "qty": 600,
+    "unit": "g",
+    "prep": "thinly sliced",
+    "original": "600 g waxy potatoes, thinly sliced"
+   },
+   {
+    "id": "i3",
+    "key": "yellow-onion",
+    "name": "yellow onion",
+    "role": "allium",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "sliced",
+    "original": "1 yellow onion, sliced"
+   },
+   {
+    "id": "i4",
+    "key": "green-bell-pepper",
+    "name": "green bell pepper",
+    "role": "vegetable",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "sliced",
+    "original": "1 green bell pepper, sliced"
+   },
+   {
+    "id": "i5",
+    "key": "chorizo",
+    "name": "cured chorizo",
+    "role": "cured-pork",
+    "qty": 100,
+    "unit": "g",
+    "prep": "diced",
+    "original": "100 g cured chorizo, diced"
+   },
+   {
+    "id": "i6",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp salt"
+   },
+   {
+    "id": "i7",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 6,
+    "unit": "piece",
+    "original": "6 eggs"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Cook potatoes, onion and pepper gently in the oil until soft. Drain and salt.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4",
+     "i6"
+    ],
+    "technique": [
+     "confit"
+    ],
+    "durationMin": 25,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s2",
+    "text": "Fry the chorizo in a dry pan until its fat runs.",
+    "uses": [
+     "i5"
+    ],
+    "technique": [
+     "render"
+    ],
+    "durationMin": 3,
+    "heat": "medium"
+   },
+   {
+    "id": "s3",
+    "text": "Mix the vegetables and chorizo with the beaten eggs.",
+    "uses": [
+     "s1",
+     "s2",
+     "i7"
+    ],
+    "technique": [
+     "mix"
+    ]
+   },
+   {
+    "id": "s4",
+    "text": "Cook in the pan until set underneath, flip and cook the other side until just set.",
+    "uses": [
+     "s3"
+    ],
+    "technique": [
+     "fry",
+     "flip"
+    ],
+    "durationMin": 8,
+    "heat": "medium",
+    "critical": "Flip in one confident move with the plate tight against the pan."
+   }
+  ],
+  "notes": {
+   "techniques": "Rendering the chorizo first colours and flavours the eggs with paprika oil.",
+   "spiceProfile": "Smoky paprika from the chorizo.",
+   "variations": "A heartier bar version; not traditional but common across Spain."
+  }
+ }
+]

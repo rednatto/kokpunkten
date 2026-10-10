@@ -1,0 +1,675 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "margherita-pizza",
+		"title": "Pizza margherita, Neapolitan style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Neapolitan style"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 30,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pizza",
+			"baking",
+			"vegetarian",
+			"slow-rise"
+		],
+		"equipment": [
+			"large bowl",
+			"pizza steel or stone",
+			"pizza peel"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tipo-00-flour",
+				"name": "tipo 00 flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g tipo 00 flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 325,
+				"unit": "ml",
+				"original": "325 ml cold water"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "fine salt",
+				"role": "salt",
+				"qty": 14,
+				"unit": "g",
+				"original": "14 g fine salt"
+			},
+			{
+				"id": "i4",
+				"key": "fresh-yeast",
+				"name": "fresh yeast",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "g",
+				"prep": "or 0.5 g dry yeast",
+				"original": "1 g fresh yeast, or 0.5 g dry yeast"
+			},
+			{
+				"id": "i5",
+				"key": "san-marzano-tomatoes",
+				"name": "whole peeled San Marzano tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g whole peeled San Marzano tomatoes"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "for the sauce",
+				"original": "1 tsp salt, for the sauce"
+			},
+			{
+				"id": "i7",
+				"key": "fior-di-latte",
+				"name": "fior di latte or buffalo mozzarella",
+				"role": "cheese",
+				"qty": 400,
+				"unit": "g",
+				"prep": "torn and drained",
+				"original": "400 g fior di latte or buffalo mozzarella, torn and drained"
+			},
+			{
+				"id": "i8",
+				"key": "basil",
+				"name": "fresh basil leaves",
+				"role": "herb",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 fresh basil leaves"
+			},
+			{
+				"id": "i9",
+				"key": "olive-oil",
+				"name": "extra-virgin olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp extra-virgin olive oil"
+			},
+			{
+				"id": "i10",
+				"key": "semolina",
+				"name": "semolina",
+				"role": "flour",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "for the peel",
+				"original": "2 tbsp semolina, for the peel"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Dissolve the yeast in the water, mix in most of the flour, then the salt and the rest of the flour. Knead until smooth and elastic.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"mix",
+					"knead"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Cover and let the dough rise at room temperature.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 120
+			},
+			{
+				"id": "s3",
+				"text": "Divide into 4 balls of about 210 g. Put in a covered tray and refrigerate 24 hours, then bring back to room temperature for 2 hours.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"shape",
+					"proof"
+				],
+				"durationMin": 1560,
+				"critical": "A long, cold rise is what makes the crust light, blistered and digestible."
+			},
+			{
+				"id": "s4",
+				"text": "Crush the tomatoes by hand with the salt. Do not cook the sauce.",
+				"uses": [
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"crush"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Heat the oven with the steel or stone on the top shelf at maximum for 1 hour.",
+				"uses": [],
+				"technique": [
+					"preheat"
+				],
+				"durationMin": 60,
+				"tempC": 275
+			},
+			{
+				"id": "s6",
+				"text": "Press each ball out from the centre with your fingertips, leaving a puffy rim. Do not use a rolling pin.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"stretch"
+				]
+			},
+			{
+				"id": "s7",
+				"text": "On a semolina-dusted peel, spread a thin layer of sauce, add mozzarella and a drizzle of oil.",
+				"uses": [
+					"s4",
+					"s6",
+					"i10",
+					"i7",
+					"i9"
+				],
+				"technique": [
+					"top"
+				]
+			},
+			{
+				"id": "s8",
+				"text": "Slide onto the steel and bake until the rim is puffed and charred in spots. Add basil as it comes out.",
+				"uses": [
+					"s5",
+					"s7",
+					"i8"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 6,
+				"tempC": 275
+			}
+		],
+		"notes": {
+			"techniques": "Fingertip stretching keeps gas in the rim (cornicione). A preheated steel transfers heat fast to mimic a wood oven.",
+			"chemistry": "Long cold fermentation lets enzymes break starch into sugars, which brown via the Maillard reaction and caramelisation. Tipo 00 flour forms a strong but extensible gluten network.",
+			"spiceProfile": "Raw tomato, milky mozzarella, basil and olive oil only.",
+			"variations": "Soft, thin centre and a high, airy rim. Uses an uncooked sauce and a long-fermented 65 % hydration dough."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "margherita-pizza",
+		"title": "Margherita pizza, New York style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – New York style"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 35,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"italian-american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pizza",
+			"baking",
+			"vegetarian"
+		],
+		"equipment": [
+			"stand mixer or bowl",
+			"pizza steel or stone",
+			"rolling pin",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g bread flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "lukewarm water",
+				"role": "liquid",
+				"qty": 310,
+				"unit": "ml",
+				"original": "310 ml lukewarm water"
+			},
+			{
+				"id": "i3",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 4,
+				"unit": "g",
+				"original": "4 g instant yeast"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g sugar"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "fine salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g fine salt"
+			},
+			{
+				"id": "i7",
+				"key": "canned-tomatoes",
+				"name": "crushed tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g crushed tomatoes"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "1 clove garlic, grated"
+			},
+			{
+				"id": "i9",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"prep": "for the sauce",
+				"original": "0.5 tsp salt, for the sauce"
+			},
+			{
+				"id": "i11",
+				"key": "mozzarella",
+				"name": "low-moisture mozzarella",
+				"role": "cheese",
+				"qty": 300,
+				"unit": "g",
+				"prep": "grated",
+				"original": "300 g low-moisture mozzarella, grated"
+			},
+			{
+				"id": "i12",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 30,
+				"unit": "g",
+				"prep": "grated",
+				"original": "30 g parmesan, grated"
+			},
+			{
+				"id": "i13",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 10,
+				"unit": "piece",
+				"original": "10 fresh basil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix flour, water, yeast, sugar, oil and salt and knead until smooth.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s2",
+				"text": "Divide into 2 balls, oil them and refrigerate 1–3 days.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 1440
+			},
+			{
+				"id": "s3",
+				"text": "Simmer the tomatoes with garlic, oregano and salt until slightly thick. Cool.",
+				"uses": [
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Heat the oven with the steel at maximum for 1 hour.",
+				"uses": [],
+				"technique": [
+					"preheat"
+				],
+				"durationMin": 60,
+				"tempC": 275
+			},
+			{
+				"id": "s5",
+				"text": "Stretch each ball to a thin 35 cm round. Top with sauce, mozzarella and parmesan.",
+				"uses": [
+					"s2",
+					"s3",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"stretch",
+					"top"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Bake until the cheese is spotty and the base crisp and foldable. Finish with basil.",
+				"uses": [
+					"s4",
+					"s5",
+					"i13"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 8,
+				"tempC": 275
+			}
+		],
+		"notes": {
+			"techniques": "Larger, thinner pies with a crisper, foldable crust. Oil and sugar in the dough help it brown in a home oven.",
+			"chemistry": "Higher-protein bread flour gives a chewier crust. Sugar speeds browning at lower oven temperatures.",
+			"spiceProfile": "Cooked, garlicky, oregano-scented sauce with stretchy low-moisture cheese.",
+			"variations": "Uses a cooked garlic-oregano sauce, low-moisture mozzarella and bread flour for a bigger, crisper, chewier pizza than the Neapolitan."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "margherita-pizza",
+		"title": "Sheet-pan margherita (pizza in teglia)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Sheet-pan"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 25,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pizza",
+			"baking",
+			"vegetarian",
+			"no-knead",
+			"crowd"
+		],
+		"equipment": [
+			"large bowl",
+			"baking tray 30×40 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g bread flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml water"
+			},
+			{
+				"id": "i3",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 4,
+				"unit": "g",
+				"original": "4 g instant yeast"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 12,
+				"unit": "g",
+				"original": "12 g salt"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 5,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "5 tbsp olive oil, divided"
+			},
+			{
+				"id": "i6",
+				"key": "canned-tomatoes",
+				"name": "crushed tomatoes",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g crushed tomatoes"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"prep": "for the sauce",
+				"original": "0.5 tsp salt, for the sauce"
+			},
+			{
+				"id": "i8",
+				"key": "mozzarella",
+				"name": "mozzarella",
+				"role": "cheese",
+				"qty": 300,
+				"unit": "g",
+				"prep": "torn, well drained",
+				"original": "300 g mozzarella, torn, well drained"
+			},
+			{
+				"id": "i9",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 15,
+				"unit": "piece",
+				"original": "15 fresh basil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Stir together flour, water, yeast and salt into a wet, shaggy dough. Pour 1 tbsp oil over it.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Over the next hour, do 3 sets of stretch-and-folds, then refrigerate overnight.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"fold",
+					"proof"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s3",
+				"text": "Oil the tray generously, tip in the dough and leave it to relax, then dimple it out to the corners.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"proof",
+					"dimple"
+				],
+				"durationMin": 120
+			},
+			{
+				"id": "s4",
+				"text": "Spread the tomato seasoned with salt over the dough and bake on the lowest shelf.",
+				"uses": [
+					"s3",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 15,
+				"tempC": 250
+			},
+			{
+				"id": "s5",
+				"text": "Add the mozzarella and bake until bubbling and the base is crisp and golden. Top with basil.",
+				"uses": [
+					"s4",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 8,
+				"tempC": 250,
+				"critical": "Add the mozzarella late or it overcooks and goes rubbery before the thick base is done."
+			}
+		],
+		"notes": {
+			"techniques": "A very wet, no-knead dough built by folding. Plenty of oil in the pan fries the base crisp.",
+			"chemistry": "High hydration (80 %) gives an open, airy crumb; gluten develops by time and folding instead of kneading.",
+			"spiceProfile": "Same simple tomato-mozzarella-basil profile on a thick, focaccia-like base.",
+			"variations": "Roman-style pan pizza: thick, airy and crisp-bottomed, baked in a regular home oven and cut in squares. No steel needed."
+		}
+	}
+]

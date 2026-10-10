@@ -1,0 +1,533 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "spaghetti-carbonara",
+		"title": "Carbonara, Roman style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Roman classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"roman"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "guanciale",
+				"name": "guanciale",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "cut into thick strips",
+				"original": "150 g guanciale, cut into thick strips"
+			},
+			{
+				"id": "i2",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 egg yolks"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i4",
+				"key": "pecorino-romano",
+				"name": "pecorino romano",
+				"role": "hard-cheese",
+				"qty": 70,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "70 g pecorino romano, finely grated"
+			},
+			{
+				"id": "i5",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the pasta water",
+				"original": "1 tbsp coarse salt, for the pasta water"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 2,
+				"unit": "tsp",
+				"prep": "coarsely ground",
+				"original": "2 tsp black pepper, coarsely ground"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the guanciale in a dry pan until the fat renders and the edges turn crisp. Take the pan off the heat.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"render",
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the yolks, whole egg, most of the pecorino and the pepper into a thick paste.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i7"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Boil the spaghetti in salted water until just al dente. Save 2 dl of the pasta water.",
+				"uses": [
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Toss the drained pasta in the pan with the guanciale and its fat. Let it cool for a minute.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"toss"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Add the egg mixture off the heat and toss hard, adding pasta water a splash at a time until the sauce is creamy. Serve with the rest of the pecorino.",
+				"uses": [
+					"s2",
+					"s4"
+				],
+				"technique": [
+					"emulsify",
+					"temper"
+				],
+				"critical": "Do it off the heat; above about 70 °C the eggs scramble."
+			}
+		],
+		"notes": {
+			"techniques": "The sauce is an emulsion of rendered pork fat, starchy pasta water and egg. It is built off the heat by tossing constantly.",
+			"chemistry": "Egg yolk proteins thicken from about 65 °C and curdle above about 70 °C, so the residual heat of the pasta is enough. Starch from the pasta water stabilises the emulsion.",
+			"spiceProfile": "Only black pepper, used generously. Salty, sharp pecorino and sweet pork fat carry the flavour.",
+			"variations": "This is the Roman standard: guanciale, pecorino and mostly yolks, with no cream, garlic or onion."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "spaghetti-carbonara",
+		"title": "Carbonara with pancetta and parmesan",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Pancetta and parmesan"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"weeknight"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "pancetta",
+				"name": "pancetta",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "diced",
+				"original": "150 g pancetta, diced"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"prep": "lightly crushed",
+				"original": "1 clove garlic, lightly crushed"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 60,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "60 g parmesan, finely grated"
+			},
+			{
+				"id": "i6",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the pasta water",
+				"original": "1 tbsp coarse salt, for the pasta water"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "freshly ground",
+				"original": "1 tsp black pepper, freshly ground"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the pancetta and garlic in the oil until the pancetta is golden. Discard the garlic.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"fry",
+					"render"
+				],
+				"durationMin": 7,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Beat the eggs with the parmesan and pepper.",
+				"uses": [
+					"i4",
+					"i5",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Boil the spaghetti in salted water until al dente. Save 2 dl of the pasta water.",
+				"uses": [
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Off the heat, toss the pasta with the pancetta, then the egg mixture, loosening with pasta water until glossy.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"emulsify",
+					"temper"
+				],
+				"critical": "Keep the pan off the heat or the whole eggs set into scrambled egg."
+			}
+		],
+		"notes": {
+			"techniques": "Same off-heat emulsion as the Roman version, but whole eggs give a looser, less rich sauce.",
+			"chemistry": "Egg white sets at a lower temperature than yolk (about 62 °C), so whole-egg sauces scramble more easily. Work quickly and use pasta water to cool and loosen.",
+			"spiceProfile": "Milder and nuttier than the Roman version: parmesan is less salty and tangy than pecorino.",
+			"variations": "Uses easier-to-find pancetta, parmesan and whole eggs, plus a hint of garlic. The result is lighter and milder than the guanciale-pecorino classic."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "spaghetti-carbonara",
+		"title": "Carbonara with cream",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – With cream"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"creamy"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bacon",
+				"name": "smoked bacon",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "cut into strips",
+				"original": "150 g smoked bacon, cut into strips"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i4",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 egg yolks"
+			},
+			{
+				"id": "i5",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 60,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "60 g parmesan, finely grated"
+			},
+			{
+				"id": "i6",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the pasta water",
+				"original": "1 tbsp coarse salt, for the pasta water"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "freshly ground",
+				"original": "1 tsp black pepper, freshly ground"
+			},
+			{
+				"id": "i9",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"optional": true,
+				"original": "2 tbsp flat-leaf parsley, chopped (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the bacon until crisp, then add the onion and cook until soft.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"fry",
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the cream, yolks, parmesan and pepper together.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Boil the spaghetti in salted water until al dente. Save 1 dl of the pasta water.",
+				"uses": [
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Add the pasta to the bacon pan, pour in the cream mixture and toss over low heat until it just thickens. Loosen with pasta water and top with parsley.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"temper",
+					"toss"
+				],
+				"heat": "low",
+				"critical": "Only warm it until the sauce coats the pasta; boiling splits the yolks."
+			}
+		],
+		"notes": {
+			"techniques": "Cream dilutes the yolks, so the sauce can sit over low heat briefly without curdling.",
+			"chemistry": "Fat and water in the cream raise the temperature at which the egg proteins coagulate, giving a wider safety margin.",
+			"spiceProfile": "Smoky bacon and onion make it sweeter and rounder than the Italian versions.",
+			"variations": "A common non-Italian take: smoked bacon, onion and cream make a forgiving, saucier dish. Purists do not use cream."
+		}
+	}
+]

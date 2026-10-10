@@ -1,0 +1,575 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "cheesecake",
+		"title": "New York cheesecake",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – New York baked"
+		},
+		"servings": 12,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 75,
+			"totalMin": 600
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"baked",
+			"water-bath",
+			"make-ahead"
+		],
+		"equipment": [
+			"23 cm springform tin",
+			"roasting tin",
+			"electric mixer",
+			"foil"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "digestive-biscuit",
+				"name": "graham crackers or digestive biscuits",
+				"role": "bread",
+				"qty": 200,
+				"unit": "g",
+				"prep": "finely crushed",
+				"group": "Base",
+				"original": "200 g graham crackers or digestive biscuits, finely crushed"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "unsalted butter",
+				"role": "fat",
+				"qty": 80,
+				"unit": "g",
+				"prep": "melted",
+				"group": "Base",
+				"original": "80 g unsalted butter, melted"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "Base",
+				"original": "2 tbsp granulated sugar"
+			},
+			{
+				"id": "i4",
+				"key": "cream-cheese",
+				"name": "full-fat cream cheese",
+				"role": "cheese",
+				"qty": 900,
+				"unit": "g",
+				"prep": "room temperature",
+				"group": "Filling",
+				"original": "900 g full-fat cream cheese, room temperature"
+			},
+			{
+				"id": "i5",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 250,
+				"unit": "g",
+				"group": "Filling",
+				"original": "250 g granulated sugar"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "Filling",
+				"original": "2 tbsp all-purpose flour"
+			},
+			{
+				"id": "i7",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 240,
+				"unit": "ml",
+				"group": "Filling",
+				"original": "240 ml sour cream"
+			},
+			{
+				"id": "i8",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "room temperature",
+				"group": "Filling",
+				"original": "4 eggs, room temperature"
+			},
+			{
+				"id": "i9",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "tsp",
+				"group": "Filling",
+				"original": "2 tsp vanilla extract"
+			},
+			{
+				"id": "i10",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "Filling",
+				"original": "1 tsp lemon zest"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 175 °C. Mix crumbs, butter and sugar, press into the tin and bake.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"press",
+					"bake"
+				],
+				"durationMin": 10,
+				"tempC": 175
+			},
+			{
+				"id": "s2",
+				"text": "Wrap the outside of the tin in a double layer of foil.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"prepare"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Beat the cream cheese with sugar and flour on low speed until smooth, then mix in sour cream, vanilla and zest.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"beat"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add the eggs one at a time on low speed, mixing only until combined.",
+				"uses": [
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				],
+				"critical": "Beating in air makes the cheesecake rise, then sink and crack."
+			},
+			{
+				"id": "s5",
+				"text": "Pour onto the base, set the tin in a roasting tin and add hot water halfway up the sides. Bake at 160 °C until the edges are set and the centre still wobbles.",
+				"uses": [
+					"s2",
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 70,
+				"tempC": 160
+			},
+			{
+				"id": "s6",
+				"text": "Turn off the oven and leave the cake inside with the door ajar for 1 hour.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s7",
+				"text": "Chill overnight before unmoulding and slicing.",
+				"uses": [
+					"s6"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 480
+			}
+		],
+		"notes": {
+			"techniques": "The water bath keeps the edges below boiling so the custard bakes evenly and stays creamy.",
+			"chemistry": "Egg proteins set the filling; too much heat makes them tighten and squeeze out moisture, causing cracks and a grainy texture.",
+			"spiceProfile": "Vanilla and lemon zest, kept subtle so the tangy cheese leads.",
+			"variations": "Dense and tall with a biscuit base; Basque cheesecake is crustless and burnt on top, and no-bake versions are lighter and mousse-like."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "cheesecake",
+		"title": "Basque burnt cheesecake",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Basque burnt"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 50,
+			"totalMin": 185
+		},
+		"cuisine": [
+			"spanish",
+			"basque"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"crustless",
+			"burnt",
+			"creamy"
+		],
+		"equipment": [
+			"23 cm springform tin",
+			"baking paper",
+			"electric mixer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "cream-cheese",
+				"name": "full-fat cream cheese",
+				"role": "cheese",
+				"qty": 900,
+				"unit": "g",
+				"prep": "room temperature",
+				"original": "900 g full-fat cream cheese, room temperature"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g granulated sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 5,
+				"unit": "piece",
+				"prep": "room temperature",
+				"original": "5 eggs, room temperature"
+			},
+			{
+				"id": "i4",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 450,
+				"unit": "ml",
+				"original": "450 ml heavy cream"
+			},
+			{
+				"id": "i5",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g all-purpose flour"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 220 °C. Line the tin with two crumpled sheets of baking paper, letting them stand 5 cm above the rim.",
+				"uses": [],
+				"technique": [
+					"prepare"
+				],
+				"tempC": 220
+			},
+			{
+				"id": "s2",
+				"text": "Beat the cream cheese and sugar until smooth, then add the eggs one at a time.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"beat"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Mix in the cream, then sift in the flour and salt and mix until smooth.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Pour into the tin and bake until deeply browned, almost black, on top while the centre still jiggles loosely.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 50,
+				"tempC": 220,
+				"critical": "Pull it while the middle is very wobbly; it sets as it cools."
+			},
+			{
+				"id": "s5",
+				"text": "Cool to room temperature in the tin; it will sink. Serve at room temperature or chilled.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 120
+			}
+		],
+		"notes": {
+			"techniques": "High heat browns the outside fast while the inside stays barely set, giving a custardy centre.",
+			"chemistry": "The dark top is caramelised sugar and Maillard browning of milk and egg proteins, adding a bittersweet flavour.",
+			"variations": "No crust and no water bath, so it is easier than New York style; the texture is softer and the flavour more caramel."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "cheesecake",
+		"title": "No-bake cheesecake",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – No-bake"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 0,
+			"totalMin": 385
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"no-bake",
+			"make-ahead",
+			"summer"
+		],
+		"equipment": [
+			"20 cm springform tin",
+			"electric mixer",
+			"bowls"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "digestive-biscuit",
+				"name": "digestive biscuits",
+				"role": "bread",
+				"qty": 250,
+				"unit": "g",
+				"prep": "finely crushed",
+				"original": "250 g digestive biscuits, finely crushed"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "unsalted butter",
+				"role": "fat",
+				"qty": 100,
+				"unit": "g",
+				"prep": "melted",
+				"original": "100 g unsalted butter, melted"
+			},
+			{
+				"id": "i3",
+				"key": "cream-cheese",
+				"name": "full-fat cream cheese",
+				"role": "cheese",
+				"qty": 600,
+				"unit": "g",
+				"prep": "room temperature",
+				"original": "600 g full-fat cream cheese, room temperature"
+			},
+			{
+				"id": "i4",
+				"key": "icing-sugar",
+				"name": "icing sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g icing sugar"
+			},
+			{
+				"id": "i5",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla extract"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp lemon juice"
+			},
+			{
+				"id": "i7",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"prep": "cold",
+				"original": "300 ml heavy cream, cold"
+			},
+			{
+				"id": "i8",
+				"key": "mixed-berries",
+				"name": "fresh berries",
+				"role": "topping",
+				"qty": 250,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "250 g fresh berries, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the biscuit crumbs with the butter, press firmly into the tin and chill.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"press",
+					"chill"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s2",
+				"text": "Beat the cream cheese with icing sugar, vanilla and lemon juice until smooth.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"beat"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Whip the cream to soft-firm peaks and fold it into the cheese mixture.",
+				"uses": [
+					"s2",
+					"i7"
+				],
+				"technique": [
+					"whip",
+					"fold"
+				],
+				"critical": "Whip the cream firmly enough; it is the only thing that makes the filling set."
+			},
+			{
+				"id": "s4",
+				"text": "Spread over the base, smooth the top and chill until firm.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 360
+			},
+			{
+				"id": "s5",
+				"text": "Unmould and top with berries.",
+				"uses": [
+					"s4",
+					"i8"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Whipped cream gives the filling its structure; the cold fat and air bubbles hold it once chilled.",
+			"chemistry": "Lemon acid slightly thickens the dairy proteins, helping the filling firm up.",
+			"variations": "Nothing is baked and there are no eggs, so it is lighter and mousse-like compared with baked versions."
+		}
+	}
+]

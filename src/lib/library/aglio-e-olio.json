@@ -1,0 +1,339 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "aglio-e-olio",
+		"title": "Spaghetti aglio, olio e peperoncino",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 12,
+			"totalMin": 17
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"vegan",
+			"pantry"
+		],
+		"equipment": [
+			"large pot",
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "extra-virgin olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl extra-virgin olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "thinly sliced",
+				"original": "4 cloves garlic, thinly sliced"
+			},
+			{
+				"id": "i4",
+				"key": "chili-flakes",
+				"name": "dried chili flakes",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp dried chili flakes"
+			},
+			{
+				"id": "i5",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp flat-leaf parsley, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the pasta water",
+				"original": "1 tbsp coarse salt, for the pasta water"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Boil the spaghetti in salted water until 1 minute short of al dente. Save 2 dl of water.",
+				"uses": [
+					"i1",
+					"i6"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 9,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Warm the oil with the garlic over low heat until the garlic is pale gold. Add the chili.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"infuse"
+				],
+				"durationMin": 4,
+				"heat": "low",
+				"critical": "Stop at pale gold; brown garlic tastes bitter."
+			},
+			{
+				"id": "s3",
+				"text": "Add a ladle of pasta water to the oil, then the pasta. Toss over medium heat for a minute until the sauce turns cloudy and clings. Add the parsley.",
+				"uses": [
+					"s1",
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"emulsify",
+					"toss"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Gentle heat infuses the oil with garlic. Tossing pasta, oil and starchy water together creates a light emulsion that coats the strands.",
+			"chemistry": "Starch released from the pasta acts as an emulsifier, holding small oil droplets in the water.",
+			"spiceProfile": "Sweet, mellow garlic with chili heat and fresh parsley.",
+			"variations": "The minimal Neapolitan-Roman version: only garlic, oil, chili and parsley, no cheese."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "aglio-e-olio",
+		"title": "Aglio e olio with anchovies and toasted breadcrumbs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – With breadcrumbs and anchovy"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"pantry"
+		],
+		"equipment": [
+			"large pot",
+			"large frying pan",
+			"small frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "extra-virgin olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl extra-virgin olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "for the crumbs",
+				"original": "2 tbsp olive oil, for the crumbs"
+			},
+			{
+				"id": "i4",
+				"key": "breadcrumbs",
+				"name": "coarse breadcrumbs",
+				"role": "topping",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g coarse breadcrumbs"
+			},
+			{
+				"id": "i5",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "finely grated",
+				"original": "1 tsp lemon zest, finely grated"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "thinly sliced",
+				"original": "4 cloves garlic, thinly sliced"
+			},
+			{
+				"id": "i7",
+				"key": "anchovies",
+				"name": "anchovy fillets in oil",
+				"role": "umami",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 anchovy fillets in oil"
+			},
+			{
+				"id": "i8",
+				"key": "chili-flakes",
+				"name": "dried chili flakes",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp dried chili flakes"
+			},
+			{
+				"id": "i9",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp flat-leaf parsley, chopped"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the pasta water",
+				"original": "1 tbsp coarse salt, for the pasta water"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toast the breadcrumbs in the 2 tbsp oil until golden and crisp. Mix in the lemon zest.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 4,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Boil the spaghetti in salted water until 1 minute short of al dente. Save 2 dl of water.",
+				"uses": [
+					"i1",
+					"i10"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 9,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Warm the oil with the garlic and anchovies over low heat until the anchovies melt and the garlic is pale gold. Add the chili.",
+				"uses": [
+					"i2",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"infuse"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Add a ladle of pasta water, then the pasta, and toss until glossy. Add parsley and serve topped with the crumbs.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"emulsify",
+					"toss"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Breadcrumbs stand in for cheese, a southern Italian thrift trick. They are added at the table so they stay crunchy.",
+			"chemistry": "Anchovies dissolve in warm oil and add glutamates, boosting savoury depth without tasting fishy.",
+			"spiceProfile": "Garlic and chili with salty umami from anchovy and bright lemon zest.",
+			"variations": "Adds melted anchovies and crisp lemony breadcrumbs (\"poor man's parmesan\") for more savouriness and crunch than the plain classic."
+		}
+	}
+]

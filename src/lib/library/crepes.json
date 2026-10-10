@@ -1,0 +1,556 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "crepes",
+		"title": "Classic French crêpes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic sweet"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"dessert",
+			"breakfast"
+		],
+		"tags": [
+			"pancakes",
+			"sweet"
+		],
+		"equipment": [
+			"bowl",
+			"whisk",
+			"crêpe pan or 24 cm nonstick pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 125,
+				"unit": "g",
+				"original": "125 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp granulated sugar"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch salt"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"original": "300 ml whole milk"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"prep": "melted, plus extra for the pan",
+				"original": "30 g butter, melted, plus extra for the pan"
+			},
+			{
+				"id": "i7",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"optional": true,
+				"original": "1 tsp vanilla extract (optional)"
+			},
+			{
+				"id": "i8",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "topping",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "cut in wedges, with sugar, to serve",
+				"original": "1 lemon, cut in wedges, with sugar, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk flour, sugar and salt. Whisk in the eggs, then the milk a little at a time until smooth. Add melted butter and vanilla.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Rest the batter for at least 30 minutes.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s3",
+				"text": "Heat a lightly buttered pan. Pour in a small ladle of batter and swirl to coat thinly. Cook until the edge lifts, flip and cook 30 seconds more.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 20,
+				"heat": "medium-high",
+				"critical": "Use just enough batter to coat the pan thinly; thick batter makes pancakes, not crêpes."
+			},
+			{
+				"id": "s4",
+				"text": "Serve folded with lemon and sugar.",
+				"uses": [
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Swirl the pan quickly as you pour so the batter spreads before it sets.",
+			"chemistry": "Resting lets the flour hydrate and the gluten relax, so crêpes are tender and less likely to tear.",
+			"variations": "The sweet wheat crêpe; Breton galettes use buckwheat and savoury fillings, and crêpes Suzette add an orange-butter sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "crepes",
+		"title": "Galettes bretonnes (buckwheat crêpes) complètes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Breton buckwheat galette"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 155
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"buckwheat",
+			"savory",
+			"gluten-free"
+		],
+		"equipment": [
+			"bowl",
+			"whisk",
+			"large crêpe pan or flat griddle"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "buckwheat-flour",
+				"name": "buckwheat flour",
+				"role": "flour",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g buckwheat flour"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp coarse salt"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i4",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 600,
+				"unit": "ml",
+				"original": "600 ml cold water"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "salted butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"prep": "melted",
+				"original": "40 g salted butter, melted"
+			},
+			{
+				"id": "i6",
+				"key": "ham",
+				"name": "cooked ham",
+				"role": "meat",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 slices cooked ham"
+			},
+			{
+				"id": "i7",
+				"key": "emmental",
+				"name": "Emmental or Gruyère",
+				"role": "cheese",
+				"qty": 150,
+				"unit": "g",
+				"prep": "grated",
+				"original": "150 g Emmental or Gruyère, grated"
+			},
+			{
+				"id": "i8",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the buckwheat flour and salt, whisk in the egg and the water a little at a time to a smooth, thin batter.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Rest the batter in the fridge, ideally overnight; thin with a little water if it thickens.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 120
+			},
+			{
+				"id": "s3",
+				"text": "Heat a large buttered pan until very hot. Spread a thin layer of batter and cook until the underside is lacy and brown.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Lower the heat. Scatter cheese, lay ham on top and crack an egg in the middle. Cook until the white sets.",
+				"uses": [
+					"s3",
+					"i7",
+					"i6",
+					"i8"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 4,
+				"heat": "medium",
+				"critical": "Use pure buckwheat flour and a really hot pan for the crisp, lacy texture."
+			},
+			{
+				"id": "s5",
+				"text": "Fold the four sides in toward the yolk to make a square and serve. Repeat with the remaining batter.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"fold"
+				],
+				"durationMin": 15
+			}
+		],
+		"notes": {
+			"techniques": "Galettes are cooked on one side only and folded around the filling while still in the pan.",
+			"chemistry": "Buckwheat has no gluten, so the batter relies on egg and long resting for its structure.",
+			"spiceProfile": "Earthy buckwheat with salted butter and nutty cheese.",
+			"variations": "Savoury, made with buckwheat and water rather than wheat and milk; traditionally served with dry cider."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "crepes",
+		"title": "Crêpes Suzette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Crêpes Suzette"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 35,
+			"totalMin": 80
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"flambe",
+			"orange",
+			"classic"
+		],
+		"equipment": [
+			"bowl",
+			"whisk",
+			"crêpe pan",
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 125,
+				"unit": "g",
+				"original": "125 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp granulated sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"original": "300 ml whole milk"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 20,
+				"unit": "g",
+				"prep": "melted",
+				"original": "20 g butter, melted"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 80,
+				"unit": "g",
+				"group": "Suzette butter",
+				"original": "80 g butter"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 60,
+				"unit": "g",
+				"group": "Suzette butter",
+				"original": "60 g granulated sugar"
+			},
+			{
+				"id": "i8",
+				"key": "orange-zest",
+				"name": "orange zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Suzette butter",
+				"original": "1 tbsp orange zest"
+			},
+			{
+				"id": "i9",
+				"key": "orange-juice",
+				"name": "fresh orange juice",
+				"role": "liquid",
+				"qty": 150,
+				"unit": "ml",
+				"group": "Suzette butter",
+				"original": "150 ml fresh orange juice"
+			},
+			{
+				"id": "i10",
+				"key": "grand-marnier",
+				"name": "orange liqueur (Grand Marnier or Cointreau)",
+				"role": "wine",
+				"qty": 4,
+				"unit": "tbsp",
+				"group": "Suzette butter",
+				"original": "4 tbsp orange liqueur (Grand Marnier or Cointreau)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk flour, sugar, eggs, milk and melted butter into a smooth batter and rest.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk",
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Cook thin crêpes in a hot buttered pan and stack them.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "In a large pan, melt the butter with the sugar until lightly caramelised, then add zest and juice and simmer to a syrupy sauce.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"caramelize",
+					"reduce"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Fold the crêpes into quarters and warm them in the sauce.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"heat"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s5",
+				"text": "Add the liqueur, carefully ignite and spoon the flaming sauce over the crêpes. Serve at once.",
+				"uses": [
+					"s4",
+					"i10"
+				],
+				"technique": [
+					"flambe"
+				],
+				"critical": "Pour the liqueur off the heat and keep your face and hair clear when lighting it."
+			}
+		],
+		"notes": {
+			"techniques": "The crêpes are cooked first, then finished in the pan with the orange-butter sauce.",
+			"chemistry": "Flambéing burns off part of the alcohol and lightly caramelises the sugar in the sauce.",
+			"spiceProfile": "Orange zest, juice and orange liqueur.",
+			"variations": "A restaurant-style dessert built on plain sweet crêpes, with a caramel-orange sauce and a flambé."
+		}
+	}
+]

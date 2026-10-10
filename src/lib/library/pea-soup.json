@@ -1,0 +1,539 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pea-soup",
+		"title": "Ärtsoppa with salted pork",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic Swedish with pork"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 120,
+			"totalMin": 135
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"thursday",
+			"classic",
+			"legumes"
+		],
+		"equipment": [
+			"large soup pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "yellow-peas",
+				"name": "dried yellow peas",
+				"role": "legume",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g dried yellow peas"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "l",
+				"prep": "plus water for soaking",
+				"original": "2 l water, plus water for soaking"
+			},
+			{
+				"id": "i3",
+				"key": "salted-pork",
+				"name": "lightly salted pork belly or knuckle",
+				"role": "cured-pork",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g lightly salted pork belly or knuckle"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 yellow onions, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "dried-marjoram",
+				"name": "dried marjoram",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp dried marjoram"
+			},
+			{
+				"id": "i6",
+				"key": "dried-thyme",
+				"name": "dried thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried thyme"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "swedish-mustard",
+				"name": "Swedish mustard",
+				"role": "seasoning",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp Swedish mustard, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse the peas and soak them overnight in plenty of cold water. Drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Bring the peas and fresh water to the boil and skim off the husks and foam.",
+				"uses": [
+					"s1",
+					"i2"
+				],
+				"technique": [
+					"boil",
+					"skim"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Add the pork, onion and thyme and simmer, partly covered, until the peas break down and the pork is tender.",
+				"uses": [
+					"s2",
+					"i3",
+					"i4",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 100,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Lift out the pork and cut it into pieces. Rub in the marjoram, season the soup and serve with the pork and mustard.",
+				"uses": [
+					"s3",
+					"i5",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Skimming removes the loose pea husks. Marjoram goes in at the end so its aroma stays fresh.",
+			"chemistry": "Soaking hydrates the peas so they cook evenly; long simmering breaks down cell walls and releases starch that thickens the soup.",
+			"spiceProfile": "Marjoram and thyme, with salty pork and sharp-sweet mustard.",
+			"variations": "The Swedish Thursday tradition with salted pork, often followed by pancakes. Peas are left partly whole."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pea-soup",
+		"title": "Vegetarian yellow pea soup",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian smoky"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 90,
+			"totalMin": 105
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"vegan",
+			"legumes"
+		],
+		"equipment": [
+			"large soup pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "yellow-peas",
+				"name": "dried yellow peas",
+				"role": "legume",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g dried yellow peas"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "l",
+				"original": "2 l water"
+			},
+			{
+				"id": "i3",
+				"key": "olive-oil",
+				"name": "rapeseed oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp rapeseed oil"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 yellow onions, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 carrots, diced"
+			},
+			{
+				"id": "i6",
+				"key": "smoked-paprika",
+				"name": "smoked paprika",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp smoked paprika"
+			},
+			{
+				"id": "i7",
+				"key": "vegetable-stock-cube",
+				"name": "vegetable stock cube",
+				"role": "stock",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 vegetable stock cube"
+			},
+			{
+				"id": "i8",
+				"key": "dried-marjoram",
+				"name": "dried marjoram",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp dried marjoram"
+			},
+			{
+				"id": "i9",
+				"key": "dried-thyme",
+				"name": "dried thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried thyme"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i11",
+				"key": "swedish-mustard",
+				"name": "Swedish mustard",
+				"role": "seasoning",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp Swedish mustard, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the peas overnight and drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Soften the onion and carrot in the oil, then stir in the paprika.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add peas, water, stock cubes and thyme. Boil, skim, then simmer until the peas are soft.",
+				"uses": [
+					"s1",
+					"s2",
+					"i2",
+					"i7",
+					"i9"
+				],
+				"technique": [
+					"simmer",
+					"skim"
+				],
+				"durationMin": 80,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Stir in the marjoram and season. Serve with mustard.",
+				"uses": [
+					"s3",
+					"i8",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Smoked paprika replaces the smoky, salty pork.",
+			"chemistry": "Without pork fat, frying the paprika in oil carries its fat-soluble flavour through the soup.",
+			"spiceProfile": "Smoky paprika, marjoram and thyme.",
+			"variations": "Plant-based: smoked paprika and stock replace the pork, and carrot adds sweetness."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pea-soup",
+		"title": "Finnish pea soup (hernekeitto)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Finnish oven-baked"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 240,
+			"totalMin": 255
+		},
+		"cuisine": [
+			"finnish"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"legumes",
+			"slow-cooked"
+		],
+		"equipment": [
+			"ovenproof casserole with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "yellow-peas",
+				"name": "dried yellow or green peas",
+				"role": "legume",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g dried yellow or green peas"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "l",
+				"original": "2 l water"
+			},
+			{
+				"id": "i3",
+				"key": "smoked-pork",
+				"name": "smoked pork shoulder or ham hock",
+				"role": "cured-pork",
+				"qty": 700,
+				"unit": "g",
+				"original": "700 g smoked pork shoulder or ham hock"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "allspice",
+				"name": "whole allspice berries",
+				"role": "spice",
+				"qty": 5,
+				"unit": "piece",
+				"original": "5 whole allspice berries"
+			},
+			{
+				"id": "i6",
+				"key": "dried-marjoram",
+				"name": "dried marjoram",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried marjoram"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "mustard",
+				"name": "strong mustard",
+				"role": "seasoning",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp strong mustard, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the peas overnight and drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Bring peas, water, pork, onion and allspice to the boil on the hob and skim.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"boil",
+					"skim"
+				],
+				"durationMin": 15,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Cover and cook in the oven until the peas have collapsed into a thick soup.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 220,
+				"tempC": 150
+			},
+			{
+				"id": "s4",
+				"text": "Shred the pork back into the soup, add marjoram and season. Serve with mustard.",
+				"uses": [
+					"s3",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Long, slow oven cooking breaks the peas down completely without sticking.",
+			"chemistry": "Hours at a gentle temperature fully gelatinise the pea starch and soften the pork's connective tissue into gelatine.",
+			"spiceProfile": "Smoky pork, allspice and mustard.",
+			"variations": "Finland's version uses smoked pork and long oven cooking, giving a thicker, smoother soup than the Swedish one."
+		}
+	}
+]

@@ -1,0 +1,648 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pumpkin-soup",
+		"title": "Creamy butternut squash soup",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic creamy"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 35,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"european"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegetarian",
+			"autumn"
+		],
+		"equipment": [
+			"large pot",
+			"blender",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i4",
+				"key": "butternut-squash",
+				"name": "butternut squash",
+				"role": "vegetable",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg butternut squash, peeled, seeded and cubed",
+				"prep": "peeled, seeded and cubed",
+				"substitutes": [
+					"pumpkin"
+				]
+			},
+			{
+				"id": "i5",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 8,
+				"unit": "dl",
+				"original": "8 dl vegetable stock"
+			},
+			{
+				"id": "i6",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl heavy cream"
+			},
+			{
+				"id": "i7",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of nutmeg, freshly grated",
+				"prep": "freshly grated"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i10",
+				"key": "pumpkin-seeds",
+				"name": "pumpkin seeds",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp pumpkin seeds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter and sweat the onion until soft.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the garlic and squash and stir for a couple of minutes.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the stock and simmer until the squash is completely tender.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Blend until smooth, then stir in the cream and nutmeg and season.",
+				"uses": [
+					"s3",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Toast the pumpkin seeds in a dry pan until they pop.",
+				"uses": [
+					"i10"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s6",
+				"text": "Serve the soup topped with the seeds.",
+				"uses": [
+					"s4",
+					"s5"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Sweating the onion slowly in butter gives sweetness without browning.",
+			"chemistry": "The squash cells soften as pectin breaks down during simmering, so the soup blends silky without needing a thickener.",
+			"spiceProfile": "Nutmeg is the classic warm partner to squash and cream.",
+			"variations": "The plainest version: simmered, not roasted, and enriched with cream rather than coconut or yogurt."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pumpkin-soup",
+		"title": "Pumpkin soup with red curry and coconut",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Thai red curry and coconut"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"thai"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegan-optional",
+			"spicy"
+		],
+		"equipment": [
+			"large pot",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i2",
+				"key": "shallot",
+				"name": "shallots",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 shallots, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i4",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g fresh ginger, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i5",
+				"key": "red-curry-paste",
+				"name": "Thai red curry paste",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp Thai red curry paste"
+			},
+			{
+				"id": "i6",
+				"key": "coconut-milk",
+				"name": "coconut milk",
+				"role": "dairy",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml coconut milk, unshaken",
+				"prep": "unshaken"
+			},
+			{
+				"id": "i7",
+				"key": "pumpkin",
+				"name": "pumpkin",
+				"role": "vegetable",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg pumpkin, peeled, seeded and cubed",
+				"prep": "peeled, seeded and cubed",
+				"substitutes": [
+					"butternut-squash"
+				]
+			},
+			{
+				"id": "i8",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 6,
+				"unit": "dl",
+				"original": "6 dl vegetable stock"
+			},
+			{
+				"id": "i9",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp fish sauce",
+				"substitutes": [
+					"soy-sauce"
+				]
+			},
+			{
+				"id": "i10",
+				"key": "lime-juice",
+				"name": "lime juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lime juice"
+			},
+			{
+				"id": "i11",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp cilantro, chopped",
+				"prep": "chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oil and soften the shallots, garlic and ginger.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 4,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the curry paste and the thick cream from the top of the coconut milk. Fry, stirring, until fragrant and the oil starts to separate.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the pumpkin, the rest of the coconut milk and the stock. Simmer until the pumpkin is tender.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Blend until smooth and season with fish sauce and lime juice.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Serve topped with cilantro.",
+				"uses": [
+					"s4",
+					"i11"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The curry paste is fried in coconut cream first, as in a Thai curry.",
+			"chemistry": "Many aromatic compounds in chili, lemongrass and galangal are fat-soluble, so frying the paste in fat releases far more flavour than adding it to liquid.",
+			"spiceProfile": "Hot, sour and salty: curry paste for heat, lime for acid and fish sauce for salt and savouriness.",
+			"variations": "Coconut milk replaces dairy cream, and the soup is seasoned the Thai way with fish sauce and lime instead of salt and nutmeg."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pumpkin-soup",
+		"title": "Roasted pumpkin soup with cumin and yogurt",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Roasted and spiced"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 45,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegetarian",
+			"roasted"
+		],
+		"equipment": [
+			"roasting tray",
+			"large pot",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "pumpkin",
+				"name": "pumpkin",
+				"role": "vegetable",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg pumpkin, peeled, seeded and cubed",
+				"prep": "peeled, seeded and cubed",
+				"substitutes": [
+					"butternut-squash"
+				]
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, cut into wedges",
+				"prep": "cut into wedges"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"original": "3 cloves garlic, unpeeled",
+				"prep": "unpeeled"
+			},
+			{
+				"id": "i4",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i5",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i6",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground coriander"
+			},
+			{
+				"id": "i7",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of ground cinnamon"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 8,
+				"unit": "dl",
+				"original": "8 dl vegetable stock"
+			},
+			{
+				"id": "i10",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i11",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i12",
+				"key": "greek-yogurt",
+				"name": "Greek yogurt",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl Greek yogurt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the pumpkin, onion and garlic with the oil, spices and salt on a tray.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Roast until soft and caramelised at the edges, turning once.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 35,
+				"tempC": 200
+			},
+			{
+				"id": "s3",
+				"text": "Squeeze the garlic from its skins and put everything in a pot with the stock. Bring to a simmer.",
+				"uses": [
+					"s2",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Blend until smooth, then season with lemon juice, salt and pepper.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Serve with a swirl of yogurt.",
+				"uses": [
+					"s4",
+					"i12"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Roasting replaces the slow simmer, so the soup only needs a brief boil after blending.",
+			"chemistry": "Dry oven heat browns the pumpkin sugars by caramelisation and Maillard reactions, which simmering cannot do.",
+			"spiceProfile": "Cumin and coriander are earthy and citrusy, with a pinch of cinnamon for warmth; yogurt and lemon add a tangy finish.",
+			"variations": "Roasted rather than simmered, warmly spiced, and finished with tangy yogurt instead of cream."
+		}
+	}
+]

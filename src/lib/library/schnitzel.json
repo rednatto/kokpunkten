@@ -1,0 +1,652 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "schnitzel",
+		"title": "Wiener schnitzel, veal",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Viennese veal"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 15,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"austrian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"veal",
+			"fried",
+			"classic"
+		],
+		"equipment": [
+			"meat mallet",
+			"cling film",
+			"3 shallow plates",
+			"large heavy frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "veal-cutlet",
+				"name": "veal cutlets from the leg (topside)",
+				"role": "meat",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 veal cutlets, about 150 g each"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "White pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 60,
+				"unit": "g",
+				"group": "Breading",
+				"original": "60 g all-purpose flour"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"group": "Breading",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i6",
+				"key": "heavy-cream",
+				"name": "heavy cream or milk",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Breading",
+				"original": "1 tbsp heavy cream or milk"
+			},
+			{
+				"id": "i7",
+				"key": "breadcrumbs",
+				"name": "fine dry breadcrumbs (Semmelbrösel)",
+				"role": "bread",
+				"qty": 120,
+				"unit": "g",
+				"group": "Breading",
+				"original": "120 g fine dry breadcrumbs (Semmelbrösel)"
+			},
+			{
+				"id": "i8",
+				"key": "clarified-butter",
+				"name": "clarified butter or lard",
+				"role": "fat",
+				"qty": 300,
+				"unit": "g",
+				"prep": "for frying",
+				"original": "300 g clarified butter or lard, for frying"
+			},
+			{
+				"id": "i9",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			},
+			{
+				"id": "i10",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "garnish",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 sprigs parsley"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pound the cutlets between cling film to 4 mm thick. Season with salt and pepper.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"pound",
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Lightly beat the eggs with the cream. Dredge each cutlet in flour, then egg, then breadcrumbs, pressing very lightly.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"bread"
+				],
+				"critical": "Bread just before frying and do not press the crumbs on, so the coating can puff away from the meat."
+			},
+			{
+				"id": "s3",
+				"text": "Heat the fat to about 170 °C, 1–2 cm deep. Fry the schnitzels, swirling the pan so the fat washes over the top, until the coating puffs and turns golden.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"shallow-fry"
+				],
+				"durationMin": 4,
+				"heat": "medium-high",
+				"tempC": 170
+			},
+			{
+				"id": "s4",
+				"text": "Drain briefly on paper and serve at once with lemon and parsley.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"drain",
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Swirling the pan so hot fat rolls over the top makes the crust lift into loose waves (soufflé).",
+			"chemistry": "Steam from the meat and egg puffs the coating, while the thin meat cooks through in the same few minutes.",
+			"spiceProfile": "Simple: salt, white pepper and lemon.",
+			"variations": "Only veal may be called Wiener Schnitzel in Austria; pork versions are \"Wiener Art\", and Jägerschnitzel comes with mushroom sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "schnitzel",
+		"title": "Pork schnitzel (Wiener Art)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Pork, Wiener Art"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 15,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"austrian",
+			"german"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pork",
+			"fried",
+			"budget"
+		],
+		"equipment": [
+			"meat mallet",
+			"3 shallow plates",
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "pork-loin",
+				"name": "boneless pork loin or leg steaks",
+				"role": "meat",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 pork steaks, about 150 g each"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 60,
+				"unit": "g",
+				"group": "Breading",
+				"original": "60 g all-purpose flour"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"group": "Breading",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i6",
+				"key": "heavy-cream",
+				"name": "heavy cream or milk",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Breading",
+				"original": "1 tbsp heavy cream or milk"
+			},
+			{
+				"id": "i7",
+				"key": "breadcrumbs",
+				"name": "fine dry breadcrumbs (Semmelbrösel)",
+				"role": "bread",
+				"qty": 120,
+				"unit": "g",
+				"group": "Breading",
+				"original": "120 g fine dry breadcrumbs (Semmelbrösel)"
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 250,
+				"unit": "ml",
+				"prep": "for frying",
+				"original": "250 ml neutral oil, for frying"
+			},
+			{
+				"id": "i9",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i10",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pound the pork to 5 mm thick and season.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"pound",
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Coat in flour, beaten egg with cream, then breadcrumbs.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"bread"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fry in hot oil with the butter, about 170 °C, swirling the pan, until golden on both sides and cooked through.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"shallow-fry"
+				],
+				"durationMin": 6,
+				"heat": "medium-high",
+				"tempC": 170,
+				"critical": "Pork should reach at least 63 °C; the thin cutlets get there by the time the crust is golden."
+			},
+			{
+				"id": "s4",
+				"text": "Drain and serve with lemon.",
+				"uses": [
+					"s3",
+					"i10"
+				],
+				"technique": [
+					"drain",
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Oil with a little butter gives a higher smoke point with butter flavour.",
+			"spiceProfile": "Salt, pepper and lemon.",
+			"variations": "Pork instead of veal, which makes it cheaper and slightly firmer; the most common schnitzel in Germany and Austria."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "schnitzel",
+		"title": "Jägerschnitzel with mushroom sauce",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Jägerschnitzel"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 25,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"german"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pork",
+			"mushrooms",
+			"sauce"
+		],
+		"equipment": [
+			"meat mallet",
+			"3 shallow plates",
+			"2 frying pans"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "pork-loin",
+				"name": "pork loin steaks",
+				"role": "meat",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 pork steaks, about 150 g each"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 60,
+				"unit": "g",
+				"group": "Breading",
+				"original": "60 g all-purpose flour"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"group": "Breading",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i6",
+				"key": "heavy-cream",
+				"name": "heavy cream or milk",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Breading",
+				"original": "1 tbsp heavy cream or milk"
+			},
+			{
+				"id": "i7",
+				"key": "breadcrumbs",
+				"name": "fine dry breadcrumbs (Semmelbrösel)",
+				"role": "bread",
+				"qty": 120,
+				"unit": "g",
+				"group": "Breading",
+				"original": "120 g fine dry breadcrumbs (Semmelbrösel)"
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 200,
+				"unit": "ml",
+				"prep": "for frying",
+				"original": "200 ml neutral oil, for frying"
+			},
+			{
+				"id": "i9",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"group": "Sauce",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i10",
+				"key": "bacon",
+				"name": "smoked bacon",
+				"role": "cured-pork",
+				"qty": 80,
+				"unit": "g",
+				"prep": "diced",
+				"group": "Sauce",
+				"original": "80 g smoked bacon, diced"
+			},
+			{
+				"id": "i11",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"group": "Sauce",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i12",
+				"key": "button-mushroom",
+				"name": "mixed mushrooms",
+				"role": "vegetable",
+				"qty": 350,
+				"unit": "g",
+				"prep": "sliced",
+				"group": "Sauce",
+				"original": "350 g mixed mushrooms, sliced"
+			},
+			{
+				"id": "i13",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 250,
+				"unit": "ml",
+				"group": "Sauce",
+				"original": "250 ml beef stock"
+			},
+			{
+				"id": "i14",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"group": "Sauce",
+				"original": "150 ml heavy cream"
+			},
+			{
+				"id": "i15",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the bacon in the butter, add onion and mushrooms and cook until the mushrooms are browned.",
+				"uses": [
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Add stock and cream and simmer until slightly thickened. Season.",
+				"uses": [
+					"s1",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Pound the pork thin, season and bread in flour, egg and crumbs.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"pound",
+					"bread"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Fry in hot oil until golden and cooked through to at least 63 °C.",
+				"uses": [
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"shallow-fry"
+				],
+				"durationMin": 6,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Serve the schnitzels with the sauce spooned alongside and parsley on top.",
+				"uses": [
+					"s2",
+					"s4",
+					"i15"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Serve the sauce next to the schnitzel rather than over it, so the crust stays crisp.",
+			"chemistry": "Browning the mushrooms well before adding liquid concentrates their savoury flavour.",
+			"spiceProfile": "Smoky bacon, mushrooms and parsley.",
+			"variations": "Comes with a creamy mushroom sauce; some German regions make it unbreaded."
+		}
+	}
+]

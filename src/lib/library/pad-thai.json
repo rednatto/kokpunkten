@@ -1,0 +1,572 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pad-thai",
+		"title": "Pad thai with shrimp and tamarind",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic shrimp and tamarind"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 10,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"thai"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"noodles",
+			"street-food",
+			"wok"
+		],
+		"equipment": [
+			"wok",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rice-noodles",
+				"name": "dried flat rice noodles (about 5 mm)",
+				"role": "noodles",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g dried flat rice noodles (about 5 mm)"
+			},
+			{
+				"id": "i2",
+				"key": "tamarind-paste",
+				"name": "tamarind paste (pulp water)",
+				"role": "acid",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp tamarind paste (pulp water)"
+			},
+			{
+				"id": "i3",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 2.5,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "2.5 tbsp fish sauce"
+			},
+			{
+				"id": "i4",
+				"key": "palm-sugar",
+				"name": "palm sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "shaved",
+				"group": "sauce",
+				"substitutes": [
+					"light brown sugar"
+				],
+				"original": "3 tbsp palm sugar, shaved"
+			},
+			{
+				"id": "i5",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i6",
+				"key": "shallot",
+				"name": "shallots",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "2 shallots, thinly sliced"
+			},
+			{
+				"id": "i7",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "2 cloves garlic, chopped"
+			},
+			{
+				"id": "i8",
+				"key": "firm-tofu",
+				"name": "firm tofu",
+				"role": "tofu",
+				"qty": 100,
+				"unit": "g",
+				"prep": "in small cubes",
+				"original": "100 g firm tofu, in small cubes"
+			},
+			{
+				"id": "i9",
+				"key": "preserved-radish",
+				"name": "sweet preserved radish",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"optional": true,
+				"original": "1 tbsp sweet preserved radish, chopped (optional)"
+			},
+			{
+				"id": "i10",
+				"key": "dried-shrimp",
+				"name": "dried shrimp",
+				"role": "seafood",
+				"qty": 1,
+				"unit": "tbsp",
+				"optional": true,
+				"original": "1 tbsp dried shrimp (optional)"
+			},
+			{
+				"id": "i11",
+				"key": "shrimp",
+				"name": "raw shrimp, peeled",
+				"role": "seafood",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g raw shrimp, peeled"
+			},
+			{
+				"id": "i12",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i13",
+				"key": "bean-sprouts",
+				"name": "bean sprouts",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g bean sprouts"
+			},
+			{
+				"id": "i14",
+				"key": "garlic-chives",
+				"name": "garlic chives",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "in 4 cm lengths",
+				"substitutes": [
+					"scallions"
+				],
+				"original": "1 bunch garlic chives, in 4 cm lengths"
+			},
+			{
+				"id": "i15",
+				"key": "peanuts",
+				"name": "roasted peanuts",
+				"role": "nut",
+				"qty": 40,
+				"unit": "g",
+				"prep": "crushed",
+				"original": "40 g roasted peanuts, crushed"
+			},
+			{
+				"id": "i16",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lime, in wedges"
+			},
+			{
+				"id": "i17",
+				"key": "chili-flakes",
+				"name": "dried chili flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried chili flakes"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the noodles in room-temperature water until pliable but still firm, then drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 30,
+				"critical": "Do not soak in hot water; soft noodles turn to mush in the wok."
+			},
+			{
+				"id": "s2",
+				"text": "Warm the tamarind, fish sauce and palm sugar until the sugar dissolves. Taste: it should be sour, sweet and salty in balance.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Heat the oil in a wok and stir-fry shallots, garlic, tofu, radish and dried shrimp until fragrant and the tofu colours.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Add the shrimp and cook until just pink.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Add the noodles and sauce and toss until the noodles absorb the sauce and soften. Add a splash of water if they stick.",
+				"uses": [
+					"s1",
+					"s2",
+					"s4"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Push the noodles aside, scramble the eggs in the space, then toss everything together with the sprouts and chives.",
+				"uses": [
+					"s5",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"scramble",
+					"stir-fry"
+				],
+				"durationMin": 1
+			},
+			{
+				"id": "s7",
+				"text": "Serve with peanuts, lime wedges, chili flakes and extra sprouts on the side.",
+				"uses": [
+					"s6",
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Cook no more than two portions at a time so the wok stays hot; the noodles finish cooking in the sauce.",
+			"chemistry": "Rice noodles are pure starch with no gluten, so they rely on partly hydrated starch that finishes gelatinising in the wok; too much water early makes them break.",
+			"spiceProfile": "Sour tamarind, salty fish sauce and sweet palm sugar balanced, with heat added at the table.",
+			"variations": "The traditional street version with tamarind, dried shrimp and preserved radish. Vegetarian versions use soy sauce and more tofu."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pad-thai",
+		"title": "Pad thai with tofu, vegetarian",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian tofu"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 10,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"thai"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"noodles",
+			"vegetarian",
+			"wok"
+		],
+		"equipment": [
+			"wok",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rice-noodles",
+				"name": "dried flat rice noodles (about 5 mm)",
+				"role": "noodles",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g dried flat rice noodles (about 5 mm)"
+			},
+			{
+				"id": "i2",
+				"key": "tamarind-paste",
+				"name": "tamarind paste",
+				"role": "acid",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp tamarind paste"
+			},
+			{
+				"id": "i3",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "sauce",
+				"substitutes": [
+					"vegetarian fish sauce"
+				],
+				"original": "2 tbsp light soy sauce"
+			},
+			{
+				"id": "i4",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 2.5,
+				"unit": "tbsp",
+				"group": "sauce",
+				"substitutes": [
+					"palm sugar"
+				],
+				"original": "2.5 tbsp light brown sugar"
+			},
+			{
+				"id": "i5",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i6",
+				"key": "firm-tofu",
+				"name": "extra-firm tofu",
+				"role": "tofu",
+				"qty": 250,
+				"unit": "g",
+				"prep": "pressed, in 2 cm cubes",
+				"original": "250 g extra-firm tofu, pressed, in 2 cm cubes"
+			},
+			{
+				"id": "i7",
+				"key": "shallot",
+				"name": "shallot",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1 shallot, thinly sliced"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"optional": true,
+				"original": "2 eggs (optional)"
+			},
+			{
+				"id": "i10",
+				"key": "bean-sprouts",
+				"name": "bean sprouts",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g bean sprouts"
+			},
+			{
+				"id": "i11",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "in 4 cm lengths",
+				"original": "3 scallions, in 4 cm lengths"
+			},
+			{
+				"id": "i12",
+				"key": "peanuts",
+				"name": "roasted peanuts",
+				"role": "nut",
+				"qty": 40,
+				"unit": "g",
+				"prep": "crushed",
+				"original": "40 g roasted peanuts, crushed"
+			},
+			{
+				"id": "i13",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lime, in wedges"
+			},
+			{
+				"id": "i14",
+				"key": "chili-flakes",
+				"name": "dried chili flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried chili flakes"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the noodles in room-temperature water until pliable, then drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Stir the tamarind, soy sauce and sugar together until dissolved.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fry the tofu in half the oil until golden on several sides, then set aside.",
+				"uses": [
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Stir-fry shallot and garlic in the remaining oil, then add the noodles and sauce and toss until soft and glossy.",
+				"uses": [
+					"s1",
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 4,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Push aside, scramble the eggs (if using), then toss in the tofu, sprouts and scallions.",
+				"uses": [
+					"s3",
+					"s4",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Serve with peanuts, lime and chili flakes.",
+				"uses": [
+					"s5",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Pressing and pan-frying the tofu first gives it a crisp skin that holds up in the wok.",
+			"chemistry": "Pressing removes water so the tofu surface can brown rather than steam.",
+			"spiceProfile": "Sweet-sour tamarind with salty soy instead of fish sauce, so it tastes rounder and less funky.",
+			"variations": "Soy sauce replaces fish sauce and dried shrimp; leave out the egg for a vegan dish."
+		}
+	}
+]

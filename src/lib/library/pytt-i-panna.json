@@ -1,0 +1,577 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pytt-i-panna",
+		"title": "Pytt i panna, classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic with roast beef"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"leftovers",
+			"hash",
+			"classic"
+		],
+		"equipment": [
+			"large frying pan",
+			"small frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "firm potatoes",
+				"role": "starch",
+				"qty": 800,
+				"unit": "g",
+				"prep": "peeled, in 1 cm dice",
+				"original": "800 g firm potatoes, peeled, in 1 cm dice"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"prep": "divided",
+				"original": "40 g butter, divided"
+			},
+			{
+				"id": "i3",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "in 1 cm dice",
+				"original": "2 yellow onions, in 1 cm dice"
+			},
+			{
+				"id": "i5",
+				"key": "roast-beef",
+				"name": "leftover roast beef or steak",
+				"role": "meat",
+				"qty": 300,
+				"unit": "g",
+				"prep": "in 1 cm dice",
+				"original": "300 g leftover roast beef or steak, in 1 cm dice"
+			},
+			{
+				"id": "i6",
+				"key": "smoked-ham",
+				"name": "smoked ham",
+				"role": "cured-pork",
+				"qty": 100,
+				"unit": "g",
+				"prep": "in 1 cm dice",
+				"original": "100 g smoked ham, in 1 cm dice"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i10",
+				"key": "pickled-beets",
+				"name": "pickled beetroot",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "2 dl pickled beetroot, to serve"
+			},
+			{
+				"id": "i11",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse the raw potato cubes and pat them very dry. Fry in oil and half the butter, turning now and then, until golden and tender.",
+				"uses": [
+					"i1",
+					"i3",
+					"i2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 20,
+				"heat": "medium",
+				"critical": "Dry the potatoes well and do not stir too often, or they will not crisp."
+			},
+			{
+				"id": "s2",
+				"text": "Fry the onion soft and golden in a separate pan, then add the meat and ham and fry until browned.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Combine with the potatoes, season and keep warm.",
+				"uses": [
+					"s1",
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"toss"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Fry the eggs sunny side up and serve on top with pickled beetroot and parsley.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Potatoes, onion and meat are fried separately so each browns properly, then combined.",
+			"chemistry": "Rinsing removes surface starch so the cubes crisp instead of sticking; dry surfaces brown by the Maillard reaction.",
+			"spiceProfile": "Simple: salt, pepper and onion, with sweet-sour beetroot and runny yolk.",
+			"variations": "The traditional Swedish hash with raw diced potatoes, leftover roast and ham, fried egg and pickled beetroot."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pytt-i-panna",
+		"title": "Pytt i panna with falukorv",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Falukorv and boiled potatoes"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"leftovers",
+			"hash",
+			"weeknight",
+			"kid-friendly"
+		],
+		"equipment": [
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "cooked-potatoes",
+				"name": "cold boiled potatoes",
+				"role": "starch",
+				"qty": 700,
+				"unit": "g",
+				"prep": "diced",
+				"original": "700 g cold boiled potatoes, diced"
+			},
+			{
+				"id": "i2",
+				"key": "falukorv",
+				"name": "falukorv sausage",
+				"role": "meat",
+				"qty": 400,
+				"unit": "g",
+				"prep": "diced",
+				"original": "400 g falukorv sausage, diced"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 yellow onion, diced"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i9",
+				"key": "pickled-beets",
+				"name": "pickled beetroot",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "2 dl pickled beetroot, to serve"
+			},
+			{
+				"id": "i10",
+				"key": "ketchup",
+				"name": "ketchup",
+				"role": "sauce",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"optional": true,
+				"original": "4 tbsp ketchup, to serve (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the potatoes in butter and oil until golden.",
+				"uses": [
+					"i1",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onion and sausage and fry until browned. Season.",
+				"uses": [
+					"s1",
+					"i3",
+					"i2",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 7,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Fry the eggs and serve on top with beetroot and ketchup.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 3
+			}
+		],
+		"notes": {
+			"techniques": "Using already boiled potatoes halves the cooking time.",
+			"chemistry": "Cooked, cooled potatoes have firmer, retrograded starch that holds its shape and crisps well.",
+			"spiceProfile": "Mild and smoky from the sausage.",
+			"variations": "A quick everyday version with boiled potatoes and falukorv. Faster but less crisp than the raw-potato classic."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pytt-i-panna",
+		"title": "Root vegetable pytt with halloumi",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian root vegetable"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"hash",
+			"vegetarian"
+		],
+		"equipment": [
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 1 cm dice",
+				"original": "500 g potatoes, in 1 cm dice"
+			},
+			{
+				"id": "i2",
+				"key": "parsnip",
+				"name": "parsnip",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in 1 cm dice",
+				"original": "1 parsnip, in 1 cm dice"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "in 1 cm dice",
+				"original": "2 carrots, in 1 cm dice"
+			},
+			{
+				"id": "i4",
+				"key": "beetroot",
+				"name": "raw beetroot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in 1 cm dice",
+				"original": "1 raw beetroot, in 1 cm dice"
+			},
+			{
+				"id": "i5",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 red onion, diced"
+			},
+			{
+				"id": "i6",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i7",
+				"key": "halloumi",
+				"name": "halloumi",
+				"role": "cheese",
+				"qty": 200,
+				"unit": "g",
+				"prep": "diced",
+				"original": "200 g halloumi, diced"
+			},
+			{
+				"id": "i8",
+				"key": "thyme",
+				"name": "fresh thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "leaves",
+				"original": "1 tbsp fresh thyme, leaves"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i10",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i11",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the potato, parsnip, carrot and beetroot in oil, partly covered, until tender and browned.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 20,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add onion, halloumi and thyme and fry until the cheese is golden. Season.",
+				"uses": [
+					"s1",
+					"i5",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 6,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Fry the eggs and serve on top.",
+				"uses": [
+					"s2",
+					"i11"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 3
+			}
+		],
+		"notes": {
+			"techniques": "A lid for the first part steams the dense roots tender before they brown.",
+			"chemistry": "Halloumi has a high melting point, so it browns without melting away.",
+			"spiceProfile": "Earthy, sweet roots with thyme and salty halloumi.",
+			"variations": "Meat-free, with mixed root vegetables and halloumi standing in for the meat. Sweeter and more colourful."
+		}
+	}
+]

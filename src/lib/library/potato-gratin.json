@@ -1,0 +1,527 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "potato-gratin",
+		"title": "Gratin dauphinois",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Dauphinois"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 75,
+			"totalMin": 95
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"classic",
+			"no-cheese"
+		],
+		"equipment": [
+			"gratin dish",
+			"large saucepan",
+			"mandoline or sharp knife"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, 1 halved, 1 crushed",
+				"prep": "1 halved, 1 crushed"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g butter, for the dish",
+				"prep": "for the dish"
+			},
+			{
+				"id": "i3",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl whole milk"
+			},
+			{
+				"id": "i4",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl heavy cream"
+			},
+			{
+				"id": "i5",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of nutmeg, freshly grated",
+				"prep": "freshly grated"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i7",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "white pepper, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "potato",
+				"name": "firm, all-purpose potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"original": "1 kg firm, all-purpose potatoes, peeled and sliced 3 mm thick, not rinsed",
+				"prep": "peeled and sliced 3 mm thick, not rinsed"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rub the gratin dish with the cut garlic clove, then butter it.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"grease"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Bring the milk and cream to a simmer with the crushed garlic, nutmeg, salt and pepper.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the potato slices and simmer gently, stirring carefully, until the liquid starts to thicken.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low",
+				"critical": "Do not rinse the sliced potatoes; their surface starch is what thickens the cream."
+			},
+			{
+				"id": "s4",
+				"text": "Pour into the dish, level the top and bake until golden and a knife slides through easily.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 60,
+				"tempC": 160
+			},
+			{
+				"id": "s5",
+				"text": "Let it rest before serving.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Precooking the slices in the cream starts the thickening and shortens the oven time.",
+			"chemistry": "Potato starch gelatinises in the hot milk and cream and thickens them into a sauce; the high fat in cream keeps it from curdling in the long bake.",
+			"spiceProfile": "Only garlic, nutmeg and white pepper; no cheese in the traditional version.",
+			"variations": "The traditional Dauphiné version uses cream and milk and no cheese, unlike the savoyard and Swedish gratins."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "potato-gratin",
+		"title": "Gratin savoyard",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Savoyard"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 75,
+			"totalMin": 95
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"cheese",
+			"lighter"
+		],
+		"equipment": [
+			"gratin dish",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter, in small pieces",
+				"prep": "in small pieces"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic, halved",
+				"prep": "halved"
+			},
+			{
+				"id": "i3",
+				"key": "potato",
+				"name": "firm potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"original": "1 kg firm potatoes, peeled and sliced 3 mm thick",
+				"prep": "peeled and sliced 3 mm thick"
+			},
+			{
+				"id": "i4",
+				"key": "beaufort",
+				"name": "Beaufort or Gruyère",
+				"role": "hard-cheese",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g Beaufort or Gruyère, grated",
+				"prep": "grated",
+				"substitutes": [
+					"gruyere"
+				]
+			},
+			{
+				"id": "i5",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of nutmeg, freshly grated",
+				"prep": "freshly grated"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl chicken stock",
+				"substitutes": [
+					"vegetable-stock"
+				]
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rub the dish with the cut garlic and grease it with a little of the butter.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"grease"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Layer the potatoes with most of the cheese, nutmeg, salt, pepper and dots of butter, finishing with cheese and butter on top.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Heat the stock and pour it over until it just reaches the top layer.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"pour"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Bake until the stock is absorbed, the potatoes are tender and the top is brown and crisp.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 70,
+				"tempC": 180
+			}
+		],
+		"notes": {
+			"techniques": "Stock replaces dairy, so the gratin bakes down until the potatoes absorb it and the cheese forms a crust.",
+			"chemistry": "Without cream, the cheese and potato starch give the body; a firm cheese like Beaufort melts smoothly without much oil separation.",
+			"spiceProfile": "Nutty mountain cheese, nutmeg and pepper.",
+			"variations": "Made with stock and cheese instead of cream, so it is lighter but more savoury than dauphinois."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "potato-gratin",
+		"title": "Potatisgratäng (Swedish creamy potato gratin with cheese)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Swedish potatisgratäng"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 55,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"cheese",
+			"everyday"
+		],
+		"equipment": [
+			"gratin dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g butter, for the dish",
+				"prep": "for the dish"
+			},
+			{
+				"id": "i2",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"original": "1 kg potatoes, peeled and thinly sliced",
+				"prep": "peeled and thinly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, thinly sliced",
+				"prep": "thinly sliced"
+			},
+			{
+				"id": "i4",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl heavy cream"
+			},
+			{
+				"id": "i5",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl whole milk"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1½ tsp salt"
+			},
+			{
+				"id": "i8",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "white pepper, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "vasterbottensost",
+				"name": "aged hard cheese such as Västerbottensost",
+				"role": "hard-cheese",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g aged hard cheese such as Västerbottensost, grated",
+				"prep": "grated",
+				"substitutes": [
+					"gruyere",
+					"cheddar"
+				]
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Butter the dish and layer the potatoes and onion in it.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Mix the cream, milk, garlic, salt and pepper and pour over.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"pour"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Top with the cheese and bake until the potatoes are soft and the top is golden.",
+				"uses": [
+					"s2",
+					"i9"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 55,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Raw potatoes and onion are layered and baked in seasoned cream, an easy everyday method.",
+			"chemistry": "The cheese browns through the Maillard reaction while the potato starch thickens the cream underneath.",
+			"spiceProfile": "Sharp aged cheese, garlic and white pepper.",
+			"variations": "Includes onion and a grated cheese crust, and skips precooking the potatoes, unlike dauphinois."
+		}
+	}
+]

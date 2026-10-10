@@ -1,0 +1,733 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kanelbullar",
+		"title": "Kanelbullar, classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic rolled"
+		},
+		"servings": 30,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 10,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"buns",
+			"fika",
+			"yeast-dough"
+		],
+		"equipment": [
+			"saucepan",
+			"stand mixer or bowl",
+			"rolling pin",
+			"paper bun cases",
+			"baking trays"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 75,
+				"unit": "g",
+				"prep": "for the dough",
+				"original": "75 g butter, for the dough"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl whole milk"
+			},
+			{
+				"id": "i3",
+				"key": "fresh-yeast",
+				"name": "fresh yeast",
+				"role": "leavening",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g fresh yeast"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 0.5,
+				"unit": "dl",
+				"original": "0.5 dl sugar"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "cardamom",
+				"name": "ground cardamom",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cardamom"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"prep": "about",
+				"original": "500 g all-purpose flour, about"
+			},
+			{
+				"id": "i8",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 100,
+				"unit": "g",
+				"prep": "soft, for the filling",
+				"original": "100 g butter, soft, for the filling"
+			},
+			{
+				"id": "i9",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 0.75,
+				"unit": "dl",
+				"prep": "for the filling",
+				"original": "0.75 dl sugar, for the filling"
+			},
+			{
+				"id": "i10",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp ground cinnamon"
+			},
+			{
+				"id": "i11",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "beaten, for brushing",
+				"original": "1 egg, beaten, for brushing"
+			},
+			{
+				"id": "i12",
+				"key": "pearl-sugar",
+				"name": "pearl sugar",
+				"role": "topping",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp pearl sugar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter, add the milk and warm to 37 °C. Crumble the yeast into a bowl and stir in the warm liquid.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"dissolve"
+				],
+				"durationMin": 3,
+				"heat": "low",
+				"critical": "Liquid hotter than about 45 °C kills fresh yeast."
+			},
+			{
+				"id": "s2",
+				"text": "Add sugar, salt, cardamom and most of the flour and knead until smooth and elastic. Cover and let rise until doubled.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"knead",
+					"proof"
+				],
+				"durationMin": 40
+			},
+			{
+				"id": "s3",
+				"text": "Mix the soft butter, sugar and cinnamon into a spreadable filling.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Roll the dough to a 30×50 cm rectangle, spread with filling and roll up from the long side. Cut into 30 slices and place in paper cases.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"roll",
+					"shape"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Let the buns rise under a cloth until puffy.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 40
+			},
+			{
+				"id": "s6",
+				"text": "Brush with egg, sprinkle with pearl sugar and bake until golden.",
+				"uses": [
+					"s5",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 8,
+				"tempC": 250
+			}
+		],
+		"notes": {
+			"techniques": "A soft enriched dough, rolled and sliced. A short bake at high heat keeps the buns soft.",
+			"chemistry": "Milk, butter and sugar tenderise the dough by limiting gluten development. The egg wash browns quickly through the Maillard reaction.",
+			"spiceProfile": "Cinnamon in the filling and cardamom in the dough, the Swedish signature.",
+			"variations": "The classic home-baking version: rolled, sliced, baked in paper cases and topped with pearl sugar."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kanelbullar",
+		"title": "Cinnamon knots (kanelknutar) with overnight rise",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Knotted with cold proof"
+		},
+		"servings": 16,
+		"time": {
+			"prepMin": 45,
+			"cookMin": 12,
+			"totalMin": 57
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"buns",
+			"fika",
+			"yeast-dough",
+			"make-ahead"
+		],
+		"equipment": [
+			"stand mixer",
+			"rolling pin",
+			"baking trays",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 2.5,
+				"unit": "dl",
+				"prep": "cold",
+				"original": "2.5 dl whole milk, cold"
+			},
+			{
+				"id": "i2",
+				"key": "fresh-yeast",
+				"name": "fresh yeast",
+				"role": "leavening",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g fresh yeast"
+			},
+			{
+				"id": "i3",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 450,
+				"unit": "g",
+				"original": "450 g all-purpose flour"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g sugar"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "cardamom",
+				"name": "freshly crushed cardamom seeds",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp freshly crushed cardamom seeds"
+			},
+			{
+				"id": "i7",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 100,
+				"unit": "g",
+				"prep": "soft, for the dough",
+				"original": "100 g butter, soft, for the dough"
+			},
+			{
+				"id": "i8",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 120,
+				"unit": "g",
+				"prep": "soft, for the filling",
+				"original": "120 g butter, soft, for the filling"
+			},
+			{
+				"id": "i9",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g light brown sugar"
+			},
+			{
+				"id": "i10",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"original": "1.5 tbsp ground cinnamon"
+			},
+			{
+				"id": "i11",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "beaten",
+				"original": "1 egg, beaten"
+			},
+			{
+				"id": "i12",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "for the syrup",
+				"original": "1 dl sugar, for the syrup"
+			},
+			{
+				"id": "i13",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "for the syrup",
+				"original": "1 dl water, for the syrup"
+			},
+			{
+				"id": "i14",
+				"key": "pearl-sugar",
+				"name": "pearl sugar",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp pearl sugar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Knead milk, yeast, flour, sugar, salt and cardamom for 5 minutes, then add the butter bit by bit and knead until the dough is smooth and windowpanes.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Cover and refrigerate overnight.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s3",
+				"text": "Beat the butter, brown sugar and cinnamon together.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Roll the cold dough to 30×40 cm, spread the filling over half, fold over and cut into 16 strips. Twist each strip and tie into a knot.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"roll",
+					"shape"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Let the knots rise until puffy.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s6",
+				"text": "Brush with egg and bake until deep golden.",
+				"uses": [
+					"s5",
+					"i11"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 12,
+				"tempC": 210
+			},
+			{
+				"id": "s7",
+				"text": "Boil sugar and water for 1 minute, brush over the hot knots and sprinkle with pearl sugar.",
+				"uses": [
+					"s6",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"boil",
+					"glaze"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			}
+		],
+		"notes": {
+			"techniques": "A long cold rise firms the butter-rich dough so it can be folded and knotted cleanly.",
+			"chemistry": "Slow cold fermentation develops more flavour, and adding butter after gluten has formed gives a stronger, more open crumb.",
+			"spiceProfile": "More cardamom and a brown-sugar filling give a deeper, more caramel flavour.",
+			"variations": "Folded and knotted rather than rolled and sliced, richer in butter and glazed with syrup. A bakery-style version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kanelbullar",
+		"title": "Kanelbullar with almond paste filling",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Almond paste filling"
+		},
+		"servings": 24,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 10,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"buns",
+			"fika",
+			"yeast-dough"
+		],
+		"equipment": [
+			"stand mixer or bowl",
+			"rolling pin",
+			"grater",
+			"paper bun cases",
+			"baking trays"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 75,
+				"unit": "g",
+				"prep": "for the dough",
+				"original": "75 g butter, for the dough"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2.5 dl whole milk"
+			},
+			{
+				"id": "i3",
+				"key": "fresh-yeast",
+				"name": "fresh yeast",
+				"role": "leavening",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g fresh yeast"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g sugar"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "cardamom",
+				"name": "ground cardamom",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cardamom"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 420,
+				"unit": "g",
+				"original": "420 g all-purpose flour"
+			},
+			{
+				"id": "i8",
+				"key": "almond-paste",
+				"name": "almond paste (mandelmassa)",
+				"role": "nut",
+				"qty": 150,
+				"unit": "g",
+				"prep": "grated",
+				"original": "150 g almond paste (mandelmassa), grated"
+			},
+			{
+				"id": "i9",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 75,
+				"unit": "g",
+				"prep": "soft, for the filling",
+				"original": "75 g butter, soft, for the filling"
+			},
+			{
+				"id": "i10",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground cinnamon"
+			},
+			{
+				"id": "i11",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "beaten",
+				"original": "1 egg, beaten"
+			},
+			{
+				"id": "i12",
+				"key": "almonds",
+				"name": "flaked almonds",
+				"role": "topping",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp flaked almonds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter, add the milk, cool to 37 °C and dissolve the yeast in it.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"dissolve"
+				],
+				"durationMin": 3,
+				"heat": "low"
+			},
+			{
+				"id": "s2",
+				"text": "Knead in sugar, salt, cardamom and flour until smooth. Let rise until doubled.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"knead",
+					"proof"
+				],
+				"durationMin": 40
+			},
+			{
+				"id": "s3",
+				"text": "Beat the grated almond paste, soft butter and cinnamon to a smooth filling.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Roll out the dough, spread with filling, roll up and slice into 24 buns. Place in cases and let rise.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"roll",
+					"shape",
+					"proof"
+				],
+				"durationMin": 40
+			},
+			{
+				"id": "s5",
+				"text": "Brush with egg, sprinkle with flaked almonds and bake until golden.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 10,
+				"tempC": 225
+			}
+		],
+		"notes": {
+			"techniques": "Grated almond paste beats smoothly into butter for a filling that stays moist and does not leak.",
+			"chemistry": "Almond paste is mostly ground almonds and sugar; the fat and sugar keep the filling soft after baking.",
+			"spiceProfile": "Cinnamon and cardamom with sweet almond.",
+			"variations": "Almond paste in the filling makes softer, richer buns. A popular fika variation, close to a mandelbulle."
+		}
+	}
+]

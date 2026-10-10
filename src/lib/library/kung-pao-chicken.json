@@ -1,0 +1,580 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kung-pao-chicken",
+		"title": "Gong bao chicken, Sichuan style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Sichuan classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 8,
+			"totalMin": 28
+		},
+		"cuisine": [
+			"chinese",
+			"sichuan"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"wok",
+			"spicy"
+		],
+		"equipment": [
+			"wok"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "boneless skinless chicken thighs",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 1.5 cm cubes",
+				"group": "marinade",
+				"original": "500 g boneless skinless chicken thighs, in 1.5 cm cubes"
+			},
+			{
+				"id": "i2",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "1 tbsp for the marinade, 1 tbsp for the sauce",
+				"original": "2 tbsp light soy sauce, 1 tbsp for the marinade, 1 tbsp for the sauce"
+			},
+			{
+				"id": "i3",
+				"key": "shaoxing-wine",
+				"name": "Shaoxing wine",
+				"role": "wine",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "marinade",
+				"original": "1 tbsp Shaoxing wine"
+			},
+			{
+				"id": "i4",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"prep": "1 tbsp for the marinade, ½ tbsp for the sauce",
+				"original": "1.5 tbsp cornstarch, 1 tbsp for the marinade, ½ tbsp for the sauce"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.25,
+				"unit": "tsp",
+				"group": "marinade",
+				"original": "0.25 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "chinkiang-vinegar",
+				"name": "Chinkiang black vinegar",
+				"role": "acid",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1.5 tbsp Chinkiang black vinegar"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1.5 tbsp sugar"
+			},
+			{
+				"id": "i8",
+				"key": "dark-soy-sauce",
+				"name": "dark soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "sauce",
+				"original": "1 tsp dark soy sauce"
+			},
+			{
+				"id": "i9",
+				"key": "chicken-stock",
+				"name": "chicken stock or water",
+				"role": "stock",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp chicken stock or water"
+			},
+			{
+				"id": "i10",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i11",
+				"key": "dried-red-chili",
+				"name": "dried red chilies",
+				"role": "chili",
+				"qty": 10,
+				"unit": "piece",
+				"prep": "cut in half, seeds shaken out",
+				"original": "10 dried red chilies, cut in half, seeds shaken out"
+			},
+			{
+				"id": "i12",
+				"key": "sichuan-peppercorns",
+				"name": "Sichuan peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Sichuan peppercorns"
+			},
+			{
+				"id": "i13",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "sliced",
+				"original": "3 cloves garlic, sliced"
+			},
+			{
+				"id": "i14",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "sliced",
+				"original": "1 tbsp ginger, sliced"
+			},
+			{
+				"id": "i15",
+				"key": "scallion",
+				"name": "scallions, white parts",
+				"role": "allium",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "in 1.5 cm pieces",
+				"original": "6 scallions, white parts, in 1.5 cm pieces"
+			},
+			{
+				"id": "i16",
+				"key": "peanuts",
+				"name": "roasted unsalted peanuts",
+				"role": "nut",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g roasted unsalted peanuts"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the chicken with half the light soy, the Shaoxing wine, 1 tbsp cornstarch and salt. Marinate.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Mix the sauce: the rest of the light soy and cornstarch, vinegar, sugar, dark soy and stock.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Heat the oil in a wok over medium heat and fry the chilies and Sichuan peppercorns until the chilies darken but do not blacken.",
+				"uses": [
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"bloom"
+				],
+				"durationMin": 1,
+				"heat": "medium",
+				"critical": "Pull the heat back the moment the chilies turn deep red; burnt chilies make the dish bitter."
+			},
+			{
+				"id": "s4",
+				"text": "Turn the heat to high, add the chicken and stir-fry until it separates and turns opaque.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Add garlic, ginger and scallions and stir-fry until fragrant and the chicken reaches 74 °C.",
+				"uses": [
+					"s4",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Stir the sauce, pour it in and toss until thick and glossy, then toss in the peanuts and serve at once.",
+				"uses": [
+					"s2",
+					"s5",
+					"i16"
+				],
+				"technique": [
+					"stir-fry",
+					"thicken"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			}
+		],
+		"notes": {
+			"techniques": "Chilies and Sichuan pepper are bloomed in oil first, so the oil carries their aroma. The sauce is mixed in advance and added in one go.",
+			"chemistry": "The cornstarch coating protects the chicken from drying out (velveting) and helps the sauce cling. Sichuan pepper contains hydroxy-alpha-sanshool, which causes the tingling numbness.",
+			"spiceProfile": "Hot, numbing and tangy-sweet, the Sichuan \"lychee\" flavour of balanced vinegar and sugar.",
+			"variations": "The Sichuan original has no vegetables apart from scallions and a small amount of glossy sauce. American takeout versions add peppers and courgette and more, sweeter sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kung-pao-chicken",
+		"title": "Kung pao chicken, American takeout style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American takeout"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 10,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"chinese",
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"wok",
+			"weeknight"
+		],
+		"equipment": [
+			"wok"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-breast",
+				"name": "chicken breast",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 2 cm cubes",
+				"original": "500 g chicken breast, in 2 cm cubes"
+			},
+			{
+				"id": "i2",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "1 tbsp for the marinade, 2 tbsp for the sauce",
+				"original": "3 tbsp soy sauce, 1 tbsp for the marinade, 2 tbsp for the sauce"
+			},
+			{
+				"id": "i3",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "1.5 tbsp cornstarch, divided"
+			},
+			{
+				"id": "i4",
+				"key": "hoisin-sauce",
+				"name": "hoisin sauce",
+				"role": "sauce",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "2 tbsp hoisin sauce"
+			},
+			{
+				"id": "i5",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp rice vinegar"
+			},
+			{
+				"id": "i6",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp brown sugar"
+			},
+			{
+				"id": "i7",
+				"key": "chili-garlic-sauce",
+				"name": "chili-garlic sauce",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp chili-garlic sauce"
+			},
+			{
+				"id": "i8",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "sauce",
+				"original": "1 tsp toasted sesame oil"
+			},
+			{
+				"id": "i9",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"group": "sauce",
+				"original": "1 dl water"
+			},
+			{
+				"id": "i10",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp vegetable oil"
+			},
+			{
+				"id": "i11",
+				"key": "dried-red-chili",
+				"name": "dried red chilies",
+				"role": "chili",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 dried red chilies"
+			},
+			{
+				"id": "i12",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i13",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "grated",
+				"original": "1 tsp ginger, grated"
+			},
+			{
+				"id": "i14",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in squares",
+				"original": "1 red bell pepper, in squares"
+			},
+			{
+				"id": "i15",
+				"key": "zucchini",
+				"name": "zucchini",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 zucchini, diced"
+			},
+			{
+				"id": "i16",
+				"key": "celery",
+				"name": "celery",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 stalks celery, sliced"
+			},
+			{
+				"id": "i17",
+				"key": "peanuts",
+				"name": "roasted peanuts",
+				"role": "nut",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g roasted peanuts"
+			},
+			{
+				"id": "i18",
+				"key": "rice",
+				"name": "cooked rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked rice, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the chicken with 1 tbsp soy and 1 tbsp cornstarch.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the remaining soy and cornstarch with hoisin, vinegar, sugar, chili-garlic sauce, sesame oil and water.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Stir-fry the chicken in half the oil until browned and cooked to 74 °C. Remove.",
+				"uses": [
+					"s1",
+					"i10"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 5,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Add the remaining oil and fry the chilies, garlic and ginger briefly, then add the pepper, zucchini and celery and stir-fry until tender-crisp.",
+				"uses": [
+					"i11",
+					"i12",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Return the chicken, add the sauce and toss until it thickens. Stir in the peanuts and serve with rice.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"i17",
+					"i18"
+				],
+				"technique": [
+					"stir-fry",
+					"thicken"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			}
+		],
+		"notes": {
+			"techniques": "More vegetables and a larger amount of thickened sauce make it a one-dish meal over rice.",
+			"chemistry": "Cornstarch in the sauce gelatinises as it boils, turning the thin liquid into a glossy coating.",
+			"spiceProfile": "Sweet, savoury and moderately spicy from hoisin and chili-garlic sauce; usually no Sichuan pepper numbness.",
+			"variations": "Sweeter, saucier and less numbing than the Sichuan original, with mixed vegetables."
+		}
+	}
+]

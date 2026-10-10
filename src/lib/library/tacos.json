@@ -1,0 +1,765 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tacos",
+		"title": "Ground beef tacos, Tex-Mex style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Tex-Mex ground beef"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 20,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"tex-mex",
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"weeknight",
+			"family"
+		],
+		"equipment": [
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 onion, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "minced",
+				"original": "2 cloves garlic, minced"
+			},
+			{
+				"id": "i4",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g ground beef"
+			},
+			{
+				"id": "i5",
+				"key": "chili-powder",
+				"name": "chili powder",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp chili powder"
+			},
+			{
+				"id": "i6",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i7",
+				"key": "sweet-paprika",
+				"name": "paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp paprika"
+			},
+			{
+				"id": "i8",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp oregano"
+			},
+			{
+				"id": "i9",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i10",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 120,
+				"unit": "ml",
+				"original": "1.2 dl water"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i12",
+				"key": "hard-taco-shells",
+				"name": "hard taco shells",
+				"role": "bread",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 hard taco shells"
+			},
+			{
+				"id": "i13",
+				"key": "iceberg-lettuce",
+				"name": "iceberg lettuce",
+				"role": "leafy-green",
+				"qty": 0.25,
+				"unit": "piece",
+				"prep": "shredded",
+				"original": "1/4 head iceberg, shredded"
+			},
+			{
+				"id": "i14",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 tomatoes, diced"
+			},
+			{
+				"id": "i15",
+				"key": "cheddar",
+				"name": "cheddar",
+				"role": "cheese",
+				"qty": 150,
+				"unit": "g",
+				"prep": "grated",
+				"original": "150 g cheddar, grated"
+			},
+			{
+				"id": "i16",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl sour cream"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften onion in oil, add garlic and the beef and cook until browned. Pour off excess fat.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"brown"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the spices, oregano and tomato paste, add water and salt and simmer until saucy.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Warm the shells in a 180 °C oven.",
+				"uses": [
+					"i12"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 5,
+				"tempC": 180
+			},
+			{
+				"id": "s4",
+				"text": "Fill shells with beef, lettuce, tomato, cheese and sour cream.",
+				"uses": [
+					"s2",
+					"s3",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A splash of water turns the spices into a clingy sauce that coats the meat.",
+			"spiceProfile": "Mild chili powder, cumin and paprika.",
+			"variations": "The American hard-shell family taco. Carne asada uses grilled steak on soft corn tortillas, and birria uses braised beef dipped in its consommé."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tacos",
+		"title": "Carne asada tacos",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Carne asada"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 10,
+			"totalMin": 145
+		},
+		"cuisine": [
+			"mexican"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"grilled",
+			"street food"
+		],
+		"equipment": [
+			"grill or cast-iron pan",
+			"comal"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "skirt-steak",
+				"name": "skirt or flank steak",
+				"role": "meat",
+				"qty": 700,
+				"unit": "g",
+				"original": "700 g skirt steak"
+			},
+			{
+				"id": "i2",
+				"key": "orange",
+				"name": "orange",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1 orange"
+			},
+			{
+				"id": "i3",
+				"key": "lime",
+				"name": "limes",
+				"role": "acid",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 2 limes, plus wedges to serve"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "minced",
+				"original": "3 cloves garlic, minced"
+			},
+			{
+				"id": "i5",
+				"key": "jalapeno",
+				"name": "jalapeño",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "minced",
+				"original": "1 jalapeño, minced"
+			},
+			{
+				"id": "i6",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "1 bunch coriander, chopped (divided)"
+			},
+			{
+				"id": "i7",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin"
+			},
+			{
+				"id": "i8",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1 1/2 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "corn-tortillas",
+				"name": "small corn tortillas",
+				"role": "bread",
+				"qty": 16,
+				"unit": "piece",
+				"original": "16 small corn tortillas"
+			},
+			{
+				"id": "i11",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely diced",
+				"original": "1 white onion, finely diced"
+			},
+			{
+				"id": "i12",
+				"key": "salsa-verde",
+				"name": "salsa verde or salsa roja",
+				"role": "sauce",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl salsa"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Marinate the steak in citrus juice, garlic, jalapeño, half the coriander, cumin, oil and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 120,
+				"critical": "Keep it under about 4 hours or the acid makes the surface mushy."
+			},
+			{
+				"id": "s2",
+				"text": "Grill over very high heat until charred outside and medium inside (about 55 °C), then rest.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"grill",
+					"rest"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Warm the tortillas on a dry comal until soft and spotty.",
+				"uses": [
+					"i10"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Slice the steak thinly against the grain, chop and pile on doubled tortillas with onion, remaining coriander and salsa.",
+				"uses": [
+					"s2",
+					"s3",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"slice",
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Fast, very hot grilling chars thin skirt steak without overcooking it. Slicing against the grain shortens the long muscle fibres.",
+			"chemistry": "High heat drives fast Maillard browning on the surface. The citrus acid only tenderises the outermost layer.",
+			"spiceProfile": "Citrus, garlic and cumin, with heat from the salsa.",
+			"variations": "Grilled steak on soft corn tortillas, Mexican street style, compared with the seasoned ground beef of Tex-Mex tacos."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tacos",
+		"title": "Birria tacos with consommé",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Birria"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 210,
+			"totalMin": 250
+		},
+		"cuisine": [
+			"mexican"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"braised",
+			"weekend"
+		],
+		"equipment": [
+			"heavy pot",
+			"blender",
+			"griddle"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-guajillo-chili",
+				"name": "dried guajillo chiles",
+				"role": "chili",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "seeded",
+				"original": "6 guajillo chiles, seeded"
+			},
+			{
+				"id": "i2",
+				"key": "dried-ancho-chili",
+				"name": "dried ancho chiles",
+				"role": "chili",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "seeded",
+				"original": "3 ancho chiles, seeded"
+			},
+			{
+				"id": "i3",
+				"key": "dried-arbol-chili",
+				"name": "chiles de árbol",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 chiles de árbol"
+			},
+			{
+				"id": "i4",
+				"key": "tomato",
+				"name": "tomatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 tomatoes"
+			},
+			{
+				"id": "i5",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "1 white onion (half for sauce, half to serve)"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 6,
+				"unit": "clove",
+				"original": "6 cloves garlic"
+			},
+			{
+				"id": "i7",
+				"key": "apple-cider-vinegar",
+				"name": "cider vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp cider vinegar"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin"
+			},
+			{
+				"id": "i9",
+				"key": "dried-oregano",
+				"name": "Mexican oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Mexican oregano"
+			},
+			{
+				"id": "i10",
+				"key": "cinnamon-stick",
+				"name": "cinnamon stick",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 cinnamon stick"
+			},
+			{
+				"id": "i11",
+				"key": "cloves",
+				"name": "whole cloves",
+				"role": "spice",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 whole cloves"
+			},
+			{
+				"id": "i12",
+				"key": "beef-chuck",
+				"name": "beef chuck or short rib",
+				"role": "meat",
+				"qty": 1.5,
+				"unit": "kg",
+				"prep": "in large chunks",
+				"original": "1.5 kg beef chuck, in large chunks"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i14",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i15",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l water"
+			},
+			{
+				"id": "i16",
+				"key": "corn-tortillas",
+				"name": "corn tortillas",
+				"role": "bread",
+				"qty": 18,
+				"unit": "piece",
+				"original": "18 corn tortillas"
+			},
+			{
+				"id": "i17",
+				"key": "oaxaca-cheese",
+				"name": "Oaxaca cheese or mozzarella",
+				"role": "cheese",
+				"qty": 250,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "250 g Oaxaca cheese, shredded"
+			},
+			{
+				"id": "i18",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "a handful of coriander, chopped"
+			},
+			{
+				"id": "i19",
+				"key": "lime",
+				"name": "limes",
+				"role": "acid",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "2 limes, in wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the chiles with tomatoes, half the onion and garlic until soft, then blend with vinegar, cumin, oregano, cinnamon and cloves.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer",
+					"blend"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Season the beef, cover with the chile sauce, bay and water and braise covered until it shreds easily.",
+				"uses": [
+					"s1",
+					"i12",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 180,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Shred the beef. Skim the red fat off the top of the broth and keep the broth hot as consommé.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"shred",
+					"skim"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Dip tortillas in the red fat, fill with beef and cheese, fold and griddle until crisp and the cheese melts.",
+				"uses": [
+					"s3",
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"dip",
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Serve with the consommé for dipping, topped with onion, coriander and lime.",
+				"uses": [
+					"s3",
+					"s4",
+					"i5",
+					"i18",
+					"i19"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The braising liquid is both the dip and the frying fat, so the tortillas crisp in the beef's own red fat.",
+			"chemistry": "The long braise converts the beef's collagen to gelatin, which gives the consommé body.",
+			"spiceProfile": "Earthy dried chiles with cinnamon, clove and oregano.",
+			"variations": "A slow weekend project with crisp, cheesy tacos and a broth for dipping. Carne asada is fast-grilled, and Tex-Mex tacos use ground beef."
+		}
+	}
+]

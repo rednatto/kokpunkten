@@ -1,0 +1,751 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chili-con-carne",
+		"title": "Texas chili (bowl of red)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Texas bowl of red"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 180,
+			"totalMin": 210
+		},
+		"cuisine": [
+			"american",
+			"tex-mex"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"no beans",
+			"slow-cooked"
+		],
+		"equipment": [
+			"heavy pot",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-ancho-chili",
+				"name": "dried ancho chiles",
+				"role": "chili",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "stemmed and seeded",
+				"original": "4 dried ancho chiles, stemmed and seeded"
+			},
+			{
+				"id": "i2",
+				"key": "dried-guajillo-chili",
+				"name": "dried guajillo chiles",
+				"role": "chili",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "stemmed and seeded",
+				"original": "4 dried guajillo chiles, stemmed and seeded"
+			},
+			{
+				"id": "i3",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l beef stock"
+			},
+			{
+				"id": "i4",
+				"key": "beef-chuck",
+				"name": "beef chuck",
+				"role": "meat",
+				"qty": 1.5,
+				"unit": "kg",
+				"prep": "cut into 2 cm cubes",
+				"original": "1.5 kg beef chuck, cut into 2 cm cubes"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "beef-tallow",
+				"name": "beef tallow or neutral oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp tallow or oil"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 onion, finely chopped"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 5,
+				"unit": "clove",
+				"prep": "minced",
+				"original": "5 cloves garlic, minced"
+			},
+			{
+				"id": "i9",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp ground cumin"
+			},
+			{
+				"id": "i10",
+				"key": "dried-oregano",
+				"name": "Mexican oregano",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp Mexican oregano"
+			},
+			{
+				"id": "i11",
+				"key": "chipotle-in-adobo",
+				"name": "chipotle in adobo",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 chipotle in adobo, chopped"
+			},
+			{
+				"id": "i12",
+				"key": "masa-harina",
+				"name": "masa harina",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp masa harina"
+			},
+			{
+				"id": "i13",
+				"key": "apple-cider-vinegar",
+				"name": "cider vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp cider vinegar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toast the dried chiles in a dry pan until fragrant, then soak in 4 dl hot stock and blend smooth.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"toast",
+					"blend"
+				],
+				"durationMin": 15,
+				"heat": "medium",
+				"critical": "Toast only a few seconds per side; burnt chiles make the whole pot bitter."
+			},
+			{
+				"id": "s2",
+				"text": "Season the beef and brown it in batches in the fat.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 15,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Soften onion and garlic in the same pot, add cumin and oregano for 30 seconds.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Return the beef, add the chile purée, chipotle and remaining stock, and simmer partly covered until the beef is very tender.",
+				"uses": [
+					"s1",
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 150,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Whisk masa harina with a little liquid, stir in and simmer to thicken. Finish with vinegar and salt.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"thicken",
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Whole dried chiles make the base instead of chili powder, and cubed chuck is braised until it falls apart. Masa harina thickens it and adds a corn flavour.",
+			"chemistry": "Collagen in chuck slowly converts to gelatin above about 70 °C during the long simmer, which makes the meat tender and the sauce silky.",
+			"spiceProfile": "Fruity ancho and guajillo heat with smoky chipotle, cumin and oregano.",
+			"variations": "Texas style has no beans and no tomatoes and uses chunks of beef. The common home version uses ground beef, beans and tomatoes, and Cincinnati chili is a thin, cinnamon-spiced sauce over spaghetti."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chili-con-carne",
+		"title": "Chili con carne with beans",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Weeknight ground beef with beans"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 60,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"american",
+			"tex-mex"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"beans",
+			"weeknight"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 onion, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 red pepper, diced"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g ground beef"
+			},
+			{
+				"id": "i6",
+				"key": "chili-powder",
+				"name": "chili powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp chili powder"
+			},
+			{
+				"id": "i7",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground cumin"
+			},
+			{
+				"id": "i8",
+				"key": "smoked-paprika",
+				"name": "smoked paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp smoked paprika"
+			},
+			{
+				"id": "i9",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i11",
+				"key": "canned-tomatoes",
+				"name": "canned chopped tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g canned tomatoes"
+			},
+			{
+				"id": "i12",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 250,
+				"unit": "ml",
+				"original": "2.5 dl beef stock"
+			},
+			{
+				"id": "i13",
+				"key": "canned-kidney-beans",
+				"name": "canned kidney beans",
+				"role": "legume",
+				"qty": 2,
+				"unit": "can",
+				"prep": "drained",
+				"original": "2 cans (2 × 400 g) kidney beans, drained"
+			},
+			{
+				"id": "i14",
+				"key": "dark-chocolate",
+				"name": "dark chocolate",
+				"role": "chocolate",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g dark chocolate (optional)"
+			},
+			{
+				"id": "i15",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i16",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl sour cream, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften onion and pepper in oil, add garlic, then brown the beef well.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"saute",
+					"brown"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the spices, oregano and tomato paste and fry for 1 minute.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"bloom"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Add tomatoes and stock and simmer gently, stirring now and then.",
+				"uses": [
+					"s2",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 35,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Add beans and chocolate and simmer until thick. Season and serve with sour cream.",
+				"uses": [
+					"s3",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Blooming the dry spices in the fat before adding liquid brings out their flavour.",
+			"chemistry": "Many aroma compounds in spices dissolve in fat rather than water, so frying them briefly carries more flavour into the sauce.",
+			"spiceProfile": "Chili powder, cumin and smoked paprika with a little bitter depth from chocolate.",
+			"variations": "The most common home version, with ground beef, beans and tomatoes. Texas chili uses chunks of beef and dried chiles with no beans."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chili-con-carne",
+		"title": "Cincinnati chili",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cincinnati"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 120,
+			"totalMin": 135
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"spaghetti",
+			"regional"
+		],
+		"equipment": [
+			"large pot",
+			"pasta pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 900,
+				"unit": "g",
+				"original": "900 g lean ground beef"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l cold water"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "2 onions, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "minced",
+				"original": "3 cloves garlic, minced"
+			},
+			{
+				"id": "i5",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 170,
+				"unit": "g",
+				"original": "170 g tomato paste"
+			},
+			{
+				"id": "i6",
+				"key": "chili-powder",
+				"name": "chili powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp chili powder"
+			},
+			{
+				"id": "i7",
+				"key": "ground-cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cinnamon"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin"
+			},
+			{
+				"id": "i9",
+				"key": "ground-allspice",
+				"name": "ground allspice",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp allspice"
+			},
+			{
+				"id": "i10",
+				"key": "ground-cloves",
+				"name": "ground cloves",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "1/4 tsp ground cloves"
+			},
+			{
+				"id": "i11",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa",
+				"role": "chocolate",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp unsweetened cocoa"
+			},
+			{
+				"id": "i12",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Worcestershire"
+			},
+			{
+				"id": "i13",
+				"key": "apple-cider-vinegar",
+				"name": "cider vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp cider vinegar"
+			},
+			{
+				"id": "i14",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i15",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i16",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g spaghetti"
+			},
+			{
+				"id": "i17",
+				"key": "cheddar",
+				"name": "mild cheddar",
+				"role": "cheese",
+				"qty": 250,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "250 g finely grated cheddar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Break the raw beef into the cold water and stir until fine and no lumps remain, then bring to a simmer.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium",
+				"critical": "Start the beef in cold water and break it up; browning it first gives the wrong, crumbly texture."
+			},
+			{
+				"id": "s2",
+				"text": "Add onions, garlic, tomato paste, all spices, cocoa, Worcestershire, vinegar, bay and salt and simmer uncovered until thick.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 100,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Boil the spaghetti until tender.",
+				"uses": [
+					"i16"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s4",
+				"text": "Serve the chili over spaghetti, heaped with grated cheddar (\"three-way\").",
+				"uses": [
+					"s2",
+					"s3",
+					"i17"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The beef is simmered in water rather than browned, which gives a fine, saucy texture meant for ladling over pasta.",
+			"spiceProfile": "Sweet-warm Greek-American spicing: cinnamon, allspice and cloves with chili and cocoa.",
+			"variations": "A thin, Mediterranean-spiced meat sauce served over spaghetti with cheese, unlike the thick Tex-Mex chilis."
+		}
+	}
+]

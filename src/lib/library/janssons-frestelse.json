@@ -1,0 +1,485 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "janssons-frestelse",
+		"title": "Janssons frestelse, classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic Christmas"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 60,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"side",
+			"main"
+		],
+		"tags": [
+			"christmas",
+			"gratin",
+			"smörgåsbord"
+		],
+		"equipment": [
+			"frying pan",
+			"baking dish 20×30 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "firm potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "peeled, cut into matchsticks",
+				"original": "1 kg firm potatoes, peeled, cut into matchsticks"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "2 yellow onions, thinly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"prep": "divided",
+				"original": "40 g butter, divided"
+			},
+			{
+				"id": "i4",
+				"key": "swedish-anchovies",
+				"name": "Swedish-style anchovies (ansjovis, spiced sprats)",
+				"role": "fish",
+				"qty": 125,
+				"unit": "g",
+				"prep": "tin, with brine",
+				"original": "125 g Swedish-style anchovies (ansjovis, spiced sprats), tin, with brine"
+			},
+			{
+				"id": "i5",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl heavy cream"
+			},
+			{
+				"id": "i6",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl whole milk"
+			},
+			{
+				"id": "i7",
+				"key": "breadcrumbs",
+				"name": "breadcrumbs",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp breadcrumbs"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the onions in half the butter without browning.",
+				"uses": [
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Layer potatoes, onion and fillets in a buttered dish, starting and ending with potato.",
+				"uses": [
+					"s1",
+					"i1",
+					"i4"
+				],
+				"technique": [
+					"layer"
+				],
+				"critical": "Do not rinse the matchsticks; their starch is what thickens the cream."
+			},
+			{
+				"id": "s3",
+				"text": "Pour over half the cream and the anchovy brine, sprinkle with breadcrumbs and dot with the rest of the butter. Bake.",
+				"uses": [
+					"s2",
+					"i5",
+					"i7",
+					"i3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 200
+			},
+			{
+				"id": "s4",
+				"text": "Add the rest of the cream and the milk and bake until the potatoes are soft and the top golden.",
+				"uses": [
+					"s3",
+					"i6"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 30,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Matchstick potatoes cook through faster than slices and release starch that thickens the cream. Adding the cream in two goes stops it from boiling over.",
+			"chemistry": "Potato starch gelatinises in the hot cream, turning it into a sauce; browning on top comes from the Maillard reaction in milk proteins and breadcrumbs.",
+			"spiceProfile": "The spiced sprats bring salt, sweetness and hints of cinnamon, clove and sandalwood.",
+			"variations": "The smörgåsbord classic made with Swedish sweet-spiced sprats, not Mediterranean anchovies."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "janssons-frestelse",
+		"title": "Janssons frestelse with leek",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Leek and lighter cream"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 55,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"side",
+			"main"
+		],
+		"tags": [
+			"gratin",
+			"weeknight"
+		],
+		"equipment": [
+			"frying pan",
+			"baking dish 20×30 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "peeled, coarsely grated or in matchsticks",
+				"original": "1 kg potatoes, peeled, coarsely grated or in matchsticks"
+			},
+			{
+				"id": "i2",
+				"key": "leek",
+				"name": "leek",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1 leek, thinly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1 yellow onion, thinly sliced"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "swedish-anchovies",
+				"name": "Swedish-style anchovies (ansjovis)",
+				"role": "fish",
+				"qty": 125,
+				"unit": "g",
+				"prep": "tin, with brine",
+				"original": "125 g Swedish-style anchovies (ansjovis), tin, with brine"
+			},
+			{
+				"id": "i6",
+				"key": "cooking-cream",
+				"name": "cooking cream (15 %)",
+				"role": "dairy",
+				"qty": 4,
+				"unit": "dl",
+				"original": "4 dl cooking cream (15 %)"
+			},
+			{
+				"id": "i7",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "0.25 tsp white pepper"
+			},
+			{
+				"id": "i8",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 30,
+				"unit": "g",
+				"prep": "grated",
+				"optional": true,
+				"original": "30 g parmesan, grated (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften leek and onion in the butter.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Layer potato, leek-onion mixture and anchovies in a dish.",
+				"uses": [
+					"s1",
+					"i1",
+					"i5"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Mix the cooking cream with the anchovy brine and pepper and pour over. Top with parmesan and bake until golden and tender.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 45,
+				"tempC": 200,
+				"critical": "Check the potatoes with a knife; the gratin is done only when they are fully soft."
+			}
+		],
+		"notes": {
+			"techniques": "Leek gives a milder, sweeter allium layer and lighter cream keeps it less rich.",
+			"chemistry": "Lower-fat cream is more likely to split when boiled, but the potato starch helps hold it together.",
+			"spiceProfile": "Milder and greener, with leek sweetness and white pepper.",
+			"variations": "Lighter everyday version using leek and 15 % cream, with an optional parmesan crust instead of breadcrumbs."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "janssons-frestelse",
+		"title": "Jansson's temptation with Mediterranean anchovies",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – With Mediterranean anchovies"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 60,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"swedish",
+			"international"
+		],
+		"course": [
+			"side",
+			"main"
+		],
+		"tags": [
+			"gratin",
+			"adapted"
+		],
+		"equipment": [
+			"frying pan",
+			"baking dish 20×30 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "firm potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "peeled, cut into matchsticks",
+				"original": "1 kg firm potatoes, peeled, cut into matchsticks"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "2 yellow onions, thinly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i4",
+				"key": "anchovies",
+				"name": "salted anchovy fillets in oil",
+				"role": "fish",
+				"qty": 40,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "40 g salted anchovy fillets in oil, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i6",
+				"key": "allspice",
+				"name": "ground allspice",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch ground allspice"
+			},
+			{
+				"id": "i7",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 4,
+				"unit": "dl",
+				"original": "4 dl heavy cream"
+			},
+			{
+				"id": "i8",
+				"key": "breadcrumbs",
+				"name": "breadcrumbs",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp breadcrumbs"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the onions in half the butter. Stir in the anchovies, sugar and allspice until the anchovies melt.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Layer potatoes and the onion mixture in a buttered dish.",
+				"uses": [
+					"s1",
+					"i1"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Pour over the cream, top with breadcrumbs and bake until soft and golden.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 50,
+				"tempC": 200,
+				"critical": "Use far fewer Mediterranean anchovies than Swedish ansjovis; they are much saltier."
+			}
+		],
+		"notes": {
+			"techniques": "Melting the anchovies into the onions spreads their flavour evenly rather than in salty pockets.",
+			"chemistry": "Salt-cured anchovies are rich in glutamates and dissolve in warm butter, seasoning the whole gratin.",
+			"spiceProfile": "A pinch of sugar and allspice imitates the sweet spicing of Swedish sprats.",
+			"variations": "An adaptation for when Swedish spiced sprats are unavailable: saltier and more savoury, so less fish is used."
+		}
+	}
+]

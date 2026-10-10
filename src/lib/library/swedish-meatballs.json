@@ -1,0 +1,703 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "swedish-meatballs",
+		"title": "Köttbullar with gräddsås",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic with cream gravy"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 30,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"meatballs",
+			"classic",
+			"family"
+		],
+		"equipment": [
+			"bowl",
+			"large frying pan",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "breadcrumbs",
+				"name": "dried breadcrumbs",
+				"role": "binder",
+				"qty": 0.5,
+				"unit": "dl",
+				"original": "0.5 dl dried breadcrumbs"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl whole milk"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"prep": "divided",
+				"original": "40 g butter, divided"
+			},
+			{
+				"id": "i5",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g ground beef"
+			},
+			{
+				"id": "i6",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g ground pork"
+			},
+			{
+				"id": "i7",
+				"key": "egg",
+				"name": "egg",
+				"role": "binder",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i8",
+				"key": "allspice",
+				"name": "ground allspice",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "0.25 tsp ground allspice"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp white pepper"
+			},
+			{
+				"id": "i11",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl beef stock"
+			},
+			{
+				"id": "i12",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1.5,
+				"unit": "dl",
+				"original": "1.5 dl heavy cream"
+			},
+			{
+				"id": "i13",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp soy sauce"
+			},
+			{
+				"id": "i14",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp all-purpose flour"
+			},
+			{
+				"id": "i15",
+				"key": "lingonberry-jam",
+				"name": "lingonberry jam",
+				"role": "fruit",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "1 dl lingonberry jam, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the breadcrumbs in the milk.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s2",
+				"text": "Fry the onion in a little butter until soft and golden. Cool slightly.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Mix the meat with the soaked crumbs, onion, egg, allspice, salt and pepper into a smooth mixture. Roll into balls about 3 cm across with wet hands.",
+				"uses": [
+					"s1",
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix",
+					"shape"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Fry the meatballs in batches in butter, shaking the pan, until browned all over and cooked through (71 °C inside).",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 12,
+				"heat": "medium",
+				"critical": "Do not crowd the pan or the meatballs steam instead of browning."
+			},
+			{
+				"id": "s5",
+				"text": "Whisk the flour into the fat left in the pan, add stock, cream and soy and simmer to a smooth gravy. Return the meatballs to warm through and serve with lingonberries.",
+				"uses": [
+					"s4",
+					"i14",
+					"i11",
+					"i12",
+					"i13",
+					"i15"
+				],
+				"technique": [
+					"deglaze",
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			}
+		],
+		"notes": {
+			"techniques": "A breadcrumb-and-milk panade keeps the meatballs juicy. The gravy is built on the browned bits left in the pan.",
+			"chemistry": "Soaked crumbs hold moisture and get in the way of the meat proteins tightening too much. Browning in butter creates Maillard flavour that the gravy picks up from the pan.",
+			"spiceProfile": "Mild: white pepper and a little allspice, with sweet-sour lingonberries alongside.",
+			"variations": "The home classic with a beef-pork mix, fried in butter and served with cream gravy, potatoes, lingonberries and pressed cucumber."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "swedish-meatballs",
+		"title": "Oven-baked Swedish meatballs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Oven-baked weeknight"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 20,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"meatballs",
+			"weeknight",
+			"kid-friendly"
+		],
+		"equipment": [
+			"bowl",
+			"baking tray",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "breadcrumbs",
+				"name": "dried breadcrumbs",
+				"role": "binder",
+				"qty": 0.75,
+				"unit": "dl",
+				"original": "0.75 dl dried breadcrumbs"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl water"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "1 yellow onion, grated"
+			},
+			{
+				"id": "i4",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g ground beef"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "egg",
+				"role": "binder",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp black pepper"
+			},
+			{
+				"id": "i8",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g butter"
+			},
+			{
+				"id": "i9",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp all-purpose flour"
+			},
+			{
+				"id": "i10",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 4,
+				"unit": "dl",
+				"original": "4 dl beef stock"
+			},
+			{
+				"id": "i11",
+				"key": "heavy-cream",
+				"name": "cooking cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl cooking cream"
+			},
+			{
+				"id": "i12",
+				"key": "lingonberry-jam",
+				"name": "lingonberry jam",
+				"role": "fruit",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lingonberry jam"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the breadcrumbs in the water, then mix in the grated onion, beef, egg, salt and pepper.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"soak",
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Roll into balls and bake on a lined tray until browned and 71 °C inside.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"shape",
+					"bake"
+				],
+				"durationMin": 15,
+				"tempC": 225
+			},
+			{
+				"id": "s3",
+				"text": "Melt the butter, whisk in the flour, then the stock, cream and jam. Simmer until thickened.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"roux",
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the meatballs to the sauce and warm through.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Baking all the meatballs at once on a tray is quicker and less messy than frying in batches.",
+			"chemistry": "Grated raw onion adds moisture and sweetness without pre-frying. A roux gravy is needed since there are no pan drippings.",
+			"spiceProfile": "Simple salt and pepper, with a spoon of lingonberry jam in the sauce for a sweet edge.",
+			"variations": "All-beef, oven-baked and with a roux gravy. Less browned than pan-fried, but easier for a crowd."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "swedish-meatballs",
+		"title": "Moose meatballs with juniper cream sauce",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Moose with juniper"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 30,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"meatballs",
+			"game",
+			"autumn"
+		],
+		"equipment": [
+			"mortar and pestle",
+			"bowl",
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "juniper-berries",
+				"name": "juniper berries",
+				"role": "spice",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 juniper berries"
+			},
+			{
+				"id": "i2",
+				"key": "breadcrumbs",
+				"name": "dried breadcrumbs",
+				"role": "binder",
+				"qty": 0.5,
+				"unit": "dl",
+				"original": "0.5 dl dried breadcrumbs"
+			},
+			{
+				"id": "i3",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "for the mince",
+				"original": "1 dl heavy cream, for the mince"
+			},
+			{
+				"id": "i4",
+				"key": "moose-mince",
+				"name": "ground moose",
+				"role": "meat",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g ground moose"
+			},
+			{
+				"id": "i5",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g ground pork"
+			},
+			{
+				"id": "i6",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i7",
+				"key": "egg",
+				"name": "egg",
+				"role": "binder",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp black pepper"
+			},
+			{
+				"id": "i10",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i11",
+				"key": "game-stock",
+				"name": "game or beef stock",
+				"role": "stock",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl game or beef stock"
+			},
+			{
+				"id": "i12",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "for the sauce",
+				"original": "2 dl heavy cream, for the sauce"
+			},
+			{
+				"id": "i13",
+				"key": "blackcurrant-jelly",
+				"name": "blackcurrant jelly",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp blackcurrant jelly"
+			},
+			{
+				"id": "i14",
+				"key": "lingonberry-jam",
+				"name": "lingonberry jam",
+				"role": "fruit",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "1 dl lingonberry jam, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Crush the juniper berries. Soak the breadcrumbs in the cream.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"crush",
+					"soak"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s2",
+				"text": "Fry the onion soft in a little butter, then mix with the moose, pork, egg, half the juniper, salt and pepper. Shape into balls.",
+				"uses": [
+					"s1",
+					"i6",
+					"i4",
+					"i5",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"saute",
+					"mix",
+					"shape"
+				],
+				"durationMin": 6
+			},
+			{
+				"id": "s3",
+				"text": "Fry the meatballs in butter until browned and 71 °C inside.",
+				"uses": [
+					"s2",
+					"i10"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 12,
+				"heat": "medium",
+				"critical": "Moose is very lean; the added pork and cream keep it juicy, so do not skip them."
+			},
+			{
+				"id": "s4",
+				"text": "Add stock, cream, the rest of the juniper and the jelly to the pan and reduce until it coats a spoon. Return the meatballs and serve with lingonberries.",
+				"uses": [
+					"s3",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"deglaze",
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Lean game mince needs extra fat from pork and cream. The sauce is reduced rather than thickened with flour.",
+			"chemistry": "Reducing cream concentrates its fat and milk proteins so it thickens without flour.",
+			"spiceProfile": "Resinous juniper and tart blackcurrant suit the deeper flavour of game.",
+			"variations": "A northern autumn version with moose, juniper and blackcurrant. Gamier and more aromatic than the beef-pork classic."
+		}
+	}
+]

@@ -1,0 +1,561 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "brownies",
+		"title": "Fudgy cocoa brownies",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Fudgy cocoa"
+		},
+		"servings": 16,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 25,
+			"totalMin": 100
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"chocolate",
+			"one-bowl",
+			"fudgy"
+		],
+		"equipment": [
+			"saucepan",
+			"20x20 cm baking tin",
+			"baking paper"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "unsalted butter",
+				"role": "fat",
+				"qty": 170,
+				"unit": "g",
+				"original": "170 g unsalted butter"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g granulated sugar"
+			},
+			{
+				"id": "i3",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "chocolate",
+				"qty": 65,
+				"unit": "g",
+				"original": "65 g unsweetened cocoa powder"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla extract"
+			},
+			{
+				"id": "i6",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "cold",
+				"original": "2 eggs, cold"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 70,
+				"unit": "g",
+				"original": "70 g all-purpose flour"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 175 °C and line the tin with baking paper.",
+				"uses": [],
+				"technique": [
+					"prepare"
+				],
+				"tempC": 175
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter, then stir in sugar, cocoa and salt. Leave to cool for 5 minutes.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"melt"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Beat in the vanilla and eggs one at a time until the batter is thick and glossy.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Fold in the flour until no streaks remain, then spread in the tin.",
+				"uses": [
+					"s3",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Bake until the edges are set and a skewer in the centre comes out with moist crumbs.",
+				"uses": [
+					"s1",
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 175,
+				"critical": "Do not overbake: take them out while the centre is still slightly soft."
+			},
+			{
+				"id": "s6",
+				"text": "Cool completely in the tin before cutting into 16 squares.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "Melted butter and minimal flour give a dense, fudgy crumb rather than a cake-like one.",
+			"chemistry": "Sugar dissolved in warm butter and beaten with eggs forms the thin, shiny crust on top.",
+			"variations": "Uses only cocoa powder, which gives a deep chocolate flavour and chewiness; chocolate-based versions are richer, and creamed versions are cakier."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "brownies",
+		"title": "Dark chocolate brownies with crackly top",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Dark chocolate, crackly top"
+		},
+		"servings": 16,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 25,
+			"totalMin": 135
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"chocolate",
+			"fudgy",
+			"rich"
+		],
+		"equipment": [
+			"heatproof bowl",
+			"saucepan",
+			"electric mixer",
+			"20x20 cm baking tin",
+			"baking paper"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dark-chocolate",
+				"name": "dark chocolate (60–70%)",
+				"role": "chocolate",
+				"qty": 200,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "200 g dark chocolate (60–70%), chopped"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "unsalted butter",
+				"role": "fat",
+				"qty": 175,
+				"unit": "g",
+				"prep": "cubed",
+				"original": "175 g unsalted butter, cubed"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "room temperature",
+				"original": "3 eggs, room temperature"
+			},
+			{
+				"id": "i4",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g caster sugar"
+			},
+			{
+				"id": "i5",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g all-purpose flour"
+			},
+			{
+				"id": "i6",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "chocolate",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g unsweetened cocoa powder"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "flaky salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp flaky salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 180 °C and line the tin.",
+				"uses": [],
+				"technique": [
+					"prepare"
+				],
+				"tempC": 180
+			},
+			{
+				"id": "s2",
+				"text": "Melt the chocolate and butter together over a pan of barely simmering water. Cool slightly.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"melt"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Whisk the eggs and sugar with an electric mixer until pale, thick and doubled in volume.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				],
+				"durationMin": 5,
+				"critical": "Whisking the eggs well is what creates the shiny, crackly top."
+			},
+			{
+				"id": "s4",
+				"text": "Fold the chocolate mixture into the eggs, then sift in flour, cocoa and salt and fold until just combined.",
+				"uses": [
+					"s2",
+					"s3",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Pour into the tin and bake until the top is papery and the centre barely wobbles.",
+				"uses": [
+					"s1",
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 180
+			},
+			{
+				"id": "s6",
+				"text": "Cool in the tin, then chill for an hour for clean slices.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 90
+			}
+		],
+		"notes": {
+			"techniques": "Whipping the eggs and sugar incorporates air that rises and dries into a thin meringue-like crackle on top.",
+			"chemistry": "Cocoa butter in the chocolate sets as it cools, which is why chilled brownies are denser and slice cleaner.",
+			"variations": "Real chocolate makes this richer and more truffle-like than the cocoa-only version; it is still fudgy rather than cakey."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "brownies",
+		"title": "Cakey brownies",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cakey"
+		},
+		"servings": 16,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"chocolate",
+			"cakey",
+			"kid-friendly"
+		],
+		"equipment": [
+			"electric mixer",
+			"bowls",
+			"20x20 cm baking tin",
+			"baking paper"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "unsalted butter",
+				"role": "fat",
+				"qty": 115,
+				"unit": "g",
+				"prep": "softened",
+				"original": "115 g unsalted butter, softened"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g granulated sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "room temperature",
+				"original": "2 eggs, room temperature"
+			},
+			{
+				"id": "i4",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla extract"
+			},
+			{
+				"id": "i5",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 130,
+				"unit": "g",
+				"original": "130 g all-purpose flour"
+			},
+			{
+				"id": "i6",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "chocolate",
+				"qty": 45,
+				"unit": "g",
+				"original": "45 g unsweetened cocoa powder"
+			},
+			{
+				"id": "i7",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 60,
+				"unit": "ml",
+				"original": "60 ml whole milk"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 175 °C and line the tin.",
+				"uses": [],
+				"technique": [
+					"prepare"
+				],
+				"tempC": 175
+			},
+			{
+				"id": "s2",
+				"text": "Cream the butter and sugar until light and fluffy, then beat in the eggs and vanilla.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"cream"
+				],
+				"durationMin": 4
+			},
+			{
+				"id": "s3",
+				"text": "Whisk flour, cocoa, baking powder and salt together.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Fold the dry mix into the butter mixture in two parts, alternating with the milk.",
+				"uses": [
+					"s2",
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Spread in the tin and bake until a skewer comes out clean.",
+				"uses": [
+					"s1",
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 30,
+				"tempC": 175
+			},
+			{
+				"id": "s6",
+				"text": "Cool in the tin before cutting.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 30
+			}
+		],
+		"notes": {
+			"techniques": "Creaming beats air into the butter, and baking powder adds more lift, giving a soft, cake-like crumb.",
+			"chemistry": "More flour relative to fat develops more structure, so the brownie springs back instead of staying dense.",
+			"variations": "Lighter and drier than fudgy brownies; good for frosting or for cutting into neat squares for a crowd."
+		}
+	}
+]

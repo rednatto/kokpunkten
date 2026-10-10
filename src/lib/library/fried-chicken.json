@@ -1,0 +1,653 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fried-chicken",
+		"title": "Southern buttermilk fried chicken",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Southern buttermilk"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 530
+		},
+		"cuisine": [
+			"american",
+			"southern"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"deep-fried"
+		],
+		"equipment": [
+			"bowl",
+			"heavy pot or Dutch oven",
+			"thermometer",
+			"wire rack"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-pieces",
+				"name": "chicken pieces, bone-in",
+				"role": "poultry",
+				"qty": 1.5,
+				"unit": "kg",
+				"original": "1.5 kg bone-in chicken pieces (thighs, drumsticks, breasts halved)"
+			},
+			{
+				"id": "i2",
+				"key": "buttermilk",
+				"name": "buttermilk",
+				"role": "dairy",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl buttermilk"
+			},
+			{
+				"id": "i3",
+				"key": "hot-sauce",
+				"name": "hot sauce",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp hot sauce"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp salt (divided)"
+			},
+			{
+				"id": "i5",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g flour"
+			},
+			{
+				"id": "i6",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "starch",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp cornstarch"
+			},
+			{
+				"id": "i7",
+				"key": "sweet-paprika",
+				"name": "paprika",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp paprika"
+			},
+			{
+				"id": "i8",
+				"key": "garlic-powder",
+				"name": "garlic powder",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp garlic powder"
+			},
+			{
+				"id": "i9",
+				"key": "cayenne-pepper",
+				"name": "cayenne",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp cayenne"
+			},
+			{
+				"id": "i10",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black pepper"
+			},
+			{
+				"id": "i11",
+				"key": "neutral-oil",
+				"name": "peanut or vegetable oil",
+				"role": "fat",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l oil for frying"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the chicken in buttermilk, hot sauce and half the salt in the fridge.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 480
+			},
+			{
+				"id": "s2",
+				"text": "Mix flour, cornstarch, spices and the rest of the salt. Drizzle in a few spoons of buttermilk and rub to form craggy bits.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Lift the chicken from the buttermilk, dredge firmly in the flour and rest on a rack.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"dredge",
+					"rest"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s4",
+				"text": "Fry in batches at 160–165 °C, turning, until deep golden and 74 °C at the bone. Drain on a rack.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 15,
+				"heat": "medium",
+				"critical": "Keep the oil at about 160 °C; hotter burns the crust before bone-in pieces are cooked."
+			}
+		],
+		"notes": {
+			"techniques": "Resting the dredged chicken lets the coating hydrate and stick. A rack instead of paper keeps the crust crisp.",
+			"chemistry": "The mild acidity of buttermilk tenderises the surface and helps the flour cling. Cornstarch limits gluten and gives a crisper crust.",
+			"spiceProfile": "Paprika, cayenne, black pepper and garlic.",
+			"variations": "A thick, craggy crust on bone-in pieces fried once. Korean fried chicken is double-fried and glazed, and Japanese karaage uses marinated boneless thighs in a light starch coating."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fried-chicken",
+		"title": "Korean fried chicken with yangnyeom glaze",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Korean double-fried"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 35,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"korean"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"chicken",
+			"double-fried",
+			"spicy"
+		],
+		"equipment": [
+			"deep pot",
+			"thermometer",
+			"wok or saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-wings",
+				"name": "chicken wings or boneless thighs",
+				"role": "poultry",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg chicken wings"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp pepper"
+			},
+			{
+				"id": "i4",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 10,
+				"unit": "g",
+				"prep": "grated",
+				"original": "10 g grated ginger"
+			},
+			{
+				"id": "i5",
+				"key": "potato-starch",
+				"name": "potato starch or cornstarch",
+				"role": "starch",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g potato starch"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g flour"
+			},
+			{
+				"id": "i7",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i8",
+				"key": "water",
+				"name": "ice water",
+				"role": "liquid",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl ice water"
+			},
+			{
+				"id": "i9",
+				"key": "neutral-oil",
+				"name": "neutral oil for frying",
+				"role": "fat",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l oil"
+			},
+			{
+				"id": "i10",
+				"key": "gochujang",
+				"name": "gochujang",
+				"role": "chili",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp gochujang"
+			},
+			{
+				"id": "i11",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i12",
+				"key": "rice-syrup",
+				"name": "rice syrup or honey",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp rice syrup"
+			},
+			{
+				"id": "i13",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "3 cloves garlic, grated"
+			},
+			{
+				"id": "i14",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp rice vinegar"
+			},
+			{
+				"id": "i15",
+				"key": "sesame-seeds",
+				"name": "sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame seeds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the chicken with salt, pepper and ginger.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"season"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Whisk starch, flour, baking powder and ice water into a thin batter and coat the chicken.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"coat"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fry at 170 °C until pale golden and cooked through to 74 °C, then rest on a rack.",
+				"uses": [
+					"s2",
+					"i9"
+				],
+				"technique": [
+					"deep-fry",
+					"rest"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Fry again at 185 °C until very crisp and deep golden.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 3,
+				"heat": "high",
+				"critical": "Do the second fry; it is what makes the crust shatter-crisp."
+			},
+			{
+				"id": "s5",
+				"text": "Simmer gochujang, soy, syrup, garlic and vinegar until glossy.",
+				"uses": [
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 3,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s6",
+				"text": "Toss the hot chicken in the glaze and sprinkle with sesame.",
+				"uses": [
+					"s4",
+					"s5",
+					"i15"
+				],
+				"technique": [
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A first fry cooks the chicken through and a hotter second fry drives off moisture so the thin crust becomes glassy and crisp.",
+			"chemistry": "Potato starch contains no gluten-forming proteins and forms a thin, brittle shell. Resting between fries lets moisture move to the surface so the second fry can drive it off.",
+			"spiceProfile": "Sweet, spicy and garlicky from gochujang and rice syrup.",
+			"variations": "A thin, glassy batter that is double-fried and glazed. Southern fried chicken has a thick, craggy flour crust."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fried-chicken",
+		"title": "Karaage, Japanese fried chicken",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Japanese karaage"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"chicken",
+			"boneless",
+			"izakaya"
+		],
+		"equipment": [
+			"bowl",
+			"deep pan",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs, skin on",
+				"role": "poultry",
+				"qty": 700,
+				"unit": "g",
+				"prep": "in 4 cm pieces",
+				"original": "700 g boneless skin-on chicken thighs, in 4 cm pieces"
+			},
+			{
+				"id": "i2",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp soy sauce"
+			},
+			{
+				"id": "i3",
+				"key": "sake",
+				"name": "sake",
+				"role": "wine",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp sake"
+			},
+			{
+				"id": "i4",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 15,
+				"unit": "g",
+				"prep": "grated",
+				"original": "15 g ginger, grated"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "2 cloves garlic, grated"
+			},
+			{
+				"id": "i6",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sesame oil"
+			},
+			{
+				"id": "i7",
+				"key": "potato-starch",
+				"name": "potato starch (katakuriko)",
+				"role": "starch",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g potato starch"
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "neutral oil for frying",
+				"role": "fat",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l oil"
+			},
+			{
+				"id": "i9",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			},
+			{
+				"id": "i10",
+				"key": "kewpie-mayonnaise",
+				"name": "Japanese mayonnaise",
+				"role": "sauce",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp Japanese mayonnaise"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Marinate the chicken in soy, sake, ginger, garlic and sesame oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Drain and toss in potato starch until coated with a dry, patchy layer.",
+				"uses": [
+					"s1",
+					"i7"
+				],
+				"technique": [
+					"dredge"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fry at 160 °C for 3 minutes, rest 3 minutes, then fry at 180 °C until crisp and 74 °C inside.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"deep-fry",
+					"rest"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Serve with lemon and mayonnaise.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Bite-size boneless pieces cook fast. A short double fry keeps them juicy inside and crisp outside.",
+			"chemistry": "Potato starch gelatinises and dries into a light, crackly coating. Soy sugars and amino acids help it brown quickly.",
+			"spiceProfile": "Ginger, garlic and soy, with lemon to cut the richness.",
+			"variations": "Boneless and marinated, with only a starch coating and no batter or buttermilk."
+		}
+	}
+]

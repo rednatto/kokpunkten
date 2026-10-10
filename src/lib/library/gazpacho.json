@@ -1,0 +1,537 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "gazpacho",
+		"title": "Gazpacho andaluz",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Andalusian smooth"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 0,
+			"totalMin": 140
+		},
+		"cuisine": [
+			"spanish"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"cold",
+			"vegan",
+			"summer",
+			"no-cook"
+		],
+		"equipment": [
+			"blender",
+			"sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tomato",
+				"name": "very ripe tomatoes",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "roughly chopped",
+				"original": "1 kg very ripe tomatoes, roughly chopped"
+			},
+			{
+				"id": "i2",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "peeled and chopped",
+				"original": "½ cucumber, peeled and chopped"
+			},
+			{
+				"id": "i3",
+				"key": "green-bell-pepper",
+				"name": "green bell pepper (or Italian frying pepper)",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 green bell pepper (or Italian frying pepper), chopped"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i5",
+				"key": "white-bread",
+				"name": "day-old white bread",
+				"role": "bread",
+				"qty": 50,
+				"unit": "g",
+				"prep": "crusts removed, soaked in water",
+				"original": "50 g day-old white bread, crusts removed, soaked in water"
+			},
+			{
+				"id": "i6",
+				"key": "sherry-vinegar",
+				"name": "sherry vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp sherry vinegar"
+			},
+			{
+				"id": "i7",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 100,
+				"unit": "ml",
+				"original": "100 ml extra virgin olive oil"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 100,
+				"unit": "ml",
+				"optional": true,
+				"original": "100 ml cold water (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Blend tomatoes, cucumber, pepper, garlic, squeezed bread, vinegar and salt until very smooth.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i8"
+				],
+				"technique": [
+					"blend"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s2",
+				"text": "With the blender running, drizzle in the olive oil to emulsify. Add water if it is too thick.",
+				"uses": [
+					"s1",
+					"i7",
+					"i9"
+				],
+				"technique": [
+					"emulsify"
+				],
+				"critical": "Add the oil slowly while blending so the soup turns creamy and orange-pink."
+			},
+			{
+				"id": "s3",
+				"text": "Pass through a sieve, adjust salt and vinegar and chill well.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"strain",
+					"chill"
+				],
+				"durationMin": 120
+			}
+		],
+		"notes": {
+			"techniques": "Blending the oil in slowly creates a smooth, creamy emulsion.",
+			"chemistry": "Bread starch and olive oil form an emulsion that gives body without cream.",
+			"spiceProfile": "Garlic and sherry vinegar against sweet tomato.",
+			"variations": "The smooth, drinkable Andalusian classic; rustic versions are chunkier, and modern ones swap in fruit like watermelon."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "gazpacho",
+		"title": "Rustic chunky gazpacho",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Rustic chunky"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 0,
+			"totalMin": 145
+		},
+		"cuisine": [
+			"spanish"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"cold",
+			"vegan",
+			"summer",
+			"no-cook"
+		],
+		"equipment": [
+			"blender",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g ripe tomatoes"
+			},
+			{
+				"id": "i2",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 cucumber"
+			},
+			{
+				"id": "i3",
+				"key": "green-bell-pepper",
+				"name": "green bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 green bell pepper"
+			},
+			{
+				"id": "i4",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"original": "½ red onion"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i6",
+				"key": "sherry-vinegar",
+				"name": "sherry vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp sherry vinegar"
+			},
+			{
+				"id": "i7",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 80,
+				"unit": "ml",
+				"original": "80 ml extra virgin olive oil"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"optional": true,
+				"original": "¼ tsp ground cumin (optional)"
+			},
+			{
+				"id": "i10",
+				"key": "croutons",
+				"name": "bread croutons",
+				"role": "garnish",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g bread croutons"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Finely dice a quarter of the tomato, cucumber, pepper and onion and set aside for the garnish.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"dice"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Roughly chop the rest of the vegetables and blend briefly with garlic, vinegar, oil, salt and cumin, leaving some texture.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"blend"
+				],
+				"durationMin": 1,
+				"critical": "Pulse rather than purée so it stays textured."
+			},
+			{
+				"id": "s3",
+				"text": "Chill well, then serve topped with the diced vegetables and croutons.",
+				"uses": [
+					"s2",
+					"i10"
+				],
+				"technique": [
+					"chill",
+					"serve"
+				],
+				"durationMin": 120
+			}
+		],
+		"notes": {
+			"techniques": "Only part of the vegetables is blended and the rest is served diced on top.",
+			"spiceProfile": "Garlic, sherry vinegar and an optional pinch of cumin.",
+			"variations": "No bread blended in and not sieved, so it is lighter, fresher and more like a liquid salad."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "gazpacho",
+		"title": "Watermelon gazpacho",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Watermelon"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 0,
+			"totalMin": 80
+		},
+		"cuisine": [
+			"spanish",
+			"modern"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"cold",
+			"vegan",
+			"summer",
+			"fruit"
+		],
+		"equipment": [
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "watermelon",
+				"name": "seedless watermelon flesh",
+				"role": "fruit",
+				"qty": 700,
+				"unit": "g",
+				"prep": "cubed",
+				"original": "700 g seedless watermelon flesh, cubed"
+			},
+			{
+				"id": "i2",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "400 g ripe tomatoes, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "½ cucumber, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 0.5,
+				"unit": "piece",
+				"original": "½ red bell pepper"
+			},
+			{
+				"id": "i5",
+				"key": "shallot",
+				"name": "shallot",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 shallot"
+			},
+			{
+				"id": "i6",
+				"key": "chili",
+				"name": "red chili",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "seeded",
+				"original": "½ red chili, seeded"
+			},
+			{
+				"id": "i7",
+				"key": "sherry-vinegar",
+				"name": "sherry vinegar",
+				"role": "acid",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"original": "1½ tbsp sherry vinegar"
+			},
+			{
+				"id": "i8",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 60,
+				"unit": "ml",
+				"original": "60 ml extra virgin olive oil"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.75,
+				"unit": "tsp",
+				"original": "¾ tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "mint",
+				"name": "mint leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "shredded",
+				"original": "2 tbsp mint leaves, shredded"
+			},
+			{
+				"id": "i11",
+				"key": "feta",
+				"name": "feta",
+				"role": "cheese",
+				"qty": 60,
+				"unit": "g",
+				"prep": "crumbled",
+				"optional": true,
+				"original": "60 g feta, crumbled (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Blend watermelon, tomatoes, cucumber, pepper, shallot and chili until smooth.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"blend"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s2",
+				"text": "Blend in vinegar, salt and olive oil and taste for balance.",
+				"uses": [
+					"s1",
+					"i7",
+					"i9",
+					"i8"
+				],
+				"technique": [
+					"emulsify"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Chill, then serve topped with mint and crumbled feta.",
+				"uses": [
+					"s2",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"chill",
+					"serve"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "Watermelon replaces part of the tomato, so taste and adjust acid and salt to balance its sweetness.",
+			"spiceProfile": "Sweet watermelon, a little chili heat and fresh mint.",
+			"variations": "A modern, sweeter and lighter take; no bread and no garlic."
+		}
+	}
+]

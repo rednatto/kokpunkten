@@ -1,0 +1,344 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "swedish-pancakes",
+		"title": "Pannkakor, thin Swedish pancakes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Thin pan pancakes"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 30,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main",
+			"dessert",
+			"breakfast"
+		],
+		"tags": [
+			"pancakes",
+			"classic",
+			"vegetarian"
+		],
+		"equipment": [
+			"mixing bowl",
+			"whisk",
+			"20–24 cm frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 180,
+				"unit": "g",
+				"original": "3 dl (180 g) all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 6,
+				"unit": "dl",
+				"original": "6 dl whole milk"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"prep": "melted, plus extra for frying",
+				"original": "40 g butter, melted, plus extra for frying"
+			},
+			{
+				"id": "i6",
+				"key": "lingonberry-jam",
+				"name": "lingonberry or strawberry jam",
+				"role": "fruit",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "2 dl lingonberry or strawberry jam, to serve"
+			},
+			{
+				"id": "i7",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "whipped, to serve",
+				"optional": true,
+				"original": "2 dl heavy cream, whipped, to serve (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the flour and salt with half the milk to a smooth, thick batter.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				],
+				"critical": "Adding the milk in two parts prevents lumps."
+			},
+			{
+				"id": "s2",
+				"text": "Whisk in the rest of the milk, then the eggs and melted butter.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Let the batter rest so the flour hydrates.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s4",
+				"text": "Heat a pan with a little butter. Pour in a thin layer of batter, tilt to cover, and fry until the edge lifts, then flip and fry the other side briefly.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 25,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Serve rolled or folded with jam and whipped cream.",
+				"uses": [
+					"s4",
+					"i6",
+					"i7"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The batter is thin, like crêpe batter, and is spread by tilting the pan. Butter in the batter means the pan needs only a little extra fat.",
+			"chemistry": "Resting lets the starch absorb liquid and lets gluten relax, so the pancakes are tender and less likely to tear.",
+			"variations": "These are the everyday stovetop pancakes. The oven version (ugnspannkaka) uses the same kind of batter baked thick in a tin, often with bacon."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "swedish-pancakes",
+		"title": "Ugnspannkaka with bacon, oven pancake",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Oven pancake with bacon"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 30,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pancakes",
+			"oven",
+			"bacon"
+		],
+		"equipment": [
+			"frying pan",
+			"mixing bowl",
+			"whisk",
+			"roasting tin about 25 × 35 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bacon",
+				"name": "smoked bacon",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "diced",
+				"original": "150 g smoked bacon, diced"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 150,
+				"unit": "g",
+				"original": "2.5 dl (150 g) all-purpose flour"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 6,
+				"unit": "dl",
+				"original": "6 dl whole milk"
+			},
+			{
+				"id": "i6",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i7",
+				"key": "lingonberry-jam",
+				"name": "lingonberry jam",
+				"role": "fruit",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "2 dl lingonberry jam, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 225 °C. Put the butter in the roasting tin and heat it in the oven until melted.",
+				"uses": [
+					"i2"
+				],
+				"technique": [],
+				"durationMin": 5,
+				"tempC": 225
+			},
+			{
+				"id": "s2",
+				"text": "Fry the bacon until golden and drain off most of the fat.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Whisk the flour and salt with half the milk until smooth, then whisk in the rest of the milk and the eggs.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Pour the batter into the hot buttered tin and scatter the bacon over.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3"
+				],
+				"technique": []
+			},
+			{
+				"id": "s5",
+				"text": "Bake until puffed, set and golden brown.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 225,
+				"critical": "Do not open the oven in the first 15 minutes or it will not set evenly."
+			},
+			{
+				"id": "s6",
+				"text": "Cut into squares and serve warm with lingonberry jam.",
+				"uses": [
+					"s5",
+					"i7"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Pouring the batter into a preheated buttered tin gives crisp edges, like a large Yorkshire pudding with a custardy middle.",
+			"chemistry": "Steam from the milk puffs the batter while egg proteins set around it; it sinks a little as it cools.",
+			"variations": "Baked as one sheet rather than fried one by one, so it is hands-off. Bacon makes it a savoury main, though plain or apple versions also exist."
+		}
+	}
+]

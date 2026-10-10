@@ -1,0 +1,733 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "dumplings",
+		"title": "Boiled pork and cabbage jiaozi",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Boiled jiaozi"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 60,
+			"cookMin": 15,
+			"totalMin": 105
+		},
+		"cuisine": [
+			"chinese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"dumplings",
+			"pork",
+			"homemade dough"
+		],
+		"equipment": [
+			"mixing bowls",
+			"rolling pin",
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 300,
+				"unit": "g",
+				"group": "dough",
+				"original": "300 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.5,
+				"unit": "dl",
+				"prep": "plus more for boiling",
+				"group": "dough",
+				"original": "1.5 dl water, plus more for boiling"
+			},
+			{
+				"id": "i3",
+				"key": "napa-cabbage",
+				"name": "napa cabbage",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "finely chopped",
+				"group": "filling",
+				"original": "300 g napa cabbage, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "filling",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "ground-pork",
+				"name": "ground pork (not too lean)",
+				"role": "meat",
+				"qty": 400,
+				"unit": "g",
+				"group": "filling",
+				"original": "400 g ground pork (not too lean)"
+			},
+			{
+				"id": "i6",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "finely grated",
+				"group": "filling",
+				"original": "1 tbsp ginger, finely grated"
+			},
+			{
+				"id": "i7",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "allium",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"group": "filling",
+				"original": "3 scallions, finely chopped"
+			},
+			{
+				"id": "i8",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "filling",
+				"original": "2 tbsp light soy sauce"
+			},
+			{
+				"id": "i9",
+				"key": "shaoxing-wine",
+				"name": "Shaoxing wine",
+				"role": "wine",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "filling",
+				"original": "1 tbsp Shaoxing wine"
+			},
+			{
+				"id": "i10",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "filling",
+				"original": "1 tbsp toasted sesame oil"
+			},
+			{
+				"id": "i11",
+				"key": "white-pepper",
+				"name": "ground white pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"group": "filling",
+				"original": "0.5 tsp ground white pepper"
+			},
+			{
+				"id": "i12",
+				"key": "chinkiang-vinegar",
+				"name": "Chinkiang black vinegar",
+				"role": "acid",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "dipping sauce",
+				"original": "3 tbsp Chinkiang black vinegar"
+			},
+			{
+				"id": "i13",
+				"key": "chili-oil",
+				"name": "chili oil",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"optional": true,
+				"group": "dipping sauce",
+				"original": "1 tbsp chili oil (optional)"
+			},
+			{
+				"id": "i14",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"prep": "grated",
+				"group": "dipping sauce",
+				"original": "1 clove garlic, grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the flour with the water to a firm dough and knead until smooth. Cover and rest.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"knead",
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Toss the cabbage with the salt, leave for 15 minutes, then squeeze out as much water as possible.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"salt"
+				],
+				"durationMin": 15,
+				"critical": "Squeeze the cabbage hard; wet filling makes soggy dumplings that burst."
+			},
+			{
+				"id": "s3",
+				"text": "Stir the pork with ginger, scallions, soy, Shaoxing wine, sesame oil and pepper in one direction until sticky, then mix in the cabbage.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Roll the dough into a log, cut into about 40 pieces and roll each into an 8 cm round with thinner edges.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"roll"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Put a teaspoon of filling on each wrapper, fold in half and pleat or pinch tightly closed.",
+				"uses": [
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Boil the dumplings in batches. When the water boils again, add a cup of cold water; repeat twice. They are done when they float and puff, and the filling reaches 71 °C.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s7",
+				"text": "Serve with vinegar mixed with chili oil and garlic.",
+				"uses": [
+					"s6",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Homemade dough gives thick, chewy wrappers that hold up to boiling. Adding cold water during boiling cooks the filling through without bursting the wrappers.",
+			"chemistry": "Stirring the pork with salt in one direction dissolves myosin proteins, which bind the filling into a springy, juicy mass. Gluten in the rested dough makes wrappers elastic.",
+			"spiceProfile": "Savoury and clean: ginger, scallion, white pepper and sesame, with a sharp vinegar dip.",
+			"variations": "The northern Chinese family dumpling, boiled with homemade wrappers. Potstickers are pan-fried for a crisp base, and wontons are thin-skinned and served in soup."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "dumplings",
+		"title": "Pork and chive potstickers (guotie)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Pan-fried potstickers"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 15,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"chinese"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"dumplings",
+			"pork",
+			"pan-fried"
+		],
+		"equipment": [
+			"mixing bowl",
+			"large non-stick frying pan with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g ground pork"
+			},
+			{
+				"id": "i2",
+				"key": "garlic-chives",
+				"name": "garlic chives",
+				"role": "herb",
+				"qty": 100,
+				"unit": "g",
+				"prep": "finely chopped",
+				"substitutes": [
+					"scallions"
+				],
+				"original": "100 g garlic chives, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i4",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp soy sauce"
+			},
+			{
+				"id": "i5",
+				"key": "shaoxing-wine",
+				"name": "Shaoxing wine",
+				"role": "wine",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Shaoxing wine"
+			},
+			{
+				"id": "i6",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame oil"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp sugar"
+			},
+			{
+				"id": "i8",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "binder",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cornstarch"
+			},
+			{
+				"id": "i9",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "3 tbsp for the filling, the rest for steaming",
+				"original": "2 dl water, 3 tbsp for the filling, the rest for steaming"
+			},
+			{
+				"id": "i10",
+				"key": "dumpling-wrappers",
+				"name": "round dumpling wrappers",
+				"role": "flour",
+				"qty": 40,
+				"unit": "piece",
+				"original": "40 round dumpling wrappers"
+			},
+			{
+				"id": "i11",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp vegetable oil"
+			},
+			{
+				"id": "i12",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "dipping sauce",
+				"original": "2 tbsp rice vinegar"
+			},
+			{
+				"id": "i13",
+				"key": "chili-oil",
+				"name": "chili oil",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "dipping sauce",
+				"original": "1 tbsp chili oil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the pork with chives, ginger, soy, wine, sesame oil, sugar, cornstarch and 3 tbsp water, stirring until sticky.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Fill each wrapper with a heaped teaspoon, fold and pleat into a crescent with a flat base.",
+				"uses": [
+					"s1",
+					"i10"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fry the dumplings base down in the oil until golden underneath.",
+				"uses": [
+					"s2",
+					"i11"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Pour in about 1 dl water, cover at once and steam until the water has evaporated and the filling is cooked to 71 °C.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"steam"
+				],
+				"durationMin": 7,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Uncover and fry until the bases are crisp again. Serve with vinegar and chili oil.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium",
+				"critical": "Let the water evaporate fully before serving, or the bottoms stay soft."
+			}
+		],
+		"notes": {
+			"techniques": "Fry, steam, then fry again in the same pan: the base is crisp while the top is soft and tender.",
+			"chemistry": "The browned base comes from the Maillard reaction on the wrapper after the water evaporates; steam cooks the filling quickly.",
+			"spiceProfile": "Garlicky chives with ginger and soy, served with a tangy vinegar and chili dip.",
+			"variations": "Store-bought wrappers and pan-frying make these quicker and crisper than boiled jiaozi. Japanese gyoza use the same method with thinner wrappers and more garlic."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "dumplings",
+		"title": "Pork and shrimp wontons in broth",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Wonton soup"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 15,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"chinese",
+			"cantonese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"dumplings",
+			"pork",
+			"soup"
+		],
+		"equipment": [
+			"mixing bowl",
+			"large pot",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g ground pork"
+			},
+			{
+				"id": "i2",
+				"key": "shrimp",
+				"name": "raw shrimp, peeled",
+				"role": "seafood",
+				"qty": 150,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "150 g raw shrimp, peeled, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "grated",
+				"original": "1 tsp ginger, grated"
+			},
+			{
+				"id": "i4",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "3 scallions, finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp light soy sauce"
+			},
+			{
+				"id": "i6",
+				"key": "shaoxing-wine",
+				"name": "Shaoxing wine",
+				"role": "wine",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Shaoxing wine"
+			},
+			{
+				"id": "i7",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp toasted sesame oil"
+			},
+			{
+				"id": "i8",
+				"key": "white-pepper",
+				"name": "ground white pepper",
+				"role": "seasoning",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "0.25 tsp ground white pepper"
+			},
+			{
+				"id": "i9",
+				"key": "wonton-wrappers",
+				"name": "square wonton wrappers",
+				"role": "flour",
+				"qty": 40,
+				"unit": "piece",
+				"original": "40 square wonton wrappers"
+			},
+			{
+				"id": "i10",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l chicken stock"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i12",
+				"key": "bok-choy",
+				"name": "baby bok choy",
+				"role": "leafy-green",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "4 baby bok choy, halved"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the pork, shrimp, ginger, half the scallions, soy, wine, sesame oil and pepper until sticky.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Put a teaspoon of filling in each wrapper, fold into a triangle and bring two corners together, sealing with water.",
+				"uses": [
+					"s1",
+					"i9"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Heat the stock, season with salt and cook the bok choy in it until just tender.",
+				"uses": [
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Boil the wontons in a separate pot of water until they float and the filling reaches 71 °C.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 4,
+				"heat": "high",
+				"critical": "Cook wontons in plain water, not the soup, so loose starch does not cloud the broth."
+			},
+			{
+				"id": "s5",
+				"text": "Divide the wontons and bok choy between bowls, ladle over the hot stock and top with the remaining scallions.",
+				"uses": [
+					"s3",
+					"s4"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Thin, square wrappers folded loosely so the skins trail like ribbons in the broth.",
+			"chemistry": "Shrimp adds a bouncy texture because its proteins set firm; myosin from the stirred pork binds the filling.",
+			"spiceProfile": "Delicate: ginger, white pepper and sesame in a light, clear broth.",
+			"variations": "Thin-skinned and served in soup rather than on a plate; shrimp makes the filling lighter than in jiaozi or potstickers."
+		}
+	}
+]

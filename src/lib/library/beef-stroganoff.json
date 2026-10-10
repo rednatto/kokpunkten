@@ -1,0 +1,633 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-stroganoff",
+		"title": "Beef stroganoff, Russian classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Russian classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"russian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"quick",
+			"sour-cream"
+		],
+		"equipment": [
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-tenderloin",
+				"name": "beef tenderloin or sirloin",
+				"role": "meat",
+				"qty": 600,
+				"unit": "g",
+				"prep": "cut in finger-thick strips",
+				"original": "600 g beef tenderloin or sirloin, cut in finger-thick strips"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1 yellow onion, thinly sliced"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp all-purpose flour"
+			},
+			{
+				"id": "i7",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 200,
+				"unit": "ml",
+				"original": "200 ml beef stock"
+			},
+			{
+				"id": "i8",
+				"key": "dijon-mustard",
+				"name": "mustard",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp mustard"
+			},
+			{
+				"id": "i9",
+				"key": "smetana",
+				"name": "smetana or full-fat sour cream",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"original": "200 ml smetana or full-fat sour cream"
+			},
+			{
+				"id": "i10",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp dill, chopped"
+			},
+			{
+				"id": "i11",
+				"key": "potato",
+				"name": "fried potatoes or mashed potatoes",
+				"role": "starch",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g fried potatoes or mashed potatoes, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the beef and sear it in half the butter in very hot batches, just to brown. Lift out.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 4,
+				"heat": "high",
+				"critical": "Sear in small batches and only briefly; tender cuts turn tough if stewed."
+			},
+			{
+				"id": "s2",
+				"text": "Soften the onion in the same pan, stir in the flour, then add stock and mustard and simmer.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute",
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Lower the heat, stir in the smetana and return the beef to warm through without boiling.",
+				"uses": [
+					"s2",
+					"i9"
+				],
+				"technique": [
+					"finish"
+				],
+				"durationMin": 2,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Sprinkle with dill and serve with potatoes.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The beef is a quick-cooking cut, seared hot and only reheated in the sauce.",
+			"chemistry": "Sour cream curdles if boiled because its proteins tighten in heat and acid; keep it below a simmer.",
+			"spiceProfile": "Mustard and dill with tangy sour cream.",
+			"variations": "The older Russian style has no mushrooms and is served with potatoes; American and Swedish versions differ a lot."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-stroganoff",
+		"title": "Beef stroganoff with mushrooms and egg noodles",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Mushroom and noodles"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 25,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"american",
+			"russian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"mushrooms",
+			"weeknight"
+		],
+		"equipment": [
+			"large frying pan",
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-sirloin",
+				"name": "beef sirloin",
+				"role": "meat",
+				"qty": 600,
+				"unit": "g",
+				"prep": "cut in thin strips",
+				"original": "600 g beef sirloin, cut in thin strips"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i6",
+				"key": "button-mushroom",
+				"name": "cremini mushrooms",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "300 g cremini mushrooms, sliced"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 yellow onion, sliced"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "2 cloves garlic, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"original": "1½ tbsp all-purpose flour"
+			},
+			{
+				"id": "i10",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 300,
+				"unit": "ml",
+				"original": "300 ml beef stock"
+			},
+			{
+				"id": "i11",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Worcestershire sauce"
+			},
+			{
+				"id": "i12",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"original": "200 ml sour cream"
+			},
+			{
+				"id": "i13",
+				"key": "egg-noodles",
+				"name": "wide egg noodles",
+				"role": "noodles",
+				"qty": 350,
+				"unit": "g",
+				"original": "350 g wide egg noodles"
+			},
+			{
+				"id": "i14",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the beef and sear it in the oil in batches until browned. Lift out.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 5,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Add the butter and mushrooms and cook until browned, then add onion and garlic and soften.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Stir in the flour, then the stock and Worcestershire, and simmer until thickened.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Meanwhile cook the noodles in salted water.",
+				"uses": [
+					"i13"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 8
+			},
+			{
+				"id": "s5",
+				"text": "Take the sauce off the heat, stir in the sour cream and the beef with its juices.",
+				"uses": [
+					"s3",
+					"i12"
+				],
+				"technique": [
+					"finish"
+				],
+				"critical": "Add the sour cream off the heat so it does not split."
+			},
+			{
+				"id": "s6",
+				"text": "Serve over the noodles with parsley.",
+				"uses": [
+					"s4",
+					"s5",
+					"i14"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Browning the mushrooms hard before the onions keeps them meaty instead of watery.",
+			"chemistry": "Flour in the sauce helps stabilise the sour cream against curdling.",
+			"spiceProfile": "Savoury Worcestershire and mushrooms, finished with tangy sour cream.",
+			"variations": "The common American version: mushrooms, Worcestershire and egg noodles."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-stroganoff",
+		"title": "Korv stroganoff (Swedish sausage stroganoff)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Swedish korv stroganoff"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"sausage",
+			"weeknight",
+			"kid-friendly"
+		],
+		"equipment": [
+			"large frying pan",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "falukorv",
+				"name": "falukorv (Swedish bologna-style sausage)",
+				"role": "meat",
+				"qty": 600,
+				"unit": "g",
+				"prep": "cut in strips",
+				"original": "600 g falukorv (Swedish bologna-style sausage), cut in strips"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp tomato paste"
+			},
+			{
+				"id": "i5",
+				"key": "dijon-mustard",
+				"name": "Swedish mustard",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Swedish mustard"
+			},
+			{
+				"id": "i6",
+				"key": "heavy-cream",
+				"name": "cream (matlagningsgrädde)",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"original": "300 ml cream (matlagningsgrädde)"
+			},
+			{
+				"id": "i7",
+				"key": "whole-milk",
+				"name": "milk",
+				"role": "dairy",
+				"qty": 100,
+				"unit": "ml",
+				"original": "100 ml milk"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "rice",
+				"name": "long-grain rice",
+				"role": "rice",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g long-grain rice"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the rice.",
+				"uses": [
+					"i9"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 18
+			},
+			{
+				"id": "s2",
+				"text": "Soften the onion in the butter, then add the sausage and fry until lightly browned.",
+				"uses": [
+					"i2",
+					"i3",
+					"i1"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Stir in tomato paste and mustard, then add cream and milk and simmer until thickened. Season with pepper.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Serve with the rice.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Frying the tomato paste briefly deepens its flavour before the cream goes in.",
+			"spiceProfile": "Tomato and mustard; mild enough for children.",
+			"variations": "A Swedish weeknight classic that swaps beef for falukorv and adds tomato; served with rice."
+		}
+	}
+]

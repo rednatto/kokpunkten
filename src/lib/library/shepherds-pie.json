@@ -1,0 +1,873 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "shepherds-pie",
+		"title": "Shepherd's pie with lamb",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic lamb"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 60,
+			"totalMin": 95
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"lamb",
+			"comfort",
+			"baked"
+		],
+		"equipment": [
+			"large frying pan",
+			"large pot",
+			"ovenproof dish (about 2 l)"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i2",
+				"key": "ground-lamb",
+				"name": "ground lamb",
+				"role": "meat",
+				"qty": 750,
+				"unit": "g",
+				"original": "750 g ground lamb"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely diced",
+				"original": "2 carrots, finely diced"
+			},
+			{
+				"id": "i5",
+				"key": "celery",
+				"name": "celery",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely diced",
+				"original": "1 stick celery, finely diced"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp all-purpose flour"
+			},
+			{
+				"id": "i7",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i8",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Worcestershire sauce"
+			},
+			{
+				"id": "i9",
+				"key": "lamb-stock",
+				"name": "lamb or chicken stock",
+				"role": "stock",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml lamb or chicken stock"
+			},
+			{
+				"id": "i10",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "leaves",
+				"original": "1 tsp thyme, leaves"
+			},
+			{
+				"id": "i11",
+				"key": "rosemary",
+				"name": "rosemary",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "finely chopped",
+				"original": "1 tsp rosemary, finely chopped"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i13",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i14",
+				"key": "frozen-peas",
+				"name": "frozen peas",
+				"role": "vegetable",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g frozen peas"
+			},
+			{
+				"id": "i15",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 1.2,
+				"unit": "kg",
+				"prep": "peeled and chunked",
+				"group": "Mash",
+				"original": "1.2 kg floury potatoes, peeled and chunked"
+			},
+			{
+				"id": "i16",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"group": "Mash",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i17",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 120,
+				"unit": "ml",
+				"prep": "warm",
+				"group": "Mash",
+				"original": "120 ml whole milk, warm"
+			},
+			{
+				"id": "i18",
+				"key": "egg-yolk",
+				"name": "egg yolk",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"group": "Mash",
+				"original": "1 egg yolk"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the lamb in the oil in batches, breaking it up, and pour off excess fat.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"brown"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Add onion, carrot and celery and soften. Stir in flour and tomato paste.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add Worcestershire, stock, herbs, salt and pepper and simmer until thick. Stir in the peas.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 25,
+				"heat": "low",
+				"critical": "Simmer until the gravy is thick, or it bubbles up through the mash."
+			},
+			{
+				"id": "s4",
+				"text": "Boil the potatoes in salted water until soft, drain well and mash with the butter and warm milk, then beat in the egg yolk.",
+				"uses": [
+					"i15",
+					"i16",
+					"i17",
+					"i18"
+				],
+				"technique": [
+					"boil",
+					"mash"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s5",
+				"text": "Heat the oven to 200 °C. Spread the filling in the dish, top with the mash and rough it up with a fork.",
+				"uses": [
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"assemble"
+				],
+				"tempC": 200
+			},
+			{
+				"id": "s6",
+				"text": "Bake until golden and bubbling at the edges. Rest 10 minutes.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake",
+					"rest"
+				],
+				"durationMin": 35,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Browning the meat properly before adding vegetables gives the filling its depth.",
+			"chemistry": "Egg yolk in the mash helps the top brown and crisp through Maillard reactions.",
+			"spiceProfile": "Rosemary and thyme suit lamb; Worcestershire adds savoury depth.",
+			"variations": "Made with lamb, as the name says (shepherds keep sheep); beef makes it a cottage pie."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "shepherds-pie",
+		"title": "Cottage pie with beef and cheddar mash",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cottage pie"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 60,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"comfort",
+			"baked"
+		],
+		"equipment": [
+			"large frying pan",
+			"large pot",
+			"ovenproof dish (about 2 l)"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i2",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 750,
+				"unit": "g",
+				"original": "750 g ground beef"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 carrots, diced"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "2 cloves garlic, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp all-purpose flour"
+			},
+			{
+				"id": "i8",
+				"key": "red-wine",
+				"name": "red wine",
+				"role": "wine",
+				"qty": 150,
+				"unit": "ml",
+				"optional": true,
+				"original": "150 ml red wine (optional)"
+			},
+			{
+				"id": "i9",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml beef stock"
+			},
+			{
+				"id": "i10",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Worcestershire sauce"
+			},
+			{
+				"id": "i11",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "leaves",
+				"original": "1 tsp thyme, leaves"
+			},
+			{
+				"id": "i12",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i14",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i15",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 1.2,
+				"unit": "kg",
+				"prep": "peeled and chunked",
+				"group": "Mash",
+				"original": "1.2 kg floury potatoes, peeled and chunked"
+			},
+			{
+				"id": "i16",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"group": "Mash",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i17",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 120,
+				"unit": "ml",
+				"prep": "warm",
+				"group": "Mash",
+				"original": "120 ml whole milk, warm"
+			},
+			{
+				"id": "i18",
+				"key": "cheddar",
+				"name": "mature cheddar",
+				"role": "cheese",
+				"qty": 100,
+				"unit": "g",
+				"prep": "grated",
+				"original": "100 g mature cheddar, grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the beef in the oil and lift out. Soften onion, carrot and garlic in the pan.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"brown",
+					"saute"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in tomato paste and flour, add the wine and reduce, then add stock, Worcestershire, herbs and seasoning. Simmer until thick and remove the bay leaf.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"deglaze",
+					"simmer"
+				],
+				"durationMin": 30,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Boil the potatoes in salted water until soft, drain well and mash with the butter and warm milk.",
+				"uses": [
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"boil",
+					"mash"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s4",
+				"text": "Heat the oven to 200 °C. Spoon the filling into the dish, cover with mash and scatter with cheddar.",
+				"uses": [
+					"s2",
+					"s3",
+					"i18"
+				],
+				"technique": [
+					"assemble"
+				],
+				"tempC": 200
+			},
+			{
+				"id": "s5",
+				"text": "Bake until the cheese is golden and the filling bubbles.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 30,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Reducing red wine with the beef adds body and acidity to the gravy.",
+			"spiceProfile": "Thyme and bay with savoury Worcestershire.",
+			"variations": "Beef instead of lamb, and a cheese-topped mash; strictly speaking it is a cottage pie."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "shepherds-pie",
+		"title": "Vegetarian shepherd's pie with lentils",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian lentil"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 60,
+			"totalMin": 80
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"lentils",
+			"budget"
+		],
+		"equipment": [
+			"large pot",
+			"saucepan",
+			"ovenproof dish (about 2 l)"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 carrots, diced"
+			},
+			{
+				"id": "i4",
+				"key": "celery",
+				"name": "celery",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 sticks celery, diced"
+			},
+			{
+				"id": "i5",
+				"key": "button-mushroom",
+				"name": "mushrooms",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "250 g mushrooms, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "2 cloves garlic, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i8",
+				"key": "brown-lentils",
+				"name": "dried brown or green lentils",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"prep": "rinsed",
+				"original": "250 g dried brown or green lentils, rinsed"
+			},
+			{
+				"id": "i9",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 800,
+				"unit": "ml",
+				"original": "800 ml vegetable stock"
+			},
+			{
+				"id": "i10",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i11",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "leaves",
+				"original": "1 tsp thyme, leaves"
+			},
+			{
+				"id": "i12",
+				"key": "rosemary",
+				"name": "rosemary",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "chopped",
+				"original": "1 tsp rosemary, chopped"
+			},
+			{
+				"id": "i13",
+				"key": "frozen-peas",
+				"name": "frozen peas",
+				"role": "vegetable",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g frozen peas"
+			},
+			{
+				"id": "i14",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i15",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 1.2,
+				"unit": "kg",
+				"prep": "peeled and chunked",
+				"group": "Mash",
+				"original": "1.2 kg floury potatoes, peeled and chunked"
+			},
+			{
+				"id": "i16",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"group": "Mash",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i17",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 120,
+				"unit": "ml",
+				"prep": "warm",
+				"group": "Mash",
+				"original": "120 ml whole milk, warm"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften onion, carrot and celery in the oil, then add mushrooms and garlic and cook until the mushrooms brown.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 12,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in tomato paste, then lentils, stock, soy sauce and herbs. Simmer until the lentils are tender and the mixture thick. Add peas and pepper.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 35,
+				"heat": "low",
+				"critical": "Cook the lentils until fully soft before baking; they will not soften further under the mash."
+			},
+			{
+				"id": "s3",
+				"text": "Boil the potatoes in salted water until soft, drain well and mash with the butter and warm milk.",
+				"uses": [
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"boil",
+					"mash"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s4",
+				"text": "Heat the oven to 200 °C. Top the filling with mash and bake until golden.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"assemble",
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Browned mushrooms and soy sauce give a meaty depth without meat.",
+			"chemistry": "Lentils release starch as they simmer, thickening the filling naturally.",
+			"spiceProfile": "Thyme and rosemary with savoury soy.",
+			"variations": "Lentils and mushrooms replace the meat; cheaper and lighter than the lamb or beef versions."
+		}
+	}
+]

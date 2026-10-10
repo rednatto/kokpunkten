@@ -1,0 +1,672 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-noodle-soup",
+		"title": "Chicken noodle soup from a whole chicken",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic from a whole chicken"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 100,
+			"totalMin": 120
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"comfort-food",
+			"weekend"
+		],
+		"equipment": [
+			"large stockpot",
+			"sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-chicken",
+				"name": "whole chicken",
+				"role": "poultry",
+				"qty": 1.5,
+				"unit": "kg",
+				"original": "1½ kg whole chicken"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 2.5,
+				"unit": "l",
+				"original": "2½ l cold water"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, halved",
+				"prep": "halved"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 carrots, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i5",
+				"key": "celery",
+				"name": "celery stalks",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 celery stalks, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i6",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch flat-leaf parsley, stems and leaves separated",
+				"prep": "stems and leaves separated"
+			},
+			{
+				"id": "i7",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i8",
+				"key": "black-peppercorns",
+				"name": "black peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black peppercorns"
+			},
+			{
+				"id": "i9",
+				"key": "egg-noodles",
+				"name": "dried egg noodles",
+				"role": "noodles",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g dried egg noodles"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Put the chicken, cold water, onion, parsley stems, bay leaves and peppercorns in a pot. Bring slowly to a boil and skim off the foam.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"skim"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Simmer, barely bubbling, until the chicken is falling off the bone.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 75,
+				"heat": "low",
+				"critical": "Keep it at a bare simmer; a hard boil makes the broth cloudy and the meat stringy."
+			},
+			{
+				"id": "s3",
+				"text": "Lift out the chicken and strain the broth back into the pot.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"strain"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add the carrots and celery to the broth and simmer.",
+				"uses": [
+					"s3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Add the noodles and cook until tender.",
+				"uses": [
+					"s4",
+					"i9"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 7,
+				"heat": "medium"
+			},
+			{
+				"id": "s6",
+				"text": "Shred the chicken meat, discarding skin and bones, and return it to the pot. Season with salt and stir in chopped parsley leaves.",
+				"uses": [
+					"s5",
+					"i10"
+				],
+				"technique": [
+					"shred"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Starting in cold water and skimming gives a clear broth with full flavour from the bones.",
+			"chemistry": "Long, gentle simmering converts collagen in the skin and joints into gelatin, giving the broth body; the chicken is well past the safe 74 °C.",
+			"spiceProfile": "Mild and herbal: bay, peppercorns and parsley.",
+			"variations": "Makes its own broth from scratch, so it takes about two hours but tastes richer than the weeknight version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-noodle-soup",
+		"title": "Quick chicken noodle soup with thighs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Weeknight"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"quick",
+			"weeknight"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter or olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp butter or olive oil",
+				"substitutes": [
+					"olive-oil"
+				]
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 carrots, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i4",
+				"key": "celery",
+				"name": "celery stalks",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 celery stalks, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i6",
+				"key": "dried-thyme",
+				"name": "dried thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried thyme"
+			},
+			{
+				"id": "i7",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1½ l chicken stock"
+			},
+			{
+				"id": "i8",
+				"key": "chicken-thigh",
+				"name": "boneless, skinless chicken thighs",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g boneless, skinless chicken thighs"
+			},
+			{
+				"id": "i9",
+				"key": "egg-noodles",
+				"name": "dried egg noodles",
+				"role": "noodles",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g dried egg noodles"
+			},
+			{
+				"id": "i10",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i11",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp parsley, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i13",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter and soften the onion, carrot and celery.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the garlic and thyme and cook for a minute.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the stock and whole thighs and simmer until the chicken is cooked through.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low",
+				"critical": "The thickest piece must reach 74 °C inside."
+			},
+			{
+				"id": "s4",
+				"text": "Lift out the chicken and shred it. Add the noodles to the pot and cook until tender.",
+				"uses": [
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"shred",
+					"boil"
+				],
+				"durationMin": 7,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Return the chicken, add the lemon juice and parsley and season.",
+				"uses": [
+					"s4",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Thighs poached directly in store-bought stock add flavour and stay juicy.",
+			"chemistry": "Thigh meat has more connective tissue and fat than breast, so it tolerates simmering without drying out.",
+			"spiceProfile": "Thyme and a squeeze of lemon brighten the store-bought stock.",
+			"variations": "Ready in about 45 minutes using boxed stock and boneless thighs instead of a whole chicken."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-noodle-soup",
+		"title": "Ginger chicken soup with rice noodles",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Ginger and rice noodle"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"asian"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"light",
+			"dairy-free"
+		],
+		"equipment": [
+			"large pot",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1½ l chicken stock"
+			},
+			{
+				"id": "i2",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g fresh ginger, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"original": "3 cloves garlic, smashed",
+				"prep": "smashed"
+			},
+			{
+				"id": "i4",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "allium",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 scallions, whites and greens separated",
+				"prep": "whites and greens separated"
+			},
+			{
+				"id": "i5",
+				"key": "chicken-breast",
+				"name": "chicken breasts",
+				"role": "poultry",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g chicken breasts"
+			},
+			{
+				"id": "i6",
+				"key": "rice-noodles",
+				"name": "flat rice noodles",
+				"role": "noodles",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g flat rice noodles"
+			},
+			{
+				"id": "i7",
+				"key": "bok-choy",
+				"name": "heads bok choy",
+				"role": "leafy-green",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 heads bok choy, quartered",
+				"prep": "quartered"
+			},
+			{
+				"id": "i8",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp soy sauce"
+			},
+			{
+				"id": "i9",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp fish sauce"
+			},
+			{
+				"id": "i10",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame oil"
+			},
+			{
+				"id": "i11",
+				"key": "red-chili",
+				"name": "red chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 red chili, sliced (optional)",
+				"prep": "sliced",
+				"optional": true
+			},
+			{
+				"id": "i12",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 lime, cut into wedges",
+				"prep": "cut into wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the stock with the ginger, garlic and scallion whites.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"infuse",
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the chicken and poach gently until cooked through, then lift out and slice.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 15,
+				"heat": "low",
+				"critical": "Poach until the centre reaches 74 °C; keep the broth just below a simmer so the breast stays juicy."
+			},
+			{
+				"id": "s3",
+				"text": "Cook or soak the noodles as the packet says, rinse and divide between bowls.",
+				"uses": [
+					"i6"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s4",
+				"text": "Fish out the aromatics, add the bok choy to the broth and cook until just tender. Season with soy and fish sauce.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Top the noodles with chicken, ladle over the broth and finish with scallion greens, sesame oil, chili and lime.",
+				"uses": [
+					"s3",
+					"s4",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Infusing the stock with aromatics first gives a clear, fragrant broth in 15 minutes.",
+			"chemistry": "Gentle poaching keeps the breast muscle proteins from contracting hard and squeezing out moisture.",
+			"spiceProfile": "Warming ginger and garlic with salty soy and fish sauce, finished with sesame, chili and lime.",
+			"variations": "Uses rice noodles and Asian seasoning instead of egg noodles, carrot and celery; the noodles are cooked separately so they stay springy."
+		}
+	}
+]

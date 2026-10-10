@@ -1,0 +1,728 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "coq-au-vin",
+		"title": "Coq au vin, classic red wine",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Burgundy red wine"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 120,
+			"totalMin": 870
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"braise",
+			"red-wine",
+			"chicken"
+		],
+		"equipment": [
+			"bowl",
+			"cast-iron casserole with lid",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken",
+				"name": "whole chicken",
+				"role": "poultry",
+				"qty": 1.8,
+				"unit": "kg",
+				"prep": "cut into 8 pieces",
+				"original": "1.8 kg whole chicken, cut into 8 pieces"
+			},
+			{
+				"id": "i2",
+				"key": "red-wine",
+				"name": "red Burgundy (Pinot Noir)",
+				"role": "wine",
+				"qty": 750,
+				"unit": "ml",
+				"original": "750 ml red Burgundy (Pinot Noir)"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 yellow onion, sliced"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 carrot, sliced"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "3 cloves garlic, crushed"
+			},
+			{
+				"id": "i6",
+				"key": "bouquet-garni",
+				"name": "bouquet garni (thyme, bay, parsley)",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bouquet garni (thyme, bay, parsley)"
+			},
+			{
+				"id": "i7",
+				"key": "lardons",
+				"name": "smoked lardons",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g smoked lardons"
+			},
+			{
+				"id": "i8",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i11",
+				"key": "cognac",
+				"name": "cognac",
+				"role": "wine",
+				"qty": 3,
+				"unit": "tbsp",
+				"optional": true,
+				"original": "3 tbsp cognac (optional)"
+			},
+			{
+				"id": "i12",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp all-purpose flour"
+			},
+			{
+				"id": "i13",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 250,
+				"unit": "ml",
+				"original": "250 ml chicken stock"
+			},
+			{
+				"id": "i14",
+				"key": "pearl-onion",
+				"name": "pearl onions",
+				"role": "allium",
+				"qty": 200,
+				"unit": "g",
+				"prep": "peeled",
+				"original": "200 g pearl onions, peeled"
+			},
+			{
+				"id": "i15",
+				"key": "button-mushroom",
+				"name": "button mushrooms",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "quartered",
+				"original": "250 g button mushrooms, quartered"
+			},
+			{
+				"id": "i16",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Marinate the chicken in the wine with onion, carrot, garlic and bouquet garni in the fridge overnight.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Lift out the chicken and pat dry; keep the wine and vegetables. Season the chicken with salt and pepper.",
+				"uses": [
+					"s1",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"drain",
+					"season"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Crisp the lardons in half the butter and lift out. Brown the chicken skin-side first in the fat, then flame with cognac if using.",
+				"uses": [
+					"s2",
+					"i7",
+					"i11"
+				],
+				"technique": [
+					"render",
+					"sear",
+					"flambe"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Remove the chicken, soften the marinade vegetables, then stir in the flour.",
+				"uses": [
+					"s3",
+					"i12"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 6
+			},
+			{
+				"id": "s5",
+				"text": "Add the wine, stock, herbs, chicken and lardons. Cover and simmer gently until the chicken is tender and reaches at least 74 °C at the bone.",
+				"uses": [
+					"s4",
+					"i13"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 75,
+				"heat": "low",
+				"critical": "Keep it at a bare simmer; boiling makes the chicken stringy."
+			},
+			{
+				"id": "s6",
+				"text": "Brown the pearl onions and mushrooms in the rest of the butter.",
+				"uses": [
+					"i14",
+					"i15",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s7",
+				"text": "Lift out the chicken, reduce the sauce until it coats a spoon, return the chicken with the garnish, and scatter with parsley.",
+				"uses": [
+					"s5",
+					"s6",
+					"i16"
+				],
+				"technique": [
+					"reduce",
+					"finish"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Browning the chicken and lardons first builds the base; the garnish is cooked separately so it keeps its colour and bite.",
+			"chemistry": "Wine acids and tannins tenderise the meat during marinating and give the sauce its structure.",
+			"spiceProfile": "Thyme, bay and parsley with fruity red wine and smoky pork.",
+			"variations": "The red-wine classic; Alsace makes it with Riesling and cream, and a weeknight version skips the marinade."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "coq-au-vin",
+		"title": "Coq au Riesling",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Alsace Riesling"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 70,
+			"totalMin": 90
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"white-wine",
+			"creamy",
+			"chicken"
+		],
+		"equipment": [
+			"cast-iron casserole with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "bone-in chicken thighs and drumsticks",
+				"role": "poultry",
+				"qty": 1.5,
+				"unit": "kg",
+				"original": "1½ kg bone-in chicken thighs and drumsticks"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "white or black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "White or black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "shallot",
+				"name": "shallots",
+				"role": "allium",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "3 shallots, finely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "button-mushroom",
+				"name": "button mushrooms",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "300 g button mushrooms, sliced"
+			},
+			{
+				"id": "i7",
+				"key": "riesling",
+				"name": "dry Alsace Riesling",
+				"role": "wine",
+				"qty": 500,
+				"unit": "ml",
+				"original": "500 ml dry Alsace Riesling"
+			},
+			{
+				"id": "i8",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 150,
+				"unit": "ml",
+				"original": "150 ml chicken stock"
+			},
+			{
+				"id": "i9",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 sprigs thyme"
+			},
+			{
+				"id": "i10",
+				"key": "creme-fraiche",
+				"name": "crème fraîche",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"original": "200 ml crème fraîche"
+			},
+			{
+				"id": "i11",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the chicken and brown it in the butter on all sides. Lift out.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Soften the shallots in the same pot, then add the mushrooms and cook until their liquid evaporates.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Pour in the Riesling and stock, add thyme, return the chicken, cover and simmer until tender and at least 74 °C inside.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 40,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Lift out the chicken, reduce the liquid by a third, then whisk in the crème fraîche and simmer until it coats a spoon.",
+				"uses": [
+					"s3",
+					"i10"
+				],
+				"technique": [
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Return the chicken to the sauce and serve with parsley, traditionally with buttered noodles.",
+				"uses": [
+					"s4",
+					"i11"
+				],
+				"technique": [
+					"finish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Reducing the wine before adding the cream concentrates the flavour and avoids a thin sauce.",
+			"chemistry": "Crème fraîche has enough fat to boil without curdling, unlike lighter creams.",
+			"spiceProfile": "Delicate: thyme, shallots and the floral notes of Riesling.",
+			"variations": "White wine and cream instead of red wine and lardons, so it is lighter in colour and quicker to make."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "coq-au-vin",
+		"title": "Weeknight coq au vin with chicken thighs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Weeknight thighs"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 55,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"weeknight",
+			"red-wine",
+			"chicken"
+		],
+		"equipment": [
+			"deep frying pan or casserole with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "bone-in, skin-on chicken thighs",
+				"role": "poultry",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 bone-in, skin-on chicken thighs"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "bacon",
+				"name": "smoked bacon",
+				"role": "cured-pork",
+				"qty": 120,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "120 g smoked bacon, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "button-mushroom",
+				"name": "mushrooms",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "halved",
+				"original": "250 g mushrooms, halved"
+			},
+			{
+				"id": "i6",
+				"key": "shallot",
+				"name": "shallots",
+				"role": "allium",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "4 shallots, halved"
+			},
+			{
+				"id": "i7",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "2 cloves garlic, chopped"
+			},
+			{
+				"id": "i8",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp all-purpose flour"
+			},
+			{
+				"id": "i9",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i10",
+				"key": "red-wine",
+				"name": "dry red wine",
+				"role": "wine",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml dry red wine"
+			},
+			{
+				"id": "i11",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 200,
+				"unit": "ml",
+				"original": "200 ml chicken stock"
+			},
+			{
+				"id": "i12",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 sprigs thyme"
+			},
+			{
+				"id": "i13",
+				"key": "butter",
+				"name": "cold butter",
+				"role": "fat",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g cold butter"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the thighs and brown them skin-side down in a dry pan until crisp, then turn briefly. Lift out.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Fry the bacon, mushrooms and shallots in the chicken fat until browned, then add garlic, flour and tomato paste.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Add wine, stock and thyme and scrape up the browned bits. Return the chicken skin-side up, cover and simmer until it reaches at least 74 °C at the bone.",
+				"uses": [
+					"s2",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"deglaze",
+					"braise"
+				],
+				"durationMin": 35,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Remove the chicken, boil the sauce until glossy, then swirl in the cold butter.",
+				"uses": [
+					"s3",
+					"i13"
+				],
+				"technique": [
+					"reduce",
+					"mount"
+				],
+				"durationMin": 5,
+				"heat": "high"
+			}
+		],
+		"notes": {
+			"techniques": "Thighs stay juicy with a shorter braise, and cooking everything in one pan keeps it quick.",
+			"chemistry": "Swirling in cold butter at the end emulsifies into the reduced sauce for shine and body.",
+			"spiceProfile": "Thyme and garlic with red wine.",
+			"variations": "No marinade and no separate garnish; it is ready in about an hour."
+		}
+	}
+]

@@ -1,0 +1,651 @@
+[
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "ratatouille",
+  "title": "Ratatouille, Provençal style",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Provençal, cooked separately"
+  },
+  "servings": 6,
+  "time": {
+   "prepMin": 25,
+   "cookMin": 75,
+   "totalMin": 100
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "side"
+  ],
+  "tags": [
+   "vegetarian",
+   "vegan",
+   "summer"
+  ],
+  "equipment": [
+   "large frying pan",
+   "heavy pot"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "eggplant",
+    "name": "eggplant",
+    "role": "vegetable",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "cut in 2 cm cubes",
+    "original": "1 large eggplant, cut in 2 cm cubes"
+   },
+   {
+    "id": "i2",
+    "key": "zucchini",
+    "name": "zucchini",
+    "role": "vegetable",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "cut in 2 cm cubes",
+    "original": "2 zucchini, cut in 2 cm cubes"
+   },
+   {
+    "id": "i3",
+    "key": "red-bell-pepper",
+    "name": "red bell peppers",
+    "role": "vegetable",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "cut in 2 cm pieces",
+    "original": "2 red bell peppers, cut in 2 cm pieces"
+   },
+   {
+    "id": "i4",
+    "key": "yellow-onion",
+    "name": "yellow onions",
+    "role": "allium",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "chopped",
+    "original": "2 yellow onions, chopped"
+   },
+   {
+    "id": "i5",
+    "key": "garlic",
+    "name": "garlic",
+    "role": "allium",
+    "qty": 4,
+    "unit": "clove",
+    "prep": "sliced",
+    "original": "4 cloves garlic, sliced"
+   },
+   {
+    "id": "i6",
+    "key": "tomato",
+    "name": "ripe tomatoes",
+    "role": "vegetable",
+    "qty": 800,
+    "unit": "g",
+    "prep": "peeled and chopped",
+    "original": "800 g ripe tomatoes, peeled and chopped"
+   },
+   {
+    "id": "i7",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 100,
+    "unit": "ml",
+    "original": "100 ml olive oil"
+   },
+   {
+    "id": "i8",
+    "key": "thyme",
+    "name": "thyme",
+    "role": "herb",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 sprigs thyme"
+   },
+   {
+    "id": "i9",
+    "key": "bay-leaf",
+    "name": "bay leaf",
+    "role": "herb",
+    "qty": 1,
+    "unit": "piece",
+    "original": "1 bay leaf"
+   },
+   {
+    "id": "i10",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Salt, to taste"
+   },
+   {
+    "id": "i11",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i12",
+    "key": "basil",
+    "name": "basil",
+    "role": "herb",
+    "qty": 1,
+    "unit": "bunch",
+    "prep": "torn",
+    "original": "1 bunch basil, torn"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Fry the eggplant in a third of the oil until golden, and season. Set aside.",
+    "uses": [
+     "i1",
+     "i7",
+     "i10"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 10,
+    "heat": "medium-high"
+   },
+   {
+    "id": "s2",
+    "text": "Fry the zucchini the same way until lightly browned. Set aside.",
+    "uses": [
+     "i2"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 8,
+    "heat": "medium-high"
+   },
+   {
+    "id": "s3",
+    "text": "Fry the peppers until soft. Set aside.",
+    "uses": [
+     "i3"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 10,
+    "heat": "medium"
+   },
+   {
+    "id": "s4",
+    "text": "In the pot, soften the onions in the remaining oil, add garlic, then tomatoes, thyme and bay, and simmer to a thick sauce.",
+    "uses": [
+     "i4",
+     "i5",
+     "i6",
+     "i8",
+     "i9"
+    ],
+    "technique": [
+     "sweat",
+     "simmer"
+    ],
+    "durationMin": 20,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s5",
+    "text": "Add all the fried vegetables to the sauce and simmer gently, covered, so the flavours meld but the pieces hold their shape.",
+    "uses": [
+     "s1",
+     "s2",
+     "s3",
+     "s4"
+    ],
+    "technique": [
+     "simmer"
+    ],
+    "durationMin": 25,
+    "heat": "low",
+    "critical": "Frying each vegetable separately keeps them from turning into mush."
+   },
+   {
+    "id": "s6",
+    "text": "Season with pepper, stir in basil and serve warm or at room temperature.",
+    "uses": [
+     "s5",
+     "i11",
+     "i12"
+    ],
+    "technique": [
+     "finish"
+    ]
+   }
+  ],
+  "notes": {
+   "techniques": "Each vegetable is browned on its own so it cooks correctly and keeps its texture.",
+   "chemistry": "Browning the eggplant collapses its spongy cells so it absorbs flavour instead of oil.",
+   "spiceProfile": "Herbes de Provence character from thyme and bay; basil added fresh at the end.",
+   "variations": "The slow, careful version; one-pot versions are faster and softer, and tian-style versions are sliced and baked."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "ratatouille",
+  "title": "One-pot weeknight ratatouille",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – One-pot weeknight"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 40,
+   "totalMin": 55
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "side"
+  ],
+  "tags": [
+   "vegetarian",
+   "vegan",
+   "quick",
+   "one-pot"
+  ],
+  "equipment": [
+   "large heavy pot"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "eggplant",
+    "name": "eggplant",
+    "role": "vegetable",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "cut in 2 cm cubes",
+    "original": "1 large eggplant, cut in 2 cm cubes"
+   },
+   {
+    "id": "i2",
+    "key": "zucchini",
+    "name": "zucchini",
+    "role": "vegetable",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "cut in 2 cm cubes",
+    "original": "2 zucchini, cut in 2 cm cubes"
+   },
+   {
+    "id": "i3",
+    "key": "red-bell-pepper",
+    "name": "red bell peppers",
+    "role": "vegetable",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "cut in 2 cm pieces",
+    "original": "2 red bell peppers, cut in 2 cm pieces"
+   },
+   {
+    "id": "i4",
+    "key": "yellow-onion",
+    "name": "yellow onions",
+    "role": "allium",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "chopped",
+    "original": "2 yellow onions, chopped"
+   },
+   {
+    "id": "i5",
+    "key": "garlic",
+    "name": "garlic",
+    "role": "allium",
+    "qty": 4,
+    "unit": "clove",
+    "prep": "sliced",
+    "original": "4 cloves garlic, sliced"
+   },
+   {
+    "id": "i6",
+    "key": "canned-tomatoes",
+    "name": "canned chopped tomatoes",
+    "role": "vegetable",
+    "qty": 400,
+    "unit": "g",
+    "original": "400 g canned chopped tomatoes"
+   },
+   {
+    "id": "i7",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 4,
+    "unit": "tbsp",
+    "original": "4 tbsp olive oil"
+   },
+   {
+    "id": "i8",
+    "key": "herbes-de-provence",
+    "name": "herbes de Provence",
+    "role": "herb",
+    "qty": 1.5,
+    "unit": "tsp",
+    "original": "1½ tsp herbes de Provence"
+   },
+   {
+    "id": "i9",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp salt"
+   },
+   {
+    "id": "i10",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i11",
+    "key": "basil",
+    "name": "basil",
+    "role": "herb",
+    "qty": 1,
+    "unit": "bunch",
+    "prep": "torn",
+    "optional": true,
+    "original": "1 bunch basil, torn (optional)"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Soften the onions in the oil, then add the garlic.",
+    "uses": [
+     "i4",
+     "i7",
+     "i5"
+    ],
+    "technique": [
+     "saute"
+    ],
+    "durationMin": 6,
+    "heat": "medium"
+   },
+   {
+    "id": "s2",
+    "text": "Add eggplant and peppers and cook, stirring, until they start to soften.",
+    "uses": [
+     "s1",
+     "i1",
+     "i3"
+    ],
+    "technique": [
+     "saute"
+    ],
+    "durationMin": 8,
+    "heat": "medium-high"
+   },
+   {
+    "id": "s3",
+    "text": "Add zucchini, tomatoes, herbs and salt. Simmer, partly covered, until everything is tender.",
+    "uses": [
+     "s2",
+     "i2",
+     "i6",
+     "i8",
+     "i9"
+    ],
+    "technique": [
+     "simmer"
+    ],
+    "durationMin": 25,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s4",
+    "text": "Season with pepper and finish with basil.",
+    "uses": [
+     "s3",
+     "i10",
+     "i11"
+    ],
+    "technique": [
+     "finish"
+    ]
+   }
+  ],
+  "notes": {
+   "techniques": "Vegetables are added in order of cooking time so they finish together.",
+   "spiceProfile": "Dried herbes de Provence give the classic Provençal flavour quickly.",
+   "variations": "Everything in one pot with canned tomatoes; softer and more stew-like than the Provençal version."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "ratatouille",
+  "title": "Ratatouille tian, sliced and baked",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Tian, sliced and baked"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 30,
+   "cookMin": 75,
+   "totalMin": 105
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "side"
+  ],
+  "tags": [
+   "vegetarian",
+   "vegan",
+   "baked",
+   "showpiece"
+  ],
+  "equipment": [
+   "frying pan",
+   "round baking dish (about 25 cm)",
+   "mandoline or sharp knife"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "yellow-onion",
+    "name": "yellow onion",
+    "role": "allium",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "finely chopped",
+    "original": "1 yellow onion, finely chopped"
+   },
+   {
+    "id": "i2",
+    "key": "garlic",
+    "name": "garlic",
+    "role": "allium",
+    "qty": 3,
+    "unit": "clove",
+    "prep": "chopped",
+    "original": "3 cloves garlic, chopped"
+   },
+   {
+    "id": "i3",
+    "key": "red-bell-pepper",
+    "name": "red bell pepper",
+    "role": "vegetable",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "finely diced",
+    "original": "1 red bell pepper, finely diced"
+   },
+   {
+    "id": "i4",
+    "key": "canned-tomatoes",
+    "name": "canned crushed tomatoes",
+    "role": "vegetable",
+    "qty": 400,
+    "unit": "g",
+    "original": "400 g canned crushed tomatoes"
+   },
+   {
+    "id": "i5",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 4,
+    "unit": "tbsp",
+    "original": "4 tbsp olive oil"
+   },
+   {
+    "id": "i6",
+    "key": "eggplant",
+    "name": "slim eggplant",
+    "role": "vegetable",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "sliced 3 mm thick",
+    "original": "1 slim eggplant, sliced 3 mm thick"
+   },
+   {
+    "id": "i7",
+    "key": "zucchini",
+    "name": "zucchini",
+    "role": "vegetable",
+    "qty": 2,
+    "unit": "piece",
+    "prep": "sliced 3 mm thick",
+    "original": "2 zucchini, sliced 3 mm thick"
+   },
+   {
+    "id": "i8",
+    "key": "tomato",
+    "name": "plum tomatoes",
+    "role": "vegetable",
+    "qty": 4,
+    "unit": "piece",
+    "prep": "sliced 3 mm thick",
+    "original": "4 plum tomatoes, sliced 3 mm thick"
+   },
+   {
+    "id": "i9",
+    "key": "thyme",
+    "name": "thyme leaves",
+    "role": "herb",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp thyme leaves"
+   },
+   {
+    "id": "i10",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp salt"
+   },
+   {
+    "id": "i11",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Heat the oven to 180 °C. Soften onion, garlic and pepper in half the oil, add the crushed tomatoes and simmer to a thick sauce.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4",
+     "i5"
+    ],
+    "technique": [
+     "saute",
+     "simmer"
+    ],
+    "durationMin": 15,
+    "heat": "medium",
+    "tempC": 180
+   },
+   {
+    "id": "s2",
+    "text": "Spread the sauce in the dish. Arrange the sliced vegetables on top in tight, alternating overlapping rows.",
+    "uses": [
+     "s1",
+     "i6",
+     "i7",
+     "i8"
+    ],
+    "technique": [
+     "assemble"
+    ],
+    "critical": "Slice everything the same thickness so it cooks evenly."
+   },
+   {
+    "id": "s3",
+    "text": "Drizzle with the rest of the oil and season with thyme, salt and pepper. Cover with baking paper.",
+    "uses": [
+     "s2",
+     "i9",
+     "i10",
+     "i11"
+    ],
+    "technique": [
+     "season"
+    ]
+   },
+   {
+    "id": "s4",
+    "text": "Bake covered until the vegetables are very tender, then uncover and bake until lightly browned.",
+    "uses": [
+     "s3"
+    ],
+    "technique": [
+     "bake"
+    ],
+    "durationMin": 75,
+    "tempC": 180
+   }
+  ],
+  "notes": {
+   "techniques": "Thin, even slices bake slowly on a bed of sauce so they become tender without falling apart.",
+   "chemistry": "Covering with paper traps steam so the vegetables soften before they brown.",
+   "spiceProfile": "Thyme with sweet pepper and tomato.",
+   "variations": "Sliced and baked rather than stewed; same ingredients, very different look and texture."
+  }
+ }
+]

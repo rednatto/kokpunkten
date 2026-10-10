@@ -1,0 +1,570 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "miso-soup",
+		"title": "Miso soup with tofu and wakame",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic dashi, tofu and wakame"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"soup",
+			"side"
+		],
+		"tags": [
+			"soup",
+			"quick",
+			"dashi"
+		],
+		"equipment": [
+			"saucepan",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l water"
+			},
+			{
+				"id": "i2",
+				"key": "kombu",
+				"name": "kombu",
+				"role": "umami",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g kombu"
+			},
+			{
+				"id": "i3",
+				"key": "katsuobushi",
+				"name": "katsuobushi (bonito flakes)",
+				"role": "umami",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g katsuobushi (bonito flakes)"
+			},
+			{
+				"id": "i4",
+				"key": "dried-wakame",
+				"name": "dried wakame",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "soaked in water for 5 minutes, drained",
+				"original": "2 tbsp dried wakame, soaked in water for 5 minutes, drained"
+			},
+			{
+				"id": "i5",
+				"key": "silken-tofu",
+				"name": "silken tofu",
+				"role": "tofu",
+				"qty": 200,
+				"unit": "g",
+				"prep": "in 1 cm cubes",
+				"original": "200 g silken tofu, in 1 cm cubes"
+			},
+			{
+				"id": "i6",
+				"key": "miso",
+				"name": "awase miso (mixed)",
+				"role": "umami",
+				"qty": 4,
+				"unit": "tbsp",
+				"qtyMax": 5,
+				"original": "4–5 tbsp awase miso (mixed)"
+			},
+			{
+				"id": "i7",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely sliced",
+				"original": "2 scallions, finely sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the kombu in the water for 30 minutes if you have time, then heat slowly and remove the kombu just before the water boils.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"steep"
+				],
+				"durationMin": 10,
+				"heat": "medium-low",
+				"critical": "Take the kombu out before boiling, or the dashi turns slimy and bitter."
+			},
+			{
+				"id": "s2",
+				"text": "Bring to a boil, add the bonito flakes, turn off the heat and steep, then strain without squeezing.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"steep",
+					"strain"
+				],
+				"durationMin": 3
+			},
+			{
+				"id": "s3",
+				"text": "Bring the dashi back to a simmer, add the wakame and tofu and heat through.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Turn the heat to low, dissolve the miso in a ladle of dashi and stir it in. Heat without boiling.",
+				"uses": [
+					"s3",
+					"i6"
+				],
+				"technique": [],
+				"heat": "low",
+				"critical": "Never boil soup after the miso goes in; the aroma disappears."
+			},
+			{
+				"id": "s5",
+				"text": "Serve topped with scallions.",
+				"uses": [
+					"s4",
+					"i7"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Dashi is made by steeping kombu and bonito flakes; miso is added off the boil and dissolved first so it does not clump.",
+			"chemistry": "Kombu supplies glutamate and bonito supplies inosinate; together they create synergistic umami, much stronger than either alone.",
+			"spiceProfile": "Savoury, lightly smoky from bonito, salty-sweet from miso, with fresh scallion.",
+			"variations": "The everyday Japanese miso soup. Vegan versions use a kombu-shiitake dashi, and tonjiru is a hearty pork and root-vegetable version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "miso-soup",
+		"title": "Vegan miso soup with shiitake dashi",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegan kombu-shiitake"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 90
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"soup",
+			"side"
+		],
+		"tags": [
+			"soup",
+			"vegan",
+			"dashi"
+		],
+		"equipment": [
+			"saucepan",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l water"
+			},
+			{
+				"id": "i2",
+				"key": "kombu",
+				"name": "kombu",
+				"role": "umami",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g kombu"
+			},
+			{
+				"id": "i3",
+				"key": "dried-shiitake",
+				"name": "dried shiitake mushrooms",
+				"role": "umami",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 dried shiitake mushrooms"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "0.5 yellow onion, thinly sliced"
+			},
+			{
+				"id": "i5",
+				"key": "firm-tofu",
+				"name": "firm tofu",
+				"role": "tofu",
+				"qty": 150,
+				"unit": "g",
+				"prep": "in 1 cm cubes",
+				"original": "150 g firm tofu, in 1 cm cubes"
+			},
+			{
+				"id": "i6",
+				"key": "spinach",
+				"name": "spinach",
+				"role": "leafy-green",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g spinach"
+			},
+			{
+				"id": "i7",
+				"key": "miso",
+				"name": "red miso (aka miso)",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"substitutes": [
+					"awase miso"
+				],
+				"original": "3 tbsp red miso (aka miso)"
+			},
+			{
+				"id": "i8",
+				"key": "scallion",
+				"name": "scallion",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 scallion, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the kombu and shiitake in the water for at least 1 hour, or overnight in the fridge.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s2",
+				"text": "Heat slowly, remove the kombu just before boiling and simmer the shiitake for 5 minutes. Lift out the shiitake, slice them and return to the pot.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Add the onion and simmer until soft, then the tofu and spinach.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Dissolve the miso in a little broth, stir it in off the boil and top with scallion.",
+				"uses": [
+					"s3",
+					"i7",
+					"i8"
+				],
+				"technique": [],
+				"heat": "low",
+				"critical": "Do not boil after adding miso."
+			}
+		],
+		"notes": {
+			"techniques": "A cold soak extracts flavour from kombu and dried shiitake without any fish.",
+			"chemistry": "Dried shiitake contribute guanylate, which works with kombu glutamate for strong umami without bonito.",
+			"spiceProfile": "Earthy and deep, with a saltier, more robust red miso and sweet onion.",
+			"variations": "Fully plant-based with an earthier taste than bonito dashi. Red miso is stronger and saltier than mixed miso, so less is needed."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "miso-soup",
+		"title": "Tonjiru, pork and root vegetable miso soup",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Tonjiru pork"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"pork",
+			"hearty"
+		],
+		"equipment": [
+			"large saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame oil"
+			},
+			{
+				"id": "i2",
+				"key": "pork-belly",
+				"name": "thinly sliced pork belly",
+				"role": "meat",
+				"qty": 200,
+				"unit": "g",
+				"prep": "in 3 cm pieces",
+				"original": "200 g thinly sliced pork belly, in 3 cm pieces"
+			},
+			{
+				"id": "i3",
+				"key": "daikon",
+				"name": "daikon",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"prep": "in thin quarter-moons",
+				"original": "200 g daikon, in thin quarter-moons"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in thin half-moons",
+				"original": "1 carrot, in thin half-moons"
+			},
+			{
+				"id": "i5",
+				"key": "burdock",
+				"name": "burdock root (gobo)",
+				"role": "vegetable",
+				"qty": 80,
+				"unit": "g",
+				"prep": "shaved thinly and soaked in water",
+				"optional": true,
+				"original": "80 g burdock root (gobo), shaved thinly and soaked in water (optional)"
+			},
+			{
+				"id": "i6",
+				"key": "konnyaku",
+				"name": "konnyaku",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "torn into small pieces",
+				"optional": true,
+				"original": "150 g konnyaku, torn into small pieces (optional)"
+			},
+			{
+				"id": "i7",
+				"key": "shiitake",
+				"name": "shiitake mushrooms",
+				"role": "vegetable",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "4 shiitake mushrooms, sliced"
+			},
+			{
+				"id": "i8",
+				"key": "dashi",
+				"name": "dashi",
+				"role": "stock",
+				"qty": 1.2,
+				"unit": "l",
+				"original": "1.2 l dashi"
+			},
+			{
+				"id": "i9",
+				"key": "miso",
+				"name": "awase miso",
+				"role": "umami",
+				"qty": 5,
+				"unit": "tbsp",
+				"original": "5 tbsp awase miso"
+			},
+			{
+				"id": "i10",
+				"key": "firm-tofu",
+				"name": "firm tofu",
+				"role": "tofu",
+				"qty": 150,
+				"unit": "g",
+				"prep": "in cubes",
+				"original": "150 g firm tofu, in cubes"
+			},
+			{
+				"id": "i11",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 scallions, sliced"
+			},
+			{
+				"id": "i12",
+				"key": "shichimi-togarashi",
+				"name": "shichimi togarashi",
+				"role": "chili",
+				"qty": 1,
+				"unit": "pinch",
+				"optional": true,
+				"original": "1 pinch shichimi togarashi (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the pork in the sesame oil until no longer pink.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the daikon, carrot, burdock, konnyaku and shiitake and stir-fry for 2 minutes.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the dashi, bring to a simmer, skim and cook until the vegetables are tender.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"simmer",
+					"skim"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Add the tofu, then dissolve the miso into the soup off the boil.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [],
+				"heat": "low",
+				"critical": "Add the miso at the end and do not boil it."
+			},
+			{
+				"id": "s5",
+				"text": "Serve with scallions and a pinch of shichimi.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The pork and vegetables are stir-fried before simmering, which adds richness and helps the vegetables keep their shape.",
+			"chemistry": "Rendered pork fat carries flavour into the broth, and root vegetable starches lightly thicken it.",
+			"spiceProfile": "Rich and savoury with sweet root vegetables, sesame and optional seven-spice heat.",
+			"variations": "A hearty meal soup, more like a stew than the light everyday miso soup."
+		}
+	}
+]

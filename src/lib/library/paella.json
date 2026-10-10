@@ -1,0 +1,766 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "paella",
+		"title": "Paella valenciana",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Valenciana"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 50,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"spanish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"chicken",
+			"rabbit",
+			"traditional"
+		],
+		"equipment": [
+			"paella pan (about 40 cm)"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 100,
+				"unit": "ml",
+				"original": "100 ml olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "chicken",
+				"name": "chicken pieces (thighs and drumsticks)",
+				"role": "poultry",
+				"qty": 800,
+				"unit": "g",
+				"prep": "cut in small pieces",
+				"original": "800 g chicken pieces (thighs and drumsticks), cut in small pieces"
+			},
+			{
+				"id": "i3",
+				"key": "rabbit",
+				"name": "rabbit",
+				"role": "meat",
+				"qty": 500,
+				"unit": "g",
+				"prep": "cut in small pieces",
+				"original": "500 g rabbit, cut in small pieces"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "green-beans",
+				"name": "flat green beans (bajoqueta)",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "cut in 4 cm pieces",
+				"original": "250 g flat green beans (bajoqueta), cut in 4 cm pieces"
+			},
+			{
+				"id": "i6",
+				"key": "lima-beans",
+				"name": "garrofó (large white lima beans), cooked",
+				"role": "legume",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g garrofó (large white lima beans), cooked"
+			},
+			{
+				"id": "i7",
+				"key": "grated-tomato",
+				"name": "ripe tomato",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "grated, skin discarded",
+				"original": "2 ripe tomatoes, grated"
+			},
+			{
+				"id": "i8",
+				"key": "sweet-paprika",
+				"name": "sweet paprika (pimentón dulce)",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sweet paprika (pimentón dulce)"
+			},
+			{
+				"id": "i9",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.8,
+				"unit": "l",
+				"original": "1.8 l water"
+			},
+			{
+				"id": "i10",
+				"key": "saffron",
+				"name": "saffron threads",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"prep": "crushed",
+				"original": "1 pinch saffron threads, crushed"
+			},
+			{
+				"id": "i11",
+				"key": "bomba-rice",
+				"name": "bomba or other short-grain paella rice",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g bomba or other short-grain paella rice"
+			},
+			{
+				"id": "i12",
+				"key": "rosemary",
+				"name": "rosemary",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 sprig rosemary"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oil in the pan, season the chicken and rabbit with half the salt and brown them slowly on all sides.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 20,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Push the meat to the edges, add the green beans and garrofó and fry for a few minutes.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s3",
+				"text": "Add the tomato and paprika and fry briefly, then pour in the water and saffron and simmer to make a broth in the pan.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium",
+				"critical": "Fry the paprika only for seconds before the water goes in; burnt paprika turns bitter."
+			},
+			{
+				"id": "s4",
+				"text": "Scatter the rice evenly across the pan and do not stir again. Cook on high for 10 minutes, then lower the heat.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Lay the rosemary on top and cook on low until the liquid is absorbed and the rice is tender, then turn up the heat for a minute to form the socarrat.",
+				"uses": [
+					"s4",
+					"i12"
+				],
+				"technique": [
+					"simmer",
+					"toast"
+				],
+				"durationMin": 9,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Rest off the heat, covered with a cloth, before serving.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 5
+			}
+		],
+		"notes": {
+			"techniques": "The broth is made in the pan from the browned meat; once the rice goes in it is never stirred.",
+			"chemistry": "Not stirring keeps the starch from making the rice creamy, and the dry heat at the end caramelises a crust (socarrat) on the bottom.",
+			"spiceProfile": "Saffron, sweet paprika and a sprig of rosemary.",
+			"variations": "The original Valencian paella with chicken, rabbit and beans; no seafood and no chorizo."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "paella",
+		"title": "Paella de marisco",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Seafood"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 45,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"spanish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"seafood"
+		],
+		"equipment": [
+			"paella pan (about 40 cm)",
+			"saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 80,
+				"unit": "ml",
+				"original": "80 ml olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "prawns",
+				"name": "large shell-on prawns",
+				"role": "seafood",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 large shell-on prawns"
+			},
+			{
+				"id": "i3",
+				"key": "squid",
+				"name": "squid",
+				"role": "seafood",
+				"qty": 300,
+				"unit": "g",
+				"prep": "cleaned and cut in rings",
+				"original": "300 g squid, cleaned and cut in rings"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 red bell pepper, diced"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "4 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i7",
+				"key": "grated-tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "2 ripe tomatoes, grated"
+			},
+			{
+				"id": "i8",
+				"key": "sweet-paprika",
+				"name": "sweet paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sweet paprika"
+			},
+			{
+				"id": "i9",
+				"key": "fish-stock",
+				"name": "hot fish stock",
+				"role": "stock",
+				"qty": 1.4,
+				"unit": "l",
+				"original": "1.4 l hot fish stock"
+			},
+			{
+				"id": "i10",
+				"key": "saffron",
+				"name": "saffron threads",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"prep": "crushed",
+				"original": "1 pinch saffron threads, crushed"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i12",
+				"key": "bomba-rice",
+				"name": "bomba rice",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g bomba rice"
+			},
+			{
+				"id": "i13",
+				"key": "mussels",
+				"name": "mussels",
+				"role": "seafood",
+				"qty": 500,
+				"unit": "g",
+				"prep": "scrubbed and debearded",
+				"original": "500 g mussels, scrubbed and debearded"
+			},
+			{
+				"id": "i14",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the prawns in the oil for a minute per side and lift out.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Fry the squid briefly, then add onion and pepper and soften; add garlic.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add tomato and paprika and cook down to a thick sofrito.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Pour in the hot stock with saffron and salt, bring to a boil, then scatter in the rice and spread evenly. Do not stir again.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "high",
+				"critical": "Do not stir after the rice is in."
+			},
+			{
+				"id": "s5",
+				"text": "Lower the heat. Push the mussels into the rice, hinge down, and lay the prawns on top. Cook until the liquid is absorbed and the mussels open.",
+				"uses": [
+					"s4",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Raise the heat for a minute for socarrat, then rest covered and serve with lemon. Discard any mussels that stay closed.",
+				"uses": [
+					"s5",
+					"i14"
+				],
+				"technique": [
+					"toast",
+					"rest"
+				],
+				"durationMin": 6
+			}
+		],
+		"notes": {
+			"techniques": "Searing the prawns first flavours the oil and keeps them from overcooking.",
+			"chemistry": "Bomba rice absorbs about three times its volume of liquid while holding its shape.",
+			"spiceProfile": "Saffron and sweet paprika with garlic.",
+			"variations": "Uses fish stock and seafood instead of meat; a sofrito of onion and pepper is added, unlike the Valencian original."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "paella",
+		"title": "Paella mixta (chicken and seafood)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Mixta"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 50,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"spanish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"chicken",
+			"seafood",
+			"party"
+		],
+		"equipment": [
+			"paella pan (about 40 cm)"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 80,
+				"unit": "ml",
+				"original": "80 ml olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"prep": "cut in chunks",
+				"original": "500 g boneless chicken thighs, cut in chunks"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1½ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in strips",
+				"original": "1 red bell pepper, in strips"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "grated-tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "2 ripe tomatoes, grated"
+			},
+			{
+				"id": "i8",
+				"key": "smoked-paprika",
+				"name": "smoked paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp smoked paprika"
+			},
+			{
+				"id": "i9",
+				"key": "chicken-stock",
+				"name": "hot chicken stock",
+				"role": "stock",
+				"qty": 1.4,
+				"unit": "l",
+				"original": "1.4 l hot chicken stock"
+			},
+			{
+				"id": "i10",
+				"key": "saffron",
+				"name": "saffron threads",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch saffron threads"
+			},
+			{
+				"id": "i11",
+				"key": "bomba-rice",
+				"name": "bomba rice",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g bomba rice"
+			},
+			{
+				"id": "i12",
+				"key": "frozen-peas",
+				"name": "frozen peas",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g frozen peas"
+			},
+			{
+				"id": "i13",
+				"key": "prawns",
+				"name": "shell-on prawns",
+				"role": "seafood",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 shell-on prawns"
+			},
+			{
+				"id": "i14",
+				"key": "mussels",
+				"name": "mussels",
+				"role": "seafood",
+				"qty": 500,
+				"unit": "g",
+				"prep": "scrubbed",
+				"original": "500 g mussels, scrubbed"
+			},
+			{
+				"id": "i15",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			},
+			{
+				"id": "i16",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the chicken with half the salt and brown it in the oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Add onion, pepper and garlic and soften, then add tomato and paprika and cook down.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 12,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the hot stock and saffron, bring to a boil, scatter in the rice and spread evenly. Cook without stirring.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "high",
+				"critical": "Do not stir after the rice is in."
+			},
+			{
+				"id": "s4",
+				"text": "Lower the heat, scatter the peas and press in the prawns and mussels. Cook until the liquid is absorbed, the mussels open and the chicken reaches 74 °C.",
+				"uses": [
+					"s3",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 12,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Rest covered for 5 minutes and serve with lemon and parsley. Discard unopened mussels.",
+				"uses": [
+					"s4",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 5
+			}
+		],
+		"notes": {
+			"techniques": "Seafood goes in late so it cooks through just as the rice finishes.",
+			"spiceProfile": "Smoked paprika and saffron.",
+			"variations": "The popular mixed version: chicken and seafood together with chicken stock; frowned on in Valencia but common everywhere else."
+		}
+	}
+]

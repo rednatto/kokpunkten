@@ -1,0 +1,275 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "cacio-e-pepe",
+		"title": "Cacio e pepe, Roman style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Roman classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 15,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"roman",
+			"vegetarian"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tonnarelli",
+				"name": "tonnarelli or spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g tonnarelli or spaghetti"
+			},
+			{
+				"id": "i2",
+				"key": "pecorino-romano",
+				"name": "pecorino romano",
+				"role": "hard-cheese",
+				"qty": 160,
+				"unit": "g",
+				"prep": "very finely grated",
+				"original": "160 g pecorino romano, very finely grated"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black peppercorns",
+				"role": "seasoning",
+				"qty": 2,
+				"unit": "tsp",
+				"prep": "coarsely crushed",
+				"original": "2 tsp black peppercorns, coarsely crushed"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "for the pasta water",
+				"original": "1 tsp coarse salt, for the pasta water"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toast the crushed pepper in a dry pan until fragrant. Add a ladle of pasta water and take off the heat.",
+				"uses": [
+					"i3"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Cook the pasta in a small amount of lightly salted water so it gets very starchy. Save plenty of water.",
+				"uses": [
+					"i1",
+					"i4"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Mash the pecorino with a few spoons of warm (not boiling) pasta water to a smooth paste.",
+				"uses": [
+					"i2",
+					"s2"
+				],
+				"technique": [
+					"whisk"
+				],
+				"critical": "Water must be warm, not boiling, or the cheese clumps into strings."
+			},
+			{
+				"id": "s4",
+				"text": "Toss the pasta in the pepper pan, then off the heat add the cheese paste and toss hard, adding water until creamy.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"emulsify",
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The whole dish is an emulsion of cheese, starch and water. Use less water than usual so it gets starchy, and slightly salted since pecorino is salty.",
+			"chemistry": "Pecorino proteins clump above about 65 °C. Starch from the pasta water coats the fat and protein so they stay dispersed in a creamy sauce.",
+			"spiceProfile": "Toasted black pepper is the only spice, sharp against salty sheep's cheese.",
+			"variations": "The Roman purist version: only pecorino, pepper and pasta water, with no butter or oil."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "cacio-e-pepe",
+		"title": "Cacio e pepe with butter",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – With butter and parmesan"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 15,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"vegetarian",
+			"beginner-friendly"
+		],
+		"equipment": [
+			"large pot",
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 2,
+				"unit": "tsp",
+				"prep": "coarsely ground",
+				"original": "2 tsp black pepper, coarsely ground"
+			},
+			{
+				"id": "i4",
+				"key": "pecorino-romano",
+				"name": "pecorino romano",
+				"role": "hard-cheese",
+				"qty": 80,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "80 g pecorino romano, finely grated"
+			},
+			{
+				"id": "i5",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 40,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "40 g parmesan, finely grated"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "for the pasta water",
+				"original": "1 tsp salt, for the pasta water"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Boil the spaghetti in lightly salted water until 1 minute short of al dente. Save 3 dl of water.",
+				"uses": [
+					"i1",
+					"i6"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 9,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter, toast the pepper in it, then add 1 dl of pasta water.",
+				"uses": [
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Finish cooking the pasta in the pan for a minute. Off the heat, add the cheeses in handfuls, tossing and adding water until creamy.",
+				"uses": [
+					"s1",
+					"s2",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"emulsify",
+					"toss"
+				],
+				"critical": "Take the pan off the heat before adding the cheese."
+			}
+		],
+		"notes": {
+			"techniques": "Butter gives the sauce extra fat to emulsify around, making it much more forgiving.",
+			"chemistry": "Butter adds emulsifiers and fat that keep cheese proteins from clumping when the pan is a little too hot.",
+			"spiceProfile": "Mellower than the classic: parmesan softens the sharp pecorino.",
+			"variations": "A forgiving version with butter and part parmesan. Less sharp but much less likely to clump."
+		}
+	}
+]

@@ -4,26 +4,50 @@
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
-	import { db } from '#lib/db.ts';
+	import { db, type StoredRecipe } from '#lib/db.ts';
 	import { displayAmount } from '#lib/recipe/units.ts';
 	import Timer from './Timer.svelte';
 
-	const id = page.params.id!;
-	const row = liveQuery(() => db.recipes.get(id));
+	const id = $derived(page.params.id!);
+	// null = not found; undefined = still loading.
+	let row = $state<StoredRecipe | null | undefined>(undefined);
+	$effect(() => {
+		const current = id; // read here so the effect re-runs when the URL changes
+		return watch(() => db.recipes.get(current), (r) => (row = r ?? null));
+	});
 
-	let servings = $state<number | null>(null);
+	// Cooking state belongs to one recipe. Moving between versions reuses this page,
+	// so state is tagged with its recipe id and anything from another recipe is ignored.
+	let cooking = $state<{ id: string; servings: number | null; have: Set<string>; done: Set<string> }>({
+		id: '',
+		servings: null,
+		have: new Set(),
+		done: new Set()
+	});
+	const mine = $derived(cooking.id === id ? cooking : { id, servings: null, have: new Set<string>(), done: new Set<string>() });
+	const haveIng = $derived(mine.have);
+	const doneStep = $derived(mine.done);
 	let metric = $state(true);
-	let haveIng = $state(new Set<string>());
-	let doneStep = $state(new Set<string>());
 
-	const recipe = $derived($row?.recipe);
+	const recipe = $derived(row?.recipe);
+	const servings = $derived(mine.servings ?? recipe?.servings ?? null);
 	const factor = $derived(recipe && servings ? servings / recipe.servings : 1);
+	const setCooking = (changes: Partial<typeof cooking>) => (cooking = { ...mine, ...changes });
 	const ingName = $derived(new Map(recipe?.ingredients.map((i) => [i.id, i.name]) ?? []));
 	const stepNo = $derived(new Map(recipe?.steps.map((s, n) => [s.id, n + 1]) ?? []));
 
+	const dish = $derived(recipe?.dish);
+	let siblings = $state<StoredRecipe[]>([]);
 	$effect(() => {
-		if (recipe && servings === null) servings = recipe.servings;
+		const d = dish; // read here so the effect re-runs when the dish changes
+		return watch(() => (d ? db.recipes.where('recipe.dish').equals(d).toArray() : []), (rows) => (siblings = rows));
 	});
+
+	/** Subscribes to a live database query; the returned cleanup lets $effect re-subscribe when inputs change. */
+	function watch<T>(query: () => Promise<T> | T, set: (value: T) => void) {
+		const sub = liveQuery(query).subscribe({ next: set, error: (e) => console.error(e) });
+		return () => sub.unsubscribe();
+	}
 
 	function toggle(set: Set<string>, key: string) {
 		const next = new Set(set);
@@ -68,9 +92,9 @@
 	}
 </script>
 
-{#if $row === undefined}
+{#if row === undefined}
 	<p class="muted">Loading…</p>
-{:else if !recipe}
+{:else if row === null || !recipe}
 	<p>Recipe not found. <a href={resolve('/')}>Back to recipes</a></p>
 {:else}
 	<h1>{recipe.title}</h1>
@@ -84,11 +108,21 @@
 		{#if recipe.cuisine.length}· {recipe.cuisine.join(', ')}{/if}
 	</p>
 
+	{#if siblings && siblings.length > 1}
+		<nav class="row others" aria-label="Versions of this dish">
+			{#each siblings as s (s.id)}
+				<a href={resolve('/r/[id]', { id: s.id })} class="chip" class:current={s.id === id} aria-current={s.id === id ? 'page' : undefined}>
+					{s.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? s.recipe.title}
+				</a>
+			{/each}
+		</nav>
+	{/if}
+
 	<div class="row controls">
 		<div class="row stepper" aria-label="Servings">
-			<button class="ghost small" onclick={() => (servings = Math.max(1, (servings ?? 1) - 1))} aria-label="Fewer servings">−</button>
+			<button class="ghost small" onclick={() => setCooking({ servings: Math.max(1, (servings ?? 1) - 1) })} aria-label="Fewer servings">−</button>
 			<span><strong>{servings}</strong> servings</span>
-			<button class="ghost small" onclick={() => (servings = (servings ?? 0) + 1)} aria-label="More servings">+</button>
+			<button class="ghost small" onclick={() => setCooking({ servings: (servings ?? 0) + 1 })} aria-label="More servings">+</button>
 		</div>
 		<label class="row check"><input type="checkbox" bind:checked={metric} /> Metric</label>
 		{#if 'wakeLock' in navigator}
@@ -104,7 +138,7 @@
 			{/if}
 			<li class:done={haveIng.has(ing.id)}>
 				<label>
-					<input type="checkbox" checked={haveIng.has(ing.id)} onchange={() => (haveIng = toggle(haveIng, ing.id))} />
+					<input type="checkbox" checked={haveIng.has(ing.id)} onchange={() => setCooking({ have: toggle(haveIng, ing.id) })} />
 					<span>
 						<strong class="amount">{displayAmount(ing, factor, metric)}</strong>
 						{ing.name}{#if ing.prep}<span class="muted">, {ing.prep}</span>{/if}
@@ -120,7 +154,7 @@
 	<ol class="steps">
 		{#each recipe.steps as step (step.id)}
 			<li class:done={doneStep.has(step.id)}>
-				<button class="num" onclick={() => (doneStep = toggle(doneStep, step.id))} aria-pressed={doneStep.has(step.id)}>
+				<button class="num" onclick={() => setCooking({ done: toggle(doneStep, step.id) })} aria-pressed={doneStep.has(step.id)}>
 					{doneStep.has(step.id) ? '✓' : stepNo.get(step.id)}
 				</button>
 				<div>
@@ -152,33 +186,52 @@
 	<h2>Yours</h2>
 	<div class="card mine">
 		<div class="row">
-			<button class="ghost small" onclick={() => update({ favorite: !$row.favorite })}>
-				{$row.favorite ? '★ Favorite' : '☆ Favorite'}
+			<button class="ghost small" onclick={() => update({ favorite: !row!.favorite })}>
+				{row.favorite ? '★ Favorite' : '☆ Favorite'}
 			</button>
 			<div class="row rating" aria-label="Rating">
 				{#each [1, 2, 3, 4, 5] as n}
 					<button
 						class="ghost small dot"
-						class:filled={($row.rating ?? 0) >= n}
+						class:filled={(row.rating ?? 0) >= n}
 						aria-label="Rate {n} of 5"
-						onclick={() => update({ rating: $row.rating === n ? null : n })}>●</button>
+						onclick={() => update({ rating: row!.rating === n ? null : n })}>●</button>
 				{/each}
 			</div>
 		</div>
 		<textarea
 			rows="3"
 			placeholder="Your notes, e.g. less salt next time"
-			value={$row.note}
+			value={row.note}
 			onchange={(e) => update({ note: e.currentTarget.value })}
 			style="font-family: inherit; font-size: 1rem"
 		></textarea>
-		<button class="ghost small delete" onclick={remove}>Delete recipe</button>
+		{#if !row.builtin}
+			<button class="ghost small delete" onclick={remove}>Delete recipe</button>
+		{/if}
 	</div>
 {/if}
 
 <style>
 	.meta {
 		margin: 0 0 0.75rem;
+	}
+	.others {
+		gap: 0.4rem;
+		margin-bottom: 0.75rem;
+	}
+	.chip {
+		font-size: 0.85rem;
+		border: 1px solid var(--line);
+		border-radius: 1rem;
+		padding: 0.15rem 0.6rem;
+		color: inherit;
+		text-decoration: none;
+	}
+	.chip.current {
+		border-color: var(--accent);
+		background: var(--accent);
+		color: var(--accent-fg);
 	}
 	.controls {
 		justify-content: space-between;

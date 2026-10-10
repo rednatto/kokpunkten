@@ -1,0 +1,966 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pho",
+		"title": "Pho bo, beef pho with bone broth",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Southern beef pho"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 360,
+			"totalMin": 420
+		},
+		"cuisine": [
+			"vietnamese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"noodles",
+			"soup",
+			"beef",
+			"weekend-project"
+		],
+		"equipment": [
+			"large stockpot",
+			"fine sieve",
+			"dry frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-bones",
+				"name": "beef marrow and knuckle bones",
+				"role": "meat",
+				"qty": 2.5,
+				"unit": "kg",
+				"group": "broth",
+				"original": "2.5 kg beef marrow and knuckle bones"
+			},
+			{
+				"id": "i2",
+				"key": "beef-brisket",
+				"name": "beef brisket or chuck",
+				"role": "meat",
+				"qty": 500,
+				"unit": "g",
+				"group": "broth",
+				"original": "500 g beef brisket or chuck"
+			},
+			{
+				"id": "i3",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 5,
+				"unit": "l",
+				"group": "broth",
+				"original": "5 l water"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "halved, unpeeled",
+				"group": "broth",
+				"original": "2 yellow onions, halved, unpeeled"
+			},
+			{
+				"id": "i5",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 100,
+				"unit": "g",
+				"prep": "halved lengthwise",
+				"group": "broth",
+				"original": "100 g ginger, halved lengthwise"
+			},
+			{
+				"id": "i6",
+				"key": "star-anise",
+				"name": "star anise",
+				"role": "spice",
+				"qty": 5,
+				"unit": "piece",
+				"group": "spices",
+				"original": "5 star anise"
+			},
+			{
+				"id": "i7",
+				"key": "cinnamon-stick",
+				"name": "cinnamon stick",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"group": "spices",
+				"original": "1 cinnamon stick"
+			},
+			{
+				"id": "i8",
+				"key": "cloves",
+				"name": "whole cloves",
+				"role": "spice",
+				"qty": 5,
+				"unit": "piece",
+				"group": "spices",
+				"original": "5 whole cloves"
+			},
+			{
+				"id": "i9",
+				"key": "coriander-seeds",
+				"name": "coriander seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "spices",
+				"original": "1 tbsp coriander seeds"
+			},
+			{
+				"id": "i10",
+				"key": "black-cardamom",
+				"name": "black cardamom pod",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"group": "spices",
+				"original": "1 black cardamom pod"
+			},
+			{
+				"id": "i11",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp fish sauce"
+			},
+			{
+				"id": "i12",
+				"key": "rock-sugar",
+				"name": "rock sugar",
+				"role": "sweetener",
+				"qty": 30,
+				"unit": "g",
+				"substitutes": [
+					"sugar"
+				],
+				"original": "30 g rock sugar"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp salt"
+			},
+			{
+				"id": "i14",
+				"key": "rice-noodles",
+				"name": "fresh or dried flat rice noodles (banh pho)",
+				"role": "noodles",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g fresh or dried flat rice noodles (banh pho)"
+			},
+			{
+				"id": "i15",
+				"key": "beef-sirloin",
+				"name": "raw beef sirloin",
+				"role": "meat",
+				"qty": 300,
+				"unit": "g",
+				"prep": "very thinly sliced",
+				"original": "300 g raw beef sirloin, very thinly sliced"
+			},
+			{
+				"id": "i16",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "4 scallions, sliced"
+			},
+			{
+				"id": "i17",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "garnish",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "very thinly sliced and soaked in cold water",
+				"original": "0.5 white onion, very thinly sliced and soaked in cold water"
+			},
+			{
+				"id": "i18",
+				"key": "thai-basil",
+				"name": "Thai basil",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch Thai basil"
+			},
+			{
+				"id": "i19",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch cilantro"
+			},
+			{
+				"id": "i20",
+				"key": "bean-sprouts",
+				"name": "bean sprouts",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g bean sprouts"
+			},
+			{
+				"id": "i21",
+				"key": "lime",
+				"name": "limes",
+				"role": "acid",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "2 limes, in wedges"
+			},
+			{
+				"id": "i22",
+				"key": "red-chili",
+				"name": "bird's eye chilies",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 bird's eye chilies, sliced"
+			},
+			{
+				"id": "i23",
+				"key": "hoisin-sauce",
+				"name": "hoisin sauce",
+				"role": "sauce",
+				"qty": 4,
+				"unit": "tbsp",
+				"optional": true,
+				"original": "4 tbsp hoisin sauce (optional)"
+			},
+			{
+				"id": "i24",
+				"key": "sriracha",
+				"name": "sriracha",
+				"role": "chili",
+				"qty": 4,
+				"unit": "tbsp",
+				"optional": true,
+				"original": "4 tbsp sriracha (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cover the bones with water, boil hard for 10 minutes, then drain and rinse the bones and pot.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Char the onions and ginger in a dry pan or over a flame until blackened in places. Toast the spices in a dry pan until fragrant.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"char",
+					"toast"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Return the bones to the pot with the fresh water and brisket and bring to a bare simmer, skimming well.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"simmer",
+					"skim"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the charred aromatics and the spices in a muslin bag. Simmer gently, uncovered.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 360,
+				"heat": "low",
+				"critical": "Never let the broth boil; keep skimming for a clear broth."
+			},
+			{
+				"id": "s5",
+				"text": "Remove the brisket after about 1.5 hours when tender, cool and slice thinly. Remove the spice bag after 2 hours so it does not turn bitter.",
+				"uses": [
+					"s4"
+				],
+				"technique": []
+			},
+			{
+				"id": "s6",
+				"text": "Strain the broth and season with fish sauce, rock sugar and salt. Keep it at a rolling boil for serving.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"strain"
+				]
+			},
+			{
+				"id": "s7",
+				"text": "Cook the noodles, divide between bowls, top with sliced brisket, raw sirloin, scallions and onion.",
+				"uses": [
+					"s5",
+					"i14",
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s8",
+				"text": "Ladle boiling broth over so it cooks the raw beef, and serve with herbs, sprouts, lime, chili, hoisin and sriracha on the side.",
+				"uses": [
+					"s6",
+					"s7",
+					"i18",
+					"i19",
+					"i20",
+					"i21",
+					"i22",
+					"i23",
+					"i24"
+				],
+				"technique": [],
+				"critical": "The broth must be at a full boil to cook the thin raw beef in the bowl."
+			}
+		],
+		"notes": {
+			"techniques": "A clear broth relies on blanching the bones, skimming and never boiling. Charring the onion and ginger adds sweetness and smokiness.",
+			"chemistry": "Slow simmering extracts gelatin from bones for body. Charring caramelises the onion sugars and creates roasted flavours that colour the broth.",
+			"spiceProfile": "Fragrant star anise and cinnamon with cloves and coriander, savoury fish sauce, and fresh herbs, lime and chili added at the table.",
+			"variations": "Saigon-style with a full herb plate, hoisin and sriracha. Hanoi-style pho is clearer and garnished only with scallion, and pho ga uses chicken."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pho",
+		"title": "Pho ga, chicken pho",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Chicken pho ga"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 90,
+			"totalMin": 110
+		},
+		"cuisine": [
+			"vietnamese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"noodles",
+			"soup",
+			"chicken"
+		],
+		"equipment": [
+			"large stockpot",
+			"fine sieve",
+			"dry frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-chicken",
+				"name": "whole chicken",
+				"role": "poultry",
+				"qty": 1.6,
+				"unit": "kg",
+				"original": "1.6 kg whole chicken"
+			},
+			{
+				"id": "i2",
+				"key": "chicken-wings",
+				"name": "chicken wings or backs",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"optional": true,
+				"original": "500 g chicken wings or backs (optional)"
+			},
+			{
+				"id": "i3",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 3.5,
+				"unit": "l",
+				"original": "3.5 l water"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved, unpeeled",
+				"original": "1 yellow onion, halved, unpeeled"
+			},
+			{
+				"id": "i5",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 60,
+				"unit": "g",
+				"prep": "halved lengthwise",
+				"original": "60 g ginger, halved lengthwise"
+			},
+			{
+				"id": "i6",
+				"key": "star-anise",
+				"name": "star anise",
+				"role": "spice",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 star anise"
+			},
+			{
+				"id": "i7",
+				"key": "coriander-seeds",
+				"name": "coriander seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp coriander seeds"
+			},
+			{
+				"id": "i8",
+				"key": "cinnamon-stick",
+				"name": "cinnamon stick, small",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 cinnamon stick, small"
+			},
+			{
+				"id": "i9",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp fish sauce"
+			},
+			{
+				"id": "i10",
+				"key": "rock-sugar",
+				"name": "rock sugar",
+				"role": "sweetener",
+				"qty": 15,
+				"unit": "g",
+				"substitutes": [
+					"sugar"
+				],
+				"original": "15 g rock sugar"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i12",
+				"key": "rice-noodles",
+				"name": "flat rice noodles",
+				"role": "noodles",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g flat rice noodles"
+			},
+			{
+				"id": "i13",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "3 scallions, sliced"
+			},
+			{
+				"id": "i14",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "1 bunch cilantro, chopped"
+			},
+			{
+				"id": "i15",
+				"key": "makrut-lime-leaves",
+				"name": "makrut lime leaves",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "very finely shredded",
+				"optional": true,
+				"original": "3 makrut lime leaves, very finely shredded (optional)"
+			},
+			{
+				"id": "i16",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lime, in wedges"
+			},
+			{
+				"id": "i17",
+				"key": "red-chili",
+				"name": "red chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 red chili, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Char the onion and ginger until blackened in spots, and toast the spices.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"char",
+					"toast"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Put the chicken and wings in the cold water, bring slowly to a simmer and skim.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"simmer",
+					"skim"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the aromatics and spices and simmer gently until the chicken reaches 74 °C in the thigh, about 40 minutes.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 40,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Lift out the chicken, cool slightly and pull the meat into strips. Return the bones to the pot and simmer the broth for another 30 minutes.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 30,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Strain and season with fish sauce, rock sugar and salt.",
+				"uses": [
+					"s4",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"strain"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Cook the noodles and divide between bowls with the chicken, scallions, cilantro and lime leaves. Ladle over hot broth and serve with lime and chili.",
+				"uses": [
+					"s4",
+					"s5",
+					"i12",
+					"i13",
+					"i14",
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 2
+			}
+		],
+		"notes": {
+			"techniques": "The whole chicken poaches in the broth, then the bones go back in to strengthen it. The method is the same as for beef pho, just faster.",
+			"chemistry": "Poaching gently keeps the chicken meat moist, since muscle proteins tighten and expel water if boiled.",
+			"spiceProfile": "Lighter spicing than beef pho, so ginger and charred onion come forward; lime leaf adds a citrus lift.",
+			"variations": "Lighter and quicker than beef pho, and done in two hours. Garnishes lean toward lime leaves and scallion rather than a big herb plate."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pho",
+		"title": "Quick weeknight beef pho",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick weeknight"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 35,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"vietnamese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"noodles",
+			"soup",
+			"beef",
+			"weeknight"
+		],
+		"equipment": [
+			"large pot",
+			"dry frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "1 yellow onion, halved"
+			},
+			{
+				"id": "i2",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 50,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "50 g ginger, sliced"
+			},
+			{
+				"id": "i3",
+				"key": "star-anise",
+				"name": "star anise",
+				"role": "spice",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 star anise"
+			},
+			{
+				"id": "i4",
+				"key": "cinnamon-stick",
+				"name": "cinnamon stick",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 cinnamon stick"
+			},
+			{
+				"id": "i5",
+				"key": "cloves",
+				"name": "whole cloves",
+				"role": "spice",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 whole cloves"
+			},
+			{
+				"id": "i6",
+				"key": "coriander-seeds",
+				"name": "coriander seeds",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp coriander seeds"
+			},
+			{
+				"id": "i7",
+				"key": "beef-stock",
+				"name": "good beef stock",
+				"role": "stock",
+				"qty": 2,
+				"unit": "l",
+				"original": "2 l good beef stock"
+			},
+			{
+				"id": "i8",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp fish sauce"
+			},
+			{
+				"id": "i9",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp sugar"
+			},
+			{
+				"id": "i10",
+				"key": "rice-noodles",
+				"name": "flat rice noodles",
+				"role": "noodles",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g flat rice noodles"
+			},
+			{
+				"id": "i11",
+				"key": "beef-sirloin",
+				"name": "beef sirloin",
+				"role": "meat",
+				"qty": 300,
+				"unit": "g",
+				"prep": "frozen for 20 minutes, then very thinly sliced",
+				"original": "300 g beef sirloin, frozen for 20 minutes, then very thinly sliced"
+			},
+			{
+				"id": "i12",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "3 scallions, sliced"
+			},
+			{
+				"id": "i13",
+				"key": "thai-basil",
+				"name": "Thai basil",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch Thai basil"
+			},
+			{
+				"id": "i14",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch cilantro"
+			},
+			{
+				"id": "i15",
+				"key": "bean-sprouts",
+				"name": "bean sprouts",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g bean sprouts"
+			},
+			{
+				"id": "i16",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lime, in wedges"
+			},
+			{
+				"id": "i17",
+				"key": "sriracha",
+				"name": "sriracha",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tbsp",
+				"optional": true,
+				"original": "2 tbsp sriracha (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Char the onion and ginger cut side down in a dry pot until blackened, then toast the spices in the pot for 1 minute.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"char",
+					"toast"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Pour in the stock and simmer to infuse.",
+				"uses": [
+					"s1",
+					"i7"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 25,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Strain and season with fish sauce and sugar.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"strain"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Cook the noodles and divide between bowls. Top with the raw beef and scallions and ladle the boiling broth over.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 2,
+				"critical": "The broth must be boiling to cook the beef slices in the bowl."
+			},
+			{
+				"id": "s5",
+				"text": "Serve with basil, cilantro, sprouts, lime and sriracha.",
+				"uses": [
+					"s4",
+					"i13",
+					"i14",
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Ready-made stock is infused with charred aromatics and toasted spices for 25 minutes instead of simmering bones for hours.",
+			"chemistry": "Toasting whole spices drives volatile aromatic oils out to the surface, so they infuse quickly into hot stock.",
+			"spiceProfile": "The same star anise, cinnamon and clove notes as long-cooked pho, but lighter in body.",
+			"variations": "Under an hour using store-bought stock. It lacks the gelatin body of a real bone broth, but the aroma is recognisably pho."
+		}
+	}
+]

@@ -1,0 +1,514 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "sushi-rice",
+		"title": "Sushi rice with hosomaki (tuna and cucumber rolls)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic hosomaki"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 20,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main",
+			"basic"
+		],
+		"tags": [
+			"rice",
+			"sushi",
+			"raw fish"
+		],
+		"equipment": [
+			"rice cooker or heavy pot with lid",
+			"wide shallow bowl",
+			"bamboo rolling mat",
+			"sharp knife"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "sushi-rice",
+				"name": "Japanese short-grain rice",
+				"role": "rice",
+				"qty": 450,
+				"unit": "g",
+				"original": "450 g Japanese short-grain rice"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 5.2,
+				"unit": "dl",
+				"original": "5.2 dl water"
+			},
+			{
+				"id": "i3",
+				"key": "kombu",
+				"name": "kombu",
+				"role": "umami",
+				"qty": 5,
+				"unit": "g",
+				"prep": "a 5 cm piece",
+				"optional": true,
+				"original": "5 g kombu, a 5 cm piece (optional)"
+			},
+			{
+				"id": "i4",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 75,
+				"unit": "ml",
+				"group": "sushi vinegar",
+				"original": "75 ml rice vinegar"
+			},
+			{
+				"id": "i5",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "sushi vinegar",
+				"original": "2 tbsp sugar"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"group": "sushi vinegar",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i7",
+				"key": "nori",
+				"name": "nori sheets",
+				"role": "garnish",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "6 nori sheets, halved"
+			},
+			{
+				"id": "i8",
+				"key": "tuna",
+				"name": "sushi-grade tuna",
+				"role": "fish",
+				"qty": 200,
+				"unit": "g",
+				"prep": "in 1 cm sticks",
+				"original": "200 g sushi-grade tuna, in 1 cm sticks"
+			},
+			{
+				"id": "i9",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "seeded, in 1 cm sticks",
+				"original": "1 cucumber, seeded, in 1 cm sticks"
+			},
+			{
+				"id": "i10",
+				"key": "wasabi",
+				"name": "wasabi",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp wasabi"
+			},
+			{
+				"id": "i11",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp soy sauce, to serve"
+			},
+			{
+				"id": "i12",
+				"key": "pickled-ginger",
+				"name": "pickled ginger (gari)",
+				"role": "garnish",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp pickled ginger (gari), to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse the rice in cold water, swishing and draining, until the water runs almost clear. Drain for 15 minutes.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"rinse"
+				],
+				"durationMin": 15,
+				"critical": "Rinse well; surface starch left on the grains makes the rice pasty."
+			},
+			{
+				"id": "s2",
+				"text": "Cook the rice with the water and kombu: bring to a boil covered, then cook on the lowest heat for 13 minutes and rest off the heat, lid on, for 10 minutes.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"boil",
+					"steam",
+					"rest"
+				],
+				"durationMin": 25,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Warm the vinegar, sugar and salt until dissolved, then cool.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Turn the hot rice into a wide bowl, remove the kombu, and fold in the vinegar with slicing strokes while fanning to cool it to body temperature. Cover with a damp cloth.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"fold"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s5",
+				"text": "Place half a nori sheet, shiny side down, on the mat. With wet hands spread about 80 g rice evenly, leaving 1 cm free at the far edge.",
+				"uses": [
+					"s4",
+					"i7"
+				],
+				"technique": [
+					"spread"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Smear a little wasabi across the rice, lay a line of tuna or cucumber on top, and roll tightly with the mat.",
+				"uses": [
+					"s5",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"roll"
+				]
+			},
+			{
+				"id": "s7",
+				"text": "Cut each roll into 6 pieces with a wet sharp knife and serve with soy and pickled ginger.",
+				"uses": [
+					"s6",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"slice"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Sushi rice is seasoned while hot and cooled quickly by fanning, which gives a glossy surface. Hosomaki are thin rolls with one filling and nori outside.",
+			"chemistry": "Hot rice absorbs the vinegar seasoning better; acetic acid lowers pH, which slows bacterial growth. Raw fish should be sushi-grade or frozen to −20 °C for at least 7 days to kill parasites.",
+			"spiceProfile": "Lightly sweet-sour rice with the sharp heat of wasabi and clean fish and cucumber flavours.",
+			"variations": "Traditional thin rolls with a single filling. Inside-out rolls such as the California roll put rice outside and use cooked or no fish."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "sushi-rice",
+		"title": "California uramaki (inside-out rolls)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Inside-out California roll"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 45,
+			"cookMin": 20,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"japanese",
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"sushi",
+			"no raw fish"
+		],
+		"equipment": [
+			"rice cooker or heavy pot with lid",
+			"wide shallow bowl",
+			"bamboo rolling mat",
+			"cling film",
+			"sharp knife"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "sushi-rice",
+				"name": "Japanese short-grain rice",
+				"role": "rice",
+				"qty": 450,
+				"unit": "g",
+				"original": "450 g Japanese short-grain rice"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 5.2,
+				"unit": "dl",
+				"original": "5.2 dl water"
+			},
+			{
+				"id": "i3",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 75,
+				"unit": "ml",
+				"group": "sushi vinegar",
+				"original": "75 ml rice vinegar"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "sushi vinegar",
+				"original": "2 tbsp sugar"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"group": "sushi vinegar",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "nori",
+				"name": "nori sheets",
+				"role": "garnish",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 nori sheets"
+			},
+			{
+				"id": "i7",
+				"key": "crab-sticks",
+				"name": "crab sticks (surimi) or cooked crab meat",
+				"role": "seafood",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g crab sticks (surimi) or cooked crab meat"
+			},
+			{
+				"id": "i8",
+				"key": "mayonnaise",
+				"name": "Japanese mayonnaise",
+				"role": "sauce",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp Japanese mayonnaise"
+			},
+			{
+				"id": "i9",
+				"key": "avocado",
+				"name": "ripe avocado",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 ripe avocado, sliced"
+			},
+			{
+				"id": "i10",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "in thin sticks",
+				"original": "0.5 cucumber, in thin sticks"
+			},
+			{
+				"id": "i11",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 3,
+				"unit": "tbsp",
+				"substitutes": [
+					"tobiko"
+				],
+				"original": "3 tbsp toasted sesame seeds"
+			},
+			{
+				"id": "i12",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp soy sauce, to serve"
+			},
+			{
+				"id": "i13",
+				"key": "wasabi",
+				"name": "wasabi",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "to serve",
+				"original": "1 tsp wasabi, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse the rice until the water runs almost clear and let drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"rinse"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Cook the rice with the water, then rest covered off the heat.",
+				"uses": [
+					"s1",
+					"i2"
+				],
+				"technique": [
+					"boil",
+					"steam",
+					"rest"
+				],
+				"durationMin": 25,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Dissolve the sugar and salt in the vinegar and fold it into the hot rice while fanning until it cools to body temperature.",
+				"uses": [
+					"s2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"fold"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s4",
+				"text": "Shred the crab and mix it with the mayonnaise.",
+				"uses": [
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Cover the mat with cling film. Lay a nori sheet on it, spread a thin, even layer of rice over the whole sheet and sprinkle with sesame seeds.",
+				"uses": [
+					"s3",
+					"i6",
+					"i11"
+				],
+				"technique": [
+					"spread"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Flip so the rice faces down. Lay crab, avocado and cucumber along the near edge of the nori and roll tightly, pressing gently.",
+				"uses": [
+					"s4",
+					"s5",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"roll"
+				],
+				"critical": "Use a thin rice layer and do not overfill, or the roll will not close."
+			},
+			{
+				"id": "s7",
+				"text": "Cut each roll into 8 pieces with a wet knife and serve with soy and wasabi.",
+				"uses": [
+					"s6",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"slice"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Rolled inside out, with rice on the outside and nori inside, on a mat wrapped in cling film so the rice does not stick.",
+			"chemistry": "The fat in avocado and mayonnaise gives richness that normally comes from raw fish; cooked surimi avoids raw-fish risks.",
+			"spiceProfile": "Creamy, mild and slightly sweet, with nutty sesame.",
+			"variations": "A Western-style roll with no raw fish, more fillings and rice on the outside. Traditional hosomaki are simpler and slimmer."
+		}
+	}
+]

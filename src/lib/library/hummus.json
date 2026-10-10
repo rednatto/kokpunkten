@@ -1,0 +1,561 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "hummus",
+		"title": "Hummus from dried chickpeas",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Levantine classic"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 75,
+			"totalMin": 810
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"snack",
+			"side"
+		],
+		"tags": [
+			"vegan",
+			"dip"
+		],
+		"equipment": [
+			"pot",
+			"food processor"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-chickpeas",
+				"name": "dried chickpeas",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g dried chickpeas"
+			},
+			{
+				"id": "i2",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking soda"
+			},
+			{
+				"id": "i3",
+				"key": "tahini",
+				"name": "tahini",
+				"role": "nut",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g tahini"
+			},
+			{
+				"id": "i4",
+				"key": "lemon",
+				"name": "lemons",
+				"role": "acid",
+				"qty": 1.5,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1 1/2 lemons"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i6",
+				"key": "ice-water",
+				"name": "ice water",
+				"role": "liquid",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl ice-cold water"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp ground cumin"
+			},
+			{
+				"id": "i9",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil, to serve"
+			},
+			{
+				"id": "i10",
+				"key": "sweet-paprika",
+				"name": "paprika",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "paprika, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the chickpeas overnight in plenty of water.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Drain, cover with fresh water, add the baking soda and simmer until very soft and falling apart.",
+				"uses": [
+					"s1",
+					"i2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 60,
+				"heat": "medium-low",
+				"critical": "They must be overcooked to the point of mushiness, or the hummus will be grainy."
+			},
+			{
+				"id": "s3",
+				"text": "Blend the lemon juice, garlic and salt, let stand a few minutes, then blend in the tahini and enough ice water to make a pale, fluffy cream.",
+				"uses": [
+					"i4",
+					"i5",
+					"i7",
+					"i3",
+					"i6"
+				],
+				"technique": [
+					"blend",
+					"emulsify"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add the hot, drained chickpeas and cumin and blend for 3–4 minutes until very smooth.",
+				"uses": [
+					"s2",
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"blend"
+				],
+				"durationMin": 4
+			},
+			{
+				"id": "s5",
+				"text": "Spread in a shallow bowl and finish with olive oil and paprika.",
+				"uses": [
+					"s4",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"garnish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Blending the tahini with lemon and ice water before the chickpeas go in makes a light, whipped base.",
+			"chemistry": "Baking soda raises the pH of the cooking water, which weakens the pectin in the chickpea skins so they break down completely. Tahini seizes into a thick paste with a little water, then loosens into an emulsion as more is added.",
+			"spiceProfile": "Nutty tahini, sharp lemon and raw garlic with a little cumin.",
+			"variations": "Uses dried chickpeas cooked very soft, which gives the smoothest result. The quick version uses canned chickpeas, and musabbaha serves the chickpeas warm and whole."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "hummus",
+		"title": "Quick hummus with canned chickpeas",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick canned"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 10,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"snack",
+			"side"
+		],
+		"tags": [
+			"vegan",
+			"dip",
+			"quick"
+		],
+		"equipment": [
+			"small pot",
+			"food processor"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "canned-chickpeas",
+				"name": "canned chickpeas",
+				"role": "legume",
+				"qty": 2,
+				"unit": "can",
+				"original": "2 cans (2 × 400 g) chickpeas, drained"
+			},
+			{
+				"id": "i2",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp baking soda"
+			},
+			{
+				"id": "i3",
+				"key": "tahini",
+				"name": "tahini",
+				"role": "nut",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g tahini"
+			},
+			{
+				"id": "i4",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1 lemon"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i6",
+				"key": "ice-water",
+				"name": "ice water",
+				"role": "liquid",
+				"qty": 60,
+				"unit": "ml",
+				"original": "60 ml ice water"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i8",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the drained chickpeas in water with the baking soda to soften the skins.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Drain and rinse, rubbing off any loose skins.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"rinse"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Blend tahini, lemon, garlic, salt and ice water until creamy, add the chickpeas and blend until smooth.",
+				"uses": [
+					"s2",
+					"i3",
+					"i4",
+					"i5",
+					"i7",
+					"i6"
+				],
+				"technique": [
+					"blend"
+				],
+				"durationMin": 3
+			},
+			{
+				"id": "s4",
+				"text": "Spoon into a bowl and drizzle with oil.",
+				"uses": [
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"garnish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A short simmer with baking soda makes canned chickpeas almost as soft as home-cooked ones.",
+			"chemistry": "Alkaline water breaks down the skins and cell walls, so the purée turns out smoother.",
+			"variations": "Ready in 20 minutes but slightly less silky than hummus made from dried chickpeas."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "hummus",
+		"title": "Musabbaha (warm whole-chickpea hummus)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Musabbaha"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 70,
+			"totalMin": 805
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"main",
+			"breakfast"
+		],
+		"tags": [
+			"vegan",
+			"warm"
+		],
+		"equipment": [
+			"pot",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-chickpeas",
+				"name": "dried chickpeas",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g dried chickpeas"
+			},
+			{
+				"id": "i2",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking soda"
+			},
+			{
+				"id": "i3",
+				"key": "tahini",
+				"name": "tahini",
+				"role": "nut",
+				"qty": 120,
+				"unit": "g",
+				"original": "120 g tahini"
+			},
+			{
+				"id": "i4",
+				"key": "lemon",
+				"name": "lemons",
+				"role": "acid",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 2 lemons"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "2 cloves garlic, crushed"
+			},
+			{
+				"id": "i6",
+				"key": "green-chili",
+				"name": "green chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 green chili, finely chopped"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp cumin"
+			},
+			{
+				"id": "i9",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp olive oil"
+			},
+			{
+				"id": "i10",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "a handful of parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the chickpeas overnight.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Drain and simmer with baking soda in fresh water until tender but still whole. Keep some cooking water.",
+				"uses": [
+					"s1",
+					"i2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 50,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Stir tahini with half the lemon, a crushed garlic clove, salt and a little cooking water to a pourable sauce.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i7"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Mix the rest of the lemon and garlic with the chili into a sharp dressing.",
+				"uses": [
+					"i6",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Spoon warm chickpeas into bowls, pour the tahini sauce over, then the chili-lemon dressing, cumin, oil and parsley.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The chickpeas stay whole and warm instead of being puréed, sitting in a loose tahini sauce.",
+			"spiceProfile": "Bright lemon-chili dressing over nutty tahini, with cumin.",
+			"variations": "Served warm, with whole chickpeas, as a breakfast or main. Classic hummus is a smooth, room-temperature purée."
+		}
+	}
+]

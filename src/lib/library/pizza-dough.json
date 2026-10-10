@@ -1,0 +1,477 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pizza-dough",
+		"title": "Neapolitan pizza dough",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Neapolitan"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 2,
+			"totalMin": 515
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"baking",
+			"basic"
+		],
+		"tags": [
+			"pizza",
+			"slow-rise",
+			"yeast"
+		],
+		"equipment": [
+			"large bowl",
+			"lidded tray",
+			"pizza oven or baking steel"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tipo-00-flour",
+				"name": "Italian 00 pizza flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g Italian 00 pizza flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "cool water",
+				"role": "liquid",
+				"qty": 325,
+				"unit": "ml",
+				"original": "325 ml cool water"
+			},
+			{
+				"id": "i3",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "g",
+				"original": "1 g (¼ tsp) instant yeast",
+				"substitutes": [
+					"fresh-yeast"
+				]
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "fine sea salt",
+				"role": "salt",
+				"qty": 14,
+				"unit": "g",
+				"original": "14 g fine sea salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Stir the yeast into the water, then mix in the flour until shaggy. Add the salt and mix until it is absorbed.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Knead until smooth and elastic.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s3",
+				"text": "Cover and leave at room temperature.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 120
+			},
+			{
+				"id": "s4",
+				"text": "Divide into four balls of about 210 g, put them in a lidded tray and leave at room temperature until soft and nearly doubled.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"shape",
+					"proof"
+				],
+				"durationMin": 360,
+				"critical": "Shape the balls tight and keep them covered so a skin does not form."
+			},
+			{
+				"id": "s5",
+				"text": "Press each ball out by hand from the centre, leaving a puffy rim. Do not use a rolling pin.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"stretch"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Top lightly and bake in the hottest oven you have, ideally a pizza oven, until puffed and blistered.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 2,
+				"tempC": 450
+			}
+		],
+		"notes": {
+			"techniques": "Very little yeast and a long rise at room temperature give flavour and a tender, puffy rim.",
+			"chemistry": "During the long rise, enzymes break starch into sugars and gluten relaxes, so the dough stretches easily and browns quickly in a fierce oven.",
+			"variations": "No oil or sugar and a soft 00 flour, made for 60–90 seconds at around 450 °C; in a home oven use a preheated steel at maximum heat for 5–7 minutes."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pizza-dough",
+		"title": "New York-style pizza dough",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – New York cold-fermented"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 8,
+			"totalMin": 1590
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking",
+			"basic"
+		],
+		"tags": [
+			"pizza",
+			"cold-ferment",
+			"yeast"
+		],
+		"equipment": [
+			"stand mixer or large bowl",
+			"lidded containers",
+			"baking steel or stone"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g bread flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 325,
+				"unit": "ml",
+				"original": "325 ml cold water"
+			},
+			{
+				"id": "i3",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 4,
+				"unit": "g",
+				"original": "4 g (1 tsp) instant yeast"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g sugar"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g salt"
+			},
+			{
+				"id": "i6",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the flour, water, yeast and sugar, then add the salt and oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Knead until smooth and stretchy.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 8
+			},
+			{
+				"id": "s3",
+				"text": "Divide into four balls, put them in oiled lidded containers and refrigerate.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"cold-ferment"
+				],
+				"durationMin": 1440
+			},
+			{
+				"id": "s4",
+				"text": "Take the dough out and let it come to room temperature.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 120
+			},
+			{
+				"id": "s5",
+				"text": "Stretch each ball into a thin 35 cm round, keeping a slim rim.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"stretch"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Top and bake on a preheated steel or stone until crisp and browned underneath.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 8,
+				"tempC": 275,
+				"critical": "Preheat the steel or stone for at least 45 minutes."
+			}
+		],
+		"notes": {
+			"techniques": "One to three days in the fridge builds flavour and makes the dough easy to stretch thin.",
+			"chemistry": "High-protein bread flour forms more gluten, giving a chewy, foldable crust; the sugar and oil help it brown and stay tender in a home oven.",
+			"variations": "Made for home ovens: bread flour, oil and sugar, a long cold ferment and a larger, thinner pizza than Neapolitan."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pizza-dough",
+		"title": "Quick same-day pizza dough",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick same-day"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 12,
+			"totalMin": 95
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"baking",
+			"basic"
+		],
+		"tags": [
+			"pizza",
+			"quick",
+			"weeknight",
+			"yeast"
+		],
+		"equipment": [
+			"large bowl",
+			"baking trays",
+			"rolling pin"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 7,
+				"unit": "g",
+				"original": "7 g (1 sachet) instant yeast"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 9,
+				"unit": "g",
+				"original": "9 g salt"
+			},
+			{
+				"id": "i5",
+				"key": "water",
+				"name": "warm water",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl warm water, about 37 °C",
+				"prep": "about 37 °C"
+			},
+			{
+				"id": "i6",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the flour, yeast, sugar and salt, then add the water and oil and bring together.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Knead until smooth.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s3",
+				"text": "Cover and leave somewhere warm until doubled.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s4",
+				"text": "Divide into four and roll or stretch thinly. Put on oiled trays.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"roll"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Top and bake on a preheated tray on the lowest shelf until the base is crisp.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 12,
+				"tempC": 250
+			}
+		],
+		"notes": {
+			"techniques": "A full sachet of yeast and warm water make the dough ready in about an hour.",
+			"chemistry": "Warm water speeds up yeast fermentation, but the short rise means less flavour and a breadier crust than slow doughs.",
+			"variations": "The weeknight option: no planning ahead and ordinary flour, at the cost of the flavour and blistering of long-fermented doughs."
+		}
+	}
+]

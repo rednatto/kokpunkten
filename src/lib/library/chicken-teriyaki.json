@@ -1,0 +1,455 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-teriyaki",
+		"title": "Chicken teriyaki, Japanese pan-glazed",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Japanese pan-glazed"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 20,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"quick",
+			"gluten-free option"
+		],
+		"equipment": [
+			"large frying pan with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "skin-on boneless chicken thighs",
+				"role": "poultry",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g skin-on boneless chicken thighs"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vegetable oil"
+			},
+			{
+				"id": "i4",
+				"key": "soy-sauce",
+				"name": "Japanese soy sauce",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp Japanese soy sauce"
+			},
+			{
+				"id": "i5",
+				"key": "mirin",
+				"name": "mirin",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp mirin"
+			},
+			{
+				"id": "i6",
+				"key": "sake",
+				"name": "sake",
+				"role": "wine",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp sake"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp sugar"
+			},
+			{
+				"id": "i8",
+				"key": "rice",
+				"name": "cooked short-grain rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked short-grain rice, to serve"
+			},
+			{
+				"id": "i9",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tsp",
+				"optional": true,
+				"original": "1 tsp toasted sesame seeds (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pat the chicken dry, prick the skin and season lightly with salt.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": []
+			},
+			{
+				"id": "s2",
+				"text": "Mix the soy sauce, mirin, sake and sugar.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Start the chicken skin side down in a cold pan with the oil and cook over medium heat, pressing flat, until the skin is deep golden and crisp.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium",
+				"critical": "Most of the cooking happens skin side down; rushing this gives flabby skin."
+			},
+			{
+				"id": "s4",
+				"text": "Turn, cover and cook until the chicken reaches 74 °C. Wipe out excess fat with paper towel.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s5",
+				"text": "Pour in the sauce and simmer, spooning it over, until it reduces to a glossy glaze.",
+				"uses": [
+					"s2",
+					"s4"
+				],
+				"technique": [
+					"reduce",
+					"glaze"
+				],
+				"durationMin": 3,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s6",
+				"text": "Slice and serve over rice, with the glaze poured over and sesame seeds on top.",
+				"uses": [
+					"s5",
+					"i8",
+					"i9"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The sauce is only soy, mirin, sake and sugar, reduced in the pan until it coats the chicken. There is no cornstarch.",
+			"chemistry": "The sugars in mirin and sugar caramelise and thicken as water evaporates; \"teri\" means shine, from this glaze.",
+			"spiceProfile": "Sweet and salty with the rounded, slightly winey taste of sake and mirin; no garlic or ginger.",
+			"variations": "The traditional home method. American-style teriyaki adds garlic and ginger and thickens the sauce with cornstarch."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-teriyaki",
+		"title": "Chicken teriyaki, American style with garlic and ginger",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American thickened sauce"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"japanese",
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"quick",
+			"weeknight"
+		],
+		"equipment": [
+			"large frying pan",
+			"small saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "boneless skinless chicken thighs",
+				"role": "poultry",
+				"qty": 700,
+				"unit": "g",
+				"prep": "in bite-size pieces",
+				"substitutes": [
+					"chicken breast"
+				],
+				"original": "700 g boneless skinless chicken thighs, in bite-size pieces"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vegetable oil"
+			},
+			{
+				"id": "i3",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 4,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "4 tbsp soy sauce"
+			},
+			{
+				"id": "i4",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"group": "sauce",
+				"original": "1 dl water"
+			},
+			{
+				"id": "i5",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp brown sugar"
+			},
+			{
+				"id": "i6",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp honey"
+			},
+			{
+				"id": "i7",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp rice vinegar"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "grated",
+				"group": "sauce",
+				"original": "2 cloves garlic, grated"
+			},
+			{
+				"id": "i9",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "grated",
+				"group": "sauce",
+				"original": "1 tsp ginger, grated"
+			},
+			{
+				"id": "i10",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "mixed with 2 tbsp cold water",
+				"original": "1 tbsp cornstarch, mixed with 2 tbsp cold water"
+			},
+			{
+				"id": "i11",
+				"key": "broccoli",
+				"name": "broccoli",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "in florets",
+				"original": "300 g broccoli, in florets"
+			},
+			{
+				"id": "i12",
+				"key": "rice",
+				"name": "cooked rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked rice, to serve"
+			},
+			{
+				"id": "i13",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame seeds"
+			},
+			{
+				"id": "i14",
+				"key": "scallion",
+				"name": "scallion",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 scallion, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer soy, water, brown sugar, honey, vinegar, garlic and ginger for 2 minutes.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the cornstarch slurry and simmer until thick and glossy.",
+				"uses": [
+					"s1",
+					"i10"
+				],
+				"technique": [
+					"thicken"
+				],
+				"durationMin": 1,
+				"heat": "medium",
+				"critical": "Bring it back to a boil after adding cornstarch, or it will not thicken fully."
+			},
+			{
+				"id": "s3",
+				"text": "Steam or blanch the broccoli until bright green and tender-crisp.",
+				"uses": [
+					"i11"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 3
+			},
+			{
+				"id": "s4",
+				"text": "Brown the chicken in the oil until cooked through to 74 °C.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Toss the chicken in the sauce and serve over rice with broccoli, sesame seeds and scallion.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "A separately made, cornstarch-thickened sauce is tossed with the cooked chicken, so there is more sauce to coat rice.",
+			"chemistry": "Cornstarch gelatinises near boiling point, giving a thick, clingy sauce.",
+			"spiceProfile": "Sweeter and more garlicky than the Japanese original, with ginger and a touch of vinegar.",
+			"variations": "The takeout-style version: skinless pieces, thick sauce, garlic and ginger. The Japanese version is a simple four-ingredient glaze on crisp-skinned thighs."
+		}
+	}
+]

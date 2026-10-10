@@ -1,0 +1,560 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mac-and-cheese",
+		"title": "Baked macaroni and cheese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Baked with béchamel"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 40,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main",
+			"side"
+		],
+		"tags": [
+			"pasta",
+			"cheesy",
+			"baked"
+		],
+		"equipment": [
+			"saucepan",
+			"pasta pot",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "elbow-macaroni",
+				"name": "elbow macaroni",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g elbow macaroni"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g flour"
+			},
+			{
+				"id": "i4",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 750,
+				"unit": "ml",
+				"prep": "warmed",
+				"original": "7.5 dl whole milk, warmed"
+			},
+			{
+				"id": "i5",
+				"key": "dijon-mustard",
+				"name": "mustard powder or Dijon",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp mustard"
+			},
+			{
+				"id": "i6",
+				"key": "cheddar",
+				"name": "sharp cheddar",
+				"role": "cheese",
+				"qty": 300,
+				"unit": "g",
+				"prep": "grated",
+				"original": "300 g sharp cheddar, grated"
+			},
+			{
+				"id": "i7",
+				"key": "gruyere",
+				"name": "Gruyère",
+				"role": "cheese",
+				"qty": 100,
+				"unit": "g",
+				"prep": "grated",
+				"original": "100 g Gruyère, grated"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i9",
+				"key": "cayenne-pepper",
+				"name": "cayenne",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "pinch of cayenne"
+			},
+			{
+				"id": "i10",
+				"key": "panko",
+				"name": "panko breadcrumbs",
+				"role": "topping",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g panko"
+			},
+			{
+				"id": "i11",
+				"key": "butter",
+				"name": "melted butter (topping)",
+				"role": "fat",
+				"qty": 20,
+				"unit": "g",
+				"prep": "melted",
+				"original": "20 g butter, melted"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Boil the macaroni 2 minutes short of al dente, then drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 6
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter, cook the flour 2 minutes, then whisk in the milk and simmer until thick.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Off the heat, stir in mustard, most of the cheese, salt and cayenne until smooth.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"melt"
+				],
+				"critical": "Add the cheese off the heat; boiling makes it grainy and oily."
+			},
+			{
+				"id": "s4",
+				"text": "Fold in the pasta, pour into a dish, top with remaining cheese and panko tossed in melted butter.",
+				"uses": [
+					"s1",
+					"s3",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Bake at 190 °C until bubbling and golden.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 190
+			}
+		],
+		"notes": {
+			"techniques": "Undercooking the pasta lets it absorb sauce in the oven without going soft.",
+			"chemistry": "The flour starch in the béchamel coats the fat droplets and keeps the cheese sauce from breaking.",
+			"spiceProfile": "Mustard and a pinch of cayenne sharpen the cheese flavour.",
+			"variations": "A sliceable baked version with a crunchy top. Stovetop mac is creamier and quicker, and the Southern custard style is bound with eggs."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mac-and-cheese",
+		"title": "Stovetop mac and cheese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Creamy stovetop"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 15,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main",
+			"side"
+		],
+		"tags": [
+			"pasta",
+			"quick",
+			"creamy"
+		],
+		"equipment": [
+			"pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "elbow-macaroni",
+				"name": "elbow macaroni",
+				"role": "pasta",
+				"qty": 350,
+				"unit": "g",
+				"original": "350 g elbow macaroni"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "evaporated-milk",
+				"name": "evaporated milk",
+				"role": "dairy",
+				"qty": 350,
+				"unit": "ml",
+				"original": "3.5 dl evaporated milk"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i5",
+				"key": "dijon-mustard",
+				"name": "mustard powder",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp mustard powder"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i7",
+				"key": "cheddar",
+				"name": "cheddar",
+				"role": "cheese",
+				"qty": 300,
+				"unit": "g",
+				"prep": "grated",
+				"original": "300 g cheddar, grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the macaroni in just enough salted water to cover, until the water is mostly absorbed.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 9,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk evaporated milk, egg and mustard.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Over low heat, stir butter, the milk mixture and cheese into the pasta until creamy.",
+				"uses": [
+					"s1",
+					"s2",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"melt"
+				],
+				"durationMin": 3,
+				"heat": "low",
+				"critical": "Keep the heat low so the egg thickens the sauce without scrambling."
+			}
+		],
+		"notes": {
+			"techniques": "Cooking the pasta in a small amount of water keeps the starch in the pot, which helps thicken the sauce.",
+			"chemistry": "Evaporated milk has concentrated milk proteins that act as emulsifiers, so the melted cheese stays smooth without a roux.",
+			"variations": "Fast and very creamy with no roux and no oven. The baked version is firmer and has a crust."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mac-and-cheese",
+		"title": "Southern baked macaroni and cheese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Southern custard"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 50,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"american",
+			"southern"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"pasta",
+			"holiday",
+			"baked"
+		],
+		"equipment": [
+			"pasta pot",
+			"bowl",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "elbow-macaroni",
+				"name": "elbow macaroni",
+				"role": "pasta",
+				"qty": 450,
+				"unit": "g",
+				"original": "450 g elbow macaroni"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"prep": "melted",
+				"original": "60 g butter, melted"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 350,
+				"unit": "ml",
+				"original": "3.5 dl whole milk"
+			},
+			{
+				"id": "i5",
+				"key": "evaporated-milk",
+				"name": "evaporated milk",
+				"role": "dairy",
+				"qty": 350,
+				"unit": "ml",
+				"original": "3.5 dl evaporated milk"
+			},
+			{
+				"id": "i6",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 120,
+				"unit": "ml",
+				"original": "1.2 dl sour cream"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1 1/2 tsp salt"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp black pepper"
+			},
+			{
+				"id": "i9",
+				"key": "sweet-paprika",
+				"name": "paprika",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp paprika"
+			},
+			{
+				"id": "i10",
+				"key": "cheddar",
+				"name": "sharp cheddar",
+				"role": "cheese",
+				"qty": 400,
+				"unit": "g",
+				"prep": "grated",
+				"original": "400 g sharp cheddar, grated"
+			},
+			{
+				"id": "i11",
+				"key": "monterey-jack",
+				"name": "Colby or Monterey Jack",
+				"role": "cheese",
+				"qty": 200,
+				"unit": "g",
+				"prep": "grated",
+				"original": "200 g Colby Jack, grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Boil the macaroni until just al dente, drain and toss with the butter.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 7
+			},
+			{
+				"id": "s2",
+				"text": "Whisk eggs, milk, evaporated milk, sour cream, salt, pepper and paprika.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Layer pasta and cheese in a dish, pour the custard over, and finish with a thick layer of cheese.",
+				"uses": [
+					"s1",
+					"s2",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Bake at 175 °C until set and browned, then rest before serving.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake",
+					"rest"
+				],
+				"durationMin": 45,
+				"tempC": 175,
+				"critical": "Rest 15 minutes so the custard firms and slices cleanly."
+			}
+		],
+		"notes": {
+			"techniques": "Layering the cheese rather than melting it into a sauce gives pockets of molten cheese and a firm, sliceable bake.",
+			"chemistry": "The eggs coagulate in the oven and set the milk into a custard that holds the pasta together.",
+			"spiceProfile": "Paprika and black pepper.",
+			"variations": "Egg-set and firm, a holiday side in the American South. Béchamel-based mac is creamier and the stovetop version is loose and saucy."
+		}
+	}
+]

@@ -1,0 +1,1060 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-curry",
+		"title": "Chicken curry, North Indian home style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – North Indian home style"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 45,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"gluten-free"
+		],
+		"equipment": [
+			"heavy pot or kadai"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"substitutes": [
+					"ghee"
+				],
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin seeds"
+			},
+			{
+				"id": "i3",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i4",
+				"key": "cinnamon-stick",
+				"name": "cinnamon stick",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "about 5 cm",
+				"original": "1 cinnamon stick, about 5 cm"
+			},
+			{
+				"id": "i5",
+				"key": "green-cardamom",
+				"name": "green cardamom pods",
+				"role": "spice",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "lightly crushed",
+				"original": "4 green cardamom pods, lightly crushed"
+			},
+			{
+				"id": "i6",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "2 yellow onions, finely chopped"
+			},
+			{
+				"id": "i7",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "4 cloves garlic, grated"
+			},
+			{
+				"id": "i9",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp ground turmeric"
+			},
+			{
+				"id": "i10",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i11",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground coriander"
+			},
+			{
+				"id": "i12",
+				"key": "canned-tomatoes",
+				"name": "chopped tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g chopped tomatoes"
+			},
+			{
+				"id": "i13",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 800,
+				"unit": "g",
+				"prep": "in large bite-size pieces",
+				"original": "800 g boneless chicken thighs, in large bite-size pieces"
+			},
+			{
+				"id": "i14",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i15",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl water"
+			},
+			{
+				"id": "i16",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i17",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp cilantro, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oil and fry the cumin seeds, bay leaf, cinnamon and cardamom until fragrant.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"bloom"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onions and fry, stirring, until deep golden brown.",
+				"uses": [
+					"s1",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium",
+				"critical": "Take the onions to an even deep golden colour; pale onions give a thin, sweet curry, burnt ones a bitter one."
+			},
+			{
+				"id": "s3",
+				"text": "Add ginger and garlic and fry for a minute, then add turmeric, chili and coriander with a splash of water.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"fry"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add the tomatoes and cook until thick and the oil separates at the edges.",
+				"uses": [
+					"s3",
+					"i12"
+				],
+				"technique": [
+					"fry",
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Add the chicken and salt and stir to coat. Fry for a few minutes until the outside turns opaque.",
+				"uses": [
+					"s4",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s6",
+				"text": "Add the water, cover and simmer until the chicken is tender and reaches 74 °C inside.",
+				"uses": [
+					"s5",
+					"i15"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			},
+			{
+				"id": "s7",
+				"text": "Stir in garam masala and cilantro and serve with rice or roti.",
+				"uses": [
+					"s6",
+					"i16",
+					"i17"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The flavour comes from the bhuna stage: frying the onion, aromatics and tomato until the oil separates before the meat goes in.",
+			"chemistry": "Long browning of the onions develops sugars and Maillard flavours. Many spice aromas are fat-soluble, so blooming them in oil releases more flavour.",
+			"spiceProfile": "Warm whole spices (cinnamon, cardamom, cumin) with earthy turmeric and coriander and mild heat from Kashmiri chili. Garam masala at the end adds fresh aroma.",
+			"variations": "A tomato-onion base without cream or coconut. The Kerala version uses coconut milk and curry leaves, while British and Swedish home versions use curry powder and cream."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-curry",
+		"title": "Kerala chicken curry with coconut milk",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Kerala coconut"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 40,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"coconut",
+			"gluten-free",
+			"dairy-free"
+		],
+		"equipment": [
+			"heavy pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "coconut-oil",
+				"name": "coconut oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp coconut oil"
+			},
+			{
+				"id": "i2",
+				"key": "mustard-seeds",
+				"name": "black mustard seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black mustard seeds"
+			},
+			{
+				"id": "i3",
+				"key": "curry-leaves",
+				"name": "curry leaves",
+				"role": "herb",
+				"qty": 20,
+				"unit": "piece",
+				"original": "20 curry leaves"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"substitutes": [
+					"shallots"
+				],
+				"original": "2 yellow onions, thinly sliced"
+			},
+			{
+				"id": "i5",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "finely chopped",
+				"original": "1 tbsp ginger, finely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 5,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "5 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i7",
+				"key": "green-chili",
+				"name": "green chilies",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "slit",
+				"original": "2 green chilies, slit"
+			},
+			{
+				"id": "i8",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp ground turmeric"
+			},
+			{
+				"id": "i9",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i10",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"original": "1.5 tbsp ground coriander"
+			},
+			{
+				"id": "i11",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i12",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 tomato, chopped"
+			},
+			{
+				"id": "i13",
+				"key": "chicken-thigh",
+				"name": "bone-in chicken thighs and drumsticks",
+				"role": "poultry",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "skin removed",
+				"original": "1 kg bone-in chicken thighs and drumsticks, skin removed"
+			},
+			{
+				"id": "i14",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i15",
+				"key": "coconut-milk",
+				"name": "coconut milk",
+				"role": "liquid",
+				"qty": 400,
+				"unit": "ml",
+				"prep": "divided into thin and thick: 2.5 dl diluted, 1.5 dl undiluted",
+				"original": "400 ml coconut milk, divided into thin and thick: 2.5 dl diluted, 1.5 dl undiluted"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oil, add mustard seeds and, when they pop, the curry leaves.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"bloom"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Fry the onions with ginger, garlic and green chilies until soft and light golden.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the ground spices and fry for a minute, then add the tomato and cook until soft.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 4
+			},
+			{
+				"id": "s4",
+				"text": "Add the chicken and salt and stir to coat in the masala.",
+				"uses": [
+					"s3",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Pour in about 2.5 dl of the coconut milk diluted with a little water, cover and simmer until the chicken is cooked through to 74 °C at the bone.",
+				"uses": [
+					"s4",
+					"i15"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 25,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Stir in the remaining thick coconut milk and heat without boiling.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"heat": "low",
+				"critical": "Do not boil after the thick coconut milk goes in or it splits and turns oily."
+			}
+		],
+		"notes": {
+			"techniques": "Mustard seeds and curry leaves are tempered in coconut oil first, the signature start of many Kerala dishes. Coconut milk is added in two stages: thin to cook in, thick to finish.",
+			"chemistry": "Coconut milk is an emulsion of fat in water, stabilised by proteins that break down with hard boiling, which is why the thick milk is only warmed through.",
+			"spiceProfile": "Fragrant and rounded: popping mustard seeds, curry leaves, plenty of coriander and black pepper notes, softened by coconut.",
+			"variations": "Coconut milk replaces the tomato-heavy gravy of North Indian curries, and coconut oil and curry leaves give a distinctly South Indian flavour."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-curry",
+		"title": "Japanese chicken curry (kare raisu)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Japanese curry roux"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"family",
+			"mild"
+		],
+		"equipment": [
+			"heavy pot",
+			"small saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in bite-size pieces",
+				"original": "500 g boneless chicken thighs, in bite-size pieces"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 yellow onions, sliced"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "in chunks",
+				"original": "2 carrots, in chunks"
+			},
+			{
+				"id": "i5",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "in chunks",
+				"original": "3 potatoes, in chunks"
+			},
+			{
+				"id": "i6",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 8,
+				"unit": "dl",
+				"original": "8 dl chicken stock"
+			},
+			{
+				"id": "i7",
+				"key": "apple",
+				"name": "apple",
+				"role": "fruit",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "0.5 apple, grated"
+			},
+			{
+				"id": "i8",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 50,
+				"unit": "g",
+				"group": "roux",
+				"original": "50 g butter"
+			},
+			{
+				"id": "i9",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 4,
+				"unit": "tbsp",
+				"group": "roux",
+				"original": "4 tbsp all-purpose flour"
+			},
+			{
+				"id": "i10",
+				"key": "curry-powder",
+				"name": "Japanese-style curry powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "roux",
+				"original": "2 tbsp Japanese-style curry powder"
+			},
+			{
+				"id": "i11",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "roux",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i12",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i13",
+				"key": "ketchup",
+				"name": "ketchup",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp ketchup"
+			},
+			{
+				"id": "i14",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp honey"
+			},
+			{
+				"id": "i15",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i16",
+				"key": "rice",
+				"name": "cooked Japanese short-grain rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked Japanese short-grain rice, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the chicken in the oil and set aside.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Fry the onions in the same pot until soft and lightly golden.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the carrots, potatoes, stock, apple and chicken. Simmer until the vegetables are tender and the chicken is cooked through.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Meanwhile make the roux: melt the butter, stir in the flour and cook until light brown, then stir in curry powder and garam masala.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"roux"
+				],
+				"durationMin": 8,
+				"heat": "low",
+				"critical": "Cook the roux slowly to a light brown; burnt flour makes the whole curry bitter."
+			},
+			{
+				"id": "s5",
+				"text": "Whisk a ladle of the hot broth into the roux, then stir it back into the pot. Add soy sauce, ketchup and honey and simmer until thick and glossy.",
+				"uses": [
+					"s3",
+					"s4",
+					"i12",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"simmer",
+					"thicken"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Serve over rice.",
+				"uses": [
+					"s5",
+					"i16"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "A browned flour-and-butter roux flavoured with curry powder thickens the stew, the homemade version of the boxed curry blocks used in Japan.",
+			"chemistry": "Flour starch gelatinises in the hot broth to give the thick, glossy sauce; browning the roux adds nutty flavour but reduces its thickening power.",
+			"spiceProfile": "Mild, sweet and savoury curry with turmeric, cumin and coriander from the curry powder, rounded by apple, honey and soy.",
+			"variations": "Much thicker and sweeter than Indian curries, with potatoes and carrots, and eaten over rice. It came to Japan via British naval curry."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-curry",
+		"title": "Creamy curry chicken, Swedish weeknight style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Swedish creamy weeknight"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"weeknight",
+			"quick",
+			"creamy"
+		],
+		"equipment": [
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp butter"
+			},
+			{
+				"id": "i2",
+				"key": "chicken-breast",
+				"name": "chicken breast fillets",
+				"role": "poultry",
+				"qty": 600,
+				"unit": "g",
+				"prep": "in strips",
+				"original": "600 g chicken breast fillets, in strips"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "curry-powder",
+				"name": "mild curry powder",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp mild curry powder"
+			},
+			{
+				"id": "i5",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in strips",
+				"original": "1 red bell pepper, in strips"
+			},
+			{
+				"id": "i6",
+				"key": "heavy-cream",
+				"name": "cooking cream (15 %)",
+				"role": "dairy",
+				"qty": 3,
+				"unit": "dl",
+				"substitutes": [
+					"heavy cream"
+				],
+				"original": "3 dl cooking cream (15 %)"
+			},
+			{
+				"id": "i7",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl chicken stock"
+			},
+			{
+				"id": "i8",
+				"key": "mango-chutney",
+				"name": "mango chutney",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp mango chutney"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i10",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i11",
+				"key": "rice",
+				"name": "cooked rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked rice, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the chicken strips in half the butter, season and set aside.",
+				"uses": [
+					"i1",
+					"i2",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Soften the onion in the rest of the butter, then add the curry powder and fry for 30 seconds.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"saute",
+					"bloom"
+				],
+				"durationMin": 4,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the bell pepper, cream, stock and chutney and simmer for a few minutes.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 4,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Return the chicken and simmer until cooked through to 74 °C. Serve with rice.",
+				"uses": [
+					"s1",
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "low",
+				"critical": "Chicken breast dries out quickly; take it off as soon as it reaches 74 °C."
+			}
+		],
+		"notes": {
+			"techniques": "A quick pan sauce: brown the chicken, bloom curry powder in fat, then finish in cream.",
+			"chemistry": "Frying the curry powder in butter before adding liquid releases fat-soluble aromas and removes its raw, dusty taste.",
+			"spiceProfile": "Mild curry powder, sweetened with mango chutney and softened by cream.",
+			"variations": "A 30-minute everyday dish using ready-made curry powder and cream rather than a slowly fried onion-tomato base."
+		}
+	}
+]

@@ -1,0 +1,699 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "apple-pie",
+		"title": "Apple pie, American double-crust",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American double-crust"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 45,
+			"cookMin": 60,
+			"totalMin": 285
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"pie",
+			"pastry",
+			"holiday"
+		],
+		"equipment": [
+			"food processor or bowl",
+			"rolling pin",
+			"23 cm pie dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 315,
+				"unit": "g",
+				"group": "Pastry",
+				"original": "315 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "cold unsalted butter",
+				"role": "fat",
+				"qty": 225,
+				"unit": "g",
+				"prep": "cubed",
+				"group": "Pastry",
+				"original": "225 g cold unsalted butter, cubed"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "Pastry",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Pastry",
+				"original": "1 tbsp granulated sugar"
+			},
+			{
+				"id": "i5",
+				"key": "water",
+				"name": "ice water",
+				"role": "liquid",
+				"qty": 120,
+				"unit": "ml",
+				"group": "Pastry",
+				"original": "120 ml ice water"
+			},
+			{
+				"id": "i6",
+				"key": "apple",
+				"name": "tart baking apples (e.g. Granny Smith, Braeburn)",
+				"role": "fruit",
+				"qty": 1.2,
+				"unit": "kg",
+				"prep": "peeled, cored and sliced 5 mm thick",
+				"group": "Filling",
+				"original": "1.2 kg tart baking apples (e.g. Granny Smith, Braeburn), peeled, cored and sliced 5 mm thick"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 130,
+				"unit": "g",
+				"group": "Filling",
+				"original": "130 g granulated sugar"
+			},
+			{
+				"id": "i8",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 50,
+				"unit": "g",
+				"group": "Filling",
+				"original": "50 g light brown sugar"
+			},
+			{
+				"id": "i9",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "Filling",
+				"original": "2 tbsp cornstarch"
+			},
+			{
+				"id": "i10",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Filling",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i11",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1.5,
+				"unit": "tsp",
+				"group": "Filling",
+				"original": "1½ tsp ground cinnamon"
+			},
+			{
+				"id": "i12",
+				"key": "nutmeg",
+				"name": "ground nutmeg",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"group": "Filling",
+				"original": "¼ tsp ground nutmeg"
+			},
+			{
+				"id": "i13",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "beaten, for glazing",
+				"original": "1 egg, beaten, for glazing"
+			},
+			{
+				"id": "i14",
+				"key": "demerara-sugar",
+				"name": "demerara sugar",
+				"role": "topping",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp demerara sugar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix flour, salt and sugar, then rub or pulse in the butter until pea-sized pieces remain.",
+				"uses": [
+					"i1",
+					"i3",
+					"i4",
+					"i2"
+				],
+				"technique": [
+					"rub-in"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Add ice water a little at a time until the dough just holds. Divide in two discs, wrap and chill.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"mix",
+					"rest"
+				],
+				"durationMin": 60,
+				"critical": "Keep the butter cold and do not overwork the dough, or the crust turns tough."
+			},
+			{
+				"id": "s3",
+				"text": "Toss the apples with both sugars, cornstarch, lemon juice and spices.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"toss"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Heat the oven to 220 °C. Roll one disc to line the dish, fill with the apples, and cover with the second rolled disc. Crimp and cut steam vents.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"roll",
+					"assemble"
+				],
+				"tempC": 220
+			},
+			{
+				"id": "s5",
+				"text": "Brush with egg and sprinkle with demerara sugar.",
+				"uses": [
+					"s4",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"glaze"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Bake 20 minutes at 220 °C, then lower to 190 °C and bake until the crust is deep golden and the filling bubbles through the vents.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 60,
+				"tempC": 190
+			},
+			{
+				"id": "s7",
+				"text": "Cool at least 3 hours so the filling sets before slicing.",
+				"uses": [
+					"s6"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 180
+			}
+		],
+		"notes": {
+			"techniques": "Flat flakes of cold butter in the pastry turn to steam in the hot oven and lift the dough into layers.",
+			"chemistry": "Cornstarch gelatinises above about 95 °C, so the filling must visibly bubble to thicken; it firms further as it cools.",
+			"spiceProfile": "Cinnamon leads, with a little nutmeg; lemon keeps the apples bright.",
+			"variations": "A full pastry lid makes this the tallest and most pastry-forward version; crumble-topped versions are quicker and crunchier."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "apple-pie",
+		"title": "Dutch apple pie with streusel",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Dutch streusel"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 35,
+			"cookMin": 55,
+			"totalMin": 210
+		},
+		"cuisine": [
+			"dutch",
+			"american"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"pie",
+			"streusel"
+		],
+		"equipment": [
+			"bowls",
+			"rolling pin",
+			"23 cm pie dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 160,
+				"unit": "g",
+				"group": "Crust",
+				"original": "160 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "cold unsalted butter",
+				"role": "fat",
+				"qty": 110,
+				"unit": "g",
+				"prep": "cubed",
+				"group": "Crust",
+				"original": "110 g cold unsalted butter, cubed"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"group": "Crust",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "water",
+				"name": "ice water",
+				"role": "liquid",
+				"qty": 60,
+				"unit": "ml",
+				"group": "Crust",
+				"original": "60 ml ice water"
+			},
+			{
+				"id": "i5",
+				"key": "apple",
+				"name": "baking apples",
+				"role": "fruit",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "peeled, cored and sliced",
+				"group": "Filling",
+				"original": "1 kg baking apples, peeled, cored and sliced"
+			},
+			{
+				"id": "i6",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 80,
+				"unit": "g",
+				"group": "Filling",
+				"original": "80 g granulated sugar"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "Filling",
+				"original": "2 tbsp all-purpose flour"
+			},
+			{
+				"id": "i8",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "Filling",
+				"original": "1 tsp ground cinnamon"
+			},
+			{
+				"id": "i9",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "Filling",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i10",
+				"key": "raisins",
+				"name": "raisins",
+				"role": "fruit",
+				"qty": 50,
+				"unit": "g",
+				"optional": true,
+				"group": "Filling",
+				"original": "50 g raisins (optional)"
+			},
+			{
+				"id": "i11",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 100,
+				"unit": "g",
+				"group": "Streusel",
+				"original": "100 g all-purpose flour"
+			},
+			{
+				"id": "i12",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 90,
+				"unit": "g",
+				"group": "Streusel",
+				"original": "90 g light brown sugar"
+			},
+			{
+				"id": "i13",
+				"key": "butter",
+				"name": "unsalted butter",
+				"role": "fat",
+				"qty": 75,
+				"unit": "g",
+				"prep": "melted",
+				"group": "Streusel",
+				"original": "75 g unsalted butter, melted"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rub the butter into flour and salt, add the ice water and press into a dough. Chill.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"rub-in",
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Toss the apples with sugar, flour, cinnamon, lemon juice and raisins.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"toss"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Mix flour, brown sugar and melted butter with your fingers into large clumps.",
+				"uses": [
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Heat the oven to 190 °C. Roll out the dough, line the dish, pile in the apples and scatter the streusel over.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"roll",
+					"assemble"
+				],
+				"tempC": 190
+			},
+			{
+				"id": "s5",
+				"text": "Bake until the streusel is golden and the filling bubbles at the edges. Tent with foil if it browns too fast.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 55,
+				"tempC": 190
+			},
+			{
+				"id": "s6",
+				"text": "Cool for at least 2 hours before slicing.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 120
+			}
+		],
+		"notes": {
+			"techniques": "Melted butter in the streusel makes larger, crunchier clumps than cold rubbed-in butter.",
+			"chemistry": "Brown sugar in the topping caramelises and adds molasses notes.",
+			"spiceProfile": "Cinnamon-forward; raisins add a traditional Dutch touch.",
+			"variations": "Single crust with a crumb topping instead of a pastry lid, so it is easier than the double-crust version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "apple-pie",
+		"title": "Swedish äppelpaj with oat crumble",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Swedish äppelpaj"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"crumble",
+			"quick",
+			"no-pastry"
+		],
+		"equipment": [
+			"ovenproof dish (about 24 cm)",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "apple",
+				"name": "apples",
+				"role": "fruit",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "cored and sliced (peeling optional)",
+				"original": "6 apples, cored and sliced"
+			},
+			{
+				"id": "i2",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cinnamon"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp granulated sugar"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 125,
+				"unit": "g",
+				"prep": "melted",
+				"original": "125 g butter, melted"
+			},
+			{
+				"id": "i5",
+				"key": "rolled-oats",
+				"name": "rolled oats",
+				"role": "flour",
+				"qty": 1.5,
+				"unit": "dl",
+				"original": "1½ dl rolled oats"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl all-purpose flour"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl granulated sugar"
+			},
+			{
+				"id": "i8",
+				"key": "vanilla-sauce",
+				"name": "vanilla sauce or vanilla ice cream",
+				"role": "sauce",
+				"qty": 4,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "4 dl vanilla sauce or vanilla ice cream, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 225 °C. Spread the apples in the dish and sprinkle with cinnamon and sugar.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"assemble"
+				],
+				"tempC": 225
+			},
+			{
+				"id": "s2",
+				"text": "Stir the melted butter with oats, flour and sugar into a crumbly mixture.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Scatter the crumble over the apples and bake until golden and the apples are soft.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 225
+			},
+			{
+				"id": "s4",
+				"text": "Serve warm with vanilla sauce or ice cream.",
+				"uses": [
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "No pastry at all: the oat crumble is both crust and topping, so it is ready in well under an hour.",
+			"chemistry": "Oats toast in the butter and brown quickly at high heat, giving a nutty crunch.",
+			"spiceProfile": "Just cinnamon, served with cold vanilla sauce (vaniljsås) for contrast.",
+			"variations": "The Swedish everyday version; much quicker and less sweet than American pies, and always served warm."
+		}
+	}
+]

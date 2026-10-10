@@ -1,0 +1,477 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "omelette",
+		"title": "French omelette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – French rolled"
+		},
+		"servings": 1,
+		"time": {
+			"prepMin": 2,
+			"cookMin": 3,
+			"totalMin": 5
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"breakfast",
+			"main"
+		],
+		"tags": [
+			"quick",
+			"eggs"
+		],
+		"equipment": [
+			"20 cm non-stick pan",
+			"fork"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "chives",
+				"name": "chives",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp chives, finely chopped (optional)",
+				"prep": "finely chopped",
+				"optional": true
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Beat the eggs with salt until completely uniform, with no streaks of white.",
+				"uses": [
+					"i1",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Heat the butter in the pan until it foams but does not brown.",
+				"uses": [
+					"i2"
+				],
+				"technique": [
+					"melt"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Pour in the eggs and stir quickly with a fork while shaking the pan until small soft curds form and the top is still wet.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"scramble"
+				],
+				"heat": "medium",
+				"critical": "The outside must stay pale yellow with no browning; pull it at about one minute."
+			},
+			{
+				"id": "s4",
+				"text": "Smooth the surface, then tilt the pan and roll the omelette onto a plate, seam side down. Sprinkle with chives.",
+				"uses": [
+					"s3",
+					"i4"
+				],
+				"technique": [
+					"roll"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Constant stirring creates fine curds, and rolling traps a creamy, barely set centre.",
+			"chemistry": "Egg proteins start to set around 62–65 °C; keeping the heat moderate and the cooking short prevents tough, rubbery curds.",
+			"variations": "Pale, smooth and soft inside, unlike the browned, filled American omelette."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "omelette",
+		"title": "Ham and cheese diner omelette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American diner"
+		},
+		"servings": 1,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 8,
+			"totalMin": 13
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"breakfast",
+			"main"
+		],
+		"tags": [
+			"filled",
+			"eggs"
+		],
+		"equipment": [
+			"non-stick pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g butter, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i2",
+				"key": "bell-pepper",
+				"name": "green bell pepper",
+				"role": "vegetable",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g green bell pepper, diced",
+				"prep": "diced"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "onion",
+				"role": "allium",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g onion, diced",
+				"prep": "diced"
+			},
+			{
+				"id": "i4",
+				"key": "ham",
+				"name": "cooked ham",
+				"role": "meat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g cooked ham, diced",
+				"prep": "diced"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i6",
+				"key": "whole-milk",
+				"name": "milk",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp milk"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "cheddar",
+				"name": "cheddar",
+				"role": "cheese",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g cheddar, grated",
+				"prep": "grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the pepper, onion and ham in half the butter until soft, then set aside.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 4,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the eggs with the milk, salt and pepper.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Melt the rest of the butter, pour in the eggs and cook, pushing the set edges to the centre and tilting the pan, until almost set and lightly golden underneath.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Scatter the filling and cheese over one half, fold over and cook until the cheese melts.",
+				"uses": [
+					"s1",
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"fold"
+				],
+				"durationMin": 1,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "The edges are pushed in so raw egg runs underneath and the omelette sets as a flat sheet before folding.",
+			"chemistry": "The light browning on the underside is the Maillard reaction between egg proteins and sugars.",
+			"variations": "Cooked flat, lightly browned and folded around a hearty filling, rather than rolled pale like the French omelette."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "omelette",
+		"title": "Masala omelette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Indian masala"
+		},
+		"servings": 1,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 4,
+			"totalMin": 9
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"breakfast",
+			"main"
+		],
+		"tags": [
+			"spicy",
+			"eggs"
+		],
+		"equipment": [
+			"frying pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i2",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g red onion, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "green-chili",
+				"name": "green chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 green chili, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g tomato, seeded and finely chopped",
+				"prep": "seeded and finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp cilantro, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i6",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of ground turmeric"
+			},
+			{
+				"id": "i7",
+				"key": "chili-powder",
+				"name": "red chili powder",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of red chili powder"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "ghee",
+				"name": "ghee or oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp ghee or oil",
+				"substitutes": [
+					"neutral-oil"
+				]
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Beat the eggs with the onion, chili, tomato, cilantro, spices and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Heat the ghee, pour in the eggs and spread them thinly. Cook until the underside is golden.",
+				"uses": [
+					"s1",
+					"i9"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Flip and cook the other side briefly, then fold and serve.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "The vegetables are mixed into the raw egg rather than added as a filling, and the omelette is flipped.",
+			"chemistry": "Turmeric is fat-soluble, so the ghee helps carry its colour and earthy flavour.",
+			"spiceProfile": "Green chili and chili powder for heat, turmeric for earthiness, cilantro and onion for freshness.",
+			"variations": "Thin, cooked on both sides and spiced throughout, unlike the French and American styles; often eaten with bread or toast."
+		}
+	}
+]

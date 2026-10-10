@@ -1,0 +1,709 @@
+[
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "quiche-lorraine",
+  "title": "Quiche lorraine, traditional",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Traditional, no cheese"
+  },
+  "servings": 6,
+  "time": {
+   "prepMin": 30,
+   "cookMin": 65,
+   "totalMin": 125
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "baking"
+  ],
+  "tags": [
+   "tart",
+   "bacon",
+   "brunch"
+  ],
+  "equipment": [
+   "23 cm tart tin",
+   "rolling pin",
+   "baking beans",
+   "frying pan"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "all-purpose-flour",
+    "name": "all-purpose flour",
+    "role": "flour",
+    "qty": 200,
+    "unit": "g",
+    "group": "Pastry",
+    "original": "200 g all-purpose flour"
+   },
+   {
+    "id": "i2",
+    "key": "butter",
+    "name": "cold butter",
+    "role": "fat",
+    "qty": 100,
+    "unit": "g",
+    "prep": "cubed",
+    "group": "Pastry",
+    "original": "100 g cold butter, cubed"
+   },
+   {
+    "id": "i3",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 0.5,
+    "unit": "tsp",
+    "group": "Pastry",
+    "original": "½ tsp salt"
+   },
+   {
+    "id": "i4",
+    "key": "egg-yolk",
+    "name": "egg yolk",
+    "role": "binder",
+    "qty": 1,
+    "unit": "piece",
+    "group": "Pastry",
+    "original": "1 egg yolk"
+   },
+   {
+    "id": "i5",
+    "key": "water",
+    "name": "ice water",
+    "role": "liquid",
+    "qty": 3,
+    "unit": "tbsp",
+    "group": "Pastry",
+    "original": "3 tbsp ice water"
+   },
+   {
+    "id": "i6",
+    "key": "lardons",
+    "name": "smoked lardons",
+    "role": "cured-pork",
+    "qty": 200,
+    "unit": "g",
+    "original": "200 g smoked lardons"
+   },
+   {
+    "id": "i7",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 3,
+    "unit": "piece",
+    "original": "3 eggs"
+   },
+   {
+    "id": "i8",
+    "key": "egg-yolk",
+    "name": "egg yolks",
+    "role": "egg",
+    "qty": 2,
+    "unit": "piece",
+    "original": "2 egg yolks"
+   },
+   {
+    "id": "i9",
+    "key": "creme-fraiche",
+    "name": "crème fraîche",
+    "role": "dairy",
+    "qty": 200,
+    "unit": "ml",
+    "original": "200 ml crème fraîche"
+   },
+   {
+    "id": "i10",
+    "key": "heavy-cream",
+    "name": "heavy cream",
+    "role": "dairy",
+    "qty": 200,
+    "unit": "ml",
+    "original": "200 ml heavy cream"
+   },
+   {
+    "id": "i11",
+    "key": "nutmeg",
+    "name": "nutmeg",
+    "role": "spice",
+    "qty": 1,
+    "unit": "pinch",
+    "prep": "grated",
+    "original": "1 pinch nutmeg, grated"
+   },
+   {
+    "id": "i12",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Rub the butter into flour and salt, add the yolk and water and bring together into a dough. Wrap and chill.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4",
+     "i5"
+    ],
+    "technique": [
+     "rub-in",
+     "rest"
+    ],
+    "durationMin": 30
+   },
+   {
+    "id": "s2",
+    "text": "Roll out and line a 23 cm tart tin. Chill, then blind bake with paper and weights at 200 °C, remove the weights and bake until dry.",
+    "uses": [
+     "s1"
+    ],
+    "technique": [
+     "roll",
+     "blind-bake"
+    ],
+    "durationMin": 25,
+    "tempC": 200,
+    "critical": "Blind bake fully, or the custard makes the base soggy."
+   },
+   {
+    "id": "s3",
+    "text": "Fry the lardons until lightly browned and drain on paper.",
+    "uses": [
+     "i6"
+    ],
+    "technique": [
+     "render"
+    ],
+    "durationMin": 6,
+    "heat": "medium"
+   },
+   {
+    "id": "s4",
+    "text": "Whisk eggs, yolks, crème fraîche, cream, nutmeg and pepper. No salt is needed because of the bacon.",
+    "uses": [
+     "i7",
+     "i8",
+     "i9",
+     "i10",
+     "i11",
+     "i12"
+    ],
+    "technique": [
+     "whisk"
+    ]
+   },
+   {
+    "id": "s5",
+    "text": "Lower the oven to 170 °C. Scatter the lardons in the case and pour in the custard.",
+    "uses": [
+     "s2",
+     "s3",
+     "s4"
+    ],
+    "technique": [
+     "assemble"
+    ],
+    "tempC": 170
+   },
+   {
+    "id": "s6",
+    "text": "Bake until just set with a slight wobble in the centre.",
+    "uses": [
+     "s5"
+    ],
+    "technique": [
+     "bake"
+    ],
+    "durationMin": 35,
+    "tempC": 170
+   },
+   {
+    "id": "s7",
+    "text": "Rest for 15 minutes before cutting; serve warm.",
+    "uses": [
+     "s6"
+    ],
+    "technique": [
+     "rest"
+    ],
+    "durationMin": 15
+   }
+  ],
+  "notes": {
+   "techniques": "A low oven sets the custard gently so it stays silky rather than spongy.",
+   "chemistry": "Egg proteins coagulate around 70–80 °C; overheated custard curdles and weeps.",
+   "spiceProfile": "Just nutmeg and pepper; smoky bacon is the main flavour.",
+   "variations": "The Lorraine original has no cheese and no onion; many modern versions add Gruyère."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "quiche-lorraine",
+  "title": "Quiche lorraine with Gruyère and onion",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – With Gruyère and onion"
+  },
+  "servings": 6,
+  "time": {
+   "prepMin": 30,
+   "cookMin": 70,
+   "totalMin": 130
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "baking"
+  ],
+  "tags": [
+   "tart",
+   "bacon",
+   "cheese"
+  ],
+  "equipment": [
+   "23 cm tart tin",
+   "rolling pin",
+   "baking beans",
+   "frying pan"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "all-purpose-flour",
+    "name": "all-purpose flour",
+    "role": "flour",
+    "qty": 200,
+    "unit": "g",
+    "group": "Pastry",
+    "original": "200 g all-purpose flour"
+   },
+   {
+    "id": "i2",
+    "key": "butter",
+    "name": "cold butter",
+    "role": "fat",
+    "qty": 100,
+    "unit": "g",
+    "prep": "cubed",
+    "group": "Pastry",
+    "original": "100 g cold butter, cubed"
+   },
+   {
+    "id": "i3",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 0.5,
+    "unit": "tsp",
+    "group": "Pastry",
+    "original": "½ tsp salt"
+   },
+   {
+    "id": "i4",
+    "key": "egg-yolk",
+    "name": "egg yolk",
+    "role": "binder",
+    "qty": 1,
+    "unit": "piece",
+    "group": "Pastry",
+    "original": "1 egg yolk"
+   },
+   {
+    "id": "i5",
+    "key": "water",
+    "name": "ice water",
+    "role": "liquid",
+    "qty": 3,
+    "unit": "tbsp",
+    "group": "Pastry",
+    "original": "3 tbsp ice water"
+   },
+   {
+    "id": "i6",
+    "key": "bacon",
+    "name": "smoked bacon",
+    "role": "cured-pork",
+    "qty": 200,
+    "unit": "g",
+    "prep": "cut in strips",
+    "original": "200 g smoked bacon, cut in strips"
+   },
+   {
+    "id": "i7",
+    "key": "yellow-onion",
+    "name": "yellow onion",
+    "role": "allium",
+    "qty": 1,
+    "unit": "piece",
+    "prep": "thinly sliced",
+    "original": "1 yellow onion, thinly sliced"
+   },
+   {
+    "id": "i8",
+    "key": "gruyere",
+    "name": "Gruyère",
+    "role": "cheese",
+    "qty": 120,
+    "unit": "g",
+    "prep": "grated",
+    "original": "120 g Gruyère, grated"
+   },
+   {
+    "id": "i9",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 eggs"
+   },
+   {
+    "id": "i10",
+    "key": "heavy-cream",
+    "name": "heavy cream",
+    "role": "dairy",
+    "qty": 200,
+    "unit": "ml",
+    "original": "200 ml heavy cream"
+   },
+   {
+    "id": "i11",
+    "key": "whole-milk",
+    "name": "whole milk",
+    "role": "dairy",
+    "qty": 150,
+    "unit": "ml",
+    "original": "150 ml whole milk"
+   },
+   {
+    "id": "i12",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 0.25,
+    "unit": "tsp",
+    "original": "¼ tsp salt"
+   },
+   {
+    "id": "i13",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i14",
+    "key": "nutmeg",
+    "name": "nutmeg",
+    "role": "spice",
+    "qty": 1,
+    "unit": "pinch",
+    "prep": "grated",
+    "original": "1 pinch nutmeg, grated"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Rub the butter into flour and salt, add the yolk and water and bring together into a dough. Wrap and chill.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4",
+     "i5"
+    ],
+    "technique": [
+     "rub-in",
+     "rest"
+    ],
+    "durationMin": 30
+   },
+   {
+    "id": "s2",
+    "text": "Roll out and line a 23 cm tart tin. Chill, then blind bake with paper and weights at 200 °C, remove the weights and bake until dry.",
+    "uses": [
+     "s1"
+    ],
+    "technique": [
+     "roll",
+     "blind-bake"
+    ],
+    "durationMin": 25,
+    "tempC": 200,
+    "critical": "Blind bake fully, or the custard makes the base soggy."
+   },
+   {
+    "id": "s3",
+    "text": "Fry the bacon until crisp, then soften the onion in the fat until golden.",
+    "uses": [
+     "i6",
+     "i7"
+    ],
+    "technique": [
+     "render",
+     "saute"
+    ],
+    "durationMin": 12,
+    "heat": "medium"
+   },
+   {
+    "id": "s4",
+    "text": "Whisk eggs, cream, milk, salt, pepper and nutmeg.",
+    "uses": [
+     "i9",
+     "i10",
+     "i11",
+     "i12",
+     "i13",
+     "i14"
+    ],
+    "technique": [
+     "whisk"
+    ]
+   },
+   {
+    "id": "s5",
+    "text": "Lower the oven to 170 °C. Fill the case with bacon, onion and most of the cheese, pour in the custard and top with the rest of the cheese.",
+    "uses": [
+     "s2",
+     "s3",
+     "s4",
+     "i8"
+    ],
+    "technique": [
+     "assemble"
+    ],
+    "tempC": 170
+   },
+   {
+    "id": "s6",
+    "text": "Bake until golden and just set.",
+    "uses": [
+     "s5"
+    ],
+    "technique": [
+     "bake"
+    ],
+    "durationMin": 35,
+    "tempC": 170
+   },
+   {
+    "id": "s7",
+    "text": "Rest before slicing.",
+    "uses": [
+     "s6"
+    ],
+    "technique": [
+     "rest"
+    ],
+    "durationMin": 15
+   }
+  ],
+  "notes": {
+   "techniques": "Softening the onions first drives off water that would otherwise thin the custard.",
+   "chemistry": "Milk makes a lighter custard than all cream, while cheese adds fat and helps it set.",
+   "spiceProfile": "Nutmeg and pepper, with nutty Gruyère and sweet onion.",
+   "variations": "The widespread modern version: cheese and onion added, and a lighter cream-and-milk custard."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "quiche-lorraine",
+  "title": "Crustless quiche lorraine",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Crustless"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 10,
+   "cookMin": 35,
+   "totalMin": 45
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "breakfast"
+  ],
+  "tags": [
+   "crustless",
+   "gluten-free",
+   "quick"
+  ],
+  "equipment": [
+   "frying pan",
+   "23 cm pie dish"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 10,
+    "unit": "g",
+    "prep": "for the dish",
+    "original": "10 g butter, for the dish"
+   },
+   {
+    "id": "i2",
+    "key": "lardons",
+    "name": "smoked lardons",
+    "role": "cured-pork",
+    "qty": 200,
+    "unit": "g",
+    "original": "200 g smoked lardons"
+   },
+   {
+    "id": "i3",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 6,
+    "unit": "piece",
+    "original": "6 eggs"
+   },
+   {
+    "id": "i4",
+    "key": "heavy-cream",
+    "name": "heavy cream",
+    "role": "dairy",
+    "qty": 150,
+    "unit": "ml",
+    "original": "150 ml heavy cream"
+   },
+   {
+    "id": "i5",
+    "key": "whole-milk",
+    "name": "whole milk",
+    "role": "dairy",
+    "qty": 150,
+    "unit": "ml",
+    "original": "150 ml whole milk"
+   },
+   {
+    "id": "i6",
+    "key": "gruyere",
+    "name": "Gruyère",
+    "role": "cheese",
+    "qty": 100,
+    "unit": "g",
+    "prep": "grated",
+    "original": "100 g Gruyère, grated"
+   },
+   {
+    "id": "i7",
+    "key": "chives",
+    "name": "chives",
+    "role": "herb",
+    "qty": 2,
+    "unit": "tbsp",
+    "prep": "chopped",
+    "original": "2 tbsp chives, chopped"
+   },
+   {
+    "id": "i8",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i9",
+    "key": "nutmeg",
+    "name": "nutmeg",
+    "role": "spice",
+    "qty": 1,
+    "unit": "pinch",
+    "original": "1 pinch nutmeg"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Heat the oven to 180 °C and butter the dish.",
+    "uses": [
+     "i1"
+    ],
+    "technique": [
+     "prepare"
+    ],
+    "tempC": 180
+   },
+   {
+    "id": "s2",
+    "text": "Fry the lardons until golden and drain.",
+    "uses": [
+     "i2"
+    ],
+    "technique": [
+     "render"
+    ],
+    "durationMin": 6,
+    "heat": "medium"
+   },
+   {
+    "id": "s3",
+    "text": "Whisk the eggs with cream, milk, cheese, chives, pepper and nutmeg.",
+    "uses": [
+     "i3",
+     "i4",
+     "i5",
+     "i6",
+     "i7",
+     "i8",
+     "i9"
+    ],
+    "technique": [
+     "whisk"
+    ]
+   },
+   {
+    "id": "s4",
+    "text": "Scatter the lardons in the dish, pour over the egg mixture and bake until puffed and just set.",
+    "uses": [
+     "s1",
+     "s2",
+     "s3"
+    ],
+    "technique": [
+     "bake"
+    ],
+    "durationMin": 28,
+    "tempC": 180,
+    "critical": "Take it out while the centre barely wobbles; it sets further as it cools."
+   }
+  ],
+  "notes": {
+   "techniques": "More eggs than a regular quiche so the filling holds its shape without pastry.",
+   "spiceProfile": "Chives and nutmeg with smoky bacon.",
+   "variations": "No pastry, so it is quick and gluten-free, but softer and more like a baked omelette."
+  }
+ }
+]

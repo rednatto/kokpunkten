@@ -1,0 +1,704 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "goulash",
+		"title": "Hungarian goulash soup (gulyásleves)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Hungarian gulyásleves"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 120,
+			"totalMin": 145
+		},
+		"cuisine": [
+			"hungarian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"paprika",
+			"beef",
+			"one-pot"
+		],
+		"equipment": [
+			"large heavy pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "lard",
+				"name": "lard or neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp lard or neutral oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "2 yellow onions, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "beef-chuck",
+				"name": "beef shin or chuck",
+				"role": "meat",
+				"qty": 800,
+				"unit": "g",
+				"prep": "cut in 2 cm cubes",
+				"original": "800 g beef shin or chuck, cut in 2 cm cubes"
+			},
+			{
+				"id": "i4",
+				"key": "sweet-paprika",
+				"name": "Hungarian sweet paprika",
+				"role": "spice",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp Hungarian sweet paprika"
+			},
+			{
+				"id": "i5",
+				"key": "caraway-seeds",
+				"name": "caraway seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "crushed",
+				"original": "1 tsp caraway seeds, crushed"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "2 cloves garlic, crushed"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i8",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "l",
+				"original": "2 l water"
+			},
+			{
+				"id": "i9",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 carrots, diced"
+			},
+			{
+				"id": "i10",
+				"key": "parsnip",
+				"name": "parsnip",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 parsnip, diced"
+			},
+			{
+				"id": "i11",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 500,
+				"unit": "g",
+				"prep": "diced",
+				"original": "500 g potatoes, diced"
+			},
+			{
+				"id": "i12",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 tomato, chopped"
+			},
+			{
+				"id": "i13",
+				"key": "green-bell-pepper",
+				"name": "Hungarian wax or green pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 Hungarian wax or green pepper, sliced"
+			},
+			{
+				"id": "i14",
+				"key": "hot-paprika",
+				"name": "hot paprika or fresh chili",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"optional": true,
+				"original": "½ tsp hot paprika or fresh chili (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the onions slowly in the fat until golden.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the beef and stir until it loses its raw colour.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Take the pot off the heat, stir in the paprika, caraway and garlic, then add salt and a little water at once.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"bloom"
+				],
+				"critical": "Paprika burns in seconds in hot fat; always add it off the heat."
+			},
+			{
+				"id": "s4",
+				"text": "Add the rest of the water, cover and simmer until the beef is almost tender.",
+				"uses": [
+					"s3",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 75,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Add carrots, parsnip, potatoes, tomato, pepper and hot paprika, and simmer until the vegetables and beef are tender.",
+				"uses": [
+					"s4",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 30,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Onions, paprika and meat form the base; it is a brothy soup rather than a thick stew.",
+			"chemistry": "Paprika's colour and flavour compounds are fat-soluble, so blooming in fat carries them through the soup; overheating turns its sugars bitter.",
+			"spiceProfile": "Sweet paprika dominates, with caraway and garlic.",
+			"variations": "The Hungarian original is a soup with root vegetables and potatoes; Austrian goulash is a thick onion stew, and American goulash is a pasta dish."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "goulash",
+		"title": "Viennese beef goulash (Saftgulasch)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Viennese Saftgulasch"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 180,
+			"totalMin": 200
+		},
+		"cuisine": [
+			"austrian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"paprika",
+			"beef",
+			"stew",
+			"make-ahead"
+		],
+		"equipment": [
+			"large heavy pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "lard",
+				"name": "lard or neutral oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp lard or neutral oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "thinly sliced",
+				"original": "1 kg yellow onions, thinly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i4",
+				"key": "sweet-paprika",
+				"name": "sweet paprika",
+				"role": "spice",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp sweet paprika"
+			},
+			{
+				"id": "i5",
+				"key": "white-wine-vinegar",
+				"name": "white wine vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp white wine vinegar"
+			},
+			{
+				"id": "i6",
+				"key": "beef-shin",
+				"name": "beef shin",
+				"role": "meat",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "cut in 4 cm cubes",
+				"original": "1 kg beef shin, cut in 4 cm cubes"
+			},
+			{
+				"id": "i7",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 750,
+				"unit": "ml",
+				"original": "750 ml water"
+			},
+			{
+				"id": "i8",
+				"key": "caraway-seeds",
+				"name": "caraway seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "ground",
+				"original": "1 tsp caraway seeds, ground"
+			},
+			{
+				"id": "i9",
+				"key": "marjoram",
+				"name": "dried marjoram",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried marjoram"
+			},
+			{
+				"id": "i10",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "3 cloves garlic, crushed"
+			},
+			{
+				"id": "i11",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon zest"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i13",
+				"key": "bread-roll",
+				"name": "Kaiser rolls or bread dumplings",
+				"role": "bread",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "to serve",
+				"original": "6 Kaiser rolls or bread dumplings, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the onions slowly in the fat until deep golden brown.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"caramelize"
+				],
+				"durationMin": 30,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the tomato paste, take off the heat and stir in the paprika, then add the vinegar and a splash of water.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"bloom"
+				],
+				"critical": "Add the paprika off the heat so it does not burn."
+			},
+			{
+				"id": "s3",
+				"text": "Add the beef, water, caraway, marjoram, garlic, lemon zest and salt. Cover and simmer very gently, stirring now and then.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 150,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Uncover and simmer until the onions have melted into a thick, glossy sauce and the beef is tender.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"reduce"
+				],
+				"durationMin": 20,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Serve with rolls or dumplings.",
+				"uses": [
+					"s4",
+					"i13"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "An equal weight of onions and beef cooks down into the sauce; no flour is used.",
+			"chemistry": "Gelatin from the beef shin and the dissolved onions thicken the sauce.",
+			"spiceProfile": "Paprika, caraway, marjoram and lemon zest; vinegar keeps it lively.",
+			"variations": "A thick, rich stew with no vegetables; it tastes better the day after."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "goulash",
+		"title": "American goulash with macaroni",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American macaroni"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 35,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"ground-beef",
+			"pasta",
+			"one-pot",
+			"weeknight"
+		],
+		"equipment": [
+			"large pot or deep frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 700,
+				"unit": "g",
+				"original": "700 g ground beef"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "sweet-paprika",
+				"name": "paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp paprika"
+			},
+			{
+				"id": "i6",
+				"key": "dried-oregano",
+				"name": "dried Italian herbs",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried Italian herbs"
+			},
+			{
+				"id": "i7",
+				"key": "canned-tomatoes",
+				"name": "canned diced tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g canned diced tomatoes"
+			},
+			{
+				"id": "i8",
+				"key": "tomato-sauce",
+				"name": "tomato passata",
+				"role": "sauce",
+				"qty": 500,
+				"unit": "ml",
+				"original": "500 ml tomato passata"
+			},
+			{
+				"id": "i9",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 500,
+				"unit": "ml",
+				"original": "500 ml beef stock"
+			},
+			{
+				"id": "i10",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Worcestershire sauce"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i12",
+				"key": "elbow-macaroni",
+				"name": "elbow macaroni",
+				"role": "pasta",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g elbow macaroni"
+			},
+			{
+				"id": "i13",
+				"key": "cheddar",
+				"name": "cheddar",
+				"role": "cheese",
+				"qty": 100,
+				"unit": "g",
+				"prep": "grated",
+				"optional": true,
+				"original": "100 g cheddar, grated (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the beef in the oil, breaking it up, then add the onion and garlic and soften.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"brown",
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in paprika and herbs, then add tomatoes, passata, stock, Worcestershire and salt. Simmer.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Stir in the macaroni, cover and simmer, stirring often, until the pasta is tender.",
+				"uses": [
+					"s2",
+					"i12"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low",
+				"critical": "Stir often so the pasta does not stick to the bottom."
+			},
+			{
+				"id": "s4",
+				"text": "Serve topped with cheddar if you like.",
+				"uses": [
+					"s3",
+					"i13"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The pasta cooks directly in the sauce, absorbing flavour and thickening it with starch.",
+			"spiceProfile": "Mild: paprika and Italian herbs.",
+			"variations": "An American one-pot pasta that shares only the name and some paprika with Hungarian goulash."
+		}
+	}
+]

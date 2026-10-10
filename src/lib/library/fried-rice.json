@@ -1,0 +1,694 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fried-rice",
+		"title": "Egg fried rice, Yangzhou style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Chinese Yangzhou"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 10,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"chinese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"wok",
+			"leftovers"
+		],
+		"equipment": [
+			"wok"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rice",
+				"name": "cooked jasmine rice, chilled overnight",
+				"role": "rice",
+				"qty": 750,
+				"unit": "g",
+				"original": "750 g cooked jasmine rice, chilled overnight (from 300 g raw)"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "beaten with a pinch of salt",
+				"original": "3 eggs, beaten with a pinch of salt"
+			},
+			{
+				"id": "i4",
+				"key": "shrimp",
+				"name": "small raw shrimp, peeled",
+				"role": "seafood",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g small raw shrimp, peeled"
+			},
+			{
+				"id": "i5",
+				"key": "char-siu",
+				"name": "char siu (Chinese roast pork)",
+				"role": "meat",
+				"qty": 150,
+				"unit": "g",
+				"prep": "diced",
+				"substitutes": [
+					"ham"
+				],
+				"original": "150 g char siu (Chinese roast pork), diced"
+			},
+			{
+				"id": "i6",
+				"key": "peas",
+				"name": "frozen peas",
+				"role": "vegetable",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g frozen peas"
+			},
+			{
+				"id": "i7",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "3 scallions, sliced"
+			},
+			{
+				"id": "i8",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp light soy sauce"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "white-pepper",
+				"name": "ground white pepper",
+				"role": "seasoning",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "0.25 tsp ground white pepper"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Break up the cold rice with your hands so there are no clumps.",
+				"uses": [
+					"i1"
+				],
+				"technique": []
+			},
+			{
+				"id": "s2",
+				"text": "Heat a wok until smoking, add 1 tbsp oil and scramble the eggs until just set. Remove.",
+				"uses": [
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"scramble"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Stir-fry the shrimp in another tablespoon of oil until pink, then add the char siu and peas and toss for a minute. Remove.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Add the remaining oil and the rice. Toss and press against the wok until every grain is hot and slightly toasted.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 4,
+				"heat": "high",
+				"critical": "Use cold, day-old rice and a very hot wok; fresh rice steams and turns gluey."
+			},
+			{
+				"id": "s5",
+				"text": "Return the egg and shrimp mix, season with soy, salt and white pepper and toss in the scallions.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			}
+		],
+		"notes": {
+			"techniques": "Cook each component separately in a very hot wok and combine at the end so nothing stews.",
+			"chemistry": "Chilled rice has dried out and its starch has partly retrograded, so grains stay separate. Cooked rice should be cooled quickly and refrigerated to avoid Bacillus cereus.",
+			"spiceProfile": "Clean and savoury: soy, white pepper and scallion let the egg and wok flavour show.",
+			"variations": "A lightly seasoned, colourful Chinese classic. Thai fried rice uses fish sauce and lime; kimchi fried rice is spicy and sour."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fried-rice",
+		"title": "Khao pad, Thai fried rice with chicken",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Thai khao pad"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 10,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"thai"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"wok",
+			"chicken"
+		],
+		"equipment": [
+			"wok"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thigh",
+				"role": "poultry",
+				"qty": 200,
+				"unit": "g",
+				"prep": "thinly sliced",
+				"original": "200 g boneless chicken thigh, thinly sliced"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "0.5 yellow onion, sliced"
+			},
+			{
+				"id": "i5",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i6",
+				"key": "rice",
+				"name": "cooked jasmine rice, chilled",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g cooked jasmine rice, chilled"
+			},
+			{
+				"id": "i7",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 tomato, in wedges"
+			},
+			{
+				"id": "i8",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"original": "1.5 tbsp fish sauce"
+			},
+			{
+				"id": "i9",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp light soy sauce"
+			},
+			{
+				"id": "i10",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i11",
+				"key": "scallion",
+				"name": "scallion",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 scallion, sliced"
+			},
+			{
+				"id": "i12",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "garnish",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "sliced, to serve",
+				"original": "0.5 cucumber, sliced, to serve"
+			},
+			{
+				"id": "i13",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lime, in wedges"
+			},
+			{
+				"id": "i14",
+				"key": "prik-nam-pla",
+				"name": "bird's eye chilies in fish sauce (prik nam pla)",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"optional": true,
+				"original": "2 tbsp bird's eye chilies in fish sauce (prik nam pla), to serve (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the garlic in the oil until fragrant, add the chicken and stir-fry until cooked through to 74 °C.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onion, then push everything aside and scramble the eggs.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"stir-fry",
+					"scramble"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Add the rice and tomato and toss until the rice is hot.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Season with fish sauce, soy and sugar and toss in the scallion.",
+				"uses": [
+					"s3",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Serve with cucumber, lime wedges and prik nam pla.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [],
+				"critical": "Squeeze lime over at the table; it is the key seasoning."
+			}
+		],
+		"notes": {
+			"techniques": "A one-wok dish cooked in quick sequence; the final seasoning happens at the table with lime and chili fish sauce.",
+			"chemistry": "High heat drives off moisture and gives light Maillard browning on the rice and chicken.",
+			"spiceProfile": "Salty fish sauce, fresh lime and optional chili heat, with sweet tomato and onion.",
+			"variations": "Seasoned with fish sauce instead of soy and served with lime and cucumber. The Chinese version is milder, the Korean one spicier."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fried-rice",
+		"title": "Kimchi fried rice (kimchi-bokkeumbap)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Korean kimchi"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 12,
+			"totalMin": 22
+		},
+		"cuisine": [
+			"korean"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"spicy",
+			"leftovers"
+		],
+		"equipment": [
+			"large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "pork-belly",
+				"name": "pork belly",
+				"role": "meat",
+				"qty": 150,
+				"unit": "g",
+				"prep": "in thin strips",
+				"substitutes": [
+					"bacon",
+					"spam"
+				],
+				"original": "150 g pork belly, in thin strips"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "0.5 yellow onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "kimchi",
+				"name": "well-fermented kimchi",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "chopped, with 3 tbsp of its juice",
+				"original": "250 g well-fermented kimchi, chopped, with 3 tbsp of its juice"
+			},
+			{
+				"id": "i5",
+				"key": "gochujang",
+				"name": "gochujang",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp gochujang"
+			},
+			{
+				"id": "i6",
+				"key": "gochugaru",
+				"name": "gochugaru (Korean chili flakes)",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"optional": true,
+				"original": "1 tsp gochugaru (Korean chili flakes) (optional)"
+			},
+			{
+				"id": "i7",
+				"key": "rice",
+				"name": "cooked short-grain rice, chilled",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g cooked short-grain rice, chilled"
+			},
+			{
+				"id": "i8",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp soy sauce"
+			},
+			{
+				"id": "i9",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame oil"
+			},
+			{
+				"id": "i10",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i11",
+				"key": "scallion",
+				"name": "scallion",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 scallion, sliced"
+			},
+			{
+				"id": "i12",
+				"key": "roasted-seaweed",
+				"name": "roasted seaweed (gim)",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "crumbled",
+				"original": "1 roasted seaweed (gim), crumbled"
+			},
+			{
+				"id": "i13",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame seeds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the pork belly in the oil until the fat renders and the edges crisp.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"render",
+					"fry"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onion and kimchi and fry until the kimchi softens and starts to caramelise.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 4,
+				"heat": "medium-high",
+				"critical": "Use sour, well-aged kimchi; fresh kimchi gives a flat, watery result."
+			},
+			{
+				"id": "s3",
+				"text": "Stir in the gochujang and gochugaru, then the rice, and fry, pressing it into the pan, until hot and slightly crisp.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 4,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Season with soy and sesame oil.",
+				"uses": [
+					"s3",
+					"i8",
+					"i9"
+				],
+				"technique": []
+			},
+			{
+				"id": "s5",
+				"text": "Fry the eggs sunny side up with runny yolks.",
+				"uses": [
+					"i10"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s6",
+				"text": "Top the rice with the eggs, scallion, seaweed and sesame seeds.",
+				"uses": [
+					"s4",
+					"s5",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Frying the kimchi in rendered pork fat first concentrates its flavour before the rice goes in.",
+			"chemistry": "Lactic acid from fermentation gives the sourness; caramelising the kimchi adds sweetness and Maillard depth to balance it.",
+			"spiceProfile": "Sour, spicy and savoury, with fermented chili heat and nutty sesame.",
+			"variations": "Spicy and tangy where the Chinese version is mild. A runny fried egg on top acts as the sauce."
+		}
+	}
+]

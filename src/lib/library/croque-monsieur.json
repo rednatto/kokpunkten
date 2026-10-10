@@ -1,0 +1,568 @@
+[
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "croque-monsieur",
+  "title": "Croque monsieur with béchamel",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Classic with béchamel"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 20,
+   "totalMin": 35
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "snack"
+  ],
+  "tags": [
+   "sandwich",
+   "cheese",
+   "bistro"
+  ],
+  "equipment": [
+   "saucepan",
+   "whisk",
+   "baking sheet"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 25,
+    "unit": "g",
+    "group": "Béchamel",
+    "original": "25 g butter"
+   },
+   {
+    "id": "i2",
+    "key": "all-purpose-flour",
+    "name": "all-purpose flour",
+    "role": "thickener",
+    "qty": 25,
+    "unit": "g",
+    "group": "Béchamel",
+    "original": "25 g all-purpose flour"
+   },
+   {
+    "id": "i3",
+    "key": "whole-milk",
+    "name": "whole milk",
+    "role": "dairy",
+    "qty": 300,
+    "unit": "ml",
+    "group": "Béchamel",
+    "original": "300 ml whole milk"
+   },
+   {
+    "id": "i4",
+    "key": "nutmeg",
+    "name": "nutmeg",
+    "role": "spice",
+    "qty": 1,
+    "unit": "pinch",
+    "prep": "grated",
+    "group": "Béchamel",
+    "original": "1 pinch nutmeg, grated"
+   },
+   {
+    "id": "i5",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": null,
+    "unit": "to-taste",
+    "group": "Béchamel",
+    "original": "Salt, to taste"
+   },
+   {
+    "id": "i6",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "group": "Béchamel",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i7",
+    "key": "pain-de-mie",
+    "name": "pain de mie or white sandwich bread",
+    "role": "bread",
+    "qty": 8,
+    "unit": "piece",
+    "original": "8 slices pain de mie"
+   },
+   {
+    "id": "i8",
+    "key": "dijon-mustard",
+    "name": "Dijon mustard",
+    "role": "seasoning",
+    "qty": 2,
+    "unit": "tsp",
+    "original": "2 tsp Dijon mustard"
+   },
+   {
+    "id": "i9",
+    "key": "ham",
+    "name": "jambon de Paris (cooked ham)",
+    "role": "meat",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 slices cooked ham"
+   },
+   {
+    "id": "i10",
+    "key": "gruyere",
+    "name": "Gruyère or Comté",
+    "role": "cheese",
+    "qty": 200,
+    "unit": "g",
+    "prep": "grated",
+    "original": "200 g Gruyère or Comté, grated"
+   },
+   {
+    "id": "i11",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 30,
+    "unit": "g",
+    "prep": "softened",
+    "original": "30 g butter, softened"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Melt the butter, stir in the flour and cook for 1 minute. Whisk in the milk gradually and simmer until thick. Season with nutmeg, salt and pepper.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4",
+     "i5",
+     "i6"
+    ],
+    "technique": [
+     "roux",
+     "whisk",
+     "simmer"
+    ],
+    "durationMin": 6,
+    "heat": "medium",
+    "critical": "Add the milk gradually while whisking, or the sauce turns lumpy."
+   },
+   {
+    "id": "s2",
+    "text": "Heat the oven to 220 °C. Butter the outside of the bread slices and toast them on the sheet for a few minutes, buttered side down.",
+    "uses": [
+     "i7",
+     "i11"
+    ],
+    "technique": [
+     "toast"
+    ],
+    "durationMin": 4,
+    "tempC": 220
+   },
+   {
+    "id": "s3",
+    "text": "Spread the inner side of 4 slices with mustard and a little béchamel. Top with ham and some cheese, then the remaining slices.",
+    "uses": [
+     "s1",
+     "s2",
+     "i8",
+     "i9",
+     "i10"
+    ],
+    "technique": [
+     "assemble"
+    ]
+   },
+   {
+    "id": "s4",
+    "text": "Spread the tops with the rest of the béchamel and cover with the remaining cheese.",
+    "uses": [
+     "s3"
+    ],
+    "technique": [
+     "assemble"
+    ]
+   },
+   {
+    "id": "s5",
+    "text": "Bake, then grill briefly until bubbling and browned.",
+    "uses": [
+     "s4"
+    ],
+    "technique": [
+     "bake",
+     "broil"
+    ],
+    "durationMin": 10,
+    "tempC": 220
+   }
+  ],
+  "notes": {
+   "techniques": "Béchamel both inside and on top keeps the sandwich moist and gives the browned, bubbly crust.",
+   "chemistry": "The roux starch gelatinises as the milk heats, thickening the sauce.",
+   "spiceProfile": "Nutmeg and Dijon mustard with nutty Gruyère.",
+   "variations": "The Paris café classic; simpler versions skip the béchamel, and a croque madame adds a fried egg."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "croque-monsieur",
+  "title": "Pan-fried croque monsieur",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Pan-fried, no béchamel"
+  },
+  "servings": 2,
+  "time": {
+   "prepMin": 5,
+   "cookMin": 10,
+   "totalMin": 15
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "snack"
+  ],
+  "tags": [
+   "sandwich",
+   "quick",
+   "cheese"
+  ],
+  "equipment": [
+   "frying pan",
+   "lid"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "pain-de-mie",
+    "name": "white sandwich bread",
+    "role": "bread",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 slices white sandwich bread"
+   },
+   {
+    "id": "i2",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 30,
+    "unit": "g",
+    "prep": "softened",
+    "original": "30 g butter, softened"
+   },
+   {
+    "id": "i3",
+    "key": "dijon-mustard",
+    "name": "Dijon mustard",
+    "role": "seasoning",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp Dijon mustard"
+   },
+   {
+    "id": "i4",
+    "key": "ham",
+    "name": "cooked ham",
+    "role": "meat",
+    "qty": 2,
+    "unit": "piece",
+    "original": "2 slices cooked ham"
+   },
+   {
+    "id": "i5",
+    "key": "gruyere",
+    "name": "Gruyère or Emmental",
+    "role": "cheese",
+    "qty": 100,
+    "unit": "g",
+    "prep": "grated",
+    "original": "100 g Gruyère or Emmental, grated"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Butter one side of each bread slice. Spread mustard on the other side of 2 slices.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3"
+    ],
+    "technique": [
+     "spread"
+    ]
+   },
+   {
+    "id": "s2",
+    "text": "Build the sandwiches buttered sides out with ham and cheese.",
+    "uses": [
+     "s1",
+     "i4",
+     "i5"
+    ],
+    "technique": [
+     "assemble"
+    ]
+   },
+   {
+    "id": "s3",
+    "text": "Fry over medium heat, covered, until golden underneath and the cheese melts; flip and fry the other side.",
+    "uses": [
+     "s2"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 8,
+    "heat": "medium",
+    "critical": "Medium heat lets the cheese melt before the bread burns."
+   }
+  ],
+  "notes": {
+   "techniques": "A lid traps heat so the cheese melts through while the bread browns.",
+   "chemistry": "Butter browning on the bread gives the crisp, nutty crust through the Maillard reaction.",
+   "variations": "The quick home version without béchamel; crisper and less rich than the oven-baked classic."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "croque-monsieur",
+  "title": "Croque madame",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Croque madame"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 25,
+   "totalMin": 40
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "main",
+   "brunch"
+  ],
+  "tags": [
+   "sandwich",
+   "egg",
+   "cheese"
+  ],
+  "equipment": [
+   "saucepan",
+   "whisk",
+   "baking sheet",
+   "frying pan"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 25,
+    "unit": "g",
+    "group": "Béchamel",
+    "original": "25 g butter"
+   },
+   {
+    "id": "i2",
+    "key": "all-purpose-flour",
+    "name": "all-purpose flour",
+    "role": "thickener",
+    "qty": 25,
+    "unit": "g",
+    "group": "Béchamel",
+    "original": "25 g all-purpose flour"
+   },
+   {
+    "id": "i3",
+    "key": "whole-milk",
+    "name": "whole milk",
+    "role": "dairy",
+    "qty": 300,
+    "unit": "ml",
+    "group": "Béchamel",
+    "original": "300 ml whole milk"
+   },
+   {
+    "id": "i4",
+    "key": "nutmeg",
+    "name": "nutmeg",
+    "role": "spice",
+    "qty": 1,
+    "unit": "pinch",
+    "prep": "grated",
+    "group": "Béchamel",
+    "original": "1 pinch nutmeg, grated"
+   },
+   {
+    "id": "i5",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": null,
+    "unit": "to-taste",
+    "group": "Béchamel",
+    "original": "Salt, to taste"
+   },
+   {
+    "id": "i6",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "group": "Béchamel",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i7",
+    "key": "pain-de-mie",
+    "name": "pain de mie",
+    "role": "bread",
+    "qty": 8,
+    "unit": "piece",
+    "original": "8 slices pain de mie"
+   },
+   {
+    "id": "i8",
+    "key": "ham",
+    "name": "cooked ham",
+    "role": "meat",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 slices cooked ham"
+   },
+   {
+    "id": "i9",
+    "key": "gruyere",
+    "name": "Gruyère",
+    "role": "cheese",
+    "qty": 200,
+    "unit": "g",
+    "prep": "grated",
+    "original": "200 g Gruyère, grated"
+   },
+   {
+    "id": "i10",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 20,
+    "unit": "g",
+    "original": "20 g butter"
+   },
+   {
+    "id": "i11",
+    "key": "egg",
+    "name": "eggs",
+    "role": "egg",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 eggs"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Melt the butter, stir in the flour and cook for 1 minute. Whisk in the milk gradually and simmer until thick. Season with nutmeg, salt and pepper.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4",
+     "i5",
+     "i6"
+    ],
+    "technique": [
+     "roux",
+     "whisk",
+     "simmer"
+    ],
+    "durationMin": 6,
+    "heat": "medium",
+    "critical": "Add the milk gradually while whisking, or the sauce turns lumpy."
+   },
+   {
+    "id": "s2",
+    "text": "Heat the oven to 220 °C. Make sandwiches of bread, a little béchamel, ham and cheese, then top with the rest of the béchamel and cheese.",
+    "uses": [
+     "s1",
+     "i7",
+     "i8",
+     "i9"
+    ],
+    "technique": [
+     "assemble"
+    ],
+    "tempC": 220
+   },
+   {
+    "id": "s3",
+    "text": "Bake until bubbling and browned on top.",
+    "uses": [
+     "s2"
+    ],
+    "technique": [
+     "bake"
+    ],
+    "durationMin": 12,
+    "tempC": 220
+   },
+   {
+    "id": "s4",
+    "text": "Meanwhile fry the eggs sunny side up in butter until the whites are set but the yolks runny.",
+    "uses": [
+     "i11",
+     "i10"
+    ],
+    "technique": [
+     "fry"
+    ],
+    "durationMin": 4,
+    "heat": "medium"
+   },
+   {
+    "id": "s5",
+    "text": "Put an egg on each sandwich and serve at once.",
+    "uses": [
+     "s3",
+     "s4"
+    ],
+    "technique": [
+     "serve"
+    ]
+   }
+  ],
+  "notes": {
+   "techniques": "Frying the eggs gently keeps the yolk runny to act as a second sauce.",
+   "spiceProfile": "Nutmeg béchamel and Gruyère; the yolk adds richness.",
+   "variations": "A croque monsieur topped with a fried egg; the egg is said to look like a lady's hat."
+  }
+ }
+]

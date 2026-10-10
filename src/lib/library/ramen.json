@@ -1,0 +1,853 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "ramen",
+		"title": "Shoyu ramen with chicken broth",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Shoyu chicken broth"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 45,
+			"cookMin": 240,
+			"totalMin": 300
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"noodles",
+			"soup",
+			"weekend-project"
+		],
+		"equipment": [
+			"large stockpot",
+			"small saucepan",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-wings",
+				"name": "chicken wings and backs",
+				"role": "poultry",
+				"qty": 1.5,
+				"unit": "kg",
+				"group": "broth",
+				"original": "1.5 kg chicken wings and backs"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "l",
+				"group": "broth",
+				"original": "3 l water"
+			},
+			{
+				"id": "i3",
+				"key": "kombu",
+				"name": "kombu",
+				"role": "umami",
+				"qty": 10,
+				"unit": "g",
+				"group": "broth",
+				"original": "10 g kombu"
+			},
+			{
+				"id": "i4",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 30,
+				"unit": "g",
+				"prep": "sliced",
+				"group": "broth",
+				"original": "30 g ginger, sliced"
+			},
+			{
+				"id": "i5",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "green tops for broth, whites sliced for topping",
+				"original": "6 scallions, green tops for broth, whites sliced for topping"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "crushed",
+				"group": "broth",
+				"original": "4 cloves garlic, crushed"
+			},
+			{
+				"id": "i7",
+				"key": "soy-sauce",
+				"name": "Japanese soy sauce",
+				"role": "umami",
+				"qty": 1.5,
+				"unit": "dl",
+				"group": "tare",
+				"original": "1.5 dl Japanese soy sauce"
+			},
+			{
+				"id": "i8",
+				"key": "mirin",
+				"name": "mirin",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "tare",
+				"original": "3 tbsp mirin"
+			},
+			{
+				"id": "i9",
+				"key": "sake",
+				"name": "sake",
+				"role": "wine",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "tare",
+				"original": "3 tbsp sake"
+			},
+			{
+				"id": "i10",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"group": "toppings",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i11",
+				"key": "chashu-pork",
+				"name": "pork shoulder or belly, rolled and tied",
+				"role": "meat",
+				"qty": 600,
+				"unit": "g",
+				"group": "toppings",
+				"original": "600 g pork shoulder or belly, rolled and tied"
+			},
+			{
+				"id": "i12",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "toppings",
+				"original": "2 tbsp sugar"
+			},
+			{
+				"id": "i13",
+				"key": "ramen-noodles",
+				"name": "fresh ramen noodles",
+				"role": "noodles",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g fresh ramen noodles"
+			},
+			{
+				"id": "i14",
+				"key": "menma",
+				"name": "menma (seasoned bamboo shoots)",
+				"role": "topping",
+				"qty": 100,
+				"unit": "g",
+				"optional": true,
+				"original": "100 g menma (seasoned bamboo shoots) (optional)"
+			},
+			{
+				"id": "i15",
+				"key": "nori",
+				"name": "nori sheets",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "2 nori sheets, halved"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Blanch the chicken in boiling water for 5 minutes, drain and rinse off the scum.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 5,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Cover the chicken with the fresh water, add ginger, garlic and scallion greens and simmer very gently, skimming, without a lid.",
+				"uses": [
+					"s1",
+					"i2",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 180,
+				"heat": "low",
+				"critical": "Keep the broth at a bare simmer so it stays clear; boiling clouds and greases it."
+			},
+			{
+				"id": "s3",
+				"text": "Add the kombu for the last 30 minutes, then strain the broth through a fine sieve.",
+				"uses": [
+					"s2",
+					"i3"
+				],
+				"technique": [
+					"simmer",
+					"strain"
+				],
+				"durationMin": 30,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Bring soy, mirin, sake and sugar to a simmer with 2 dl water to make a braising liquid. Braise the pork, covered and turning, until tender. Reserve the liquid as tare.",
+				"uses": [
+					"i7",
+					"i8",
+					"i9",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 120,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Boil the eggs for 6½ minutes, chill in ice water, peel and marinate in some of the cooled tare.",
+				"uses": [
+					"s4",
+					"i10"
+				],
+				"technique": [
+					"boil",
+					"marinate"
+				],
+				"durationMin": 7,
+				"critical": "Exactly 6½ minutes gives a jammy yolk."
+			},
+			{
+				"id": "s6",
+				"text": "Cook the noodles according to the package, usually 1–2 minutes, and drain well.",
+				"uses": [
+					"i13"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s7",
+				"text": "Put 3 tbsp tare in each bowl, pour in 4 dl hot broth, add the noodles, and top with sliced pork, halved eggs, menma, nori and scallion whites.",
+				"uses": [
+					"s3",
+					"s4",
+					"s5",
+					"s6",
+					"i14",
+					"i15"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Ramen is assembled from separate parts: broth, tare (the seasoning), noodles, toppings and sometimes aroma oil. The broth is unsalted; the tare seasons each bowl.",
+			"chemistry": "Gentle simmering dissolves collagen into gelatin, giving body, while keeping fat and proteins from emulsifying into a cloudy broth. Kombu adds glutamate for umami.",
+			"spiceProfile": "Clean, savoury and salty from soy, with ginger and scallion.",
+			"variations": "A clear, soy-seasoned broth, the classic Tokyo style. Tonkotsu is milky and pork-based, and miso ramen is heartier and quicker."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "ramen",
+		"title": "Tonkotsu ramen",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Tonkotsu pork bone"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 720,
+			"totalMin": 750
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"noodles",
+			"soup",
+			"pork",
+			"weekend-project"
+		],
+		"equipment": [
+			"large stockpot",
+			"fine sieve",
+			"small saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "pork-trotters",
+				"name": "pork trotters, split",
+				"role": "meat",
+				"qty": 1.5,
+				"unit": "kg",
+				"group": "broth",
+				"original": "1.5 kg pork trotters, split"
+			},
+			{
+				"id": "i2",
+				"key": "pork-bones",
+				"name": "pork neck or back bones",
+				"role": "meat",
+				"qty": 1,
+				"unit": "kg",
+				"group": "broth",
+				"original": "1 kg pork neck or back bones"
+			},
+			{
+				"id": "i3",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 5,
+				"unit": "l",
+				"group": "broth",
+				"original": "5 l water"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved",
+				"group": "broth",
+				"original": "1 yellow onion, halved"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "whole head, halved",
+				"group": "broth",
+				"original": "1 head garlic, halved"
+			},
+			{
+				"id": "i6",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 30,
+				"unit": "g",
+				"prep": "sliced",
+				"group": "broth",
+				"original": "30 g ginger, sliced"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "tare",
+				"original": "1 tbsp salt"
+			},
+			{
+				"id": "i8",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 5,
+				"unit": "tbsp",
+				"group": "tare",
+				"original": "5 tbsp light soy sauce"
+			},
+			{
+				"id": "i9",
+				"key": "mirin",
+				"name": "mirin",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "tare",
+				"original": "2 tbsp mirin"
+			},
+			{
+				"id": "i10",
+				"key": "pork-belly",
+				"name": "pork belly chashu",
+				"role": "meat",
+				"qty": 400,
+				"unit": "g",
+				"prep": "braised and sliced",
+				"group": "toppings",
+				"original": "400 g pork belly chashu, braised and sliced"
+			},
+			{
+				"id": "i11",
+				"key": "ajitama",
+				"name": "marinated soft-boiled eggs (ajitama)",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"group": "toppings",
+				"original": "4 marinated soft-boiled eggs (ajitama)"
+			},
+			{
+				"id": "i12",
+				"key": "thin-ramen-noodles",
+				"name": "thin straight ramen noodles",
+				"role": "noodles",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g thin straight ramen noodles"
+			},
+			{
+				"id": "i13",
+				"key": "kikurage",
+				"name": "wood ear mushrooms",
+				"role": "vegetable",
+				"qty": 20,
+				"unit": "g",
+				"prep": "rehydrated and sliced",
+				"optional": true,
+				"original": "20 g wood ear mushrooms, rehydrated and sliced (optional)"
+			},
+			{
+				"id": "i14",
+				"key": "beni-shoga",
+				"name": "pickled red ginger (beni shoga)",
+				"role": "garnish",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp pickled red ginger (beni shoga)"
+			},
+			{
+				"id": "i15",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "finely sliced",
+				"original": "4 scallions, finely sliced"
+			},
+			{
+				"id": "i16",
+				"key": "black-garlic-oil",
+				"name": "black garlic oil (mayu)",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tsp",
+				"optional": true,
+				"original": "4 tsp black garlic oil (mayu) (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the bones in cold water for a few hours, then blanch in boiling water for 10 minutes. Drain, rinse and scrub off the dark scum.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"soak",
+					"blanch"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Cover the bones with the fresh water and boil hard with the lid on, topping up with water to keep them covered.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 600,
+				"heat": "high",
+				"critical": "The broth must boil vigorously the whole time; this emulsifies fat and collagen into the milky white broth."
+			},
+			{
+				"id": "s3",
+				"text": "Add onion, garlic and ginger for the last hour, then strain the broth through a fine sieve. You should have about 2 litres.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"boil",
+					"strain"
+				],
+				"durationMin": 60,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Mix salt, soy and mirin into a tare and warm it until the salt dissolves.",
+				"uses": [
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Boil the noodles firm, usually 60–90 seconds, and drain well.",
+				"uses": [
+					"i12"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Put 2 tbsp tare in each bowl, add 4.5 dl very hot broth and the noodles. Top with pork belly, halved eggs, wood ear, red ginger, scallions and a drizzle of black garlic oil.",
+				"uses": [
+					"s3",
+					"s4",
+					"s5",
+					"i10",
+					"i11",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The opposite of clear broth: a long rolling boil breaks down collagen and emulsifies fat into a creamy, opaque soup.",
+			"chemistry": "Collagen from trotters converts to gelatin, which, with vigorous agitation, keeps fat droplets suspended as an emulsion. That is why it looks milky.",
+			"spiceProfile": "Rich and porky, cut with sharp pickled ginger and smoky-bitter black garlic oil.",
+			"variations": "Fukuoka-style pork-bone ramen with thin, firm noodles. It takes all day, unlike shoyu or miso ramen."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "ramen",
+		"title": "Miso ramen, Sapporo style weeknight",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick miso"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 25,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main",
+			"soup"
+		],
+		"tags": [
+			"noodles",
+			"soup",
+			"weeknight",
+			"pork"
+		],
+		"equipment": [
+			"large pot",
+			"wok or frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame oil"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "3 cloves garlic, grated"
+			},
+			{
+				"id": "i4",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i5",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g ground pork"
+			},
+			{
+				"id": "i6",
+				"key": "doubanjiang",
+				"name": "doubanjiang (chili bean paste)",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"optional": true,
+				"original": "1 tbsp doubanjiang (chili bean paste) (optional)"
+			},
+			{
+				"id": "i7",
+				"key": "miso",
+				"name": "miso (half red, half white)",
+				"role": "umami",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp miso (half red, half white)"
+			},
+			{
+				"id": "i8",
+				"key": "tahini",
+				"name": "sesame paste or tahini",
+				"role": "nut",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp sesame paste or tahini"
+			},
+			{
+				"id": "i9",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1.6,
+				"unit": "l",
+				"original": "1.6 l chicken stock"
+			},
+			{
+				"id": "i10",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i11",
+				"key": "bean-sprouts",
+				"name": "bean sprouts",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g bean sprouts"
+			},
+			{
+				"id": "i12",
+				"key": "cabbage",
+				"name": "white cabbage",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "150 g white cabbage, shredded"
+			},
+			{
+				"id": "i13",
+				"key": "ramen-noodles",
+				"name": "fresh wavy ramen noodles",
+				"role": "noodles",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g fresh wavy ramen noodles"
+			},
+			{
+				"id": "i14",
+				"key": "corn",
+				"name": "sweetcorn kernels",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g sweetcorn kernels"
+			},
+			{
+				"id": "i15",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"prep": "in 4 pats",
+				"original": "40 g butter, in 4 pats"
+			},
+			{
+				"id": "i16",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "3 scallions, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry garlic and ginger in both oils for 30 seconds, add the pork and fry until browned and crumbly.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the doubanjiang, miso and sesame paste, then whisk in the stock and soy. Bring just to a simmer.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium",
+				"critical": "Do not boil hard after the miso goes in; it dulls its aroma."
+			},
+			{
+				"id": "s3",
+				"text": "Stir-fry the sprouts and cabbage in a hot wok for 1–2 minutes until just wilted.",
+				"uses": [
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Cook the noodles, drain well and divide between bowls.",
+				"uses": [
+					"i13"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Pour over the hot soup with pork, top with the vegetables, corn, a pat of butter and scallions.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The soup base is built in one pot from stock, miso and fried pork, so it takes under an hour.",
+			"chemistry": "Miso is fermented soybean paste, rich in glutamates; its aroma compounds are volatile and fade with hard boiling.",
+			"spiceProfile": "Savoury and nutty from miso and sesame, with garlic, ginger and a gentle chili-bean heat; butter and corn add sweetness.",
+			"variations": "Hearty Hokkaido style with miso, butter and corn. Much faster than shoyu or tonkotsu because it starts from ready-made stock."
+		}
+	}
+]

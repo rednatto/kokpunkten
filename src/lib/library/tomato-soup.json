@@ -1,0 +1,585 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tomato-soup",
+		"title": "Tomato soup with roasted tomatoes and basil",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Roasted tomato and basil"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 55,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegetarian",
+			"summer"
+		],
+		"equipment": [
+			"roasting tray",
+			"large pot",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg ripe tomatoes, halved",
+				"prep": "halved"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, cut into wedges",
+				"prep": "cut into wedges"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"original": "4 cloves garlic, unpeeled",
+				"prep": "unpeeled"
+			},
+			{
+				"id": "i4",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i5",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl vegetable stock"
+			},
+			{
+				"id": "i6",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g fresh basil, leaves picked",
+				"prep": "leaves picked"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar (optional)",
+				"optional": true
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the tomatoes, onion and garlic with the oil, salt and pepper on a tray. Turn the tomatoes cut side up.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Roast until the tomatoes are soft and browned at the edges.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 40,
+				"tempC": 200
+			},
+			{
+				"id": "s3",
+				"text": "Squeeze the garlic out of its skins and tip everything, with the juices, into a pot. Add the stock and simmer.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the basil and blend until smooth.",
+				"uses": [
+					"s3",
+					"i6"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Season with salt, and add the sugar only if the tomatoes taste sharp.",
+				"uses": [
+					"s4",
+					"i7"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Roasting drives off water and concentrates the tomatoes before they ever meet the stock.",
+			"chemistry": "The browned edges come from caramelised sugars and Maillard reactions, which give a deeper, slightly smoky flavour than simmering alone.",
+			"spiceProfile": "Basil goes in at the end so its volatile aromas survive.",
+			"variations": "Uses fresh tomatoes roasted in the oven rather than canned, and has no cream, so it depends on ripe summer tomatoes."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tomato-soup",
+		"title": "Creamy tomato soup from canned tomatoes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Creamy weeknight"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 30,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"quick",
+			"pantry"
+		],
+		"equipment": [
+			"large pot",
+			"blender"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i4",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i5",
+				"key": "canned-tomatoes",
+				"name": "canned whole tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"original": "2 cans (400 g each) whole peeled tomatoes"
+			},
+			{
+				"id": "i6",
+				"key": "chicken-stock",
+				"name": "chicken or vegetable stock",
+				"role": "stock",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl chicken or vegetable stock",
+				"substitutes": [
+					"vegetable-stock"
+				]
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i8",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i9",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl heavy cream"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i11",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter and sweat the onion until soft but not browned.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 6,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the garlic and tomato paste and cook, stirring, until the paste darkens.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the tomatoes, stock, sugar and bay leaf. Simmer, breaking up the tomatoes.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Remove the bay leaf and blend until smooth. Fill the blender no more than half full with hot soup.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Stir in the cream, heat through and season with salt and pepper.",
+				"uses": [
+					"s4",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Frying the tomato paste in butter before adding liquid gives a rounder, less raw tomato taste.",
+			"chemistry": "Heavy cream has enough fat to resist curdling in the acidic soup, which is why it is preferred over milk here.",
+			"variations": "A pantry version with canned tomatoes and cream, smoother and milder than a roasted fresh-tomato soup."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tomato-soup",
+		"title": "Pappa al pomodoro",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Tuscan bread soup"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegetarian",
+			"bread",
+			"rustic"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp extra virgin olive oil, plus more to serve",
+				"prep": "plus more to serve"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"original": "3 cloves garlic, thinly sliced",
+				"prep": "thinly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "chili-flakes",
+				"name": "chili flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of chili flakes (optional)",
+				"optional": true
+			},
+			{
+				"id": "i4",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "kg",
+				"original": "1 kg ripe tomatoes, peeled and chopped",
+				"prep": "peeled and chopped",
+				"substitutes": [
+					"canned-tomatoes"
+				]
+			},
+			{
+				"id": "i5",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 7.5,
+				"unit": "dl",
+				"original": "7.5 dl vegetable stock"
+			},
+			{
+				"id": "i6",
+				"key": "stale-bread",
+				"name": "stale rustic white bread",
+				"role": "bread",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g stale rustic white bread, crusts removed, torn",
+				"prep": "crusts removed, torn"
+			},
+			{
+				"id": "i7",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g fresh basil, torn",
+				"prep": "torn"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Warm the oil and gently cook the garlic and chili without letting the garlic colour.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 2,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the tomatoes and a good pinch of salt. Simmer until they break down.",
+				"uses": [
+					"s1",
+					"i4",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the stock and bring to a simmer. Add the bread and cook, stirring, until it collapses into a thick porridge.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Off the heat, stir in the basil and pepper and let it rest. Serve warm or at room temperature with a drizzle of oil.",
+				"uses": [
+					"s3",
+					"i7",
+					"i9"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Stale bread is used as the thickener instead of blending or cream.",
+			"chemistry": "The bread starch absorbs liquid and gelatinises, giving the soup its thick, spoonable texture.",
+			"spiceProfile": "Garlic, basil and a good fruity olive oil carry the flavour.",
+			"variations": "Much thicker than other tomato soups and never blended; it is often eaten lukewarm in summer."
+		}
+	}
+]

@@ -1,0 +1,520 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tiramisu",
+		"title": "Tiramisu, classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic raw egg"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 0,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"no-bake",
+			"make-ahead",
+			"coffee"
+		],
+		"equipment": [
+			"2 bowls",
+			"electric whisk",
+			"dish 20×30 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg-yolk",
+				"name": "very fresh egg yolks",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 very fresh egg yolks"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g sugar"
+			},
+			{
+				"id": "i3",
+				"key": "mascarpone",
+				"name": "mascarpone",
+				"role": "dairy",
+				"qty": 500,
+				"unit": "g",
+				"prep": "at room temperature",
+				"original": "500 g mascarpone, at room temperature"
+			},
+			{
+				"id": "i4",
+				"key": "egg-white",
+				"name": "egg whites",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 egg whites"
+			},
+			{
+				"id": "i5",
+				"key": "espresso",
+				"name": "strong espresso, cooled",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl strong espresso, cooled"
+			},
+			{
+				"id": "i6",
+				"key": "ladyfingers",
+				"name": "savoiardi (ladyfingers)",
+				"role": "bread",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g savoiardi (ladyfingers)"
+			},
+			{
+				"id": "i7",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp unsweetened cocoa powder"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the yolks and sugar until pale and thick.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"whisk"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s2",
+				"text": "Beat in the mascarpone until smooth.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Whisk the whites to soft peaks and fold them into the mascarpone cream.",
+				"uses": [
+					"s2",
+					"i4"
+				],
+				"technique": [
+					"whisk",
+					"fold"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Dip each ladyfinger briefly in coffee and lay half in the dish. Spread half the cream on top, then repeat.",
+				"uses": [
+					"s3",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"dip",
+					"layer"
+				],
+				"critical": "Dip for about one second; soaked biscuits collapse into mush."
+			},
+			{
+				"id": "s5",
+				"text": "Chill at least 6 hours. Dust with cocoa before serving.",
+				"uses": [
+					"s4",
+					"i7"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 360
+			}
+		],
+		"notes": {
+			"techniques": "Whipped yolks and folded whites make a light cream without any cooking or gelatine.",
+			"chemistry": "Whipping traps air bubbles stabilised by egg proteins. Chilling firms the mascarpone fat so it sets and slices.",
+			"spiceProfile": "Bitter coffee and cocoa against sweet, rich cream.",
+			"variations": "The classic Veneto method with raw eggs and no alcohol. Use very fresh or pasteurised eggs, and avoid serving to pregnant people, young children or the elderly."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tiramisu",
+		"title": "Tiramisu with Marsala zabaglione",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cooked zabaglione with Marsala"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 35,
+			"cookMin": 10,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"make-ahead",
+			"coffee",
+			"egg-safe"
+		],
+		"equipment": [
+			"heatproof bowl over a saucepan",
+			"thermometer",
+			"electric whisk",
+			"dish 20×30 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 5,
+				"unit": "piece",
+				"original": "5 egg yolks"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g sugar"
+			},
+			{
+				"id": "i3",
+				"key": "marsala",
+				"name": "Marsala",
+				"role": "wine",
+				"qty": 6,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "6 tbsp Marsala, divided"
+			},
+			{
+				"id": "i4",
+				"key": "mascarpone",
+				"name": "mascarpone",
+				"role": "dairy",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g mascarpone"
+			},
+			{
+				"id": "i5",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i6",
+				"key": "espresso",
+				"name": "strong espresso, cooled",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl strong espresso, cooled"
+			},
+			{
+				"id": "i7",
+				"key": "ladyfingers",
+				"name": "savoiardi (ladyfingers)",
+				"role": "bread",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g savoiardi (ladyfingers)"
+			},
+			{
+				"id": "i8",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp unsweetened cocoa powder"
+			},
+			{
+				"id": "i9",
+				"key": "dark-chocolate",
+				"name": "dark chocolate",
+				"role": "chocolate",
+				"qty": 30,
+				"unit": "g",
+				"prep": "finely grated",
+				"optional": true,
+				"original": "30 g dark chocolate, finely grated (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the yolks, sugar and 4 tbsp Marsala over simmering water until thick, pale and 71 °C.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				],
+				"durationMin": 8,
+				"heat": "low",
+				"critical": "Keep whisking and keep the water at a bare simmer, or the yolks scramble."
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the zabaglione off the heat until cool.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"whisk"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s3",
+				"text": "Whip the cream to soft peaks. Beat the mascarpone into the cooled zabaglione, then fold in the cream.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk",
+					"fold"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Mix the coffee with the remaining Marsala. Dip the ladyfingers briefly and layer with the cream twice.",
+				"uses": [
+					"s3",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"dip",
+					"layer"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Chill at least 6 hours, then dust with cocoa and grated chocolate.",
+				"uses": [
+					"s4",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 360
+			}
+		],
+		"notes": {
+			"techniques": "A cooked zabaglione replaces raw yolks, and whipped cream replaces the egg whites.",
+			"chemistry": "Heating yolks to 71 °C while whisking pasteurises them and thickens them by partial coagulation; the sugar and constant motion prevent curdling.",
+			"spiceProfile": "Raisiny, nutty Marsala adds warmth to the coffee and cocoa.",
+			"variations": "Egg-safe version with a cooked Marsala custard and whipped cream. Richer and boozier than the classic."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tiramisu",
+		"title": "Egg-free tiramisu",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Egg-free"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 0,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"no-bake",
+			"egg-free",
+			"quick",
+			"coffee"
+		],
+		"equipment": [
+			"bowl",
+			"electric whisk",
+			"dish 20×20 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "mascarpone",
+				"name": "mascarpone",
+				"role": "dairy",
+				"qty": 500,
+				"unit": "g",
+				"prep": "cold",
+				"original": "500 g mascarpone, cold"
+			},
+			{
+				"id": "i2",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 3,
+				"unit": "dl",
+				"prep": "cold",
+				"original": "3 dl heavy cream, cold"
+			},
+			{
+				"id": "i3",
+				"key": "icing-sugar",
+				"name": "powdered sugar",
+				"role": "sweetener",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g powdered sugar"
+			},
+			{
+				"id": "i4",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla extract"
+			},
+			{
+				"id": "i5",
+				"key": "espresso",
+				"name": "strong espresso, cooled",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl strong espresso, cooled"
+			},
+			{
+				"id": "i6",
+				"key": "coffee-liqueur",
+				"name": "coffee liqueur",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "opt",
+				"original": "3 tbsp coffee liqueur, opt"
+			},
+			{
+				"id": "i7",
+				"key": "ladyfingers",
+				"name": "savoiardi (ladyfingers)",
+				"role": "bread",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g savoiardi (ladyfingers)"
+			},
+			{
+				"id": "i8",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp unsweetened cocoa powder"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the cold mascarpone, cream, sugar and vanilla together until thick and spreadable.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				],
+				"durationMin": 3,
+				"critical": "Stop when it holds soft peaks; overbeaten mascarpone turns grainy."
+			},
+			{
+				"id": "s2",
+				"text": "Mix coffee and liqueur, dip the ladyfingers briefly and layer with the cream twice.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"dip",
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Chill at least 4 hours and dust with cocoa.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 240
+			}
+		],
+		"notes": {
+			"techniques": "Whipped cream gives the lift that egg whites provide in the classic.",
+			"chemistry": "Cold cream and mascarpone whip well because their fat globules are firm enough to trap air.",
+			"spiceProfile": "Vanilla-forward and slightly sweeter, with optional coffee liqueur.",
+			"variations": "No eggs at all, so it is quicker and safe for everyone. Denser and creamier than the classic, with a vanilla note."
+		}
+	}
+]

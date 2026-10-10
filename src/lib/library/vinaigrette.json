@@ -1,0 +1,416 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "vinaigrette",
+		"title": "Classic French vinaigrette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – French Dijon and shallot"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"dressing",
+			"emulsion"
+		],
+		"equipment": [
+			"bowl",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "shallot",
+				"name": "small shallot",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 small shallot, very finely chopped",
+				"prep": "very finely chopped"
+			},
+			{
+				"id": "i2",
+				"key": "red-wine-vinegar",
+				"name": "red wine vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp red wine vinegar"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "binder",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Dijon mustard"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "olive oil or a mix of olive and neutral oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp olive oil or a mix of olive and neutral oil"
+			},
+			{
+				"id": "i6",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Let the shallot sit in the vinegar with the salt to soften.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"macerate"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s2",
+				"text": "Whisk in the mustard.",
+				"uses": [
+					"s1",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Add the oil in a thin stream, whisking all the time, until thick and emulsified. Season with pepper.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"emulsify"
+				],
+				"critical": "Dissolve the salt in the vinegar before adding the oil; salt does not dissolve in oil."
+			}
+		],
+		"notes": {
+			"techniques": "Roughly 1 part vinegar to 3 parts oil, whisked into a temporary emulsion.",
+			"chemistry": "Mustard contains mucilage and other emulsifiers that coat the oil droplets and keep the dressing from separating quickly.",
+			"spiceProfile": "Sharp, mustardy and savoury, with mild onion flavour from the shallot.",
+			"variations": "The base vinaigrette: wine vinegar, mustard and shallot, sharper than balsamic and without fresh herbs."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "vinaigrette",
+		"title": "Balsamic vinaigrette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Balsamic"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 0,
+			"totalMin": 5
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"dressing",
+			"quick"
+		],
+		"equipment": [
+			"jar with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "balsamic-vinegar",
+				"name": "balsamic vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp balsamic vinegar"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "small garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove small garlic, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i4",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp honey"
+			},
+			{
+				"id": "i5",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "binder",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp Dijon mustard"
+			},
+			{
+				"id": "i6",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp extra virgin olive oil"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Put the vinegar, salt, garlic, honey and mustard in a jar and shake until the salt dissolves.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Add the oil and pepper and shake hard until emulsified. Shake again before using.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"emulsify"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Shaking in a jar is the quickest way to emulsify and lets you store leftovers.",
+			"chemistry": "The honey and mustard both help hold the emulsion together for a while.",
+			"spiceProfile": "Sweet-tart balsamic with fruity olive oil and a hint of garlic.",
+			"variations": "Sweeter and darker than the French version, with garlic and honey; best on tomatoes, leaves and grilled vegetables."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "vinaigrette",
+		"title": "Lemon herb vinaigrette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Lemon and herb"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 0,
+			"totalMin": 10
+		},
+		"cuisine": [
+			"mediterranean"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"dressing",
+			"fresh"
+		],
+		"equipment": [
+			"bowl",
+			"whisk",
+			"zester"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp lemon juice"
+			},
+			{
+				"id": "i2",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon zest"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "small garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove small garlic, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i5",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp honey"
+			},
+			{
+				"id": "i6",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp extra virgin olive oil"
+			},
+			{
+				"id": "i7",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp parsley, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i8",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp dill, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the lemon juice, zest, salt, garlic and honey.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Whisk in the oil, then stir in the herbs and pepper. Use the same day.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"emulsify"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A higher acid ratio than wine vinegar dressings, because lemon juice is less acidic.",
+			"chemistry": "Fresh herbs darken in acid over time as their chlorophyll breaks down, so add them shortly before serving.",
+			"spiceProfile": "Bright citrus, garlic and fresh green herbs.",
+			"variations": "Lemon replaces vinegar and fresh herbs replace mustard and shallot; good on fish, grains and bean salads."
+		}
+	}
+]

@@ -1,0 +1,541 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "coleslaw",
+		"title": "Creamy coleslaw",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Creamy American"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"bbq",
+			"no-cook"
+		],
+		"equipment": [
+			"large bowl",
+			"colander"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "green-cabbage",
+				"name": "green cabbage",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g green cabbage, finely shredded",
+				"prep": "finely shredded"
+			},
+			{
+				"id": "i2",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "mayonnaise",
+				"name": "mayonnaise",
+				"role": "sauce",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl mayonnaise"
+			},
+			{
+				"id": "i5",
+				"key": "apple-cider-vinegar",
+				"name": "apple cider vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp apple cider vinegar"
+			},
+			{
+				"id": "i6",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i7",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Dijon mustard"
+			},
+			{
+				"id": "i8",
+				"key": "celery-seed",
+				"name": "celery seed",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp celery seed"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the cabbage and carrot with the salt and leave in a colander, then squeeze out the liquid.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"salt"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the mayonnaise, vinegar, sugar, mustard, celery seed and pepper.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Toss the vegetables with the dressing and chill before serving.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"toss",
+					"chill"
+				],
+				"durationMin": 30
+			}
+		],
+		"notes": {
+			"techniques": "Salting the cabbage first stops the slaw from going watery in the bowl.",
+			"chemistry": "Salt draws water out of the cabbage cells by osmosis, so it softens slightly and does not dilute the dressing.",
+			"spiceProfile": "Tangy and lightly sweet, with celery seed as the classic seasoning.",
+			"variations": "Mayonnaise-based and rich, unlike the oil-and-vinegar Carolina slaw or the sesame Asian slaw."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "coleslaw",
+		"title": "Carolina vinegar slaw",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Carolina vinegar"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 2,
+			"totalMin": 17
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"bbq",
+			"dairy-free",
+			"tangy"
+		],
+		"equipment": [
+			"small saucepan",
+			"large bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "apple-cider-vinegar",
+				"name": "apple cider vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl apple cider vinegar"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp sugar"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp neutral oil"
+			},
+			{
+				"id": "i5",
+				"key": "celery-seed",
+				"name": "celery seed",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp celery seed"
+			},
+			{
+				"id": "i6",
+				"key": "chili-flakes",
+				"name": "red pepper flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of red pepper flakes"
+			},
+			{
+				"id": "i7",
+				"key": "green-cabbage",
+				"name": "green cabbage",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g green cabbage, finely shredded",
+				"prep": "finely shredded"
+			},
+			{
+				"id": "i8",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Warm the vinegar with the sugar and salt until dissolved.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"dissolve"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Off the heat, whisk in the oil, celery seed and chili flakes.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Pour over the cabbage and carrot, add pepper, toss and chill so the cabbage wilts slightly.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"toss",
+					"chill"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "The warm dressing slightly wilts the cabbage and soaks in while it chills.",
+			"chemistry": "Acid and salt soften the cabbage cell walls over time, so this slaw keeps well and gets better after an hour.",
+			"spiceProfile": "Sharp, sweet and lightly hot.",
+			"variations": "No mayonnaise: a thin sweet-sour dressing that cuts through rich pulled pork, as served in the Carolinas."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "coleslaw",
+		"title": "Asian sesame slaw",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Asian sesame"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 3,
+			"totalMin": 23
+		},
+		"cuisine": [
+			"asian"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"dairy-free",
+			"crunchy"
+		],
+		"equipment": [
+			"frying pan",
+			"large bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "sesame-seeds",
+				"name": "sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp sesame seeds"
+			},
+			{
+				"id": "i2",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp rice vinegar"
+			},
+			{
+				"id": "i3",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i4",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame oil"
+			},
+			{
+				"id": "i5",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i6",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp honey"
+			},
+			{
+				"id": "i7",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp fresh ginger, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i8",
+				"key": "napa-cabbage",
+				"name": "napa cabbage",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g napa cabbage, shredded",
+				"prep": "shredded"
+			},
+			{
+				"id": "i9",
+				"key": "red-cabbage",
+				"name": "red cabbage",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g red cabbage, finely shredded",
+				"prep": "finely shredded"
+			},
+			{
+				"id": "i10",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, cut into thin matchsticks",
+				"prep": "cut into thin matchsticks"
+			},
+			{
+				"id": "i11",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "allium",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 scallions, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i12",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp cilantro, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i13",
+				"key": "peanuts",
+				"name": "roasted peanuts",
+				"role": "nut",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g roasted peanuts, chopped (optional)",
+				"prep": "chopped",
+				"optional": true
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toast the sesame seeds in a dry pan until golden.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the vinegar, soy sauce, both oils, honey and ginger.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Toss the cabbages, carrot, scallions and cilantro with the dressing just before serving, and top with the sesame seeds and peanuts.",
+				"uses": [
+					"s1",
+					"s2",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Dressed at the last minute so the tender napa cabbage stays crunchy.",
+			"chemistry": "Toasting sesame seeds creates nutty flavour compounds through the Maillard reaction.",
+			"spiceProfile": "Nutty sesame, salty soy, sweet honey and warm ginger.",
+			"variations": "Uses napa and red cabbage with a soy-sesame dressing instead of mayonnaise or a cider-vinegar dressing."
+		}
+	}
+]

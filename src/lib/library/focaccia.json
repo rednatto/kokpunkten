@@ -1,0 +1,555 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "focaccia",
+		"title": "Focaccia genovese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Genovese"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 20,
+			"totalMin": 210
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"bread",
+			"yeast",
+			"ligurian"
+		],
+		"equipment": [
+			"large bowl",
+			"30 × 40 cm baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bread-flour",
+				"name": "bread flour or 00 flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g bread flour or 00 flour",
+				"substitutes": [
+					"00-flour"
+				]
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "lukewarm water",
+				"role": "liquid",
+				"qty": 4,
+				"unit": "dl",
+				"original": "4 dl lukewarm water, divided: 340 ml for the dough, 60 ml for the brine",
+				"prep": "divided: 340 ml for the dough, 60 ml for the brine"
+			},
+			{
+				"id": "i3",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 4,
+				"unit": "g",
+				"original": "4 g instant yeast"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "fine salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g fine salt"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 1.2,
+				"unit": "dl",
+				"original": "1.2 dl extra virgin olive oil, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i6",
+				"key": "flaky-salt",
+				"name": "coarse sea salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp coarse sea salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the flour, 340 ml water, yeast, salt and 2 tbsp oil. Knead until smooth and soft.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 8
+			},
+			{
+				"id": "s2",
+				"text": "Cover and leave until doubled.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s3",
+				"text": "Oil the tray with 3 tbsp oil and press the dough into it. Rest for 20 minutes, then stretch it to the corners.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"stretch",
+					"rest"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s4",
+				"text": "Cover and let it rise again until puffy.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 45
+			},
+			{
+				"id": "s5",
+				"text": "Whisk the remaining oil and 60 ml water. Press deep dimples into the dough with oiled fingers, pour the brine over and sprinkle with coarse salt. Rest.",
+				"uses": [
+					"s4",
+					"i6"
+				],
+				"technique": [
+					"dimple"
+				],
+				"durationMin": 30,
+				"critical": "Press the dimples right down to the tray; they hold the brine."
+			},
+			{
+				"id": "s6",
+				"text": "Bake until golden on top and crisp underneath.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 20,
+				"tempC": 230
+			}
+		],
+		"notes": {
+			"techniques": "A thin layer of dough is dimpled and soaked with a brine of oil and water (salamoia) just before baking.",
+			"chemistry": "The water in the brine steams and keeps the dimples soft and white, while the oil around them fries the surface golden.",
+			"variations": "Thin, salty and oily, typical of Liguria, with no toppings except salt."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "focaccia",
+		"title": "Focaccia pugliese with potato, tomatoes and olives",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Pugliese with tomatoes"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 25,
+			"totalMin": 200
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"bread",
+			"yeast",
+			"potato"
+		],
+		"equipment": [
+			"pot",
+			"large bowl",
+			"30 cm round pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "floury potato",
+				"role": "starch",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g floury potato, boiled, peeled and mashed",
+				"prep": "boiled, peeled and mashed"
+			},
+			{
+				"id": "i2",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g bread flour"
+			},
+			{
+				"id": "i3",
+				"key": "semolina",
+				"name": "fine durum wheat semolina",
+				"role": "flour",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g fine durum wheat semolina"
+			},
+			{
+				"id": "i4",
+				"key": "water",
+				"name": "lukewarm water",
+				"role": "liquid",
+				"qty": 300,
+				"unit": "ml",
+				"original": "300 ml lukewarm water"
+			},
+			{
+				"id": "i5",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 5,
+				"unit": "g",
+				"original": "5 g instant yeast"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g salt"
+			},
+			{
+				"id": "i7",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 8,
+				"unit": "tbsp",
+				"original": "8 tbsp extra virgin olive oil, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i8",
+				"key": "cherry-tomatoes",
+				"name": "cherry tomatoes",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g cherry tomatoes, halved",
+				"prep": "halved"
+			},
+			{
+				"id": "i9",
+				"key": "olives",
+				"name": "pitted green or black olives",
+				"role": "topping",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g pitted green or black olives"
+			},
+			{
+				"id": "i10",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i11",
+				"key": "flaky-salt",
+				"name": "coarse sea salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp coarse sea salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the mashed potato, flours, water, yeast, salt and 2 tbsp oil to a soft, sticky dough. Knead or beat until smooth.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"knead"
+				],
+				"durationMin": 8
+			},
+			{
+				"id": "s2",
+				"text": "Cover and leave until doubled.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 90
+			},
+			{
+				"id": "s3",
+				"text": "Pour 4 tbsp oil into the pan, press the dough in to fill it and let it rise again.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"stretch",
+					"proof"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s4",
+				"text": "Press the tomatoes cut side down and the olives into the dough. Sprinkle with oregano and coarse salt and drizzle with the rest of the oil.",
+				"uses": [
+					"s3",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"dimple"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Bake until deep golden and crisp at the edges.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 220
+			}
+		],
+		"notes": {
+			"techniques": "Boiled potato in the dough makes a very soft, moist crumb that stays fresh longer.",
+			"chemistry": "Gelatinised potato starch holds a lot of water and interrupts the gluten network, giving tenderness; semolina adds a golden colour and slight chew.",
+			"spiceProfile": "Oregano, sweet tomatoes and briny olives.",
+			"variations": "Thicker, softer and baked in a round pan with toppings, unlike the plain, salty Genovese."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "focaccia",
+		"title": "No-knead overnight focaccia with rosemary",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – No-knead overnight"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 22,
+			"totalMin": 950
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"bread",
+			"yeast",
+			"no-knead",
+			"overnight"
+		],
+		"equipment": [
+			"large bowl with lid",
+			"23 × 33 cm baking pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g bread flour"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "lukewarm water",
+				"role": "liquid",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml lukewarm water"
+			},
+			{
+				"id": "i3",
+				"key": "instant-yeast",
+				"name": "instant yeast",
+				"role": "leavening",
+				"qty": 2,
+				"unit": "g",
+				"original": "2 g instant yeast"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g salt"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp extra virgin olive oil, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i6",
+				"key": "rosemary",
+				"name": "sprigs rosemary",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 sprigs rosemary, leaves picked",
+				"prep": "leaves picked"
+			},
+			{
+				"id": "i7",
+				"key": "flaky-salt",
+				"name": "flaky sea salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp flaky sea salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Stir the flour, water, yeast and salt together until no dry flour remains. Cover and rest.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"mix",
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "With wet hands, stretch and fold the dough over itself a few times. Cover and refrigerate.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"fold",
+					"retard"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s3",
+				"text": "Tip the dough into the pan with 4 tbsp oil, turn to coat and leave until very puffy and nearly filling the pan.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 150
+			},
+			{
+				"id": "s4",
+				"text": "Dimple deeply with oiled fingers, scatter with rosemary and flaky salt and drizzle with the remaining oil.",
+				"uses": [
+					"s3",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"dimple"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Bake until golden all over.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 22,
+				"tempC": 230
+			}
+		],
+		"notes": {
+			"techniques": "A wet 80 % hydration dough develops gluten by time and folding instead of kneading.",
+			"chemistry": "Over a long cold rest, gluten bonds form by themselves as the flour hydrates, and fermentation adds flavour; the high water content gives large, irregular holes.",
+			"spiceProfile": "Rosemary and good olive oil.",
+			"variations": "Very wet and hands-off, with a tall, airy crumb; it needs a day of planning but almost no work."
+		}
+	}
+]

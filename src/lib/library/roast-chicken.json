@@ -1,0 +1,560 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "roast-chicken",
+		"title": "Roast chicken with lemon and herbs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – French-style butter and herb"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 85,
+			"totalMin": 115
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"sunday",
+			"roast"
+		],
+		"equipment": [
+			"roasting tin",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-chicken",
+				"name": "whole chicken",
+				"role": "poultry",
+				"qty": 1.6,
+				"unit": "kg",
+				"original": "1 chicken, about 1.6 kg"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter, softened",
+				"role": "fat",
+				"qty": 50,
+				"unit": "g",
+				"prep": "softened",
+				"original": "50 g softened butter"
+			},
+			{
+				"id": "i3",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 sprigs thyme, leaves picked"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "1 head garlic, halved crosswise"
+			},
+			{
+				"id": "i5",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "1 lemon, halved"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp flaky salt"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i8",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thickly sliced",
+				"original": "2 onions, thickly sliced"
+			},
+			{
+				"id": "i9",
+				"key": "white-wine",
+				"name": "dry white wine",
+				"role": "wine",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl dry white wine"
+			},
+			{
+				"id": "i10",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl chicken stock"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Take the chicken out of the fridge, pat dry and leave at room temperature.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Mix butter and thyme and rub it under and over the skin. Put lemon and garlic in the cavity and season all over.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i5",
+					"i4",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Set the bird on the onions in a tin and roast at 220 °C for 20 minutes, then at 190 °C until the thickest part of the thigh reads 74 °C.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 70,
+				"tempC": 220,
+				"critical": "Check the thigh, not the breast; the bird is safe at 74 °C in the thickest part of the thigh."
+			},
+			{
+				"id": "s4",
+				"text": "Rest the chicken, loosely covered.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s5",
+				"text": "Deglaze the tin with wine and stock, scraping up the browned bits, and reduce to a light jus.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"deglaze",
+					"reduce"
+				],
+				"durationMin": 5,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Carve and serve with the jus.",
+				"uses": [
+					"s4",
+					"s5"
+				],
+				"technique": [
+					"carve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A hot start crisps and browns the skin, then lower heat cooks the meat gently. The onions under the bird keep the drippings from burning and become part of the jus.",
+			"chemistry": "Butter under the skin bastes the breast while the skin browns through Maillard reactions. Resting lets the juices settle.",
+			"spiceProfile": "Thyme, lemon and garlic.",
+			"variations": "The classic whole bird with butter and herbs. Spatchcocking is faster and more even, and the Peruvian style uses a cumin-garlic-chili marinade."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "roast-chicken",
+		"title": "Spatchcocked dry-brined roast chicken",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Spatchcock dry-brined"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 45,
+			"totalMin": 790
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"crispy skin",
+			"fast"
+		],
+		"equipment": [
+			"poultry shears",
+			"rimmed baking tray with rack",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-chicken",
+				"name": "whole chicken",
+				"role": "poultry",
+				"qty": 1.6,
+				"unit": "kg",
+				"original": "1 chicken, about 1.6 kg"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "kosher salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp kosher salt (about 1% of the bird's weight)"
+			},
+			{
+				"id": "i3",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black pepper"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			},
+			{
+				"id": "i6",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cut out the backbone with shears and press the bird flat.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"spatchcock"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Rub with salt, baking powder and pepper and refrigerate uncovered on a rack overnight.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"dry-brine"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s3",
+				"text": "Brush with oil and roast at 240 °C until the breast reaches 74 °C and the thigh about 80 °C.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 45,
+				"tempC": 240,
+				"critical": "Roast on a rack so hot air reaches the underside and the skin crisps all over."
+			},
+			{
+				"id": "s4",
+				"text": "Rest 10 minutes, cut into pieces and serve with lemon.",
+				"uses": [
+					"s3",
+					"i6"
+				],
+				"technique": [
+					"rest",
+					"carve"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "A flattened bird cooks evenly in about 45 minutes at high heat. Uncovered refrigeration dries the skin.",
+			"chemistry": "Salt draws moisture out, then dissolves and is reabsorbed, seasoning the meat deeply. Baking powder raises the skin's pH, which speeds browning and makes the skin blister and crisp.",
+			"variations": "Faster and crisper than a whole roast bird, but needs planning a day ahead."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "roast-chicken",
+		"title": "Pollo a la brasa, Peruvian-style roast chicken",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Peruvian"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 75,
+			"totalMin": 590
+		},
+		"cuisine": [
+			"peruvian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"marinated",
+			"spicy"
+		],
+		"equipment": [
+			"roasting tin with rack",
+			"blender",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-chicken",
+				"name": "whole chicken",
+				"role": "poultry",
+				"qty": 1.6,
+				"unit": "kg",
+				"original": "1 chicken, about 1.6 kg"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 6,
+				"unit": "clove",
+				"original": "6 cloves garlic"
+			},
+			{
+				"id": "i3",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp soy sauce"
+			},
+			{
+				"id": "i4",
+				"key": "lime",
+				"name": "limes",
+				"role": "acid",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 2 limes"
+			},
+			{
+				"id": "i5",
+				"key": "aji-panca",
+				"name": "ají panca paste",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp ají panca paste"
+			},
+			{
+				"id": "i6",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp cumin"
+			},
+			{
+				"id": "i7",
+				"key": "sweet-paprika",
+				"name": "paprika",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp paprika"
+			},
+			{
+				"id": "i8",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i9",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp oil"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i11",
+				"key": "aji-verde",
+				"name": "ají verde sauce",
+				"role": "sauce",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl green ají sauce, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Blend garlic, soy, lime, ají panca, cumin, paprika, oregano, oil and salt into a marinade.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Rub the marinade all over and under the skin of the chicken and refrigerate.",
+				"uses": [
+					"s1",
+					"i1"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 480
+			},
+			{
+				"id": "s3",
+				"text": "Roast on a rack at 200 °C until dark and the thigh reads 74 °C.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 75,
+				"tempC": 200,
+				"critical": "The soy and paprika brown quickly; tent with foil if the skin darkens too early."
+			},
+			{
+				"id": "s4",
+				"text": "Rest, carve and serve with ají verde.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"rest",
+					"carve"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Normally rotisserie-cooked over charcoal. A rack in a hot oven gives a similar all-round browning.",
+			"chemistry": "The sugars and amino acids in soy sauce speed up browning, which gives the skin its dark lacquered colour.",
+			"spiceProfile": "Garlic, cumin and smoky-fruity ají panca, with a fresh green chili sauce.",
+			"variations": "Boldly marinated and spiced compared with the French herb-butter bird."
+		}
+	}
+]

@@ -1,0 +1,542 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pancakes",
+		"title": "Buttermilk pancakes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Buttermilk diner"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"fluffy",
+			"weekend"
+		],
+		"equipment": [
+			"bowls",
+			"griddle or frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g flour"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp sugar"
+			},
+			{
+				"id": "i3",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp baking powder"
+			},
+			{
+				"id": "i4",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp baking soda"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "buttermilk",
+				"name": "buttermilk",
+				"role": "dairy",
+				"qty": 475,
+				"unit": "ml",
+				"original": "4.75 dl buttermilk"
+			},
+			{
+				"id": "i7",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i8",
+				"key": "butter",
+				"name": "butter, melted",
+				"role": "fat",
+				"qty": 45,
+				"unit": "g",
+				"prep": "melted",
+				"original": "45 g butter, melted, plus more for the pan"
+			},
+			{
+				"id": "i9",
+				"key": "maple-syrup",
+				"name": "maple syrup",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl maple syrup, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the dry ingredients in one bowl.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Whisk buttermilk, eggs and melted butter in another.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Pour wet into dry and stir only until just combined; lumps are fine. Rest.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"fold",
+					"rest"
+				],
+				"durationMin": 5,
+				"critical": "Do not overmix; it develops gluten and makes the pancakes tough and flat."
+			},
+			{
+				"id": "s4",
+				"text": "Cook 60 ml portions on a lightly buttered griddle until bubbles form and edges look dry, then flip.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Serve stacked with maple syrup.",
+				"uses": [
+					"s4",
+					"i9"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Brief mixing and a short rest give tall, tender pancakes.",
+			"chemistry": "Baking soda reacts with the lactic acid in buttermilk to release CO2 straight away, while baking powder gives a second rise on the griddle. Overmixing develops gluten.",
+			"variations": "Tangy and very fluffy. The plain milk version is simpler, and Japanese soufflé pancakes get their lift from whipped egg whites."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pancakes",
+		"title": "Everyday milk pancakes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Plain milk"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 5,
+			"cookMin": 20,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"quick",
+			"pantry"
+		],
+		"equipment": [
+			"bowl",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g flour"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp sugar"
+			},
+			{
+				"id": "i3",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp baking powder"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"original": "3 dl milk"
+			},
+			{
+				"id": "i6",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i7",
+				"key": "butter",
+				"name": "butter, melted",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"prep": "melted",
+				"original": "30 g butter, melted"
+			},
+			{
+				"id": "i8",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the dry ingredients in a bowl.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Add milk, egg, butter and vanilla and stir until just combined.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Cook ladlefuls on a buttered pan over medium heat, flipping once when bubbles break.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Made in one bowl with pantry ingredients.",
+			"chemistry": "Double-acting baking powder releases gas once when wet and again when heated, so it does all the leavening without buttermilk.",
+			"variations": "Uses milk and more baking powder instead of buttermilk and soda. It is slightly less tangy and tender."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pancakes",
+		"title": "Japanese soufflé pancakes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Japanese soufflé"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 20,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"breakfast",
+			"dessert"
+		],
+		"tags": [
+			"fluffy",
+			"meringue"
+		],
+		"equipment": [
+			"stand or hand mixer",
+			"lidded non-stick pan",
+			"piping bag or spoon"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 egg yolks"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 30,
+				"unit": "ml",
+				"original": "30 ml milk"
+			},
+			{
+				"id": "i3",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp vanilla"
+			},
+			{
+				"id": "i4",
+				"key": "cake-flour",
+				"name": "cake flour",
+				"role": "flour",
+				"qty": 35,
+				"unit": "g",
+				"original": "35 g cake flour"
+			},
+			{
+				"id": "i5",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp baking powder"
+			},
+			{
+				"id": "i6",
+				"key": "egg-white",
+				"name": "egg whites, cold",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 cold egg whites"
+			},
+			{
+				"id": "i7",
+				"key": "cream-of-tartar",
+				"name": "cream of tartar or lemon juice",
+				"role": "acid",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "1/4 tsp cream of tartar"
+			},
+			{
+				"id": "i8",
+				"key": "sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 35,
+				"unit": "g",
+				"original": "35 g caster sugar"
+			},
+			{
+				"id": "i9",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp oil for the pan"
+			},
+			{
+				"id": "i10",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp water for steaming"
+			},
+			{
+				"id": "i11",
+				"key": "icing-sugar",
+				"name": "powdered sugar",
+				"role": "topping",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "powdered sugar and berries, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk yolks, milk and vanilla, then sift in flour and baking powder and mix to a smooth batter.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Whip the whites with cream of tartar, gradually adding sugar, to firm, glossy peaks.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whip"
+				],
+				"durationMin": 5,
+				"critical": "Use a perfectly clean, grease-free bowl or the whites will not whip."
+			},
+			{
+				"id": "s3",
+				"text": "Fold the meringue into the batter in three additions, gently, keeping as much air as possible.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Pile tall mounds in a lightly oiled pan on low heat, add water, cover and cook. Add more batter on top, flip carefully, add water, cover and finish.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"steam",
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Dust with powdered sugar and serve immediately.",
+				"uses": [
+					"s4",
+					"i11"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Steaming under a lid on low heat cooks the tall pancakes through before the bottoms burn.",
+			"chemistry": "Egg-white proteins unfold and trap air during whipping. Sugar and acid stabilise the foam, and heat then sets it.",
+			"variations": "Tall and wobbly, raised mainly by meringue rather than chemical leavening."
+		}
+	}
+]
