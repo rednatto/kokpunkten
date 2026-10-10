@@ -5,7 +5,10 @@
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
 	import { db, type StoredRecipe } from '#lib/db.ts';
-	import { displayAmount } from '#lib/recipe/units.ts';
+	import { roughAmount, usAmount, weightHint } from '#lib/recipe/measures.ts';
+	import type { Ingredient } from '#lib/recipe/schema.ts';
+	import { convert, formatAmount, ingredientAmount } from '#lib/recipe/units.ts';
+	import { settings } from '#lib/settings.svelte.ts';
 	import Timer from './Timer.svelte';
 
 	const id = $derived(page.params.id!);
@@ -27,7 +30,6 @@
 	const mine = $derived(cooking.id === id ? cooking : { id, servings: null, have: new Set<string>(), done: new Set<string>() });
 	const haveIng = $derived(mine.have);
 	const doneStep = $derived(mine.done);
-	let metric = $state(true);
 
 	const recipe = $derived(row?.recipe);
 	const servings = $derived(mine.servings ?? recipe?.servings ?? null);
@@ -47,6 +49,18 @@
 	function watch<T>(query: () => Promise<T> | T, set: (value: T) => void) {
 		const sub = liveQuery(query).subscribe({ next: set, error: (e) => console.error(e) });
 		return () => sub.unsubscribe();
+	}
+
+	/** The amount to show, plus a quieter hint (standard weight, or the exact amount behind a rough one). */
+	function amountFor(ing: Ingredient): { main: string; hint: string | null } {
+		const a = ingredientAmount(ing, factor);
+		const shown = settings.units === 'us' ? usAmount(ing, a) : convert(a, settings.units === 'rough' ? 'metric' : settings.units);
+		const exact = formatAmount(shown, settings.numbers);
+		if (settings.units === 'rough') {
+			const rough = roughAmount(ing, a);
+			if (rough) return { main: rough, hint: exact };
+		}
+		return { main: exact, hint: settings.units === 'us' ? null : weightHint(ing, a) };
 	}
 
 	function toggle(set: Set<string>, key: string) {
@@ -124,7 +138,15 @@
 			<span><strong>{servings}</strong> servings</span>
 			<button class="ghost small" onclick={() => setCooking({ servings: (servings ?? 0) + 1 })} aria-label="More servings">+</button>
 		</div>
-		<label class="row check"><input type="checkbox" bind:checked={metric} /> Metric</label>
+		<select bind:value={settings.units} aria-label="Units" class="units">
+			<option value="original">As written</option>
+			<option value="metric">Metric</option>
+			<option value="us">US cups</option>
+			<option value="rough">Rough (att höfta)</option>
+		</select>
+		<button class="ghost small" onclick={() => (settings.numbers = settings.numbers === 'fraction' ? 'decimal' : 'fraction')} aria-label="Fractions or decimals">
+			{settings.numbers === 'fraction' ? '½ → 0.5' : '0.5 → ½'}
+		</button>
 		{#if 'wakeLock' in navigator}
 			<button class="ghost small" class:on={awake} onclick={toggleAwake}>{awake ? 'Screen stays on' : 'Keep screen on'}</button>
 		{/if}
@@ -133,6 +155,7 @@
 	<h2>Ingredients</h2>
 	<ul class="checklist">
 		{#each recipe.ingredients as ing, n (ing.id)}
+			{@const amt = amountFor(ing)}
 			{#if ing.group && ing.group !== recipe.ingredients[n - 1]?.group}
 				<li class="group">{ing.group}</li>
 			{/if}
@@ -140,8 +163,9 @@
 				<label>
 					<input type="checkbox" checked={haveIng.has(ing.id)} onchange={() => setCooking({ have: toggle(haveIng, ing.id) })} />
 					<span>
-						<strong class="amount">{displayAmount(ing, factor, metric)}</strong>
+						<strong class="amount">{amt.main}</strong>
 						{ing.name}{#if ing.prep}<span class="muted">, {ing.prep}</span>{/if}
+						{#if amt.hint}<span class="muted hint"> ({amt.hint})</span>{/if}
 						{#if ing.optional}<span class="muted"> (optional)</span>{/if}
 						{#if ing.substitutes.length}<span class="muted sub">or {ing.substitutes.join(', ')}</span>{/if}
 					</span>
@@ -245,8 +269,13 @@
 		padding: 0;
 		font-size: 1.2rem;
 	}
-	.check input {
+	.units {
 		width: auto;
+		flex: 1;
+		min-width: 9rem;
+	}
+	.hint {
+		font-size: 0.85rem;
 	}
 	.on {
 		background: var(--accent);

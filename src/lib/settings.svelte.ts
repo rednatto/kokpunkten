@@ -1,0 +1,31 @@
+import type { NumberStyle, UnitSystem } from './recipe/units.ts';
+
+export interface Settings {
+	units: UnitSystem;
+	numbers: NumberStyle;
+}
+
+const KEY = 'kokpunkten.settings';
+const defaults: Settings = { units: 'metric', numbers: 'fraction' };
+
+function load(): Settings {
+	try {
+		return { ...defaults, ...JSON.parse(localStorage.getItem(KEY) ?? '{}') };
+	} catch {
+		return { ...defaults };
+	}
+}
+
+/** Display preferences, remembered on this device. */
+export const settings = $state<Settings>(load());
+
+$effect.root(() => {
+	$effect(() => {
+		const json = JSON.stringify(settings);
+		try {
+			localStorage.setItem(KEY, json);
+		} catch {
+			// Private mode or storage full: the setting just won't stick.
+		}
+	});
+});
