@@ -73,6 +73,7 @@
 				{#each allCuisines as c}<option value={c}>{c}</option>{/each}
 			</select>
 			<button class="ghost small" class:on={favoritesOnly} onclick={() => (favoritesOnly = !favoritesOnly)}>★ Favorites</button>
+			<a href={resolve('/ingredients')} class="button ghost small">By ingredients</a>
 		</div>
 	</div>
 
