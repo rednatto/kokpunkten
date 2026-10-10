@@ -17,11 +17,15 @@
 	const dish = $derived(page.params.dish!);
 
 	let rows = $state<StoredRecipe[] | undefined>(undefined);
+	let loadError = $state('');
 	$effect(() => {
 		const d = dish; // read here so the effect re-runs when the URL changes
 		const sub = liveQuery(() => db.recipes.where('recipe.dish').equals(d).sortBy('addedAt')).subscribe({
-			next: (r) => (rows = r),
-			error: (e) => console.error(e)
+			next: (r) => ((rows = r), (loadError = '')),
+			error: (e: Error) => {
+				console.error(e);
+				loadError = `${e.name}: ${e.message}`;
+			}
 		});
 		return () => sub.unsubscribe();
 	});
@@ -195,8 +199,14 @@
 		saving = true;
 		mixError = '';
 		try {
-			const [id] = await addRecipes([mix.recipe]);
-			await goto(resolve('/r/[id]', { id }));
+			// Saving waits behind any other write to the database; don't leave the button grey forever.
+			const timeout = new Promise<never>((_, reject) =>
+				setTimeout(() => reject(new Error('saving took too long; the recipe database may be busy or held by an older copy of the app')), 8000)
+			);
+			const [id] = await Promise.race([addRecipes([mix.recipe]), timeout]);
+			const href = resolve('/r/[id]', { id });
+			// A full page load if the in-app navigation fails (an app update can leave this page's code stale).
+			await goto(href).catch(() => location.assign(href));
 		} catch (e) {
 			console.error(e);
 			mixError = `Couldn't save the mix (${(e as Error).message.slice(0, 120)}).`;
@@ -245,7 +255,10 @@
 	const SIGN: Record<Change['kind'], string> = { add: '+', remove: '−', swap: '⇄', more: '↑', less: '↓' };
 </script>
 
-{#if rows === undefined}
+{#if loadError}
+	<p class="error" role="alert">Couldn't read the recipes ({loadError}).</p>
+	<button class="small" onclick={() => location.reload()}>Reload</button>
+{:else if rows === undefined}
 	<p class="muted">Loading…</p>
 {:else if !diff || n === 0}
 	<p>No versions of this dish. <a href={resolve('/')}>Back to recipes</a></p>
@@ -349,7 +362,7 @@
 			{/if}
 			{#if mixed.error || mixError}<p class="error" role="alert">{mixed.error || mixError}</p>{/if}
 			<div class="row cook">
-				<button onclick={cookMix} disabled={saving || !mix}>Cook this mix →</button>
+				<button onclick={cookMix} disabled={saving || !mix}>{saving ? 'Saving…' : 'Cook this mix →'}</button>
 				<a href={resolve('/r/[id]', { id: rows[closest].id })}>or {label(closest)} as written</a>
 			</div>
 			<p class="muted small">Cooking the mix saves it as your own version of the dish, so you can rate it, note changes, or delete it.</p>
@@ -461,7 +474,7 @@
 				<button class="link" onclick={() => (settings.compareView = 'merge')}>see the method</button>
 			</span>
 			{#if mixed.error || mixError}<span class="small error" role="alert">{mixed.error || mixError}</span>{/if}
-			<button class="small" onclick={cookMix} disabled={saving || !mix}>Cook this mix →</button>
+			<button class="small" onclick={cookMix} disabled={saving || !mix}>{saving ? 'Saving…' : 'Cook this mix →'}</button>
 		</div>
 	{:else}
 		<p class="muted small">Compare against:</p>
