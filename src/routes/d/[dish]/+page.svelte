@@ -7,9 +7,9 @@
 	import { addRecipes, db, type StoredRecipe } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
-	import { amountRange, baseValue, closestVersion, diffRecipes, type DiffRow } from '#lib/recipe/diff.ts';
+	import { amountRange, baseValue, closestTo, diffRecipes, meanAmount, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
 	import { familyName } from '#lib/recipe/families.ts';
-	import { mixRecipe } from '#lib/recipe/mix.ts';
+	import { mixRecipe, type AmountSource } from '#lib/recipe/mix.ts';
 	import { tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
 	import type { Amount } from '#lib/recipe/units.ts';
 	import { settings } from '#lib/settings.svelte.ts';
@@ -67,34 +67,106 @@
 	}
 	/** What a folded group shows per version: the names of the members it uses. */
 	const usedIn = (g: TreeGroup, v: number) => g.leaves.flatMap((l) => l.row.ingredients[v]?.name ?? []).join(', ');
-	const dots = (count: number) => `${'●'.repeat(count)}${'○'.repeat(n - count)}`;
+	/** How many versions use something: dots for a few versions, a count for many, so it never spills into the next column. */
+	const uses = (count: number) => (n <= 6 ? `${'●'.repeat(count)}${'○'.repeat(n - count)}` : `${count} of ${n}`);
 
-	// --- Merge view state: which option per slot, which extras are in.
-	let picks = $state(new Map<string, string>());
-	let extrasOn = $state<Set<string> | null>(null);
-	// Until the cook ticks anything, the extras are those of the version closest to the picks,
-	// so the mix starts out as a real recipe rather than one missing the oil it fries in.
-	const defaultExtras = $derived.by(() => {
-		if (!diff) return new Set<string>();
-		const v = closestVersion(diff, effectivePicks, new Set(diff.extras.filter((r) => r.count > n / 2).map((r) => r.key)));
-		return new Set(diff.extras.filter((r) => r.ingredients[v]).map((r) => r.key));
+	/** The average amount, or each distinct amount when they can't be averaged. */
+	function average(row: DiffRow): string {
+		const mean = meanAmount(row.amounts);
+		return mean ? amount(row, mean) : range(row);
+	}
+
+	// Rows whose spread of amounts is open, by key.
+	let spreadOpen = $state(new Set<string>());
+	function toggleSpread(key: string) {
+		const next = new Set(spreadOpen);
+		if (!next.delete(key)) next.add(key);
+		spreadOpen = next;
+	}
+	/** Where each version's amount sits between the smallest and largest, and how many use each amount. */
+	function spread(row: DiffRow) {
+		const points = row.amounts.flatMap((a, v) => {
+			const b = baseValue(a);
+			return b ? [{ v, ...b }] : [];
+		});
+		const comparable = points.length > 1 && points.every((p) => p.dim === points[0].dim);
+		const values = points.map((p) => p.value);
+		const [min, max] = [Math.min(...values), Math.max(...values)];
+		const pct = (x: number) => (max === min ? 50 : ((x - min) / (max - min)) * 100);
+		const mean = meanAmount(row.amounts);
+		const byText = Map.groupBy(
+			row.amounts.flatMap((a, v) => (a ? [{ v, text: amount(row, a) || 'to taste', value: baseValue(a)?.value ?? 0 }] : [])),
+			(b) => b.text
+		);
+		return {
+			comparable,
+			points: comparable ? points.map((p) => ({ v: p.v, pct: pct(p.value) })) : [],
+			meanPct: comparable && mean ? pct(baseValue(mean)!.value) : null,
+			low: comparable ? amount(row, row.amounts[points[values.indexOf(min)].v]) : '',
+			high: comparable ? amount(row, row.amounts[points[values.indexOf(max)].v]) : '',
+			buckets: [...byText]
+				.map(([text, list]) => ({ text, count: list.length, value: list[0].value, who: list.map((b) => label(b.v)).join(', ') }))
+				.sort((a, b) => a.value - b.value)
+		};
+	}
+
+	// --- The mix: which rows to cook with, and where each amount comes from (a version, or the
+	// average). Until the cook changes anything it is the version closest to the most common
+	// choices, with average amounts, so it starts out as a real recipe. Merge and Table share it.
+	let chosenEdit = $state<Map<string, AmountSource> | null>(null);
+	const defaultChosen = $derived.by(() => {
+		if (!diff) return new Map<string, AmountSource>();
+		const likely = new Set([
+			...diff.common.map((r) => r.key),
+			...diff.slots.map((s) => s.options.toSorted((a, b) => b.versions.length - a.versions.length)[0].row.key),
+			...diff.extras.filter((r) => r.count > n / 2).map((r) => r.key)
+		]);
+		const v = closestTo(diff, likely);
+		return new Map(diff.rows.filter((r) => r.ingredients[v]).map((r) => [r.key, 'average' as AmountSource]));
 	});
-	const chosenExtras = $derived(extrasOn ?? defaultExtras);
-	const pickFor = (role: string) =>
-		picks.get(role) ?? diff?.slots.find((s) => s.role === role)?.options.toSorted((a, b) => b.versions.length - a.versions.length)[0].row.key;
-	const effectivePicks = $derived(new Map(diff?.slots.map((s) => [s.role, pickFor(s.role)!]) ?? []));
-	const closest = $derived(diff ? closestVersion(diff, effectivePicks, chosenExtras) : 0);
+	const chosen = $derived(chosenEdit ?? defaultChosen);
+	const closest = $derived(diff ? closestTo(diff, new Set(chosen.keys())) : 0);
 
-	// The mixed recipe: the closest version's method with the picks swapped in.
-	let mixAmounts = $state<'base' | 'average'>('average');
+	function editChosen(change: (m: Map<string, AmountSource>) => void) {
+		const next = new Map(chosen);
+		change(next);
+		chosenEdit = next;
+	}
+	/** Puts a row in the mix with an amount from `from`; choosing the same again takes it out. */
+	function choose(key: string, from: AmountSource) {
+		editChosen((m) => (m.get(key) === from ? m.delete(key) : m.set(key, from)));
+	}
+	function toggleRow(key: string) {
+		editChosen((m) => (m.has(key) ? m.delete(key) : m.set(key, 'average')));
+	}
+	/** Picks one option of a slot; picking it again leaves the slot empty, since not every version has one. */
+	function pickOption(slot: DiffSlot, key: string) {
+		editChosen((m) => {
+			const was = m.has(key);
+			for (const o of slot.options) m.delete(o.row.key);
+			if (!was) m.set(key, 'average');
+		});
+	}
+	const rowByKey = $derived(new Map(diff?.rows.map((r) => [r.key, r]) ?? []));
+	const amountsMode = $derived(
+		[...chosen.values()].every((f) => f === 'average')
+			? 'average'
+			: [...chosen].every(([k, f]) => f === closest || (f === 'average' && !rowByKey.get(k)?.ingredients[closest]))
+				? 'base'
+				: 'mixed'
+	);
+	function setAllAmounts(mode: 'average' | 'base') {
+		editChosen((m) => {
+			for (const k of m.keys()) m.set(k, mode === 'base' && rowByKey.get(k)?.ingredients[closest] ? closest : 'average');
+		});
+	}
+
 	let saving = $state(false);
 	const mix = $derived(
-		diff
+		diff && chosen.size
 			? mixRecipe(diff, {
-					picks: effectivePicks,
-					extras: chosenExtras,
+					rows: chosen,
 					base: closest,
-					amounts: mixAmounts,
 					labels: versions.map((_, v) => label(v)),
 					title: `${DISH_NAMES[dish] ?? versions[0].title} – my mix`
 				})
@@ -105,15 +177,6 @@
 		saving = true;
 		const [id] = await addRecipes([mix.recipe]);
 		await goto(resolve('/r/[id]', { id }));
-	}
-
-	function pick(role: string, key: string) {
-		picks = new Map(picks).set(role, key);
-	}
-	function toggleExtra(key: string) {
-		const next = new Set(chosenExtras);
-		if (!next.delete(key)) next.add(key);
-		extrasOn = next;
 	}
 
 	// --- Changes view: one version as the base, the others described against it.
@@ -188,21 +251,27 @@
 			<ul class="plain">
 				{#each diff.common as row (row.key)}
 					<li>
-						<strong class="amount">{range(row)}</strong> {row.name}
-						{#if variants(row).length}<span class="muted small">({variants(row).join(', ')})</span>{/if}
+						<label class="row extra">
+							<input type="checkbox" checked={chosen.has(row.key)} onchange={() => toggleRow(row.key)} />
+							<span>
+								<strong class="amount">{range(row)}</strong> {row.name}
+								{#if variants(row).length}<span class="muted small">({variants(row).join(', ')})</span>{/if}
+							</span>
+						</label>
 					</li>
 				{/each}
 			</ul>
 
 			{#if diff.slots.length}
-				<h2>Pick one</h2>
+				<h2>Pick one, or none</h2>
+				<p class="muted small">Not every version has one of each. Tap a picked option again to leave it out.</p>
 				{#each diff.slots as slot (slot.role)}
 					<div class="slot">
 						<span class="muted small">{roleName(slot.role)}</span>
 						<div class="row options">
 							{#each slot.options as opt (opt.row.key)}
-								{@const on = effectivePicks.get(slot.role) === opt.row.key}
-								<button class="option" class:on aria-pressed={on} onclick={() => pick(slot.role, opt.row.key)}>
+								{@const on = chosen.has(opt.row.key)}
+								<button class="option" class:on aria-pressed={on} onclick={() => pickOption(slot, opt.row.key)}>
 									<strong>{opt.row.name}</strong>
 									<span class="small">{range(opt.row)}</span>
 									<span class="small who">{opt.versions.map(label).join(', ')}</span>
@@ -219,7 +288,7 @@
 					{#each diff.extras as row (row.key)}
 						<li>
 							<label class="row extra">
-								<input type="checkbox" checked={chosenExtras.has(row.key)} onchange={() => toggleExtra(row.key)} />
+								<input type="checkbox" checked={chosen.has(row.key)} onchange={() => toggleRow(row.key)} />
 								<span>
 									<strong class="amount">{range(row)}</strong> {row.name}
 									<span class="muted small">· {row.count} of {n}: {row.ingredients.flatMap((i, v) => (i ? [label(v)] : [])).join(', ')}</span>
@@ -237,8 +306,9 @@
 			</p>
 			<div class="row amounts" role="radiogroup" aria-label="Amounts">
 				<span class="small muted">Amounts:</span>
-				<button class="ghost small" class:on={mixAmounts === 'average'} aria-pressed={mixAmounts === 'average'} onclick={() => (mixAmounts = 'average')}>Middle of all</button>
-				<button class="ghost small" class:on={mixAmounts === 'base'} aria-pressed={mixAmounts === 'base'} onclick={() => (mixAmounts = 'base')}>As in {label(closest)}</button>
+				<button class="ghost small" class:on={amountsMode === 'average'} aria-pressed={amountsMode === 'average'} onclick={() => setAllAmounts('average')}>Average of all</button>
+				<button class="ghost small" class:on={amountsMode === 'base'} aria-pressed={amountsMode === 'base'} onclick={() => setAllAmounts('base')}>As in {label(closest)}</button>
+				{#if amountsMode === 'mixed'}<span class="small muted">mixed, picked in the table</span>{/if}
 			</div>
 			{#if mix}
 				<ol class="method">
@@ -252,17 +322,19 @@
 				</ol>
 			{/if}
 			<div class="row cook">
-				<button onclick={cookMix} disabled={saving}>Cook this mix →</button>
+				<button onclick={cookMix} disabled={saving || !mix}>Cook this mix →</button>
 				<a href={resolve('/r/[id]', { id: rows[closest].id })}>or {label(closest)} as written</a>
 			</div>
 			<p class="muted small">Cooking the mix saves it as your own version of the dish, so you can rate it, note changes, or delete it.</p>
 		</section>
 	{:else if settings.compareView === 'table'}
+		<p class="muted small">Tap an amount to cook with it, or the average. Tap a name to see how the amounts spread.</p>
 		<div class="table-wrap">
 			<table>
 				<thead>
 					<tr>
 						<th class="first">Ingredient</th>
+						<th class="avg">Average</th>
 						{#each versions as _, v}
 							<th><a href={resolve('/r/[id]', { id: rows[v].id })}>{label(v)}</a></th>
 						{/each}
@@ -272,14 +344,15 @@
 					{#each tree as g (g.id)}
 						{@const open = !g.title || isOpen(g)}
 						{#if g.basic && g.id === tree.find((t) => t.basic)?.id}
-							<tr class="section"><th class="first" scope="rowgroup" colspan={n + 1}>Basics</th></tr>
+							<tr class="section"><th class="first" scope="rowgroup" colspan={n + 2}>Basics</th></tr>
 						{/if}
 						{#if g.title}
 							<tr class="group">
 								<th class="first" scope="rowgroup">
 									<button class="fold" aria-expanded={open} onclick={() => flip(g.id)}>{open ? '▾' : '▸'} {g.title}</button>
-									<span class="dots" aria-label="{g.count} of {n}">{dots(g.count)}</span>
+									<span class="dots" aria-label="{g.count} of {n}">{uses(g.count)}</span>
 								</th>
+								<td class="avg"></td>
 								{#each versions as _, v}
 									<td class:none={!usedIn(g, v)}>{open ? '' : usedIn(g, v) || '—'}</td>
 								{/each}
@@ -287,20 +360,54 @@
 						{/if}
 						{#if open}
 							{#each g.leaves as { row, subs } (row.key)}
+								{@const from = chosen.get(row.key)}
 								<tr class:shared={row.count === n} class:child={!!g.title}>
 									<th class="first" scope="row">
-										{subs.length ? familyName(row.key) : row.name}
-										<span class="dots" aria-label="{row.count} of {n}">{dots(row.count)}</span>
+										<button class="name" aria-expanded={spreadOpen.has(row.key)} onclick={() => toggleSpread(row.key)}>
+											{subs.length ? familyName(row.key) : row.name}
+										</button>
+										<span class="dots" aria-label="{row.count} of {n}">{uses(row.count)}</span>
 									</th>
+									<td class="avg">
+										<button class="cell" class:picked={from === 'average'} aria-pressed={from === 'average'} onclick={() => choose(row.key, 'average')}>{average(row)}</button>
+									</td>
 									{#each row.amounts as a, v}
-										<td class:none={!a}>{subs.length ? '' : a ? amount(row, a) || '✓' : '—'}</td>
+										<td class:none={!a}>
+											{#if subs.length}{''}{:else if a}
+												<button class="cell" class:picked={from === v} aria-pressed={from === v} onclick={() => choose(row.key, v)}>{amount(row, a) || '✓'}</button>
+											{:else}—{/if}
+										</td>
 									{/each}
 								</tr>
+								{#if spreadOpen.has(row.key)}
+									{@const sp = spread(row)}
+									<tr class="spread">
+										<td colspan={n + 2}>
+											{#if sp.comparable}
+												<div class="strip" aria-hidden="true">
+													{#each sp.points as p (p.v)}<span class="pt" style:left="{p.pct}%" title={label(p.v)}></span>{/each}
+													{#if sp.meanPct !== null}<span class="mean" style:left="{sp.meanPct}%"></span>{/if}
+												</div>
+												<div class="ends small muted"><span>{sp.low}</span><span>average {average(row)}</span><span>{sp.high}</span></div>
+											{/if}
+											<ul class="buckets">
+												{#each sp.buckets as b (b.text)}
+													<li title={b.who}><strong>{b.text}</strong> × {b.count} <span class="muted">{b.who}</span></li>
+												{/each}
+											</ul>
+										</td>
+									</tr>
+								{/if}
 								{#each subs as sub (sub.name)}
 									<tr class="sub" class:child={!!g.title}>
 										<th class="first" scope="row">{sub.name}</th>
+										<td class="avg"></td>
 										{#each row.amounts as a, v}
-											<td class:none={!sub.versions.includes(v)}>{sub.versions.includes(v) && a ? amount(row, a) || '✓' : ''}</td>
+											<td class:none={!sub.versions.includes(v)}>
+												{#if sub.versions.includes(v) && a}
+													<button class="cell" class:picked={from === v} aria-pressed={from === v} onclick={() => choose(row.key, v)}>{amount(row, a) || '✓'}</button>
+												{/if}
+											</td>
 										{/each}
 									</tr>
 								{/each}
@@ -309,16 +416,25 @@
 					{/each}
 					<tr class="totals">
 						<th class="first" scope="row">Total time</th>
+						<td class="avg"></td>
 						{#each versions as r}<td>{r.time.totalMin ? `${r.time.totalMin} min` : '—'}</td>{/each}
 					</tr>
 					<tr class="totals">
 						<th class="first" scope="row">Steps</th>
+						<td class="avg"></td>
 						{#each versions as r}<td>{r.steps.length}</td>{/each}
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<p class="muted small">● marks how many versions use an ingredient. Shared rows are bold. Amounts are for {diff.servings} servings.</p>
+		<p class="muted small">{n <= 6 ? '● marks' : 'The count under a name says'} how many versions use an ingredient. Shared rows are bold. Amounts are for {diff.servings} servings.</p>
+		<div class="mixbar">
+			<span class="small">
+				<strong>{chosen.size}</strong> picked · follows {label(closest)}
+				<button class="link" onclick={() => (settings.compareView = 'merge')}>see the method</button>
+			</span>
+			<button class="small" onclick={cookMix} disabled={saving || !mix}>Cook this mix →</button>
+		</div>
 	{:else}
 		<p class="muted small">Compare against:</p>
 		<div class="row options">
@@ -510,6 +626,96 @@
 		white-space: normal;
 		min-width: 6.5rem;
 		max-width: 8rem;
+	}
+	td.avg,
+	th.avg {
+		background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+	}
+	.cell,
+	.name,
+	.link {
+		all: unset;
+		cursor: pointer;
+	}
+	.cell {
+		display: inline-block;
+		padding: 0.1rem 0.35rem;
+		margin: -0.1rem -0.35rem;
+		border-radius: 0.4rem;
+		border: 1px solid transparent;
+	}
+	.cell:hover {
+		border-color: var(--line);
+	}
+	.cell.picked {
+		background: var(--accent);
+		color: var(--accent-fg);
+	}
+	.name {
+		text-decoration: underline dotted var(--muted);
+		text-underline-offset: 3px;
+	}
+	.link {
+		color: var(--accent);
+		text-decoration: underline;
+	}
+	tr.spread td {
+		white-space: normal;
+		background: var(--surface);
+		padding: 0.6rem 0.8rem;
+	}
+	.strip {
+		position: relative;
+		height: 1rem;
+		margin: 0.25rem 0.4rem;
+		max-width: 18rem;
+		border-bottom: 2px solid var(--line);
+	}
+	.pt,
+	.mean {
+		position: absolute;
+		bottom: -0.35rem;
+		width: 0.6rem;
+		height: 0.6rem;
+		margin-left: -0.3rem;
+		border-radius: 50%;
+		background: color-mix(in srgb, var(--accent) 55%, transparent);
+	}
+	.mean {
+		width: 2px;
+		height: 1.1rem;
+		margin-left: -1px;
+		border-radius: 0;
+		background: var(--warn);
+	}
+	.ends {
+		display: flex;
+		justify-content: space-between;
+		max-width: 19rem;
+		margin-top: 0.4rem;
+	}
+	.buckets {
+		list-style: none;
+		padding: 0;
+		margin: 0.5rem 0 0;
+		display: grid;
+		gap: 0.2rem;
+		font-size: 0.8rem;
+	}
+	.mixbar {
+		position: sticky;
+		bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+		z-index: 5;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		margin-top: 0.75rem;
+		padding: 0.5rem 0.75rem;
+		background: var(--surface);
+		border: 1px solid var(--line);
+		border-radius: 0.75rem;
+		box-shadow: 0 2px 10px rgb(0 0 0 / 0.12);
 	}
 	.fold {
 		all: unset;

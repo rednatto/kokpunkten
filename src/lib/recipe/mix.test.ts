@@ -7,17 +7,14 @@ import carbonara from '../library/spaghetti-carbonara.json';
 const versions = (carbonara as unknown[]).map((r) => recipeSchema.parse(r));
 const diff = diffRecipes(versions, 4);
 const labels = ['Roman classic', 'Pancetta and parmesan', 'With cream'];
-const role = (key: string) => diff.slots.find((s) => s.options.some((o) => o.row.key === key))!.role;
+/** The shared rows plus the given ones, all with amounts from `from`. */
+const pick = (keys: string[], from: number | 'average') =>
+	new Map([...diff.common.map((r) => r.key), ...keys].map((k) => [k, from] as const));
 
 describe('mixRecipe', () => {
 	const { recipe: mix, steps } = mixRecipe(diff, {
-		picks: new Map([
-			[role('pancetta'), 'pancetta'],
-			[role('pecorino-romano'), 'pecorino-romano']
-		]),
-		extras: new Set(['egg-yolks', 'egg', 'garlic']),
+		rows: pick(['pancetta', 'pecorino-romano', 'egg-yolks', 'egg', 'garlic'], 'average'),
 		base: 0,
-		amounts: 'average',
 		labels,
 		title: 'Carbonara – my mix'
 	});
@@ -51,13 +48,8 @@ describe('mixRecipe', () => {
 
 	it('speaks of the picked ingredients everywhere, borrowed steps included', () => {
 		const other = mixRecipe(diff, {
-			picks: new Map([
-				[role('guanciale'), 'guanciale'],
-				[role('parmesan'), 'parmesan']
-			]),
-			extras: new Set(['egg-yolks', 'egg', 'garlic']),
+			rows: pick(['guanciale', 'parmesan', 'egg-yolks', 'egg', 'garlic'], 0),
 			base: 0,
-			amounts: 'base',
 			labels,
 			title: 'mix'
 		});
@@ -71,5 +63,19 @@ describe('mixRecipe', () => {
 		const amounts = diff.rows.find((r) => r.key === 'black-pepper')!.amounts.map((a) => a!.qty);
 		expect(pepper.qty).toBeGreaterThan(Math.min(...(amounts as number[])) - 0.01);
 		expect(pepper.qty).toBeLessThan(Math.max(...(amounts as number[])) + 0.01);
+	});
+
+	it('leaves a pick-one slot empty when nothing is picked', () => {
+		const none = mixRecipe(diff, { rows: pick(['egg-yolks', 'egg', 'pecorino-romano'], 'average'), base: 0, labels, title: 'mix' });
+		expect(none.recipe.ingredients.some((i) => ['guanciale', 'pancetta', 'bacon'].includes(i.key))).toBe(false);
+		expect(none.steps[0].text).toMatch(/Skip this step: no guanciale/);
+	});
+
+	it('takes an amount from the version it was picked from', () => {
+		const rows = pick(['guanciale', 'pecorino-romano', 'egg-yolks', 'egg'], 'average');
+		rows.set('black-pepper', 1);
+		const { recipe } = mixRecipe(diff, { rows, base: 0, labels, title: 'mix' });
+		const pepper = diff.rows.find((r) => r.key === 'black-pepper')!.amounts[1]!;
+		expect(recipe.ingredients.find((i) => i.key === 'black-pepper')!.qty).toBe(pepper.qty);
 	});
 });

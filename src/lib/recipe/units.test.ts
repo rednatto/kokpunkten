@@ -49,3 +49,11 @@ describe('number style and US units', () => {
 		expect(toUS({ qty: 1, qtyMax: null, unit: 'tsp' }).unit).toBe('tsp');
 	});
 });
+
+describe('formatAmount plurals', () => {
+	it('pluralises units that read as words', () => {
+		expect(formatAmount({ qty: 2, qtyMax: null, unit: 'clove' })).toBe('2 cloves');
+		expect(formatAmount({ qty: 1, qtyMax: null, unit: 'clove' })).toBe('1 clove');
+		expect(formatAmount({ qty: 1, qtyMax: 2, unit: 'can' })).toBe('1–2 cans');
+	});
+});

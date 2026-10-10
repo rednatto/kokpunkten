@@ -109,10 +109,14 @@ const UNIT_LABEL: Partial<Record<Unit, string>> = {
 	'fl-oz': 'fl oz'
 };
 
+/** Units that read as words and take a plural. */
+const PLURAL = new Set(['clove', 'can', 'bunch', 'cup']);
+
 export function formatAmount(a: Amount, numbers: NumberStyle = 'fraction'): string {
 	if (a.unit === 'to-taste') return 'to taste';
 	if (a.qty == null) return '';
-	const unit = a.unit ? (UNIT_LABEL[a.unit] ?? a.unit) : '';
+	let unit = a.unit ? (UNIT_LABEL[a.unit] ?? a.unit) : '';
+	if (PLURAL.has(unit) && (a.qtyMax ?? a.qty) > 1) unit += unit === 'bunch' ? 'es' : 's'; // 2 cloves, 3 cans, 3 cans
 	const qty = formatQty(a.qty, a.unit, numbers) + (a.qtyMax != null ? `–${formatQty(a.qtyMax, a.unit, numbers)}` : '');
 	return unit ? `${qty} ${unit}` : qty;
 }
