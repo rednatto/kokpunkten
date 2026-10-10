@@ -1,7 +1,7 @@
 import type { Ingredient, Unit } from './schema';
 
-const MASS_G: Partial<Record<Unit, number>> = { g: 1, kg: 1000, oz: 28.3495, lb: 453.592 };
-const VOLUME_ML: Partial<Record<Unit, number>> = {
+export const MASS_G: Partial<Record<Unit, number>> = { g: 1, kg: 1000, oz: 28.3495, lb: 453.592 };
+export const VOLUME_ML: Partial<Record<Unit, number>> = {
 	ml: 1,
 	cl: 10,
 	dl: 100,

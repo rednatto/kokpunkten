@@ -3,10 +3,12 @@ import type { NumberStyle, UnitSystem } from './recipe/units.ts';
 export interface Settings {
 	units: UnitSystem;
 	numbers: NumberStyle;
+	/** Which comparison design to show for several versions of a dish. */
+	compareView: 'merge' | 'table' | 'changes';
 }
 
 const KEY = 'kokpunkten.settings';
-const defaults: Settings = { units: 'metric', numbers: 'fraction' };
+const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge' };
 
 function load(): Settings {
 	try {
