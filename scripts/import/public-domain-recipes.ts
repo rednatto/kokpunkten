@@ -138,6 +138,7 @@ writeCatalog(OUT, {
 		name: 'Public Domain Recipes',
 		url: SITE,
 		license: 'Unlicense',
+		idPrefix: 'pdr-',
 		repository: REPO.replace(/\.git$/, ''),
 		commit,
 		count: entries.length

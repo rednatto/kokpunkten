@@ -4,7 +4,7 @@
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
-	import { db, type StoredRecipe } from '#lib/db.ts';
+	import { db, deleteRecipes, updateRecipe, type StoredRecipe } from '#lib/db.ts';
 	import { showAmount } from '#lib/display.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
@@ -87,12 +87,11 @@
 	}
 	onDestroy(() => wakeLock?.release());
 
-	const update = (changes: Partial<{ favorite: boolean; rating: number | null; note: string }>) =>
-		db.recipes.update(id, changes);
+	const update = (changes: Partial<{ favorite: boolean; rating: number | null; note: string }>) => updateRecipe(id, changes);
 
 	async function remove() {
 		if (!confirm('Delete this recipe from this device?')) return;
-		await db.recipes.delete(id);
+		await deleteRecipes([id]);
 		await goto(resolve('/'));
 	}
 </script>
