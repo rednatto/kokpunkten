@@ -1,0 +1,620 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pulled-pork",
+		"title": "Oven pulled pork with dry rub",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Oven barbecue"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 360,
+			"totalMin": 1110
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"bbq",
+			"slow-cooked",
+			"oven"
+		],
+		"equipment": [
+			"roasting pan or Dutch oven",
+			"foil",
+			"meat thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp brown sugar"
+			},
+			{
+				"id": "i2",
+				"key": "smoked-paprika",
+				"name": "smoked paprika",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp smoked paprika"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp black pepper, coarsely ground",
+				"prep": "coarsely ground"
+			},
+			{
+				"id": "i5",
+				"key": "garlic-powder",
+				"name": "garlic powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp garlic powder"
+			},
+			{
+				"id": "i6",
+				"key": "onion-powder",
+				"name": "onion powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp onion powder"
+			},
+			{
+				"id": "i7",
+				"key": "cayenne-pepper",
+				"name": "cayenne pepper",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp cayenne pepper"
+			},
+			{
+				"id": "i8",
+				"key": "pork-shoulder",
+				"name": "bone-in pork shoulder (Boston butt)",
+				"role": "meat",
+				"qty": 2.5,
+				"unit": "kg",
+				"original": "2½ kg bone-in pork shoulder (Boston butt)"
+			},
+			{
+				"id": "i9",
+				"key": "apple-cider-vinegar",
+				"name": "apple cider vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl apple cider vinegar"
+			},
+			{
+				"id": "i10",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl water"
+			},
+			{
+				"id": "i11",
+				"key": "bbq-sauce",
+				"name": "barbecue sauce",
+				"role": "sauce",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2½ dl barbecue sauce"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the sugar, spices and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Rub the mixture all over the pork, cover and refrigerate overnight, or at least 1 hour.",
+				"uses": [
+					"s1",
+					"i8"
+				],
+				"technique": [
+					"dry-brine"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s3",
+				"text": "Put the pork in the pan with the vinegar and water, cover tightly and roast.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"braise",
+					"roast"
+				],
+				"durationMin": 300,
+				"tempC": 150
+			},
+			{
+				"id": "s4",
+				"text": "Uncover and roast until the bark darkens and the meat reaches 92–95 °C inside and the bone pulls out cleanly.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 60,
+				"tempC": 150,
+				"critical": "Pork is safe at 63 °C, but it only shreds once the collagen has melted at 90 °C or more."
+			},
+			{
+				"id": "s5",
+				"text": "Rest the pork.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s6",
+				"text": "Shred with two forks, skim the fat from the pan juices and mix the juices and barbecue sauce into the meat.",
+				"uses": [
+					"s5",
+					"i11"
+				],
+				"technique": [
+					"shred"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Covered roasting braises the shoulder in its own steam, and the uncovered last hour builds a crust.",
+			"chemistry": "Collagen in the shoulder slowly converts to gelatin above about 70 °C and turns the meat moist and pullable; the rub caramelises into a bark.",
+			"spiceProfile": "Sweet, smoky and peppery with a little cayenne heat.",
+			"variations": "A no-smoker version: smoked paprika stands in for wood smoke, and the meat is tossed in a sweet tomato barbecue sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pulled-pork",
+		"title": "Carolina smoked pulled pork with vinegar sauce",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Carolina smoked"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 660,
+			"totalMin": 1470
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"bbq",
+			"smoked",
+			"weekend"
+		],
+		"equipment": [
+			"smoker",
+			"hickory or oak wood",
+			"butcher paper or foil",
+			"meat thermometer",
+			"cool box"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "pork-shoulder",
+				"name": "bone-in pork shoulder (Boston butt)",
+				"role": "meat",
+				"qty": 3,
+				"unit": "kg",
+				"original": "3 kg bone-in pork shoulder (Boston butt)"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp coarse salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "coarse black pepper",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp coarse black pepper"
+			},
+			{
+				"id": "i4",
+				"key": "paprika",
+				"name": "paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp paprika"
+			},
+			{
+				"id": "i5",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp brown sugar, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i6",
+				"key": "apple-cider-vinegar",
+				"name": "apple cider vinegar",
+				"role": "acid",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2½ dl apple cider vinegar"
+			},
+			{
+				"id": "i7",
+				"key": "chili-flakes",
+				"name": "red pepper flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp red pepper flakes"
+			},
+			{
+				"id": "i8",
+				"key": "hot-sauce",
+				"name": "hot sauce",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp hot sauce"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rub the pork with the salt, pepper, paprika and 1 tbsp sugar and refrigerate overnight.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"dry-brine"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Smoke at 110–120 °C until a dark bark forms and the inside stalls at about 70 °C.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"smoke"
+				],
+				"durationMin": 420,
+				"tempC": 115
+			},
+			{
+				"id": "s3",
+				"text": "Wrap tightly in butcher paper or foil and continue until the inside reaches 95 °C and a probe slides in like butter.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"smoke"
+				],
+				"durationMin": 240,
+				"tempC": 115,
+				"critical": "Cook by internal temperature and feel, not the clock; under-cooked shoulder will not pull."
+			},
+			{
+				"id": "s4",
+				"text": "Rest, still wrapped, in an empty cool box.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 60
+			},
+			{
+				"id": "s5",
+				"text": "Whisk the vinegar with the remaining sugar, chili flakes, hot sauce and a little salt until the sugar dissolves.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Pull the meat into chunks and strands, mixing in the bark, and toss with some of the sauce. Serve the rest on the side.",
+				"uses": [
+					"s4",
+					"s5"
+				],
+				"technique": [
+					"shred"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Low heat and wood smoke for 10–12 hours, with a wrap to push through the stall.",
+			"chemistry": "The stall happens when evaporation from the meat surface cools it as fast as the smoker heats it; wrapping stops the evaporation. Smoke compounds bind to the moist surface and form a pink smoke ring.",
+			"spiceProfile": "Sharp, hot vinegar sauce against smoky, fatty pork.",
+			"variations": "Real wood smoke and a thin vinegar-chili sauce instead of a sweet tomato sauce, as in eastern North Carolina."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pulled-pork",
+		"title": "Slow cooker pulled pork",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Slow cooker"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 540,
+			"totalMin": 560
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"slow-cooker",
+			"easy"
+		],
+		"equipment": [
+			"slow cooker",
+			"baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp brown sugar"
+			},
+			{
+				"id": "i2",
+				"key": "smoked-paprika",
+				"name": "smoked paprika",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp smoked paprika"
+			},
+			{
+				"id": "i3",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black pepper"
+			},
+			{
+				"id": "i6",
+				"key": "pork-shoulder",
+				"name": "boneless pork shoulder",
+				"role": "meat",
+				"qty": 2,
+				"unit": "kg",
+				"original": "2 kg boneless pork shoulder, cut into 2–3 large pieces",
+				"prep": "cut into 2–3 large pieces"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, sliced",
+				"prep": "sliced"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"original": "4 cloves garlic, smashed",
+				"prep": "smashed"
+			},
+			{
+				"id": "i9",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "dl",
+				"original": "1½ dl chicken stock"
+			},
+			{
+				"id": "i10",
+				"key": "apple-cider-vinegar",
+				"name": "apple cider vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp apple cider vinegar"
+			},
+			{
+				"id": "i11",
+				"key": "bbq-sauce",
+				"name": "barbecue sauce",
+				"role": "sauce",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl barbecue sauce"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the sugar, spices and salt and rub them over the pork.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Put the onion and garlic in the slow cooker, lay the pork on top and pour in the stock and vinegar.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Cook on low until the pork falls apart when prodded with a fork.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 540,
+				"heat": "low",
+				"critical": "It should be well above 90 °C inside to shred easily."
+			},
+			{
+				"id": "s4",
+				"text": "Shred the pork, discard excess fat and mix in some of the cooking juices and the barbecue sauce.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"shred"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "For crisp edges, spread on a tray and grill under a hot grill.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"broil"
+				],
+				"durationMin": 5,
+				"tempC": 250
+			}
+		],
+		"notes": {
+			"techniques": "A hands-off braise; a few minutes under the grill at the end gives the crispy bits a smoker or oven would.",
+			"chemistry": "Moist, low heat for many hours turns collagen into gelatin, but with no dry heat there is no bark unless you grill it afterwards.",
+			"spiceProfile": "Smoky paprika, cumin and sweet barbecue sauce.",
+			"variations": "The easiest version: boneless pork, no oven or smoker, with a softer texture and no real bark."
+		}
+	}
+]

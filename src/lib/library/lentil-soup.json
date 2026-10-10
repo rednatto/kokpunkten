@@ -1,0 +1,741 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lentil-soup",
+		"title": "Mercimek çorbası (Turkish red lentil soup)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Turkish red lentil"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 40,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"turkish"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegetarian-optional",
+			"budget"
+		],
+		"equipment": [
+			"large pot",
+			"blender",
+			"small pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i4",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i5",
+				"key": "red-pepper-paste",
+				"name": "Turkish red pepper paste (biber salçası)",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Turkish red pepper paste (biber salçası) (optional)",
+				"optional": true
+			},
+			{
+				"id": "i6",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i7",
+				"key": "red-lentils",
+				"name": "red lentils",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g red lentils, rinsed",
+				"prep": "rinsed"
+			},
+			{
+				"id": "i8",
+				"key": "chicken-stock",
+				"name": "chicken stock or water",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1½ l chicken stock or water",
+				"substitutes": [
+					"vegetable-stock",
+					"water"
+				]
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i10",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i11",
+				"key": "dried-mint",
+				"name": "dried mint",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried mint"
+			},
+			{
+				"id": "i12",
+				"key": "aleppo-pepper",
+				"name": "Aleppo pepper (pul biber)",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Aleppo pepper (pul biber)",
+				"substitutes": [
+					"chili-flakes"
+				]
+			},
+			{
+				"id": "i13",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 lemon, cut into wedges",
+				"prep": "cut into wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oil and sweat the onion and carrot until soft.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the tomato paste, pepper paste and cumin and cook until fragrant.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the lentils and stock. Simmer, stirring now and then, until the lentils have completely collapsed.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 25,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Blend until smooth and season with salt. Thin with water if needed.",
+				"uses": [
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Melt the butter and sizzle the mint and Aleppo pepper for about 30 seconds.",
+				"uses": [
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"bloom"
+				],
+				"heat": "medium",
+				"critical": "Take it off the heat as soon as it foams red; burnt mint turns bitter."
+			},
+			{
+				"id": "s6",
+				"text": "Serve the soup with the spiced butter drizzled over and lemon wedges on the side.",
+				"uses": [
+					"s4",
+					"s5",
+					"i13"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Red lentils are split and hulled, so they fall apart quickly and blend to a velvety purée.",
+			"chemistry": "Blooming dried mint and pepper in hot butter dissolves their fat-soluble aroma compounds into a fragrant drizzle.",
+			"spiceProfile": "Earthy cumin, mild fruity heat from pul biber and cool dried mint, lifted with lemon at the table.",
+			"variations": "Smooth and blended, unlike the chunky Italian and Lebanese versions, and finished with a spiced butter."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lentil-soup",
+		"title": "Italian brown lentil and vegetable soup",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Italian with vegetables"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 50,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegetarian-optional",
+			"hearty"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil, plus more to serve",
+				"prep": "plus more to serve"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "celery",
+				"name": "celery stalk",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 celery stalk, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i6",
+				"key": "brown-lentils",
+				"name": "brown or green lentils",
+				"role": "legume",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g brown or green lentils, rinsed",
+				"prep": "rinsed"
+			},
+			{
+				"id": "i7",
+				"key": "canned-tomatoes",
+				"name": "canned chopped tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g canned chopped tomatoes"
+			},
+			{
+				"id": "i8",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1½ l vegetable stock"
+			},
+			{
+				"id": "i9",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i10",
+				"key": "rosemary",
+				"name": "sprig rosemary",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 sprig rosemary"
+			},
+			{
+				"id": "i11",
+				"key": "parmesan-rind",
+				"name": "parmesan rind",
+				"role": "umami",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 parmesan rind (optional)",
+				"optional": true
+			},
+			{
+				"id": "i12",
+				"key": "spinach",
+				"name": "baby spinach",
+				"role": "leafy-green",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g baby spinach",
+				"substitutes": [
+					"kale"
+				]
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i14",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i15",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g parmesan, grated",
+				"prep": "grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oil and gently cook the onion, carrot and celery until soft and sweet.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the garlic and cook for a minute.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"saute"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the lentils, tomatoes, stock, bay leaf, rosemary and parmesan rind. Simmer until the lentils are tender but hold their shape.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 35,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Remove the bay leaf, rosemary stem and rind. Stir in the spinach until wilted and season.",
+				"uses": [
+					"s3",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"wilt"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s5",
+				"text": "Serve with grated parmesan and a drizzle of olive oil.",
+				"uses": [
+					"s4",
+					"i15"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "A slow soffritto of onion, carrot and celery is the flavour base.",
+			"chemistry": "A parmesan rind slowly releases glutamates into the broth, adding savoury depth without much extra salt.",
+			"spiceProfile": "Rosemary and bay give a woodsy, herbal background.",
+			"variations": "Whole brown lentils keep their shape for a chunky, brothy soup, unlike the puréed red lentil version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lentil-soup",
+		"title": "Adas bi hamod (lentil soup with chard and lemon)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Lebanese with chard and lemon"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 40,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"lebanese"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"vegan",
+			"lemony"
+		],
+		"equipment": [
+			"large pot",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "brown-lentils",
+				"name": "brown or green lentils",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g brown or green lentils, rinsed",
+				"prep": "rinsed"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1½ l water"
+			},
+			{
+				"id": "i3",
+				"key": "potato",
+				"name": "medium potato",
+				"role": "starch",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 medium potato, diced",
+				"prep": "diced"
+			},
+			{
+				"id": "i4",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp olive oil"
+			},
+			{
+				"id": "i5",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 5,
+				"unit": "clove",
+				"original": "5 cloves garlic, crushed",
+				"prep": "crushed"
+			},
+			{
+				"id": "i7",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch cilantro, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i9",
+				"key": "swiss-chard",
+				"name": "Swiss chard",
+				"role": "leafy-green",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g Swiss chard, shredded",
+				"prep": "shredded",
+				"substitutes": [
+					"spinach"
+				]
+			},
+			{
+				"id": "i10",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp lemon juice"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i12",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the lentils in the water.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the potato and keep simmering.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Meanwhile, fry the onion in the oil until golden.",
+				"uses": [
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the garlic, cilantro and cumin to the onion and fry until fragrant.",
+				"uses": [
+					"s3",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Add the chard and the onion mixture to the lentils and simmer until the chard is tender and the lentils are soft.",
+				"uses": [
+					"s2",
+					"s4",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s6",
+				"text": "Off the heat, stir in the lemon juice and season well with salt and pepper.",
+				"uses": [
+					"s5",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The garlic-cilantro fry is made separately and stirred in, so its flavour stays bright.",
+			"chemistry": "Lemon is added off the heat because prolonged boiling dulls its fresh citrus aroma.",
+			"spiceProfile": "Very lemony and garlicky, with cumin and fresh cilantro.",
+			"variations": "A vegan, brothy soup with greens and potato, sharper and fresher than the Turkish and Italian versions."
+		}
+	}
+]

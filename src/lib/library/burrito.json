@@ -1,0 +1,654 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "burrito",
+		"title": "Mission-style burrito",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Mission-style"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 40,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"tex-mex",
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"big",
+			"rice and beans",
+			"chicken"
+		],
+		"equipment": [
+			"grill pan",
+			"pot",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g boneless chicken thighs"
+			},
+			{
+				"id": "i2",
+				"key": "chipotle-in-adobo",
+				"name": "chipotle in adobo",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 chipotles in adobo, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "lime",
+				"name": "limes",
+				"role": "acid",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 2 limes (divided)"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "2 cloves garlic, grated"
+			},
+			{
+				"id": "i5",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin"
+			},
+			{
+				"id": "i6",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp oil"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i8",
+				"key": "long-grain-rice",
+				"name": "long-grain rice",
+				"role": "rice",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g long-grain rice"
+			},
+			{
+				"id": "i9",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "1 bunch coriander, chopped"
+			},
+			{
+				"id": "i10",
+				"key": "canned-black-beans",
+				"name": "canned black or pinto beans",
+				"role": "legume",
+				"qty": 1,
+				"unit": "can",
+				"original": "1 can (400 g) beans"
+			},
+			{
+				"id": "i11",
+				"key": "large-flour-tortillas",
+				"name": "large flour tortillas (30 cm)",
+				"role": "bread",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 large flour tortillas"
+			},
+			{
+				"id": "i12",
+				"key": "monterey-jack",
+				"name": "Monterey Jack",
+				"role": "cheese",
+				"qty": 150,
+				"unit": "g",
+				"prep": "grated",
+				"original": "150 g Monterey Jack, grated"
+			},
+			{
+				"id": "i13",
+				"key": "pico-de-gallo",
+				"name": "pico de gallo",
+				"role": "sauce",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g pico de gallo"
+			},
+			{
+				"id": "i14",
+				"key": "avocado",
+				"name": "avocado or guacamole",
+				"role": "fruit",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 avocados, sliced"
+			},
+			{
+				"id": "i15",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl sour cream"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Marinate the chicken with chipotle, half the lime, garlic, cumin, 1 tbsp oil and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Grill or pan-fry until charred and 74 °C inside, rest and chop.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"grill",
+					"rest"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Cook the rice and fold in coriander, the rest of the lime and a pinch of salt.",
+				"uses": [
+					"i8",
+					"i9",
+					"i3",
+					"i7"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 18
+			},
+			{
+				"id": "s4",
+				"text": "Warm the beans with a splash of their liquid.",
+				"uses": [
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Steam the tortillas until very pliable so they will not crack.",
+				"uses": [
+					"i11"
+				],
+				"technique": [
+					"steam"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s6",
+				"text": "Lay cheese, rice, beans, chicken, pico, avocado and sour cream on each tortilla, fold in the sides and roll tightly. Toast seam-side down in a dry pan.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"s5",
+					"i12",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"roll",
+					"toast"
+				],
+				"durationMin": 4,
+				"heat": "medium",
+				"critical": "Fold the sides in before rolling, and roll tightly so it does not burst."
+			}
+		],
+		"notes": {
+			"techniques": "Steaming the tortilla makes it stretchy enough to roll a large filling without tearing. A quick toast seals the seam.",
+			"variations": "The large San Francisco style with rice, beans and everything inside. Northern Mexican burritos are slim with one or two fillings, and breakfast burritos use egg and potato."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "burrito",
+		"title": "Burrito de carne guisada, northern Mexican style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Northern Mexican"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 120,
+			"totalMin": 135
+		},
+		"cuisine": [
+			"mexican"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"stew",
+			"simple"
+		],
+		"equipment": [
+			"heavy pot",
+			"comal"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-chuck",
+				"name": "beef chuck",
+				"role": "meat",
+				"qty": 800,
+				"unit": "g",
+				"prep": "cut into 1.5 cm cubes",
+				"original": "800 g beef chuck, cut into 1.5 cm cubes"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1 1/2 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "beef-tallow",
+				"name": "lard or oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp lard"
+			},
+			{
+				"id": "i4",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "green-bell-pepper",
+				"name": "green bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 green pepper, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "minced",
+				"original": "3 cloves garlic, minced"
+			},
+			{
+				"id": "i7",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin"
+			},
+			{
+				"id": "i8",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp flour"
+			},
+			{
+				"id": "i9",
+				"key": "tomato",
+				"name": "tomatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 tomatoes, chopped"
+			},
+			{
+				"id": "i10",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl water"
+			},
+			{
+				"id": "i11",
+				"key": "flour-tortillas",
+				"name": "flour tortillas (25 cm)",
+				"role": "bread",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 flour tortillas"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Season the beef and brown it in the lard.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Add onion, pepper, garlic and cumin, then sprinkle with flour and stir for 1 minute.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add tomatoes and water and simmer covered until the beef is tender and the gravy thick.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 100,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Warm the tortillas on a comal, spoon in a line of stew and roll up tightly.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"roll"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A slim burrito with just one saucy filling, rolled in thin flour tortillas.",
+			"chemistry": "The flour coats the meat and thickens the braising liquid into a gravy, while collagen in the chuck melts into gelatin.",
+			"spiceProfile": "Cumin and garlic, mild and savoury.",
+			"variations": "Small and simple, with one filling and no rice. Mission-style burritos are large and filled with rice, beans and toppings."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "burrito",
+		"title": "Breakfast burrito",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Breakfast"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 25,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"tex-mex",
+			"american"
+		],
+		"course": [
+			"breakfast",
+			"main"
+		],
+		"tags": [
+			"eggs",
+			"potato",
+			"chorizo"
+		],
+		"equipment": [
+			"frying pan",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"prep": "diced 1 cm",
+				"original": "400 g potatoes, diced 1 cm"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp oil"
+			},
+			{
+				"id": "i3",
+				"key": "mexican-chorizo",
+				"name": "Mexican chorizo",
+				"role": "meat",
+				"qty": 200,
+				"unit": "g",
+				"prep": "casings removed",
+				"original": "200 g fresh Mexican chorizo, casings removed"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp butter"
+			},
+			{
+				"id": "i7",
+				"key": "large-flour-tortillas",
+				"name": "large flour tortillas",
+				"role": "bread",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 large flour tortillas"
+			},
+			{
+				"id": "i8",
+				"key": "cheddar",
+				"name": "cheddar",
+				"role": "cheese",
+				"qty": 120,
+				"unit": "g",
+				"prep": "grated",
+				"original": "120 g cheddar, grated"
+			},
+			{
+				"id": "i9",
+				"key": "salsa-roja",
+				"name": "salsa roja",
+				"role": "sauce",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl salsa"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the potatoes in oil until golden and tender.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the chorizo and cook until it is browned and crumbly and reaches 71 °C.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Beat the eggs with salt and softly scramble in butter.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"scramble"
+				],
+				"durationMin": 3,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Fill warmed tortillas with potato-chorizo, eggs, cheese and salsa and roll tightly.",
+				"uses": [
+					"s2",
+					"s3",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"roll"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Scramble the eggs softly; they keep cooking inside the warm burrito.",
+			"chemistry": "Egg proteins tighten and squeeze out water when overheated, so soft eggs stay moist.",
+			"spiceProfile": "Smoky, paprika-heavy chorizo with salsa.",
+			"variations": "Filled with egg, potato and chorizo instead of rice, beans and meat."
+		}
+	}
+]

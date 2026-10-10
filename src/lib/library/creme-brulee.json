@@ -1,0 +1,478 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "creme-brulee",
+		"title": "Crème brûlée, classic vanilla",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic baked vanilla"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 315
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"custard",
+			"make-ahead",
+			"water-bath"
+		],
+		"equipment": [
+			"saucepan",
+			"bowl",
+			"6 ramekins (about 150 ml)",
+			"roasting tin",
+			"kitchen blowtorch"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 600,
+				"unit": "ml",
+				"original": "600 ml heavy cream"
+			},
+			{
+				"id": "i2",
+				"key": "vanilla-bean",
+				"name": "vanilla pod",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "split and scraped",
+				"original": "1 vanilla pod, split and scraped"
+			},
+			{
+				"id": "i3",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 egg yolks"
+			},
+			{
+				"id": "i4",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g caster sugar"
+			},
+			{
+				"id": "i5",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "topping",
+				"qty": 6,
+				"unit": "tbsp",
+				"prep": "for the topping",
+				"original": "6 tbsp caster sugar, for the topping"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 150 °C. Bring the cream and vanilla to just below a simmer, then leave to infuse.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"infuse"
+				],
+				"durationMin": 15,
+				"heat": "medium",
+				"tempC": 150
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the yolks and sugar until just combined, then slowly pour in the hot cream, whisking. Strain and skim off the foam.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"temper",
+					"strain"
+				],
+				"critical": "Pour the cream slowly so the yolks warm gradually instead of scrambling."
+			},
+			{
+				"id": "s3",
+				"text": "Divide among the ramekins in a roasting tin, pour hot water halfway up the sides and bake until set at the edges with a slight wobble in the centre.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 35,
+				"tempC": 150
+			},
+			{
+				"id": "s4",
+				"text": "Cool, then chill for at least 4 hours.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 240
+			},
+			{
+				"id": "s5",
+				"text": "Sprinkle each with an even layer of sugar and caramelise with a blowtorch until amber. Let the sugar harden for a minute before serving.",
+				"uses": [
+					"s4",
+					"i5"
+				],
+				"technique": [
+					"caramelize"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A gentle oven and water bath set the custard evenly so it is smooth throughout.",
+			"chemistry": "Yolk proteins thicken the cream around 80 °C; above that they curdle. Melted sugar sets into a glassy caramel crust.",
+			"spiceProfile": "Pure vanilla.",
+			"variations": "Cream and yolks only, baked in the oven; crema catalana uses milk and starch on the stove and is flavoured with citrus and cinnamon."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "creme-brulee",
+		"title": "Crema catalana-style burnt cream",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Crema catalana style"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 210
+		},
+		"cuisine": [
+			"spanish",
+			"catalan"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"custard",
+			"stovetop",
+			"citrus"
+		],
+		"equipment": [
+			"saucepan",
+			"whisk",
+			"6 shallow dishes",
+			"kitchen blowtorch"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 750,
+				"unit": "ml",
+				"original": "750 ml whole milk"
+			},
+			{
+				"id": "i2",
+				"key": "lemon-zest",
+				"name": "lemon peel",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wide strips",
+				"original": "Peel of 1 lemon, in wide strips"
+			},
+			{
+				"id": "i3",
+				"key": "cinnamon-stick",
+				"name": "cinnamon stick",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 cinnamon stick"
+			},
+			{
+				"id": "i4",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 egg yolks"
+			},
+			{
+				"id": "i5",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 120,
+				"unit": "g",
+				"original": "120 g granulated sugar"
+			},
+			{
+				"id": "i6",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 25,
+				"unit": "g",
+				"original": "25 g cornstarch"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "topping",
+				"qty": 6,
+				"unit": "tbsp",
+				"prep": "for the topping",
+				"original": "6 tbsp granulated sugar, for the topping"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the milk with lemon peel and cinnamon until steaming, then infuse and strain.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"infuse",
+					"strain"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the yolks, sugar and cornstarch until smooth, then whisk in the hot milk.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"temper",
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Return to the pan and cook over low heat, whisking constantly, until thick, about the moment it starts to bubble.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 6,
+				"heat": "medium-low",
+				"critical": "Whisk without stopping, or the bottom scorches and turns lumpy."
+			},
+			{
+				"id": "s4",
+				"text": "Pour into the dishes, cool, then chill.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 180
+			},
+			{
+				"id": "s5",
+				"text": "Just before serving, sprinkle with sugar and caramelise with a blowtorch.",
+				"uses": [
+					"s4",
+					"i7"
+				],
+				"technique": [
+					"caramelize"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Cooked on the stove like a pastry cream; no oven or water bath needed.",
+			"chemistry": "Cornstarch protects the yolks from curdling, which is why this custard can be brought to a bubble.",
+			"spiceProfile": "Lemon peel and cinnamon.",
+			"variations": "Milk instead of cream and thickened with starch, so it is lighter and quicker than French crème brûlée."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "creme-brulee",
+		"title": "Crème brûlée, stovetop method",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Stovetop, no-bake"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 10,
+			"totalMin": 260
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"dessert"
+		],
+		"tags": [
+			"custard",
+			"no-oven"
+		],
+		"equipment": [
+			"saucepan",
+			"whisk",
+			"thermometer",
+			"4 ramekins",
+			"kitchen blowtorch"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml heavy cream"
+			},
+			{
+				"id": "i2",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1½ tsp vanilla extract"
+			},
+			{
+				"id": "i3",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 5,
+				"unit": "piece",
+				"original": "5 egg yolks"
+			},
+			{
+				"id": "i4",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g caster sugar"
+			},
+			{
+				"id": "i5",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "topping",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "for the topping",
+				"original": "4 tbsp caster sugar, for the topping"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the cream until steaming.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"heat"
+				],
+				"durationMin": 4,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the yolks with sugar, then slowly whisk in the hot cream.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"temper"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Return to the pan and stir over low heat until the custard thickens and coats a spoon, 80–82 °C. Stir in the vanilla.",
+				"uses": [
+					"s2",
+					"i2"
+				],
+				"technique": [
+					"stir"
+				],
+				"durationMin": 6,
+				"heat": "low",
+				"critical": "Do not go above about 84 °C or it curdles; strain at once if it starts to."
+			},
+			{
+				"id": "s4",
+				"text": "Strain into ramekins and chill until set.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"strain",
+					"chill"
+				],
+				"durationMin": 240
+			},
+			{
+				"id": "s5",
+				"text": "Top with sugar and caramelise with a blowtorch.",
+				"uses": [
+					"s4",
+					"i5"
+				],
+				"technique": [
+					"caramelize"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The custard is thickened on the stove like a crème anglaise and set by chilling.",
+			"chemistry": "A higher ratio of yolks to cream helps the custard set firm once cold without baking.",
+			"spiceProfile": "Vanilla.",
+			"variations": "No oven needed; the texture is a little softer than the baked classic."
+		}
+	}
+]

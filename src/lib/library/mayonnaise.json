@@ -1,0 +1,379 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mayonnaise",
+		"title": "Classic hand-whisked mayonnaise",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic hand-whisked"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"emulsion",
+			"basic"
+		],
+		"equipment": [
+			"bowl",
+			"balloon whisk",
+			"damp towel"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 egg yolks, at room temperature",
+				"prep": "at room temperature"
+			},
+			{
+				"id": "i2",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "binder",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Dijon mustard"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "neutral oil such as sunflower or rapeseed",
+				"role": "fat",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2½ dl neutral oil such as sunflower or rapeseed"
+			},
+			{
+				"id": "i5",
+				"key": "lemon-juice",
+				"name": "lemon juice or white wine vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice or white wine vinegar",
+				"substitutes": [
+					"white-wine-vinegar"
+				]
+			},
+			{
+				"id": "i6",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "white pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Set the bowl on a damp towel and whisk the yolks, mustard and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Whisk in the oil a few drops at a time until it thickens, then in a thin stream.",
+				"uses": [
+					"s1",
+					"i4"
+				],
+				"technique": [
+					"emulsify"
+				],
+				"critical": "Add the first oil drop by drop; too much too soon breaks the emulsion. If it splits, whisk it slowly into a fresh yolk."
+			},
+			{
+				"id": "s3",
+				"text": "Whisk in the lemon juice and season with pepper and more salt if needed.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Slow addition of oil while whisking builds an oil-in-water emulsion.",
+			"chemistry": "Lecithin and proteins in the yolk coat tiny oil droplets and keep them suspended in the water from the yolk and lemon. Raw egg is not cooked, so use pasteurised eggs for pregnant, elderly or immunocompromised people.",
+			"variations": "The most traditional method, using only yolks and a whisk; it is thicker and richer than whole-egg blender mayonnaise."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mayonnaise",
+		"title": "One-minute whole-egg mayonnaise",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Whole-egg immersion blender"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 3,
+			"cookMin": 0,
+			"totalMin": 3
+		},
+		"cuisine": [
+			"european"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"emulsion",
+			"quick"
+		],
+		"equipment": [
+			"immersion blender",
+			"tall narrow jar"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg, at room temperature",
+				"prep": "at room temperature"
+			},
+			{
+				"id": "i2",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "binder",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Dijon mustard"
+			},
+			{
+				"id": "i3",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2½ dl neutral oil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Put the egg, mustard, lemon juice and salt in a jar just wider than the blender head, then pour the oil on top and let it settle.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Press the blender to the bottom, start it and hold still until white mayonnaise forms, then slowly lift it to pull in the rest of the oil.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"blend",
+					"emulsify"
+				],
+				"critical": "Keep the blender at the bottom until the emulsion has formed."
+			}
+		],
+		"notes": {
+			"techniques": "The narrow jar lets the blender build the emulsion at the bottom and draw the oil down gradually.",
+			"chemistry": "The blender shears oil into very fine droplets very quickly, and the whole egg adds water and white proteins that make a lighter emulsion. Raw egg is not cooked, so use pasteurised eggs for vulnerable people.",
+			"variations": "Uses a whole egg and a stick blender, so it is foolproof and fast but paler and looser than hand-whisked yolk mayonnaise."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mayonnaise",
+		"title": "Aioli (garlic mayonnaise)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Garlic aioli"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"spanish",
+			"french"
+		],
+		"course": [
+			"sauce"
+		],
+		"tags": [
+			"emulsion",
+			"garlic"
+		],
+		"equipment": [
+			"mortar and pestle",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"original": "3 cloves garlic, peeled",
+				"prep": "peeled"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp coarse salt"
+			},
+			{
+				"id": "i3",
+				"key": "egg-yolk",
+				"name": "egg yolk",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg yolk"
+			},
+			{
+				"id": "i4",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon juice"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl extra virgin olive oil"
+			},
+			{
+				"id": "i6",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl neutral oil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pound the garlic with the salt in a mortar to a smooth paste.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"pound"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Work in the yolk and lemon juice.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Add the oils drop by drop, then in a thin stream, stirring with the pestle or whisking constantly until thick.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"emulsify"
+				],
+				"critical": "Go very slowly at the start, as with any mayonnaise."
+			}
+		],
+		"notes": {
+			"techniques": "The garlic is pounded to a paste first so it disperses evenly through the emulsion.",
+			"chemistry": "Crushing garlic releases allicin, which gives the sharp bite; a mix of oils stops the bitterness that strong olive oil can develop when beaten hard. Raw egg is not cooked, so use pasteurised eggs for vulnerable people.",
+			"spiceProfile": "Pungent raw garlic with peppery olive oil.",
+			"variations": "Heavily garlicky and made partly with olive oil; the oldest Mediterranean versions skip the egg altogether."
+		}
+	}
+]

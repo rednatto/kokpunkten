@@ -1,0 +1,314 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "guacamole",
+		"title": "Guacamole, Mexican molcajete style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Mexican traditional"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"mexican"
+		],
+		"course": [
+			"snack",
+			"side"
+		],
+		"tags": [
+			"vegan",
+			"dip",
+			"no-cook"
+		],
+		"equipment": [
+			"molcajete or mortar"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "allium",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "finely chopped",
+				"original": "2 tbsp finely chopped white onion"
+			},
+			{
+				"id": "i2",
+				"key": "serrano-chili",
+				"name": "serrano chiles",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1–2 serrano chiles, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp chopped coriander"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "coarse salt",
+				"role": "salt",
+				"qty": 0.75,
+				"unit": "tsp",
+				"original": "3/4 tsp coarse salt"
+			},
+			{
+				"id": "i5",
+				"key": "avocado",
+				"name": "ripe Hass avocados",
+				"role": "fruit",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 ripe Hass avocados"
+			},
+			{
+				"id": "i6",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1/2 lime"
+			},
+			{
+				"id": "i7",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "seeded and diced",
+				"original": "1 small tomato, seeded and diced (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Grind the onion, chile, half the coriander and the salt to a coarse paste in the molcajete.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"grind"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Add the avocado and mash roughly into the paste, keeping it chunky.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"mash"
+				],
+				"critical": "Do not purée it smooth; guacamole should be chunky."
+			},
+			{
+				"id": "s3",
+				"text": "Fold in lime, tomato and the remaining coriander, adjust salt and serve at once.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Grinding the aromatics with coarse salt first releases their juices, which then season the avocado.",
+			"chemistry": "Avocado browns when the enzyme polyphenol oxidase meets oxygen. Lime acid slows the browning but does not stop it, so serve fresh.",
+			"spiceProfile": "Fresh green heat from serrano, with coriander and onion.",
+			"variations": "The traditional version contains no garlic or cumin and is chunky. Tex-Mex versions add garlic, cumin and more lime."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "guacamole",
+		"title": "Guacamole, Tex-Mex style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Tex-Mex"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"tex-mex"
+		],
+		"course": [
+			"snack",
+			"side"
+		],
+		"tags": [
+			"vegan",
+			"dip",
+			"no-cook"
+		],
+		"equipment": [
+			"bowl",
+			"fork"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "avocado",
+				"name": "ripe avocados",
+				"role": "fruit",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 ripe avocados"
+			},
+			{
+				"id": "i2",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1 lime"
+			},
+			{
+				"id": "i3",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 0.25,
+				"unit": "piece",
+				"prep": "finely diced",
+				"original": "1/4 red onion, finely diced"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "1 clove garlic, grated"
+			},
+			{
+				"id": "i5",
+				"key": "jalapeno",
+				"name": "jalapeño",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "minced",
+				"original": "1 jalapeño, minced"
+			},
+			{
+				"id": "i6",
+				"key": "tomato",
+				"name": "Roma tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 Roma tomato, diced"
+			},
+			{
+				"id": "i7",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "1/4 tsp ground cumin"
+			},
+			{
+				"id": "i8",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp chopped coriander"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mash the avocados with the lime juice in a bowl.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"mash"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Stir in onion, garlic, jalapeño, tomato, cumin, coriander and salt.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Press plastic wrap onto the surface if not serving at once.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"cover"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Pressing wrap directly on the surface keeps out air and slows browning.",
+			"spiceProfile": "Garlic and cumin with jalapeño and plenty of lime.",
+			"variations": "Adds garlic and cumin and more lime than Mexican guacamole, and is usually mashed smoother."
+		}
+	}
+]

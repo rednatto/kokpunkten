@@ -1,0 +1,601 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "scones",
+		"title": "British plain scones",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – British plain"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 12,
+			"totalMin": 27
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"afternoon-tea",
+			"quick"
+		],
+		"equipment": [
+			"bowl",
+			"6 cm round cutter",
+			"baking sheet"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "self-raising-flour",
+				"name": "self-raising flour",
+				"role": "flour",
+				"qty": 350,
+				"unit": "g",
+				"original": "350 g self-raising flour"
+			},
+			{
+				"id": "i2",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "cold butter",
+				"role": "fat",
+				"qty": 85,
+				"unit": "g",
+				"prep": "cubed",
+				"original": "85 g cold butter, cubed"
+			},
+			{
+				"id": "i5",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp caster sugar"
+			},
+			{
+				"id": "i6",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 175,
+				"unit": "ml",
+				"prep": "warmed slightly",
+				"original": "175 ml whole milk, warmed slightly"
+			},
+			{
+				"id": "i7",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon juice"
+			},
+			{
+				"id": "i8",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla extract"
+			},
+			{
+				"id": "i9",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "beaten, for glazing",
+				"original": "1 egg, beaten, for glazing"
+			},
+			{
+				"id": "i10",
+				"key": "clotted-cream",
+				"name": "clotted cream",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "200 g clotted cream, to serve"
+			},
+			{
+				"id": "i11",
+				"key": "strawberry-jam",
+				"name": "strawberry jam",
+				"role": "topping",
+				"qty": 200,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "200 g strawberry jam, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 220 °C. Rub the butter into the flour, baking powder and salt until it looks like fine crumbs, then stir in the sugar.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"rub-in"
+				],
+				"tempC": 220
+			},
+			{
+				"id": "s2",
+				"text": "Mix milk, lemon juice and vanilla, then cut it into the flour with a knife until it just comes together.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				],
+				"critical": "Handle the dough as little as possible, or the scones rise unevenly and turn tough."
+			},
+			{
+				"id": "s3",
+				"text": "Pat out to 4 cm thick and stamp out rounds straight down without twisting.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"cut"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Brush the tops with egg and bake until risen and golden.",
+				"uses": [
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 12,
+				"tempC": 220
+			},
+			{
+				"id": "s5",
+				"text": "Serve warm with jam and clotted cream.",
+				"uses": [
+					"s4",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Cutting straight down without twisting lets the sides rise evenly.",
+			"chemistry": "Lemon juice sours the milk so it reacts with the baking powder for extra lift and tenderness.",
+			"spiceProfile": "Plain and lightly sweet; vanilla in the dough.",
+			"variations": "Tall, soft and only lightly sweet, made for jam and cream; American scones are richer and sweeter, and cheese scones are savoury."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "scones",
+		"title": "American blueberry buttermilk scones",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American buttermilk blueberry"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 22,
+			"totalMin": 57
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking",
+			"breakfast"
+		],
+		"tags": [
+			"blueberry",
+			"glazed",
+			"coffee-shop"
+		],
+		"equipment": [
+			"bowl",
+			"baking sheet",
+			"baking paper"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 70,
+				"unit": "g",
+				"original": "70 g granulated sugar"
+			},
+			{
+				"id": "i3",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 2.5,
+				"unit": "tsp",
+				"original": "2½ tsp baking powder"
+			},
+			{
+				"id": "i4",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp baking soda"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon zest"
+			},
+			{
+				"id": "i7",
+				"key": "butter",
+				"name": "frozen butter",
+				"role": "fat",
+				"qty": 115,
+				"unit": "g",
+				"prep": "grated",
+				"original": "115 g frozen butter, grated"
+			},
+			{
+				"id": "i8",
+				"key": "buttermilk",
+				"name": "buttermilk",
+				"role": "dairy",
+				"qty": 160,
+				"unit": "ml",
+				"prep": "cold",
+				"original": "160 ml buttermilk, cold"
+			},
+			{
+				"id": "i9",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i10",
+				"key": "blueberries",
+				"name": "blueberries",
+				"role": "fruit",
+				"qty": 150,
+				"unit": "g",
+				"prep": "fresh or frozen",
+				"original": "150 g blueberries, fresh or frozen"
+			},
+			{
+				"id": "i11",
+				"key": "icing-sugar",
+				"name": "icing sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"group": "Glaze",
+				"original": "100 g icing sugar"
+			},
+			{
+				"id": "i12",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "Glaze",
+				"original": "2 tbsp lemon juice"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 200 °C. Whisk flour, sugar, baking powder, soda, salt and zest. Toss in the grated frozen butter.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"mix"
+				],
+				"tempC": 200
+			},
+			{
+				"id": "s2",
+				"text": "Whisk buttermilk and egg, stir into the flour until barely combined, then fold in the blueberries.",
+				"uses": [
+					"s1",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"fold"
+				],
+				"critical": "Keep the butter frozen and stop mixing as soon as the dough holds."
+			},
+			{
+				"id": "s3",
+				"text": "Pat into a 20 cm disc, cut into 8 wedges and space them out on the lined sheet. Chill for 15 minutes.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"shape",
+					"chill"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s4",
+				"text": "Bake until golden and firm to the touch, then cool on a rack.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 22,
+				"tempC": 200
+			},
+			{
+				"id": "s5",
+				"text": "Whisk the icing sugar with lemon juice and drizzle over the cooled scones.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"glaze"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Grated frozen butter stays in flakes, giving a flaky, rich texture.",
+			"chemistry": "Baking soda reacts with the acidic buttermilk for lift and helps browning.",
+			"spiceProfile": "Lemon and blueberry.",
+			"variations": "Richer and sweeter than British scones, shaped as wedges and glazed; eaten on their own rather than with cream."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "scones",
+		"title": "Cheese scones",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cheese scones"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"baking",
+			"snack"
+		],
+		"tags": [
+			"savory",
+			"cheese"
+		],
+		"equipment": [
+			"bowl",
+			"6 cm round cutter",
+			"baking sheet"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "self-raising-flour",
+				"name": "self-raising flour",
+				"role": "flour",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g self-raising flour"
+			},
+			{
+				"id": "i2",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i3",
+				"key": "mustard-powder",
+				"name": "mustard powder",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp mustard powder"
+			},
+			{
+				"id": "i4",
+				"key": "cayenne-pepper",
+				"name": "cayenne pepper",
+				"role": "chili",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch cayenne pepper"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "cold butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"prep": "cubed",
+				"original": "60 g cold butter, cubed"
+			},
+			{
+				"id": "i7",
+				"key": "cheddar",
+				"name": "mature cheddar",
+				"role": "cheese",
+				"qty": 120,
+				"unit": "g",
+				"prep": "grated",
+				"original": "120 g mature cheddar, grated"
+			},
+			{
+				"id": "i8",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "150 ml whole milk"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 220 °C. Mix flour, baking powder, mustard, cayenne and salt, then rub in the butter.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"rub-in"
+				],
+				"tempC": 220
+			},
+			{
+				"id": "s2",
+				"text": "Stir in most of the cheese, then the milk, and bring together into a soft dough.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				],
+				"critical": "Do not knead; a light hand gives tender scones."
+			},
+			{
+				"id": "s3",
+				"text": "Pat out to 3 cm, cut rounds and top with the remaining cheese.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"cut"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Bake until risen and golden. Serve warm with butter.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 15,
+				"tempC": 220
+			}
+		],
+		"notes": {
+			"techniques": "Mustard and cayenne make the cheese taste sharper without being noticeable on their own.",
+			"chemistry": "Cheese on top melts and browns into a crisp, savoury crust.",
+			"spiceProfile": "Sharp cheddar, mustard and a hint of cayenne.",
+			"variations": "Savoury and less sweet than plain scones, eaten with butter rather than jam."
+		}
+	}
+]

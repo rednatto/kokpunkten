@@ -1,0 +1,730 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "dal",
+		"title": "Dal tadka with toor dal",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Toor dal tadka"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 40,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main",
+			"side"
+		],
+		"tags": [
+			"vegetarian",
+			"legumes",
+			"comfort"
+		],
+		"equipment": [
+			"pot",
+			"small frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "toor-dal",
+				"name": "toor dal (split pigeon peas)",
+				"role": "legume",
+				"qty": 200,
+				"unit": "g",
+				"prep": "rinsed and soaked for 30 minutes",
+				"original": "200 g toor dal (split pigeon peas), rinsed and soaked for 30 minutes"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l water"
+			},
+			{
+				"id": "i3",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp ground turmeric"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "ghee",
+				"name": "ghee",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "tadka",
+				"original": "3 tbsp ghee"
+			},
+			{
+				"id": "i6",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "tadka",
+				"original": "1 tsp cumin seeds"
+			},
+			{
+				"id": "i7",
+				"key": "dried-red-chili",
+				"name": "dried red chilies",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"group": "tadka",
+				"original": "2 dried red chilies"
+			},
+			{
+				"id": "i8",
+				"key": "asafoetida",
+				"name": "asafoetida (hing)",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"group": "tadka",
+				"original": "1 pinch asafoetida (hing)"
+			},
+			{
+				"id": "i9",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "thinly sliced",
+				"group": "tadka",
+				"original": "4 cloves garlic, thinly sliced"
+			},
+			{
+				"id": "i10",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"group": "tadka",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i11",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"group": "tadka",
+				"original": "1 tomato, chopped"
+			},
+			{
+				"id": "i12",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"group": "tadka",
+				"original": "0.5 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i13",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i14",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp cilantro, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the dal with the water and turmeric, skimming off foam, until completely soft and falling apart.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 35,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the dal to a smooth, pourable consistency and season with salt.",
+				"uses": [
+					"s1",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "For the tadka, heat the ghee and fry cumin seeds and dried chilies until the cumin darkens. Add asafoetida and garlic and fry until the garlic is golden.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"temper"
+				],
+				"durationMin": 2,
+				"heat": "medium",
+				"critical": "Garlic goes from golden to burnt in seconds; have the onion ready to stop the cooking."
+			},
+			{
+				"id": "s4",
+				"text": "Add the onion and fry until soft, then the tomato and chili powder and cook until soft.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Pour the tadka over the dal, stir, and finish with lemon juice and cilantro.",
+				"uses": [
+					"s2",
+					"s4",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The dal is boiled plain and seasoned at the end with a tadka, spices fried in hot ghee.",
+			"chemistry": "Pulses break down as their starch gelatinises and cell walls soften; turmeric added early also colours the dal evenly.",
+			"spiceProfile": "Savoury and garlicky, with cumin, the onion-like funk of asafoetida and a little chili heat.",
+			"variations": "Everyday North Indian yellow dal. Masoor dal cooks faster, and dal makhani is a slow, creamy black-lentil dish."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "dal",
+		"title": "Masoor dal, quick red lentils",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick red lentil"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main",
+			"side"
+		],
+		"tags": [
+			"vegetarian",
+			"vegan",
+			"legumes",
+			"quick"
+		],
+		"equipment": [
+			"pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"substitutes": [
+					"ghee"
+				],
+				"original": "2 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "mustard-seeds",
+				"name": "black mustard seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black mustard seeds"
+			},
+			{
+				"id": "i3",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin seeds"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "3 cloves garlic, grated"
+			},
+			{
+				"id": "i6",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i7",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp ground turmeric"
+			},
+			{
+				"id": "i8",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground coriander"
+			},
+			{
+				"id": "i9",
+				"key": "tomato",
+				"name": "tomatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 tomatoes, chopped"
+			},
+			{
+				"id": "i10",
+				"key": "red-lentils",
+				"name": "red lentils (masoor dal)",
+				"role": "legume",
+				"qty": 200,
+				"unit": "g",
+				"prep": "rinsed",
+				"original": "200 g red lentils (masoor dal), rinsed"
+			},
+			{
+				"id": "i11",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 8,
+				"unit": "dl",
+				"original": "8 dl water"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i13",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			},
+			{
+				"id": "i14",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp cilantro, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the mustard and cumin seeds in the oil until the mustard pops.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"bloom"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onion and fry until soft, then the garlic, ginger, turmeric and coriander.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the tomatoes, lentils and water and simmer, stirring now and then, until the lentils collapse.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low",
+				"critical": "Stir from the bottom as it thickens; red lentils stick and scorch easily."
+			},
+			{
+				"id": "s4",
+				"text": "Season with salt and lemon juice and top with cilantro.",
+				"uses": [
+					"s3",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "All in one pot: the spices are bloomed first and the lentils cook directly in the masala.",
+			"chemistry": "Split red lentils have no skin, so they absorb water fast and break down into a purée in about 20 minutes.",
+			"spiceProfile": "Bright and mild: mustard seeds, cumin, turmeric and coriander with fresh ginger.",
+			"variations": "The fastest dal, cooked in one pot without a separate tadka. Toor dal is more savoury and dal makhani much richer."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "dal",
+		"title": "Dal makhani, slow-cooked black lentils",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Dal makhani"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 120,
+			"totalMin": 855
+		},
+		"cuisine": [
+			"indian",
+			"punjabi"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"legumes",
+			"slow-cooked",
+			"rich"
+		],
+		"equipment": [
+			"large heavy pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "urad-dal",
+				"name": "whole black urad dal",
+				"role": "legume",
+				"qty": 200,
+				"unit": "g",
+				"prep": "soaked overnight",
+				"original": "200 g whole black urad dal, soaked overnight"
+			},
+			{
+				"id": "i2",
+				"key": "kidney-beans",
+				"name": "dried red kidney beans",
+				"role": "legume",
+				"qty": 50,
+				"unit": "g",
+				"prep": "soaked overnight",
+				"original": "50 g dried red kidney beans, soaked overnight"
+			},
+			{
+				"id": "i3",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l water"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g butter"
+			},
+			{
+				"id": "i6",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin seeds"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i8",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i9",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 5,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "5 cloves garlic, grated"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-puree",
+				"name": "tomato purée (passata)",
+				"role": "vegetable",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2.5 dl tomato purée (passata)"
+			},
+			{
+				"id": "i11",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i12",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i13",
+				"key": "kasuri-methi",
+				"name": "dried fenugreek leaves (kasuri methi)",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried fenugreek leaves (kasuri methi)"
+			},
+			{
+				"id": "i14",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl heavy cream"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Drain the lentils and beans, cover with the water, bring to a hard boil for 10 minutes, then simmer until the lentils are soft and the beans tender.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"boil",
+					"simmer"
+				],
+				"durationMin": 60,
+				"heat": "medium-low",
+				"critical": "Boil kidney beans hard for at least 10 minutes; undercooked kidney beans contain a toxin that causes food poisoning."
+			},
+			{
+				"id": "s2",
+				"text": "In another pot fry the cumin in half the butter, add onion and fry until golden, then ginger and garlic.",
+				"uses": [
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 12,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the tomato purée and chili and cook until thick and the butter separates.",
+				"uses": [
+					"s2",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"fry",
+					"reduce"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the lentils with their liquid and the salt. Simmer very gently, stirring and mashing a little, until thick and creamy, adding water if needed.",
+				"uses": [
+					"s1",
+					"s3",
+					"i4"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 60,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Stir in the remaining butter, garam masala, crushed fenugreek and most of the cream; drizzle the rest on top.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Long, slow simmering is the whole technique; the lentils partly break down into a creamy body.",
+			"chemistry": "Urad dal is rich in mucilage that gives the silky, almost gluey texture. Kidney beans contain phytohaemagglutinin, which is destroyed only by thorough boiling.",
+			"spiceProfile": "Rich and smoky-mellow, with butter, cream, mild chili and fenugreek.",
+			"variations": "Made from whole black lentils with butter and cream, it is a slow celebration dish rather than everyday yellow dal."
+		}
+	}
+]

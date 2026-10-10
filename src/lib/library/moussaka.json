@@ -1,0 +1,759 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "moussaka",
+		"title": "Moussaka, Greek classic",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Greek classic"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 45,
+			"cookMin": 105,
+			"totalMin": 180
+		},
+		"cuisine": [
+			"greek"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"lamb",
+			"eggplant",
+			"baked"
+		],
+		"equipment": [
+			"frying pan",
+			"saucepan",
+			"baking dish 23x33 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "eggplant",
+				"name": "eggplants",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced 1 cm thick",
+				"original": "3 large eggplants (about 1.2 kg), sliced 1 cm thick"
+			},
+			{
+				"id": "i2",
+				"key": "potato",
+				"name": "waxy potatoes",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "sliced 5 mm thick",
+				"original": "500 g potatoes, sliced 5 mm thick"
+			},
+			{
+				"id": "i3",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp olive oil"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i5",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 large onion, finely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "ground-lamb",
+				"name": "ground lamb or beef",
+				"role": "meat",
+				"qty": 750,
+				"unit": "g",
+				"original": "750 g ground lamb"
+			},
+			{
+				"id": "i8",
+				"key": "red-wine",
+				"name": "red wine",
+				"role": "wine",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl red wine"
+			},
+			{
+				"id": "i9",
+				"key": "canned-tomatoes",
+				"name": "canned chopped tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g canned tomatoes"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i11",
+				"key": "ground-cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cinnamon"
+			},
+			{
+				"id": "i12",
+				"key": "ground-allspice",
+				"name": "ground allspice",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp allspice"
+			},
+			{
+				"id": "i13",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i14",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i15",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g butter"
+			},
+			{
+				"id": "i16",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g flour"
+			},
+			{
+				"id": "i17",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 800,
+				"unit": "ml",
+				"prep": "warmed",
+				"original": "8 dl whole milk, warmed"
+			},
+			{
+				"id": "i18",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "pinch of grated nutmeg"
+			},
+			{
+				"id": "i19",
+				"key": "egg-yolk",
+				"name": "egg yolks",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 egg yolks"
+			},
+			{
+				"id": "i20",
+				"key": "kefalotyri",
+				"name": "kefalotyri or parmesan",
+				"role": "hard-cheese",
+				"qty": 80,
+				"unit": "g",
+				"prep": "grated",
+				"original": "80 g kefalotyri, grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Salt the eggplant slices and leave to drain, then pat dry.",
+				"uses": [
+					"i1",
+					"i4"
+				],
+				"technique": [
+					"salt"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Brush eggplant and potato slices with oil and roast at 200 °C until golden and soft.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 25,
+				"tempC": 200
+			},
+			{
+				"id": "s3",
+				"text": "Brown the lamb with onion and garlic, deglaze with wine, then add tomatoes, paste, cinnamon, allspice, bay and pepper. Simmer until thick and almost dry.",
+				"uses": [
+					"i7",
+					"i5",
+					"i6",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"brown",
+					"deglaze",
+					"simmer"
+				],
+				"durationMin": 40,
+				"heat": "medium-low",
+				"critical": "Reduce until no liquid pools; a wet sauce makes the moussaka collapse."
+			},
+			{
+				"id": "s4",
+				"text": "Melt butter, cook the flour for 2 minutes, whisk in warm milk and simmer to a thick béchamel. Off the heat, beat in nutmeg, yolks and half the cheese.",
+				"uses": [
+					"i15",
+					"i16",
+					"i17",
+					"i18",
+					"i19",
+					"i20"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Layer potatoes, half the eggplant, the meat and the rest of the eggplant. Spread the béchamel on top and sprinkle with the remaining cheese.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Bake at 180 °C until deep golden, then rest before cutting.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake",
+					"rest"
+				],
+				"durationMin": 50,
+				"tempC": 180,
+				"critical": "Rest at least 30 minutes or it slumps when cut."
+			}
+		],
+		"notes": {
+			"techniques": "Pre-roasting the vegetables instead of frying them uses less oil. A thick, yolk-enriched béchamel sets into a firm top layer.",
+			"chemistry": "Salting draws water out of the eggplant through osmosis, so it absorbs less oil. The yolks set during baking and turn the béchamel into a sliceable custard.",
+			"spiceProfile": "Warm cinnamon and allspice in the meat, nutmeg in the béchamel.",
+			"variations": "The Greek version with eggplant, potato and a thick béchamel. The Balkan version is mostly potato with an egg-and-milk topping, and the lentil version is vegetarian."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "moussaka",
+		"title": "Balkan potato moussaka",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Balkan potato"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 75,
+			"totalMin": 100
+		},
+		"cuisine": [
+			"serbian",
+			"balkan"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"potato",
+			"pork",
+			"baked"
+		],
+		"equipment": [
+			"frying pan",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "vegetable",
+				"qty": 1.2,
+				"unit": "kg",
+				"prep": "sliced 5 mm thick",
+				"original": "1.2 kg potatoes, sliced 5 mm thick"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "sunflower oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp sunflower oil"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "2 onions, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "ground-pork-beef",
+				"name": "mixed ground pork and beef",
+				"role": "meat",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g ground pork and beef"
+			},
+			{
+				"id": "i5",
+				"key": "sweet-paprika",
+				"name": "sweet paprika",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp sweet paprika"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i8",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl water"
+			},
+			{
+				"id": "i9",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i10",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"original": "3 dl milk"
+			},
+			{
+				"id": "i11",
+				"key": "sour-cream",
+				"name": "sour cream or yogurt",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl sour cream or yogurt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry onions in oil until soft, add the meat and paprika and cook until browned. Season with salt and pepper.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"saute",
+					"brown"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Layer half the potatoes in an oiled dish, then the meat, then the rest of the potatoes. Pour in the water and cover with foil.",
+				"uses": [
+					"s1",
+					"i1",
+					"i8"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Bake covered at 200 °C until the potatoes are nearly tender.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 40,
+				"tempC": 200
+			},
+			{
+				"id": "s4",
+				"text": "Whisk eggs, milk and sour cream, pour over the top and bake uncovered until set and golden.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"whisk",
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "The potatoes steam under foil first, then the egg-milk mixture is poured over and baked uncovered until it sets.",
+			"chemistry": "Egg proteins coagulate around 70–80 °C and turn the milk mixture into a custard topping.",
+			"spiceProfile": "Simple: paprika, salt and pepper.",
+			"variations": "There is no eggplant and no béchamel; it is closer to a potato bake. The Greek version is spiced with cinnamon and topped with béchamel."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "moussaka",
+		"title": "Lentil moussaka",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian lentil"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 90,
+			"totalMin": 130
+		},
+		"cuisine": [
+			"greek"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"eggplant",
+			"baked"
+		],
+		"equipment": [
+			"baking tray",
+			"saucepan",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "eggplant",
+				"name": "eggplants",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced 1 cm thick",
+				"original": "3 eggplants, sliced 1 cm thick"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 5,
+				"unit": "tbsp",
+				"original": "5 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "green-lentils",
+				"name": "green or brown lentils",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g dried green lentils"
+			},
+			{
+				"id": "i6",
+				"key": "canned-tomatoes",
+				"name": "canned tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g canned tomatoes"
+			},
+			{
+				"id": "i7",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl vegetable stock"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cinnamon"
+			},
+			{
+				"id": "i9",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i11",
+				"key": "greek-yogurt",
+				"name": "Greek yogurt",
+				"role": "dairy",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g Greek yogurt"
+			},
+			{
+				"id": "i12",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i13",
+				"key": "feta",
+				"name": "feta",
+				"role": "cheese",
+				"qty": 100,
+				"unit": "g",
+				"prep": "crumbled",
+				"original": "100 g feta, crumbled"
+			},
+			{
+				"id": "i14",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "pinch of nutmeg"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brush the eggplant with oil, season and roast at 200 °C until soft and browned.",
+				"uses": [
+					"i1",
+					"i2",
+					"i10"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 25,
+				"tempC": 200
+			},
+			{
+				"id": "s2",
+				"text": "Soften onion and garlic in oil, add lentils, tomatoes, stock, cinnamon and oregano and simmer until the lentils are tender and the sauce thick.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"saute",
+					"simmer"
+				],
+				"durationMin": 35,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Whisk yogurt, eggs, feta and nutmeg for the topping.",
+				"uses": [
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Layer eggplant and lentils twice, spread over the topping and bake at 180 °C until golden. Rest before serving.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"layer",
+					"bake",
+					"rest"
+				],
+				"durationMin": 40,
+				"tempC": 180
+			}
+		],
+		"notes": {
+			"techniques": "A yogurt-egg-feta topping replaces béchamel, so no roux is needed.",
+			"chemistry": "The eggs bind the yogurt so it sets during baking instead of splitting.",
+			"spiceProfile": "Cinnamon and oregano with tangy feta and yogurt.",
+			"variations": "Lentils replace the meat and a yogurt topping replaces the béchamel, which makes it lighter than the Greek classic."
+		}
+	}
+]

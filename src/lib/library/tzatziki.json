@@ -1,0 +1,301 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tzatziki",
+		"title": "Tzatziki, Greek style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Greek strained"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"greek"
+		],
+		"course": [
+			"sauce",
+			"snack"
+		],
+		"tags": [
+			"vegetarian",
+			"dip",
+			"no-cook"
+		],
+		"equipment": [
+			"box grater",
+			"sieve",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "coarsely grated",
+				"original": "1 cucumber (about 300 g), coarsely grated"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "greek-yogurt",
+				"name": "full-fat Greek yogurt (10%)",
+				"role": "dairy",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g full-fat Greek yogurt"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "2 cloves garlic, grated"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i6",
+				"key": "white-wine-vinegar",
+				"name": "white wine vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp white wine vinegar"
+			},
+			{
+				"id": "i7",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp chopped dill"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Salt the grated cucumber, leave in a sieve, then squeeze out as much liquid as possible.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"salt",
+					"drain"
+				],
+				"durationMin": 10,
+				"critical": "Squeeze the cucumber hard, or the tzatziki turns watery."
+			},
+			{
+				"id": "s2",
+				"text": "Mix the yogurt with garlic, oil, vinegar and dill, then fold in the cucumber.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Chill so the garlic flavour develops.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"chill"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "Thick strained yogurt and well-squeezed cucumber give a dip that holds its shape.",
+			"chemistry": "Salt draws water from the cucumber by osmosis, which keeps it from diluting the yogurt.",
+			"spiceProfile": "Garlic-forward, with fresh dill and a little vinegar.",
+			"variations": "A thick dip for souvlaki and grilled meat. Turkish cacık is thinner, uses mint and is often loosened with water."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "tzatziki",
+		"title": "Cacık, Turkish style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Turkish cacık"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 0,
+			"totalMin": 10
+		},
+		"cuisine": [
+			"turkish"
+		],
+		"course": [
+			"sauce",
+			"side"
+		],
+		"tags": [
+			"vegetarian",
+			"no-cook"
+		],
+		"equipment": [
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "cucumber",
+				"name": "cucumbers",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely diced",
+				"original": "2 small cucumbers, finely diced"
+			},
+			{
+				"id": "i2",
+				"key": "plain-yogurt",
+				"name": "plain yogurt",
+				"role": "dairy",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g plain yogurt"
+			},
+			{
+				"id": "i3",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl cold water"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "1 clove garlic, crushed"
+			},
+			{
+				"id": "i5",
+				"key": "dried-mint",
+				"name": "dried mint",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried mint"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i7",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			},
+			{
+				"id": "i8",
+				"key": "pul-biber",
+				"name": "pul biber (Aleppo pepper)",
+				"role": "chili",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "pinch of pul biber"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the yogurt with water, garlic and salt until smooth.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the cucumber and most of the mint.",
+				"uses": [
+					"s1",
+					"i1",
+					"i5"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Serve chilled, drizzled with oil and sprinkled with the remaining mint and pul biber.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"garnish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The yogurt is thinned rather than strained, so cacık can be eaten with a spoon as a cold side or soup.",
+			"spiceProfile": "Dried mint and a little garlic, with a hint of Aleppo pepper.",
+			"variations": "Thinner than Greek tzatziki, uses diced rather than squeezed cucumber, and mint instead of dill."
+		}
+	}
+]

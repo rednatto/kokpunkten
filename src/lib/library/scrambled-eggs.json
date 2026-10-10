@@ -1,0 +1,461 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "scrambled-eggs",
+		"title": "Soft French-style scrambled eggs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – French soft"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 2,
+			"cookMin": 10,
+			"totalMin": 12
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"eggs",
+			"creamy"
+		],
+		"equipment": [
+			"small saucepan",
+			"spatula"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i3",
+				"key": "butter",
+				"name": "cold butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g cold butter, diced, divided",
+				"prep": "diced, divided"
+			},
+			{
+				"id": "i4",
+				"key": "creme-fraiche",
+				"name": "crème fraîche",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp crème fraîche (optional)",
+				"optional": true
+			},
+			{
+				"id": "i5",
+				"key": "chives",
+				"name": "chives",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp chives, chopped",
+				"prep": "chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Lightly beat the eggs with salt.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Cook the eggs with half the butter in a saucepan, stirring constantly, until they form tiny, creamy curds.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"stir"
+				],
+				"durationMin": 8,
+				"heat": "low",
+				"critical": "Keep the heat low and take the pan off for a moment if the eggs set too fast at the edges."
+			},
+			{
+				"id": "s3",
+				"text": "Take off the heat while still slightly loose and stir in the remaining butter and crème fraîche. Sprinkle with chives.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"finish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Slow cooking with constant stirring produces a custard-like texture with very small curds.",
+			"chemistry": "Cold butter and crème fraîche lower the temperature at the end, so carryover heat does not overcook the proteins.",
+			"variations": "Much slower and creamier than American-style eggs, with no milk and no large curds."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "scrambled-eggs",
+		"title": "Fluffy American scrambled eggs",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American fluffy"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 2,
+			"cookMin": 3,
+			"totalMin": 5
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"eggs",
+			"quick"
+		],
+		"equipment": [
+			"non-stick pan",
+			"spatula"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "milk",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp milk"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 15,
+				"unit": "g",
+				"original": "15 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the eggs, milk and salt until frothy.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter, add the eggs, let them set for a few seconds, then push them across the pan in large folds until just set.",
+				"uses": [
+					"s1",
+					"i4"
+				],
+				"technique": [
+					"fold"
+				],
+				"durationMin": 3,
+				"heat": "medium",
+				"critical": "Take them off while still glossy; they keep cooking on the plate."
+			},
+			{
+				"id": "s3",
+				"text": "Season with pepper and serve straight away.",
+				"uses": [
+					"s2",
+					"i5"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Folding rather than constant stirring gives big, soft curds.",
+			"chemistry": "Water from the milk turns to steam during cooking, which puffs the curds and makes them fluffy.",
+			"variations": "Quick, higher heat and larger curds than the French method; milk is added for fluffiness."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "scrambled-eggs",
+		"title": "Anda bhurji (Indian spiced scrambled eggs)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Indian anda bhurji"
+		},
+		"servings": 2,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 12,
+			"totalMin": 22
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"breakfast",
+			"main"
+		],
+		"tags": [
+			"spicy",
+			"eggs"
+		],
+		"equipment": [
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ghee",
+				"name": "ghee or oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp ghee or oil",
+				"substitutes": [
+					"neutral-oil"
+				]
+			},
+			{
+				"id": "i2",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp cumin seeds"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "small onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 small onion, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "green-chili",
+				"name": "green chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 green chili, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i5",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp fresh ginger, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i6",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 tomato, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i7",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp ground turmeric"
+			},
+			{
+				"id": "i8",
+				"key": "chili-powder",
+				"name": "red chili powder",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp red chili powder"
+			},
+			{
+				"id": "i9",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "¼ tsp garam masala"
+			},
+			{
+				"id": "i10",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs, beaten",
+				"prep": "beaten"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i12",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp cilantro, chopped",
+				"prep": "chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the ghee and fry the cumin seeds until they sizzle and darken slightly.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"bloom"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onion and cook until soft and lightly golden, then add the chili and ginger.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the tomato and spices and cook until the tomato softens.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Pour in the eggs with salt and stir until just set. Finish with cilantro.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"scramble"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "The spices are bloomed in ghee and cooked with a masala base before the eggs go in.",
+			"chemistry": "Frying whole cumin in fat releases its aroma compounds, which are mostly fat-soluble.",
+			"spiceProfile": "Cumin, turmeric, chili and garam masala, with fresh ginger and green chili.",
+			"variations": "A savoury, spiced, drier scramble full of onion and tomato, unlike the plain creamy French and American styles."
+		}
+	}
+]

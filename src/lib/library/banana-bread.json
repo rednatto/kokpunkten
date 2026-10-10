@@ -1,0 +1,360 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "banana-bread",
+		"title": "Classic banana bread",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic creamed butter"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 60,
+			"totalMin": 75
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"loaf",
+			"banana"
+		],
+		"equipment": [
+			"loaf tin 23x13 cm",
+			"stand or hand mixer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter, softened",
+				"role": "fat",
+				"qty": 115,
+				"unit": "g",
+				"prep": "softened",
+				"original": "115 g softened butter"
+			},
+			{
+				"id": "i2",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g brown sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "banana",
+				"name": "very ripe bananas",
+				"role": "fruit",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "mashed",
+				"original": "3 very ripe bananas (about 350 g peeled), mashed"
+			},
+			{
+				"id": "i5",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g flour"
+			},
+			{
+				"id": "i7",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking soda"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "ground-cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp cinnamon"
+			},
+			{
+				"id": "i10",
+				"key": "walnuts",
+				"name": "walnuts",
+				"role": "nut",
+				"qty": 75,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "75 g walnuts, chopped (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Beat butter and sugar until light, then beat in the eggs one at a time.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"cream"
+				],
+				"durationMin": 4
+			},
+			{
+				"id": "s2",
+				"text": "Mix in the bananas and vanilla.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Whisk flour, soda, salt and cinnamon together, then fold into the banana mixture with the walnuts until just combined.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"fold"
+				],
+				"critical": "Stop folding once no dry flour remains, or the loaf turns tough and tunnelled."
+			},
+			{
+				"id": "s4",
+				"text": "Bake in a lined tin at 175 °C until a skewer comes out clean. Cool 15 minutes in the tin.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 60,
+				"tempC": 175
+			}
+		],
+		"notes": {
+			"techniques": "Creaming the butter and sugar gives a lighter, more cake-like crumb.",
+			"chemistry": "Baking soda reacts with the acidity in brown sugar and bananas, raising the loaf and helping it brown. Ripe bananas have converted most of their starch to sugar, which makes the bread sweeter and moister.",
+			"spiceProfile": "Vanilla and a little cinnamon.",
+			"variations": "Butter-based and cakey. The one-bowl oil version is denser and moister and stays soft longer."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "banana-bread",
+		"title": "One-bowl banana bread with oil",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – One-bowl oil"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 55,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"loaf",
+			"banana",
+			"easy"
+		],
+		"equipment": [
+			"bowl",
+			"loaf tin"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "banana",
+				"name": "very ripe bananas",
+				"role": "fruit",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "mashed",
+				"original": "4 very ripe bananas, mashed"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl neutral oil"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g sugar"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "plain-yogurt",
+				"name": "plain yogurt or sour cream",
+				"role": "dairy",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl yogurt"
+			},
+			{
+				"id": "i6",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 220,
+				"unit": "g",
+				"original": "220 g flour"
+			},
+			{
+				"id": "i8",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking soda"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "dark-chocolate",
+				"name": "dark chocolate chips",
+				"role": "chocolate",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g chocolate chips (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mash the bananas in a bowl and whisk in oil, sugar, eggs, yogurt and vanilla.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Sprinkle over flour, soda and salt and fold until just combined, then fold in the chocolate.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Bake at 175 °C until a skewer comes out clean.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 55,
+				"tempC": 175
+			}
+		],
+		"notes": {
+			"techniques": "Everything goes into one bowl with a whisk; no mixer needed.",
+			"chemistry": "Oil stays liquid at room temperature, so the loaf feels moister than one made with butter. Yogurt adds acid for the baking soda to react with.",
+			"variations": "Denser and moister than the creamed-butter loaf and keeps soft longer, but has less butter flavour."
+		}
+	}
+]

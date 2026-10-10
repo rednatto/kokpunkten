@@ -1,0 +1,419 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "roast-potatoes",
+		"title": "Crispy British roast potatoes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – British crispy"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 65,
+			"totalMin": 80
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"crispy",
+			"sunday-roast"
+		],
+		"equipment": [
+			"large pot",
+			"colander",
+			"roasting tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "goose-fat",
+				"name": "goose fat",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp goose fat",
+				"substitutes": [
+					"sunflower-oil",
+					"beef-dripping"
+				]
+			},
+			{
+				"id": "i2",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg floury potatoes, peeled and cut into large chunks",
+				"prep": "peeled and cut into large chunks"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "rosemary",
+				"name": "sprigs rosemary",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 sprigs rosemary (optional)",
+				"optional": true
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"original": "4 cloves garlic, smashed (optional)",
+				"prep": "smashed",
+				"optional": true
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Put the fat in a roasting tray and heat it in the oven.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"preheat"
+				],
+				"durationMin": 10,
+				"tempC": 220
+			},
+			{
+				"id": "s2",
+				"text": "Boil the potatoes in well-salted water until the edges are soft but the centre is still firm.",
+				"uses": [
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"parboil"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Drain, let them steam dry, then shake them in the colander to rough up the surfaces.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"steam-dry"
+				],
+				"durationMin": 3,
+				"critical": "Fluffed, dry edges are what turn crisp; wet potatoes steam instead of roasting."
+			},
+			{
+				"id": "s4",
+				"text": "Tip the potatoes carefully into the hot fat, turn to coat and roast, turning once or twice, until deep golden and crisp. Add the rosemary and garlic for the last 10 minutes.",
+				"uses": [
+					"s1",
+					"s3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 50,
+				"tempC": 220
+			},
+			{
+				"id": "s5",
+				"text": "Sprinkle with salt and serve straight away.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"season"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Parboiling and roughing up the surface creates a starchy paste that fries into a glassy crust in hot fat.",
+			"chemistry": "Surface starch gelatinises during parboiling, then dehydrates and browns in the fat through the Maillard reaction.",
+			"variations": "Parboiled floury potatoes in very hot animal fat give the crunchiest crust, unlike the braised Greek version or the sliced Hasselback."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "roast-potatoes",
+		"title": "Greek lemon potatoes (patates lemonates)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Greek lemon"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 70,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"greek"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"lemony",
+			"one-tray"
+		],
+		"equipment": [
+			"roasting tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg potatoes, peeled and cut into wedges",
+				"prep": "peeled and cut into wedges"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl lemon juice (about 2 lemons)"
+			},
+			{
+				"id": "i4",
+				"key": "chicken-stock",
+				"name": "chicken stock or water",
+				"role": "stock",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl chicken stock or water",
+				"substitutes": [
+					"water"
+				]
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"original": "4 cloves garlic, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i6",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp dried oregano"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the potatoes in a tray with the oil, lemon juice, stock, garlic, oregano, salt and pepper. Spread in one layer.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Roast, turning every 20 minutes, until the liquid is absorbed and the potatoes are tender and browned at the edges. Add a splash of water if the tray dries out too early.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"roast",
+					"braise"
+				],
+				"durationMin": 70,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "The potatoes braise in lemony liquid first, then fry in the remaining oil once the liquid has evaporated.",
+			"chemistry": "Starch on the potato surface absorbs the lemon stock, so the flavour goes into the potato rather than just coating it.",
+			"spiceProfile": "Lemon, garlic and oregano.",
+			"variations": "Soft, juicy and tangy with browned edges rather than shatteringly crisp; no parboiling needed."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "roast-potatoes",
+		"title": "Hasselback potatoes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Hasselback"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 55,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"crispy",
+			"classic"
+		],
+		"equipment": [
+			"baking dish",
+			"wooden spoon",
+			"sharp knife"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "medium potatoes of even size",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"original": "8 medium potatoes (about 1 kg), peeled",
+				"prep": "peeled"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g butter, melted",
+				"prep": "melted"
+			},
+			{
+				"id": "i3",
+				"key": "flaky-salt",
+				"name": "flaky salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp flaky salt"
+			},
+			{
+				"id": "i4",
+				"key": "breadcrumbs",
+				"name": "dried breadcrumbs",
+				"role": "topping",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp dried breadcrumbs"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Lay each potato in the bowl of a wooden spoon and slice it crosswise every 2–3 mm, stopping where the knife hits the spoon.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"slice"
+				],
+				"critical": "The spoon stops the knife so the slices stay joined at the base."
+			},
+			{
+				"id": "s2",
+				"text": "Put the potatoes in a dish, brush with half the butter and sprinkle with salt. Roast.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 30,
+				"tempC": 220
+			},
+			{
+				"id": "s3",
+				"text": "Brush with the rest of the butter, sprinkle with breadcrumbs and roast until the slices fan out and turn crisp and golden.",
+				"uses": [
+					"s2",
+					"i4"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 25,
+				"tempC": 220
+			}
+		],
+		"notes": {
+			"techniques": "Thin cuts that do not go all the way through give each potato a crisp, fanned top and a soft base.",
+			"chemistry": "Butter seeps between the slices and fries the cut edges, which brown through the Maillard reaction.",
+			"variations": "Whole sliced potatoes roasted with butter and breadcrumbs, from Sweden; no parboiling or tray of hot fat as in the British version."
+		}
+	}
+]

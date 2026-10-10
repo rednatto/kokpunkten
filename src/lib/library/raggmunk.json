@@ -1,0 +1,493 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "raggmunk",
+		"title": "Raggmunk with fried pork",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic with pork and lingonberries"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"potato",
+			"pancakes",
+			"classic"
+		],
+		"equipment": [
+			"bowl",
+			"grater",
+			"frying pans"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 1.5,
+				"unit": "dl",
+				"original": "1.5 dl all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl whole milk"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 800,
+				"unit": "g",
+				"prep": "peeled",
+				"original": "800 g floury potatoes, peeled"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 50,
+				"unit": "g",
+				"prep": "for frying",
+				"original": "50 g butter, for frying"
+			},
+			{
+				"id": "i7",
+				"key": "salted-pork",
+				"name": "salted pork belly (sidfläsk)",
+				"role": "cured-pork",
+				"qty": 400,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "400 g salted pork belly (sidfläsk), sliced"
+			},
+			{
+				"id": "i8",
+				"key": "lingonberries",
+				"name": "stirred lingonberries (rårörda lingon)",
+				"role": "fruit",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl stirred lingonberries (rårörda lingon)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk flour and milk smooth, then whisk in the eggs and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Fry the pork slices until crisp. Keep warm.",
+				"uses": [
+					"i7"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Grate the potatoes coarsely and stir them straight into the batter.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"grate",
+					"mix"
+				],
+				"critical": "Grate just before frying; grated potato turns grey quickly."
+			},
+			{
+				"id": "s4",
+				"text": "Fry thin cakes in butter until crisp and golden on both sides. Serve with the pork and lingonberries.",
+				"uses": [
+					"s2",
+					"s3",
+					"i6",
+					"i8"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Thin cakes fried in plenty of butter give a crisp, lacy edge with a soft centre.",
+			"chemistry": "Potato starch and egg bind the batter. Cut potato browns through enzymatic oxidation, so it goes straight into the batter.",
+			"spiceProfile": "Salty pork and tart lingonberries against mild potato.",
+			"variations": "The classic with a milk-and-egg batter, served with fried salted pork and lingonberries."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "raggmunk",
+		"title": "Rårakor (crisp potato cakes without batter)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Rårakor"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 20,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main",
+			"side"
+		],
+		"tags": [
+			"potato",
+			"vegetarian",
+			"gluten-free"
+		],
+		"equipment": [
+			"grater",
+			"clean tea towel",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 800,
+				"unit": "g",
+				"prep": "peeled",
+				"original": "800 g floury potatoes, peeled"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "grated",
+				"optional": true,
+				"original": "1 yellow onion, grated (optional)"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp black pepper"
+			},
+			{
+				"id": "i5",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i6",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i7",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "2 dl sour cream, to serve"
+			},
+			{
+				"id": "i8",
+				"key": "lingonberries",
+				"name": "stirred lingonberries",
+				"role": "fruit",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "to serve",
+				"original": "1 dl stirred lingonberries, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Grate the potatoes coarsely and squeeze out as much liquid as possible in a towel. Mix with onion, salt and pepper.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"grate",
+					"squeeze"
+				],
+				"critical": "Squeeze hard; wet potato steams instead of crisping."
+			},
+			{
+				"id": "s2",
+				"text": "Fry flat, thin heaps in butter and oil until deep golden and crisp on both sides. Serve with sour cream and lingonberries.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 12,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "No batter: only squeezed grated potato pressed thin in the pan.",
+			"chemistry": "The potato's own starch glues the shreds together once heated; less water means faster browning.",
+			"spiceProfile": "Just potato, salt, pepper and onion.",
+			"variations": "Crisper and lacier than raggmunk since there is no batter; naturally gluten-free."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "raggmunk",
+		"title": "Oven raggmunk (ugnsraggmunk)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Oven-baked sheet"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 40,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"potato",
+			"oven",
+			"weeknight"
+		],
+		"equipment": [
+			"bowl",
+			"grater",
+			"baking tray 30×40 cm",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl all-purpose flour"
+			},
+			{
+				"id": "i2",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "liquid",
+				"qty": 5,
+				"unit": "dl",
+				"original": "5 dl whole milk"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 700,
+				"unit": "g",
+				"prep": "peeled",
+				"original": "700 g potatoes, peeled"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i7",
+				"key": "bacon",
+				"name": "bacon",
+				"role": "cured-pork",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g bacon"
+			},
+			{
+				"id": "i8",
+				"key": "lingonberries",
+				"name": "stirred lingonberries",
+				"role": "fruit",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl stirred lingonberries"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter on the tray in the oven.",
+				"uses": [
+					"i6"
+				],
+				"technique": [
+					"melt"
+				],
+				"durationMin": 3,
+				"tempC": 225
+			},
+			{
+				"id": "s2",
+				"text": "Whisk flour, milk, eggs and salt to a batter. Grate in the potatoes.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk",
+					"grate"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Pour into the hot tray and bake until set and golden.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 35,
+				"tempC": 225
+			},
+			{
+				"id": "s4",
+				"text": "Fry the bacon crisp. Cut the raggmunk into squares and serve with bacon and lingonberries.",
+				"uses": [
+					"s3",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			}
+		],
+		"notes": {
+			"techniques": "Baked like a sheet of Swedish oven pancake, so there is no batch frying.",
+			"chemistry": "The hot buttered tray sets and browns the bottom quickly, much like a Yorkshire pudding.",
+			"spiceProfile": "Same mild potato with salty bacon and lingonberries.",
+			"variations": "One tray in the oven instead of frying in batches. Softer and more pudding-like, with crisp edges."
+		}
+	}
+]

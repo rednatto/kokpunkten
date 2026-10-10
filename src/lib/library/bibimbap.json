@@ -1,0 +1,590 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "bibimbap",
+		"title": "Bibimbap with beef and namul",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic beef and namul"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 30,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"korean"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"beef",
+			"vegetables"
+		],
+		"equipment": [
+			"pot",
+			"frying pan",
+			"bowls"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rice",
+				"name": "short-grain rice",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"prep": "rinsed",
+				"original": "400 g short-grain rice, rinsed"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 4.8,
+				"unit": "dl",
+				"original": "4.8 dl water"
+			},
+			{
+				"id": "i3",
+				"key": "beef-sirloin",
+				"name": "beef sirloin or rib-eye",
+				"role": "meat",
+				"qty": 300,
+				"unit": "g",
+				"prep": "in thin strips",
+				"original": "300 g beef sirloin or rib-eye, in thin strips"
+			},
+			{
+				"id": "i4",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "3 tbsp soy sauce, divided"
+			},
+			{
+				"id": "i5",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "1 tbsp sugar, divided"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "grated, divided",
+				"original": "4 cloves garlic, grated, divided"
+			},
+			{
+				"id": "i7",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "4 tbsp toasted sesame oil, divided"
+			},
+			{
+				"id": "i8",
+				"key": "spinach",
+				"name": "spinach",
+				"role": "leafy-green",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g spinach"
+			},
+			{
+				"id": "i9",
+				"key": "soybean-sprouts",
+				"name": "soybean or mung bean sprouts",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g soybean or mung bean sprouts"
+			},
+			{
+				"id": "i10",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in matchsticks",
+				"original": "1 carrot, in matchsticks"
+			},
+			{
+				"id": "i11",
+				"key": "zucchini",
+				"name": "zucchini",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in matchsticks",
+				"original": "1 zucchini, in matchsticks"
+			},
+			{
+				"id": "i12",
+				"key": "shiitake",
+				"name": "shiitake mushrooms",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "150 g shiitake mushrooms, sliced"
+			},
+			{
+				"id": "i13",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i14",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i15",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 eggs"
+			},
+			{
+				"id": "i16",
+				"key": "gochujang",
+				"name": "gochujang",
+				"role": "chili",
+				"qty": 4,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "4 tbsp gochujang"
+			},
+			{
+				"id": "i17",
+				"key": "rice-vinegar",
+				"name": "rice vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "1 tbsp rice vinegar"
+			},
+			{
+				"id": "i18",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame seeds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the rice with the water, covered, then rest off the heat.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"simmer",
+					"rest"
+				],
+				"durationMin": 25,
+				"heat": "low"
+			},
+			{
+				"id": "s2",
+				"text": "Marinate the beef with 2 tbsp soy, 2 tsp sugar, half the garlic and 1 tbsp sesame oil.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s3",
+				"text": "Blanch the spinach for 30 seconds and the sprouts for 3 minutes. Squeeze dry and season each with salt, a little garlic and sesame oil.",
+				"uses": [
+					"i8",
+					"i9",
+					"i14"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 5,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Stir-fry the carrot, zucchini and shiitake separately in a little oil with a pinch of salt until just tender.",
+				"uses": [
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Stir-fry the beef over high heat until browned.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Mix gochujang with the remaining sugar, sesame oil, soy and vinegar to a sauce.",
+				"uses": [
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s7",
+				"text": "Fry the eggs sunny side up.",
+				"uses": [
+					"i15"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s8",
+				"text": "Top bowls of rice with the vegetables and beef in sections, an egg in the middle, sesame seeds and sauce. Mix everything together to eat.",
+				"uses": [
+					"s1",
+					"s3",
+					"s4",
+					"s5",
+					"s6",
+					"s7",
+					"i18"
+				],
+				"technique": [],
+				"critical": "Season each vegetable separately; that is what keeps the bowl interesting rather than flat."
+			}
+		],
+		"notes": {
+			"techniques": "Each vegetable is cooked and seasoned separately as namul, then everything is arranged on rice and mixed at the table.",
+			"chemistry": "Blanching sets the colour of green vegetables by driving out air from the tissue and deactivating enzymes, while short cooking keeps texture.",
+			"spiceProfile": "Sweet-hot gochujang with nutty sesame, garlic and savoury soy.",
+			"variations": "Served in a regular bowl with a fried egg. The dolsot version is heated in a stone bowl for a crisp rice crust."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "bibimbap",
+		"title": "Dolsot bibimbap in a hot stone bowl",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Dolsot stone bowl"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 30,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"korean"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"rice",
+			"beef",
+			"crispy"
+		],
+		"equipment": [
+			"4 stone bowls (dolsot)",
+			"pot",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rice",
+				"name": "cooked short-grain rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g cooked short-grain rice"
+			},
+			{
+				"id": "i2",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 5,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "5 tbsp toasted sesame oil, divided"
+			},
+			{
+				"id": "i3",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g ground beef"
+			},
+			{
+				"id": "i4",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 2.5,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "2.5 tbsp soy sauce, divided"
+			},
+			{
+				"id": "i5",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp brown sugar"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "3 cloves garlic, grated"
+			},
+			{
+				"id": "i7",
+				"key": "spinach",
+				"name": "spinach",
+				"role": "leafy-green",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g spinach"
+			},
+			{
+				"id": "i8",
+				"key": "soybean-sprouts",
+				"name": "soybean sprouts",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g soybean sprouts"
+			},
+			{
+				"id": "i9",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in matchsticks",
+				"original": "1 carrot, in matchsticks"
+			},
+			{
+				"id": "i10",
+				"key": "shiitake",
+				"name": "shiitake mushrooms",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "150 g shiitake mushrooms, sliced"
+			},
+			{
+				"id": "i11",
+				"key": "kimchi",
+				"name": "kimchi",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "150 g kimchi, chopped"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i13",
+				"key": "egg-yolk",
+				"name": "very fresh egg yolks",
+				"role": "egg",
+				"qty": 4,
+				"unit": "piece",
+				"substitutes": [
+					"fried eggs"
+				],
+				"original": "4 very fresh egg yolks"
+			},
+			{
+				"id": "i14",
+				"key": "gochujang",
+				"name": "gochujang",
+				"role": "chili",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp gochujang"
+			},
+			{
+				"id": "i15",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp toasted sesame seeds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the beef with 1.5 tbsp soy, the sugar and half the garlic until browned and dry.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 6,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Blanch spinach and sprouts, squeeze dry and season with salt, the rest of the garlic and a little sesame oil.",
+				"uses": [
+					"i7",
+					"i8",
+					"i12"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 4,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Sauté the carrot and shiitake with a little salt and soy until tender.",
+				"uses": [
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s4",
+				"text": "Brush each stone bowl generously with sesame oil and pack in the rice.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": []
+			},
+			{
+				"id": "s5",
+				"text": "Arrange the vegetables, beef and kimchi on top and heat the bowls on the stove until the rice crackles and forms a golden crust underneath.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3",
+					"s4",
+					"i11"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium",
+				"critical": "Listen for steady crackling; too high heat burns the crust before the bowl is evenly hot."
+			},
+			{
+				"id": "s6",
+				"text": "Put a raw yolk in the centre and sesame seeds on top. Serve sizzling with gochujang and mix at the table so the yolk cooks against the hot stone.",
+				"uses": [
+					"s5",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The rice is fried directly in an oiled stone bowl, forming a crisp crust (nurungji) that keeps sizzling at the table.",
+			"chemistry": "The heavy stone holds heat long enough to brown the rice by Maillard reaction and to partly cook the raw yolk as it is mixed in.",
+			"spiceProfile": "Same sweet-hot gochujang and sesame base, with sour kimchi and toasted, nutty rice crust.",
+			"variations": "The stone bowl gives crunchy rice and keeps the dish hot. Use fresh eggs from a trusted source, or fried eggs if serving anyone vulnerable to raw egg."
+		}
+	}
+]

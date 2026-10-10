@@ -1,0 +1,549 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "granola",
+		"title": "Honey nut granola",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic honey and nut"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 28,
+			"totalMin": 38
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"oats",
+			"make-ahead"
+		],
+		"equipment": [
+			"large bowl",
+			"lined baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rolled-oats",
+				"name": "rolled oats",
+				"role": "starch",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g rolled oats"
+			},
+			{
+				"id": "i2",
+				"key": "almonds",
+				"name": "almonds",
+				"role": "nut",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g almonds, roughly chopped",
+				"prep": "roughly chopped"
+			},
+			{
+				"id": "i3",
+				"key": "sunflower-seeds",
+				"name": "sunflower seeds",
+				"role": "nut",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g sunflower seeds"
+			},
+			{
+				"id": "i4",
+				"key": "pumpkin-seeds",
+				"name": "pumpkin seeds",
+				"role": "nut",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g pumpkin seeds"
+			},
+			{
+				"id": "i5",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cinnamon"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp salt"
+			},
+			{
+				"id": "i7",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "ml",
+				"original": "100 ml honey"
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "rapeseed or sunflower oil",
+				"role": "fat",
+				"qty": 60,
+				"unit": "ml",
+				"original": "60 ml rapeseed or sunflower oil"
+			},
+			{
+				"id": "i9",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla extract"
+			},
+			{
+				"id": "i10",
+				"key": "raisins",
+				"name": "raisins",
+				"role": "fruit",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g raisins"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the oats, nuts, seeds, cinnamon and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Warm the honey, oil and vanilla until runny and stir through the oat mix until evenly coated.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"coat"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Spread on the tray and bake, stirring every 10 minutes, until evenly golden.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 28,
+				"tempC": 160,
+				"critical": "Honey burns easily; check the edges from 20 minutes."
+			},
+			{
+				"id": "s4",
+				"text": "Cool on the tray, then mix in the raisins and store airtight.",
+				"uses": [
+					"s3",
+					"i10"
+				],
+				"technique": [
+					"cool"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Stirring during baking gives an even, loose granola rather than clusters.",
+			"chemistry": "The honey sugars caramelise and the oats brown through the Maillard reaction; it crisps fully only as it cools.",
+			"spiceProfile": "Honey, cinnamon and vanilla.",
+			"variations": "Loose and evenly toasted, sweetened with honey; the dried fruit is added after baking so it stays soft."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "granola",
+		"title": "Big-cluster maple and olive oil granola",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Big-cluster maple"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 40,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"oats",
+			"clusters"
+		],
+		"equipment": [
+			"large bowl",
+			"lined baking tray",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rolled-oats",
+				"name": "rolled oats",
+				"role": "starch",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g rolled oats"
+			},
+			{
+				"id": "i2",
+				"key": "pecans",
+				"name": "pecans",
+				"role": "nut",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g pecans, roughly chopped",
+				"prep": "roughly chopped"
+			},
+			{
+				"id": "i3",
+				"key": "coconut-flakes",
+				"name": "coconut flakes",
+				"role": "nut",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g coconut flakes"
+			},
+			{
+				"id": "i4",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g brown sugar"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "flaky salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp flaky salt"
+			},
+			{
+				"id": "i6",
+				"key": "maple-syrup",
+				"name": "maple syrup",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl maple syrup"
+			},
+			{
+				"id": "i7",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp extra virgin olive oil"
+			},
+			{
+				"id": "i8",
+				"key": "egg-white",
+				"name": "egg white",
+				"role": "binder",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg white"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the oats, pecans, coconut, sugar and salt, then stir in the maple syrup and oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the egg white until frothy and fold it through.",
+				"uses": [
+					"s1",
+					"i8"
+				],
+				"technique": [
+					"whisk",
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Press firmly into a thin, even layer on the tray and bake without stirring until golden and dry to the touch.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 40,
+				"tempC": 150,
+				"critical": "Do not stir; that would break up the clusters."
+			},
+			{
+				"id": "s4",
+				"text": "Cool completely on the tray, then break into chunks.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"cool"
+				],
+				"durationMin": 30
+			}
+		],
+		"notes": {
+			"techniques": "Pressing the mix flat and leaving it alone in the oven sets it into one sheet that breaks into clusters.",
+			"chemistry": "The egg-white proteins coagulate in the oven and glue the oats together, while the dissolved sugar sets into a brittle glass as it cools.",
+			"spiceProfile": "Maple, fruity olive oil and a salty edge.",
+			"variations": "Large crunchy clusters bound with egg white and baked at a lower temperature without stirring."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "granola",
+		"title": "Grain-free nut and seed granola",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Grain-free"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 22,
+			"totalMin": 32
+		},
+		"cuisine": [
+			"international"
+		],
+		"course": [
+			"breakfast"
+		],
+		"tags": [
+			"gluten-free",
+			"grain-free",
+			"low-sugar"
+		],
+		"equipment": [
+			"large bowl",
+			"lined baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "almonds",
+				"name": "almonds",
+				"role": "nut",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g almonds, roughly chopped",
+				"prep": "roughly chopped"
+			},
+			{
+				"id": "i2",
+				"key": "hazelnuts",
+				"name": "hazelnuts",
+				"role": "nut",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g hazelnuts, roughly chopped",
+				"prep": "roughly chopped"
+			},
+			{
+				"id": "i3",
+				"key": "pumpkin-seeds",
+				"name": "pumpkin seeds",
+				"role": "nut",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g pumpkin seeds"
+			},
+			{
+				"id": "i4",
+				"key": "sunflower-seeds",
+				"name": "sunflower seeds",
+				"role": "nut",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g sunflower seeds"
+			},
+			{
+				"id": "i5",
+				"key": "coconut-flakes",
+				"name": "coconut flakes",
+				"role": "nut",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g coconut flakes"
+			},
+			{
+				"id": "i6",
+				"key": "chia-seeds",
+				"name": "chia seeds",
+				"role": "binder",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp chia seeds"
+			},
+			{
+				"id": "i7",
+				"key": "cinnamon",
+				"name": "ground cinnamon",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cinnamon"
+			},
+			{
+				"id": "i8",
+				"key": "cardamom",
+				"name": "ground cardamom",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp ground cardamom"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "a pinch of salt"
+			},
+			{
+				"id": "i10",
+				"key": "coconut-oil",
+				"name": "coconut oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp coconut oil, melted",
+				"prep": "melted"
+			},
+			{
+				"id": "i11",
+				"key": "maple-syrup",
+				"name": "maple syrup",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp maple syrup"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the nuts, seeds, coconut, chia, spices and salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the coconut oil and maple syrup until everything is coated. Leave for 10 minutes so the chia can gel.",
+				"uses": [
+					"s1",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"coat",
+					"rest"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s3",
+				"text": "Spread on the tray and bake, stirring once halfway, until golden.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 22,
+				"tempC": 150,
+				"critical": "Nuts burn faster than oats; pull it as soon as the coconut is golden."
+			},
+			{
+				"id": "s4",
+				"text": "Cool completely on the tray to crisp, then store airtight.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"cool"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Lower heat and a shorter bake because there are no oats to buffer the nuts.",
+			"chemistry": "Chia seeds form a mucilage gel when wet, which binds the nuts into small clusters.",
+			"spiceProfile": "Cinnamon and cardamom, Nordic style, with just a little maple.",
+			"variations": "No oats or grains, lower in sugar and much higher in fat and protein than oat granolas."
+		}
+	}
+]

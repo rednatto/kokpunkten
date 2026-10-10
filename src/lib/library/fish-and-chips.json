@@ -1,0 +1,614 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fish-and-chips",
+		"title": "Fish and chips with beer-battered cod",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Beer-battered cod"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 40,
+			"totalMin": 70
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"fried",
+			"fish",
+			"pub"
+		],
+		"equipment": [
+			"deep fryer or heavy pot",
+			"thermometer",
+			"wire rack",
+			"bowls"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "floury potatoes (e.g. Maris Piper)",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "cut in 1.5 cm chips",
+				"original": "1 kg floury potatoes (e.g. Maris Piper), cut in 1.5 cm chips"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "vegetable or sunflower oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "l",
+				"prep": "for deep-frying",
+				"original": "3 l vegetable or sunflower oil, for deep-frying"
+			},
+			{
+				"id": "i3",
+				"key": "cod-fillet",
+				"name": "thick skinless cod fillets",
+				"role": "fish",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 thick cod fillets, about 175 g each"
+			},
+			{
+				"id": "i4",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 200,
+				"unit": "g",
+				"group": "Batter",
+				"original": "200 g all-purpose flour"
+			},
+			{
+				"id": "i5",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "Batter",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i6",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "Batter",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i7",
+				"key": "beer",
+				"name": "cold lager or ale",
+				"role": "liquid",
+				"qty": 300,
+				"unit": "ml",
+				"group": "Batter",
+				"original": "300 ml cold lager or ale"
+			},
+			{
+				"id": "i8",
+				"key": "all-purpose-flour",
+				"name": "flour for dusting",
+				"role": "flour",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp flour for dusting"
+			},
+			{
+				"id": "i9",
+				"key": "sea-salt",
+				"name": "flaky salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Flaky salt, to taste"
+			},
+			{
+				"id": "i10",
+				"key": "malt-vinegar",
+				"name": "malt vinegar",
+				"role": "acid",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Malt vinegar, to taste"
+			},
+			{
+				"id": "i11",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse the chips, simmer them in salted water until just tender, drain and dry on a rack.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"parboil"
+				],
+				"durationMin": 8
+			},
+			{
+				"id": "s2",
+				"text": "Fry the chips at 130 °C until soft but pale. Drain and cool.",
+				"uses": [
+					"s1",
+					"i2"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 8,
+				"tempC": 130
+			},
+			{
+				"id": "s3",
+				"text": "Whisk flour, baking powder and salt, then whisk in the cold beer to a thick, smooth batter.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"whisk"
+				],
+				"critical": "Mix just before frying and keep it cold so it stays light."
+			},
+			{
+				"id": "s4",
+				"text": "Pat the fish dry, dust with flour, dip in batter and lower into oil at 180 °C. Fry until golden and the fish reaches 63 °C.",
+				"uses": [
+					"s2",
+					"s3",
+					"i3",
+					"i8"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 7,
+				"tempC": 180
+			},
+			{
+				"id": "s5",
+				"text": "Fry the chips again at 190 °C until crisp and golden.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 4,
+				"tempC": 190
+			},
+			{
+				"id": "s6",
+				"text": "Season with flaky salt and serve with vinegar and lemon.",
+				"uses": [
+					"s5",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Chips are cooked three times: boiled, fried low, then fried hot for a fluffy inside and a glassy crust.",
+			"chemistry": "Carbonation and baking powder release gas in the hot oil, making a light, crisp batter; cold batter limits gluten.",
+			"spiceProfile": "Simply salt and malt vinegar.",
+			"variations": "The pub-style version with beer batter and triple-cooked chips; the northern chippy uses beef dripping, and oven versions use breadcrumbs."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fish-and-chips",
+		"title": "Fish and chips with haddock fried in beef dripping",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Northern chippy, dripping-fried haddock"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"fried",
+			"fish",
+			"traditional"
+		],
+		"equipment": [
+			"deep heavy pot",
+			"thermometer",
+			"wire rack"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "cut in thick chips",
+				"original": "1 kg floury potatoes, cut in thick chips"
+			},
+			{
+				"id": "i2",
+				"key": "beef-dripping",
+				"name": "beef dripping",
+				"role": "fat",
+				"qty": 2.5,
+				"unit": "kg",
+				"prep": "for frying",
+				"original": "2½ kg beef dripping, for frying"
+			},
+			{
+				"id": "i3",
+				"key": "haddock-fillet",
+				"name": "skinless haddock fillets",
+				"role": "fish",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 haddock fillets, about 175 g each"
+			},
+			{
+				"id": "i4",
+				"key": "self-raising-flour",
+				"name": "self-raising flour",
+				"role": "flour",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g self-raising flour"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "sparkling-water",
+				"name": "ice-cold sparkling water",
+				"role": "liquid",
+				"qty": 280,
+				"unit": "ml",
+				"original": "280 ml ice-cold sparkling water"
+			},
+			{
+				"id": "i7",
+				"key": "malt-vinegar",
+				"name": "malt vinegar",
+				"role": "acid",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Malt vinegar, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "mushy-peas",
+				"name": "mushy peas",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "to serve",
+				"optional": true,
+				"original": "300 g mushy peas, to serve (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the cut chips in cold water for 30 minutes, then drain and dry thoroughly.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Melt the dripping and fry the chips at 140 °C until soft but pale. Drain.",
+				"uses": [
+					"s1",
+					"i2"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 8,
+				"tempC": 140
+			},
+			{
+				"id": "s3",
+				"text": "Whisk the flour and salt with the cold sparkling water into a smooth batter.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Dip the haddock in batter and fry at 180 °C until crisp and golden and cooked through to 63 °C.",
+				"uses": [
+					"s2",
+					"s3",
+					"i3"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 6,
+				"tempC": 180,
+				"critical": "Keep the fat at temperature; fry in batches so it does not drop."
+			},
+			{
+				"id": "s5",
+				"text": "Fry the chips again at 185 °C until golden and crisp. Serve with salt, vinegar and mushy peas.",
+				"uses": [
+					"s4",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"deep-fry",
+					"serve"
+				],
+				"durationMin": 4,
+				"tempC": 185
+			}
+		],
+		"notes": {
+			"techniques": "Soaking the chips removes surface starch so they do not stick or brown too fast.",
+			"chemistry": "Beef dripping is very stable at frying temperature and gives a rich, savoury flavour.",
+			"spiceProfile": "Salt and vinegar; mushy peas on the side.",
+			"variations": "Haddock and beef dripping are the tradition in northern England; the batter uses no beer."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fish-and-chips",
+		"title": "Oven-baked fish and chips",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Oven-baked"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"baked",
+			"fish",
+			"healthier",
+			"weeknight"
+		],
+		"equipment": [
+			"2 baking sheets",
+			"baking paper",
+			"3 shallow plates"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "cut in wedges or chips",
+				"original": "1 kg potatoes, cut in wedges or chips"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1½ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "cod-fillet",
+				"name": "cod or other white fish fillets",
+				"role": "fish",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 white fish fillets, about 150 g each"
+			},
+			{
+				"id": "i5",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g all-purpose flour"
+			},
+			{
+				"id": "i6",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "beaten",
+				"original": "1 egg, beaten"
+			},
+			{
+				"id": "i7",
+				"key": "panko",
+				"name": "panko breadcrumbs",
+				"role": "bread",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g panko breadcrumbs"
+			},
+			{
+				"id": "i8",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon zest"
+			},
+			{
+				"id": "i9",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges",
+				"original": "1 lemon, in wedges"
+			},
+			{
+				"id": "i10",
+				"key": "tartar-sauce",
+				"name": "tartare sauce",
+				"role": "sauce",
+				"qty": 4,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "4 tbsp tartare sauce, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 220 °C. Toss the potatoes with 2 tbsp oil and the salt, spread on a sheet and roast, turning once.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 40,
+				"tempC": 220
+			},
+			{
+				"id": "s2",
+				"text": "Mix panko with the lemon zest and the rest of the oil.",
+				"uses": [
+					"i7",
+					"i8",
+					"i2"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Dust the fish in flour, dip in egg and press into the panko.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"bread"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Bake the fish on a lined sheet for the last 15 minutes of the potatoes, until golden and 63 °C inside.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 15,
+				"tempC": 220,
+				"critical": "Toss the panko in oil first, or it stays pale in the oven."
+			},
+			{
+				"id": "s5",
+				"text": "Serve with lemon and tartare sauce.",
+				"uses": [
+					"s1",
+					"s4",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"serve"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Oiled panko browns in the oven and gives a crunch close to deep-frying.",
+			"spiceProfile": "Lemon zest in the crumb and tartare sauce on the side.",
+			"variations": "No deep-frying: crumbed rather than battered, and roasted chips; much simpler at home."
+		}
+	}
+]

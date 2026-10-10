@@ -1,0 +1,392 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "sourdough-bread",
+		"title": "Sourdough country loaf",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Country loaf"
+		},
+		"servings": 12,
+		"time": {
+			"prepMin": 45,
+			"cookMin": 45,
+			"totalMin": 1300
+		},
+		"cuisine": [
+			"european"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"bread",
+			"sourdough",
+			"overnight"
+		],
+		"equipment": [
+			"large bowl",
+			"banneton or bowl with tea towel",
+			"Dutch oven",
+			"lame or razor"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 450,
+				"unit": "g",
+				"original": "450 g bread flour"
+			},
+			{
+				"id": "i2",
+				"key": "whole-wheat-flour",
+				"name": "whole-wheat flour",
+				"role": "flour",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g whole-wheat flour"
+			},
+			{
+				"id": "i3",
+				"key": "water",
+				"name": "lukewarm water",
+				"role": "liquid",
+				"qty": 350,
+				"unit": "ml",
+				"original": "350 ml lukewarm water, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i4",
+				"key": "sourdough-starter",
+				"name": "active sourdough starter (100 % hydration)",
+				"role": "leavening",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g active sourdough starter (100 % hydration), fed 4–8 hours before",
+				"prep": "fed 4–8 hours before"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g salt"
+			},
+			{
+				"id": "i6",
+				"key": "rice-flour",
+				"name": "rice flour",
+				"role": "flour",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp rice flour, for dusting",
+				"prep": "for dusting"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the flours with 325 ml of the water until no dry flour remains. Cover and rest.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"autolyse"
+				],
+				"durationMin": 45
+			},
+			{
+				"id": "s2",
+				"text": "Add the starter and squeeze it in, then add the salt with the remaining water and mix until fully absorbed.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Bulk ferment at about 24 °C, giving the dough a set of stretch and folds every 30 minutes for the first 2 hours.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"fold",
+					"ferment"
+				],
+				"durationMin": 270,
+				"critical": "Judge by the dough, not the clock: it should rise by about half, feel airy and jiggle, with bubbles on the sides."
+			},
+			{
+				"id": "s4",
+				"text": "Turn out, pre-shape into a loose round and let it rest uncovered.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"preshape",
+					"rest"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s5",
+				"text": "Shape into a tight round or oval and put it seam side up in a basket dusted with rice flour.",
+				"uses": [
+					"s4",
+					"i6"
+				],
+				"technique": [
+					"shape"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Cover and refrigerate overnight.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"retard"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s7",
+				"text": "Heat the Dutch oven in the oven.",
+				"uses": [],
+				"technique": [
+					"preheat"
+				],
+				"durationMin": 45,
+				"tempC": 250
+			},
+			{
+				"id": "s8",
+				"text": "Turn the cold dough onto parchment, score it and bake in the covered pot for 20 minutes, then uncover and bake at 230 °C for 25 minutes until deep brown.",
+				"uses": [
+					"s6",
+					"s7"
+				],
+				"technique": [
+					"score",
+					"bake"
+				],
+				"durationMin": 45,
+				"tempC": 250
+			},
+			{
+				"id": "s9",
+				"text": "Cool on a rack before slicing.",
+				"uses": [
+					"s8"
+				],
+				"technique": [
+					"cool"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "An overnight cold retard develops sour flavour and makes the cold dough easy to score.",
+			"chemistry": "Wild yeasts produce gas while lactic and acetic acid bacteria add sourness; steam trapped in the lidded pot keeps the crust soft long enough for full oven spring. The loaf is done at about 96 °C inside.",
+			"variations": "A wheat loaf with a free-form open crumb and a blistered crust, unlike the dense, tin-baked rye."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "sourdough-bread",
+		"title": "Scandinavian sourdough rye loaf",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Scandinavian rye"
+		},
+		"servings": 12,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 60,
+			"totalMin": 960
+		},
+		"cuisine": [
+			"swedish",
+			"danish"
+		],
+		"course": [
+			"baking"
+		],
+		"tags": [
+			"bread",
+			"sourdough",
+			"rye"
+		],
+		"equipment": [
+			"large bowl",
+			"1.5 litre loaf tin",
+			"spatula"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "rye-sourdough-starter",
+				"name": "active rye sourdough starter",
+				"role": "leavening",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g active rye sourdough starter"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "warm water",
+				"role": "liquid",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml warm water"
+			},
+			{
+				"id": "i3",
+				"key": "dark-rye-flour",
+				"name": "whole-grain rye flour",
+				"role": "flour",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g whole-grain rye flour"
+			},
+			{
+				"id": "i4",
+				"key": "bread-flour",
+				"name": "bread flour",
+				"role": "flour",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g bread flour"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g salt"
+			},
+			{
+				"id": "i6",
+				"key": "dark-syrup",
+				"name": "dark syrup or molasses",
+				"role": "sweetener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp dark syrup or molasses",
+				"substitutes": [
+					"molasses"
+				]
+			},
+			{
+				"id": "i7",
+				"key": "caraway-seeds",
+				"name": "caraway or fennel seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp caraway or fennel seeds, lightly crushed (optional)",
+				"prep": "lightly crushed",
+				"optional": true
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp oil, for the tin",
+				"prep": "for the tin"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Stir the starter into the water, then mix in the flours, salt, syrup and seeds to a thick, sticky paste. Do not knead.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Scrape into the oiled tin and smooth the top with a wet spatula.",
+				"uses": [
+					"s1",
+					"i8"
+				],
+				"technique": [
+					"shape"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Cover and leave until risen by about a third and small cracks appear on the surface.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"proof"
+				],
+				"durationMin": 150
+			},
+			{
+				"id": "s4",
+				"text": "Bake at 230 °C for 15 minutes, then lower to 200 °C and bake until the inside reaches about 98 °C.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 60,
+				"tempC": 230
+			},
+			{
+				"id": "s5",
+				"text": "Turn out, cool, wrap in a towel and leave before slicing.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"cool",
+					"rest"
+				],
+				"durationMin": 720,
+				"critical": "Cut too early and the crumb is gummy; rye needs many hours to set."
+			}
+		],
+		"notes": {
+			"techniques": "Rye dough is mixed, not kneaded, and baked in a tin because it cannot hold its shape.",
+			"chemistry": "Rye has little usable gluten; its structure comes from pentosans that absorb lots of water, and the acidity of the sourdough stops rye enzymes from breaking down the starch into a gummy crumb.",
+			"spiceProfile": "Earthy rye, malty sweetness from the syrup and caraway or fennel.",
+			"variations": "A dense, moist, mildly sweet tin loaf that keeps for a week, very different from an open-crumbed wheat country loaf."
+		}
+	}
+]

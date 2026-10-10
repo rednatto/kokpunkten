@@ -1,0 +1,523 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pesto-pasta",
+		"title": "Trofie al pesto genovese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Ligurian with potatoes and beans"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 20,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"vegetarian",
+			"summer"
+		],
+		"equipment": [
+			"mortar and pestle",
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "basil",
+				"name": "fresh basil leaves",
+				"role": "herb",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g fresh basil leaves"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i3",
+				"key": "pine-nuts",
+				"name": "pine nuts",
+				"role": "nut",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g pine nuts"
+			},
+			{
+				"id": "i4",
+				"key": "coarse-salt",
+				"name": "coarse sea salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch coarse sea salt"
+			},
+			{
+				"id": "i5",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 40,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "40 g parmesan, finely grated"
+			},
+			{
+				"id": "i6",
+				"key": "pecorino-romano",
+				"name": "pecorino",
+				"role": "hard-cheese",
+				"qty": 20,
+				"unit": "g",
+				"prep": "finely grated",
+				"original": "20 g pecorino, finely grated"
+			},
+			{
+				"id": "i7",
+				"key": "olive-oil",
+				"name": "mild extra-virgin olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl mild extra-virgin olive oil"
+			},
+			{
+				"id": "i8",
+				"key": "potato",
+				"name": "waxy potato",
+				"role": "starch",
+				"qty": 200,
+				"unit": "g",
+				"prep": "peeled, in small cubes",
+				"original": "200 g waxy potato, peeled, in small cubes"
+			},
+			{
+				"id": "i9",
+				"key": "green-beans",
+				"name": "green beans",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "cut into 3 cm pieces",
+				"original": "150 g green beans, cut into 3 cm pieces"
+			},
+			{
+				"id": "i10",
+				"key": "trofie",
+				"name": "trofie",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g trofie"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the pasta water",
+				"original": "1 tbsp salt, for the pasta water"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pound the garlic and salt to a paste, then add the pine nuts and pound again.",
+				"uses": [
+					"i2",
+					"i4",
+					"i3"
+				],
+				"technique": [
+					"pound"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Add the basil a handful at a time and grind with a circular motion until creamy. Stir in both cheeses, then the oil.",
+				"uses": [
+					"s1",
+					"i1",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"pound",
+					"emulsify"
+				],
+				"critical": "Grind, do not chop or blend hot; bruised, heated basil turns dark and bitter."
+			},
+			{
+				"id": "s3",
+				"text": "Boil the potatoes in salted water for 5 minutes, add the trofie, then the beans for the last 5 minutes.",
+				"uses": [
+					"i8",
+					"i10",
+					"i9",
+					"i11"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 15,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Drain, keeping a little water. Toss off the heat with the pesto, loosening with the water.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": [
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Pesto made in a mortar has a creamier texture than blended pesto because cells are crushed rather than cut.",
+			"chemistry": "Basil browns through enzymatic oxidation once its cells are damaged, and heat speeds that up. Starch from the potatoes and pasta water helps bind oil and cheese into a sauce.",
+			"spiceProfile": "Sweet basil with sharp pecorino, nutty parmesan and a little raw garlic.",
+			"variations": "The Genoese way: hand-pounded pesto with potatoes and green beans cooked in the same pot as the pasta."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pesto-pasta",
+		"title": "Spaghetti with blender pesto",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Quick blender pesto"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 10,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"vegetarian",
+			"quick"
+		],
+		"equipment": [
+			"blender or food processor",
+			"dry frying pan",
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g fresh basil"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i3",
+				"key": "pine-nuts",
+				"name": "pine nuts",
+				"role": "nut",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g pine nuts"
+			},
+			{
+				"id": "i4",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 50,
+				"unit": "g",
+				"prep": "grated",
+				"original": "50 g parmesan, grated"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1.2,
+				"unit": "dl",
+				"original": "1.2 dl olive oil"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon juice"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i8",
+				"key": "spaghetti",
+				"name": "spaghetti",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g spaghetti"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toast the pine nuts in a dry pan until golden.",
+				"uses": [
+					"i3"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Pulse the basil, garlic, pine nuts, parmesan and lemon juice, then blend in the oil in short bursts. Season.",
+				"uses": [
+					"s1",
+					"i1",
+					"i2",
+					"i4",
+					"i6",
+					"i5",
+					"i7"
+				],
+				"technique": [
+					"blend"
+				],
+				"critical": "Blend in short pulses so the blade does not heat and darken the basil."
+			},
+			{
+				"id": "s3",
+				"text": "Boil the spaghetti until al dente and toss with the pesto and a splash of pasta water.",
+				"uses": [
+					"s2",
+					"i8"
+				],
+				"technique": [
+					"boil",
+					"toss"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Short pulses keep the blade cool. A little lemon juice helps keep the colour bright.",
+			"chemistry": "Acid slows the enzyme that browns cut basil. Toasting pine nuts adds Maillard flavour.",
+			"spiceProfile": "Brighter and nuttier than the classic thanks to toasted nuts and lemon.",
+			"variations": "A fast blender version with toasted pine nuts and lemon. Uses only parmesan and skips the potatoes and beans."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "pesto-pasta",
+		"title": "Pasta with pesto alla trapanese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Sicilian red pesto"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 12,
+			"totalMin": 27
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pasta",
+			"vegetarian",
+			"summer",
+			"no-cook sauce"
+		],
+		"equipment": [
+			"food processor",
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "cherry-tomatoes",
+				"name": "ripe cherry tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g ripe cherry tomatoes"
+			},
+			{
+				"id": "i2",
+				"key": "almonds",
+				"name": "blanched almonds",
+				"role": "nut",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g blanched almonds"
+			},
+			{
+				"id": "i3",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g fresh basil"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic"
+			},
+			{
+				"id": "i5",
+				"key": "pecorino-romano",
+				"name": "pecorino",
+				"role": "hard-cheese",
+				"qty": 40,
+				"unit": "g",
+				"prep": "grated",
+				"original": "40 g pecorino, grated"
+			},
+			{
+				"id": "i6",
+				"key": "olive-oil",
+				"name": "extra-virgin olive oil",
+				"role": "fat",
+				"qty": 8,
+				"unit": "tbsp",
+				"original": "8 tbsp extra-virgin olive oil"
+			},
+			{
+				"id": "i7",
+				"key": "chili-flakes",
+				"name": "chili flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "pinch",
+				"prep": "opt",
+				"original": "1 pinch chili flakes, opt"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i9",
+				"key": "busiate",
+				"name": "busiate or fusilli",
+				"role": "pasta",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g busiate or fusilli"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pulse the almonds and garlic to coarse crumbs.",
+				"uses": [
+					"i2",
+					"i4"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Add the tomatoes, basil, pecorino and chili and pulse to a coarse sauce. Stir in the oil and season.",
+				"uses": [
+					"s1",
+					"i1",
+					"i3",
+					"i5",
+					"i7",
+					"i6",
+					"i8"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Boil the pasta until al dente and toss with the raw pesto off the heat.",
+				"uses": [
+					"s2",
+					"i9"
+				],
+				"technique": [
+					"boil",
+					"toss"
+				],
+				"durationMin": 12
+			}
+		],
+		"notes": {
+			"techniques": "A raw, uncooked sauce: just pulse and toss with hot pasta.",
+			"chemistry": "Ground almonds absorb tomato juice and thicken the sauce without heat.",
+			"spiceProfile": "Fresh tomato, sweet almond, basil and a little chili heat.",
+			"variations": "Sicily's version swaps pine nuts for almonds and adds raw tomato. Fresher and lighter than the Genoese green pesto."
+		}
+	}
+]

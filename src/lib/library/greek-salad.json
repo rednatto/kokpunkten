@@ -1,0 +1,394 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "greek-salad",
+		"title": "Horiatiki, Greek village salad",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Village horiatiki"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"greek"
+		],
+		"course": [
+			"side",
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"no-cook",
+			"summer"
+		],
+		"equipment": [
+			"large bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "cut into wedges",
+				"original": "4 ripe tomatoes, cut into wedges"
+			},
+			{
+				"id": "i2",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thickly sliced",
+				"original": "1 cucumber, thickly sliced"
+			},
+			{
+				"id": "i3",
+				"key": "green-bell-pepper",
+				"name": "green bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced into rings",
+				"original": "1 green pepper, sliced into rings"
+			},
+			{
+				"id": "i4",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1 red onion, thinly sliced"
+			},
+			{
+				"id": "i5",
+				"key": "kalamata-olives",
+				"name": "Kalamata olives",
+				"role": "vegetable",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g Kalamata olives"
+			},
+			{
+				"id": "i6",
+				"key": "capers",
+				"name": "capers",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp capers (optional)"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i8",
+				"key": "feta",
+				"name": "feta",
+				"role": "cheese",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g feta, in one slab"
+			},
+			{
+				"id": "i9",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried Greek oregano"
+			},
+			{
+				"id": "i10",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 80,
+				"unit": "ml",
+				"original": "8 cl extra virgin olive oil"
+			},
+			{
+				"id": "i11",
+				"key": "red-wine-vinegar",
+				"name": "red wine vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp red wine vinegar (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Combine tomatoes, cucumber, pepper, onion, olives and capers in a bowl and season lightly with salt.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"toss"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Lay the feta slab on top, sprinkle with oregano and pour over the oil and vinegar. Serve right away.",
+				"uses": [
+					"s1",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"dress"
+				],
+				"critical": "Use ripe, room-temperature tomatoes; the salad depends on their juice."
+			}
+		],
+		"notes": {
+			"techniques": "There is no lettuce and no emulsified dressing. Tomato juice and olive oil mix in the bowl, ready for bread to soak up.",
+			"chemistry": "Salt draws juice from the tomatoes, and that juice mixes with the oil into a loose dressing.",
+			"spiceProfile": "Dried oregano, salty feta and briny olives.",
+			"variations": "The traditional village salad with whole feta and no lettuce. Restaurant salads abroad often add romaine and a whisked vinaigrette."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "greek-salad",
+		"title": "Greek salad with romaine and vinaigrette",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Restaurant style with romaine"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 0,
+			"totalMin": 15
+		},
+		"cuisine": [
+			"greek",
+			"american"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"vegetarian",
+			"no-cook"
+		],
+		"equipment": [
+			"large bowl",
+			"jar"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "romaine-lettuce",
+				"name": "romaine lettuce",
+				"role": "leafy-green",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 head romaine, chopped"
+			},
+			{
+				"id": "i2",
+				"key": "cherry-tomatoes",
+				"name": "cherry tomatoes",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "halved",
+				"original": "250 g cherry tomatoes, halved"
+			},
+			{
+				"id": "i3",
+				"key": "cucumber",
+				"name": "cucumber",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 cucumber, diced"
+			},
+			{
+				"id": "i4",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1/2 red onion, thinly sliced"
+			},
+			{
+				"id": "i5",
+				"key": "kalamata-olives",
+				"name": "Kalamata olives",
+				"role": "vegetable",
+				"qty": 80,
+				"unit": "g",
+				"prep": "pitted",
+				"original": "80 g Kalamata olives, pitted"
+			},
+			{
+				"id": "i6",
+				"key": "pepperoncini",
+				"name": "pepperoncini",
+				"role": "vegetable",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 pepperoncini"
+			},
+			{
+				"id": "i7",
+				"key": "feta",
+				"name": "feta",
+				"role": "cheese",
+				"qty": 150,
+				"unit": "g",
+				"prep": "crumbled",
+				"original": "150 g feta, crumbled"
+			},
+			{
+				"id": "i8",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp olive oil"
+			},
+			{
+				"id": "i9",
+				"key": "red-wine-vinegar",
+				"name": "red wine vinegar",
+				"role": "acid",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp red wine vinegar"
+			},
+			{
+				"id": "i10",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "juice of 1/2 lemon"
+			},
+			{
+				"id": "i11",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "1 small clove garlic, grated"
+			},
+			{
+				"id": "i12",
+				"key": "dijon-mustard",
+				"name": "Dijon mustard",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Dijon mustard"
+			},
+			{
+				"id": "i13",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i14",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i15",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Shake oil, vinegar, lemon, garlic, mustard, oregano, salt and pepper in a jar until emulsified.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"emulsify"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Toss lettuce, tomatoes, cucumber, onion, olives and pepperoncini with the dressing, then top with feta.",
+				"uses": [
+					"s1",
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"toss"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A mustard-stabilised vinaigrette coats the lettuce evenly.",
+			"chemistry": "Mustard contains emulsifiers that keep the oil and vinegar from separating quickly.",
+			"variations": "Adds lettuce and a whisked dressing, which stretches the salad. The Greek horiatiki has no lettuce and is dressed straight with oil."
+		}
+	}
+]

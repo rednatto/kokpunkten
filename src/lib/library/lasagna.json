@@ -1,0 +1,855 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lasagna",
+		"title": "Lasagne alla bolognese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Bolognese lasagne"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 225,
+			"totalMin": 265
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"baked",
+			"pasta",
+			"sunday"
+		],
+		"equipment": [
+			"heavy casserole",
+			"saucepan",
+			"baking dish 25×35 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "pancetta",
+				"name": "pancetta",
+				"role": "cured-pork",
+				"qty": 100,
+				"unit": "g",
+				"prep": "finely chopped",
+				"original": "100 g pancetta, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 carrot, finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "celery",
+				"name": "celery stalk",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 celery stalk, finely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g ground beef"
+			},
+			{
+				"id": "i7",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g ground pork"
+			},
+			{
+				"id": "i8",
+				"key": "white-wine",
+				"name": "dry white wine",
+				"role": "wine",
+				"qty": 1.5,
+				"unit": "dl",
+				"original": "1.5 dl dry white wine"
+			},
+			{
+				"id": "i9",
+				"key": "tomato-passata",
+				"name": "tomato passata",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl tomato passata"
+			},
+			{
+				"id": "i10",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 3,
+				"unit": "dl",
+				"original": "3 dl beef stock"
+			},
+			{
+				"id": "i11",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i12",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g all-purpose flour"
+			},
+			{
+				"id": "i13",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 8,
+				"unit": "dl",
+				"original": "8 dl whole milk"
+			},
+			{
+				"id": "i14",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"prep": "freshly grated",
+				"original": "1 pinch nutmeg, freshly grated"
+			},
+			{
+				"id": "i15",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i16",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i17",
+				"key": "lasagna-sheets",
+				"name": "fresh egg lasagne sheets (green spinach if possible)",
+				"role": "pasta",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g fresh egg lasagne sheets (green spinach if possible)"
+			},
+			{
+				"id": "i18",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 120,
+				"unit": "g",
+				"prep": "grated",
+				"original": "120 g parmesan, grated"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the pancetta in the oil, add onion, carrot and celery and sweat until soft.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 12,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add beef and pork and cook until browned and dry. Add the wine and let it evaporate.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"brown",
+					"deglaze"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Add passata and stock and simmer gently, partly covered, until thick. Season.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 120,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "For the béchamel, melt the butter, stir in the flour, then whisk in the milk and simmer until it coats a spoon. Season with nutmeg, salt and pepper.",
+				"uses": [
+					"i11",
+					"i12",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"roux",
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium",
+				"critical": "Add the milk gradually while whisking, or the sauce goes lumpy."
+			},
+			{
+				"id": "s5",
+				"text": "Layer ragù, pasta, béchamel and parmesan in the dish, 5–6 layers, finishing with béchamel and parmesan.",
+				"uses": [
+					"s3",
+					"s4",
+					"i17",
+					"i18"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Bake until bubbling and golden. Rest before cutting.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake",
+					"rest"
+				],
+				"durationMin": 35,
+				"tempC": 190
+			}
+		],
+		"notes": {
+			"techniques": "Thin layers of fresh pasta, a slow ragù and a pourable béchamel. Resting 15 minutes lets it set so it slices cleanly.",
+			"chemistry": "Flour starch gelatinises in the hot milk to thicken the béchamel. The top browns by the Maillard reaction between milk proteins and sugars.",
+			"spiceProfile": "Only nutmeg in the béchamel. The rest is meat, parmesan and dairy sweetness.",
+			"variations": "The Emilian classic uses ragù and béchamel only, with no ricotta or mozzarella, often on green spinach pasta."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lasagna",
+		"title": "Lasagna with ricotta and mozzarella",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Italian-American"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 110,
+			"totalMin": 140
+		},
+		"cuisine": [
+			"italian-american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"baked",
+			"pasta",
+			"cheesy",
+			"crowd"
+		],
+		"equipment": [
+			"large frying pan",
+			"large pot",
+			"bowl",
+			"baking dish 23×33 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "italian-sausage",
+				"name": "Italian sausage",
+				"role": "meat",
+				"qty": 450,
+				"unit": "g",
+				"prep": "casings removed",
+				"original": "450 g Italian sausage, casings removed"
+			},
+			{
+				"id": "i3",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 450,
+				"unit": "g",
+				"original": "450 g ground beef"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "4 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "crushed-tomatoes",
+				"name": "crushed tomatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "can",
+				"prep": "800 g each",
+				"original": "2 cans crushed tomatoes, 800 g each"
+			},
+			{
+				"id": "i7",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i8",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i9",
+				"key": "basil",
+				"name": "fresh basil",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "torn",
+				"original": "1 bunch fresh basil, torn"
+			},
+			{
+				"id": "i10",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i11",
+				"key": "ricotta",
+				"name": "ricotta",
+				"role": "cheese",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g ricotta"
+			},
+			{
+				"id": "i12",
+				"key": "egg",
+				"name": "egg",
+				"role": "binder",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i13",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp flat-leaf parsley, chopped"
+			},
+			{
+				"id": "i14",
+				"key": "lasagna-sheets",
+				"name": "dried lasagna noodles",
+				"role": "pasta",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 dried lasagna noodles"
+			},
+			{
+				"id": "i15",
+				"key": "mozzarella",
+				"name": "low-moisture mozzarella",
+				"role": "cheese",
+				"qty": 450,
+				"unit": "g",
+				"prep": "grated",
+				"original": "450 g low-moisture mozzarella, grated"
+			},
+			{
+				"id": "i16",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 80,
+				"unit": "g",
+				"prep": "grated",
+				"original": "80 g parmesan, grated"
+			},
+			{
+				"id": "i17",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i18",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the sausage and beef in the oil, then add onion and garlic and cook until soft.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"brown",
+					"saute"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Add tomatoes, tomato paste, oregano, half the basil and the sugar. Simmer until thick and season.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i17",
+					"i18"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 45,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Mix the ricotta with the egg, parsley and half the parmesan.",
+				"uses": [
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Boil the noodles until just pliable and lay them out on oiled trays.",
+				"uses": [
+					"i14"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Layer sauce, noodles, ricotta mixture and mozzarella three times, ending with sauce, mozzarella and the rest of the parmesan.",
+				"uses": [
+					"s2",
+					"s3",
+					"s4",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Cover with foil and bake, then uncover and bake until browned. Rest 15 minutes before cutting.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"bake",
+					"rest"
+				],
+				"durationMin": 50,
+				"tempC": 190,
+				"critical": "Rest before cutting or the layers slide apart."
+			}
+		],
+		"notes": {
+			"techniques": "A thick tomato meat sauce with ricotta and mozzarella layers. Foil keeps it moist at first; uncovering browns the cheese.",
+			"chemistry": "The egg binds the ricotta so it sets in the oven instead of weeping. Low-moisture mozzarella melts without making the dish watery.",
+			"spiceProfile": "Garlic, oregano, basil and fennel from the sausage give a bold, herby sauce.",
+			"variations": "Swaps béchamel for ricotta and lots of mozzarella, and uses a garlicky tomato sauce. Taller, cheesier and heartier than the Emilian version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lasagna",
+		"title": "Spinach and mushroom lasagna",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegetarian spinach"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 70,
+			"totalMin": 100
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"baked",
+			"pasta",
+			"vegetarian"
+		],
+		"equipment": [
+			"large frying pan",
+			"saucepan",
+			"baking dish 20×30 cm"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "mushrooms",
+				"name": "mushrooms",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "500 g mushrooms, sliced"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "3 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "thyme",
+				"name": "fresh thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "leaves",
+				"original": "1 tbsp fresh thyme, leaves"
+			},
+			{
+				"id": "i5",
+				"key": "spinach",
+				"name": "baby spinach",
+				"role": "leafy-green",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g baby spinach"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g butter"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g all-purpose flour"
+			},
+			{
+				"id": "i8",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 7,
+				"unit": "dl",
+				"original": "7 dl whole milk"
+			},
+			{
+				"id": "i9",
+				"key": "nutmeg",
+				"name": "nutmeg",
+				"role": "spice",
+				"qty": 1,
+				"unit": "pinch",
+				"prep": "freshly grated",
+				"original": "1 pinch nutmeg, freshly grated"
+			},
+			{
+				"id": "i10",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 100,
+				"unit": "g",
+				"prep": "grated",
+				"original": "100 g parmesan, grated"
+			},
+			{
+				"id": "i11",
+				"key": "mozzarella",
+				"name": "mozzarella",
+				"role": "cheese",
+				"qty": 125,
+				"unit": "g",
+				"prep": "torn",
+				"original": "125 g mozzarella, torn"
+			},
+			{
+				"id": "i12",
+				"key": "lasagna-sheets",
+				"name": "no-boil lasagna sheets",
+				"role": "pasta",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g no-boil lasagna sheets"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i14",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the mushrooms in the oil until browned and dry. Add garlic and thyme for a minute and season.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i13"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Wilt the spinach in the same pan and squeeze out the liquid.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"wilt"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Make a béchamel: cook butter and flour for a minute, whisk in the milk and simmer until thick. Add nutmeg, pepper and half the parmesan.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i14"
+				],
+				"technique": [
+					"roux",
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Layer béchamel, pasta and the mushroom-spinach mix four times, ending with béchamel, mozzarella and the rest of the parmesan.",
+				"uses": [
+					"s2",
+					"s3",
+					"i12",
+					"i11",
+					"i10"
+				],
+				"technique": [
+					"layer"
+				],
+				"critical": "Squeeze the spinach well or the lasagna turns watery."
+			},
+			{
+				"id": "s5",
+				"text": "Bake until golden and bubbling, then rest 10 minutes.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"bake",
+					"rest"
+				],
+				"durationMin": 40,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Mushrooms are browned hard to remove water and build flavour before layering. No-boil sheets absorb liquid from a slightly thin béchamel.",
+			"chemistry": "Browning mushrooms evaporates their water and triggers Maillard reactions, giving a meaty depth without meat.",
+			"spiceProfile": "Earthy mushroom, thyme and nutmeg, with garlic for lift.",
+			"variations": "A meat-free white lasagna with no tomato. Quicker than the meat versions since there is no long ragù."
+		}
+	}
+]

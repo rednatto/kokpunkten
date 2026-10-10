@@ -1,0 +1,665 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "clam-chowder",
+		"title": "New England clam chowder",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – New England (cream)"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"seafood",
+			"creamy"
+		],
+		"equipment": [
+			"large pot with lid"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "littleneck-clams",
+				"name": "fresh clams (littlenecks or quahogs)",
+				"role": "seafood",
+				"qty": 2,
+				"unit": "kg",
+				"prep": "scrubbed",
+				"original": "2 kg clams, scrubbed"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl water"
+			},
+			{
+				"id": "i3",
+				"key": "bacon",
+				"name": "bacon or salt pork",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "diced",
+				"original": "150 g bacon, diced"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 onion, diced"
+			},
+			{
+				"id": "i6",
+				"key": "celery",
+				"name": "celery",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 celery stalks, diced"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp flour"
+			},
+			{
+				"id": "i8",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 sprigs thyme"
+			},
+			{
+				"id": "i9",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i10",
+				"key": "waxy-potato",
+				"name": "waxy potatoes",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "diced 1.5 cm",
+				"original": "500 g potatoes, diced 1.5 cm"
+			},
+			{
+				"id": "i11",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 300,
+				"unit": "ml",
+				"original": "3 dl whole milk"
+			},
+			{
+				"id": "i12",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i13",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i14",
+				"key": "oyster-crackers",
+				"name": "oyster crackers",
+				"role": "garnish",
+				"qty": 60,
+				"unit": "g",
+				"original": "oyster crackers, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Steam the clams in the water, covered, until they open. Discard any that stay shut. Chop the meat and strain the broth.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"steam"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Render the bacon in the pot, add butter, onion and celery and soften.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"render",
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Stir in the flour, then the clam broth, thyme, bay and potatoes, and simmer until the potatoes are tender.",
+				"uses": [
+					"s2",
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Add milk, cream and the chopped clams and heat through without boiling. Season with pepper and serve with crackers.",
+				"uses": [
+					"s3",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"heat"
+				],
+				"durationMin": 5,
+				"heat": "low",
+				"critical": "Do not boil after the clams go in; they turn rubbery and the dairy can curdle."
+			}
+		],
+		"notes": {
+			"techniques": "Steaming the clams first gives a clean, briny broth and tender meat that only needs to be warmed at the end.",
+			"chemistry": "A little flour roux stabilises the dairy against curdling from the salty, slightly acidic clam broth.",
+			"spiceProfile": "Smoky bacon with thyme, bay and black pepper.",
+			"variations": "The creamy version. Manhattan chowder uses a tomato broth, and Rhode Island chowder is a clear broth with no dairy."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "clam-chowder",
+		"title": "Manhattan clam chowder",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Manhattan (tomato)"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 45,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"seafood",
+			"tomato",
+			"dairy-free"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "littleneck-clams",
+				"name": "fresh clams",
+				"role": "seafood",
+				"qty": 2,
+				"unit": "kg",
+				"prep": "scrubbed",
+				"original": "2 kg clams, scrubbed"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl water"
+			},
+			{
+				"id": "i3",
+				"key": "bacon",
+				"name": "bacon",
+				"role": "cured-pork",
+				"qty": 100,
+				"unit": "g",
+				"prep": "diced",
+				"original": "100 g bacon, diced"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 onion, diced"
+			},
+			{
+				"id": "i5",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 carrot, diced"
+			},
+			{
+				"id": "i6",
+				"key": "celery",
+				"name": "celery",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 celery stalks, diced"
+			},
+			{
+				"id": "i7",
+				"key": "green-bell-pepper",
+				"name": "green bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 green pepper, diced"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "minced",
+				"original": "2 cloves garlic, minced"
+			},
+			{
+				"id": "i9",
+				"key": "canned-tomatoes",
+				"name": "canned chopped tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g canned tomatoes"
+			},
+			{
+				"id": "i10",
+				"key": "waxy-potato",
+				"name": "waxy potatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"prep": "diced",
+				"original": "400 g potatoes, diced"
+			},
+			{
+				"id": "i11",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp oregano"
+			},
+			{
+				"id": "i12",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 sprigs thyme"
+			},
+			{
+				"id": "i13",
+				"key": "chili-flakes",
+				"name": "chili flakes",
+				"role": "chili",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "1/4 tsp chili flakes"
+			},
+			{
+				"id": "i14",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp chopped parsley"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Steam the clams open in the water, chop the meat and strain the broth.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"steam"
+				],
+				"durationMin": 8,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Render the bacon, then soften onion, carrot, celery, pepper and garlic in its fat.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"render",
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the broth, tomatoes, potatoes, oregano, thyme and chili and simmer until the potatoes are tender.",
+				"uses": [
+					"s2",
+					"s1",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Stir in the clams and parsley and heat for 1 minute.",
+				"uses": [
+					"s3",
+					"i14"
+				],
+				"technique": [
+					"heat"
+				],
+				"durationMin": 1,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Like a vegetable soup with clams, thin and brothy.",
+			"spiceProfile": "Tomato, oregano and thyme with a little chili.",
+			"variations": "Uses a tomato broth with more vegetables and no dairy, unlike the creamy New England version."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "clam-chowder",
+		"title": "Rhode Island clear clam chowder",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Rhode Island clear"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 35,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"soup"
+		],
+		"tags": [
+			"seafood",
+			"dairy-free",
+			"light"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "littleneck-clams",
+				"name": "quahog or cherrystone clams",
+				"role": "seafood",
+				"qty": 2.5,
+				"unit": "kg",
+				"prep": "scrubbed",
+				"original": "2.5 kg clams, scrubbed"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l water"
+			},
+			{
+				"id": "i3",
+				"key": "bacon",
+				"name": "salt pork or bacon",
+				"role": "cured-pork",
+				"qty": 100,
+				"unit": "g",
+				"prep": "diced",
+				"original": "100 g salt pork, diced"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 onion, diced"
+			},
+			{
+				"id": "i5",
+				"key": "celery",
+				"name": "celery",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 celery stalk, diced"
+			},
+			{
+				"id": "i6",
+				"key": "waxy-potato",
+				"name": "waxy potatoes",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "diced",
+				"original": "500 g potatoes, diced"
+			},
+			{
+				"id": "i7",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 sprigs thyme"
+			},
+			{
+				"id": "i8",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i9",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i10",
+				"key": "dill",
+				"name": "dill or parsley",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp chopped dill"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Steam the clams in the water until open, chop the meat and strain the broth through a fine sieve to remove grit.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"steam",
+					"strain"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s2",
+				"text": "Render the salt pork, then soften onion and celery in the fat.",
+				"uses": [
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"render",
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add broth, potatoes, thyme and bay and simmer until the potatoes are tender.",
+				"uses": [
+					"s2",
+					"s1",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Add the clams, season with pepper and finish with dill.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"heat"
+				],
+				"durationMin": 1,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "The plain broth relies on well-strained clam liquor, so straining out the sand matters most.",
+			"variations": "A clear broth with no cream and no tomato, where the clam flavour comes through most strongly."
+		}
+	}
+]

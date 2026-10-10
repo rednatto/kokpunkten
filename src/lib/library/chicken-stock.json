@@ -1,0 +1,545 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-stock",
+		"title": "Classic white chicken stock",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic white"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 200,
+			"totalMin": 215
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"basic"
+		],
+		"tags": [
+			"stock",
+			"make-ahead"
+		],
+		"equipment": [
+			"large stockpot",
+			"ladle",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-bones",
+				"name": "raw chicken carcasses, backs and wings",
+				"role": "poultry",
+				"qty": 1.5,
+				"unit": "kg",
+				"original": "1½ kg raw chicken carcasses, backs and wings"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "l",
+				"original": "3 l cold water"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, halved",
+				"prep": "halved"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, in large chunks",
+				"prep": "in large chunks"
+			},
+			{
+				"id": "i5",
+				"key": "celery",
+				"name": "celery stalk",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 celery stalk, in large chunks",
+				"prep": "in large chunks"
+			},
+			{
+				"id": "i6",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i7",
+				"key": "thyme",
+				"name": "sprigs thyme",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 sprigs thyme"
+			},
+			{
+				"id": "i8",
+				"key": "flat-leaf-parsley",
+				"name": "parsley stems",
+				"role": "herb",
+				"qty": 10,
+				"unit": "g",
+				"original": "10 g parsley stems"
+			},
+			{
+				"id": "i9",
+				"key": "black-peppercorns",
+				"name": "black peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black peppercorns"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Put the bones in the pot, cover with the cold water and bring slowly to a simmer, skimming off the foam as it rises.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"skim"
+				],
+				"durationMin": 20,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the vegetables, herbs and peppercorns and keep at a bare simmer, uncovered.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 180,
+				"heat": "low",
+				"critical": "Never let it boil; boiling emulsifies fat into the stock and makes it cloudy."
+			},
+			{
+				"id": "s3",
+				"text": "Ladle through a fine sieve and cool quickly, ideally in a sink of iced water.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"strain",
+					"cool"
+				],
+				"durationMin": 30,
+				"critical": "Cool to fridge temperature within 2 hours; keep 3–4 days chilled or 3 months frozen."
+			},
+			{
+				"id": "s4",
+				"text": "Chill overnight and lift off the fat from the surface.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"degrease"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Starting in cold water and skimming gives a clear, pale, all-purpose stock.",
+			"chemistry": "Slow simmering extracts gelatin from collagen in the bones and skin; coagulated blood proteins rise as foam and are removed by skimming.",
+			"spiceProfile": "Neutral, with bay, thyme and peppercorns; no salt, so it can be reduced later.",
+			"variations": "Pale and delicate for soups, risotto and white sauces, without the roasted flavour of brown stock."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-stock",
+		"title": "Brown chicken stock",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Roasted brown"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 285,
+			"totalMin": 300
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"basic"
+		],
+		"tags": [
+			"stock",
+			"roasted",
+			"make-ahead"
+		],
+		"equipment": [
+			"roasting tray",
+			"large stockpot",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-bones",
+				"name": "raw chicken carcasses, backs and wings",
+				"role": "poultry",
+				"qty": 1.5,
+				"unit": "kg",
+				"original": "1½ kg raw chicken carcasses, backs and wings, chopped",
+				"prep": "chopped"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, quartered, skin on",
+				"prep": "quartered, skin on"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, in large chunks",
+				"prep": "in large chunks"
+			},
+			{
+				"id": "i5",
+				"key": "celery",
+				"name": "celery stalk",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 celery stalk, in large chunks",
+				"prep": "in large chunks"
+			},
+			{
+				"id": "i6",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i7",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "l",
+				"original": "3 l cold water"
+			},
+			{
+				"id": "i8",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i9",
+				"key": "thyme",
+				"name": "sprigs thyme",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 sprigs thyme"
+			},
+			{
+				"id": "i10",
+				"key": "black-peppercorns",
+				"name": "black peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black peppercorns"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the bones with the oil and roast until well browned.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 25,
+				"tempC": 220
+			},
+			{
+				"id": "s2",
+				"text": "Add the vegetables, smear the tomato paste over and roast until everything is deep brown but not burnt.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 20,
+				"tempC": 220
+			},
+			{
+				"id": "s3",
+				"text": "Move everything to the pot. Pour some of the water into the hot tray and scrape up the browned bits, then add it to the pot with the rest of the water.",
+				"uses": [
+					"s2",
+					"i7"
+				],
+				"technique": [
+					"deglaze"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add the herbs and peppercorns, bring slowly to a simmer, skim, and keep at a bare simmer.",
+				"uses": [
+					"s3",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 240,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Strain, cool quickly and remove the fat once chilled.",
+				"uses": [
+					"s4"
+				],
+				"technique": [
+					"strain",
+					"cool"
+				],
+				"durationMin": 30,
+				"critical": "Cool to fridge temperature within 2 hours."
+			}
+		],
+		"notes": {
+			"techniques": "Bones and vegetables are roasted and the tray deglazed before simmering.",
+			"chemistry": "Roasting creates Maillard flavour compounds and colour, and the tomato paste adds acidity and more browning.",
+			"spiceProfile": "Deep, roasted and savoury.",
+			"variations": "Darker and richer than white stock, meant for gravies, braises and pan sauces."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chicken-stock",
+		"title": "Pressure cooker chicken stock",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Pressure cooker"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 80,
+			"totalMin": 90
+		},
+		"cuisine": [
+			"european"
+		],
+		"course": [
+			"basic"
+		],
+		"tags": [
+			"stock",
+			"quick"
+		],
+		"equipment": [
+			"pressure cooker",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-wings",
+				"name": "chicken wings and backs",
+				"role": "poultry",
+				"qty": 1.2,
+				"unit": "kg",
+				"original": "1.2 kg chicken wings and backs"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 yellow onion, halved",
+				"prep": "halved"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 carrot, in chunks",
+				"prep": "in chunks"
+			},
+			{
+				"id": "i4",
+				"key": "celery",
+				"name": "celery stalk",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 celery stalk, in chunks",
+				"prep": "in chunks"
+			},
+			{
+				"id": "i5",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i6",
+				"key": "black-peppercorns",
+				"name": "black peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black peppercorns"
+			},
+			{
+				"id": "i7",
+				"key": "water",
+				"name": "cold water",
+				"role": "liquid",
+				"qty": 2,
+				"unit": "l",
+				"original": "2 l cold water, up to the maximum fill line",
+				"prep": "up to the maximum fill line"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Put everything in the pressure cooker and add water up to the maximum fill line.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"combine"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Cook at high pressure.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"pressure-cook"
+				],
+				"durationMin": 60,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Let the pressure release naturally.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 20,
+				"critical": "Do not use quick release; the violent boil clouds the stock and can spray hot liquid."
+			},
+			{
+				"id": "s4",
+				"text": "Strain, cool quickly and chill, then lift off the fat.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"strain",
+					"cool"
+				],
+				"durationMin": 30
+			}
+		],
+		"notes": {
+			"techniques": "The sealed pot extracts in an hour what takes three or more on the stove.",
+			"chemistry": "At about 120 °C under pressure, collagen converts to gelatin much faster, and the sealed pot does not bubble hard, so the stock stays fairly clear.",
+			"variations": "The fastest route to a rich, very gelatinous stock; wings give the most gelatin for the least effort."
+		}
+	}
+]

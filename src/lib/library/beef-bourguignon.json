@@ -1,0 +1,838 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-bourguignon",
+		"title": "Beef bourguignon, traditional marinated",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Burgundian marinated"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 210,
+			"totalMin": 970
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"braise",
+			"red-wine",
+			"make-ahead"
+		],
+		"equipment": [
+			"large bowl",
+			"cast-iron casserole with lid",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-chuck",
+				"name": "beef chuck or shin",
+				"role": "meat",
+				"qty": 1.5,
+				"unit": "kg",
+				"prep": "cut into 5 cm chunks",
+				"original": "1½ kg beef chuck or shin, cut into 5 cm chunks"
+			},
+			{
+				"id": "i2",
+				"key": "red-wine",
+				"name": "red Burgundy (Pinot Noir)",
+				"role": "wine",
+				"qty": 750,
+				"unit": "ml",
+				"original": "750 ml red Burgundy (Pinot Noir)"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thickly sliced",
+				"original": "2 carrots, thickly sliced"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "crushed",
+				"original": "3 cloves garlic, crushed"
+			},
+			{
+				"id": "i6",
+				"key": "bouquet-garni",
+				"name": "bouquet garni (thyme, bay, parsley stalks)",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bouquet garni (thyme, bay, parsley stalks)"
+			},
+			{
+				"id": "i7",
+				"key": "lardons",
+				"name": "smoked lardons",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g smoked lardons"
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i9",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp all-purpose flour"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i11",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 300,
+				"unit": "ml",
+				"original": "300 ml beef stock"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Salt, to taste"
+			},
+			{
+				"id": "i13",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i14",
+				"key": "pearl-onion",
+				"name": "pearl onions",
+				"role": "allium",
+				"qty": 200,
+				"unit": "g",
+				"prep": "peeled",
+				"group": "Garnish",
+				"original": "200 g pearl onions, peeled"
+			},
+			{
+				"id": "i15",
+				"key": "button-mushroom",
+				"name": "button mushrooms",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "quartered",
+				"group": "Garnish",
+				"original": "250 g button mushrooms, quartered"
+			},
+			{
+				"id": "i16",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"group": "Garnish",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i17",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2 tbsp flat-leaf parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Marinate the beef with the wine, carrot, onion, garlic and bouquet garni in the fridge overnight.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Drain, keeping the wine and vegetables separate. Pat the beef very dry.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"drain"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fry the lardons in the oil until crisp, then lift out. Sear the beef in batches in the fat until well browned on all sides.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"render",
+					"sear"
+				],
+				"durationMin": 20,
+				"heat": "medium-high",
+				"critical": "Dry meat and an uncrowded pan are needed for a deep brown crust."
+			},
+			{
+				"id": "s4",
+				"text": "Brown the marinade vegetables in the same pot, then stir in flour and tomato paste and cook for 2 minutes.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s5",
+				"text": "Return beef and lardons, add the marinade wine, bouquet garni and stock. Bring to a simmer, cover and braise at 150 °C until the beef is fork-tender.",
+				"uses": [
+					"s4",
+					"i11"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 180,
+				"tempC": 150
+			},
+			{
+				"id": "s6",
+				"text": "Brown the pearl onions and mushrooms in butter until golden.",
+				"uses": [
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s7",
+				"text": "Remove the herbs, skim the fat, reduce the sauce if thin, and season. Stir in the onions and mushrooms and scatter with parsley.",
+				"uses": [
+					"s5",
+					"s6",
+					"i12",
+					"i13",
+					"i17"
+				],
+				"technique": [
+					"reduce",
+					"finish"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Searing in batches and braising gently below a full boil makes the meat tender without drying it.",
+			"chemistry": "Collagen in chuck or shin converts to gelatin over long, moist cooking, giving silky meat and a glossy sauce.",
+			"spiceProfile": "Thyme, bay and parsley with the fruit and tannin of red wine; smoky lardons add depth.",
+			"variations": "The overnight wine marinade is the old Burgundian way; it seasons the meat deeply but adds a day to the timing."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-bourguignon",
+		"title": "Beef bourguignon, bistro oven braise",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Bistro oven braise"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 200,
+			"totalMin": 230
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"braise",
+			"red-wine",
+			"sunday"
+		],
+		"equipment": [
+			"cast-iron casserole with lid",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-chuck",
+				"name": "beef chuck",
+				"role": "meat",
+				"qty": 1.5,
+				"unit": "kg",
+				"prep": "cut into 5 cm chunks",
+				"original": "1½ kg beef chuck, cut into 5 cm chunks"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1½ tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "Black pepper, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "pancetta",
+				"name": "pancetta or smoked bacon",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "diced",
+				"original": "150 g pancetta or smoked bacon, diced"
+			},
+			{
+				"id": "i5",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			},
+			{
+				"id": "i6",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 carrots, sliced"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 yellow onion, sliced"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp all-purpose flour"
+			},
+			{
+				"id": "i10",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i11",
+				"key": "red-wine",
+				"name": "dry red wine",
+				"role": "wine",
+				"qty": 750,
+				"unit": "ml",
+				"original": "750 ml dry red wine"
+			},
+			{
+				"id": "i12",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml beef stock"
+			},
+			{
+				"id": "i13",
+				"key": "thyme",
+				"name": "thyme",
+				"role": "herb",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 sprigs thyme"
+			},
+			{
+				"id": "i14",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			},
+			{
+				"id": "i15",
+				"key": "pearl-onion",
+				"name": "pearl onions",
+				"role": "allium",
+				"qty": 200,
+				"unit": "g",
+				"prep": "peeled",
+				"group": "Garnish",
+				"original": "200 g pearl onions, peeled"
+			},
+			{
+				"id": "i16",
+				"key": "button-mushroom",
+				"name": "button mushrooms",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "quartered",
+				"group": "Garnish",
+				"original": "250 g button mushrooms, quartered"
+			},
+			{
+				"id": "i17",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"group": "Garnish",
+				"original": "30 g butter"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pat the beef dry and season with salt and pepper.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Crisp the pancetta in the oil and lift out. Brown the beef in batches in the fat.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"render",
+					"sear"
+				],
+				"durationMin": 20,
+				"heat": "medium-high",
+				"critical": "Do not crowd the pan, or the beef steams instead of browning."
+			},
+			{
+				"id": "s3",
+				"text": "Soften carrots, onion and garlic in the pot, then stir in flour and tomato paste.",
+				"uses": [
+					"s2",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add wine, stock, herbs, beef and pancetta. Bring to a simmer, cover and braise at 160 °C until tender.",
+				"uses": [
+					"s3",
+					"i11",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"braise"
+				],
+				"durationMin": 165,
+				"tempC": 160
+			},
+			{
+				"id": "s5",
+				"text": "Sauté the onions and mushrooms in butter until browned.",
+				"uses": [
+					"i15",
+					"i16",
+					"i17"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 12,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s6",
+				"text": "Skim the fat, adjust the sauce consistency and seasoning, and fold in the garnish.",
+				"uses": [
+					"s4",
+					"s5"
+				],
+				"technique": [
+					"reduce",
+					"finish"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Cooking the mushrooms and onions separately keeps them browned and firm instead of stewed.",
+			"chemistry": "Flour cooked in the fat thickens the braise as its starch gelatinises in the liquid.",
+			"spiceProfile": "Thyme and bay, with tomato paste for extra savouriness.",
+			"variations": "Same flavour as the traditional dish but done in one afternoon without marinating."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-bourguignon",
+		"title": "Beef bourguignon in the slow cooker",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Slow cooker"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 480,
+			"totalMin": 510
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"slow-cooker",
+			"hands-off"
+		],
+		"equipment": [
+			"frying pan",
+			"slow cooker"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "beef-chuck",
+				"name": "beef chuck",
+				"role": "meat",
+				"qty": 1.3,
+				"unit": "kg",
+				"prep": "cut into 5 cm chunks",
+				"original": "1.3 kg beef chuck, cut into 5 cm chunks"
+			},
+			{
+				"id": "i2",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp all-purpose flour"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1½ tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "½ tsp black pepper"
+			},
+			{
+				"id": "i5",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i6",
+				"key": "bacon",
+				"name": "smoked bacon",
+				"role": "cured-pork",
+				"qty": 150,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "150 g smoked bacon, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "red-wine",
+				"name": "dry red wine",
+				"role": "wine",
+				"qty": 500,
+				"unit": "ml",
+				"original": "500 ml dry red wine"
+			},
+			{
+				"id": "i8",
+				"key": "beef-stock",
+				"name": "beef stock",
+				"role": "stock",
+				"qty": 250,
+				"unit": "ml",
+				"original": "250 ml beef stock"
+			},
+			{
+				"id": "i9",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i10",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i11",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "chunked",
+				"original": "3 carrots, chunked"
+			},
+			{
+				"id": "i12",
+				"key": "pearl-onion",
+				"name": "pearl onions",
+				"role": "allium",
+				"qty": 200,
+				"unit": "g",
+				"prep": "peeled",
+				"original": "200 g pearl onions, peeled"
+			},
+			{
+				"id": "i13",
+				"key": "button-mushroom",
+				"name": "button mushrooms",
+				"role": "vegetable",
+				"qty": 250,
+				"unit": "g",
+				"prep": "halved",
+				"original": "250 g button mushrooms, halved"
+			},
+			{
+				"id": "i14",
+				"key": "thyme",
+				"name": "dried thyme",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried thyme"
+			},
+			{
+				"id": "i15",
+				"key": "bay-leaf",
+				"name": "bay leaves",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 bay leaves"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the beef with flour, salt and pepper. Brown it in batches in the oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 15,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Fry the bacon in the same pan, then deglaze with the wine, scraping up the browned bits, and bring to a boil.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"deglaze"
+				],
+				"durationMin": 8,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Put everything in the slow cooker with stock, tomato paste, garlic, vegetables and herbs. Cook on low until the beef is very tender.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14",
+					"i15"
+				],
+				"technique": [
+					"slow-cook"
+				],
+				"durationMin": 480,
+				"heat": "low",
+				"critical": "Brown the beef and boil the wine first; the slow cooker never gets hot enough to do either."
+			},
+			{
+				"id": "s4",
+				"text": "Remove the bay leaves, skim the fat and season.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"finish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Less liquid than a stovetop braise because nothing evaporates in a slow cooker.",
+			"chemistry": "Boiling the wine briefly before slow cooking drives off some alcohol and harsh notes that would otherwise linger.",
+			"variations": "Vegetables go in raw with the meat, so they are softer and less browned than in the oven versions."
+		}
+	}
+]

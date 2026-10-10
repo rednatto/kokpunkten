@@ -1,0 +1,748 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mapo-tofu",
+		"title": "Mapo tofu, Sichuan classic with beef",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Sichuan classic"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"chinese",
+			"sichuan"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"tofu",
+			"spicy",
+			"wok"
+		],
+		"equipment": [
+			"wok",
+			"pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "silken-tofu",
+				"name": "soft or silken tofu",
+				"role": "tofu",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 2 cm cubes",
+				"original": "500 g soft or silken tofu, in 2 cm cubes"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i4",
+				"key": "ground-beef",
+				"name": "ground beef",
+				"role": "meat",
+				"qty": 150,
+				"unit": "g",
+				"substitutes": [
+					"ground pork"
+				],
+				"original": "150 g ground beef"
+			},
+			{
+				"id": "i5",
+				"key": "doubanjiang",
+				"name": "Pixian doubanjiang (chili bean paste)",
+				"role": "chili",
+				"qty": 2.5,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "2.5 tbsp Pixian doubanjiang (chili bean paste), chopped"
+			},
+			{
+				"id": "i6",
+				"key": "fermented-black-beans",
+				"name": "fermented black beans (douchi)",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "rinsed and chopped",
+				"original": "1 tbsp fermented black beans (douchi), rinsed and chopped"
+			},
+			{
+				"id": "i7",
+				"key": "chili-flakes",
+				"name": "ground Sichuan chili flakes",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground Sichuan chili flakes"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "3 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i9",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "finely chopped",
+				"original": "1 tbsp ginger, finely chopped"
+			},
+			{
+				"id": "i10",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2.5 dl chicken stock"
+			},
+			{
+				"id": "i11",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp light soy sauce"
+			},
+			{
+				"id": "i12",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"prep": "mixed with 3 tbsp water",
+				"original": "1.5 tbsp cornstarch, mixed with 3 tbsp water"
+			},
+			{
+				"id": "i13",
+				"key": "sichuan-peppercorns",
+				"name": "Sichuan peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "toasted and ground",
+				"original": "1 tsp Sichuan peppercorns, toasted and ground"
+			},
+			{
+				"id": "i14",
+				"key": "scallion",
+				"name": "scallions or garlic greens",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 scallions or garlic greens, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the tofu cubes gently in salted water, then drain.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 3,
+				"heat": "medium-low",
+				"critical": "Handle the tofu gently and never stir hard; push it with the back of a spatula."
+			},
+			{
+				"id": "s2",
+				"text": "Fry the beef in the oil until crisp and browned.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Lower the heat, add doubanjiang and fry until the oil turns red, then add black beans, chili, garlic and ginger.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Add the stock and soy, slide in the tofu and simmer so it takes up the flavour.",
+				"uses": [
+					"s1",
+					"s3",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s5",
+				"text": "Add the cornstarch slurry in three additions, nudging gently, until the sauce clings.",
+				"uses": [
+					"s4",
+					"i12"
+				],
+				"technique": [
+					"thicken"
+				],
+				"durationMin": 1,
+				"heat": "medium"
+			},
+			{
+				"id": "s6",
+				"text": "Serve sprinkled with ground Sichuan pepper and scallions, with rice.",
+				"uses": [
+					"s5",
+					"i13",
+					"i14"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Blanching in salted water firms the tofu and seasons it. Adding the thickener in stages builds a glossy sauce that coats without turning gloopy.",
+			"chemistry": "Salt and heat firm the soy proteins on the tofu surface so cubes hold together. Sanshool in Sichuan pepper gives the tingling numbness.",
+			"spiceProfile": "Ma la: numbing Sichuan pepper and hot, salty, fermented chili bean paste, with savoury black beans.",
+			"variations": "The fiery original with beef and a red chili oil sheen. Japanese mabo dofu is milder and sweeter, and vegan versions use mushrooms."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mapo-tofu",
+		"title": "Mabo dofu, Japanese style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Japanese mild"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 15,
+			"totalMin": 25
+		},
+		"cuisine": [
+			"japanese",
+			"chinese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"tofu",
+			"mild",
+			"family"
+		],
+		"equipment": [
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "2 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "finely chopped",
+				"original": "1 tbsp ginger, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "ground-pork",
+				"name": "ground pork",
+				"role": "meat",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g ground pork"
+			},
+			{
+				"id": "i5",
+				"key": "doubanjiang",
+				"name": "tobanjan (chili bean paste)",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp tobanjan (chili bean paste)"
+			},
+			{
+				"id": "i6",
+				"key": "tianmianjiang",
+				"name": "sweet bean sauce (tianmianjiang)",
+				"role": "sauce",
+				"qty": 1,
+				"unit": "tbsp",
+				"substitutes": [
+					"1 tbsp miso + 1 tsp sugar"
+				],
+				"original": "1 tbsp sweet bean sauce (tianmianjiang)"
+			},
+			{
+				"id": "i7",
+				"key": "sake",
+				"name": "sake",
+				"role": "wine",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp sake"
+			},
+			{
+				"id": "i8",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2.5 dl chicken stock"
+			},
+			{
+				"id": "i9",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i10",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i11",
+				"key": "firm-tofu",
+				"name": "medium-firm tofu",
+				"role": "tofu",
+				"qty": 400,
+				"unit": "g",
+				"prep": "in 2 cm cubes",
+				"original": "400 g medium-firm tofu, in 2 cm cubes"
+			},
+			{
+				"id": "i12",
+				"key": "cornstarch",
+				"name": "potato starch or cornstarch",
+				"role": "thickener",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "mixed with 2 tbsp water",
+				"original": "1 tbsp potato starch or cornstarch, mixed with 2 tbsp water"
+			},
+			{
+				"id": "i13",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame oil"
+			},
+			{
+				"id": "i14",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 scallions, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the garlic and ginger in the oil, add the pork and fry until no longer pink.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 4,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the chili bean paste and sweet bean sauce and fry for a minute.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add sake, stock, soy and sugar and bring to a simmer.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s4",
+				"text": "Add the tofu and simmer gently.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 4,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s5",
+				"text": "Thicken with the starch slurry, then drizzle with sesame oil and top with scallions.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"thicken"
+				],
+				"durationMin": 1,
+				"critical": "Take the pan off the heat while stirring in the slurry so it does not form lumps."
+			}
+		],
+		"notes": {
+			"techniques": "A gentler home version: less oil, little chili and no Sichuan pepper, finished with sesame oil.",
+			"chemistry": "Potato starch thickens at a lower temperature than cornstarch and gives a clearer, more elastic sauce.",
+			"spiceProfile": "Savoury-sweet, with only a mild chili warmth from a small amount of bean paste.",
+			"variations": "Milder and sweeter than the Sichuan original, made with pork and sweet bean sauce. A family dish in Japan, often made from a packet mix."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mapo-tofu",
+		"title": "Mapo tofu with shiitake, vegan",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Vegan mushroom"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"chinese",
+			"sichuan"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"tofu",
+			"vegan",
+			"spicy"
+		],
+		"equipment": [
+			"wok",
+			"pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "silken-tofu",
+				"name": "soft tofu",
+				"role": "tofu",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 2 cm cubes",
+				"original": "500 g soft tofu, in 2 cm cubes"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "dried-shiitake",
+				"name": "dried shiitake mushrooms",
+				"role": "umami",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "soaked in 3 dl hot water for 20 minutes, liquid kept",
+				"original": "6 dried shiitake mushrooms, soaked in 3 dl hot water for 20 minutes, liquid kept"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i5",
+				"key": "doubanjiang",
+				"name": "Pixian doubanjiang (chili bean paste)",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp Pixian doubanjiang (chili bean paste)"
+			},
+			{
+				"id": "i6",
+				"key": "fermented-black-beans",
+				"name": "fermented black beans (douchi)",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "1 tbsp fermented black beans (douchi), chopped"
+			},
+			{
+				"id": "i7",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i8",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "1 tbsp ginger, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp light soy sauce"
+			},
+			{
+				"id": "i10",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"prep": "mixed with 3 tbsp water",
+				"original": "1.5 tbsp cornstarch, mixed with 3 tbsp water"
+			},
+			{
+				"id": "i11",
+				"key": "chili-oil",
+				"name": "chili oil",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp chili oil"
+			},
+			{
+				"id": "i12",
+				"key": "sichuan-peppercorns",
+				"name": "Sichuan peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "toasted and ground",
+				"original": "1 tsp Sichuan peppercorns, toasted and ground"
+			},
+			{
+				"id": "i13",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "herb",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 scallions, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Blanch the tofu in salted water and drain.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 3,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Squeeze the shiitake and chop finely; keep the soaking liquid. Fry them in the oil until browned and slightly crisp.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 5,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s3",
+				"text": "Add doubanjiang, black beans, garlic and ginger and fry until the oil turns red.",
+				"uses": [
+					"s2",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Add 2.5 dl of the mushroom liquid and the soy, then the tofu, and simmer gently.",
+				"uses": [
+					"s1",
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s5",
+				"text": "Thicken with the slurry in stages and finish with chili oil, Sichuan pepper and scallions.",
+				"uses": [
+					"s4",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"thicken"
+				],
+				"durationMin": 1,
+				"critical": "Fry the mushrooms until properly browned; they replace the savoury depth of the meat."
+			}
+		],
+		"notes": {
+			"techniques": "Finely chopped shiitake are fried crisp to stand in for the minced meat, and their soaking liquid replaces the stock.",
+			"chemistry": "Dried shiitake are rich in guanylate, which boosts the glutamate in the bean paste and soy for strong umami.",
+			"spiceProfile": "Same ma la profile as the classic, with earthier, woodsy mushroom notes.",
+			"variations": "Fully plant-based but keeps the Sichuan heat and numbness of the original."
+		}
+	}
+]

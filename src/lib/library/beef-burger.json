@@ -1,0 +1,563 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-burger",
+		"title": "Classic grilled cheeseburger",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Thick grilled"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"grill"
+		],
+		"equipment": [
+			"grill or grill pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ground-beef",
+				"name": "ground beef chuck, 20% fat",
+				"role": "meat",
+				"qty": 720,
+				"unit": "g",
+				"original": "720 g ground chuck (20% fat)"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1 1/2 tsp salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp black pepper"
+			},
+			{
+				"id": "i4",
+				"key": "cheddar",
+				"name": "cheddar",
+				"role": "cheese",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 slices cheddar"
+			},
+			{
+				"id": "i5",
+				"key": "burger-buns",
+				"name": "brioche or potato buns",
+				"role": "bread",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 burger buns"
+			},
+			{
+				"id": "i6",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp butter, for the buns"
+			},
+			{
+				"id": "i7",
+				"key": "iceberg-lettuce",
+				"name": "lettuce",
+				"role": "leafy-green",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 lettuce leaves"
+			},
+			{
+				"id": "i8",
+				"key": "tomato",
+				"name": "tomato",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 tomato, sliced"
+			},
+			{
+				"id": "i9",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1/2 red onion, sliced"
+			},
+			{
+				"id": "i10",
+				"key": "pickles",
+				"name": "dill pickles",
+				"role": "vegetable",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 pickle slices"
+			},
+			{
+				"id": "i11",
+				"key": "ketchup",
+				"name": "ketchup",
+				"role": "sauce",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp ketchup"
+			},
+			{
+				"id": "i12",
+				"key": "yellow-mustard",
+				"name": "mustard",
+				"role": "sauce",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp mustard"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Gently shape the beef into 4 patties 2 cm thick, slightly wider than the buns, with a dimple in the centre. Chill.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"shape"
+				],
+				"durationMin": 15,
+				"critical": "Handle as little as possible; overworked meat turns dense and springy."
+			},
+			{
+				"id": "s2",
+				"text": "Season the patties generously just before cooking and grill over high heat, turning once, until 71 °C inside. Add cheese for the last minute.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"grill"
+				],
+				"durationMin": 10,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Butter and toast the buns cut-side down.",
+				"uses": [
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Build: bun, sauces, lettuce, tomato, patty, onion, pickles, top bun.",
+				"uses": [
+					"s2",
+					"s3",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The dimple keeps the patty from doming as the edges contract. Salting only just before cooking keeps the texture loose.",
+			"chemistry": "Salt mixed into ground meat dissolves myosin and makes it sausage-like and springy, which is why it goes on the surface at the last minute. Ground beef should reach 71 °C because surface bacteria get mixed throughout.",
+			"variations": "A thick, juicy grilled patty. The smash burger has thin, crusty patties, and the Juicy Lucy hides the cheese inside."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-burger",
+		"title": "Smash burger",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Smash burger"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 10,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"quick",
+			"griddle"
+		],
+		"equipment": [
+			"cast-iron pan or griddle",
+			"sturdy spatula"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ground-beef",
+				"name": "ground beef chuck, 20% fat",
+				"role": "meat",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g ground chuck, in 8 loose 75 g balls"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i3",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "paper-thin",
+				"original": "1/2 onion, paper-thin"
+			},
+			{
+				"id": "i5",
+				"key": "american-cheese",
+				"name": "American cheese",
+				"role": "cheese",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 slices American cheese"
+			},
+			{
+				"id": "i6",
+				"key": "potato-buns",
+				"name": "soft potato buns",
+				"role": "bread",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 potato buns"
+			},
+			{
+				"id": "i7",
+				"key": "mayonnaise",
+				"name": "mayonnaise",
+				"role": "sauce",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp mayonnaise"
+			},
+			{
+				"id": "i8",
+				"key": "ketchup",
+				"name": "ketchup",
+				"role": "sauce",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp ketchup"
+			},
+			{
+				"id": "i9",
+				"key": "pickles",
+				"name": "pickles",
+				"role": "vegetable",
+				"qty": 8,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "8 pickle slices, finely chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix mayonnaise, ketchup and chopped pickles for the sauce.",
+				"uses": [
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Toast the buns in the dry pan, then heat it until smoking.",
+				"uses": [
+					"i6"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s3",
+				"text": "Put the beef balls in the pan, smash them flat to 5 mm with a spatula, season and top with onion.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"smash",
+					"sear"
+				],
+				"durationMin": 2,
+				"heat": "high",
+				"critical": "Smash within the first 30 seconds, before the fat starts to render, or the patty won't spread."
+			},
+			{
+				"id": "s4",
+				"text": "Scrape and flip when deeply browned, add cheese and cook 30 seconds more.",
+				"uses": [
+					"s3",
+					"i5"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Stack two patties per bun with sauce.",
+				"uses": [
+					"s1",
+					"s2",
+					"s4"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Thin patties pressed onto a very hot pan maximise crust; two stacked patties give enough meat per burger.",
+			"chemistry": "Full contact with a smoking-hot pan gives fast Maillard browning over the whole surface.",
+			"variations": "Thin and crusty with melted American cheese, done in minutes. The grilled burger is thick and juicy."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-burger",
+		"title": "Juicy Lucy",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Juicy Lucy (cheese-stuffed)"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 15,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"stuffed",
+			"regional"
+		],
+		"equipment": [
+			"cast-iron pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "ground-beef",
+				"name": "ground beef chuck, 20% fat",
+				"role": "meat",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g ground chuck"
+			},
+			{
+				"id": "i2",
+				"key": "american-cheese",
+				"name": "American cheese",
+				"role": "cheese",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "folded",
+				"original": "4 slices American cheese, folded into squares"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "pepper"
+			},
+			{
+				"id": "i5",
+				"key": "burger-buns",
+				"name": "burger buns",
+				"role": "bread",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 burger buns"
+			},
+			{
+				"id": "i6",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 onion, sliced and fried"
+			},
+			{
+				"id": "i7",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp oil"
+			},
+			{
+				"id": "i8",
+				"key": "pickles",
+				"name": "pickles",
+				"role": "vegetable",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 pickle slices"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Divide the beef into 8 thin patties. Place folded cheese on 4, top with the others and pinch the edges firmly to seal.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"shape"
+				],
+				"critical": "Seal the edges completely or the cheese leaks out."
+			},
+			{
+				"id": "s2",
+				"text": "Fry the onion in oil until soft and golden, then set aside.",
+				"uses": [
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Season and cook the patties over medium heat, turning once, until 71 °C. Poke a small hole on top to let steam escape.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Rest 2 minutes, then serve in buns with onions and pickles.",
+				"uses": [
+					"s3",
+					"s2",
+					"i5",
+					"i8"
+				],
+				"technique": [
+					"rest",
+					"assemble"
+				],
+				"durationMin": 2,
+				"critical": "Warn eaters: the molten cheese inside is scalding."
+			}
+		],
+		"notes": {
+			"techniques": "Medium heat lets the centre get hot enough to melt the cheese before the outside burns.",
+			"variations": "The Minneapolis style with cheese sealed inside the patty instead of on top."
+		}
+	}
+]

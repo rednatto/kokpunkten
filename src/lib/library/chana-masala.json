@@ -1,0 +1,811 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chana-masala",
+		"title": "Chana masala, weeknight with canned chickpeas",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Weeknight canned"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 30,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"indian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"vegan",
+			"legumes",
+			"weeknight"
+		],
+		"equipment": [
+			"heavy pot or kadai"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin seeds"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "2 yellow onions, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "4 cloves garlic, grated"
+			},
+			{
+				"id": "i6",
+				"key": "green-chili",
+				"name": "green chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 green chili, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground coriander"
+			},
+			{
+				"id": "i8",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp ground turmeric"
+			},
+			{
+				"id": "i9",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i10",
+				"key": "canned-tomatoes",
+				"name": "chopped tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g chopped tomatoes"
+			},
+			{
+				"id": "i11",
+				"key": "chickpeas",
+				"name": "canned chickpeas",
+				"role": "legume",
+				"qty": 800,
+				"unit": "g",
+				"prep": "drained, about 480 g drained weight",
+				"original": "2 cans (2 × 400 g) chickpeas, drained"
+			},
+			{
+				"id": "i12",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 2.5,
+				"unit": "dl",
+				"original": "2.5 dl water"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i14",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i15",
+				"key": "amchur",
+				"name": "amchur (dried mango powder)",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tsp",
+				"substitutes": [
+					"1 tbsp lemon juice"
+				],
+				"original": "1 tsp amchur (dried mango powder)"
+			},
+			{
+				"id": "i16",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp cilantro, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the cumin seeds in the oil until they darken a shade.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"bloom"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the onions and fry until golden brown.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 12,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add ginger, garlic and green chili and fry for a minute, then the ground spices.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"fry"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Add the tomatoes and cook until thick and the oil separates.",
+				"uses": [
+					"s3",
+					"i10"
+				],
+				"technique": [
+					"fry",
+					"reduce"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s5",
+				"text": "Add chickpeas, water and salt. Simmer, crushing a few chickpeas against the pot to thicken the gravy.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 12,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s6",
+				"text": "Finish with garam masala, amchur and cilantro.",
+				"uses": [
+					"s5",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Mashing some chickpeas into the sauce thickens it without cream or flour.",
+			"chemistry": "Chickpeas release starch as they are crushed and simmered, and it gelatinises to thicken the gravy.",
+			"spiceProfile": "Earthy coriander and cumin with mild heat, finished with tangy amchur and aromatic garam masala.",
+			"variations": "A quick onion-tomato gravy with canned chickpeas. Pindi chole uses dried chickpeas cooked with tea, a dry spice mix and no tomato gravy."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chana-masala",
+		"title": "Pindi chole, dark and tangy",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Pindi chole"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 75,
+			"totalMin": 810
+		},
+		"cuisine": [
+			"indian",
+			"punjabi"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"legumes",
+			"street-food"
+		],
+		"equipment": [
+			"large pot or pressure cooker",
+			"small pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-chickpeas",
+				"name": "dried chickpeas",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"prep": "soaked overnight",
+				"original": "250 g dried chickpeas, soaked overnight"
+			},
+			{
+				"id": "i2",
+				"key": "black-tea",
+				"name": "black tea bags",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 black tea bags"
+			},
+			{
+				"id": "i3",
+				"key": "black-cardamom",
+				"name": "black cardamom pod",
+				"role": "spice",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 black cardamom pod"
+			},
+			{
+				"id": "i4",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i5",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i6",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l water"
+			},
+			{
+				"id": "i7",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"group": "spice mix",
+				"original": "2 tsp ground coriander"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "roasted ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "spice mix",
+				"original": "1 tsp roasted ground cumin"
+			},
+			{
+				"id": "i9",
+				"key": "anardana",
+				"name": "pomegranate seed powder (anardana)",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "spice mix",
+				"original": "1 tbsp pomegranate seed powder (anardana)"
+			},
+			{
+				"id": "i10",
+				"key": "amchur",
+				"name": "amchur (dried mango powder)",
+				"role": "acid",
+				"qty": 1.5,
+				"unit": "tsp",
+				"group": "spice mix",
+				"original": "1.5 tsp amchur (dried mango powder)"
+			},
+			{
+				"id": "i11",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "spice mix",
+				"original": "1 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i12",
+				"key": "black-pepper",
+				"name": "ground black pepper",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"group": "spice mix",
+				"original": "0.5 tsp ground black pepper"
+			},
+			{
+				"id": "i13",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "spice mix",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i14",
+				"key": "ghee",
+				"name": "ghee",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp ghee"
+			},
+			{
+				"id": "i15",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "in thin matchsticks",
+				"original": "2 tbsp ginger, in thin matchsticks"
+			},
+			{
+				"id": "i16",
+				"key": "green-chili",
+				"name": "green chilies",
+				"role": "chili",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "slit",
+				"original": "3 green chilies, slit"
+			},
+			{
+				"id": "i17",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in rings, to serve",
+				"original": "1 red onion, in rings, to serve"
+			},
+			{
+				"id": "i18",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in wedges, to serve",
+				"original": "1 lemon, in wedges, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Drain the soaked chickpeas and simmer with tea bags, black cardamom, bay leaf, salt and water until very soft. Discard the tea bags and whole spices; keep some cooking liquid.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 60,
+				"heat": "medium-low",
+				"critical": "The chickpeas must be soft enough to crush easily, or they will not absorb the spices."
+			},
+			{
+				"id": "s2",
+				"text": "Mix the spice mix and stir it into the drained chickpeas with a little cooking liquid. Simmer until almost dry.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Scatter ginger and green chilies on top. Heat the ghee until smoking hot and pour it over, then cover for 5 minutes.",
+				"uses": [
+					"s2",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"temper"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s4",
+				"text": "Stir and serve with onion rings, lemon wedges and bhature or kulcha.",
+				"uses": [
+					"s3",
+					"i17",
+					"i18"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The chickpeas are not cooked in a gravy. They are coated in a dry, sour spice mix and finished with a pour of very hot ghee.",
+			"chemistry": "Tannins from the tea bind to the chickpeas, darkening them without adding much flavour. The hot ghee releases the fat-soluble aromas of ginger and spices.",
+			"spiceProfile": "Sour from anardana and amchur, earthy from roasted cumin and coriander, with peppery heat and fresh ginger.",
+			"variations": "Darker, drier and tangier than gravy-style chana masala, and there is no onion-tomato base."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chana-masala",
+		"title": "Punjabi chole from dried chickpeas",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Punjabi gravy chole"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 70,
+			"totalMin": 805
+		},
+		"cuisine": [
+			"indian",
+			"punjabi"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegetarian",
+			"vegan",
+			"legumes"
+		],
+		"equipment": [
+			"pressure cooker or large pot",
+			"heavy pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-chickpeas",
+				"name": "dried chickpeas",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"prep": "soaked overnight",
+				"original": "250 g dried chickpeas, soaked overnight"
+			},
+			{
+				"id": "i2",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.25,
+				"unit": "l",
+				"original": "1.25 l water"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1.5 tsp salt"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp vegetable oil"
+			},
+			{
+				"id": "i5",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i6",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin seeds"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "puréed or very finely chopped",
+				"original": "2 yellow onions, puréed or very finely chopped"
+			},
+			{
+				"id": "i8",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i9",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 5,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "5 cloves garlic, grated"
+			},
+			{
+				"id": "i10",
+				"key": "tomato",
+				"name": "ripe tomatoes",
+				"role": "vegetable",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "puréed",
+				"original": "3 ripe tomatoes, puréed"
+			},
+			{
+				"id": "i11",
+				"key": "chole-masala",
+				"name": "chole masala",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"substitutes": [
+					"1 tbsp garam masala + 1 tsp amchur"
+				],
+				"original": "2 tbsp chole masala"
+			},
+			{
+				"id": "i12",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp ground turmeric"
+			},
+			{
+				"id": "i13",
+				"key": "kashmiri-chili-powder",
+				"name": "Kashmiri chili powder",
+				"role": "chili",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Kashmiri chili powder"
+			},
+			{
+				"id": "i14",
+				"key": "kasuri-methi",
+				"name": "dried fenugreek leaves (kasuri methi)",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried fenugreek leaves (kasuri methi)"
+			},
+			{
+				"id": "i15",
+				"key": "cilantro",
+				"name": "cilantro",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp cilantro, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the drained chickpeas in the water with half the salt until tender, about 15 minutes at pressure or 60 minutes in a pot. Keep the liquid.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"pressure-cook",
+					"simmer"
+				],
+				"durationMin": 45
+			},
+			{
+				"id": "s2",
+				"text": "Fry the bay leaf and cumin seeds in the oil, then add the onion and fry until deep golden.",
+				"uses": [
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 12,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add ginger and garlic, then the tomatoes, chole masala, turmeric and chili. Fry until the oil separates.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"fry",
+					"reduce"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the chickpeas with enough cooking liquid for a thick gravy and the rest of the salt. Simmer, mashing a few chickpeas.",
+				"uses": [
+					"s1",
+					"s3"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Stir in the crushed fenugreek and cilantro.",
+				"uses": [
+					"s4",
+					"i14",
+					"i15"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Chickpeas cooked from dry and simmered in their own liquid make a deeper, silkier gravy than canned ones.",
+			"chemistry": "Soaking shortens cooking time; the cooking liquid is full of dissolved starch and protein that thickens the gravy.",
+			"spiceProfile": "Robust and warm from chole masala (coriander, cumin, pepper, dried mango, cloves), with fenugreek bitterness.",
+			"variations": "A rich gravy-style chole for a weekend; the Pindi version is drier and tangier, and the weeknight one uses canned chickpeas."
+		}
+	}
+]

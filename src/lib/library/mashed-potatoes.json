@@ -1,0 +1,415 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mashed-potatoes",
+		"title": "Classic mashed potatoes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic butter and milk"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"american",
+			"british"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"potato",
+			"comfort"
+		],
+		"equipment": [
+			"pot",
+			"potato masher"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "floury-potato",
+				"name": "floury potatoes (e.g. Russet, King Edward)",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "peeled and cut into chunks",
+				"original": "1 kg floury potatoes, peeled and cut into even chunks"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i3",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl milk"
+			},
+			{
+				"id": "i4",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g butter"
+			},
+			{
+				"id": "i5",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black or white pepper"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Start the potatoes in cold, well-salted water, bring to a boil and simmer until a knife slides in with no resistance.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"boil",
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Drain and leave in the hot pot for a minute to steam dry.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"steam"
+				],
+				"durationMin": 2,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Warm the milk with the butter.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"heat"
+				],
+				"durationMin": 3,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Mash the potatoes, then beat in the warm milk and butter and season with pepper and salt.",
+				"uses": [
+					"s2",
+					"s3",
+					"i5"
+				],
+				"technique": [
+					"mash"
+				],
+				"critical": "Never use a blender or food processor; it makes the potatoes gluey."
+			}
+		],
+		"notes": {
+			"techniques": "Starting in cold water cooks the chunks evenly to the centre. Steam-drying lets the potatoes take up more butter and milk.",
+			"chemistry": "Overworking bursts swollen starch cells and releases free starch, which makes the mash gluey. Warm dairy is absorbed more easily than cold.",
+			"variations": "A homely, slightly textured mash. The French pommes purée is riced and very rich, and colcannon adds greens and spring onion."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mashed-potatoes",
+		"title": "Pommes purée",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – French pommes purée"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 40,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"potato",
+			"rich",
+			"restaurant"
+		],
+		"equipment": [
+			"pot",
+			"potato ricer",
+			"fine sieve"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "waxy-potato",
+				"name": "yellow, slightly waxy potatoes (e.g. Ratte)",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"original": "1 kg yellow potatoes, unpeeled"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i3",
+				"key": "butter",
+				"name": "cold butter, cubed",
+				"role": "fat",
+				"qty": 250,
+				"unit": "g",
+				"prep": "cubed",
+				"original": "250 g cold butter, cubed"
+			},
+			{
+				"id": "i4",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 200,
+				"unit": "ml",
+				"prep": "hot",
+				"original": "2 dl whole milk, hot"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer the potatoes whole in their skins in salted water until completely tender.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 35,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Peel while hot and pass through a ricer, then through a fine sieve.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"rice",
+					"sieve"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Over low heat, beat in the cold butter a few cubes at a time, then the hot milk, until silky.",
+				"uses": [
+					"s2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"emulsify"
+				],
+				"durationMin": 5,
+				"heat": "low",
+				"critical": "Add the butter gradually and keep the heat low, or the fat separates out."
+			}
+		],
+		"notes": {
+			"techniques": "Cooking the potatoes whole in their skins stops them absorbing water. Ricing then sieving gives a velvety texture without overworking them.",
+			"chemistry": "Cold butter beaten in gradually forms an emulsion with the potato starch and milk, so the purée is glossy instead of greasy.",
+			"variations": "Uses about four times as much butter as a home mash and is pushed through a sieve until silky."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "mashed-potatoes",
+		"title": "Colcannon",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Irish colcannon"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"irish"
+		],
+		"course": [
+			"side"
+		],
+		"tags": [
+			"potato",
+			"cabbage"
+		],
+		"equipment": [
+			"pot",
+			"frying pan",
+			"masher"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "floury-potato",
+				"name": "floury potatoes",
+				"role": "starch",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "peeled and chunked",
+				"original": "1 kg floury potatoes, peeled and chunked"
+			},
+			{
+				"id": "i2",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i3",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 80,
+				"unit": "g",
+				"original": "80 g butter (divided)"
+			},
+			{
+				"id": "i4",
+				"key": "savoy-cabbage",
+				"name": "savoy cabbage or kale",
+				"role": "leafy-green",
+				"qty": 250,
+				"unit": "g",
+				"prep": "finely shredded",
+				"original": "250 g cabbage, finely shredded"
+			},
+			{
+				"id": "i5",
+				"key": "scallion",
+				"name": "spring onions",
+				"role": "allium",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "4 spring onions, sliced"
+			},
+			{
+				"id": "i6",
+				"key": "whole-milk",
+				"name": "whole milk",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl milk"
+			},
+			{
+				"id": "i7",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "pepper"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Boil the potatoes in salted water until tender, drain and steam dry.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s2",
+				"text": "Cook the cabbage in half the butter until wilted but still green.",
+				"uses": [
+					"i4",
+					"i3"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Heat the milk with the spring onions for a few minutes to soften them.",
+				"uses": [
+					"i6",
+					"i5"
+				],
+				"technique": [
+					"infuse"
+				],
+				"durationMin": 3,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Mash the potatoes with the onion milk, fold in the cabbage and pepper, and serve with the rest of the butter melting in a well on top.",
+				"uses": [
+					"s1",
+					"s2",
+					"s3",
+					"i7"
+				],
+				"technique": [
+					"mash",
+					"fold"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Steeping the spring onions in the milk softens them and flavours the mash.",
+			"variations": "Adds cabbage or kale and spring onion. Classic mash is plain, and pommes purée is much richer."
+		}
+	}
+]

@@ -1,0 +1,655 @@
+[
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "french-onion-soup",
+  "title": "French onion soup, classic gratinée",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Parisian gratinée"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 90,
+   "totalMin": 105
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "soup",
+   "main"
+  ],
+  "tags": [
+   "comfort",
+   "cheese",
+   "winter"
+  ],
+  "equipment": [
+   "heavy pot",
+   "ovenproof soup bowls",
+   "baking sheet"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 50,
+    "unit": "g",
+    "original": "50 g butter"
+   },
+   {
+    "id": "i2",
+    "key": "yellow-onion",
+    "name": "yellow onions",
+    "role": "allium",
+    "qty": 1,
+    "unit": "kg",
+    "prep": "thinly sliced",
+    "original": "1 kg yellow onions, thinly sliced"
+   },
+   {
+    "id": "i3",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp salt"
+   },
+   {
+    "id": "i4",
+    "key": "all-purpose-flour",
+    "name": "all-purpose flour",
+    "role": "thickener",
+    "qty": 1,
+    "unit": "tbsp",
+    "original": "1 tbsp all-purpose flour"
+   },
+   {
+    "id": "i5",
+    "key": "dry-white-wine",
+    "name": "dry white wine",
+    "role": "wine",
+    "qty": 200,
+    "unit": "ml",
+    "original": "200 ml dry white wine"
+   },
+   {
+    "id": "i6",
+    "key": "beef-stock",
+    "name": "beef stock",
+    "role": "stock",
+    "qty": 1.2,
+    "unit": "l",
+    "original": "1.2 l beef stock"
+   },
+   {
+    "id": "i7",
+    "key": "thyme",
+    "name": "thyme",
+    "role": "herb",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 sprigs thyme"
+   },
+   {
+    "id": "i8",
+    "key": "bay-leaf",
+    "name": "bay leaf",
+    "role": "herb",
+    "qty": 1,
+    "unit": "piece",
+    "original": "1 bay leaf"
+   },
+   {
+    "id": "i9",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i10",
+    "key": "baguette",
+    "name": "baguette",
+    "role": "bread",
+    "qty": 8,
+    "unit": "piece",
+    "prep": "sliced 1.5 cm thick",
+    "original": "8 slices baguette, 1.5 cm thick"
+   },
+   {
+    "id": "i11",
+    "key": "gruyere",
+    "name": "Gruyère",
+    "role": "cheese",
+    "qty": 200,
+    "unit": "g",
+    "prep": "grated",
+    "original": "200 g Gruyère, grated"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Melt the butter in a heavy pot, add the onions and salt, and cook slowly, stirring often, until deep brown and jammy.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3"
+    ],
+    "technique": [
+     "caramelize"
+    ],
+    "durationMin": 60,
+    "heat": "medium-low",
+    "critical": "Do not rush the onions; the colour is the flavour of the soup."
+   },
+   {
+    "id": "s2",
+    "text": "Stir in the flour and cook for 2 minutes.",
+    "uses": [
+     "s1",
+     "i4"
+    ],
+    "technique": [
+     "saute"
+    ],
+    "durationMin": 2,
+    "heat": "medium"
+   },
+   {
+    "id": "s3",
+    "text": "Deglaze with the wine, scraping up the browned bits, and reduce by half.",
+    "uses": [
+     "s2",
+     "i5"
+    ],
+    "technique": [
+     "deglaze",
+     "reduce"
+    ],
+    "durationMin": 3,
+    "heat": "high"
+   },
+   {
+    "id": "s4",
+    "text": "Add stock, thyme and bay leaf and simmer. Remove the herbs and season with pepper and salt.",
+    "uses": [
+     "s3",
+     "i6",
+     "i7",
+     "i8",
+     "i9"
+    ],
+    "technique": [
+     "simmer"
+    ],
+    "durationMin": 25,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s5",
+    "text": "Toast the baguette slices in the oven until dry and crisp.",
+    "uses": [
+     "i10"
+    ],
+    "technique": [
+     "toast"
+    ],
+    "durationMin": 8,
+    "tempC": 200
+   },
+   {
+    "id": "s6",
+    "text": "Ladle soup into ovenproof bowls, top with the toasts and a thick layer of cheese, and grill until bubbling and browned.",
+    "uses": [
+     "s4",
+     "s5",
+     "i11"
+    ],
+    "technique": [
+     "broil"
+    ],
+    "durationMin": 4,
+    "heat": "high"
+   }
+  ],
+  "notes": {
+   "techniques": "Long, slow caramelisation develops the sweetness and colour; a splash of water helps lift any browning from the pot.",
+   "chemistry": "Onion sugars caramelise and react with amino acids in Maillard browning, creating the deep savoury-sweet base.",
+   "spiceProfile": "Thyme and bay with black pepper; nutty Gruyère on top.",
+   "variations": "Beef stock and white wine are the classic bistro combination; other versions swap in vegetable stock or let the oven do the caramelising."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "french-onion-soup",
+  "title": "Vegetarian French onion soup",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Vegetarian"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 80,
+   "totalMin": 95
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "soup",
+   "main"
+  ],
+  "tags": [
+   "vegetarian",
+   "cheese"
+  ],
+  "equipment": [
+   "heavy pot",
+   "ovenproof soup bowls"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 40,
+    "unit": "g",
+    "original": "40 g butter"
+   },
+   {
+    "id": "i2",
+    "key": "olive-oil",
+    "name": "olive oil",
+    "role": "fat",
+    "qty": 1,
+    "unit": "tbsp",
+    "original": "1 tbsp olive oil"
+   },
+   {
+    "id": "i3",
+    "key": "yellow-onion",
+    "name": "yellow onions",
+    "role": "allium",
+    "qty": 1,
+    "unit": "kg",
+    "prep": "thinly sliced",
+    "original": "1 kg yellow onions, thinly sliced"
+   },
+   {
+    "id": "i4",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp salt"
+   },
+   {
+    "id": "i5",
+    "key": "garlic",
+    "name": "garlic",
+    "role": "allium",
+    "qty": 2,
+    "unit": "clove",
+    "prep": "sliced",
+    "original": "2 cloves garlic, sliced"
+   },
+   {
+    "id": "i6",
+    "key": "dry-sherry",
+    "name": "dry sherry",
+    "role": "wine",
+    "qty": 100,
+    "unit": "ml",
+    "original": "100 ml dry sherry"
+   },
+   {
+    "id": "i7",
+    "key": "vegetable-stock",
+    "name": "vegetable stock",
+    "role": "stock",
+    "qty": 1.2,
+    "unit": "l",
+    "original": "1.2 l vegetable stock"
+   },
+   {
+    "id": "i8",
+    "key": "soy-sauce",
+    "name": "soy sauce",
+    "role": "umami",
+    "qty": 1,
+    "unit": "tbsp",
+    "original": "1 tbsp soy sauce"
+   },
+   {
+    "id": "i9",
+    "key": "thyme",
+    "name": "thyme",
+    "role": "herb",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 sprigs thyme"
+   },
+   {
+    "id": "i10",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i11",
+    "key": "baguette",
+    "name": "baguette",
+    "role": "bread",
+    "qty": 8,
+    "unit": "piece",
+    "prep": "toasted",
+    "original": "8 slices baguette, toasted"
+   },
+   {
+    "id": "i12",
+    "key": "gruyere",
+    "name": "Gruyère (vegetarian rennet)",
+    "role": "cheese",
+    "qty": 200,
+    "unit": "g",
+    "prep": "grated",
+    "original": "200 g Gruyère (vegetarian rennet), grated"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Cook the onions with butter, oil and salt, stirring often, until deep golden brown.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3",
+     "i4"
+    ],
+    "technique": [
+     "caramelize"
+    ],
+    "durationMin": 55,
+    "heat": "medium-low",
+    "critical": "Slow browning is essential; without beef stock the onions carry all the depth."
+   },
+   {
+    "id": "s2",
+    "text": "Add the garlic and cook for 1 minute, then deglaze with sherry.",
+    "uses": [
+     "s1",
+     "i5",
+     "i6"
+    ],
+    "technique": [
+     "deglaze"
+    ]
+   },
+   {
+    "id": "s3",
+    "text": "Add stock, soy sauce and thyme and simmer. Season with pepper and remove the thyme.",
+    "uses": [
+     "s2",
+     "i7",
+     "i8",
+     "i9",
+     "i10"
+    ],
+    "technique": [
+     "simmer"
+    ],
+    "durationMin": 20,
+    "heat": "medium-low"
+   },
+   {
+    "id": "s4",
+    "text": "Fill ovenproof bowls, top with toast and cheese and grill until browned.",
+    "uses": [
+     "s3",
+     "i11",
+     "i12"
+    ],
+    "technique": [
+     "broil"
+    ],
+    "durationMin": 4,
+    "heat": "high"
+   }
+  ],
+  "notes": {
+   "techniques": "Soy sauce adds the savoury depth that beef stock would normally give.",
+   "chemistry": "Glutamates in soy sauce boost umami, compensating for the lighter vegetable stock.",
+   "spiceProfile": "Thyme, garlic and nutty sherry.",
+   "variations": "Meat-free; uses sherry instead of white wine for a rounder flavour."
+  }
+ },
+ {
+  "format": "kokpunkten.recipe/v0",
+  "dish": "french-onion-soup",
+  "title": "French onion soup with oven-caramelised onions",
+  "language": "en",
+  "source": {
+   "type": "ai-generated",
+   "name": "Kokpunkten – Oven-caramelised"
+  },
+  "servings": 4,
+  "time": {
+   "prepMin": 15,
+   "cookMin": 150,
+   "totalMin": 165
+  },
+  "cuisine": [
+   "french"
+  ],
+  "course": [
+   "soup",
+   "main"
+  ],
+  "tags": [
+   "hands-off",
+   "cheese"
+  ],
+  "equipment": [
+   "ovenproof pot with lid",
+   "ovenproof soup bowls"
+  ],
+  "ingredients": [
+   {
+    "id": "i1",
+    "key": "butter",
+    "name": "butter",
+    "role": "fat",
+    "qty": 50,
+    "unit": "g",
+    "original": "50 g butter"
+   },
+   {
+    "id": "i2",
+    "key": "yellow-onion",
+    "name": "yellow onions",
+    "role": "allium",
+    "qty": 1.3,
+    "unit": "kg",
+    "prep": "thinly sliced",
+    "original": "1.3 kg yellow onions, thinly sliced"
+   },
+   {
+    "id": "i3",
+    "key": "salt",
+    "name": "salt",
+    "role": "salt",
+    "qty": 1,
+    "unit": "tsp",
+    "original": "1 tsp salt"
+   },
+   {
+    "id": "i4",
+    "key": "water",
+    "name": "water",
+    "role": "liquid",
+    "qty": 200,
+    "unit": "ml",
+    "original": "200 ml water"
+   },
+   {
+    "id": "i5",
+    "key": "dry-white-wine",
+    "name": "dry white wine",
+    "role": "wine",
+    "qty": 150,
+    "unit": "ml",
+    "original": "150 ml dry white wine"
+   },
+   {
+    "id": "i6",
+    "key": "beef-stock",
+    "name": "beef stock",
+    "role": "stock",
+    "qty": 750,
+    "unit": "ml",
+    "original": "750 ml beef stock"
+   },
+   {
+    "id": "i7",
+    "key": "chicken-stock",
+    "name": "chicken stock",
+    "role": "stock",
+    "qty": 500,
+    "unit": "ml",
+    "original": "500 ml chicken stock"
+   },
+   {
+    "id": "i8",
+    "key": "thyme",
+    "name": "thyme",
+    "role": "herb",
+    "qty": 4,
+    "unit": "piece",
+    "original": "4 sprigs thyme"
+   },
+   {
+    "id": "i9",
+    "key": "black-pepper",
+    "name": "black pepper",
+    "role": "seasoning",
+    "qty": null,
+    "unit": "to-taste",
+    "original": "Black pepper, to taste"
+   },
+   {
+    "id": "i10",
+    "key": "baguette",
+    "name": "baguette",
+    "role": "bread",
+    "qty": 8,
+    "unit": "piece",
+    "prep": "toasted",
+    "original": "8 slices baguette, toasted"
+   },
+   {
+    "id": "i11",
+    "key": "gruyere",
+    "name": "Gruyère",
+    "role": "cheese",
+    "qty": 200,
+    "unit": "g",
+    "prep": "grated",
+    "original": "200 g Gruyère, grated"
+   }
+  ],
+  "steps": [
+   {
+    "id": "s1",
+    "text": "Heat the oven to 200 °C. Put butter, onions and salt in the pot, cover and bake for 1 hour.",
+    "uses": [
+     "i1",
+     "i2",
+     "i3"
+    ],
+    "technique": [
+     "bake"
+    ],
+    "durationMin": 60,
+    "tempC": 200
+   },
+   {
+    "id": "s2",
+    "text": "Uncover, stir, scraping the sides, and bake uncovered until the onions are dark golden.",
+    "uses": [
+     "s1"
+    ],
+    "technique": [
+     "caramelize"
+    ],
+    "durationMin": 75,
+    "tempC": 200
+   },
+   {
+    "id": "s3",
+    "text": "Move the pot to the stove. Add the water and cook, scraping the fond, until the onions are deep brown.",
+    "uses": [
+     "s2",
+     "i4"
+    ],
+    "technique": [
+     "deglaze"
+    ],
+    "durationMin": 10,
+    "heat": "medium-high",
+    "critical": "Let the fond darken between additions of liquid, but do not let it burn."
+   },
+   {
+    "id": "s4",
+    "text": "Add the wine and reduce, then the stocks and thyme. Simmer and season.",
+    "uses": [
+     "s3",
+     "i5",
+     "i6",
+     "i7",
+     "i8",
+     "i9"
+    ],
+    "technique": [
+     "simmer"
+    ],
+    "durationMin": 20
+   },
+   {
+    "id": "s5",
+    "text": "Fill bowls, top with toast and cheese and grill until browned.",
+    "uses": [
+     "s4",
+     "i10",
+     "i11"
+    ],
+    "technique": [
+     "broil"
+    ],
+    "durationMin": 4,
+    "heat": "high"
+   }
+  ],
+  "notes": {
+   "techniques": "The oven softens and browns the onions evenly with little stirring; repeated deglazing finishes the colour.",
+   "chemistry": "Repeatedly letting a fond form and dissolving it concentrates Maillard flavours into the onions.",
+   "spiceProfile": "Thyme and pepper; mixing beef and chicken stock keeps it rich but not heavy.",
+   "variations": "Takes longer but is mostly hands-off compared with stovetop caramelising."
+  }
+ }
+]

@@ -1,0 +1,523 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-stir-fry",
+		"title": "Beef and gai lan in oyster sauce, Cantonese style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Cantonese oyster sauce"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 10,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"chinese",
+			"cantonese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"wok",
+			"velveting"
+		],
+		"equipment": [
+			"wok",
+			"pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "flank-steak",
+				"name": "flank steak",
+				"role": "meat",
+				"qty": 400,
+				"unit": "g",
+				"prep": "sliced thinly across the grain",
+				"original": "400 g flank steak, sliced thinly across the grain"
+			},
+			{
+				"id": "i2",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "seasoning",
+				"qty": 0.25,
+				"unit": "tsp",
+				"group": "marinade",
+				"original": "0.25 tsp baking soda"
+			},
+			{
+				"id": "i3",
+				"key": "light-soy-sauce",
+				"name": "light soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"group": "marinade",
+				"original": "1 tbsp light soy sauce"
+			},
+			{
+				"id": "i4",
+				"key": "shaoxing-wine",
+				"name": "Shaoxing wine",
+				"role": "wine",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "2 tbsp Shaoxing wine, divided"
+			},
+			{
+				"id": "i5",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tsp",
+				"prep": "divided",
+				"original": "2 tsp cornstarch, divided"
+			},
+			{
+				"id": "i6",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i7",
+				"key": "gai-lan",
+				"name": "gai lan (Chinese broccoli)",
+				"role": "leafy-green",
+				"qty": 400,
+				"unit": "g",
+				"prep": "cut in 5 cm lengths, thick stems halved",
+				"substitutes": [
+					"broccolini",
+					"broccoli"
+				],
+				"original": "400 g gai lan (Chinese broccoli), cut in 5 cm lengths, thick stems halved"
+			},
+			{
+				"id": "i8",
+				"key": "oyster-sauce",
+				"name": "oyster sauce",
+				"role": "sauce",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp oyster sauce"
+			},
+			{
+				"id": "i9",
+				"key": "dark-soy-sauce",
+				"name": "dark soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "sauce",
+				"original": "1 tsp dark soy sauce"
+			},
+			{
+				"id": "i10",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "sauce",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i11",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1,
+				"unit": "dl",
+				"group": "sauce",
+				"original": "1 dl water"
+			},
+			{
+				"id": "i12",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "sliced",
+				"original": "3 cloves garlic, sliced"
+			},
+			{
+				"id": "i13",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "thin slices",
+				"original": "4 thin slices ginger"
+			},
+			{
+				"id": "i14",
+				"key": "rice",
+				"name": "cooked jasmine rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked jasmine rice, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the beef with baking soda, light soy, 1 tbsp Shaoxing wine, 1 tsp cornstarch and 1 tsp oil. Marinate.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"marinate",
+					"velvet"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s2",
+				"text": "Mix the oyster sauce, dark soy, sugar, water, the remaining wine and cornstarch.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Blanch the gai lan in boiling salted water with a drop of oil until bright green, then drain.",
+				"uses": [
+					"i7"
+				],
+				"technique": [
+					"blanch"
+				],
+				"durationMin": 2,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Sear the beef in a smoking-hot wok with 2 tbsp oil in one layer, then toss until just browned. Remove.",
+				"uses": [
+					"s1",
+					"i6"
+				],
+				"technique": [
+					"sear",
+					"stir-fry"
+				],
+				"durationMin": 2,
+				"heat": "high",
+				"critical": "Do not crowd the wok; the beef must sear, not stew."
+			},
+			{
+				"id": "s5",
+				"text": "Fry the garlic and ginger briefly, add the sauce and bring to a boil until glossy.",
+				"uses": [
+					"s2",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"thicken"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			},
+			{
+				"id": "s6",
+				"text": "Toss in the beef and gai lan to coat and serve with rice.",
+				"uses": [
+					"s3",
+					"s4",
+					"s5",
+					"i14"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 1,
+				"heat": "high"
+			}
+		],
+		"notes": {
+			"techniques": "Velveting with baking soda and cornstarch keeps thin slices of lean beef tender even at very high heat.",
+			"chemistry": "Baking soda raises the meat surface pH, which makes proteins hold more water and resist tightening. Slicing across the grain shortens tough muscle fibres.",
+			"spiceProfile": "Savoury and gently sweet oyster sauce, with ginger and garlic; no chili.",
+			"variations": "The Cantonese original with gai lan and a modest amount of sauce. The American takeout version uses broccoli florets and a sweeter, more abundant sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "beef-stir-fry",
+		"title": "Beef and broccoli, American takeout style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – American takeout"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 12,
+			"totalMin": 27
+		},
+		"cuisine": [
+			"chinese",
+			"american"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"beef",
+			"wok",
+			"weeknight"
+		],
+		"equipment": [
+			"wok or large frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "flank-steak",
+				"name": "flank steak",
+				"role": "meat",
+				"qty": 500,
+				"unit": "g",
+				"prep": "sliced thinly across the grain",
+				"original": "500 g flank steak, sliced thinly across the grain"
+			},
+			{
+				"id": "i2",
+				"key": "cornstarch",
+				"name": "cornstarch",
+				"role": "thickener",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "2 tbsp cornstarch, divided"
+			},
+			{
+				"id": "i3",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 5,
+				"unit": "tbsp",
+				"prep": "divided",
+				"original": "5 tbsp soy sauce, divided"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp vegetable oil"
+			},
+			{
+				"id": "i5",
+				"key": "broccoli",
+				"name": "broccoli",
+				"role": "vegetable",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in florets",
+				"original": "500 g broccoli, in florets"
+			},
+			{
+				"id": "i6",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.5,
+				"unit": "dl",
+				"prep": "divided",
+				"original": "1.5 dl water, divided"
+			},
+			{
+				"id": "i7",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "3 tbsp brown sugar"
+			},
+			{
+				"id": "i8",
+				"key": "oyster-sauce",
+				"name": "oyster sauce",
+				"role": "sauce",
+				"qty": 2,
+				"unit": "tbsp",
+				"group": "sauce",
+				"original": "2 tbsp oyster sauce"
+			},
+			{
+				"id": "i9",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 4,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "4 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i10",
+				"key": "ginger",
+				"name": "ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "grated",
+				"original": "1 tbsp ginger, grated"
+			},
+			{
+				"id": "i11",
+				"key": "sesame-oil",
+				"name": "toasted sesame oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame oil"
+			},
+			{
+				"id": "i12",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame seeds"
+			},
+			{
+				"id": "i13",
+				"key": "rice",
+				"name": "cooked rice",
+				"role": "rice",
+				"qty": 800,
+				"unit": "g",
+				"prep": "to serve",
+				"original": "800 g cooked rice, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Toss the beef with 1 tbsp cornstarch and 1 tbsp soy.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the remaining soy and cornstarch with 1 dl water, brown sugar and oyster sauce.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Stir-fry the broccoli in 1 tbsp oil for a minute, add the remaining water, cover and steam until tender-crisp. Remove.",
+				"uses": [
+					"i5"
+				],
+				"technique": [
+					"stir-fry",
+					"steam"
+				],
+				"durationMin": 3,
+				"heat": "high"
+			},
+			{
+				"id": "s4",
+				"text": "Sear the beef in batches in the remaining oil until browned. Remove.",
+				"uses": [
+					"s1",
+					"i4"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 4,
+				"heat": "high"
+			},
+			{
+				"id": "s5",
+				"text": "Fry the garlic and ginger for 30 seconds, add the sauce and simmer until thick.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"thicken"
+				],
+				"durationMin": 2,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s6",
+				"text": "Return the beef and broccoli, toss to coat and finish with sesame oil and seeds. Serve with rice.",
+				"uses": [
+					"s3",
+					"s4",
+					"s5",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 1,
+				"heat": "high",
+				"critical": "Add the beef only at the end so it stays tender."
+			}
+		],
+		"notes": {
+			"techniques": "Broccoli is steamed in the pan with a splash of water, so no separate pot is needed.",
+			"chemistry": "Cornstarch on the beef forms a thin coating that browns quickly and thickens the sauce as the meat goes back in.",
+			"spiceProfile": "Sweet-savoury and garlicky, with brown sugar, soy and ginger.",
+			"variations": "Sweeter and saucier than the Cantonese original, with broccoli florets instead of gai lan."
+		}
+	}
+]

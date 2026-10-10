@@ -1,0 +1,684 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "enchiladas",
+		"title": "Chicken enchiladas rojas",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Rojas with dried chiles"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 50,
+			"totalMin": 80
+		},
+		"cuisine": [
+			"mexican"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"red sauce"
+		],
+		"equipment": [
+			"pot",
+			"blender",
+			"frying pan",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "chicken-breast",
+				"name": "chicken breasts",
+				"role": "poultry",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g chicken breasts"
+			},
+			{
+				"id": "i2",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "halved",
+				"original": "1 white onion (half for poaching, half to serve)"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 4,
+				"unit": "clove",
+				"original": "4 cloves garlic"
+			},
+			{
+				"id": "i4",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp salt"
+			},
+			{
+				"id": "i5",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.2,
+				"unit": "l",
+				"original": "1.2 l water"
+			},
+			{
+				"id": "i6",
+				"key": "dried-guajillo-chili",
+				"name": "dried guajillo chiles",
+				"role": "chili",
+				"qty": 6,
+				"unit": "piece",
+				"prep": "seeded",
+				"original": "6 guajillo chiles, seeded"
+			},
+			{
+				"id": "i7",
+				"key": "dried-ancho-chili",
+				"name": "dried ancho chiles",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "seeded",
+				"original": "2 ancho chiles, seeded"
+			},
+			{
+				"id": "i8",
+				"key": "dried-oregano",
+				"name": "Mexican oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp Mexican oregano"
+			},
+			{
+				"id": "i9",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp cumin"
+			},
+			{
+				"id": "i10",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp oil"
+			},
+			{
+				"id": "i11",
+				"key": "corn-tortillas",
+				"name": "corn tortillas",
+				"role": "bread",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 corn tortillas"
+			},
+			{
+				"id": "i12",
+				"key": "queso-fresco",
+				"name": "queso fresco or feta",
+				"role": "cheese",
+				"qty": 150,
+				"unit": "g",
+				"prep": "crumbled",
+				"original": "150 g queso fresco, crumbled"
+			},
+			{
+				"id": "i13",
+				"key": "mexican-crema",
+				"name": "Mexican crema or sour cream",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl crema"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Poach the chicken with half the onion, 2 garlic cloves and the salt in the water until 74 °C inside. Shred and keep the broth.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"poach",
+					"shred"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Toast the chiles a few seconds per side in a dry pan, soak them in 5 dl hot broth, then blend with the remaining garlic, oregano and cumin.",
+				"uses": [
+					"s1",
+					"i3",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"toast",
+					"soak",
+					"blend"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s3",
+				"text": "Fry the sauce in 1 tbsp oil until darker and slightly thick.",
+				"uses": [
+					"s2",
+					"i10"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium",
+				"critical": "Use a deep pan; the sauce spatters hard when it hits the oil."
+			},
+			{
+				"id": "s4",
+				"text": "Pass each tortilla briefly through hot oil, dip in sauce, fill with chicken and roll.",
+				"uses": [
+					"s1",
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"fry",
+					"dip",
+					"roll"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Arrange in a dish, spoon over remaining sauce and bake at 180 °C until hot, then top with queso fresco, crema and the remaining onion.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13",
+					"i2"
+				],
+				"technique": [
+					"bake",
+					"garnish"
+				],
+				"durationMin": 15,
+				"tempC": 180
+			}
+		],
+		"notes": {
+			"techniques": "Frying each tortilla briefly in oil makes it pliable and stops it from falling apart in the sauce.",
+			"chemistry": "Frying the chile purée concentrates it and caramelises its sugars, which takes away the raw chile taste.",
+			"spiceProfile": "Earthy, mildly hot guajillo and ancho with oregano and cumin.",
+			"variations": "Red sauce from dried chiles with fresh cheese on top. Verdes use a tomatillo sauce, and Tex-Mex enchiladas are baked under melted cheddar."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "enchiladas",
+		"title": "Chicken enchiladas verdes",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Verdes with tomatillo"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 40,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"mexican"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"green sauce"
+		],
+		"equipment": [
+			"pot",
+			"blender",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "tomatillo",
+				"name": "tomatillos",
+				"role": "vegetable",
+				"qty": 600,
+				"unit": "g",
+				"prep": "husked",
+				"original": "600 g tomatillos, husked"
+			},
+			{
+				"id": "i2",
+				"key": "serrano-chili",
+				"name": "serrano chiles",
+				"role": "chili",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 serrano chiles"
+			},
+			{
+				"id": "i3",
+				"key": "white-onion",
+				"name": "white onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"original": "1/2 white onion"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"original": "2 cloves garlic"
+			},
+			{
+				"id": "i5",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch coriander"
+			},
+			{
+				"id": "i6",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl chicken stock"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i8",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp oil"
+			},
+			{
+				"id": "i9",
+				"key": "cooked-chicken",
+				"name": "cooked shredded chicken",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g cooked shredded chicken"
+			},
+			{
+				"id": "i10",
+				"key": "corn-tortillas",
+				"name": "corn tortillas",
+				"role": "bread",
+				"qty": 12,
+				"unit": "piece",
+				"original": "12 corn tortillas"
+			},
+			{
+				"id": "i11",
+				"key": "mexican-crema",
+				"name": "Mexican crema or sour cream",
+				"role": "dairy",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl crema"
+			},
+			{
+				"id": "i12",
+				"key": "queso-fresco",
+				"name": "queso fresco",
+				"role": "cheese",
+				"qty": 150,
+				"unit": "g",
+				"prep": "crumbled",
+				"original": "150 g queso fresco, crumbled"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Simmer tomatillos, chiles, onion and garlic in water until the tomatillos turn olive green.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Drain and blend with coriander, stock and salt, then fry the sauce in 1 tbsp oil.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"blend",
+					"fry"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Soften the tortillas in hot oil, fill with chicken and roll.",
+				"uses": [
+					"i10",
+					"i9"
+				],
+				"technique": [
+					"fry",
+					"roll"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Cover with the green sauce and bake at 180 °C, then top with crema and queso fresco.",
+				"uses": [
+					"s2",
+					"s3",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"bake",
+					"garnish"
+				],
+				"durationMin": 15,
+				"tempC": 180
+			}
+		],
+		"notes": {
+			"techniques": "Simmered tomatillos blend into a tart sauce that needs no thickening.",
+			"chemistry": "Tomatillos are high in acid and pectin, so the sauce sets slightly as it cooks.",
+			"spiceProfile": "Bright and tart, with fresh serrano heat and coriander.",
+			"variations": "A tart green tomatillo sauce in place of the earthy red chile sauce. Tex-Mex enchiladas are richer and covered in cheese."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "enchiladas",
+		"title": "Tex-Mex chicken enchiladas",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Tex-Mex cheesy bake"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 35,
+			"totalMin": 55
+		},
+		"cuisine": [
+			"tex-mex"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"cheesy",
+			"baked"
+		],
+		"equipment": [
+			"saucepan",
+			"baking dish"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp oil"
+			},
+			{
+				"id": "i2",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp flour"
+			},
+			{
+				"id": "i3",
+				"key": "chili-powder",
+				"name": "chili powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp chili powder"
+			},
+			{
+				"id": "i4",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp cumin"
+			},
+			{
+				"id": "i5",
+				"key": "garlic-powder",
+				"name": "garlic powder",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp garlic powder"
+			},
+			{
+				"id": "i6",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i7",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl chicken stock"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i9",
+				"key": "cooked-chicken",
+				"name": "cooked shredded chicken",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"original": "500 g shredded cooked chicken"
+			},
+			{
+				"id": "i10",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 onion, diced and softened"
+			},
+			{
+				"id": "i11",
+				"key": "canned-black-beans",
+				"name": "canned black beans",
+				"role": "legume",
+				"qty": 1,
+				"unit": "can",
+				"prep": "drained",
+				"original": "1 can (400 g) black beans, drained"
+			},
+			{
+				"id": "i12",
+				"key": "flour-tortillas",
+				"name": "flour tortillas (20 cm)",
+				"role": "bread",
+				"qty": 8,
+				"unit": "piece",
+				"original": "8 flour tortillas"
+			},
+			{
+				"id": "i13",
+				"key": "cheddar",
+				"name": "cheddar or Monterey Jack",
+				"role": "cheese",
+				"qty": 250,
+				"unit": "g",
+				"prep": "grated",
+				"original": "250 g cheddar, grated"
+			},
+			{
+				"id": "i14",
+				"key": "scallion",
+				"name": "spring onions",
+				"role": "garnish",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "3 spring onions, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook flour in the oil for 1 minute, add chili powder, cumin, garlic powder and tomato paste, then whisk in the stock and simmer to a smooth red gravy. Salt to taste.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Mix chicken, onion, beans, a third of the cheese and a few spoons of sauce.",
+				"uses": [
+					"i9",
+					"i10",
+					"i11",
+					"i13",
+					"s1"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Roll the filling in the tortillas and lay seam-side down in a dish. Pour over the sauce and cover with the remaining cheese.",
+				"uses": [
+					"s2",
+					"i12"
+				],
+				"technique": [
+					"roll"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Bake at 200 °C until bubbling and the cheese is browned. Scatter with spring onions.",
+				"uses": [
+					"s3",
+					"i14"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 20,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "A flour-thickened chili gravy and plenty of melted cheese give the classic Tex-Mex combination plate.",
+			"chemistry": "The roux keeps the sauce from separating, so it stays creamy under the cheese.",
+			"spiceProfile": "Chili powder and cumin, mild and savoury.",
+			"variations": "Uses flour tortillas, beans and a thick blanket of yellow cheese. The Mexican versions are lighter and topped with fresh cheese and crema."
+		}
+	}
+]

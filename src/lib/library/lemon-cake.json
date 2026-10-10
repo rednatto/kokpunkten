@@ -1,0 +1,565 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lemon-cake",
+		"title": "Lemon drizzle loaf",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – British drizzle loaf"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 45,
+			"totalMin": 125
+		},
+		"cuisine": [
+			"british"
+		],
+		"course": [
+			"baking",
+			"dessert"
+		],
+		"tags": [
+			"cake",
+			"loaf",
+			"classic"
+		],
+		"equipment": [
+			"900 g loaf tin",
+			"electric mixer",
+			"skewer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 175,
+				"unit": "g",
+				"original": "175 g butter, softened",
+				"prep": "softened"
+			},
+			{
+				"id": "i2",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 175,
+				"unit": "g",
+				"original": "175 g caster sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs, at room temperature",
+				"prep": "at room temperature"
+			},
+			{
+				"id": "i4",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 175,
+				"unit": "g",
+				"original": "175 g all-purpose flour"
+			},
+			{
+				"id": "i5",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp baking powder"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "finely grated zest of 2 lemons"
+			},
+			{
+				"id": "i7",
+				"key": "whole-milk",
+				"name": "milk",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp milk"
+			},
+			{
+				"id": "i8",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "juice of 2 lemons (about 6 tbsp)"
+			},
+			{
+				"id": "i9",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g granulated sugar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Beat the butter and caster sugar until pale and fluffy.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"cream"
+				],
+				"durationMin": 4
+			},
+			{
+				"id": "s2",
+				"text": "Beat in the eggs one at a time.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"beat"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fold in the flour, baking powder, zest and milk until just combined.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Spoon into the lined tin and bake until a skewer comes out clean.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 45,
+				"tempC": 180
+			},
+			{
+				"id": "s5",
+				"text": "Stir the lemon juice and granulated sugar together without dissolving the sugar.",
+				"uses": [
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s6",
+				"text": "Prick the hot cake all over with a skewer and spoon the drizzle over. Cool in the tin.",
+				"uses": [
+					"s4",
+					"s5"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 60,
+				"critical": "Pour while the cake is hot so the juice soaks in and the sugar sets into a crunchy crust."
+			}
+		],
+		"notes": {
+			"techniques": "A creamed butter sponge soaked with a sugary lemon syrup while hot.",
+			"chemistry": "Creaming beats air into the butter, which the baking powder expands; undissolved granulated sugar dries on the warm surface into a crisp crust.",
+			"spiceProfile": "Sharp, sweet lemon throughout.",
+			"variations": "Buttery and crunchy-topped; the butter base makes it firmer than the oil-based yogurt cake."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lemon-cake",
+		"title": "Lemon yogurt cake (gâteau au yaourt)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Yogurt and oil"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 40,
+			"totalMin": 115
+		},
+		"cuisine": [
+			"french"
+		],
+		"course": [
+			"baking",
+			"dessert"
+		],
+		"tags": [
+			"cake",
+			"easy",
+			"one-bowl"
+		],
+		"equipment": [
+			"bowl",
+			"whisk",
+			"22 cm round tin"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "plain-yogurt",
+				"name": "plain yogurt",
+				"role": "dairy",
+				"qty": 125,
+				"unit": "g",
+				"original": "125 g plain yogurt"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 100,
+				"unit": "ml",
+				"original": "100 ml neutral oil"
+			},
+			{
+				"id": "i5",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "finely grated zest of 2 lemons"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp lemon juice, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 210,
+				"unit": "g",
+				"original": "210 g all-purpose flour"
+			},
+			{
+				"id": "i8",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp baking powder"
+			},
+			{
+				"id": "i9",
+				"key": "icing-sugar",
+				"name": "powdered sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g powdered sugar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk the yogurt, sugar and eggs, then the oil, zest and 2 tbsp lemon juice.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Fold in the flour and baking powder until smooth.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Pour into the lined tin and bake until springy and a skewer comes out clean.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 40,
+				"tempC": 180
+			},
+			{
+				"id": "s4",
+				"text": "Cool completely. Mix the powdered sugar with the remaining lemon juice and pour over the cake.",
+				"uses": [
+					"s3",
+					"i9"
+				],
+				"technique": [
+					"glaze"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "A one-bowl, whisk-only cake; in France the yogurt pot is often used to measure everything.",
+			"chemistry": "Oil coats the flour proteins and limits gluten, giving a soft, moist crumb that stays tender for days; the acidic yogurt reacts with the baking powder.",
+			"spiceProfile": "Mild lemon in the crumb with a sharp glaze.",
+			"variations": "Made with oil and yogurt instead of butter, so it needs no mixer and stays moister longer than the drizzle loaf."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "lemon-cake",
+		"title": "Lemon, almond and polenta cake (gluten-free)",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Almond and polenta"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 50,
+			"totalMin": 130
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"baking",
+			"dessert"
+		],
+		"tags": [
+			"cake",
+			"gluten-free"
+		],
+		"equipment": [
+			"23 cm springform tin",
+			"electric mixer",
+			"small saucepan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g butter, softened",
+				"prep": "softened"
+			},
+			{
+				"id": "i2",
+				"key": "caster-sugar",
+				"name": "caster sugar",
+				"role": "sweetener",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g caster sugar"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "ground-almonds",
+				"name": "ground almonds",
+				"role": "nut",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g ground almonds"
+			},
+			{
+				"id": "i5",
+				"key": "polenta",
+				"name": "fine polenta (cornmeal)",
+				"role": "flour",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g fine polenta (cornmeal)"
+			},
+			{
+				"id": "i6",
+				"key": "baking-powder",
+				"name": "gluten-free baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp gluten-free baking powder"
+			},
+			{
+				"id": "i7",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "finely grated zest of 2 lemons"
+			},
+			{
+				"id": "i8",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "juice of 2 lemons (about 6 tbsp)"
+			},
+			{
+				"id": "i9",
+				"key": "icing-sugar",
+				"name": "powdered sugar",
+				"role": "sweetener",
+				"qty": 125,
+				"unit": "g",
+				"original": "125 g powdered sugar"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Beat the butter and sugar until pale, then beat in the eggs one at a time.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"cream"
+				],
+				"durationMin": 5
+			},
+			{
+				"id": "s2",
+				"text": "Fold in the almonds, polenta, baking powder and zest.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Spread in the lined tin and bake until set and golden; it will still be slightly soft in the middle.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 50,
+				"tempC": 160
+			},
+			{
+				"id": "s4",
+				"text": "Warm the lemon juice and powdered sugar until the sugar dissolves.",
+				"uses": [
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"dissolve"
+				],
+				"durationMin": 2,
+				"heat": "low"
+			},
+			{
+				"id": "s5",
+				"text": "Prick the warm cake and pour the syrup over. Cool in the tin.",
+				"uses": [
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "Ground almonds and polenta replace wheat flour, and a warm syrup soaks in afterwards.",
+			"chemistry": "With no gluten, the structure comes from egg proteins and almond; the high fat and syrup keep it dense and moist.",
+			"spiceProfile": "Lemon with sweet almond and a slight crunch from the polenta.",
+			"variations": "Gluten-free, denser and moister than wheat lemon cakes, with a gentle grainy texture."
+		}
+	}
+]

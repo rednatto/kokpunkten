@@ -1,0 +1,596 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "gravlax",
+		"title": "Gravlax with hovmästarsås",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic dill"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 0,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"fish",
+			"cured",
+			"make-ahead",
+			"christmas"
+		],
+		"equipment": [
+			"dish",
+			"cling film",
+			"weight",
+			"sharp knife",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "salmon",
+				"name": "salmon fillet, skin on, pin-boned",
+				"role": "fish",
+				"qty": 1,
+				"unit": "kg",
+				"prep": "centre cut",
+				"original": "1 kg salmon fillet, skin on, pin-boned, centre cut"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp sugar"
+			},
+			{
+				"id": "i3",
+				"key": "coarse-salt",
+				"name": "coarse sea salt",
+				"role": "salt",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp coarse sea salt"
+			},
+			{
+				"id": "i4",
+				"key": "white-pepper",
+				"name": "white peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "crushed",
+				"original": "1 tbsp white peppercorns, crushed"
+			},
+			{
+				"id": "i5",
+				"key": "dill",
+				"name": "dill, with stalks",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "coarsely chopped",
+				"original": "1 bunch dill, with stalks, coarsely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "swedish-mustard",
+				"name": "Swedish mustard",
+				"role": "seasoning",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp Swedish mustard"
+			},
+			{
+				"id": "i7",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "for the sauce",
+				"original": "1 tbsp sugar, for the sauce"
+			},
+			{
+				"id": "i8",
+				"key": "white-wine-vinegar",
+				"name": "white wine vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp white wine vinegar"
+			},
+			{
+				"id": "i9",
+				"key": "neutral-oil",
+				"name": "neutral oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl neutral oil"
+			},
+			{
+				"id": "i10",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "finely chopped, for the sauce",
+				"original": "3 tbsp dill, finely chopped, for the sauce"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Freeze the salmon at −20 °C for at least 24 hours and thaw in the fridge, unless it is sold as safe to eat raw.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"freeze"
+				],
+				"durationMin": 1440,
+				"critical": "Freezing kills parasites; do not skip it for wild or uncertain fish."
+			},
+			{
+				"id": "s2",
+				"text": "Mix sugar, salt and pepper. Cut the fillet in two, rub the mixture into the flesh and sandwich with dill, flesh to flesh.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"cure"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Wrap tightly, put a light weight on top and refrigerate, turning every 12 hours.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"cure"
+				],
+				"durationMin": 2880
+			},
+			{
+				"id": "s4",
+				"text": "For the sauce, whisk mustard, sugar and vinegar, then whisk in the oil in a thin stream. Add dill and salt.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"whisk",
+					"emulsify"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Scrape off the cure and slice the salmon thinly at an angle. Serve with the sauce.",
+				"uses": [
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"slice"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A dry cure of equal parts salt and sugar for 48 hours, then thin slicing at a sharp angle off the skin.",
+			"chemistry": "Salt draws out water by osmosis and denatures the surface proteins, firming the fish; sugar balances the salt and keeps the texture supple. Mustard acts as the emulsifier in the sauce.",
+			"spiceProfile": "Fresh dill and white pepper; the sauce is sweet, tangy mustard.",
+			"variations": "The Nordic classic: dill, salt, sugar and white pepper, served with sweet mustard-dill sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "gravlax",
+		"title": "Beetroot-cured gravlax with horseradish",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Beetroot-cured"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 0,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"swedish",
+			"nordic"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"fish",
+			"cured",
+			"make-ahead",
+			"party"
+		],
+		"equipment": [
+			"dish",
+			"cling film",
+			"grater",
+			"sharp knife"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "salmon",
+				"name": "salmon fillet, skin on, pin-boned",
+				"role": "fish",
+				"qty": 1,
+				"unit": "kg",
+				"original": "1 kg salmon fillet, skin on, pin-boned"
+			},
+			{
+				"id": "i2",
+				"key": "beetroot",
+				"name": "raw beetroot",
+				"role": "vegetable",
+				"qty": 300,
+				"unit": "g",
+				"prep": "grated",
+				"original": "300 g raw beetroot, grated"
+			},
+			{
+				"id": "i3",
+				"key": "horseradish",
+				"name": "fresh horseradish",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "finely grated",
+				"original": "3 tbsp fresh horseradish, finely grated"
+			},
+			{
+				"id": "i4",
+				"key": "coarse-salt",
+				"name": "coarse sea salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl coarse sea salt"
+			},
+			{
+				"id": "i5",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl sugar"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon zest"
+			},
+			{
+				"id": "i7",
+				"key": "aquavit",
+				"name": "aquavit or vodka",
+				"role": "liquid",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp aquavit or vodka"
+			},
+			{
+				"id": "i8",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "1 bunch dill, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "creme-fraiche",
+				"name": "crème fraîche",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl crème fraîche"
+			},
+			{
+				"id": "i10",
+				"key": "horseradish",
+				"name": "fresh horseradish",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"prep": "finely grated, for the sauce",
+				"original": "1 tbsp fresh horseradish, finely grated, for the sauce"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Freeze the salmon at −20 °C for at least 24 hours and thaw in the fridge.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"freeze"
+				],
+				"durationMin": 1440
+			},
+			{
+				"id": "s2",
+				"text": "Mix beetroot, horseradish, salt, sugar, zest, aquavit and dill.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Pack the mixture over the flesh, wrap tightly and refrigerate 48 hours, turning once.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"cure"
+				],
+				"durationMin": 2880
+			},
+			{
+				"id": "s4",
+				"text": "Mix crème fraîche with the horseradish for the sauce.",
+				"uses": [
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Scrape off the cure and slice thinly. Serve with the horseradish cream.",
+				"uses": [
+					"s3",
+					"s4"
+				],
+				"technique": [
+					"slice"
+				],
+				"critical": "Slice very thin against the grain with a long, sharp knife."
+			}
+		],
+		"notes": {
+			"techniques": "Beetroot in the cure stains the edges magenta; the colour is strongest on the outside.",
+			"chemistry": "Betalain pigments from beetroot are water-soluble and travel inward with the brine drawn out by the salt.",
+			"spiceProfile": "Earthy beetroot, hot horseradish and a hint of aquavit.",
+			"variations": "A modern party version: striking colour and an earthy, spicy cure, served with horseradish cream instead of mustard sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "gravlax",
+		"title": "Citrus and fennel-cured salmon",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Citrus and fennel"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 0,
+			"totalMin": 20
+		},
+		"cuisine": [
+			"nordic"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"fish",
+			"cured",
+			"quick-cure"
+		],
+		"equipment": [
+			"dish",
+			"cling film",
+			"sharp knife"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "salmon",
+				"name": "salmon fillet, skinless, pin-boned",
+				"role": "fish",
+				"qty": 600,
+				"unit": "g",
+				"original": "600 g salmon fillet, skinless, pin-boned"
+			},
+			{
+				"id": "i2",
+				"key": "coarse-salt",
+				"name": "coarse sea salt",
+				"role": "salt",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp coarse sea salt"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp sugar"
+			},
+			{
+				"id": "i4",
+				"key": "fennel-seeds",
+				"name": "fennel seeds",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"prep": "toasted and crushed",
+				"original": "2 tsp fennel seeds, toasted and crushed"
+			},
+			{
+				"id": "i5",
+				"key": "orange-zest",
+				"name": "orange zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp orange zest"
+			},
+			{
+				"id": "i6",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon zest"
+			},
+			{
+				"id": "i7",
+				"key": "pink-peppercorns",
+				"name": "pink peppercorns",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "crushed",
+				"original": "1 tsp pink peppercorns, crushed"
+			},
+			{
+				"id": "i8",
+				"key": "fennel-fronds",
+				"name": "fennel fronds or dill",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"original": "3 tbsp fennel fronds or dill, chopped"
+			},
+			{
+				"id": "i9",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "to serve",
+				"original": "2 tbsp olive oil, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Freeze the salmon at −20 °C for at least 24 hours and thaw in the fridge.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"freeze"
+				],
+				"durationMin": 1440
+			},
+			{
+				"id": "s2",
+				"text": "Mix salt, sugar, fennel seeds, zests and pink pepper and pack around the salmon.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"cure"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Wrap and refrigerate until firm at the edges.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"cure"
+				],
+				"durationMin": 1440
+			},
+			{
+				"id": "s4",
+				"text": "Rinse, pat dry and slice. Serve with fennel fronds and a drizzle of oil.",
+				"uses": [
+					"s3",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"slice"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A thinner, skinless piece needs only 24 hours of curing.",
+			"chemistry": "Without skin, salt enters from both sides, so the cure works faster and the fish firms more evenly.",
+			"spiceProfile": "Bright orange and lemon with anise from fennel and the floral heat of pink pepper.",
+			"variations": "A quicker, lighter cure with citrus and fennel instead of dill. Fresher and less sweet than the classic."
+		}
+	}
+]

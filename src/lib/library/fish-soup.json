@@ -1,0 +1,767 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fish-soup",
+		"title": "Swedish fish soup with saffron",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Swedish saffron and tomato"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"fish",
+			"seafood",
+			"saffron",
+			"festive"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely chopped",
+				"original": "1 yellow onion, finely chopped"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "finely chopped",
+				"original": "2 cloves garlic, finely chopped"
+			},
+			{
+				"id": "i4",
+				"key": "fennel",
+				"name": "fennel bulb",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "finely sliced",
+				"original": "1 fennel bulb, finely sliced"
+			},
+			{
+				"id": "i5",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 carrot, diced"
+			},
+			{
+				"id": "i6",
+				"key": "saffron",
+				"name": "saffron",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "g",
+				"original": "0.5 g saffron"
+			},
+			{
+				"id": "i7",
+				"key": "dry-white-wine",
+				"name": "dry white wine",
+				"role": "wine",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl dry white wine"
+			},
+			{
+				"id": "i8",
+				"key": "canned-tomatoes",
+				"name": "crushed tomatoes",
+				"role": "vegetable",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g crushed tomatoes"
+			},
+			{
+				"id": "i9",
+				"key": "fish-stock",
+				"name": "fish stock",
+				"role": "stock",
+				"qty": 8,
+				"unit": "dl",
+				"original": "8 dl fish stock"
+			},
+			{
+				"id": "i10",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i11",
+				"key": "cod",
+				"name": "cod fillet",
+				"role": "fish",
+				"qty": 300,
+				"unit": "g",
+				"prep": "in 3 cm pieces",
+				"original": "300 g cod fillet, in 3 cm pieces"
+			},
+			{
+				"id": "i12",
+				"key": "salmon",
+				"name": "salmon fillet, skinless",
+				"role": "fish",
+				"qty": 200,
+				"unit": "g",
+				"prep": "in 3 cm pieces",
+				"original": "200 g salmon fillet, skinless, in 3 cm pieces"
+			},
+			{
+				"id": "i13",
+				"key": "shrimp",
+				"name": "cooked peeled shrimp",
+				"role": "seafood",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g cooked peeled shrimp"
+			},
+			{
+				"id": "i14",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "1 bunch dill, chopped"
+			},
+			{
+				"id": "i15",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i16",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i17",
+				"key": "aioli",
+				"name": "aioli",
+				"role": "sauce",
+				"qty": 1,
+				"unit": "dl",
+				"prep": "to serve",
+				"optional": true,
+				"original": "1 dl aioli, to serve (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Sweat the onion, garlic, fennel and carrot in the oil until soft but not coloured.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Crumble in the saffron, add the wine and let it bubble for a minute.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"deglaze"
+				],
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the tomatoes and stock and simmer until the vegetables are tender.",
+				"uses": [
+					"s2",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Stir in the cream and season with salt and pepper.",
+				"uses": [
+					"s3",
+					"i10",
+					"i15",
+					"i16"
+				],
+				"technique": []
+			},
+			{
+				"id": "s5",
+				"text": "Add the cod and salmon and poach gently until just opaque. Stir in the shrimp to warm through.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 4,
+				"heat": "low",
+				"critical": "Keep the soup below a boil once the fish is in, or it breaks up and turns dry. Fish is done at about 55–60 °C in the centre."
+			},
+			{
+				"id": "s6",
+				"text": "Top with dill and serve with aioli on the side.",
+				"uses": [
+					"s5",
+					"i14",
+					"i17"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Build a flavourful base first, then add the fish at the very end so it poaches in a few minutes.",
+			"chemistry": "Saffron colour and aroma are water-soluble, so it blooms in the liquid. Fish muscle has little connective tissue, so it cooks through quickly and toughens if boiled.",
+			"spiceProfile": "Saffron and fennel give a gently sweet, anise note, balanced by tomato acidity and cream.",
+			"variations": "This Swedish party-style soup borrows from bouillabaisse, with tomato, saffron and aioli. Finnish and Norwegian versions skip the tomato and lean on dairy, root vegetables and dill."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fish-soup",
+		"title": "Lohikeitto, Finnish salmon soup",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Finnish salmon"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 30,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"finnish"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"fish",
+			"salmon",
+			"creamy"
+		],
+		"equipment": [
+			"large pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 30,
+				"unit": "g",
+				"original": "30 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "leek",
+				"name": "leek",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "white part, sliced",
+				"original": "1 leek, white part, sliced"
+			},
+			{
+				"id": "i4",
+				"key": "waxy-potato",
+				"name": "waxy potatoes",
+				"role": "starch",
+				"qty": 600,
+				"unit": "g",
+				"prep": "peeled, in 2 cm cubes",
+				"original": "600 g waxy potatoes, peeled, in 2 cm cubes"
+			},
+			{
+				"id": "i5",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"optional": true,
+				"original": "1 carrot, sliced (optional)"
+			},
+			{
+				"id": "i6",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 8,
+				"unit": "dl",
+				"substitutes": [
+					"fish stock"
+				],
+				"original": "8 dl water"
+			},
+			{
+				"id": "i7",
+				"key": "allspice",
+				"name": "allspice berries",
+				"role": "spice",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 allspice berries"
+			},
+			{
+				"id": "i8",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "salmon",
+				"name": "salmon fillet, skinless and boneless",
+				"role": "fish",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 3 cm cubes",
+				"original": "500 g salmon fillet, skinless and boneless, in 3 cm cubes"
+			},
+			{
+				"id": "i11",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i12",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "1 bunch dill, chopped"
+			},
+			{
+				"id": "i13",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the onion and leek in the butter without browning.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add the potatoes, carrot, water, allspice, bay leaf and salt and simmer until the potatoes are just tender.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Pour in the cream and bring back to a bare simmer.",
+				"uses": [
+					"s2",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Add the salmon, turn off the heat, cover and let it cook in the residual heat until just opaque.",
+				"uses": [
+					"s3",
+					"i10"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 5,
+				"critical": "Do not boil the salmon; it cooks through in the hot soup in about 5 minutes."
+			},
+			{
+				"id": "s5",
+				"text": "Season with pepper, stir in plenty of dill and serve with rye bread.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Salmon is added last and poached off the heat, so it stays moist and in neat cubes.",
+			"chemistry": "Potato starch leaches into the liquid and lightly thickens the soup with the cream, so no flour is needed.",
+			"spiceProfile": "Mild and creamy, with whole allspice, bay and lots of dill.",
+			"variations": "Simpler than the Swedish version, with no tomato or wine. Salmon is the only fish and potatoes make it a filling meal."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "fish-soup",
+		"title": "Bergen fish soup",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Norwegian Bergen"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 30,
+			"totalMin": 50
+		},
+		"cuisine": [
+			"norwegian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"fish",
+			"creamy",
+			"sweet-sour"
+		],
+		"equipment": [
+			"large pot",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "thickener",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp all-purpose flour"
+			},
+			{
+				"id": "i3",
+				"key": "fish-stock",
+				"name": "fish stock",
+				"role": "stock",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l fish stock"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "in thin sticks",
+				"original": "2 carrots, in thin sticks"
+			},
+			{
+				"id": "i5",
+				"key": "parsnip",
+				"name": "parsnip",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "in thin sticks",
+				"substitutes": [
+					"celeriac"
+				],
+				"original": "1 parsnip, in thin sticks"
+			},
+			{
+				"id": "i6",
+				"key": "leek",
+				"name": "leek",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 leek, sliced"
+			},
+			{
+				"id": "i7",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"original": "2 dl heavy cream"
+			},
+			{
+				"id": "i8",
+				"key": "sour-cream",
+				"name": "sour cream",
+				"role": "dairy",
+				"qty": 1,
+				"unit": "dl",
+				"original": "1 dl sour cream"
+			},
+			{
+				"id": "i9",
+				"key": "white-wine-vinegar",
+				"name": "white wine vinegar",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp white wine vinegar"
+			},
+			{
+				"id": "i10",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp sugar"
+			},
+			{
+				"id": "i11",
+				"key": "cod",
+				"name": "cod or haddock fillet",
+				"role": "fish",
+				"qty": 500,
+				"unit": "g",
+				"prep": "in 3 cm pieces",
+				"original": "500 g cod or haddock fillet, in 3 cm pieces"
+			},
+			{
+				"id": "i12",
+				"key": "chives",
+				"name": "chives",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"prep": "finely cut",
+				"original": "3 tbsp chives, finely cut"
+			},
+			{
+				"id": "i13",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i14",
+				"key": "white-pepper",
+				"name": "white pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "white pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter, stir in the flour and cook for a minute without colouring.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"roux"
+				],
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Whisk in the stock a little at a time until smooth and bring to a simmer.",
+				"uses": [
+					"s1",
+					"i3"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add the carrots, parsnip and leek and simmer until just tender.",
+				"uses": [
+					"s2",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Stir in the cream and sour cream, then balance with vinegar, sugar, salt and white pepper.",
+				"uses": [
+					"s3",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i13",
+					"i14"
+				],
+				"technique": [],
+				"critical": "Keep it below a boil after adding the sour cream so it does not split."
+			},
+			{
+				"id": "s5",
+				"text": "Add the fish and poach gently until just opaque. Sprinkle with chives.",
+				"uses": [
+					"s4",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "A light roux thickens the stock before the dairy goes in, giving a velvety, stable soup.",
+			"chemistry": "Starch from the flour gelatinises around 60–70 °C and coats the fat droplets in the cream, which helps stop the dairy from curdling with the vinegar.",
+			"spiceProfile": "Mild and creamy, with a distinct sweet-sour finish from vinegar and sugar.",
+			"variations": "The sweet-sour seasoning and roux-thickened base set this apart from the Swedish and Finnish soups. Some versions add fish balls or egg yolk."
+		}
+	}
+]

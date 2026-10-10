@@ -1,0 +1,571 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chocolate-chip-cookies",
+		"title": "Classic chocolate chip cookies",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic creamed"
+		},
+		"servings": 24,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 12,
+			"totalMin": 27
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking",
+			"dessert"
+		],
+		"tags": [
+			"cookies",
+			"chocolate"
+		],
+		"equipment": [
+			"stand or hand mixer",
+			"baking trays"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter, softened",
+				"role": "fat",
+				"qty": 225,
+				"unit": "g",
+				"prep": "softened",
+				"original": "225 g softened butter"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g sugar"
+			},
+			{
+				"id": "i3",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 165,
+				"unit": "g",
+				"original": "165 g brown sugar"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp vanilla"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 280,
+				"unit": "g",
+				"original": "280 g flour"
+			},
+			{
+				"id": "i7",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking soda"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "semisweet-chocolate-chips",
+				"name": "semisweet chocolate chips",
+				"role": "chocolate",
+				"qty": 340,
+				"unit": "g",
+				"original": "340 g chocolate chips"
+			},
+			{
+				"id": "i10",
+				"key": "walnuts",
+				"name": "walnuts",
+				"role": "nut",
+				"qty": 100,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "100 g walnuts, chopped (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cream butter and both sugars until fluffy, then beat in eggs and vanilla.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"cream"
+				],
+				"durationMin": 4
+			},
+			{
+				"id": "s2",
+				"text": "Mix in flour, soda and salt on low, then the chocolate and walnuts.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Scoop 2 tbsp balls onto lined trays and bake at 190 °C until golden at the edges but still soft in the middle.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 10,
+				"tempC": 190,
+				"critical": "Pull them while the centres look slightly underdone; they firm up as they cool."
+			},
+			{
+				"id": "s4",
+				"text": "Cool on the tray for 2 minutes, then on a rack.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"cool"
+				],
+				"durationMin": 2
+			}
+		],
+		"notes": {
+			"techniques": "Creamed butter and sugar give a cookie with crisp edges and a soft centre.",
+			"chemistry": "Brown sugar is hygroscopic and slightly acidic: it keeps the cookies chewy and reacts with the baking soda. Creaming traps air that expands in the oven.",
+			"variations": "The standard American cookie. The brown-butter version is chewier and more toffee-like, and the thin-and-crispy version uses melted butter and more white sugar."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chocolate-chip-cookies",
+		"title": "Brown butter chocolate chip cookies, rested dough",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Brown butter, rested dough"
+		},
+		"servings": 18,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 12,
+			"totalMin": 1472
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking",
+			"dessert"
+		],
+		"tags": [
+			"cookies",
+			"chocolate",
+			"chewy"
+		],
+		"equipment": [
+			"saucepan",
+			"bowl",
+			"baking trays"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 225,
+				"unit": "g",
+				"original": "225 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "brown-sugar",
+				"name": "dark brown sugar",
+				"role": "sweetener",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g dark brown sugar"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g sugar"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg"
+			},
+			{
+				"id": "i5",
+				"key": "egg-yolk",
+				"name": "egg yolk",
+				"role": "egg",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 egg yolk"
+			},
+			{
+				"id": "i6",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp vanilla"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 280,
+				"unit": "g",
+				"original": "280 g flour"
+			},
+			{
+				"id": "i8",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking soda"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "dark-chocolate",
+				"name": "dark chocolate (60–70%)",
+				"role": "chocolate",
+				"qty": 250,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "250 g dark chocolate, chopped"
+			},
+			{
+				"id": "i11",
+				"key": "flaky-salt",
+				"name": "flaky sea salt",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "flaky salt, to finish"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Melt the butter and cook, swirling, until it smells nutty and the solids turn brown. Cool slightly.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"brown"
+				],
+				"durationMin": 8,
+				"heat": "medium",
+				"critical": "Pull it off the heat as soon as the solids turn amber; they burn within seconds."
+			},
+			{
+				"id": "s2",
+				"text": "Whisk the brown butter with both sugars, then whisk in egg, yolk and vanilla until glossy.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Fold in flour, soda, salt and the chopped chocolate.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Cover and refrigerate the dough for at least 24 hours.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 1440
+			},
+			{
+				"id": "s5",
+				"text": "Scoop large balls, bake at 180 °C until the edges are set, and sprinkle with flaky salt.",
+				"uses": [
+					"s4",
+					"i11"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 12,
+				"tempC": 180
+			}
+		],
+		"notes": {
+			"techniques": "Resting the dough lets the flour hydrate fully, which gives more even browning and a deeper, toffee-like flavour.",
+			"chemistry": "Browning butter drives off its water and turns its milk solids nutty through Maillard reactions. The yolk adds fat and emulsifiers, which makes the cookie chewier.",
+			"variations": "Chewier and more caramel-flavoured than the classic, with puddles of chopped chocolate, but needs a day of planning."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "chocolate-chip-cookies",
+		"title": "Thin and crispy chocolate chip cookies",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Thin and crispy"
+		},
+		"servings": 30,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 12,
+			"totalMin": 22
+		},
+		"cuisine": [
+			"american"
+		],
+		"course": [
+			"baking",
+			"dessert"
+		],
+		"tags": [
+			"cookies",
+			"chocolate",
+			"crispy"
+		],
+		"equipment": [
+			"bowl",
+			"baking trays"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter, melted",
+				"role": "fat",
+				"qty": 170,
+				"unit": "g",
+				"prep": "melted",
+				"original": "170 g butter, melted"
+			},
+			{
+				"id": "i2",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g sugar"
+			},
+			{
+				"id": "i3",
+				"key": "brown-sugar",
+				"name": "light brown sugar",
+				"role": "sweetener",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g brown sugar"
+			},
+			{
+				"id": "i4",
+				"key": "whole-milk",
+				"name": "milk",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp milk"
+			},
+			{
+				"id": "i5",
+				"key": "vanilla-extract",
+				"name": "vanilla extract",
+				"role": "seasoning",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla"
+			},
+			{
+				"id": "i6",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 190,
+				"unit": "g",
+				"original": "190 g flour"
+			},
+			{
+				"id": "i7",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 0.75,
+				"unit": "tsp",
+				"original": "3/4 tsp baking soda"
+			},
+			{
+				"id": "i8",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp salt"
+			},
+			{
+				"id": "i9",
+				"key": "semisweet-chocolate-chips",
+				"name": "mini chocolate chips",
+				"role": "chocolate",
+				"qty": 170,
+				"unit": "g",
+				"original": "170 g mini chocolate chips"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Whisk melted butter, sugars, milk and vanilla.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Stir in flour, soda and salt, then the chocolate.",
+				"uses": [
+					"s1",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Drop tablespoons well apart on lined trays and bake at 175 °C until evenly golden all the way across.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 12,
+				"tempC": 175,
+				"critical": "Leave plenty of space; the cookies spread a lot."
+			},
+			{
+				"id": "s4",
+				"text": "Cool completely on a rack to crisp.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"cool"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Melted butter, no egg and mostly white sugar make a dough that spreads thin and bakes crisp.",
+			"chemistry": "Without egg there is less water and protein holding the dough up, so it spreads. White sugar recrystallises as the cookie cools, which gives the snap.",
+			"variations": "Snappy and thin, compared with the chewy classic and brown-butter cookies."
+		}
+	}
+]

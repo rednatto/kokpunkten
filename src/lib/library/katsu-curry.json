@@ -1,0 +1,944 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "katsu-curry",
+		"title": "Tonkatsu curry, Japanese homestyle",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Japanese homestyle"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 60,
+			"totalMin": 90
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"pork",
+			"curry",
+			"fried"
+		],
+		"equipment": [
+			"heavy pot",
+			"deep pan or wok",
+			"thermometer",
+			"rice cooker or pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "short-grain-rice",
+				"name": "Japanese short-grain rice",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g Japanese short-grain rice"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour (roux)",
+				"role": "flour",
+				"qty": 40,
+				"unit": "g",
+				"original": "40 g flour for the roux"
+			},
+			{
+				"id": "i4",
+				"key": "curry-powder",
+				"name": "Japanese-style curry powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp curry powder"
+			},
+			{
+				"id": "i5",
+				"key": "garam-masala",
+				"name": "garam masala",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp garam masala"
+			},
+			{
+				"id": "i6",
+				"key": "neutral-oil",
+				"name": "neutral oil (sauce)",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i7",
+				"key": "yellow-onion",
+				"name": "yellow onions",
+				"role": "allium",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "2 yellow onions, thinly sliced"
+			},
+			{
+				"id": "i8",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "grated",
+				"original": "2 cloves garlic, grated"
+			},
+			{
+				"id": "i9",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 10,
+				"unit": "g",
+				"prep": "grated",
+				"original": "10 g ginger, grated"
+			},
+			{
+				"id": "i10",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "cut into chunks",
+				"original": "2 carrots, cut into chunks"
+			},
+			{
+				"id": "i11",
+				"key": "potato",
+				"name": "waxy potatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "cut into chunks",
+				"original": "2 medium potatoes, cut into chunks"
+			},
+			{
+				"id": "i12",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 700,
+				"unit": "ml",
+				"original": "7 dl chicken stock"
+			},
+			{
+				"id": "i13",
+				"key": "apple",
+				"name": "apple",
+				"role": "fruit",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "grated",
+				"original": "1/2 apple, grated"
+			},
+			{
+				"id": "i14",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i15",
+				"key": "worcestershire-sauce",
+				"name": "Worcestershire or tonkatsu sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp Worcestershire sauce"
+			},
+			{
+				"id": "i16",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp honey"
+			},
+			{
+				"id": "i17",
+				"key": "pork-loin-chop",
+				"name": "boneless pork loin cutlets",
+				"role": "meat",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 boneless pork loin cutlets, about 150 g each, 1.5 cm thick"
+			},
+			{
+				"id": "i18",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i19",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i20",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour (dredge)",
+				"role": "flour",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g flour for dredging"
+			},
+			{
+				"id": "i21",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "beaten",
+				"original": "2 eggs, beaten"
+			},
+			{
+				"id": "i22",
+				"key": "panko",
+				"name": "panko breadcrumbs",
+				"role": "bread",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g panko"
+			},
+			{
+				"id": "i23",
+				"key": "neutral-oil",
+				"name": "neutral oil for frying",
+				"role": "fat",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l neutral oil for frying"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse the rice until the water runs nearly clear, then cook it with 480 ml water.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter over low heat, stir in the flour and cook, stirring, until the roux is light brown. Stir in the curry powder and garam masala for 30 seconds and set aside.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"toast"
+				],
+				"durationMin": 12,
+				"heat": "low",
+				"critical": "Stir constantly; a scorched roux turns bitter."
+			},
+			{
+				"id": "s3",
+				"text": "Fry the onions in the oil until soft and deep golden, then add garlic and ginger for 1 minute.",
+				"uses": [
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 15,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add carrots, potatoes, stock, apple, soy, Worcestershire and honey. Simmer until the vegetables are tender.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11",
+					"i12",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s5",
+				"text": "Whisk the roux into the pot and simmer, stirring, until the sauce thickens.",
+				"uses": [
+					"s4",
+					"s2"
+				],
+				"technique": [
+					"whisk",
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "low"
+			},
+			{
+				"id": "s6",
+				"text": "Score the fat edge of the pork, pound lightly and season. Dredge in flour, dip in egg, then press into panko.",
+				"uses": [
+					"i17",
+					"i18",
+					"i19",
+					"i20",
+					"i21",
+					"i22"
+				],
+				"technique": [
+					"bread"
+				]
+			},
+			{
+				"id": "s7",
+				"text": "Deep-fry the cutlets at 170 °C until golden and the pork reaches 63 °C inside, then rest on a rack.",
+				"uses": [
+					"s6",
+					"i23"
+				],
+				"technique": [
+					"deep-fry",
+					"rest"
+				],
+				"durationMin": 6,
+				"heat": "medium-high",
+				"critical": "Check the oil temperature; too cool gives greasy crumbs, too hot burns them before the pork is cooked."
+			},
+			{
+				"id": "s8",
+				"text": "Slice the katsu and serve over rice with the curry sauce alongside.",
+				"uses": [
+					"s1",
+					"s5",
+					"s7"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "A brown roux made separately and whisked in at the end thickens the curry, just as the commercial blocks do. Panko fried at 170 °C gives a crisp, light crust.",
+			"chemistry": "Toasting the flour in butter triggers Maillard browning for a nutty, roasted flavour. The starch then gelatinises in the hot stock, which thickens the sauce. Pork is safe at 63 °C followed by a short rest.",
+			"spiceProfile": "Mild and sweet-savoury: curry powder and garam masala warmed by ginger, rounded with apple and honey, deepened with soy and Worcestershire.",
+			"variations": "This version builds the roux from scratch with pork tonkatsu. The weeknight style uses ready-made roux blocks, and the British café style blends a smooth, sweeter sauce."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "katsu-curry",
+		"title": "Chicken katsu curry with roux blocks",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Weeknight roux blocks"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"weeknight"
+		],
+		"equipment": [
+			"pot",
+			"frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "short-grain-rice",
+				"name": "Japanese short-grain rice",
+				"role": "rice",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g Japanese short-grain rice"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "neutral oil (sauce)",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp neutral oil"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 large yellow onion, sliced"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrot",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "cut into chunks",
+				"original": "1 carrot, cut into chunks"
+			},
+			{
+				"id": "i5",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "cut into chunks",
+				"original": "2 potatoes, cut into chunks"
+			},
+			{
+				"id": "i6",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 700,
+				"unit": "ml",
+				"original": "7 dl water"
+			},
+			{
+				"id": "i7",
+				"key": "japanese-curry-roux",
+				"name": "Japanese curry roux blocks",
+				"role": "thickener",
+				"qty": 100,
+				"unit": "g",
+				"original": "1/2 box (about 100 g) Japanese curry roux"
+			},
+			{
+				"id": "i8",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 boneless, skinless chicken thighs"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i10",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper"
+			},
+			{
+				"id": "i11",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g flour"
+			},
+			{
+				"id": "i12",
+				"key": "egg",
+				"name": "egg",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "beaten",
+				"original": "2 eggs, beaten"
+			},
+			{
+				"id": "i13",
+				"key": "panko",
+				"name": "panko breadcrumbs",
+				"role": "bread",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g panko"
+			},
+			{
+				"id": "i14",
+				"key": "neutral-oil",
+				"name": "neutral oil for shallow-frying",
+				"role": "fat",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl neutral oil for frying"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rinse and cook the rice with 480 ml water.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s2",
+				"text": "Soften the onion in the oil, add carrot, potato and water and simmer until tender.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"saute",
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Take the pot off the heat, stir in the roux blocks until dissolved, then simmer gently until thick.",
+				"uses": [
+					"s2",
+					"i7"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 5,
+				"heat": "low",
+				"critical": "Add the blocks off the heat or they clump."
+			},
+			{
+				"id": "s4",
+				"text": "Flatten the chicken to an even thickness, season, then coat in flour, egg and panko.",
+				"uses": [
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"bread"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Shallow-fry the chicken 4–5 minutes per side until golden and 74 °C in the centre. Drain on a rack.",
+				"uses": [
+					"s4",
+					"i14"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s6",
+				"text": "Slice the chicken and serve on rice with the curry.",
+				"uses": [
+					"s1",
+					"s3",
+					"s5"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Shallow-frying flattened thighs in 1 cm of oil is quicker and uses less oil than deep-frying. The roux blocks contain fat, flour and spices, so they only need dissolving.",
+			"chemistry": "The roux blocks thicken by starch gelatinisation; adding them off the boil lets them dissolve before the starch swells and locks into lumps. Chicken must reach 74 °C.",
+			"variations": "Uses ready-made roux and chicken thighs for speed. The homestyle version makes a roux from scratch and deep-fries pork."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "katsu-curry",
+		"title": "Chicken katsu curry, British café style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – British café style"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 40,
+			"totalMin": 60
+		},
+		"cuisine": [
+			"japanese",
+			"british"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"chicken",
+			"curry",
+			"blended sauce"
+		],
+		"equipment": [
+			"pot",
+			"blender",
+			"baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "basmati-rice",
+				"name": "jasmine or basmati rice",
+				"role": "rice",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g rice"
+			},
+			{
+				"id": "i2",
+				"key": "neutral-oil",
+				"name": "neutral oil (sauce)",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp neutral oil"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "2 carrots, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 15,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "15 g ginger, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour (sauce)",
+				"role": "flour",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp flour"
+			},
+			{
+				"id": "i8",
+				"key": "curry-powder",
+				"name": "mild curry powder",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp mild curry powder"
+			},
+			{
+				"id": "i9",
+				"key": "turmeric",
+				"name": "ground turmeric",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp turmeric"
+			},
+			{
+				"id": "i10",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 500,
+				"unit": "ml",
+				"original": "5 dl chicken stock"
+			},
+			{
+				"id": "i11",
+				"key": "coconut-milk",
+				"name": "coconut milk",
+				"role": "dairy",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl coconut milk"
+			},
+			{
+				"id": "i12",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp honey"
+			},
+			{
+				"id": "i13",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp soy sauce"
+			},
+			{
+				"id": "i14",
+				"key": "chicken-breast",
+				"name": "chicken breasts",
+				"role": "poultry",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "butterflied",
+				"original": "4 small chicken breasts, butterflied"
+			},
+			{
+				"id": "i15",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i16",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour (dredge)",
+				"role": "flour",
+				"qty": 50,
+				"unit": "g",
+				"original": "50 g flour"
+			},
+			{
+				"id": "i17",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "beaten",
+				"original": "2 eggs, beaten"
+			},
+			{
+				"id": "i18",
+				"key": "panko",
+				"name": "panko breadcrumbs",
+				"role": "bread",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g panko"
+			},
+			{
+				"id": "i19",
+				"key": "neutral-oil",
+				"name": "neutral oil for frying",
+				"role": "fat",
+				"qty": 200,
+				"unit": "ml",
+				"original": "2 dl oil for frying"
+			},
+			{
+				"id": "i20",
+				"key": "pickled-red-cabbage",
+				"name": "quick pickled red cabbage or salad",
+				"role": "garnish",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g pickled red cabbage, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Cook the rice.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"boil"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Sweat onion, carrot, garlic and ginger in the oil until soft.",
+				"uses": [
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s3",
+				"text": "Stir in flour, curry powder and turmeric for 1 minute, then add stock, coconut milk, honey and soy. Simmer until the carrots are very soft.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Blend the sauce until completely smooth and adjust salt.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"blend"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Season the chicken, coat in flour, egg and panko, and fry until golden and 74 °C inside.",
+				"uses": [
+					"i14",
+					"i15",
+					"i16",
+					"i17",
+					"i18",
+					"i19"
+				],
+				"technique": [
+					"bread",
+					"fry"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s6",
+				"text": "Slice the chicken and serve over rice with the sauce poured over and pickled cabbage on the side.",
+				"uses": [
+					"s1",
+					"s4",
+					"s5",
+					"i20"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The vegetables cook down and are blended into the sauce, so it is smooth and pourable without a separate roux.",
+			"chemistry": "Blending the softened carrot and onion releases their sugars and fibre into the sauce, which adds sweetness and body. Chicken is safe at 74 °C.",
+			"spiceProfile": "Mild curry powder and turmeric with ginger, sweetened with honey and coconut.",
+			"variations": "Thinner, sweeter and poured over the chicken, as in UK chain restaurants. The Japanese versions keep chunky vegetables in a thicker roux-based curry."
+		}
+	}
+]

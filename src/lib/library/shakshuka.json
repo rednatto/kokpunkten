@@ -1,0 +1,689 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "shakshuka",
+		"title": "Shakshuka, classic red",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Classic red"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 30,
+			"totalMin": 40
+		},
+		"cuisine": [
+			"north-african",
+			"middle-eastern"
+		],
+		"course": [
+			"main",
+			"breakfast"
+		],
+		"tags": [
+			"eggs",
+			"vegetarian",
+			"one-pan"
+		],
+		"equipment": [
+			"large lidded frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 onion, sliced"
+			},
+			{
+				"id": "i3",
+				"key": "red-bell-pepper",
+				"name": "red bell peppers",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "2 red peppers, sliced"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "sliced",
+				"original": "3 cloves garlic, sliced"
+			},
+			{
+				"id": "i5",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i6",
+				"key": "sweet-paprika",
+				"name": "sweet paprika",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp sweet paprika"
+			},
+			{
+				"id": "i7",
+				"key": "chili-flakes",
+				"name": "chili flakes or harissa",
+				"role": "chili",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp chili flakes"
+			},
+			{
+				"id": "i8",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp tomato paste"
+			},
+			{
+				"id": "i9",
+				"key": "canned-tomatoes",
+				"name": "canned crushed tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"original": "2 cans (800 g) crushed tomatoes"
+			},
+			{
+				"id": "i10",
+				"key": "sugar",
+				"name": "sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "pinch of sugar"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i12",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 eggs"
+			},
+			{
+				"id": "i13",
+				"key": "flat-leaf-parsley",
+				"name": "parsley or coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "a handful of parsley, chopped"
+			},
+			{
+				"id": "i14",
+				"key": "crusty-bread",
+				"name": "crusty bread",
+				"role": "bread",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 loaf crusty bread, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the onion and peppers in the oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add garlic, cumin, paprika, chili and tomato paste and fry for 1 minute.",
+				"uses": [
+					"s1",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Add tomatoes, sugar and salt and simmer until thick enough to hold a hollow.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 12,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Make 6 hollows, crack an egg into each, cover and cook until the whites are set and the yolks still runny.",
+				"uses": [
+					"s3",
+					"i12"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 7,
+				"heat": "low",
+				"critical": "Take it off as soon as the whites set; the yolks keep cooking in the hot sauce."
+			},
+			{
+				"id": "s5",
+				"text": "Scatter with herbs and serve straight from the pan with bread.",
+				"uses": [
+					"s4",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"garnish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "The eggs poach in the reduced sauce under a lid, so steam sets the tops of the whites.",
+			"chemistry": "Egg white sets around 62–65 °C and yolk thickens around 65–70 °C, which is why a short, gentle cook leaves the yolk runny. Reducing the sauce concentrates its sugars and acids.",
+			"spiceProfile": "Earthy cumin and sweet paprika with gentle chili heat.",
+			"variations": "The common Tunisian-Israeli red version. Green shakshuka swaps tomatoes for greens, and the merguez version adds spicy lamb sausage."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "shakshuka",
+		"title": "Green shakshuka with feta",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Green with feta"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"main",
+			"breakfast"
+		],
+		"tags": [
+			"eggs",
+			"vegetarian",
+			"greens"
+		],
+		"equipment": [
+			"large lidded frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp butter"
+			},
+			{
+				"id": "i3",
+				"key": "leek",
+				"name": "leek",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "thinly sliced",
+				"original": "1 leek, thinly sliced"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "clove",
+				"prep": "sliced",
+				"original": "2 cloves garlic, sliced"
+			},
+			{
+				"id": "i5",
+				"key": "green-chili",
+				"name": "green chili",
+				"role": "chili",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 green chili, sliced"
+			},
+			{
+				"id": "i6",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i7",
+				"key": "spinach",
+				"name": "spinach",
+				"role": "leafy-green",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g spinach"
+			},
+			{
+				"id": "i8",
+				"key": "swiss-chard",
+				"name": "Swiss chard or kale",
+				"role": "leafy-green",
+				"qty": 200,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "200 g chard, shredded"
+			},
+			{
+				"id": "i9",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 100,
+				"unit": "ml",
+				"original": "1 dl vegetable stock"
+			},
+			{
+				"id": "i10",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "1/2 lemon, juiced"
+			},
+			{
+				"id": "i11",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i12",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 eggs"
+			},
+			{
+				"id": "i13",
+				"key": "feta",
+				"name": "feta",
+				"role": "cheese",
+				"qty": 100,
+				"unit": "g",
+				"prep": "crumbled",
+				"original": "100 g feta, crumbled"
+			},
+			{
+				"id": "i14",
+				"key": "dill",
+				"name": "dill and parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "a handful of dill and parsley, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the leek in oil and butter, then add garlic, chili and cumin for 1 minute.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the greens and stock and cook until wilted and most liquid has evaporated. Season with lemon and salt.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"wilt"
+				],
+				"durationMin": 6,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Make hollows, crack in the eggs, cover and cook until the whites set.",
+				"uses": [
+					"s2",
+					"i12"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 6,
+				"heat": "low",
+				"critical": "Cook off excess liquid first or the eggs sit in a watery pool."
+			},
+			{
+				"id": "s4",
+				"text": "Top with feta and herbs and serve.",
+				"uses": [
+					"s3",
+					"i13",
+					"i14"
+				],
+				"technique": [
+					"garnish"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Greens release a lot of water, so cook it off before adding the eggs.",
+			"chemistry": "Lemon added late keeps the greens tasting bright; acid added early would dull their colour by turning chlorophyll olive-brown.",
+			"spiceProfile": "Fresh and herbal: cumin and green chili with dill, lemon and salty feta.",
+			"variations": "Contains no tomato at all. The classic red version is tomato-and-pepper based and spicier."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "shakshuka",
+		"title": "Shakshuka with merguez",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – With merguez"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 35,
+			"totalMin": 45
+		},
+		"cuisine": [
+			"north-african"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"eggs",
+			"sausage",
+			"spicy"
+		],
+		"equipment": [
+			"large lidded frying pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "merguez",
+				"name": "merguez sausages",
+				"role": "meat",
+				"qty": 300,
+				"unit": "g",
+				"prep": "sliced",
+				"original": "300 g merguez, sliced"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 onion, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "red-bell-pepper",
+				"name": "red bell pepper",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 red pepper, diced"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "harissa",
+				"name": "harissa paste",
+				"role": "chili",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp harissa"
+			},
+			{
+				"id": "i7",
+				"key": "ground-caraway",
+				"name": "ground caraway",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp ground caraway"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground cumin"
+			},
+			{
+				"id": "i9",
+				"key": "canned-tomatoes",
+				"name": "canned chopped tomatoes",
+				"role": "vegetable",
+				"qty": 800,
+				"unit": "g",
+				"original": "800 g canned tomatoes"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt"
+			},
+			{
+				"id": "i11",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 6,
+				"unit": "piece",
+				"original": "6 eggs"
+			},
+			{
+				"id": "i12",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "chopped",
+				"original": "a handful of coriander, chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Brown the merguez in the oil, then lift out and leave the fat in the pan.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sear"
+				],
+				"durationMin": 6,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s2",
+				"text": "Soften onion and pepper in the sausage fat, then add garlic, harissa, caraway and cumin for 1 minute.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 10,
+				"heat": "medium"
+			},
+			{
+				"id": "s3",
+				"text": "Add tomatoes and the sausage back in, season and simmer until thick.",
+				"uses": [
+					"s2",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 12,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Crack in the eggs, cover and cook until the whites set. Garnish with coriander.",
+				"uses": [
+					"s3",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"poach"
+				],
+				"durationMin": 7,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "Rendering the sausage first flavours the base with its spiced fat.",
+			"spiceProfile": "Tunisian heat from harissa and merguez, with caraway and cumin.",
+			"variations": "A heartier, spicier Tunisian take with sausage. The classic red version is vegetarian."
+		}
+	}
+]

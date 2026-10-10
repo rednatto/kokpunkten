@@ -1,0 +1,722 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "minestrone",
+		"title": "Minestrone alla milanese",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Milanese with rice"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 75,
+			"totalMin": 100
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"vegetables",
+			"winter"
+		],
+		"equipment": [
+			"large soup pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 20,
+				"unit": "g",
+				"original": "20 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "pancetta",
+				"name": "pancetta",
+				"role": "cured-pork",
+				"qty": 80,
+				"unit": "g",
+				"prep": "diced",
+				"original": "80 g pancetta, diced"
+			},
+			{
+				"id": "i4",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 carrots, diced"
+			},
+			{
+				"id": "i6",
+				"key": "celery",
+				"name": "celery stalks",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 celery stalks, diced"
+			},
+			{
+				"id": "i7",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 potatoes, diced"
+			},
+			{
+				"id": "i8",
+				"key": "zucchini",
+				"name": "zucchini",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "1 zucchini, diced"
+			},
+			{
+				"id": "i9",
+				"key": "savoy-cabbage",
+				"name": "savoy cabbage",
+				"role": "leafy-green",
+				"qty": 250,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "250 g savoy cabbage, shredded"
+			},
+			{
+				"id": "i10",
+				"key": "borlotti-beans",
+				"name": "cooked borlotti beans",
+				"role": "legume",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g cooked borlotti beans"
+			},
+			{
+				"id": "i11",
+				"key": "canned-tomatoes",
+				"name": "chopped tomatoes",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g chopped tomatoes"
+			},
+			{
+				"id": "i12",
+				"key": "parmesan-rind",
+				"name": "parmesan rind",
+				"role": "umami",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 parmesan rind"
+			},
+			{
+				"id": "i13",
+				"key": "water",
+				"name": "water or light stock",
+				"role": "stock",
+				"qty": 1.8,
+				"unit": "l",
+				"original": "1.8 l water or light stock"
+			},
+			{
+				"id": "i14",
+				"key": "arborio",
+				"name": "arborio rice",
+				"role": "rice",
+				"qty": 120,
+				"unit": "g",
+				"original": "120 g arborio rice"
+			},
+			{
+				"id": "i15",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 50,
+				"unit": "g",
+				"prep": "grated, to serve",
+				"original": "50 g parmesan, grated, to serve"
+			},
+			{
+				"id": "i16",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i17",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the pancetta in butter and oil, add onion, carrot and celery and sweat until soft.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add potato, zucchini, cabbage, beans, tomatoes, parmesan rind and water. Simmer, partly covered.",
+				"uses": [
+					"s1",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 50,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Add the rice and simmer until tender. Season, remove the rind and serve with parmesan.",
+				"uses": [
+					"s2",
+					"i14",
+					"i16",
+					"i17",
+					"i15"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 15,
+				"heat": "low"
+			}
+		],
+		"notes": {
+			"techniques": "A long, gentle simmer lets the vegetables soften and blend. The parmesan rind slowly releases flavour.",
+			"chemistry": "Starch from the potato and rice thickens the broth; the cheese rind adds glutamates for savoury depth.",
+			"spiceProfile": "Savoury from pancetta and parmesan, sweet from cabbage and carrot.",
+			"variations": "Milan's version uses rice instead of pasta and is often served lukewarm in summer. Pancetta makes it richer than vegetarian versions."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "minestrone",
+		"title": "Minestrone alla genovese with pesto",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Genoese with pesto"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 60,
+			"totalMin": 85
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"vegetarian",
+			"summer"
+		],
+		"equipment": [
+			"large soup pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "potato",
+				"name": "potatoes",
+				"role": "starch",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 potatoes, diced"
+			},
+			{
+				"id": "i4",
+				"key": "zucchini",
+				"name": "zucchini",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 zucchini, diced"
+			},
+			{
+				"id": "i5",
+				"key": "green-beans",
+				"name": "green beans",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "cut into 2 cm pieces",
+				"original": "150 g green beans, cut into 2 cm pieces"
+			},
+			{
+				"id": "i6",
+				"key": "cannellini-beans",
+				"name": "cooked cannellini beans",
+				"role": "legume",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g cooked cannellini beans"
+			},
+			{
+				"id": "i7",
+				"key": "swiss-chard",
+				"name": "Swiss chard",
+				"role": "leafy-green",
+				"qty": 200,
+				"unit": "g",
+				"prep": "shredded",
+				"original": "200 g Swiss chard, shredded"
+			},
+			{
+				"id": "i8",
+				"key": "water",
+				"name": "water",
+				"role": "liquid",
+				"qty": 1.8,
+				"unit": "l",
+				"original": "1.8 l water"
+			},
+			{
+				"id": "i9",
+				"key": "ditalini",
+				"name": "ditalini or other small pasta",
+				"role": "pasta",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g ditalini or other small pasta"
+			},
+			{
+				"id": "i10",
+				"key": "basil-pesto",
+				"name": "basil pesto",
+				"role": "sauce",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp basil pesto"
+			},
+			{
+				"id": "i11",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 40,
+				"unit": "g",
+				"prep": "grated, to serve",
+				"original": "40 g parmesan, grated, to serve"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften the onion in the oil.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"sweat"
+				],
+				"durationMin": 5,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s2",
+				"text": "Add potato, zucchini, green beans, beans, chard and water. Simmer until the vegetables are soft.",
+				"uses": [
+					"s1",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 40,
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Add the pasta and cook until tender. Season.",
+				"uses": [
+					"s2",
+					"i9",
+					"i12"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10
+			},
+			{
+				"id": "s4",
+				"text": "Off the heat, stir in the pesto. Serve with parmesan.",
+				"uses": [
+					"s3",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"stir"
+				],
+				"critical": "Add the pesto off the heat; boiling it dulls the basil."
+			}
+		],
+		"notes": {
+			"techniques": "The pesto is stirred in at the end, so the fresh basil and garlic flavour stays bright.",
+			"chemistry": "Basil's aromatic oils are volatile and fade quickly with heat, which is why the pesto goes in last.",
+			"spiceProfile": "Green and summery: basil, garlic and pine nut from the pesto over mild vegetables.",
+			"variations": "A Ligurian, vegetarian minestrone with no tomato, finished with pesto and small pasta."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "minestrone",
+		"title": "Tomato and bean minestrone with pasta",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Hearty tomato and bean"
+		},
+		"servings": 6,
+		"time": {
+			"prepMin": 20,
+			"cookMin": 45,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"italian"
+		],
+		"course": [
+			"soup",
+			"main"
+		],
+		"tags": [
+			"soup",
+			"vegetarian",
+			"weeknight",
+			"pantry"
+		],
+		"equipment": [
+			"large soup pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp olive oil"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 yellow onion, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "carrot",
+				"name": "carrots",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 carrots, diced"
+			},
+			{
+				"id": "i4",
+				"key": "celery",
+				"name": "celery stalks",
+				"role": "vegetable",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "diced",
+				"original": "2 celery stalks, diced"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"prep": "chopped",
+				"original": "3 cloves garlic, chopped"
+			},
+			{
+				"id": "i6",
+				"key": "tomato-paste",
+				"name": "tomato paste",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp tomato paste"
+			},
+			{
+				"id": "i7",
+				"key": "canned-tomatoes",
+				"name": "chopped tomatoes",
+				"role": "vegetable",
+				"qty": 1,
+				"unit": "can",
+				"prep": "400 g",
+				"original": "1 can chopped tomatoes, 400 g"
+			},
+			{
+				"id": "i8",
+				"key": "vegetable-stock",
+				"name": "vegetable stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "l",
+				"original": "1.5 l vegetable stock"
+			},
+			{
+				"id": "i9",
+				"key": "kidney-beans",
+				"name": "cooked kidney beans",
+				"role": "legume",
+				"qty": 400,
+				"unit": "g",
+				"original": "400 g cooked kidney beans"
+			},
+			{
+				"id": "i10",
+				"key": "dried-oregano",
+				"name": "dried oregano",
+				"role": "herb",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp dried oregano"
+			},
+			{
+				"id": "i11",
+				"key": "bay-leaf",
+				"name": "bay leaf",
+				"role": "herb",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 bay leaf"
+			},
+			{
+				"id": "i12",
+				"key": "macaroni",
+				"name": "small macaroni",
+				"role": "pasta",
+				"qty": 120,
+				"unit": "g",
+				"original": "120 g small macaroni"
+			},
+			{
+				"id": "i13",
+				"key": "kale",
+				"name": "kale",
+				"role": "leafy-green",
+				"qty": 100,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "100 g kale, chopped"
+			},
+			{
+				"id": "i14",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i15",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i16",
+				"key": "parmesan",
+				"name": "parmesan",
+				"role": "hard-cheese",
+				"qty": 40,
+				"unit": "g",
+				"prep": "grated, to serve",
+				"original": "40 g parmesan, grated, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soften onion, carrot, celery and garlic in the oil.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"saute"
+				],
+				"durationMin": 8,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Stir in the tomato paste and cook for a minute.",
+				"uses": [
+					"s1",
+					"i6"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 1
+			},
+			{
+				"id": "s3",
+				"text": "Add tomatoes, stock, beans, oregano and bay leaf. Simmer.",
+				"uses": [
+					"s2",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 20,
+				"heat": "low"
+			},
+			{
+				"id": "s4",
+				"text": "Add pasta and kale and simmer until the pasta is tender. Season and serve with parmesan.",
+				"uses": [
+					"s3",
+					"i12",
+					"i13",
+					"i14",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10
+			}
+		],
+		"notes": {
+			"techniques": "Frying the tomato paste and using stock gives fast depth for a 45-minute soup.",
+			"chemistry": "Pasta releases starch as it cooks in the soup, thickening it; it keeps absorbing broth on standing.",
+			"spiceProfile": "Tomato-forward with garlic, oregano and bay.",
+			"variations": "A quick, pantry-based tomato minestrone. Heartier and redder than the Genoese, without the pancetta of the Milanese."
+		}
+	}
+]

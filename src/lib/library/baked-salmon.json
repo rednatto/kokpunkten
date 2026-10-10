@@ -1,0 +1,490 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "baked-salmon",
+		"title": "Oven-baked salmon with lemon and dill",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Lemon and dill"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 14,
+			"totalMin": 24
+		},
+		"cuisine": [
+			"scandinavian"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"fish",
+			"quick",
+			"weeknight"
+		],
+		"equipment": [
+			"baking dish",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "salmon",
+				"name": "salmon fillets",
+				"role": "fish",
+				"qty": 600,
+				"unit": "g",
+				"original": "4 salmon fillets (about 150 g each)"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp olive oil"
+			},
+			{
+				"id": "i3",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "salt, to taste"
+			},
+			{
+				"id": "i4",
+				"key": "black-pepper",
+				"name": "black pepper",
+				"role": "seasoning",
+				"qty": null,
+				"unit": "to-taste",
+				"original": "black pepper, to taste"
+			},
+			{
+				"id": "i5",
+				"key": "lemon",
+				"name": "lemon",
+				"role": "acid",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 lemon, zested, then sliced",
+				"prep": "zested, then sliced"
+			},
+			{
+				"id": "i6",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 1,
+				"unit": "clove",
+				"original": "1 clove garlic, thinly sliced",
+				"prep": "thinly sliced"
+			},
+			{
+				"id": "i7",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp dill, chopped",
+				"prep": "chopped"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Pat the salmon dry, put it in the dish and rub with oil, salt and pepper.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"season"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Scatter the lemon zest, garlic and half the dill over and lay the lemon slices on top.",
+				"uses": [
+					"s1",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"layer"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Bake until the salmon flakes and the centre reaches 52–55 °C for moist, just-opaque fish. Sprinkle with the rest of the dill.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 14,
+				"tempC": 200,
+				"critical": "Take it out early; salmon dries quickly. Cook to 63 °C if serving pregnant, elderly or immunocompromised people."
+			}
+		],
+		"notes": {
+			"techniques": "A short bake at moderate-high heat, with the lemon slices protecting the top.",
+			"chemistry": "Muscle proteins in fish set at lower temperatures than in meat, so salmon turns from translucent to opaque around 50 °C and starts to dry above 60 °C.",
+			"spiceProfile": "Fresh dill, lemon and a hint of garlic, the classic Nordic pairing.",
+			"variations": "The everyday method: quick and bright, between the very gentle slow-roast and the browned miso glaze."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "baked-salmon",
+		"title": "Slow-roasted salmon with herb oil",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Slow-roasted"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 25,
+			"totalMin": 35
+		},
+		"cuisine": [
+			"european"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"fish",
+			"gentle"
+		],
+		"equipment": [
+			"baking dish",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "salmon",
+				"name": "side of salmon",
+				"role": "fish",
+				"qty": 700,
+				"unit": "g",
+				"original": "700 g side of salmon, skinned",
+				"prep": "skinned"
+			},
+			{
+				"id": "i2",
+				"key": "olive-oil",
+				"name": "extra virgin olive oil",
+				"role": "fat",
+				"qty": 6,
+				"unit": "tbsp",
+				"original": "6 tbsp extra virgin olive oil, divided",
+				"prep": "divided"
+			},
+			{
+				"id": "i3",
+				"key": "flaky-salt",
+				"name": "flaky salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp flaky salt"
+			},
+			{
+				"id": "i4",
+				"key": "shallot",
+				"name": "small shallot",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"original": "1 small shallot, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i5",
+				"key": "flat-leaf-parsley",
+				"name": "flat-leaf parsley",
+				"role": "herb",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp flat-leaf parsley, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i6",
+				"key": "chives",
+				"name": "chives",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp chives, finely chopped",
+				"prep": "finely chopped"
+			},
+			{
+				"id": "i7",
+				"key": "lemon-zest",
+				"name": "lemon zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp lemon zest"
+			},
+			{
+				"id": "i8",
+				"key": "lemon-juice",
+				"name": "lemon juice",
+				"role": "acid",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp lemon juice"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Rub the salmon with 2 tbsp oil and the salt and let it sit at room temperature while the oven heats.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"season"
+				],
+				"durationMin": 15
+			},
+			{
+				"id": "s2",
+				"text": "Roast until the centre reaches 50 °C; the flesh will still look glossy and evenly pink.",
+				"uses": [
+					"s1"
+				],
+				"technique": [
+					"roast"
+				],
+				"durationMin": 25,
+				"tempC": 120,
+				"critical": "Use a thermometer; at this low heat the fish looks underdone even when ready."
+			},
+			{
+				"id": "s3",
+				"text": "Mix the shallot, herbs, zest and lemon juice with the remaining oil.",
+				"uses": [
+					"i2",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Spoon the herb oil over the salmon and serve.",
+				"uses": [
+					"s2",
+					"s3"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "Very low oven heat cooks the fish evenly from edge to centre with no dry outer layer.",
+			"chemistry": "Gentle heat keeps the proteins from contracting sharply, so little of the white albumin is squeezed out to the surface.",
+			"spiceProfile": "Fresh herbs, shallot and lemon in olive oil.",
+			"variations": "Silky and evenly cooked with no browning, served at about 50 °C; cook it longer to 63 °C for vulnerable guests."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "baked-salmon",
+		"title": "Miso-glazed salmon",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Miso-glazed"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 35,
+			"cookMin": 11,
+			"totalMin": 46
+		},
+		"cuisine": [
+			"japanese"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"fish",
+			"umami"
+		],
+		"equipment": [
+			"lined baking tray",
+			"bowl"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "white-miso",
+				"name": "white miso",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp white miso"
+			},
+			{
+				"id": "i2",
+				"key": "mirin",
+				"name": "mirin",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp mirin"
+			},
+			{
+				"id": "i3",
+				"key": "honey",
+				"name": "honey",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp honey"
+			},
+			{
+				"id": "i4",
+				"key": "soy-sauce",
+				"name": "soy sauce",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp soy sauce"
+			},
+			{
+				"id": "i5",
+				"key": "ginger",
+				"name": "fresh ginger",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp fresh ginger, grated",
+				"prep": "grated"
+			},
+			{
+				"id": "i6",
+				"key": "salmon",
+				"name": "skin-on salmon fillets",
+				"role": "fish",
+				"qty": 600,
+				"unit": "g",
+				"original": "4 skin-on salmon fillets (about 150 g each)"
+			},
+			{
+				"id": "i7",
+				"key": "scallion",
+				"name": "scallions",
+				"role": "garnish",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 scallions, thinly sliced",
+				"prep": "thinly sliced"
+			},
+			{
+				"id": "i8",
+				"key": "sesame-seeds",
+				"name": "toasted sesame seeds",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp toasted sesame seeds"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Mix the miso, mirin, honey, soy sauce and ginger.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5"
+				],
+				"technique": [
+					"mix"
+				]
+			},
+			{
+				"id": "s2",
+				"text": "Coat the salmon with the glaze and marinate in the fridge.",
+				"uses": [
+					"s1",
+					"i6"
+				],
+				"technique": [
+					"marinate"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s3",
+				"text": "Put the salmon skin side down on the tray and bake.",
+				"uses": [
+					"s2"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 8,
+				"tempC": 200
+			},
+			{
+				"id": "s4",
+				"text": "Switch to the grill and cook until the glaze is bubbling and spotted dark brown, and the centre is 52–55 °C.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"broil"
+				],
+				"durationMin": 3,
+				"tempC": 250,
+				"critical": "Watch it constantly; the sugary glaze goes from caramelised to burnt in seconds."
+			},
+			{
+				"id": "s5",
+				"text": "Sprinkle with scallions and sesame seeds.",
+				"uses": [
+					"s4",
+					"i7",
+					"i8"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "A short marinade and a blast under the grill give a lacquered top.",
+			"chemistry": "The sugars in honey and mirin caramelise and the miso browns quickly through the Maillard reaction, which is why the glaze needs high heat for only a few minutes.",
+			"spiceProfile": "Salty-sweet and savoury from miso and soy, with warm ginger.",
+			"variations": "Japanese-inspired and deeply browned, unlike the pale, herby lemon-dill and slow-roasted versions."
+		}
+	}
+]

@@ -23,7 +23,8 @@
 	function toDishes(rows: StoredRecipe[]): Dish[] {
 		const groups = new Map<string, StoredRecipe[]>();
 		for (const r of rows) groups.set(r.recipe.dish, [...(groups.get(r.recipe.dish) ?? []), r]);
-		return [...groups].map(([slug, versions]) => {
+		return [...groups].map(([slug, group]) => {
+			const versions = group.toSorted((a, b) => a.addedAt - b.addedAt);
 			const cuisines = [...new Set(versions.flatMap((v) => v.recipe.cuisine))];
 			const words = versions.flatMap((v) => [
 				v.recipe.title,
@@ -65,7 +66,7 @@
 	</div>
 {:else}
 	<div class="filters">
-		<input type="search" bind:value={query} placeholder="Search dishes or ingredients, e.g. leek miso" aria-label="Search" />
+		<input type="search" bind:value={query} placeholder="Search dish or ingredient" aria-label="Search" />
 		<div class="row">
 			<select bind:value={cuisine} aria-label="Cuisine">
 				<option value="">All cuisines</option>

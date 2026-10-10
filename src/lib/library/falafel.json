@@ -1,0 +1,638 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "falafel",
+		"title": "Chickpea falafel, Levantine style",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Levantine chickpea"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 20,
+			"totalMin": 1250
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"main",
+			"snack"
+		],
+		"tags": [
+			"vegan",
+			"deep-fried"
+		],
+		"equipment": [
+			"food processor",
+			"deep pot",
+			"thermometer"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-chickpeas",
+				"name": "dried chickpeas",
+				"role": "legume",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g dried chickpeas (not canned)"
+			},
+			{
+				"id": "i2",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "roughly chopped",
+				"original": "1 small onion, roughly chopped"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 4,
+				"unit": "clove",
+				"original": "4 cloves garlic"
+			},
+			{
+				"id": "i4",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch parsley"
+			},
+			{
+				"id": "i5",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch coriander"
+			},
+			{
+				"id": "i6",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground cumin"
+			},
+			{
+				"id": "i7",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground coriander"
+			},
+			{
+				"id": "i8",
+				"key": "cayenne-pepper",
+				"name": "cayenne",
+				"role": "chili",
+				"qty": 0.25,
+				"unit": "tsp",
+				"original": "1/4 tsp cayenne"
+			},
+			{
+				"id": "i9",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1 1/2 tsp salt"
+			},
+			{
+				"id": "i10",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp baking soda"
+			},
+			{
+				"id": "i11",
+				"key": "neutral-oil",
+				"name": "neutral oil for frying",
+				"role": "fat",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l oil for deep-frying"
+			},
+			{
+				"id": "i12",
+				"key": "pita-bread",
+				"name": "pita bread",
+				"role": "bread",
+				"qty": 4,
+				"unit": "piece",
+				"original": "4 pitas, to serve"
+			},
+			{
+				"id": "i13",
+				"key": "tahini-sauce",
+				"name": "tahini sauce",
+				"role": "sauce",
+				"qty": 150,
+				"unit": "ml",
+				"original": "1.5 dl tahini sauce, to serve"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the chickpeas in plenty of cold water for 18–24 hours, then drain well.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 1200,
+				"critical": "Use soaked raw chickpeas; cooked or canned ones turn to mush and fall apart in the oil."
+			},
+			{
+				"id": "s2",
+				"text": "Pulse chickpeas with onion, garlic, herbs, spices and salt until finely ground, like coarse sand that holds together when squeezed.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"pulse"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Chill the mixture, then stir in the baking soda just before shaping.",
+				"uses": [
+					"s2",
+					"i10"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s4",
+				"text": "Shape into small balls or patties and deep-fry at 175 °C until deep brown and crisp.",
+				"uses": [
+					"s3",
+					"i11"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 4,
+				"heat": "medium-high"
+			},
+			{
+				"id": "s5",
+				"text": "Serve in pita with tahini sauce.",
+				"uses": [
+					"s4",
+					"i12",
+					"i13"
+				],
+				"technique": [
+					"assemble"
+				]
+			}
+		],
+		"notes": {
+			"techniques": "Raw soaked chickpeas give a fluffy, green interior. The starch binds as it cooks in the oil, so no flour or egg is needed.",
+			"chemistry": "Raw chickpea starch gelatinises during frying and sets the balls. Baking soda releases CO2 in the heat, which lightens the crumb.",
+			"spiceProfile": "Herbaceous with cumin and coriander and a touch of cayenne.",
+			"variations": "The Levantine version is all chickpea and green with herbs. Egyptian taʿameya uses fava beans, and the baked version is oven-cooked."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "falafel",
+		"title": "Ta'ameya, Egyptian fava bean falafel",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Egyptian ta'ameya"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 30,
+			"cookMin": 20,
+			"totalMin": 770
+		},
+		"cuisine": [
+			"egyptian",
+			"middle-eastern"
+		],
+		"course": [
+			"main",
+			"breakfast"
+		],
+		"tags": [
+			"vegan",
+			"deep-fried"
+		],
+		"equipment": [
+			"food processor",
+			"deep pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-fava-beans",
+				"name": "dried split peeled fava beans",
+				"role": "legume",
+				"qty": 300,
+				"unit": "g",
+				"original": "300 g dried skinless split fava beans"
+			},
+			{
+				"id": "i2",
+				"key": "leek",
+				"name": "leek (green part)",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "chopped",
+				"original": "1 leek, green part, chopped"
+			},
+			{
+				"id": "i3",
+				"key": "yellow-onion",
+				"name": "yellow onion",
+				"role": "allium",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "roughly chopped",
+				"original": "1 small onion"
+			},
+			{
+				"id": "i4",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 5,
+				"unit": "clove",
+				"original": "5 cloves garlic"
+			},
+			{
+				"id": "i5",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch parsley"
+			},
+			{
+				"id": "i6",
+				"key": "cilantro",
+				"name": "coriander",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch coriander"
+			},
+			{
+				"id": "i7",
+				"key": "dill",
+				"name": "dill",
+				"role": "herb",
+				"qty": 0.5,
+				"unit": "bunch",
+				"original": "1/2 bunch dill"
+			},
+			{
+				"id": "i8",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground cumin"
+			},
+			{
+				"id": "i9",
+				"key": "ground-coriander",
+				"name": "ground coriander",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp ground coriander"
+			},
+			{
+				"id": "i10",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1.5,
+				"unit": "tsp",
+				"original": "1 1/2 tsp salt"
+			},
+			{
+				"id": "i11",
+				"key": "baking-soda",
+				"name": "baking soda",
+				"role": "leavening",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "1/2 tsp baking soda"
+			},
+			{
+				"id": "i12",
+				"key": "sesame-seeds",
+				"name": "sesame seeds",
+				"role": "topping",
+				"qty": 3,
+				"unit": "tbsp",
+				"original": "3 tbsp sesame seeds"
+			},
+			{
+				"id": "i13",
+				"key": "neutral-oil",
+				"name": "neutral oil for frying",
+				"role": "fat",
+				"qty": 1,
+				"unit": "l",
+				"original": "1 l oil for deep-frying"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the fava beans overnight and drain thoroughly.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Grind beans with leek, onion, garlic, herbs, spices and salt to a bright green paste.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10"
+				],
+				"technique": [
+					"pulse"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Rest the paste, then mix in the baking soda.",
+				"uses": [
+					"s2",
+					"i11"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 30
+			},
+			{
+				"id": "s4",
+				"text": "Shape into flat patties and press one side into sesame seeds.",
+				"uses": [
+					"s3",
+					"i12"
+				],
+				"technique": [
+					"shape"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Deep-fry at 175 °C until crisp and browned.",
+				"uses": [
+					"s4",
+					"i13"
+				],
+				"technique": [
+					"deep-fry"
+				],
+				"durationMin": 4,
+				"heat": "medium-high"
+			}
+		],
+		"notes": {
+			"techniques": "A finer grind and flat patty shape give a crisp shell and a moist, very green centre.",
+			"chemistry": "Skinless split fava beans grind to a finer, wetter paste than chickpeas, which gives a softer interior.",
+			"spiceProfile": "Very herb-forward (dill, parsley, coriander, leek) with cumin.",
+			"variations": "Made with fava beans instead of chickpeas and coated in sesame. It is softer and greener than Levantine falafel."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "falafel",
+		"title": "Baked falafel",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Oven-baked"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 25,
+			"cookMin": 25,
+			"totalMin": 770
+		},
+		"cuisine": [
+			"middle-eastern"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"vegan",
+			"baked",
+			"lighter"
+		],
+		"equipment": [
+			"food processor",
+			"baking tray"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dried-chickpeas",
+				"name": "dried chickpeas",
+				"role": "legume",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g dried chickpeas"
+			},
+			{
+				"id": "i2",
+				"key": "red-onion",
+				"name": "red onion",
+				"role": "allium",
+				"qty": 0.5,
+				"unit": "piece",
+				"original": "1/2 red onion"
+			},
+			{
+				"id": "i3",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "aromatic",
+				"qty": 3,
+				"unit": "clove",
+				"original": "3 cloves garlic"
+			},
+			{
+				"id": "i4",
+				"key": "flat-leaf-parsley",
+				"name": "parsley",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"original": "1 bunch parsley"
+			},
+			{
+				"id": "i5",
+				"key": "mint",
+				"name": "mint",
+				"role": "herb",
+				"qty": 0.5,
+				"unit": "bunch",
+				"original": "a few sprigs mint"
+			},
+			{
+				"id": "i6",
+				"key": "ground-cumin",
+				"name": "ground cumin",
+				"role": "spice",
+				"qty": 2,
+				"unit": "tsp",
+				"original": "2 tsp ground cumin"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp salt"
+			},
+			{
+				"id": "i8",
+				"key": "chickpea-flour",
+				"name": "chickpea flour",
+				"role": "binder",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp chickpea flour"
+			},
+			{
+				"id": "i9",
+				"key": "baking-powder",
+				"name": "baking powder",
+				"role": "leavening",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp baking powder"
+			},
+			{
+				"id": "i10",
+				"key": "olive-oil",
+				"name": "olive oil",
+				"role": "fat",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp olive oil"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Soak the chickpeas overnight and drain.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"soak"
+				],
+				"durationMin": 720
+			},
+			{
+				"id": "s2",
+				"text": "Pulse with onion, garlic, herbs, cumin and salt, then mix in chickpea flour and baking powder.",
+				"uses": [
+					"s1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9"
+				],
+				"technique": [
+					"pulse"
+				]
+			},
+			{
+				"id": "s3",
+				"text": "Shape into patties, brush generously with oil on both sides and lay on an oiled tray.",
+				"uses": [
+					"s2",
+					"i10"
+				],
+				"technique": [
+					"shape"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Bake at 200 °C, turning halfway, until golden on both sides.",
+				"uses": [
+					"s3"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 25,
+				"tempC": 200
+			}
+		],
+		"notes": {
+			"techniques": "Flat patties bake more evenly than balls, and a generous coat of oil helps them crisp.",
+			"chemistry": "Without hot oil the starch has less heat to set quickly, so a little chickpea flour helps bind them.",
+			"variations": "Less crisp than fried falafel but simpler and lower in fat."
+		}
+	}
+]

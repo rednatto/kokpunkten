@@ -1,0 +1,540 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kladdkaka",
+		"title": "Kladdkaka, classic cocoa",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Swedish classic"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 18,
+			"totalMin": 88
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"chocolate",
+			"fika",
+			"one-bowl"
+		],
+		"equipment": [
+			"saucepan",
+			"22 cm springform pan",
+			"whisk"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 100,
+				"unit": "g",
+				"prep": "plus extra for the pan",
+				"original": "100 g butter, plus extra for the pan"
+			},
+			{
+				"id": "i2",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 250,
+				"unit": "g",
+				"original": "250 g granulated sugar"
+			},
+			{
+				"id": "i4",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 60,
+				"unit": "g",
+				"original": "1 dl (60 g) all-purpose flour"
+			},
+			{
+				"id": "i5",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "chocolate",
+				"qty": 4,
+				"unit": "tbsp",
+				"original": "4 tbsp unsweetened cocoa powder"
+			},
+			{
+				"id": "i6",
+				"key": "vanilla-sugar",
+				"name": "vanilla sugar",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp vanilla sugar"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch salt"
+			},
+			{
+				"id": "i8",
+				"key": "heavy-cream",
+				"name": "heavy cream",
+				"role": "dairy",
+				"qty": 2,
+				"unit": "dl",
+				"prep": "whipped, to serve",
+				"optional": true,
+				"original": "2 dl heavy cream, whipped, to serve (optional)"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 175 °C. Grease a 22 cm springform pan with butter.",
+				"uses": [],
+				"technique": [],
+				"tempC": 175
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter in a saucepan and take it off the heat.",
+				"uses": [
+					"i1"
+				],
+				"technique": [
+					"melt"
+				],
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Stir the sugar, then the eggs, into the warm butter until smooth.",
+				"uses": [
+					"s2",
+					"i3",
+					"i2"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Sift in the flour, cocoa, vanilla sugar and salt and stir just until no dry flour remains.",
+				"uses": [
+					"s3",
+					"i4",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Pour into the pan and bake until the edges are set but the middle is still gooey.",
+				"uses": [
+					"s1",
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 18,
+				"tempC": 175,
+				"critical": "Do not overbake: the centre should still wobble slightly and a skewer should come out sticky."
+			},
+			{
+				"id": "s6",
+				"text": "Cool in the pan, then chill for at least 1 hour so it firms up. Serve with lightly whipped cream.",
+				"uses": [
+					"s5",
+					"i8"
+				],
+				"technique": [
+					"rest",
+					"whip"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "This is a one-saucepan batter with no leavening and no whipping, so the cake stays dense. It is deliberately underbaked and sets further as it cools.",
+			"chemistry": "There is too little flour and egg to set the middle fully at this baking time, so the sugar-rich centre stays fudgy. Chilling firms the butter and cocoa fat, which makes clean slices.",
+			"variations": "The classic home version uses only cocoa, which keeps it cheap and intensely chocolatey. Chocolate versions are richer and silkier, and gluten-free versions swap the flour for ground almonds."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kladdkaka",
+		"title": "Kladdkaka with dark chocolate",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Dark chocolate"
+		},
+		"servings": 10,
+		"time": {
+			"prepMin": 15,
+			"cookMin": 22,
+			"totalMin": 127
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"chocolate",
+			"fika",
+			"rich"
+		],
+		"equipment": [
+			"saucepan",
+			"24 cm springform pan",
+			"whisk",
+			"spatula"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "dark-chocolate",
+				"name": "dark chocolate (about 70 %)",
+				"role": "chocolate",
+				"qty": 150,
+				"unit": "g",
+				"prep": "chopped",
+				"original": "150 g dark chocolate (about 70 %), chopped"
+			},
+			{
+				"id": "i2",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g butter"
+			},
+			{
+				"id": "i3",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 3,
+				"unit": "piece",
+				"original": "3 eggs"
+			},
+			{
+				"id": "i4",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 200,
+				"unit": "g",
+				"original": "200 g granulated sugar"
+			},
+			{
+				"id": "i5",
+				"key": "all-purpose-flour",
+				"name": "all-purpose flour",
+				"role": "flour",
+				"qty": 60,
+				"unit": "g",
+				"original": "60 g all-purpose flour"
+			},
+			{
+				"id": "i6",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "chocolate",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp unsweetened cocoa powder"
+			},
+			{
+				"id": "i7",
+				"key": "flaky-salt",
+				"name": "flaky sea salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"original": "0.5 tsp flaky sea salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 175 °C and line a 24 cm springform pan with baking paper.",
+				"uses": [],
+				"technique": [],
+				"tempC": 175
+			},
+			{
+				"id": "s2",
+				"text": "Melt the chocolate and butter together over low heat, stirring, then let cool slightly.",
+				"uses": [
+					"i1",
+					"i2"
+				],
+				"technique": [
+					"melt"
+				],
+				"durationMin": 5,
+				"heat": "low",
+				"critical": "Keep the heat low; chocolate scorches and turns grainy above about 50 °C."
+			},
+			{
+				"id": "s3",
+				"text": "Whisk the eggs and sugar for 1 minute until just combined and glossy.",
+				"uses": [
+					"i3",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Stir the chocolate into the eggs, then fold in the flour and cocoa.",
+				"uses": [
+					"s2",
+					"s3",
+					"i5",
+					"i6"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Pour into the pan, scatter over the flaky salt and bake until the top is crackled and the centre is soft.",
+				"uses": [
+					"s1",
+					"s4",
+					"i7"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 22,
+				"tempC": 175
+			},
+			{
+				"id": "s6",
+				"text": "Cool completely, then chill for 1–2 hours before slicing.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 90
+			}
+		],
+		"notes": {
+			"techniques": "Melted chocolate replaces most of the cocoa, giving a silkier, truffle-like centre. Do not whip air into the eggs or the cake will rise and then collapse.",
+			"chemistry": "Cocoa butter in the chocolate solidifies as it cools, so this version is quite firm cold and soft at room temperature.",
+			"variations": "Richer and less sweet than the cocoa-only classic. A sprinkle of flaky salt is a common modern touch."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "kladdkaka",
+		"title": "Kladdkaka with almond flour, gluten-free",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Gluten-free almond"
+		},
+		"servings": 8,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 22,
+			"totalMin": 92
+		},
+		"cuisine": [
+			"swedish"
+		],
+		"course": [
+			"dessert",
+			"baking"
+		],
+		"tags": [
+			"chocolate",
+			"gluten-free",
+			"fika"
+		],
+		"equipment": [
+			"saucepan",
+			"22 cm springform pan"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "butter",
+				"name": "butter",
+				"role": "fat",
+				"qty": 125,
+				"unit": "g",
+				"original": "125 g butter"
+			},
+			{
+				"id": "i2",
+				"key": "muscovado-sugar",
+				"name": "light muscovado sugar",
+				"role": "sweetener",
+				"qty": 150,
+				"unit": "g",
+				"original": "150 g light muscovado sugar"
+			},
+			{
+				"id": "i3",
+				"key": "sugar",
+				"name": "granulated sugar",
+				"role": "sweetener",
+				"qty": 75,
+				"unit": "g",
+				"original": "75 g granulated sugar"
+			},
+			{
+				"id": "i4",
+				"key": "egg",
+				"name": "eggs",
+				"role": "egg",
+				"qty": 2,
+				"unit": "piece",
+				"original": "2 eggs"
+			},
+			{
+				"id": "i5",
+				"key": "almond-flour",
+				"name": "almond flour (ground almonds)",
+				"role": "flour",
+				"qty": 100,
+				"unit": "g",
+				"original": "100 g almond flour (ground almonds)"
+			},
+			{
+				"id": "i6",
+				"key": "cocoa-powder",
+				"name": "unsweetened cocoa powder",
+				"role": "chocolate",
+				"qty": 5,
+				"unit": "tbsp",
+				"original": "5 tbsp unsweetened cocoa powder"
+			},
+			{
+				"id": "i7",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 1,
+				"unit": "pinch",
+				"original": "1 pinch salt"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Heat the oven to 175 °C and grease and line a 22 cm springform pan.",
+				"uses": [],
+				"technique": [],
+				"tempC": 175
+			},
+			{
+				"id": "s2",
+				"text": "Melt the butter, then stir in both sugars until the muscovado dissolves.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"melt"
+				],
+				"heat": "low"
+			},
+			{
+				"id": "s3",
+				"text": "Beat in the eggs one at a time.",
+				"uses": [
+					"s2",
+					"i4"
+				],
+				"technique": [
+					"whisk"
+				]
+			},
+			{
+				"id": "s4",
+				"text": "Stir in the almond flour, cocoa and salt.",
+				"uses": [
+					"s3",
+					"i5",
+					"i6",
+					"i7"
+				],
+				"technique": [
+					"fold"
+				]
+			},
+			{
+				"id": "s5",
+				"text": "Bake until set at the edges with a soft centre.",
+				"uses": [
+					"s1",
+					"s4"
+				],
+				"technique": [
+					"bake"
+				],
+				"durationMin": 22,
+				"tempC": 175,
+				"critical": "Almond flour browns faster than wheat flour; check from 18 minutes."
+			},
+			{
+				"id": "s6",
+				"text": "Cool in the pan and chill for at least 1 hour.",
+				"uses": [
+					"s5"
+				],
+				"technique": [
+					"rest"
+				],
+				"durationMin": 60
+			}
+		],
+		"notes": {
+			"techniques": "Ground almonds replace wheat flour, so the cake is moister and slightly nuttier. Without gluten it is more fragile, so cool it fully before unmoulding.",
+			"chemistry": "Muscovado contains molasses, which holds moisture and adds a toffee note.",
+			"variations": "Gluten-free and a little softer than the classic. The brown sugar gives caramel notes the white-sugar versions lack."
+		}
+	}
+]

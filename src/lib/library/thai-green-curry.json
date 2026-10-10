@@ -1,0 +1,558 @@
+[
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "thai-green-curry",
+		"title": "Thai green curry with homemade paste",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – From-scratch paste"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 40,
+			"cookMin": 25,
+			"totalMin": 65
+		},
+		"cuisine": [
+			"thai"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"curry",
+			"chicken",
+			"coconut",
+			"spicy"
+		],
+		"equipment": [
+			"mortar and pestle or blender",
+			"wok or pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "green-chili",
+				"name": "green bird's eye chilies",
+				"role": "chili",
+				"qty": 10,
+				"unit": "piece",
+				"prep": "chopped",
+				"group": "paste",
+				"original": "10 green bird's eye chilies, chopped"
+			},
+			{
+				"id": "i2",
+				"key": "lemongrass",
+				"name": "lemongrass",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "piece",
+				"prep": "tender part, sliced",
+				"group": "paste",
+				"original": "2 lemongrass, tender part, sliced"
+			},
+			{
+				"id": "i3",
+				"key": "galangal",
+				"name": "galangal",
+				"role": "aromatic",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"group": "paste",
+				"substitutes": [
+					"ginger"
+				],
+				"original": "2 tbsp galangal, chopped"
+			},
+			{
+				"id": "i4",
+				"key": "shallot",
+				"name": "shallots",
+				"role": "allium",
+				"qty": 3,
+				"unit": "piece",
+				"prep": "chopped",
+				"group": "paste",
+				"original": "3 shallots, chopped"
+			},
+			{
+				"id": "i5",
+				"key": "garlic",
+				"name": "garlic",
+				"role": "allium",
+				"qty": 5,
+				"unit": "clove",
+				"group": "paste",
+				"original": "5 cloves garlic"
+			},
+			{
+				"id": "i6",
+				"key": "cilantro-root",
+				"name": "cilantro roots and stems",
+				"role": "herb",
+				"qty": 2,
+				"unit": "tbsp",
+				"prep": "chopped",
+				"group": "paste",
+				"original": "2 tbsp cilantro roots and stems, chopped"
+			},
+			{
+				"id": "i7",
+				"key": "makrut-lime-zest",
+				"name": "makrut lime zest",
+				"role": "aromatic",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "paste",
+				"substitutes": [
+					"lime zest"
+				],
+				"original": "1 tsp makrut lime zest"
+			},
+			{
+				"id": "i8",
+				"key": "coriander-seeds",
+				"name": "coriander seeds",
+				"role": "spice",
+				"qty": 1,
+				"unit": "tsp",
+				"prep": "toasted",
+				"group": "paste",
+				"original": "1 tsp coriander seeds, toasted"
+			},
+			{
+				"id": "i9",
+				"key": "cumin-seeds",
+				"name": "cumin seeds",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"prep": "toasted",
+				"group": "paste",
+				"original": "0.5 tsp cumin seeds, toasted"
+			},
+			{
+				"id": "i10",
+				"key": "white-pepper",
+				"name": "white peppercorns",
+				"role": "spice",
+				"qty": 0.5,
+				"unit": "tsp",
+				"group": "paste",
+				"original": "0.5 tsp white peppercorns"
+			},
+			{
+				"id": "i11",
+				"key": "shrimp-paste",
+				"name": "shrimp paste",
+				"role": "umami",
+				"qty": 1,
+				"unit": "tsp",
+				"group": "paste",
+				"original": "1 tsp shrimp paste"
+			},
+			{
+				"id": "i12",
+				"key": "salt",
+				"name": "salt",
+				"role": "salt",
+				"qty": 0.5,
+				"unit": "tsp",
+				"group": "paste",
+				"original": "0.5 tsp salt"
+			},
+			{
+				"id": "i13",
+				"key": "coconut-milk",
+				"name": "coconut milk",
+				"role": "liquid",
+				"qty": 800,
+				"unit": "ml",
+				"original": "2 cans (400 ml each) coconut milk, unshaken"
+			},
+			{
+				"id": "i14",
+				"key": "chicken-thigh",
+				"name": "boneless chicken thighs",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"prep": "thinly sliced",
+				"original": "500 g boneless chicken thighs, thinly sliced"
+			},
+			{
+				"id": "i15",
+				"key": "thai-eggplant",
+				"name": "Thai eggplants",
+				"role": "vegetable",
+				"qty": 200,
+				"unit": "g",
+				"prep": "quartered",
+				"substitutes": [
+					"regular eggplant in cubes"
+				],
+				"original": "200 g Thai eggplants, quartered"
+			},
+			{
+				"id": "i16",
+				"key": "makrut-lime-leaves",
+				"name": "makrut lime leaves",
+				"role": "herb",
+				"qty": 4,
+				"unit": "piece",
+				"prep": "torn",
+				"original": "4 makrut lime leaves, torn"
+			},
+			{
+				"id": "i17",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 2,
+				"unit": "tbsp",
+				"original": "2 tbsp fish sauce"
+			},
+			{
+				"id": "i18",
+				"key": "palm-sugar",
+				"name": "palm sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp palm sugar"
+			},
+			{
+				"id": "i19",
+				"key": "thai-basil",
+				"name": "Thai basil",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "leaves picked",
+				"original": "1 bunch Thai basil, leaves picked"
+			},
+			{
+				"id": "i20",
+				"key": "red-chili",
+				"name": "red chili",
+				"role": "garnish",
+				"qty": 1,
+				"unit": "piece",
+				"prep": "sliced",
+				"original": "1 red chili, sliced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Grind the toasted spices and pepper to a powder, then pound or blend with the other paste ingredients to a fine paste.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3",
+					"i4",
+					"i5",
+					"i6",
+					"i7",
+					"i8",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [
+					"grind",
+					"blend"
+				],
+				"durationMin": 20
+			},
+			{
+				"id": "s2",
+				"text": "Simmer the thick cream from the top of the coconut milk in a wok until it splits and the oil appears.",
+				"uses": [
+					"i13"
+				],
+				"technique": [
+					"reduce"
+				],
+				"durationMin": 5,
+				"heat": "medium",
+				"critical": "Let the coconut cream \"crack\" before adding paste; this is what fries the paste and releases its aroma."
+			},
+			{
+				"id": "s3",
+				"text": "Fry 4–5 tbsp of the paste in the coconut oil until very fragrant.",
+				"uses": [
+					"s1",
+					"s2"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 3,
+				"heat": "medium"
+			},
+			{
+				"id": "s4",
+				"text": "Add the chicken and stir until coated and turning opaque.",
+				"uses": [
+					"s3",
+					"i14"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 3
+			},
+			{
+				"id": "s5",
+				"text": "Add the rest of the coconut milk, eggplants and lime leaves and simmer until the eggplant is tender and the chicken reaches 74 °C.",
+				"uses": [
+					"s4",
+					"i15",
+					"i16"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 10,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s6",
+				"text": "Season with fish sauce and palm sugar, stir in the basil and top with red chili. Serve with jasmine rice.",
+				"uses": [
+					"s5",
+					"i17",
+					"i18",
+					"i19",
+					"i20"
+				],
+				"technique": []
+			}
+		],
+		"notes": {
+			"techniques": "The coconut cream is cooked until it separates, then the paste is fried in that fat rather than in added oil.",
+			"chemistry": "Cracking coconut cream evaporates water until the fat droplets coalesce; many chili and herb aromas dissolve in that fat.",
+			"spiceProfile": "Hot and herbal: fresh green chilies, lemongrass, galangal and makrut lime, with sweet basil and a salty-sweet finish.",
+			"variations": "Homemade paste is greener, hotter and fresher-tasting than jarred paste. Leftover paste keeps a week in the fridge."
+		}
+	},
+	{
+		"format": "kokpunkten.recipe/v0",
+		"dish": "thai-green-curry",
+		"title": "Thai green curry, weeknight with store-bought paste",
+		"language": "en",
+		"source": {
+			"type": "ai-generated",
+			"name": "Kokpunkten – Weeknight jar paste"
+		},
+		"servings": 4,
+		"time": {
+			"prepMin": 10,
+			"cookMin": 20,
+			"totalMin": 30
+		},
+		"cuisine": [
+			"thai"
+		],
+		"course": [
+			"main"
+		],
+		"tags": [
+			"curry",
+			"chicken",
+			"coconut",
+			"weeknight"
+		],
+		"equipment": [
+			"wok or pot"
+		],
+		"ingredients": [
+			{
+				"id": "i1",
+				"key": "neutral-oil",
+				"name": "vegetable oil",
+				"role": "fat",
+				"qty": 1,
+				"unit": "tbsp",
+				"original": "1 tbsp vegetable oil"
+			},
+			{
+				"id": "i2",
+				"key": "green-curry-paste",
+				"name": "green curry paste",
+				"role": "spice",
+				"qty": 3,
+				"unit": "tbsp",
+				"qtyMax": 4,
+				"original": "3–4 tbsp green curry paste"
+			},
+			{
+				"id": "i3",
+				"key": "coconut-milk",
+				"name": "coconut milk",
+				"role": "liquid",
+				"qty": 400,
+				"unit": "ml",
+				"original": "400 ml coconut milk"
+			},
+			{
+				"id": "i4",
+				"key": "chicken-stock",
+				"name": "chicken stock",
+				"role": "stock",
+				"qty": 1.5,
+				"unit": "dl",
+				"original": "1.5 dl chicken stock"
+			},
+			{
+				"id": "i5",
+				"key": "chicken-breast",
+				"name": "chicken breast",
+				"role": "poultry",
+				"qty": 500,
+				"unit": "g",
+				"prep": "thinly sliced",
+				"original": "500 g chicken breast, thinly sliced"
+			},
+			{
+				"id": "i6",
+				"key": "green-beans",
+				"name": "green beans",
+				"role": "vegetable",
+				"qty": 150,
+				"unit": "g",
+				"prep": "in 4 cm pieces",
+				"original": "150 g green beans, in 4 cm pieces"
+			},
+			{
+				"id": "i7",
+				"key": "bamboo-shoots",
+				"name": "bamboo shoots",
+				"role": "vegetable",
+				"qty": 225,
+				"unit": "g",
+				"prep": "drained",
+				"original": "225 g bamboo shoots, drained"
+			},
+			{
+				"id": "i8",
+				"key": "makrut-lime-leaves",
+				"name": "makrut lime leaves",
+				"role": "herb",
+				"qty": 3,
+				"unit": "piece",
+				"optional": true,
+				"original": "3 makrut lime leaves (optional)"
+			},
+			{
+				"id": "i9",
+				"key": "fish-sauce",
+				"name": "fish sauce",
+				"role": "umami",
+				"qty": 1.5,
+				"unit": "tbsp",
+				"original": "1.5 tbsp fish sauce"
+			},
+			{
+				"id": "i10",
+				"key": "brown-sugar",
+				"name": "brown sugar",
+				"role": "sweetener",
+				"qty": 1,
+				"unit": "tsp",
+				"original": "1 tsp brown sugar"
+			},
+			{
+				"id": "i11",
+				"key": "thai-basil",
+				"name": "Thai basil",
+				"role": "herb",
+				"qty": 1,
+				"unit": "bunch",
+				"prep": "leaves picked",
+				"substitutes": [
+					"regular basil"
+				],
+				"original": "1 bunch Thai basil, leaves picked"
+			},
+			{
+				"id": "i12",
+				"key": "lime",
+				"name": "lime",
+				"role": "acid",
+				"qty": 0.5,
+				"unit": "piece",
+				"prep": "juiced",
+				"original": "0.5 lime, juiced"
+			}
+		],
+		"steps": [
+			{
+				"id": "s1",
+				"text": "Fry the curry paste in the oil with 3 tbsp of the coconut milk until fragrant.",
+				"uses": [
+					"i1",
+					"i2",
+					"i3"
+				],
+				"technique": [
+					"fry"
+				],
+				"durationMin": 2,
+				"heat": "medium"
+			},
+			{
+				"id": "s2",
+				"text": "Add the chicken and stir to coat.",
+				"uses": [
+					"s1",
+					"i5"
+				],
+				"technique": [
+					"stir-fry"
+				],
+				"durationMin": 2
+			},
+			{
+				"id": "s3",
+				"text": "Add the rest of the coconut milk, stock, beans, bamboo shoots and lime leaves and simmer until the chicken reaches 74 °C and the beans are tender-crisp.",
+				"uses": [
+					"s2",
+					"i4",
+					"i6",
+					"i7",
+					"i8"
+				],
+				"technique": [
+					"simmer"
+				],
+				"durationMin": 8,
+				"heat": "medium-low"
+			},
+			{
+				"id": "s4",
+				"text": "Season with fish sauce, sugar and lime juice and stir in the basil.",
+				"uses": [
+					"s3",
+					"i9",
+					"i10",
+					"i11",
+					"i12"
+				],
+				"technique": [],
+				"critical": "Taste before adding fish sauce; jarred pastes vary a lot in salt."
+			}
+		],
+		"notes": {
+			"techniques": "Frying the jarred paste in a little oil and coconut milk wakes up flavours dulled by processing.",
+			"chemistry": "Stock thins the sauce to a soupy consistency typical of Thai curries; the coconut milk is not boiled hard so it stays smooth.",
+			"spiceProfile": "Milder and saltier than homemade, rounded with lime and basil.",
+			"variations": "About 30 minutes from start to finish. The from-scratch version has a brighter, more herbal heat."
+		}
+	}
+]
