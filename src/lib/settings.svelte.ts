@@ -5,10 +5,12 @@ export interface Settings {
 	numbers: NumberStyle;
 	/** Which comparison design to show for several versions of a dish. */
 	compareView: 'merge' | 'table' | 'changes';
+	/** Which diagram design to show for a recipe's steps. */
+	diagramView: 'flow' | 'timeline' | 'tree';
 }
 
 const KEY = 'kokpunkten.settings';
-const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge' };
+const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge', diagramView: 'flow' };
 
 function load(): Settings {
 	try {
