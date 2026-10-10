@@ -6,6 +6,7 @@ Recipes, straight to the point. A mobile-first web app with no life stories: jus
 
 - **Add recipes through your own AI assistant.** The app builds a prompt for a dish (or a URL or book page). You paste the assistant's JSON answer back in, and the app validates it with clear, per-field errors.
 - **Cooking view:** scale servings, convert to metric, check off ingredients and steps, run step timers, and keep the screen awake.
+- **Cook with what you have:** list a few ingredients (falukorv, potatis) to get the recipes that use them, the ones that use all of them first, with what else each needs.
 - **Your data:** favorites, a 1–5 rating and personal notes. Everything is stored on the device (IndexedDB); there is no sign-in yet.
 - Installable as an app (PWA) and works offline once loaded.
 
@@ -37,4 +38,4 @@ The app is a static single-page app (`adapter-static`). GitHub Pages answers dee
 1. Import from a recipe URL (schema.org Recipe JSON-LD, which needs a small server endpoint).
 2. Diff view: common ground and alternatives across the versions of one dish.
 3. Diagram view generated from `steps[].uses`.
-4. Optional sign-in and sync (Supabase), and search by ingredient or cuisine.
+4. Optional sign-in and sync (Supabase), and search by cuisine.
