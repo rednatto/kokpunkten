@@ -125,12 +125,12 @@
 
 	{#if siblings && siblings.length > 1}
 		<nav class="row others" aria-label="Versions of this dish">
+			<a href="{resolve('/d/[dish]', { dish: recipe.dish })}?from={id}" class="chip compare">⇄ Compare {siblings.length} versions</a>
 			{#each siblings as s (s.id)}
 				<a href={resolve('/r/[id]', { id: s.id })} class="chip" class:current={s.id === id} aria-current={s.id === id ? 'page' : undefined}>
 					{s.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? s.recipe.title}
 				</a>
 			{/each}
-			<a href="{resolve('/d/[dish]', { dish: recipe.dish })}?from={id}" class="chip compare">Compare ⇄</a>
 		</nav>
 	{/if}
 
@@ -252,13 +252,17 @@
 		color: inherit;
 		text-decoration: none;
 	}
-	.compare {
-		border-style: dashed;
-	}
-	.chip.current {
+	.chip.compare {
 		border-color: var(--accent);
 		background: var(--accent);
 		color: var(--accent-fg);
+		font-weight: 600;
+		padding: 0.3rem 0.85rem;
+	}
+	.chip.current {
+		border-color: var(--accent);
+		color: var(--accent);
+		font-weight: 600;
 	}
 	.controls {
 		justify-content: space-between;

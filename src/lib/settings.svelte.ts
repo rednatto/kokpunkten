@@ -7,10 +7,12 @@ export interface Settings {
 	compareView: 'merge' | 'table' | 'changes';
 	/** Which diagram design to show for a recipe's steps. */
 	diagramView: 'flow' | 'timeline' | 'tree';
+	/** Show each step's whole text in the diagram instead of a short label. */
+	diagramFull: boolean;
 }
 
 const KEY = 'kokpunkten.settings';
-const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge', diagramView: 'flow' };
+const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge', diagramView: 'flow', diagramFull: false };
 
 function load(): Settings {
 	try {

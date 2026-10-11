@@ -10,6 +10,7 @@
 	const plan = $derived(schedule(graph));
 	const table = $derived(tree(graph));
 	const sequential = $derived(plan.steps.reduce((sum, s) => sum + (s.end - s.start), 0));
+	const label = (step: Recipe['steps'][number], max?: number) => (settings.diagramFull ? step.text : stepLabel(step, max));
 	const names = (ings: { name: string }[]) => ings.map((i) => i.name).join(' · ');
 
 	// --- Flow: cards in rows by depth, joined by curves measured from the rendered cards.
@@ -42,6 +43,7 @@
 	}
 	$effect(() => {
 		void graph;
+		void settings.diagramFull;
 		if (settings.diagramView !== 'flow' || !box) return;
 		const ro = new ResizeObserver(measure);
 		ro.observe(box);
@@ -60,6 +62,10 @@
 		<button role="tab" aria-selected={settings.diagramView === value} class:active={settings.diagramView === value} onclick={() => (settings.diagramView = value)}>{name}</button>
 	{/each}
 </div>
+<label class="full">
+	<input type="checkbox" bind:checked={settings.diagramFull} />
+	Show the full text of each step
+</label>
 
 {#if settings.diagramView === 'flow'}
 	<p class="muted how">Each row can be done at the same time. Lines show what goes into what.</p>
@@ -79,7 +85,7 @@
 				{#each row as g (g.step.id)}
 					<button class="node" class:done={done.has(g.step.id)} data-step={g.step.id} onclick={() => ontoggle(g.step.id)} aria-pressed={done.has(g.step.id)}>
 						<span class="no">{done.has(g.step.id) ? '✓' : g.no}</span>
-						<span class="label">{stepLabel(g.step)}</span>
+						<span class="label">{label(g.step)}</span>
 						{#if g.adds.length}<span class="adds">+ {names(g.adds)}</span>{/if}
 						{#if g.step.durationMin || g.step.heat}
 							<span class="meta">{[g.step.durationMin && `${g.step.durationMin} min`, g.step.heat && `${g.step.heat} heat`].filter(Boolean).join(' · ')}</span>
@@ -100,7 +106,7 @@
 		</div>
 		{#each plan.steps as s (s.step.id)}
 			<button class="bar-row" class:done={done.has(s.step.id)} onclick={() => ontoggle(s.step.id)} aria-pressed={done.has(s.step.id)}>
-				<span class="bar-label"><strong>{done.has(s.step.id) ? '✓' : s.no}</strong> {stepLabel(s.step, 48)}</span>
+				<span class="bar-label"><strong class="mark">{done.has(s.step.id) ? '✓' : s.no}</strong> {label(s.step, 48)}</span>
 				<span class="track">
 					{#each ticks as t (t)}<span class="grid" style:left={pct(t)}></span>{/each}
 					<span class="bar" class:critical={s.critical} class:guessed={s.guessed} style:left={pct(s.start)} style:width={pct(s.end - s.start)}></span>
@@ -112,7 +118,7 @@
 {:else}
 	<p class="muted how">Read left to right: each step combines the rows it spans, until the last step brings everything together.</p>
 	<div class="tree-wrap">
-		<div class="tree" style:grid-template-columns="minmax(6rem, 1.2fr) repeat({table.cols - 1}, minmax(4.75rem, 1fr))" style:grid-template-rows="repeat({table.rows}, auto)">
+		<div class="tree" style:grid-template-columns="minmax(6rem, 1.2fr) repeat({table.cols - 1}, minmax({settings.diagramFull ? 9 : 4.75}rem, 1fr))" style:grid-template-rows="repeat({table.rows}, auto)">
 			{#each table.cells as c, n (n)}
 				{#if c.kind === 'ingredient'}
 					<div class="cell ing" style:grid-row="{c.row + 1} / span 1" style:grid-column="1 / span {c.colSpan}">{c.ingredient!.name}</div>
@@ -126,8 +132,8 @@
 						onclick={() => ontoggle(g.step.id)}
 						aria-pressed={done.has(g.step.id)}
 					>
-						<strong>{done.has(g.step.id) ? '✓' : g.no}</strong>
-						{stepLabel(g.step, 36)}
+						<strong class="mark">{done.has(g.step.id) ? '✓' : g.no}</strong>
+						{label(g.step, 36)}
 						{#if g.step.durationMin}<span class="meta">{g.step.durationMin} min</span>{/if}
 					</button>
 				{/if}
@@ -169,8 +175,27 @@
 		color: var(--fg);
 		min-height: 0;
 	}
-	.done {
-		opacity: 0.45;
+	.full {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0 0 0.6rem;
+		font-size: 0.85rem;
+	}
+	.full input {
+		width: 1.1rem;
+		height: 1.1rem;
+		margin: 0;
+		accent-color: var(--accent);
+	}
+	/* Done steps stay readable: muted text and a green tick, not a faded block. */
+	.done,
+	.done .meta,
+	.done .adds {
+		color: var(--muted);
+	}
+	.done .mark {
+		color: var(--accent);
 	}
 
 	/* Flow */
@@ -224,6 +249,15 @@
 		font-weight: 700;
 		display: grid;
 		place-items: center;
+	}
+	.node.done {
+		border-style: dashed;
+		background: transparent;
+	}
+	.node.done .no {
+		background: var(--bg);
+		color: var(--accent);
+		border: 1.5px solid var(--accent);
 	}
 	.label {
 		font-weight: 600;
@@ -293,6 +327,9 @@
 		background: transparent;
 		border: 1.5px dashed var(--accent);
 	}
+	.done .bar {
+		opacity: 0.55;
+	}
 	.when {
 		position: absolute;
 		top: -0.1rem;
@@ -327,5 +364,8 @@
 		justify-content: center;
 		gap: 0.15rem;
 		background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+	}
+	.cell.step.done {
+		background: var(--surface);
 	}
 </style>
