@@ -31,7 +31,10 @@
 
 <header class="bar">
 	<a href={resolve('/')} class="brand">Kokpunkten</a>
-	<a href={resolve('/add')} class="button small">+ Add</a>
+	<div class="row">
+		<a href={resolve('/kitchen')} class="button ghost small">Swaps &amp; weights</a>
+		<a href={resolve('/add')} class="button small">+ Add</a>
+	</div>
 </header>
 
 <main>
