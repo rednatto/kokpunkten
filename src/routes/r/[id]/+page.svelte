@@ -94,7 +94,16 @@
 	}
 	onDestroy(() => wakeLock?.release());
 
-	const update = (changes: Partial<{ favorite: boolean; rating: number | null; note: string }>) => updateRecipe(id, changes);
+	let saveError = $state('');
+	async function update(changes: Partial<{ favorite: boolean; rating: number | null; note: string }>) {
+		saveError = '';
+		try {
+			await updateRecipe(id, changes);
+		} catch (e) {
+			console.error(e);
+			saveError = `Couldn't save that (${(e as Error).name}: ${(e as Error).message.slice(0, 120)}).`;
+		}
+	}
 
 	async function remove() {
 		if (!confirm('Delete this recipe from this device?')) return;
@@ -230,6 +239,7 @@
 			onchange={(e) => update({ note: e.currentTarget.value })}
 			style="font-family: inherit; font-size: 1rem"
 		></textarea>
+		{#if saveError}<p role="alert">{saveError}</p>{/if}
 		{#if !row.builtin}
 			<button class="ghost small delete" onclick={remove}>Delete recipe</button>
 		{/if}

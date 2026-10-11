@@ -1,3 +1,4 @@
+import { writable } from 'svelte/store';
 import { db, deleteRecipes, putRecipes, type StoredRecipe } from './db.ts';
 import type { Catalog } from './catalog.ts';
 import { recipeSchema, type Recipe } from './recipe/schema.ts';
@@ -26,12 +27,15 @@ const sources: Source[] = [
 		async load() {
 			const files = await Promise.all(Object.values(libraryUrls).map((u) => fetchJson<unknown[]>(u)));
 			const recipes: [string, Recipe][] = [];
-			for (const versions of files)
+			for (const versions of files) {
 				versions.forEach((item, n) => {
 					const res = recipeSchema.safeParse(item);
 					if (res.success) recipes.push([libraryId(res.data.dish, n), res.data]);
 					else console.warn('Skipping invalid library recipe', res.error.issues);
 				});
+				// Checking hundreds of recipes takes seconds on a phone; let taps and page loads in between dishes.
+				await new Promise((r) => setTimeout(r));
+			}
 			return { prefix: 'lib-', recipes };
 		}
 	},
@@ -45,9 +49,30 @@ const sources: Source[] = [
 	}))
 ];
 
+/** True while built-in recipes are being copied in, for the layout to say so rather than look stuck. */
+export const syncing = writable(false);
+
+/**
+ * Rows written per transaction while syncing. A write transaction holds the recipe tables, and
+ * every read and write the app makes in the meantime (opening a recipe, the list, marking a
+ * favorite) waits for it. Hundreds of recipes in one transaction kept a phone on "Loading…" for
+ * a long time after each update; small batches let the app's own requests in between.
+ */
+const BATCH = 25;
+
+/** Writes rows, keeping the favorite, rating and note as they are now: the user may have changed them since the sync read them. */
+function putKeepingMarks(rows: StoredRecipe[]) {
+	return db.transaction('rw', db.recipes, db.summaries, async () => {
+		const now = await db.recipes.bulkGet(rows.map((r) => r.id));
+		await putRecipes(rows.map((r, i) => (now[i] ? { ...r, favorite: now[i].favorite, rating: now[i].rating, note: now[i].note } : r)));
+	});
+}
+
 /**
  * Copies the built-in library and the imported open datasets (src/lib/catalog/) into the
  * local database, each only when its files changed, the library first so the list fills fast.
+ * Only recipes that differ from the stored copy are written, so an update rewrites what it
+ * changed, and an interrupted sync (a reload) picks up where it stopped.
  * Existing rows keep the user's favorite, rating and note; recipes dropped from a
  * source are removed unless the user has marked them up.
  */
@@ -56,12 +81,15 @@ export async function syncLibrary(): Promise<void> {
 		const signature = source.urls.join('\n');
 		if ((await db.meta.get(`source:${source.key}`))?.value === signature) continue;
 
+		syncing.set(true);
 		const { prefix, recipes } = await source.load();
 		const existing = new Map((await db.recipes.where(':id').startsWith(prefix).toArray()).map((r) => [r.id, r]));
-		const rows: StoredRecipe[] = recipes.map(([id, recipe], i) => {
+		const rows: StoredRecipe[] = [];
+		recipes.forEach(([id, recipe], i) => {
 			const old = existing.get(id);
 			existing.delete(id);
-			return {
+			if (old?.builtin && JSON.stringify(old.recipe) === JSON.stringify(recipe)) return;
+			rows.push({
 				id,
 				recipe,
 				builtin: true,
@@ -70,13 +98,12 @@ export async function syncLibrary(): Promise<void> {
 				favorite: old?.favorite ?? false,
 				rating: old?.rating ?? null,
 				note: old?.note ?? ''
-			};
+			});
 		});
 		const stale = [...existing.values()].filter((r) => !r.favorite && r.rating == null && !r.note).map((r) => r.id);
-		await db.transaction('rw', db.recipes, db.summaries, db.meta, async () => {
-			await putRecipes(rows);
-			await deleteRecipes(stale);
-			await db.meta.put({ key: `source:${source.key}`, value: signature });
-		});
+		for (let i = 0; i < rows.length; i += BATCH) await putKeepingMarks(rows.slice(i, i + BATCH));
+		for (let i = 0; i < stale.length; i += BATCH) await deleteRecipes(stale.slice(i, i + BATCH));
+		await db.meta.put({ key: `source:${source.key}`, value: signature });
 	}
+	syncing.set(false);
 }
