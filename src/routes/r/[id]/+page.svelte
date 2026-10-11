@@ -189,7 +189,7 @@
 						{#if step.tempC}<span class="tag">{step.tempC} °C</span>{/if}
 						{#if step.uses.length}<span class="muted uses">uses {step.uses.map(usesLabel).join(', ')}</span>{/if}
 					</div>
-					{#if step.durationMin}<Timer minutes={step.durationMin} />{/if}
+					{#if step.durationMin}<Timer recipeId={id} stepId={step.id} title={recipe.title} step={stepNo.get(step.id) ?? 0} minutes={step.durationMin} />{/if}
 				</div>
 			</li>
 		{/each}

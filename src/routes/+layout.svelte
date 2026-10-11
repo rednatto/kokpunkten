@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { syncLibrary } from '#lib/library.ts';
 	import { dbProblem, openDb, resetDb } from '#lib/db.ts';
+	import TimerTray from '#lib/components/TimerTray.svelte';
 	import type { LayoutProps } from './$types';
 	import './app.css';
 
@@ -31,6 +32,7 @@
 
 <header class="bar">
 	<a href={resolve('/')} class="brand">Kokpunkten</a>
+	<TimerTray />
 	<a href={resolve('/add')} class="button small">+ Add</a>
 </header>
 
