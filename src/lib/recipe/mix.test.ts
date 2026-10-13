@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { closestTo, diffRecipes } from './diff';
-import { mixRecipe } from './mix';
+import { familyAmounts, mixRecipe, roundAmount } from './mix';
 import { recipeSchema } from './schema';
 import carbonara from '../library/spaghetti-carbonara.json';
+import chickenCurry from '../library/chicken-curry.json';
 
 const versions = (carbonara as unknown[]).map((r) => recipeSchema.parse(r));
 const diff = diffRecipes(versions, 4);
@@ -84,6 +85,64 @@ describe('mixRecipe', () => {
 		const { recipe } = mixRecipe(diff, { rows, base: 0, labels, title: 'mix' });
 		const pepper = diff.rows.find((r) => r.key === 'black-pepper')!.amounts[1]!;
 		expect(recipe.ingredients.find((i) => i.key === 'black-pepper')!.qty).toBe(pepper.qty);
+	});
+});
+
+describe('family amounts', () => {
+	// Roman classic: 1 egg and 4 yolks; Pancetta and parmesan: 3 eggs; With cream: 3 yolks.
+	const rows = pick(['guanciale', 'pecorino-romano', 'egg', 'egg-yolk'], 'average');
+	const grams = { egg: 50, 'egg-yolk': 18 };
+	const weight = (amounts: Map<string, { qty: number | null }>) =>
+		Object.entries(grams).reduce((s, [k, g]) => s + (amounts.get(k)?.qty ?? 0) * g, 0);
+
+	it('averages eggs and yolks together, so the mix is no eggier than the versions', () => {
+		const amounts = familyAmounts(diff, { rows, base: 0 });
+		const totals = [1 * 50 + 4 * 18, 3 * 50, 3 * 18];
+		expect(weight(amounts)).toBeLessThanOrEqual(Math.max(...totals));
+		expect(weight(amounts)).toBeGreaterThanOrEqual(Math.min(...totals));
+		// No more yolks or eggs than any version uses of each.
+		expect(amounts.get('egg-yolk')!.qty).toBeLessThanOrEqual(4);
+		expect(amounts.get('egg')!.qty).toBeLessThanOrEqual(3);
+	});
+
+	it('uses whole eggs and yolks in the mix', () => {
+		const { recipe } = mixRecipe(diff, { rows, base: 0, labels, title: 'mix' });
+		for (const i of recipe.ingredients.filter((i) => /egg/.test(i.key))) expect(Number.isInteger(i.qty)).toBe(true);
+	});
+
+	it('leaves a lone member, and amounts taken from a version, alone', () => {
+		expect(familyAmounts(diff, { rows: pick(['egg'], 'average'), base: 0 }).size).toBe(0);
+		expect(familyAmounts(diff, { rows: pick(['egg', 'egg-yolk'], 0), base: 0 }).size).toBe(0);
+	});
+});
+
+describe('roundAmount', () => {
+	it('keeps eggs whole and lets other pieces be halved', () => {
+		expect(roundAmount({ qty: 3.5, qtyMax: null, unit: 'piece' }, 'egg-yolk').qty).toBe(4);
+		expect(roundAmount({ qty: 0.4, qtyMax: null, unit: 'piece' }, 'egg').qty).toBe(1);
+		expect(roundAmount({ qty: 0.5, qtyMax: null, unit: 'piece' }, 'apple').qty).toBe(0.5);
+		expect(roundAmount({ qty: 1.4, qtyMax: null, unit: 'clove' }, 'garlic').qty).toBe(1);
+		expect(roundAmount({ qty: 1.5, qtyMax: 2.6, unit: 'piece' }, 'egg')).toEqual({ qty: 2, qtyMax: 3, unit: 'piece' });
+	});
+});
+
+describe('slots whose options go together', () => {
+	const versions = (chickenCurry as unknown[]).map((r) => recipeSchema.parse(r));
+	const curry = diffRecipes(versions, 4);
+	const vegetable = curry.slots.find((s) => s.role === 'vegetable')!;
+
+	it('lets the cook take several vegetables', () => {
+		expect(vegetable.pickOne).toBe(false);
+		expect(curry.slots.find((s) => s.role === 'poultry')!.pickOne).toBe(true);
+		expect(diff.slots.find((s) => s.role === 'egg')!.pickOne).toBe(false);
+	});
+
+	it('keeps both picks and does not swap one for the other in the method', () => {
+		const keys = vegetable.options.slice(0, 2).map((o) => o.row.key);
+		const rows = new Map([...curry.common.map((r) => r.key), ...keys].map((k) => [k, 'average' as const]));
+		const { recipe, steps } = mixRecipe(curry, { rows, base: 0, labels: versions.map((_, i) => `v${i}`), title: 'm' });
+		for (const k of keys) expect(recipe.ingredients.some((i) => i.key === k)).toBe(true);
+		expect(steps.some((s) => / instead of /.test(s.changed ?? '') && keys.every((k) => (s.changed ?? '').includes(k.replace('-', ' '))))).toBe(false);
 	});
 });
 

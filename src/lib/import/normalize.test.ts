@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { sampleRecipe } from '../recipe/sample';
 import { recipeSchema } from '../recipe/schema';
-import { linkSteps, matchDish, normalizeRecipe, stepDuration, stepHeat, stepTempC, type RawRecipe } from './normalize';
+import { linkSteps, matchDish, namesIn, normalizeRecipe, sentenceCase, stepDuration, stepHeat, stepTempC, type RawRecipe } from './normalize';
 import { buildVocabulary, matchIngredient } from './vocabulary';
 
 const vocab = buildVocabulary([recipeSchema.parse(sampleRecipe)]);
@@ -124,5 +124,21 @@ describe('linkSteps', () => {
 			[ing('i1', 'potato'), ing('i2', 'egg')]
 		);
 		expect(uses).toEqual([['i1'], ['i2'], ['s1', 's2'], ['s3']]);
+	});
+});
+
+describe('titles', () => {
+	const names = namesIn(['Serve with Greek yogurt.', 'Wrap the beef in pastry as for Beef Wellington.', 'Fry the zucchini in the air fryer.']);
+	it('tells names from ordinary words by how the texts write them', () => {
+		expect(names.has('greek')).toBe(true);
+		expect(names.has('wellington')).toBe(true);
+		expect(names.has('wrap')).toBe(false);
+		expect(names.has('zucchini')).toBe(false);
+	});
+	it('turns Title Case into sentence case, keeping names', () => {
+		expect(sentenceCase('Air Fryer Zucchini', names)).toBe('Air fryer zucchini');
+		expect(sentenceCase('Beef Wellington', names)).toBe('Beef Wellington');
+		expect(sentenceCase('Greek Salad', names)).toBe('Greek salad');
+		expect(sentenceCase('BBQ Ribs', names)).toBe('BBQ ribs');
 	});
 });

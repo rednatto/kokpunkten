@@ -2,7 +2,7 @@
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { buildVocabulary } from '../../src/lib/import/vocabulary.ts';
-import { normalizeRecipe, type RawRecipe } from '../../src/lib/import/normalize.ts';
+import { namesIn, normalizeRecipe, type RawRecipe } from '../../src/lib/import/normalize.ts';
 import { recipeSchema, type Recipe } from '../../src/lib/recipe/schema.ts';
 import type { Catalog } from '../../src/lib/catalog.ts';
 
@@ -44,6 +44,9 @@ export const COURSES: Record<string, string> = {
 	supper: 'main'
 };
 
+/** Names in dataset titles that the recipes' texts don't show as names. Checked by hand against the import. */
+const TITLE_NAMES = 'benedict breton easter flemish gröstl käsetorte lorraine lothringer mary norma quebec viennese wellington'.split(' ');
+
 export interface ImportReport {
 	ok: number;
 	failed: { id: string; errors: string[] }[];
@@ -56,10 +59,20 @@ export interface ImportReport {
 export function normalizeAll(raws: { id: string; raw: RawRecipe }[], library: Recipe[]) {
 	const vocab = buildVocabulary(library);
 	const dishes = new Set(library.map((r) => r.dish));
+	// Names keep their capital in titles: peoples, places and dishes named after them.
+	// The recipes' own ingredient lines and steps show which words are names.
+	const names = new Set([
+		...CUISINES,
+		...TITLE_NAMES,
+		...namesIn([
+			...raws.flatMap(({ raw }) => [...raw.ingredients.map((i) => i.line), ...raw.steps]),
+			...library.flatMap((r) => [r.title, ...r.ingredients.map((i) => i.name), ...r.steps.map((s) => s.text)])
+		])
+	]);
 	const report: ImportReport = { ok: 0, failed: [], unknownIngredients: new Map(), joined: new Map(), guessedServings: 0 };
 	const entries: { id: string; recipe: Recipe }[] = [];
 	for (const { id, raw } of raws) {
-		const res = normalizeRecipe(raw, { vocab, dishes });
+		const res = normalizeRecipe(raw, { vocab, dishes, names });
 		if (!res.ok) {
 			report.failed.push({ id, errors: res.errors });
 			continue;

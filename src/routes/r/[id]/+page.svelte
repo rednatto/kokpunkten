@@ -5,12 +5,13 @@
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
 	import { db, deleteRecipes, updateRecipe, type StoredRecipe } from '#lib/db.ts';
-	import { showAmount } from '#lib/display.ts';
+	import { cuisineName, showAmount } from '#lib/display.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
 	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
 	import UnitControls from '#lib/components/UnitControls.svelte';
 	import KitchenHelp from '#lib/components/KitchenHelp.svelte';
+	import { progress, setServings, toggleDone, toggleHave } from '#lib/cooking.svelte.ts';
 	import Timer from './Timer.svelte';
 
 	const id = $derived(page.params.id!);
@@ -22,22 +23,14 @@
 		return watch(() => db.recipes.get(current), (r) => (row = r ?? null));
 	});
 
-	// Cooking state belongs to one recipe. Moving between versions reuses this page,
-	// so state is tagged with its recipe id and anything from another recipe is ignored.
-	let cooking = $state<{ id: string; servings: number | null; have: Set<string>; done: Set<string> }>({
-		id: '',
-		servings: null,
-		have: new Set(),
-		done: new Set()
-	});
-	const mine = $derived(cooking.id === id ? cooking : { id, servings: null, have: new Set<string>(), done: new Set<string>() });
-	const haveIng = $derived(mine.have);
-	const doneStep = $derived(mine.done);
+	// Cooking progress lives in app state, keyed by recipe id, so it survives leaving the page.
+	const mine = $derived(progress(id));
+	const haveIng = $derived(new Set(mine.have));
+	const doneStep = $derived(new Set(mine.done));
 
 	const recipe = $derived(row?.recipe);
 	const servings = $derived(mine.servings ?? recipe?.servings ?? null);
 	const factor = $derived(recipe && servings ? servings / recipe.servings : 1);
-	const setCooking = (changes: Partial<typeof cooking>) => (cooking = { ...mine, ...changes });
 	const ingName = $derived(new Map(recipe?.ingredients.map((i) => [i.id, i.name]) ?? []));
 	const stepNo = $derived(new Map(recipe?.steps.map((s, n) => [s.id, n + 1]) ?? []));
 
@@ -61,12 +54,6 @@
 	}
 
 	const amountFor = (ing: Ingredient) => showAmount(ing, ingredientAmount(ing, factor));
-
-	function toggle(set: Set<string>, key: string) {
-		const next = new Set(set);
-		if (!next.delete(key)) next.add(key);
-		return next;
-	}
 
 	function usesLabel(ref: string) {
 		return ingName.get(ref) ?? `step ${stepNo.get(ref)}`;
@@ -138,7 +125,7 @@
 		{/if}
 		{#if recipe.source.author && recipe.source.license}· by {recipe.source.author}, {recipe.source.license}{/if}
 		{#if recipe.time.totalMin}· {recipe.time.totalMin} min{/if}
-		{#if recipe.cuisine.length}· {recipe.cuisine.join(', ')}{/if}
+		{#if recipe.cuisine.length}· {recipe.cuisine.map(cuisineName).join(', ')}{/if}
 	</p>
 
 	{#if siblings && siblings.length > 1}
@@ -154,9 +141,9 @@
 
 	<div class="row controls">
 		<div class="row stepper" aria-label="Servings">
-			<button class="ghost small" onclick={() => setCooking({ servings: Math.max(1, (servings ?? 1) - 1) })} aria-label="Fewer servings">−</button>
+			<button class="ghost small" onclick={() => setServings(id, Math.max(1, (servings ?? 1) - 1))} aria-label="Fewer servings">−</button>
 			<span><strong>{servings}</strong> servings</span>
-			<button class="ghost small" onclick={() => setCooking({ servings: (servings ?? 0) + 1 })} aria-label="More servings">+</button>
+			<button class="ghost small" onclick={() => setServings(id, (servings ?? 0) + 1)} aria-label="More servings">+</button>
 		</div>
 		<UnitControls />
 		{#if 'wakeLock' in navigator}
@@ -174,7 +161,7 @@
 			<strong>Swaps &amp; weights</strong>
 			<button class="ghost small" onclick={() => helpDialog?.close()} aria-label="Close">✕</button>
 		</div>
-		<KitchenHelp bind:tab={helpTab} />
+		<KitchenHelp bind:tab={helpTab} {recipe} />
 	</dialog>
 	<ul class="checklist">
 		{#each recipe.ingredients as ing, n (ing.id)}
@@ -184,7 +171,7 @@
 			{/if}
 			<li class:done={haveIng.has(ing.id)}>
 				<label>
-					<input type="checkbox" checked={haveIng.has(ing.id)} onchange={() => setCooking({ have: toggle(haveIng, ing.id) })} />
+					<input type="checkbox" checked={haveIng.has(ing.id)} onchange={() => toggleHave(id, ing.id)} />
 					<span>
 						<strong class="amount">{amt.main}</strong>
 						{ing.name}{#if ing.prep}<span class="muted">, {ing.prep}</span>{/if}
@@ -201,13 +188,13 @@
 	{#if recipe.steps.length > 1}
 		<details class="diagram">
 			<summary>Diagram</summary>
-			<RecipeDiagram {recipe} done={doneStep} ontoggle={(sid) => setCooking({ done: toggle(doneStep, sid) })} />
+			<RecipeDiagram {recipe} done={doneStep} ontoggle={(sid) => toggleDone(id, sid)} />
 		</details>
 	{/if}
 	<ol class="steps">
 		{#each recipe.steps as step (step.id)}
 			<li class:done={doneStep.has(step.id)}>
-				<button class="num" onclick={() => setCooking({ done: toggle(doneStep, step.id) })} aria-pressed={doneStep.has(step.id)}>
+				<button class="num" onclick={() => toggleDone(id, step.id)} aria-pressed={doneStep.has(step.id)}>
 					{doneStep.has(step.id) ? '✓' : stepNo.get(step.id)}
 				</button>
 				<div>
