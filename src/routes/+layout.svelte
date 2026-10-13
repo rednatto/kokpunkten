@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import favicon from '#lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
 	import { syncLibrary, syncing } from '#lib/library.ts';
@@ -35,7 +36,10 @@
 	<a href={resolve('/')} class="brand">Kokpunkten</a>
 	<TimerTray />
 	<div class="row">
-		<a href={resolve('/kitchen')} class="button ghost small" aria-label="Swaps and weights">⚖<span class="wide">&nbsp;Swaps &amp; weights</span></a>
+		<!-- A recipe has its own Swaps and Weights buttons, which open over it and know its ingredients. -->
+		{#if page.route.id !== '/r/[id]'}
+			<a href={resolve('/kitchen')} class="button ghost small" aria-label="Swaps and weights">⚖<span class="wide">&nbsp;Swaps &amp; weights</span></a>
+		{/if}
 		<a href={resolve('/add')} class="button small">+ Add</a>
 	</div>
 </header>

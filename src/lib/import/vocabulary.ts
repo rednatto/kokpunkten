@@ -14,7 +14,7 @@ export interface Vocabulary {
 }
 
 /** "Tomatoes" and "tomato" should meet: a rough English singular, good enough for matching. */
-function singular(word: string): string {
+export function singular(word: string): string {
 	if (word.length <= 3 || /(ss|us|is)$/.test(word)) return word;
 	if (word.endsWith('ies')) return `${word.slice(0, -3)}y`;
 	if (/(oes|ches|shes|xes|sses)$/.test(word)) return word.slice(0, -2);

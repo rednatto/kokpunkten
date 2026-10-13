@@ -1,4 +1,4 @@
-import { GRAMS_PER_DL, PIECE_GRAMS, ROUGH, gramsPerMl } from '../recipe/measures.ts';
+import { GRAMS_PER_DL, PIECE_GRAMS, ROUGH, gramsPerMl, pieceUnit } from '../recipe/measures.ts';
 import { MASS_G, VOLUME_ML, formatQty } from '../recipe/units.ts';
 import type { Unit } from '../recipe/schema.ts';
 
@@ -26,11 +26,6 @@ const NAMES: Record<string, string> = {
 	salmon: 'salmon fillet'
 };
 
-const BUNCHES = new Set(['cilantro', 'flat-leaf-parsley', 'dill', 'basil', 'mint', 'thai-basil']);
-
-const unitFor = (key: string): Weighable['eachUnit'] =>
-	key === 'garlic' ? 'clove' : BUNCHES.has(key) ? 'bunch' : /^(canned-|crushed-tomatoes$|coconut-milk$)/.test(key) ? 'can' : 'piece';
-
 /** Every ingredient the app has a weight for, by volume, by piece or both, sorted by name. */
 export const WEIGHABLES: Weighable[] = [...new Set([...Object.keys(GRAMS_PER_DL), ...LIQUIDS_AND_FATS, ...Object.keys(PIECE_GRAMS)])]
 	.map((key) => ({
@@ -38,7 +33,7 @@ export const WEIGHABLES: Weighable[] = [...new Set([...Object.keys(GRAMS_PER_DL)
 		name: NAMES[key] ?? key.replaceAll('-', ' '),
 		gPerMl: BY_VOLUME.has(key) ? gramsPerMl(key) : null,
 		each: PIECE_GRAMS[key] ?? null,
-		eachUnit: unitFor(key)
+		eachUnit: pieceUnit(key)
 	}))
 	.filter((w) => w.gPerMl != null || w.each != null)
 	.sort((a, b) => a.name.localeCompare(b.name));
@@ -88,7 +83,7 @@ export interface Rule {
 	is: string;
 }
 
-/** The rough measures the app uses in its "att höfta" view, and the units it converts between. */
+/** The rough measures the app uses in its "rough" units, and the units it converts between. */
 export const KITCHEN_MEASURES: Rule[] = [
 	{ what: 'a knob of butter', is: `≈ ${ROUGH.knob} g` },
 	{ what: 'a handful of grated cheese or nuts', is: `≈ ${ROUGH.handful} g` },

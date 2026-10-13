@@ -5,7 +5,7 @@
 		['original', 'As written'],
 		['metric', 'Metric'],
 		['us', 'US cups'],
-		['rough', 'Rough (att höfta)']
+		['rough', 'Rough']
 	] as const;
 	const id = `units-${Math.random().toString(36).slice(2, 8)}`;
 	const current = $derived(UNITS.find(([value]) => value === settings.units)?.[1] ?? 'Units');
