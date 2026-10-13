@@ -1,4 +1,5 @@
-import { rowMean, type DiffRow, type RecipeDiff } from './diff.ts';
+import { baseValue, COMBINED_ROLES, fromBase, rowMean, rowValues, type DiffRow, type RecipeDiff } from './diff.ts';
+import { gramsPerMl, PIECE_GRAMS } from './measures.ts';
 import { recipeSchema, type Ingredient, type Recipe, type Step } from './schema.ts';
 import { basicGroup } from './table-tree.ts';
 import type { Amount } from './units.ts';
@@ -33,7 +34,10 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 	const { base } = choice;
 	const baseRecipe = diff.versions[base];
 	const slotOf = new Map(diff.slots.flatMap((s) => s.options.map((o) => [o.row.key, s.role] as const)));
+	// Only an option that stands in for another takes its place in the steps.
+	const swapSlotOf = new Map(diff.slots.flatMap((s) => (s.pickOne ? s.options.map((o) => [o.row.key, s.role] as const) : [])));
 	const chosen = diff.rows.filter((r) => choice.rows.has(r.key));
+	const shared = familyAmounts(diff, choice);
 
 	// New ingredient ids, and a way back from any version's ingredient id to the new one.
 	const ingredients: Ingredient[] = [];
@@ -47,7 +51,7 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 		const src = row.ingredients[v]!;
 		const id = `i${n + 1}`;
 		const own = row.amounts[v]!;
-		const amount = from === 'average' ? (average(row) ?? own) : own.qty == null ? own : roundAmount(own);
+		const amount = from === 'average' ? (shared.get(row.key) ?? average(row) ?? own) : own.qty == null ? own : roundAmount(own, row.key);
 		ingredients.push({ ...src, id, qty: amount.qty, qtyMax: amount.qtyMax, unit: amount.unit ?? src.unit, group: undefined });
 		rowId.set(row.key, id);
 		rowOf.set(id, row);
@@ -59,9 +63,9 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 	const dropped = new Map<string, string>();
 	for (const row of diff.rows) {
 		if (rowId.has(row.key)) continue;
-		const role = slotOf.get(row.key);
+		const role = swapSlotOf.get(row.key);
 		// Another option of the same slot that was chosen takes this one's place in the steps.
-		const pick = role ? chosen.find((r) => slotOf.get(r.key) === role) : undefined;
+		const pick = role ? chosen.find((r) => swapSlotOf.get(r.key) === role) : undefined;
 		row.ingredients.forEach((ing, v) => {
 			if (!ing) return;
 			if (pick) replaced.set(`${v}:${ing.id}`, { id: rowId.get(pick.key)!, from: ing.name, to: firstIngredient(pick).name });
@@ -219,13 +223,93 @@ function firstIngredient(row: DiffRow): Ingredient {
 /** The average of the versions' amounts in one unit, rounded to what a cook would measure. */
 function average(row: DiffRow): Amount | null {
 	const r = rowMean(row);
-	return r && r.qty != null ? roundAmount(r) : null;
+	return r && r.qty != null ? roundAmount(r, row.key) : null;
+}
+
+/** A version's amount of a row in grams, or null when it has none or it can't be weighed. */
+function grams(row: DiffRow, v: number): number | null {
+	const b = baseValue(row.amounts[v]);
+	const key = row.ingredients[v]?.key ?? row.key;
+	if (!b) return null;
+	if (b.dim === 'mass') return b.value;
+	if (b.dim === 'volume') {
+		const d = gramsPerMl(key, row.role) ?? gramsPerMl(row.key, row.role);
+		return d == null ? null : b.value * d;
+	}
+	const each = PIECE_GRAMS[key] ?? PIECE_GRAMS[row.key];
+	return each ? b.value * each : null;
+}
+
+/**
+ * Average amounts for chosen ingredients that stand in for each other (whole eggs and yolks),
+ * averaged as a family rather than one by one. Averaged separately, a version with 5 eggs and
+ * one with 4 yolks make "3 eggs and 3½ yolks", more than any version uses. Instead each
+ * version's total weight of the chosen members is averaged, and split in the base version's
+ * proportions (or the members' own averages, when the base doesn't use them all), with
+ * each member kept within the amounts versions use of it. Rows that can't be weighed keep their own average.
+ */
+export function familyAmounts(diff: RecipeDiff, choice: Pick<MixChoice, 'rows' | 'base'>): Map<string, Amount> {
+	const out = new Map<string, Amount>();
+	const rows = diff.rows.filter((r) => choice.rows.get(r.key) === 'average' && !basicGroup(r) && !COMBINED_ROLES.has(r.role));
+	for (const group of Map.groupBy(rows, (r) => r.role).values()) {
+		if (group.length < 2) continue;
+		const totals = diff.versions.flatMap((_, v) => {
+			const used = group.filter((r) => r.ingredients[v]);
+			return used.length ? [used.map((r) => grams(r, v))] : [];
+		});
+		if (totals.some((t) => t.some((g) => g == null))) continue;
+		const mean = totals.reduce<number>((s, t) => s + t.reduce<number>((a, g) => a + g!, 0), 0) / totals.length;
+		const inBase = group.every((r) => grams(r, choice.base) != null);
+		const weight = (r: DiffRow) => {
+			if (inBase) return grams(r, choice.base)!;
+			const gs = r.amounts.flatMap((_, v) => grams(r, v) ?? []);
+			return gs.reduce((s, g) => s + g, 0) / gs.length;
+		};
+		const total = group.reduce((s, r) => s + weight(r), 0);
+		// No member gets more or less of itself than the versions use (not 5 yolks when they use 3 or 4).
+		const clamp = (r: DiffRow, g: number) => {
+			const gs = r.amounts.flatMap((_, v) => grams(r, v) ?? []);
+			return Math.min(Math.max(g, Math.min(...gs)), Math.max(...gs));
+		};
+		const amounts = group.map((r) => fromGrams(r, clamp(r, (mean * weight(r)) / total)));
+		if (amounts.some((a) => !a)) continue;
+		group.forEach((r, n) => out.set(r.key, roundAmount(amounts[n]!, r.key)));
+	}
+	return out;
+}
+
+/** Grams of a row's ingredient as an amount in the unit the row is compared in. */
+function fromGrams(row: DiffRow, g: number): Amount | null {
+	const dim = rowValues(row)?.dim;
+	const v = row.ingredients.findIndex((i) => i);
+	const key = row.ingredients[v]!.key;
+	if (dim === 'mass') return fromBase('mass', g, null);
+	if (dim === 'volume') {
+		const d = gramsPerMl(key, row.role) ?? gramsPerMl(row.key, row.role);
+		return d ? fromBase('volume', g / d, null) : null;
+	}
+	const each = PIECE_GRAMS[key] ?? PIECE_GRAMS[row.key];
+	return dim && each ? fromBase(dim, g / each, null) : null;
 }
 
 const to = (q: number, step: number) => Math.round(q / step) * step;
 
-/** Rounds an amount to kitchen precision: whole cloves, quarter spoons, grams to 5 above 50 g. */
-export function roundAmount(a: Amount): Amount {
+/** Things that only come whole: eggs and their parts. Other pieces (half a lemon, half an apple) can be halved. */
+const WHOLE = /(^|-)eggs?(-|$)|yolks?$|whites?$/;
+
+/**
+ * Rounds an amount to kitchen precision: whole eggs and cloves, half a lemon, quarter spoons,
+ * grams to 5 above 50 g. `key` is the ingredient's key, which decides whether a piece can be halved.
+ */
+export function roundAmount(a: Amount, key = ''): Amount {
+	const r = roundQty(a, key);
+	// A range's top end rounds the same way ("1½–3 eggs" becomes "2–3 eggs").
+	if (a.qtyMax == null || r.unit !== a.unit) return r;
+	const top = roundQty({ ...a, qty: a.qtyMax, qtyMax: null }, key).qty!;
+	return { ...r, qtyMax: top > r.qty! ? top : null };
+}
+
+function roundQty(a: Amount, key: string): Amount {
 	const q = a.qty!;
 	switch (a.unit) {
 		case 'g':
@@ -236,8 +320,10 @@ export function roundAmount(a: Amount): Amount {
 			return q < 0.125 ? { unit: 'pinch', qty: 1, qtyMax: null } : { ...a, qty: q < 0.25 ? 0.125 : to(q, 0.25) };
 		case 'tbsp':
 			return { ...a, qty: Math.max(0.25, to(q, 0.25)) };
-		case null:
 		case 'piece':
+			if (!WHOLE.test(key) && q < 3) return { ...a, qty: Math.max(0.5, to(q, 0.5)) };
+			return { ...a, qty: Math.max(1, Math.round(q)) };
+		case null:
 		case 'clove':
 		case 'can':
 		case 'bunch':
