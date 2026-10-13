@@ -6,6 +6,7 @@
 	import { onDestroy } from 'svelte';
 	import { db, deleteRecipes, updateRecipe, type StoredRecipe } from '#lib/db.ts';
 	import { showAmount } from '#lib/display.ts';
+	import { versionLabel, versionLabels, versionSource } from '#lib/recipe/labels.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
 	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
@@ -45,8 +46,9 @@
 	let siblings = $state<StoredRecipe[]>([]);
 	$effect(() => {
 		const d = dish; // read here so the effect re-runs when the dish changes
-		return watch(() => (d ? db.recipes.where('recipe.dish').equals(d).toArray() : []), (rows) => (siblings = rows));
+		return watch(() => (d ? db.recipes.where('recipe.dish').equals(d).sortBy('addedAt') : []), (rows) => (siblings = rows));
 	});
+	const siblingLabels = $derived(versionLabels(siblings.map((s) => s.recipe)));
 
 	/** Subscribes to a live database query; the returned cleanup lets $effect re-subscribe when inputs change. */
 	function watch<T>(query: () => Promise<T> | T, set: (value: T) => void) {
@@ -134,9 +136,9 @@
 		{#if recipe.source.url}
 			<a href={recipe.source.url} target="_blank" rel="noopener">{recipe.source.name ?? 'Source'}</a>
 		{:else}
-			{recipe.source.name ?? recipe.source.book?.title ?? recipe.source.type}
+			{versionSource(recipe) ?? versionLabel(recipe)}
 		{/if}
-		{#if recipe.source.author && recipe.source.license}· by {recipe.source.author}, {recipe.source.license}{/if}
+		{#if recipe.source.url && recipe.source.author && recipe.source.license}· by {recipe.source.author}, {recipe.source.license}{/if}
 		{#if recipe.time.totalMin}· {recipe.time.totalMin} min{/if}
 		{#if recipe.cuisine.length}· {recipe.cuisine.join(', ')}{/if}
 	</p>
@@ -144,9 +146,9 @@
 	{#if siblings && siblings.length > 1}
 		<nav class="row others" aria-label="Versions of this dish">
 			<a href="{resolve('/d/[dish]', { dish: recipe.dish })}?from={id}" class="chip compare">⇄ Compare {siblings.length} versions</a>
-			{#each siblings as s (s.id)}
-				<a href={resolve('/r/[id]', { id: s.id })} class="chip" class:current={s.id === id} aria-current={s.id === id ? 'page' : undefined}>
-					{s.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? s.recipe.title}
+			{#each siblings as s, i (s.id)}
+				<a href={resolve('/r/[id]', { id: s.id })} class="chip" class:current={s.id === id} aria-current={s.id === id ? 'page' : undefined} title={versionSource(s.recipe)}>
+					{siblingLabels[i]}
 				</a>
 			{/each}
 		</nav>

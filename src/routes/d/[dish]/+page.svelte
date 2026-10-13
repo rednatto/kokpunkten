@@ -7,8 +7,9 @@
 	import { addRecipes, db, type StoredRecipe } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
-	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
+	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, seasonedInSteps, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
 	import { familyName } from '#lib/recipe/families.ts';
+	import { versionLabels, versionSource } from '#lib/recipe/labels.ts';
 	import { mixRecipe, type AmountSource } from '#lib/recipe/mix.ts';
 	import { tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
 	import type { Amount } from '#lib/recipe/units.ts';
@@ -34,7 +35,16 @@
 	const versions = $derived(rows?.map((r) => r.recipe) ?? []);
 	const n = $derived(versions.length);
 	const diff = $derived(n ? diffRecipes(versions, servings ?? versions[0].servings) : null);
-	const label = (v: number) => rows?.[v]?.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? versions[v]?.title ?? '';
+	const labels = $derived(versionLabels(versions));
+	const label = (v: number) => labels[v] ?? '';
+	/** Where a version comes from, for a second line under its name. */
+	const sourceOf = (v: number) => (versions[v] ? versionSource(versions[v]) : null);
+	/** "about 4×" for a version whose amounts are all off from the others by about that much. */
+	const offScale = (v: number) => {
+		const f = diff?.offScale[v];
+		if (f == null) return null;
+		return f > 1 ? `about ${Math.round(f)}× the others` : `about 1/${Math.round(1 / f)} of the others`;
+	};
 	const roleName = (role: string) => role.charAt(0).toUpperCase() + role.slice(1).replaceAll('-', ' ');
 
 	/** Shows an amount for a row, using the row's first real ingredient for rough measures. */
@@ -56,7 +66,7 @@
 	 */
 	function range(row: DiffRow): string {
 		const r = rowRange(row);
-		const left = r ? row.amounts.filter((a, v) => a?.qty != null && rowValues(row)!.values[v] == null) : row.amounts;
+		const left = r ? row.amounts.filter((a, v) => a?.qty != null && rowValues(row)!.values[v] == null && !row.outliers.includes(v)) : row.amounts;
 		const others = [...new Set(left.map((a) => amount(row, a)).filter(Boolean))];
 		return [r ? rowAmount(row, r) : '', ...others].filter(Boolean).join(' or ');
 	}
@@ -65,11 +75,13 @@
 		const name = row.ingredients[v]?.name;
 		return name && name.toLowerCase() !== row.name.toLowerCase() ? name : null;
 	};
+	/** Amounts far from the rest, with the version that uses each: they are left out of the range and the average. */
+	const outliers = (row: DiffRow) => (row.outliers.length < row.count ? row.outliers.map((v) => ({ v, text: amount(row, row.amounts[v]) })) : []);
 	const variants = (row: DiffRow) => [...new Set(row.ingredients.map((_, v) => variantName(row, v)).filter(Boolean))];
 
 	// Where "back" goes: the recipe the cook came from, else the first version.
 	const backId = $derived(page.url.searchParams.get('from') ?? rows?.[0]?.id);
-	const backLabel = $derived(rows?.find((r) => r.id === backId)?.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? 'recipe');
+	const backLabel = $derived(rows && backId ? (label(rows.findIndex((r) => r.id === backId)) || 'recipe') : 'recipe');
 
 	// --- Table view: a tree of groups; supporting ingredients start folded.
 	const tree = $derived(diff ? tableTree(diff) : []);
@@ -106,21 +118,23 @@
 		const values = points.map((p) => p.value);
 		const [min, max] = [Math.min(...values), Math.max(...values)];
 		const pct = (x: number) => (max === min ? 50 : ((x - min) / (max - min)) * 100);
-		const mean = values.reduce((s, x) => s + x, 0) / values.length;
+		// The average line sits where the average column says: outliers left out.
+		const typical = rowValues({ ...row, amounts: row.amounts.map((a, v) => (row.outliers.includes(v) && row.outliers.length < row.count ? null : a)) })?.values.filter((x) => x != null) ?? [];
+		const typicalMean = typical.length ? typical.reduce((s, x) => s + x!, 0) / typical.length : null;
 		// Both ends in the unit the whole range reads in.
 		const ends = comparable ? fromBase(r!.dim, min, max) : null;
 		const byText = Map.groupBy(
-			row.amounts.flatMap((a, v) => (a ? [{ v, text: amount(row, a) || 'to taste', value: r?.values[v] ?? Infinity }] : [])),
+			row.amounts.flatMap((a, v) => (a ? [{ v, text: amount(row, a) || 'to taste', value: r?.values[v] ?? Infinity, far: row.outliers.includes(v) }] : [])),
 			(b) => b.text
 		);
 		return {
 			comparable,
-			points: comparable ? points.map((p) => ({ v: p.v, pct: pct(p.value) })) : [],
-			meanPct: comparable ? pct(mean) : null,
+			points: comparable ? points.map((p) => ({ v: p.v, pct: pct(p.value), far: row.outliers.includes(p.v) })) : [],
+			meanPct: comparable && typicalMean != null ? pct(typicalMean) : null,
 			low: comparable ? rowAmount(row, { ...ends!, qtyMax: null }) : '',
 			high: comparable ? rowAmount(row, { ...ends!, qty: ends!.qtyMax ?? ends!.qty, qtyMax: null }) : '',
 			buckets: [...byText]
-				.map(([text, list]) => ({ text, count: list.length, value: list[0].value, who: list.map((b) => label(b.v)).join(', ') }))
+				.map(([text, list]) => ({ text, count: list.length, value: list[0].value, far: list.every((b) => b.far), who: list.map((b) => label(b.v)).join(', ') }))
 				.sort((a, b) => a.value - b.value)
 		};
 	}
@@ -224,8 +238,9 @@
 	function changesAgainst(v: number): Change[] {
 		if (!diff) return [];
 		const out: Change[] = [];
-		const added = diff.rows.filter((r) => r.ingredients[v] && !r.ingredients[base]);
-		const removed = diff.rows.filter((r) => !r.ingredients[v] && r.ingredients[base]);
+		// Salt and pepper "to taste" in a step count as there, though the ingredient list leaves them out.
+		const added = diff.rows.filter((r) => r.ingredients[v] && !r.ingredients[base] && !seasonedInSteps(versions[base], r));
+		const removed = diff.rows.filter((r) => !r.ingredients[v] && r.ingredients[base] && !seasonedInSteps(versions[v], r));
 		for (const add of [...added]) {
 			const swap = removed.find((r) => r.role === add.role);
 			if (swap) {
@@ -254,6 +269,12 @@
 	}
 	const SIGN: Record<Change['kind'], string> = { add: '+', remove: '−', swap: '⇄', more: '↑', less: '↓' };
 </script>
+
+{#snippet far(row: DiffRow)}
+	{#each outliers(row) as o (o.v)}
+		{' '}<span class="far-note" title="Far from the other versions, so left out of the range and the average">· {o.text} in {label(o.v)}</span>
+	{/each}
+{/snippet}
 
 {#if loadError}
 	<p class="error" role="alert">Couldn't read the recipes ({loadError}).</p>
@@ -295,6 +316,7 @@
 							<span>
 								<strong class="amount">{range(row)}</strong> {row.name}
 								{#if variants(row).length}<span class="muted small">({variants(row).join(', ')})</span>{/if}
+								{@render far(row)}
 							</span>
 						</label>
 					</li>
@@ -312,7 +334,7 @@
 								{@const on = chosen.has(opt.row.key)}
 								<button class="option" class:on aria-pressed={on} onclick={() => pickOption(slot, opt.row.key)}>
 									<strong>{opt.row.name}</strong>
-									<span class="small">{range(opt.row)}</span>
+									<span class="small">{range(opt.row)}{@render far(opt.row)}</span>
 									<span class="small who">{opt.versions.map(label).join(', ')}</span>
 								</button>
 							{/each}
@@ -330,6 +352,7 @@
 								<input type="checkbox" checked={chosen.has(row.key)} onchange={() => toggleRow(row.key)} />
 								<span>
 									<strong class="amount">{range(row)}</strong> {row.name}
+									{@render far(row)}
 									<span class="muted small">· {row.count} of {n}: {row.ingredients.flatMap((i, v) => (i ? [label(v)] : [])).join(', ')}</span>
 								</span>
 							</label>
@@ -376,7 +399,11 @@
 						<th class="first">Ingredient</th>
 						<th class="avg">Average</th>
 						{#each versions as _, v}
-							<th><a href={resolve('/r/[id]', { id: rows[v].id })}>{label(v)}</a></th>
+							<th>
+								<a href={resolve('/r/[id]', { id: rows[v].id })}>{label(v)}</a>
+								{#if sourceOf(v)}<span class="source">{sourceOf(v)}</span>{/if}
+								{#if offScale(v)}<span class="source warn" title="Its amounts are left out of the averages where they stand out. Its servings may be wrong.">Amounts {offScale(v)}</span>{/if}
+							</th>
 						{/each}
 					</tr>
 				</thead>
@@ -414,7 +441,8 @@
 									{#each row.amounts as a, v}
 										<td class:none={!a}>
 											{#if subs.length}{''}{:else if a}
-												<button class="cell" class:picked={from === v} aria-pressed={from === v} onclick={() => choose(row.key, v)}>{amount(row, a) || '✓'}</button>
+												{@const isFar = row.outliers.includes(v)}
+												<button class="cell" class:picked={from === v} class:far={isFar} aria-pressed={from === v} title={isFar ? 'Far from the other versions; left out of the average' : undefined} onclick={() => choose(row.key, v)}>{amount(row, a) || '✓'}</button>
 											{:else}—{/if}
 										</td>
 									{/each}
@@ -425,14 +453,14 @@
 										<td colspan={n + 2}>
 											{#if sp.comparable}
 												<div class="strip" aria-hidden="true">
-													{#each sp.points as p (p.v)}<span class="pt" style:left="{p.pct}%" title={label(p.v)}></span>{/each}
+													{#each sp.points as p (p.v)}<span class="pt" class:far={p.far} style:left="{p.pct}%" title={label(p.v)}></span>{/each}
 													{#if sp.meanPct !== null}<span class="mean" style:left="{sp.meanPct}%"></span>{/if}
 												</div>
 												<div class="ends small muted"><span>{sp.low}</span><span>average {average(row)}</span><span>{sp.high}</span></div>
 											{/if}
 											<ul class="buckets">
 												{#each sp.buckets as b (b.text)}
-													<li title={b.who}><strong>{b.text}</strong> × {b.count} <span class="muted">{b.who}</span></li>
+													<li title={b.who} class:far={b.far}><strong>{b.text}</strong> × {b.count} <span class="muted">{b.who}</span>{#if b.far}<span class="far-note"> · far from the others, not averaged</span>{/if}</li>
 												{/each}
 											</ul>
 										</td>
@@ -480,7 +508,10 @@
 		<p class="muted small">Compare against:</p>
 		<div class="row options">
 			{#each versions as _, v}
-				<button class="option" class:on={base === v} aria-pressed={base === v} onclick={() => (base = v)}><strong>{label(v)}</strong></button>
+				<button class="option" class:on={base === v} aria-pressed={base === v} onclick={() => (base = v)}>
+					<strong>{label(v)}</strong>
+					{#if sourceOf(v)}<span class="small who">{sourceOf(v)}</span>{/if}
+				</button>
 			{/each}
 		</div>
 		{#each versions as _, v}
@@ -488,6 +519,8 @@
 				{@const changes = changesAgainst(v)}
 				<section class="card changes">
 					<h2><a href={resolve('/r/[id]', { id: rows[v].id })}>{label(v)}</a></h2>
+					{#if sourceOf(v)}<p class="muted small source-line">{sourceOf(v)}</p>{/if}
+					{#if offScale(v)}<p class="small warn">Its amounts are {offScale(v)}, so its servings may be wrong.</p>{/if}
 					{#if changes.length}
 						<ul class="plain">
 							{#each changes as c}
@@ -659,6 +692,9 @@
 	thead a {
 		color: inherit;
 	}
+	thead th:has(.source) {
+		min-width: 7.5rem;
+	}
 	.first {
 		position: sticky;
 		left: -1rem;
@@ -745,6 +781,34 @@
 	}
 	.error {
 		color: #b3261e;
+	}
+	.far-note,
+	.warn {
+		color: var(--warn);
+	}
+	.far-note {
+		font-size: 0.85rem;
+		font-weight: 400;
+	}
+	.cell.far:not(.picked) {
+		color: var(--warn);
+		text-decoration: underline wavy;
+		text-underline-offset: 3px;
+	}
+	.pt.far {
+		background: var(--warn);
+	}
+	.source {
+		display: block;
+		font-weight: 400;
+		font-size: 0.7rem;
+		color: var(--muted);
+	}
+	.source.warn {
+		color: var(--warn);
+	}
+	.source-line {
+		margin: 0 0 0.25rem;
 	}
 	.mixbar {
 		position: sticky;

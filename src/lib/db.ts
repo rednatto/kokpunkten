@@ -1,5 +1,6 @@
 import Dexie, { type EntityTable } from 'dexie';
 import { writable } from 'svelte/store';
+import { versionLabel } from './recipe/labels';
 import type { Recipe } from './recipe/schema';
 
 export interface StoredRecipe {
@@ -87,15 +88,13 @@ export async function resetDb() {
 	await Dexie.delete('kokpunkten');
 }
 
-export const variantName = (r: Recipe) => r.source.name?.replace(/^Kokpunkten – /, '') ?? r.title;
-
 export function summarize(row: StoredRecipe): RecipeSummary {
 	const r = row.recipe;
 	return {
 		id: row.id,
 		dish: r.dish,
 		title: r.title,
-		variant: variantName(r),
+		variant: versionLabel(r),
 		cuisine: r.cuisine,
 		addedAt: row.addedAt,
 		favorite: row.favorite,

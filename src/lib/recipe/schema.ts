@@ -184,6 +184,8 @@ export const recipeSchema = z
 		title: z.string().trim().min(1),
 		language: z.string().trim().min(2).default('sv'),
 		source: sourceSchema,
+		/** Short name telling this version apart from the dish's other versions ("With cream"); else the source name stands in. */
+		variant: optText,
 		// "4", "4 portions" and "4–6" are read as 4.
 		servings: z.preprocess((v) => {
 			const m = typeof v === 'string' ? v.match(/\d+(?:[.,]\d+)?/) : null;

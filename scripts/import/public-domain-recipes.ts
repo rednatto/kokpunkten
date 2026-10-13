@@ -6,6 +6,7 @@ import { existsSync, mkdtempSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { basename, join } from 'node:path';
 import type { RawRecipe } from '../../src/lib/import/normalize.ts';
+import { definingLabel } from '../../src/lib/recipe/labels.ts';
 import { COURSES, CUISINES, loadLibrary, normalizeAll, printReport, writeCatalog } from './common.ts';
 
 const REPO = 'https://github.com/ronaldl29/public-domain-recipes.git';
@@ -18,6 +19,41 @@ const DISH_OVERRIDES: Record<string, string> = {
 	pancake: 'pancakes',
 	// A page of basic ways to cook eggs, not a scrambled-eggs recipe.
 	eggs: 'eggs'
+};
+
+/**
+ * Names for the versions that join a library dish, saying what sets each apart from the
+ * library's versions, as theirs do. Written by hand from the recipes; a joined recipe not
+ * listed here gets a name from the ingredients only it uses.
+ */
+const VARIANTS: Record<string, string> = {
+	'apple-pie': 'Stovetop-thickened filling',
+	'baked-salmon': 'Foil-baked with butter',
+	'banana-bread': 'Spiced, with walnuts',
+	'bolognese-sauce': 'Three meats and milk',
+	'cacio-e-pepe': 'Crushed peppercorns',
+	'caesar-salad': 'Quick, with ready dressing',
+	carbonara: 'Light on cheese',
+	'chili-con-carne': 'Beans and dark chocolate',
+	'chocolate-chip-cookies': 'Melted butter, bread flour',
+	'clam-chowder': 'Bacon and half-and-half',
+	coleslaw: 'Buttermilk and celery seed',
+	'creme-brulee': 'With lemon peel',
+	'french-onion-soup': 'Two-hour onions, balsamic',
+	granola: 'Maple and cardamom',
+	'greek-salad': 'With lettuce and dill',
+	hummus: 'Skins loosened with baking soda',
+	lasagna: 'From ready-made sauces',
+	'mapo-tofu': 'Marinated pork, fermented black beans',
+	'miso-soup': 'Quick, instant dashi',
+	pancake: 'Basic one-bowl batter',
+	'pizza-dough': 'Quick 30-minute rise',
+	ratatouille: 'Big batch, peeled tomatoes',
+	schnitzel: 'Veal, paprika crumbs',
+	stroganoff: 'Dijon and egg noodles',
+	'swedish-pancakes': 'Griddle, butter in the batter',
+	tiramisu: 'Whipped egg whites',
+	tzatziki: 'Olive oil and lemon'
 };
 
 let dir = process.argv[2];
@@ -102,6 +138,7 @@ function parseFile(file: string): RawRecipe | null {
 	return {
 		title: String(meta.title ?? slug),
 		dish: DISH_OVERRIDES[slug],
+		variant: VARIANTS[slug],
 		language: 'en',
 		ingredients,
 		steps,
@@ -132,7 +169,12 @@ const raws = readdirSync(contentDir)
 		return raw ? [{ id: `pdr-${basename(f, '.md')}`, raw }] : [];
 	});
 
-const { entries, report } = normalizeAll(raws, loadLibrary());
+const library = loadLibrary();
+const { entries, report } = normalizeAll(raws, library);
+for (const { recipe } of entries) {
+	const versions = library.filter((r) => r.dish === recipe.dish);
+	if (versions.length && !recipe.variant) recipe.variant = definingLabel(recipe, versions) ?? undefined;
+}
 writeCatalog(OUT, {
 	meta: {
 		name: 'Public Domain Recipes',
