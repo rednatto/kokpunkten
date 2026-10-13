@@ -18,7 +18,7 @@
 				aria-label="{t.title}, step {t.step}: {formatSeconds(secondsLeft(t))} left"
 				title="{t.title}, step {t.step}"
 			>
-				⏱ <span class="time">{formatSeconds(secondsLeft(t))}</span>
+				⏱ <span class="step">{t.step}</span> · <span class="time">{formatSeconds(secondsLeft(t))}</span>
 			</a>
 		{/each}
 	</nav>
@@ -67,6 +67,9 @@
 	}
 	.time {
 		font-variant-numeric: tabular-nums;
+	}
+	.step {
+		font-weight: 400;
 	}
 	.alarm-banner {
 		position: fixed;

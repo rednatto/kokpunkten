@@ -136,10 +136,6 @@
 		flex: 1;
 		width: auto;
 	}
-	.on {
-		background: var(--accent);
-		color: var(--accent-fg);
-	}
 	.list {
 		list-style: none;
 		padding: 0;
@@ -157,26 +153,8 @@
 		color: inherit;
 		text-decoration: none;
 	}
-	.small {
-		font-size: 0.85rem;
-	}
 	.versions {
 		margin-top: 0.5rem;
 		gap: 0.4rem;
-	}
-	.chip.compare {
-		border-color: var(--accent);
-		background: var(--accent);
-		color: var(--accent-fg);
-		font-weight: 600;
-		padding: 0.3rem 0.85rem;
-	}
-	.chip {
-		font-size: 0.85rem;
-		border: 1px solid var(--line);
-		border-radius: 1rem;
-		padding: 0.15rem 0.6rem;
-		color: inherit;
-		text-decoration: none;
 	}
 </style>

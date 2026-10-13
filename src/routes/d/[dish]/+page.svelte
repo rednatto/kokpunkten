@@ -12,6 +12,7 @@
 	import { mixRecipe, type AmountSource } from '#lib/recipe/mix.ts';
 	import { tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
 	import type { Amount } from '#lib/recipe/units.ts';
+	import { scrollFade } from '#lib/scroll-fade.ts';
 	import { settings } from '#lib/settings.svelte.ts';
 
 	const dish = $derived(page.params.dish!);
@@ -369,7 +370,7 @@
 		</section>
 	{:else if settings.compareView === 'table'}
 		<p class="muted small">Tap an amount to cook with it, or the average. Tap a name to see how the amounts spread.</p>
-		<div class="table-wrap">
+		<div class="table-wrap" use:scrollFade>
 			<table>
 				<thead>
 					<tr>
@@ -545,14 +546,6 @@
 		justify-content: space-between;
 		gap: 0.75rem;
 	}
-	.stepper {
-		gap: 0.75rem;
-	}
-	.stepper button {
-		width: 2.5rem;
-		padding: 0;
-		font-size: 1.2rem;
-	}
 	.tabs {
 		display: flex;
 		margin: 1rem 0 0.5rem;
@@ -583,9 +576,6 @@
 	}
 	.amount {
 		margin-right: 0.25rem;
-	}
-	.small {
-		font-size: 0.85rem;
 	}
 	.slot {
 		margin-bottom: 0.75rem;
@@ -637,6 +627,10 @@
 		overflow-x: auto;
 		margin: 0 -1rem;
 		padding: 0 1rem;
+	}
+	/* Fade the right edge while columns are hidden there, so it's clear the table scrolls. */
+	.table-wrap:global(.more) {
+		mask-image: linear-gradient(to left, transparent, #000 3rem);
 	}
 	table {
 		border-collapse: collapse;
@@ -744,7 +738,11 @@
 		font-size: 0.8rem;
 	}
 	.error {
-		color: #b3261e;
+		color: var(--warn);
+	}
+	/* Rows scrolled to by keyboard or a tap land above the sticky mix bar, not under it. */
+	:global(html:has(.mixbar)) {
+		scroll-padding-bottom: 6rem;
 	}
 	.mixbar {
 		position: sticky;

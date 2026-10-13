@@ -156,9 +156,6 @@
 		background: var(--accent);
 		color: var(--accent-fg);
 	}
-	.small {
-		font-size: 0.85rem;
-	}
 	.list {
 		list-style: none;
 		padding: 0;
