@@ -29,6 +29,8 @@ export interface NormalizeOptions {
 	dishes?: Iterable<string>;
 	/** Used when the source gives no servings. */
 	defaultServings?: number;
+	/** Words that keep their capital when a Title Case title becomes sentence case (see `sentenceCase`). */
+	names?: Set<string>;
 }
 
 export type NormalizeResult =
@@ -45,6 +47,38 @@ export function plainText(s: string): string {
 		.replace(/(^|\s)[*_](\S[^*_]*\S|\S)[*_](?=\s|[.,;:!?]|$)/g, '$1$2')
 		.replace(/\s+/g, ' ')
 		.trim();
+}
+
+/**
+ * "Air Fryer Zucchini" as "Air fryer zucchini", the way the library writes titles. Words in
+ * `names` keep their capital ("Beef Wellington", "Greek salad"), and so does anything
+ * that isn't a plain capitalized word ("BBQ", "McDonald").
+ */
+export function sentenceCase(title: string, names: Set<string>): string {
+	let first = true;
+	return title.replace(/\p{L}+/gu, (w) => {
+		const keep = first || !/^\p{Lu}\p{Ll}+$/u.test(w) || names.has(w.toLowerCase());
+		first = false;
+		return keep ? w : w.toLowerCase();
+	});
+}
+
+/**
+ * Words a corpus treats as names: capitalized inside a sentence more often than written in
+ * lowercase. Capitals at the start of a sentence or line say nothing, so they don't count.
+ */
+export function namesIn(texts: Iterable<string>): Set<string> {
+	const lower = new Map<string, number>();
+	const upper = new Map<string, number>();
+	for (const text of texts) {
+		for (const m of text.matchAll(/\p{L}+/gu)) {
+			const w = m[0];
+			const k = w.toLowerCase();
+			if (w === k) lower.set(k, (lower.get(k) ?? 0) + 1);
+			else if (!/(^|[.!?:;(])\s*$/.test(text.slice(Math.max(0, m.index - 4), m.index))) upper.set(k, (upper.get(k) ?? 0) + 1);
+		}
+	}
+	return new Set([...upper].filter(([w, n]) => n > (lower.get(w) ?? 0)).map(([w]) => w));
 }
 
 /**
@@ -164,7 +198,7 @@ export function normalizeRecipe(raw: RawRecipe, opts: NormalizeOptions): Normali
 
 	const res = recipeSchema.safeParse({
 		dish: raw.dish ?? matchDish(raw.title, opts.dishes ?? []),
-		title: plainText(raw.title),
+		title: opts.names ? sentenceCase(plainText(raw.title), opts.names) : plainText(raw.title),
 		language: raw.language,
 		source: raw.source,
 		servings,

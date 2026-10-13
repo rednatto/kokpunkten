@@ -1,4 +1,5 @@
-import { parseTerm } from '../recipe/ingredient-search.ts';
+import { ingredientMatches, parseTerm } from '../recipe/ingredient-search.ts';
+import type { Recipe } from '../recipe/schema.ts';
 
 export interface Swap {
 	/** What to use instead, with the amount for the amount in `Swappable.per`. */
@@ -13,6 +14,8 @@ export interface Swappable {
 	aka?: string[];
 	/** The amount the swaps are given for, e.g. "1 dl". */
 	per?: string;
+	/** Courses the swaps work for, when not every dish: egg replacers suit a cake, not a carbonara. */
+	courses?: string[];
 	swaps: Swap[];
 }
 
@@ -35,6 +38,7 @@ export const SWAPS: Swappable[] = [
 		name: 'Egg (in baking)',
 		aka: ['egg', 'ägg'],
 		per: '1 egg',
+		courses: ['baking', 'dessert'],
 		swaps: [
 			{ use: '1 tbsp ground flaxseed + 3 tbsp water', note: 'Rest 5 minutes until gel-like. Binds, does not lift.' },
 			{ use: '½ mashed banana or ½ dl apple sauce', note: 'Moisture and binding, adds sweetness. Denser crumb.' },
@@ -411,6 +415,20 @@ export function findSwaps(query: string, list: Swappable[] = SWAPS): Swappable[]
 	};
 	return list
 		.map((s) => [s, score(s)] as const)
+		.filter(([, n]) => n >= 0)
+		.sort((a, b) => a[1] - b[1])
+		.map(([s]) => s);
+}
+
+/** Entries for what a recipe uses, in the recipe's order: a cook out of guanciale finds it first on carbonara. */
+export function swapsFor(recipe: Pick<Recipe, 'ingredients' | 'course'>, list: Swappable[] = SWAPS): Swappable[] {
+	const names = (s: Swappable) => [s.name, ...(s.aka ?? [])].map(parseTerm);
+	const first = (s: Swappable) =>
+		s.courses && !s.courses.some((c) => recipe.course.includes(c))
+			? -1
+			: recipe.ingredients.findIndex((ing) => names(s).some((n) => ingredientMatches(ing, n)));
+	return list
+		.map((s) => [s, first(s)] as const)
 		.filter(([, n]) => n >= 0)
 		.sort((a, b) => a[1] - b[1])
 		.map(([s]) => s);

@@ -9,8 +9,8 @@
 	import { showAmount } from '#lib/display.ts';
 	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
 	import { familyName } from '#lib/recipe/families.ts';
-	import { mixRecipe, type AmountSource } from '#lib/recipe/mix.ts';
-	import { tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
+	import { mixRecipe, roundAmount, type AmountSource } from '#lib/recipe/mix.ts';
+	import { basicGroup, tableTree, type TreeGroup } from '#lib/recipe/table-tree.ts';
 	import type { Amount } from '#lib/recipe/units.ts';
 	import { scrollFade } from '#lib/scroll-fade.ts';
 	import { settings } from '#lib/settings.svelte.ts';
@@ -86,10 +86,10 @@
 	/** How many versions use something: dots for a few versions, a count for many, so it never spills into the next column. */
 	const uses = (count: number) => (n <= 6 ? `${'●'.repeat(count)}${'○'.repeat(n - count)}` : `${count} of ${n}`);
 
-	/** The average amount, or each distinct amount when they can't be averaged. */
+	/** The average amount, rounded as the mix will use it, or each distinct amount when they can't be averaged. */
 	function average(row: DiffRow): string {
 		const mean = rowMean(row);
-		return mean ? rowAmount(row, mean) : range(row);
+		return mean ? rowAmount(row, mean.qty == null ? mean : roundAmount(mean, row.key)) : range(row);
 	}
 
 	// Rows whose spread of amounts is open, by key.
@@ -134,7 +134,11 @@
 		if (!diff) return new Map<string, AmountSource>();
 		const likely = new Set([
 			...diff.common.map((r) => r.key),
-			...diff.slots.map((s) => s.options.toSorted((a, b) => b.versions.length - a.versions.length)[0].row.key),
+			...diff.slots.flatMap((s) => {
+				const byUse = s.options.toSorted((a, b) => b.versions.length - a.versions.length);
+				const most = byUse.filter((o) => o.versions.length > n / 2);
+				return (s.pickOne || !most.length ? byUse.slice(0, 1) : most).map((o) => o.row.key);
+			}),
 			...diff.extras.filter((r) => r.count > n / 2).map((r) => r.key)
 		]);
 		const v = closestTo(diff, likely);
@@ -155,8 +159,12 @@
 	function toggleRow(key: string) {
 		editChosen((m) => (m.has(key) ? m.delete(key) : m.set(key, 'average')));
 	}
-	/** Picks one option of a slot; picking it again leaves the slot empty, since not every version has one. */
+	/**
+	 * Picks one option of a slot; picking it again leaves the slot empty, since not every version
+	 * has one. In a slot whose options go together, each option is ticked on its own.
+	 */
 	function pickOption(slot: DiffSlot, key: string) {
+		if (!slot.pickOne) return toggleRow(key);
 		editChosen((m) => {
 			const was = m.has(key);
 			for (const o of slot.options) m.delete(o.row.key);
@@ -195,6 +203,17 @@
 		}
 	});
 	const mix = $derived(mixed.mix);
+
+	// "Some add": the ingredients that make a difference stay in view, and the basics (salt,
+	// spices, oil) fold under the same headings as the table, so a big dish isn't 30 rows.
+	const extrasMain = $derived(diff?.extras.filter((r) => !basicGroup(r)) ?? []);
+	const extrasBasic = $derived(
+		tree.flatMap((g) => {
+			const rows = g.basic ? (diff?.extras ?? []).filter((r) => basicGroup(r) === g.title) : [];
+			return rows.length ? [{ title: g.title!, rows }] : [];
+		})
+	);
+	const whoUses = (row: DiffRow) => row.ingredients.flatMap((i, v) => (i ? [label(v)] : [])).join(', ');
 	async function cookMix() {
 		if (!mix || saving) return;
 		saving = true;
@@ -303,16 +322,16 @@
 			</ul>
 
 			{#if diff.slots.length}
-				<h2>Pick one, or none</h2>
+				<h2>{diff.slots.every((s) => s.pickOne) ? 'Pick one, or none' : 'Pick what goes in'}</h2>
 				<p class="muted small">Not every version has one of each. Tap a picked option again to leave it out.</p>
 				{#each diff.slots as slot (slot.role)}
 					<div class="slot">
-						<span class="muted small">{roleName(slot.role)}</span>
-						<div class="row options">
+						<span class="muted small">{roleName(slot.role)} · {slot.pickOne ? 'pick one' : 'pick any'}</span>
+						<div class="row options" role={slot.pickOne ? 'radiogroup' : 'group'} aria-label={roleName(slot.role)}>
 							{#each slot.options as opt (opt.row.key)}
 								{@const on = chosen.has(opt.row.key)}
-								<button class="option" class:on aria-pressed={on} onclick={() => pickOption(slot, opt.row.key)}>
-									<strong>{opt.row.name}</strong>
+								<button class="option" class:on class:multi={!slot.pickOne} aria-pressed={on} onclick={() => pickOption(slot, opt.row.key)}>
+									<strong>{#if !slot.pickOne}<span class="tick" aria-hidden="true">{on ? '☑' : '☐'}</span>{/if}{opt.row.name}</strong>
 									<span class="small">{range(opt.row)}</span>
 									<span class="small who">{opt.versions.map(label).join(', ')}</span>
 								</button>
@@ -322,21 +341,36 @@
 				{/each}
 			{/if}
 
+			{#snippet extra(row: DiffRow)}
+				<li>
+					<label class="row extra">
+						<input type="checkbox" checked={chosen.has(row.key)} onchange={() => toggleRow(row.key)} />
+						<span>
+							<strong class="amount">{range(row)}</strong> {row.name}
+							<span class="muted small">· {row.count} of {n}: {whoUses(row)}</span>
+						</span>
+					</label>
+				</li>
+			{/snippet}
 			{#if diff.extras.length}
 				<h2>Some add</h2>
-				<ul class="plain">
-					{#each diff.extras as row (row.key)}
-						<li>
-							<label class="row extra">
-								<input type="checkbox" checked={chosen.has(row.key)} onchange={() => toggleRow(row.key)} />
-								<span>
-									<strong class="amount">{range(row)}</strong> {row.name}
-									<span class="muted small">· {row.count} of {n}: {row.ingredients.flatMap((i, v) => (i ? [label(v)] : [])).join(', ')}</span>
-								</span>
-							</label>
-						</li>
-					{/each}
-				</ul>
+				{#if extrasMain.length}
+					<ul class="plain">
+						{#each extrasMain as row (row.key)}{@render extra(row)}{/each}
+					</ul>
+				{/if}
+				{#each extrasBasic as g (g.title)}
+					{@const picked = g.rows.filter((r) => chosen.has(r.key))}
+					<details class="basics">
+						<summary>
+							<strong>{g.title}</strong>
+							<span class="muted small">· {picked.length ? `${picked.map((r) => r.name).join(', ')} in` : 'none in'}, {g.rows.length} to choose from</span>
+						</summary>
+						<ul class="plain">
+							{#each g.rows as row (row.key)}{@render extra(row)}{/each}
+						</ul>
+					</details>
+				{/each}
 			{/if}
 
 			<h2>Your mix</h2>
@@ -351,6 +385,13 @@
 				{#if amountsMode === 'mixed'}<span class="small muted">mixed, picked in the table</span>{/if}
 			</div>
 			{#if mix}
+				<h3>Ingredients <span class="muted small">for {diff.servings} servings</span></h3>
+				<ul class="final">
+					{#each mix.recipe.ingredients as ing (ing.id)}
+						<li><strong class="amount">{showAmount(ing, { qty: ing.qty ?? null, qtyMax: ing.qtyMax ?? null, unit: ing.unit ?? null }).main}</strong> {ing.name}</li>
+					{/each}
+				</ul>
+				<h3>Method</h3>
 				<ol class="method">
 					{#each mix.steps as step (step.id)}
 						<li>
@@ -619,6 +660,36 @@
 	}
 	.method {
 		padding-left: 1.4rem;
+	}
+	.final {
+		padding-left: 1.2rem;
+		margin: 0 0 0.5rem;
+		columns: 2 14rem;
+	}
+	.final li {
+		margin-bottom: 0.2rem;
+		break-inside: avoid;
+	}
+	h3 {
+		font-size: 1rem;
+		margin: 0.75rem 0 0.35rem;
+	}
+	.tick {
+		margin-right: 0.3rem;
+		font-weight: 400;
+	}
+	.basics {
+		border-bottom: 1px solid var(--line);
+		padding: 0.4rem 0;
+	}
+	.basics summary {
+		cursor: pointer;
+	}
+	.basics .plain {
+		margin-left: 1rem;
+	}
+	.basics .plain li:last-child {
+		border-bottom: none;
 	}
 	.method li {
 		margin-bottom: 0.4rem;
