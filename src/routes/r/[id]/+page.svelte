@@ -5,7 +5,7 @@
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
 	import { db, deleteRecipes, updateRecipe, type StoredRecipe } from '#lib/db.ts';
-	import { showAmount } from '#lib/display.ts';
+	import { cuisineName, showAmount } from '#lib/display.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
 	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
@@ -138,7 +138,7 @@
 		{/if}
 		{#if recipe.source.author && recipe.source.license}· by {recipe.source.author}, {recipe.source.license}{/if}
 		{#if recipe.time.totalMin}· {recipe.time.totalMin} min{/if}
-		{#if recipe.cuisine.length}· {recipe.cuisine.join(', ')}{/if}
+		{#if recipe.cuisine.length}· {recipe.cuisine.map(cuisineName).join(', ')}{/if}
 	</p>
 
 	{#if siblings && siblings.length > 1}
@@ -174,7 +174,7 @@
 			<strong>Swaps &amp; weights</strong>
 			<button class="ghost small" onclick={() => helpDialog?.close()} aria-label="Close">✕</button>
 		</div>
-		<KitchenHelp bind:tab={helpTab} />
+		<KitchenHelp bind:tab={helpTab} {recipe} />
 	</dialog>
 	<ul class="checklist">
 		{#each recipe.ingredients as ing, n (ing.id)}

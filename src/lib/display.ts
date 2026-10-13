@@ -13,3 +13,7 @@ export function showAmount(ing: Ingredient, a: Amount): { main: string; hint: st
 	}
 	return { main: exact, hint: settings.units === 'us' ? null : weightHint(ing, a) };
 }
+
+/** A cuisine slug as a name: "italian" as "Italian", "tex-mex" as "Tex-Mex", "middle-eastern" as "Middle Eastern". */
+export const cuisineName = (slug: string) =>
+	slug.replace(/(^|-)(\p{L})/gu, (_, sep: string, c: string) => `${sep}${c.toUpperCase()}`).replace(/^(Middle|North|South|East|West)-/, '$1 ');

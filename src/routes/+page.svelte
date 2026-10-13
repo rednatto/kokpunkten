@@ -3,6 +3,8 @@
 	import { liveQuery } from 'dexie';
 	import { db, type RecipeSummary } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
+	import { cuisineName } from '#lib/display.ts';
+	import { fromSwedish } from '#lib/recipe/ingredient-search.ts';
 
 	// Summaries, not whole recipes: the list only needs names, cuisines and search words.
 	let rows = $state<RecipeSummary[]>();
@@ -21,6 +23,7 @@
 	let query = $state('');
 	let cuisine = $state('');
 	let favoritesOnly = $state(false);
+	let versionsOnly = $state(false);
 
 	interface Dish {
 		slug: string;
@@ -52,18 +55,30 @@
 	const dishes = $derived(rows ? toDishes(rows) : []);
 	const allCuisines = $derived([...new Set(dishes.flatMap((d) => d.cuisines))].sort());
 	const shown = $derived.by(() => {
-		const terms = query.toLowerCase().split(/[\s,]+/).filter(Boolean);
+		// Each term as typed, or its English word: "kyckling" finds chicken, as on the ingredients page.
+		const terms = query
+			.toLowerCase()
+			.split(/[\s,]+/)
+			.filter(Boolean)
+			.map((t) => [t, fromSwedish(t)].filter((w) => w != null));
+		const compared = (d: Dish) => Number(d.versions.length > 1);
+		// A search for chicken lists chicken dishes before dishes that only use chicken stock.
+		const named = (d: Dish) => Number(terms.length > 0 && terms.every((t) => t.some((w) => d.name.toLowerCase().includes(w))));
 		return dishes
-			.filter((d) => (!favoritesOnly || d.favorite) && (!cuisine || d.cuisines.includes(cuisine)))
-			.filter((d) => terms.every((t) => d.haystack.includes(t)))
-			.sort((a, b) => Number(b.favorite) - Number(a.favorite) || a.name.localeCompare(b.name));
+			.filter((d) => (!favoritesOnly || d.favorite) && (!versionsOnly || compared(d)) && (!cuisine || d.cuisines.includes(cuisine)))
+			.filter((d) => terms.every((t) => t.some((w) => d.haystack.includes(w))))
+			// Dishes with versions to compare come first: comparing them is what the app is for.
+			.sort(
+				(a, b) =>
+					Number(b.favorite) - Number(a.favorite) || named(b) - named(a) || compared(b) - compared(a) || a.name.localeCompare(b.name)
+			);
 	});
 
 	// Draw the list a page at a time: more cards as the end comes into view.
 	const PAGE = 40;
 	let limit = $state(PAGE);
 	$effect(() => {
-		void [query, cuisine, favoritesOnly];
+		void [query, cuisine, favoritesOnly, versionsOnly];
 		limit = PAGE;
 	});
 	function more(node: HTMLElement) {
@@ -90,9 +105,10 @@
 		<div class="row">
 			<select bind:value={cuisine} aria-label="Cuisine">
 				<option value="">All cuisines</option>
-				{#each allCuisines as c}<option value={c}>{c}</option>{/each}
+				{#each allCuisines as c}<option value={c}>{cuisineName(c)}</option>{/each}
 			</select>
-			<button class="ghost small" class:on={favoritesOnly} onclick={() => (favoritesOnly = !favoritesOnly)}>★ Favorites</button>
+			<button class="ghost small" class:on={versionsOnly} aria-pressed={versionsOnly} onclick={() => (versionsOnly = !versionsOnly)}>⇄ Has versions</button>
+			<button class="ghost small" class:on={favoritesOnly} aria-pressed={favoritesOnly} onclick={() => (favoritesOnly = !favoritesOnly)}>★ Favorites</button>
 			<a href={resolve('/ingredients')} class="button ghost small">By ingredients</a>
 		</div>
 	</div>
@@ -103,7 +119,7 @@
 			<li class="card">
 				<div class="head">
 					<a href={resolve('/r/[id]', { id: d.versions[0].id })} class="title">{d.favorite ? '★ ' : ''}{d.name}</a>
-					<span class="muted small">{d.cuisines.join(', ')}</span>
+					<span class="muted small">{d.cuisines.map(cuisineName).join(', ')}</span>
 				</div>
 				{#if d.versions.length > 1}
 					<div class="row versions">

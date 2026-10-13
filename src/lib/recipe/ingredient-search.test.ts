@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { ingredientMatches, parseTerm, searchByIngredients, singular } from './ingredient-search';
+import { fromSwedish, ingredientMatches, parseTerm, searchByIngredients, singular } from './ingredient-search';
 import { recipeSchema, type Ingredient, type Recipe } from './schema';
 
 const dir = new URL('../library/', import.meta.url);
@@ -13,6 +13,10 @@ const ing = (key: string, name = key.replaceAll('-', ' '), role: string | null =
 	({ id: 'x', key, name, role, optional: false, substitutes: [] }) as Ingredient;
 
 describe('matching', () => {
+	it('knows Swedish search words', () => {
+		expect(fromSwedish('Kyckling')).toBe('chicken');
+		expect(fromSwedish('chicken')).toBeNull();
+	});
 	it('makes plurals meet', () => {
 		expect(['potatoes', 'tomatoes', 'cherries', 'eggs', 'grass', 'asparagus'].map(singular)).toEqual([
 			'potato',
