@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { liveQuery } from 'dexie';
-	import { db, type RecipeSummary } from '#lib/db.ts';
-	import { DISH_NAMES } from '#lib/dish-names.ts';
+	import { db, dishNames, type RecipeSummary } from '#lib/db.ts';
+	import { dishName } from '#lib/dish-names.ts';
 	import { cuisineName } from '#lib/display.ts';
 	import { fromSwedish } from '#lib/recipe/ingredient-search.ts';
 
@@ -35,24 +35,25 @@
 		haystack: string;
 	}
 
-	function toDishes(rows: RecipeSummary[]): Dish[] {
+	function toDishes(rows: RecipeSummary[], named: Map<string, string>): Dish[] {
 		const groups = new Map<string, RecipeSummary[]>();
 		for (const r of rows) groups.set(r.dish, [...(groups.get(r.dish) ?? []), r]);
 		return [...groups].map(([slug, group]) => {
 			const versions = group.toSorted((a, b) => a.addedAt - b.addedAt);
 			const cuisines = [...new Set(versions.flatMap((v) => v.cuisine))];
+			const name = dishName(slug, versions.map((v) => v.title), named);
 			return {
 				slug,
-				name: DISH_NAMES[slug] ?? versions[0].title,
+				name,
 				versions,
 				cuisines,
 				favorite: versions.some((v) => v.favorite),
-				haystack: [DISH_NAMES[slug] ?? '', ...cuisines, ...versions.map((v) => v.words)].join(' ').toLowerCase()
+				haystack: [name, ...cuisines, ...versions.map((v) => v.words)].join(' ').toLowerCase()
 			};
 		});
 	}
 
-	const dishes = $derived(rows ? toDishes(rows) : []);
+	const dishes = $derived(rows ? toDishes(rows, $dishNames) : []);
 	const allCuisines = $derived([...new Set(dishes.flatMap((d) => d.cuisines))].sort());
 	const shown = $derived.by(() => {
 		// Each term as typed, or its English word: "kyckling" finds chicken, as on the ingredients page.

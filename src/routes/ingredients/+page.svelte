@@ -3,8 +3,8 @@
 	import { replaceState } from '$app/navigation';
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
-	import { db, type StoredRecipe } from '#lib/db.ts';
-	import { DISH_NAMES } from '#lib/dish-names.ts';
+	import { db, dishNames, type StoredRecipe } from '#lib/db.ts';
+	import { dishName } from '#lib/dish-names.ts';
 	import { versionLabel } from '#lib/recipe/labels.ts';
 	import { searchByIngredients, type IngredientHit } from '#lib/recipe/ingredient-search.ts';
 
@@ -70,10 +70,11 @@
 	const hits = $derived.by((): DishHit[] => {
 		if (!$recipes) return [];
 		const byDish = new Map<string, DishHit>();
+		const titles = Map.groupBy($recipes.toSorted((a, b) => a.addedAt - b.addedAt), (r) => r.recipe.dish);
 		for (const hit of searchByIngredients($recipes, terms, (r) => r.recipe, preference)) {
 			const slug = hit.item.recipe.dish;
 			const seen = byDish.get(slug);
-			if (!seen) byDish.set(slug, { slug, name: DISH_NAMES[slug] ?? hit.item.recipe.title, best: hit, others: [] });
+			if (!seen) byDish.set(slug, { slug, name: dishName(slug, titles.get(slug)!.map((r) => r.recipe.title), $dishNames), best: hit, others: [] });
 			else if (hit.matches.every((m, i) => !m === !seen.best.matches[i])) seen.others.push(hit.item);
 		}
 		return [...byDish.values()];
