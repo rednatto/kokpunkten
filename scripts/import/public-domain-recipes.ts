@@ -14,7 +14,6 @@ const OUT = 'src/lib/catalog/public-domain-recipes.json';
 
 /** Titles that are a library dish under another name. Checked by hand against the import report. */
 const DISH_OVERRIDES: Record<string, string> = {
-	'bolognese-sauce': 'spaghetti-bolognese',
 	pancake: 'pancakes',
 	// A page of basic ways to cook eggs, not a scrambled-eggs recipe.
 	eggs: 'eggs'

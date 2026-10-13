@@ -14,6 +14,11 @@ export function showAmount(ing: Ingredient, a: Amount): { main: string; hint: st
 	return { main: exact, hint: settings.units === 'us' ? null : weightHint(ing, a) };
 }
 
+/** A step time: "20 min", or "60–120 min" when the source gives a range. */
+export function formatMinutes(min: number, max?: number | null): string {
+	return max != null && max > min ? `${min}–${max} min` : `${min} min`;
+}
+
 /** A cuisine slug as a name: "italian" as "Italian", "tex-mex" as "Tex-Mex", "middle-eastern" as "Middle Eastern". */
 export const cuisineName = (slug: string) =>
 	slug.replace(/(^|-)(\p{L})/gu, (_, sep: string, c: string) => `${sep}${c.toUpperCase()}`).replace(/^(Middle|North|South|East|West)-/, '$1 ');

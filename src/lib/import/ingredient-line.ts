@@ -1,4 +1,5 @@
 import type { Unit } from '../recipe/schema.ts';
+import { MASS_G, VOLUME_ML } from '../recipe/units.ts';
 
 /** One ingredient line from a website or dataset, split into parts. Nothing here is canonical yet. */
 export interface ParsedLine {
@@ -22,7 +23,7 @@ const UNIT_WORDS: [string[], Unit, number?][] = [
 	[['dl', 'deciliter', 'decilitre'], 'dl'],
 	[['l', 'liter', 'liters', 'litre', 'litres'], 'l'],
 	[['tsp', 'tsps', 'teaspoon', 'teaspoons', 'tsk'], 'tsp'],
-	[['tbsp', 'tbsps', 'tbs', 'tbl', 'tablespoon', 'tablespoons', 'msk'], 'tbsp'],
+	[['tbsp', 'tbsps', 'tbs', 'tbl', 'tb', 'tablespoon', 'tablespoons', 'msk'], 'tbsp'],
 	[['krm'], 'krm'],
 	[['cup', 'cups', 'c'], 'cup'],
 	[['pint', 'pints', 'pt'], 'cup', 2],
@@ -70,7 +71,7 @@ const NUM = `(?:\\d+\\s+\\d+/\\d+|\\d+/\\d+|\\d+(?:[.,]\\d+)?\\s*[½¼¾⅓⅔�
 const RANGE_SEP = '\\s*(?:-|–|—|to|or|till|à)\\s*';
 // An amount at the start: "1 1/2 cups", "2-3 tbsp", "400g", "~150 g", "a pinch".
 const AMOUNT_RE = new RegExp(
-	`^(?:about|approx\\.?|ca\\.?|~)?\\s*(${NUM})(?:${RANGE_SEP}(${NUM}))?(?:\\s*(${UNIT_RE})(?=$|[\\s.,;:)]))?\\.?\\s*`,
+	`^(?:about|approx\\.?|ca\\.?|~|<|up to)?\\s*(${NUM})(?:${RANGE_SEP}(${NUM}))?(?:\\s*(${UNIT_RE})(?=$|[\\s.,;:)]))?\\.?\\s*`,
 	'i'
 );
 
@@ -122,6 +123,48 @@ function readAmount(text: string): Amount | null {
 
 const METRIC = new Set<Unit>(['g', 'kg', 'ml', 'cl', 'dl', 'l']);
 
+const PACKAGE_RE = new RegExp(
+	`^(\\d+(?:[.,]\\d+)?\\s*(?:oz|ounce|ounces|ml|cl|g|gram|grams|l)\\.?)\\s+(?:(?:large|small)\\s+)?((cans?|tins?|bottles?|jars?|packages?|packets?|pkgs?|bags?|boxes|box|sachets?|blocks?)\\s+(?:of\\s+)?)?`,
+	'i'
+);
+
+/** Same-kind units in a common base, so "½ cup + 2 tablespoons" can be added up. */
+function inBase(unit: Unit | null): { base: number; table: string } | null {
+	if (!unit) return null;
+	if (unit in MASS_G) return { base: MASS_G[unit]!, table: 'mass' };
+	if (unit in VOLUME_ML) return { base: VOLUME_ML[unit]!, table: 'volume' };
+	return null;
+}
+
+/**
+ * What follows an amount that is more of the same amount: "1 kg / 2 lbs potatoes" gives the same
+ * amount in other units (the metric one wins), "½ cup + 2 tbsp" adds up, "3 / 4 lemons" is a range.
+ * Updates `amount` in place and returns the rest of the text, or null when nothing followed.
+ */
+function moreOfAmount(amount: Amount): string | null {
+	const slash = amount.rest.match(/^\/\s*/);
+	if (slash) {
+		const alt = readAmount(amount.rest.slice(slash[0].length));
+		if (!alt) return null;
+		if (alt.unit && METRIC.has(alt.unit) && (!amount.unit || !METRIC.has(amount.unit))) Object.assign(amount, { ...alt, rest: alt.rest });
+		else if (!alt.unit && !amount.unit && alt.qty > amount.qty && amount.qtyMax == null) amount.qtyMax = alt.qty;
+		return alt.rest;
+	}
+	const plus = amount.rest.match(/^\+\s*/);
+	if (plus) {
+		const extra = readAmount(amount.rest.slice(plus[0].length));
+		if (!extra) return null;
+		const [a, b] = [inBase(amount.unit), inBase(extra.unit)];
+		if (a && b && a.table === b.table) {
+			const add = (extra.qty * b.base) / a.base;
+			amount.qty += add;
+			if (amount.qtyMax != null) amount.qtyMax += add;
+		}
+		return extra.rest;
+	}
+	return null;
+}
+
 /**
  * Splits a free-text ingredient line into amount, unit, name and preparation.
  * Handles the shapes common on recipe sites and in open datasets:
@@ -132,6 +175,9 @@ export function parseIngredientLine(line: string): ParsedLine {
 	let text = line
 		.replace(/\*\*|__|`/g, '')
 		.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+		// "3⁄4" with a fraction slash, ".5 tsp" without the zero.
+		.replace(/⁄/g, '/')
+		.replace(/(^|\s)\.(\d)/g, '$10.$2')
 		.replace(/\s+/g, ' ')
 		.trim();
 
@@ -172,9 +218,17 @@ export function parseIngredientLine(line: string): ParsedLine {
 	// Alternative measures after "|": "320 g | 11 oz" keeps the first.
 	text = text.replace(/\s*\|\s*[\d½¼¾⅓⅔⅛][^a-zA-Z]*(?:[a-zA-Z.]+)?/g, '').trim();
 
+	// "A little bit of salt", "a handful of basil": no amount to read, and not part of the name.
+	text = text.replace(/^(?:an?\s+)?(?:little\s+)?(bit|little|splash|drizzle|knob|handful)\s+of\s+/i, (_, what: string) => {
+		notes.push(/^(bit|little)$/i.test(what) ? 'a little' : `a ${what.toLowerCase()}`);
+		return '';
+	});
 	let amount = readAmount(text);
-	if (amount) text = amount.rest;
-	else {
+	if (amount) {
+		text = amount.rest;
+		const more = moreOfAmount(amount);
+		if (more) text = more;
+	} else {
 		// "Pinch of salt", "Bunch of parsley": a unit with no number means one.
 		const bare = text.match(new RegExp(`^(${UNIT_RE})\\s+of\\s+`, 'i'));
 		const u = bare && UNIT_INDEX.get(bare[1].toLowerCase());
@@ -183,10 +237,33 @@ export function parseIngredientLine(line: string): ParsedLine {
 			amount = { qty: u.factor, qtyMax: null, unit: u.unit, rest: text };
 		}
 	}
+	// "1 15 oz can diced tomatoes", "2 33cl bottles of beer": a package size, not part of the name.
+	if (amount && !amount.unit) {
+		const pack = text.match(PACKAGE_RE);
+		if (pack) {
+			text = text.slice(pack[0].length);
+			notes.unshift(`${pack[1].replace(/\s+/g, ' ').replace(/\.$/, '')}${pack[3] ? ` ${pack[3].toLowerCase().replace(/s$/, '')}` : ''}`);
+			if (pack[3] && /^(can|tin)/i.test(pack[3])) amount.unit = 'can';
+		}
+		// "3 - inch piece stick cinnamon" is one piece three inches long.
+		const inch = text.match(/^-?\s*(inch|in\.|cm)\s+(?:piece|pieces|stick|sticks)?\s*(?:of\s+)?/i);
+		if (inch) {
+			text = text.slice(inch[0].length);
+			notes.unshift(`${amount.qty}-${inch[1].replace(/\.$/, '').toLowerCase()} piece`);
+			amount.qty = 1;
+			amount.qtyMax = null;
+		}
+	}
 	if (amount && orMore != null && amount.qtyMax == null && orMore > amount.qty) amount.qtyMax = orMore;
 	// Prefer the metric alternative over cups and pounds.
 	const m = metricAlt as Amount | null;
 	if (m && (!amount || !amount.unit || !METRIC.has(amount.unit))) amount = { ...m, rest: text };
+
+	// "1-2 potatoes per serving"
+	text = text.replace(/\s+(per (?:serving|person|portion))\b/i, (_, per: string) => {
+		notes.push(per.toLowerCase());
+		return '';
+	});
 
 	let unit: Unit | null = amount?.unit ?? null;
 	if (/\b(to taste|efter smak|as needed|to serve)\b/i.test(text)) {

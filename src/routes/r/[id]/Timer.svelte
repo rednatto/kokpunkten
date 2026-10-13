@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { formatMinutes } from '#lib/display.ts';
 	import { formatSeconds, isDone, secondsLeft, startTimer, stopTimer, timerKey, timers } from '#lib/timers.svelte.ts';
 
-	let { recipeId, stepId, title, step, minutes }: { recipeId: string; stepId: string; title: string; step: number; minutes: number } = $props();
+	let {
+		recipeId,
+		stepId,
+		title,
+		step,
+		minutes,
+		maxMinutes
+	}: { recipeId: string; stepId: string; title: string; step: number; minutes: number; maxMinutes?: number | null } = $props();
 
 	// The timer itself lives app-wide, so it keeps running when this page is left.
 	const timer = $derived(timers.find((t) => t.key === timerKey(recipeId, stepId)));
@@ -10,7 +18,7 @@
 
 <div class="timer" class:running={timer && !finished} class:finished>
 	{#if !timer}
-		<button class="ghost small" onclick={() => startTimer({ recipeId, stepId, title, step, minutes })}>⏱ {minutes} min</button>
+		<button class="ghost small" onclick={() => startTimer({ recipeId, stepId, title, step, minutes })}>⏱ {formatMinutes(minutes, maxMinutes)}</button>
 	{:else}
 		<span class="time" aria-live="assertive">{finished ? 'Done!' : formatSeconds(secondsLeft(timer))}</span>
 		<button class="ghost small" onclick={() => stopTimer(timer.key)}>{finished ? 'OK' : 'Stop'}</button>
