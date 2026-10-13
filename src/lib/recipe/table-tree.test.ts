@@ -16,6 +16,14 @@ describe('basicGroup', () => {
 		expect(basicGroup({ key: 'red-bell-pepper', role: 'vegetable' })).toBeNull();
 		expect(basicGroup({ key: 'guanciale', role: 'cured-pork' })).toBeNull();
 	});
+
+	it('puts chili under Chili however it is spelled or tagged', () => {
+		for (const key of ['crushed-red-pepper-flakes', 'red-chilli', 'green-chilly', 'chilis', 'cayenne-pepper', 'chilli-flake'])
+			expect(basicGroup({ key, role: 'other' }), key).toBe('Chili');
+		expect(basicGroup({ key: 'chili-oil', role: 'chili' })).toBe('Oil and fat');
+		expect(basicGroup({ key: 'black-pepper', role: 'other' })).toBe('Salt, pepper and spices');
+		expect(basicGroup({ key: 'chilean-sea-bass', role: 'fish' })).toBeNull();
+	});
 });
 
 describe('tableTree', () => {

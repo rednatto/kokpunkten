@@ -182,11 +182,13 @@ const PINCH_ML = 0.31;
  * converted through typical weights (a clove of garlic, a tsp of salt), and left null when
  * there is no sensible conversion. Null overall when nothing has an amount.
  */
-export function rowValues(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>): { dim: Dimension; values: (number | null)[] } | null {
-	const native = row.amounts.map((a) => (a?.unit === 'pinch' && a.qty != null ? { dim: 'volume' as Dimension, value: mid(a) * PINCH_ML } : baseValue(a)));
+export function rowValues(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>, prefer?: Dimension | null): { dim: Dimension; values: (number | null)[] } | null {
+	const native = nativeValues(row);
 	const counts = Map.groupBy(native.filter((n) => n !== null), (n) => n.dim);
 	if (!counts.size) return null;
-	const dim = [...counts].toSorted((a, b) => b[1].length - a[1].length)[0][0];
+	const own = [...counts].toSorted((a, b) => b[1].length - a[1].length)[0][0];
+	// A preferred unit only swaps weight for volume or back: a chili counted in pieces stays in pieces.
+	const dim = prefer && isMeasure(prefer) && isMeasure(own) ? prefer : own;
 	const keyOf = (v: number) => row.ingredients[v]?.key ?? row.key;
 	const density = (v: number) => gramsPerMl(keyOf(v), row.role) ?? gramsPerMl(row.key, row.role);
 	const pieceG = (v: number) => PIECE_GRAMS[keyOf(v)] ?? PIECE_GRAMS[row.key] ?? null;
@@ -207,6 +209,29 @@ export function rowValues(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingre
 	return { dim, values };
 }
 
+const nativeValues = (row: Pick<DiffRow, 'amounts'>) =>
+	row.amounts.map((a) => (a?.unit === 'pinch' && a.qty != null ? { dim: 'volume' as Dimension, value: mid(a) * PINCH_ML } : baseValue(a)));
+
+const isMeasure = (d: Dimension) => d === 'mass' || d === 'volume';
+
+/**
+ * Weight or volume, to show several rows in alike (60 g parmesan and 70 g pecorino, not
+ * 150 ml and 70 g): the one their amounts use most that every weighed or measured row
+ * converts to without losing an amount, weight first on a tie. Null when there is none.
+ * Rows counted in pieces keep their own unit.
+ */
+export function sharedDimension(rows: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>[]): Dimension | null {
+	const native = rows.flatMap((r) => nativeValues(r).filter((n) => n !== null && isMeasure(n.dim)));
+	const rank = (d: Dimension) => (d === 'mass' ? 0 : d === 'volume' ? 1 : 2);
+	const dims = [...Map.groupBy(native, (n) => n.dim)].toSorted((a, b) => b[1].length - a[1].length || rank(a[0]) - rank(b[0])).map(([d]) => d);
+	const lossless = (row: (typeof rows)[number], dim: Dimension) => {
+		const own = nativeValues(row);
+		const r = rowValues(row, dim);
+		return !r || r.dim !== dim || own.every((n, v) => n === null || r.values[v] != null);
+	};
+	return dims.find((d) => rows.every((r) => lossless(r, d))) ?? null;
+}
+
 type RowLike = Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'> & { outliers?: number[] };
 
 /** The row's comparable values without its outliers (all of them when nothing else is left). */
@@ -217,8 +242,8 @@ function typicalValues(row: RowLike, r: ReturnType<typeof rowValues>): number[] 
 }
 
 /** The spread of a row's typical amounts in one unit (0.25–2 tsp), outliers left out, or null when they can't be compared. */
-export function rowRange(row: RowLike): Amount | null {
-	const r = rowValues(row);
+export function rowRange(row: RowLike, dim?: Dimension | null): Amount | null {
+	const r = rowValues(row, dim);
 	const values = typicalValues(row, r);
 	if (!r || !values.length) return null;
 	const [min, max] = [Math.min(...values), Math.max(...values)];
@@ -226,8 +251,8 @@ export function rowRange(row: RowLike): Amount | null {
 }
 
 /** The mean of a row's typical amounts in one unit, outliers left out, or null when they can't be compared. */
-export function rowMean(row: RowLike): Amount | null {
-	const r = rowValues(row);
+export function rowMean(row: RowLike, dim?: Dimension | null): Amount | null {
+	const r = rowValues(row, dim);
 	const values = typicalValues(row, r);
 	if (!r || !values.length) return null;
 	return fromBase(r.dim, values.reduce((s, v) => s + v, 0) / values.length, null);
