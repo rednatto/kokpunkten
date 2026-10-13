@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { SWAPS, findSwaps } from './swaps.ts';
+import { readFileSync } from 'node:fs';
+import { recipeSchema } from '../recipe/schema.ts';
+import { SWAPS, findSwaps, swapsFor } from './swaps.ts';
 import { WEIGHABLES, equivalents, toBase } from './weights.ts';
 
 const item = (key: string) => WEIGHABLES.find((w) => w.key === key)!;
@@ -18,6 +20,20 @@ describe('findSwaps', () => {
 	});
 	it('lists everything for an empty query', () => {
 		expect(findSwaps('  ')).toHaveLength(SWAPS.length);
+	});
+});
+
+describe('swapsFor', () => {
+	it("lists swaps for a recipe's own ingredients, in its order", () => {
+		const [carbonara] = (JSON.parse(readFileSync(new URL('../library/spaghetti-carbonara.json', import.meta.url), 'utf8')) as unknown[]).map((r) =>
+			recipeSchema.parse(r)
+		);
+		const names = swapsFor(carbonara).map((s) => s.name);
+		expect(names[0]).toBe('Guanciale');
+		expect(names).toContain('Pecorino romano');
+		expect(names).not.toContain('Buttermilk');
+		// Its eggs are the sauce: egg replacers for baking don't belong.
+		expect(names).not.toContain('Egg (in baking)');
 	});
 });
 

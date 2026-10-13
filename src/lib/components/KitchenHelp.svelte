@@ -1,13 +1,25 @@
 <script lang="ts">
-	import { findSwaps } from '#lib/kitchen/swaps.ts';
+	import { findSwaps, swapsFor } from '#lib/kitchen/swaps.ts';
 	import { KITCHEN_MEASURES, UNIT_RULES, WEIGHABLES, equivalents, type InputUnit, type Weighable } from '#lib/kitchen/weights.ts';
 	import { parseTerm } from '#lib/recipe/ingredient-search.ts';
+	import type { Recipe } from '#lib/recipe/schema.ts';
 	import { formatQty } from '#lib/recipe/units.ts';
 
-	let { tab = $bindable('swaps') }: { tab?: 'swaps' | 'weights' } = $props();
+	let {
+		tab = $bindable('swaps'),
+		recipe
+	}: {
+		tab?: 'swaps' | 'weights';
+		/** The recipe open behind the dialog: swaps start with what it uses. */
+		recipe?: Recipe;
+	} = $props();
 
 	let query = $state('');
-	const swaps = $derived(findSwaps(query));
+	const forRecipe = $derived(recipe ? swapsFor(recipe) : []);
+	let showAll = $state(false);
+	/** Over a recipe, its own swaps until the cook searches or asks for all of them. */
+	const recipeOnly = $derived(!showAll && !query.trim() && forRecipe.length > 0);
+	const swaps = $derived(recipeOnly ? forRecipe : findSwaps(query));
 
 	const matchesQuery = (w: Weighable) => {
 		const q = parseTerm(query);
@@ -50,6 +62,11 @@
 <input type="search" bind:value={query} placeholder={tab === 'swaps' ? 'What are you out of? e.g. buttermilk, smör' : 'Ingredient, e.g. flour, potato'} aria-label="Ingredient" autocapitalize="off" />
 
 {#if tab === 'swaps'}
+	{#if recipeOnly}
+		<p class="muted small scope">
+			For this recipe's ingredients · <button class="link" onclick={() => (showAll = true)}>Show all swaps</button>
+		</p>
+	{/if}
 	<ul class="list">
 		{#each swaps as s (s.name)}
 			<li class="card">
@@ -158,6 +175,15 @@
 	}
 	.small {
 		font-size: 0.85rem;
+	}
+	.scope {
+		margin: 0.25rem 0 0.5rem;
+	}
+	.link {
+		all: unset;
+		cursor: pointer;
+		color: var(--accent);
+		text-decoration: underline;
 	}
 	.list {
 		list-style: none;
