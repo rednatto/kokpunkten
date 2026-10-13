@@ -73,7 +73,8 @@ export function weightHint(ing: Ingredient, a: Amount): string | null {
 	return `≈ ${g >= 1000 ? `${Math.round(g / 100) / 10} kg` : `${formatQty(g, 'g')} g`}`;
 }
 
-const GRAMS_PER_DL: Record<string, number> = {
+/** Grams in 1 dl of loose dry goods, spooned and levelled. */
+export const GRAMS_PER_DL: Record<string, number> = {
 	'all-purpose-flour': 60,
 	'bread-flour': 60,
 	'tipo-00-flour': 60,
@@ -121,6 +122,19 @@ export function gramsPerMl(key: string, role?: string | null): number | null {
 const CANNED = /^(canned-|crushed-tomatoes$|coconut-milk$)/;
 const PORTION_GRAMS: Record<string, number> = { pasta: 100, noodles: 90 };
 
+/** What the rough measures stand for, in grams or millilitres. */
+export const ROUGH = {
+	can: 400,
+	knob: 15,
+	handful: 30,
+	leafyHandful: 25,
+	glass: 200,
+	splash: 40,
+	pastaPortion: PORTION_GRAMS.pasta,
+	noodlePortion: PORTION_GRAMS.noodles,
+	ricePortion: 75
+};
+
 const half = (n: number) => Math.max(0.5, Math.round(n * 2) / 2);
 
 /**
@@ -145,24 +159,24 @@ export function roughAmount(ing: Ingredient, scaled: Amount): string | null {
 	const amount = grams ?? ml;
 	if (amount == null) return null;
 
-	if (CANNED.test(ing.key)) return `≈ ${formatQty(half(amount / 400), 'can')} ${amount / 400 > 1.25 ? 'cans' : 'can'}`;
+	if (CANNED.test(ing.key)) return `≈ ${formatQty(half(amount / ROUGH.can), 'can')} ${amount / ROUGH.can > 1.25 ? 'cans' : 'can'}`;
 
 	if (grams != null) {
 		const each = PIECE_GRAMS[ing.key];
 		if (each && grams / each >= 0.4) return `≈ ${formatQty(half(grams / each), 'piece')}`;
-		const portion = PORTION_GRAMS[role] ?? (role === 'rice' ? 75 : undefined);
+		const portion = PORTION_GRAMS[role] ?? (role === 'rice' ? ROUGH.ricePortion : undefined);
 		if (portion) return `≈ ${formatQty(half(grams / portion), 'piece')} ${grams / portion > 1.25 ? 'portions' : 'portion'}`;
-		if (['fat', 'dairy'].includes(role) && /butter|ghee|lard/.test(ing.key)) return knobs(grams / 15);
-		if (role === 'cheese' || role === 'hard-cheese') return handfuls(grams / 30);
-		if (role === 'nut' || role === 'topping' || role === 'leafy-green') return handfuls(grams / (role === 'leafy-green' ? 25 : 30));
+		if (['fat', 'dairy'].includes(role) && /butter|ghee|lard/.test(ing.key)) return knobs(grams / ROUGH.knob);
+		if (role === 'cheese' || role === 'hard-cheese') return handfuls(grams / ROUGH.handful);
+		if (role === 'nut' || role === 'topping' || role === 'leafy-green') return handfuls(grams / (role === 'leafy-green' ? ROUGH.leafyHandful : ROUGH.handful));
 		const perDl = GRAMS_PER_DL[ing.key];
 		if (perDl) return `≈ ${formatQty(half(grams / perDl), 'cup')} dl`;
 		return null;
 	}
 
 	if (ml != null && ['liquid', 'stock', 'dairy', 'wine', 'sauce'].includes(role)) {
-		if (ml < 40) return 'a splash';
-		return `≈ ${formatQty(half(ml / 200), 'cup')} ${ml / 200 > 1.25 ? 'glasses' : 'glass'}`;
+		if (ml < ROUGH.splash) return 'a splash';
+		return `≈ ${formatQty(half(ml / ROUGH.glass), 'cup')} ${ml / ROUGH.glass > 1.25 ? 'glasses' : 'glass'}`;
 	}
 	if (ml != null && role === 'fat' && ml <= 60) return ml < 20 ? 'a glug' : 'a couple of glugs';
 	return null;

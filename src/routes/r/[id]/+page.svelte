@@ -10,6 +10,7 @@
 	import { ingredientAmount } from '#lib/recipe/units.ts';
 	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
 	import UnitControls from '#lib/components/UnitControls.svelte';
+	import KitchenHelp from '#lib/components/KitchenHelp.svelte';
 	import Timer from './Timer.svelte';
 
 	const id = $derived(page.params.id!);
@@ -110,6 +111,14 @@
 		await deleteRecipes([id]);
 		await goto(resolve('/'));
 	}
+
+	// Swaps and weights open over the recipe, so its timers and checkmarks stay put.
+	let helpDialog = $state<HTMLDialogElement>();
+	let helpTab = $state<'swaps' | 'weights'>('swaps');
+	function openHelp(t: 'swaps' | 'weights') {
+		helpTab = t;
+		helpDialog?.showModal();
+	}
 </script>
 
 {#if loadError}
@@ -155,7 +164,18 @@
 		{/if}
 	</div>
 
-	<h2>Ingredients</h2>
+	<div class="row ing-head">
+		<h2>Ingredients</h2>
+		<button class="ghost small" onclick={() => openHelp('swaps')}>Swaps</button>
+		<button class="ghost small" onclick={() => openHelp('weights')}>Weights</button>
+	</div>
+	<dialog bind:this={helpDialog} class="help" closedby="any" aria-label="Swaps and weights">
+		<div class="help-head">
+			<strong>Swaps &amp; weights</strong>
+			<button class="ghost small" onclick={() => helpDialog?.close()} aria-label="Close">✕</button>
+		</div>
+		<KitchenHelp bind:tab={helpTab} />
+	</dialog>
 	<ul class="checklist">
 		{#each recipe.ingredients as ing, n (ing.id)}
 			{@const amt = amountFor(ing)}
@@ -247,6 +267,32 @@
 {/if}
 
 <style>
+	.ing-head h2 {
+		margin-right: auto;
+	}
+	.help {
+		width: min(40rem, calc(100vw - 1rem));
+		max-height: calc(100dvh - 2rem);
+		padding: 0.75rem 1rem 1.5rem;
+		border: 1px solid var(--line);
+		border-radius: 0.8rem;
+		background: var(--bg);
+		color: var(--fg);
+	}
+	.help::backdrop {
+		background: rgb(0 0 0 / 0.45);
+	}
+	.help-head {
+		position: sticky;
+		top: -0.75rem;
+		z-index: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: -0.75rem -1rem 0;
+		padding: 0.75rem 1rem 0.25rem;
+		background: var(--bg);
+	}
 	.meta {
 		margin: 0 0 0.75rem;
 	}
