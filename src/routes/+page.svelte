@@ -93,10 +93,10 @@
 				</div>
 				{#if d.versions.length > 1}
 					<div class="row versions">
+						<a href={resolve('/d/[dish]', { dish: d.slug })} class="chip compare">⇄ Compare {d.versions.length} versions</a>
 						{#each d.versions as v (v.id)}
 							<a href={resolve('/r/[id]', { id: v.id })} class="chip">{v.favorite ? '★ ' : ''}{v.variant}{#if v.rating} · {v.rating}/5{/if}</a>
 						{/each}
-						<a href={resolve('/d/[dish]', { dish: d.slug })} class="chip compare">Compare ⇄</a>
 					</div>
 				{/if}
 			</li>
@@ -150,8 +150,12 @@
 		margin-top: 0.5rem;
 		gap: 0.4rem;
 	}
-	.compare {
-		border-style: dashed;
+	.chip.compare {
+		border-color: var(--accent);
+		background: var(--accent);
+		color: var(--accent-fg);
+		font-weight: 600;
+		padding: 0.3rem 0.85rem;
 	}
 	.chip {
 		font-size: 0.85rem;
