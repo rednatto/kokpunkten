@@ -22,6 +22,8 @@ export interface RawRecipe {
 	course?: string[];
 	tags?: string[];
 	source: Recipe['source'];
+	/** Short name telling this version apart from the dish's other versions. */
+	variant?: string | null;
 }
 
 export interface NormalizeOptions {
@@ -276,6 +278,7 @@ export function normalizeRecipe(raw: RawRecipe, opts: NormalizeOptions): Normali
 		title: opts.names ? sentenceCase(plainText(raw.title), opts.names) : plainText(raw.title),
 		language: raw.language,
 		source: raw.source,
+		variant: raw.variant,
 		servings,
 		time: { prepMin: raw.prepMin ?? null, cookMin: raw.cookMin ?? null, totalMin: raw.totalMin ?? sum(raw.prepMin, raw.cookMin) },
 		cuisine: raw.cuisine ?? [],

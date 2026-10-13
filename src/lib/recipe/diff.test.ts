@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { amountRange, closestVersion, diffRecipes, rowRange } from './diff';
+import { amountRange, closestVersion, diffRecipes, rowMean, rowRange, seasonedInSteps } from './diff';
 import { recipeSchema } from './schema';
 import { sampleRecipe } from './sample';
 
@@ -72,5 +72,60 @@ describe('rowRange', () => {
 	it('turns grams of garlic into cloves when most versions count cloves', () => {
 		const r = rowRange(row('garlic', [[2, 'clove'], [4, 'clove'], [15, 'g']]))!;
 		expect(r).toEqual({ unit: 'clove', qty: 2, qtyMax: 4 });
+	});
+});
+
+describe('outliers', () => {
+	const batter = (title: string, servings: number, flour: number, milk: number, eggs: number) =>
+		recipeSchema.parse({
+			...structuredClone(sampleRecipe),
+			dish: 'pancakes',
+			title,
+			servings,
+			ingredients: [
+				{ id: 'i1', key: 'all-purpose-flour', name: 'flour', role: 'flour', qty: flour, unit: 'g' },
+				{ id: 'i2', key: 'whole-milk', name: 'milk', role: 'dairy', qty: milk, unit: 'ml' },
+				{ id: 'i3', key: 'egg', name: 'eggs', role: 'egg', qty: eggs, unit: 'piece' },
+				{ id: 'i4', key: 'salt', name: 'salt', role: 'salt', qty: 1, unit: 'pinch' }
+			],
+			steps: [{ id: 's1', text: 'Whisk and fry.', uses: ['i1', 'i2', 'i3', 'i4'] }]
+		});
+
+	it('finds a version whose amounts are all off by the same factor, and leaves it out of range and average', () => {
+		// The last one is written for one serving, so at four servings it reads as four times everything.
+		const diff = diffRecipes([batter('A', 4, 250, 500, 2), batter('B', 4, 200, 400, 2), batter('C', 4, 240, 450, 3), batter('D', 1, 200, 200, 2)]);
+		expect(diff.offScale.map((f) => f && Math.round(f))).toEqual([null, null, null, 4]);
+		const milk = diff.rows.find((r) => r.key === 'whole-milk')!;
+		expect(milk.outliers).toEqual([3]);
+		expect(rowRange(milk)).toEqual({ unit: 'ml', qty: 400, qtyMax: 500 });
+		expect(rowMean(milk)!.qty).toBeCloseTo(450);
+	});
+
+	it('marks a single amount far from what three others use', () => {
+		const diff = diffRecipes([batter('A', 4, 250, 500, 2), batter('B', 4, 200, 400, 2), batter('C', 4, 240, 450, 3), batter('D', 4, 230, 1600, 2)]);
+		expect(diff.offScale.every((f) => f === null)).toBe(true);
+		expect(diff.rows.find((r) => r.key === 'whole-milk')!.outliers).toEqual([3]);
+		expect(diff.rows.find((r) => r.key === 'all-purpose-flour')!.outliers).toEqual([]);
+	});
+
+	it('marks nothing when versions simply differ', () => {
+		const diff = diffRecipes([batter('A', 4, 250, 500, 2), batter('B', 4, 120, 250, 1), batter('C', 4, 300, 700, 4)]);
+		expect(diff.offScale.every((f) => f === null)).toBe(true);
+		expect(diff.rows.every((r) => !r.outliers.length)).toBe(true);
+	});
+});
+
+describe('seasonedInSteps', () => {
+	const steps = (text: string) => recipeSchema.parse({ ...structuredClone(sampleRecipe), steps: [{ id: 's1', text, uses: [] }] });
+
+	it('counts salt and pepper to taste in a step as used', () => {
+		const r = steps('Season with salt and pepper to taste.');
+		expect(seasonedInSteps(r, { key: 'black-pepper', role: 'seasoning' })).toBe(true);
+		expect(seasonedInSteps(r, { key: 'coarse-salt', role: 'salt' })).toBe(true);
+		expect(seasonedInSteps(r, { key: 'cumin', role: 'spice' })).toBe(false);
+	});
+
+	it('only looks for seasonings, not main ingredients', () => {
+		expect(seasonedInSteps(steps('Fry the guanciale.'), { key: 'guanciale', role: 'cured-pork' })).toBe(false);
 	});
 });

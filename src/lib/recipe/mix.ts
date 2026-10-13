@@ -253,8 +253,9 @@ export function familyAmounts(diff: RecipeDiff, choice: Pick<MixChoice, 'rows' |
 	const rows = diff.rows.filter((r) => choice.rows.get(r.key) === 'average' && !basicGroup(r) && !COMBINED_ROLES.has(r.role));
 	for (const group of Map.groupBy(rows, (r) => r.role).values()) {
 		if (group.length < 2) continue;
+		// A version whose amounts are all off by some factor (a wrong serving count) stays out, as in the row averages.
 		const totals = diff.versions.flatMap((_, v) => {
-			const used = group.filter((r) => r.ingredients[v]);
+			const used = diff.offScale[v] == null ? group.filter((r) => r.ingredients[v]) : [];
 			return used.length ? [used.map((r) => grams(r, v))] : [];
 		});
 		if (totals.some((t) => t.some((g) => g == null))) continue;

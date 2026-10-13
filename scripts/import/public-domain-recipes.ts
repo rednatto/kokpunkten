@@ -6,6 +6,7 @@ import { existsSync, mkdtempSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { basename, join } from 'node:path';
 import type { RawRecipe } from '../../src/lib/import/normalize.ts';
+import { definingLabel } from '../../src/lib/recipe/labels.ts';
 import { COURSES, CUISINES, loadLibrary, normalizeAll, printReport, writeCatalog } from './common.ts';
 
 const REPO = 'https://github.com/ronaldl29/public-domain-recipes.git';
@@ -17,6 +18,74 @@ const DISH_OVERRIDES: Record<string, string> = {
 	pancake: 'pancakes',
 	// A page of basic ways to cook eggs, not a scrambled-eggs recipe.
 	eggs: 'eggs'
+};
+
+/**
+ * Names for the versions that join a library dish, saying what sets each apart from the
+ * library's versions, as theirs do. Written by hand from the recipes; a joined recipe not
+ * listed here gets a name from the ingredients only it uses.
+ */
+const VARIANTS: Record<string, string> = {
+	'apple-pie': 'Stovetop-thickened filling',
+	'baked-salmon': 'Foil-baked with butter',
+	'banana-bread': 'Spiced, with walnuts',
+	'beef-and-broccoli': 'Beef and broccoli',
+	'beef-goulash': 'Potatoes and caraway',
+	'bolognese-sauce': 'Three meats and milk',
+	'breton-crepes': 'Buckwheat galettes',
+	'butter-chicken-masala': 'Marinated, with fenugreek',
+	'cacio-e-pepe': 'Crushed peppercorns',
+	'caesar-salad': 'Quick, with ready dressing',
+	carbonara: 'Light on cheese',
+	'chicken-stock-bone-broth': 'Whole chicken bone broth',
+	'chili-con-carne': 'Beans and dark chocolate',
+	'chocolate-chip-cookies': 'Melted butter, bread flour',
+	'clam-chowder': 'Bacon and half-and-half',
+	coleslaw: 'Buttermilk and celery seed',
+	'creamy-mashed-potatoes': 'Loaded, bacon and cheese',
+	'creme-brulee': 'With lemon peel',
+	erwtensoep: 'Dutch split pea, pork and sausage',
+	'finnish-salmon-soup': 'Finnish salmon and cream',
+	'french-crepes': 'With beer in the batter',
+	'french-onion-soup': 'Two-hour onions, balsamic',
+	granola: 'Maple and cardamom',
+	'greek-salad': 'With lettuce and dill',
+	hummus: 'Skins loosened with baking soda',
+	'korv-stroganoff': 'Swedish falukorv',
+	lasagna: 'From ready-made sauces',
+	'lebanese-lentil-soup': 'Lebanese, chard and lemon',
+	lentejas: 'Spanish, with chorizo',
+	'lithuanian-cold-borscht': 'Cold, with kefir',
+	'mapo-tofu': 'Marinated pork, fermented black beans',
+	'mayonnaise-or-aioli': 'Whole egg, stick blender',
+	'miso-soup': 'Quick, instant dashi',
+	'modern-borscht': 'Beef and cabbage',
+	'mushroom-risotto': 'Mushroom and pecorino',
+	'no-knead-pizza-dough': 'No-knead',
+	omelet: 'Fluffy, tapioca-thickened',
+	paella: 'Valencian, chicken and rabbit',
+	pancake: 'Basic one-bowl batter',
+	'pho-soup': 'Oven-toasted spices',
+	'pizza-dough': 'Quick 30-minute rise',
+	'pork-based-chili-con-carne': 'Chorizo and pork',
+	'potato-pure': 'Simple purée with cheese',
+	quiche: 'Ham and Edam',
+	ratatouille: 'Big batch, peeled tomatoes',
+	'red-lentil-dahl': 'With curry powder and tomatoes',
+	schnitzel: 'Veal, paprika crumbs',
+	shakshouka: 'Fresh tomatoes, peeled',
+	'shepherds-pie': 'Minced lamb',
+	'simple-chicken-curry': 'Quick, ground spices',
+	'sourdough-bread-with-seeds-and-grains': 'Seeds and grains',
+	'sourdough-loaf': 'Table loaf with rye',
+	'spicy-kung-pao-style-chicken': 'Weeknight, with rice',
+	stroganoff: 'Dijon and egg noodles',
+	'swedish-pancakes': 'Griddle, butter in the batter',
+	tiramisu: 'Whipped egg whites',
+	tzatziki: 'Olive oil and lemon',
+	'turkish-red-lentil-soup': 'Turkish, mint and paprika',
+	'ukrainian-borscht': 'Ukrainian, with beans',
+	'wholemeal-wheat-flour-pizza-dough': 'Wholemeal'
 };
 
 let dir = process.argv[2];
@@ -101,6 +170,7 @@ function parseFile(file: string): RawRecipe | null {
 	return {
 		title: String(meta.title ?? slug),
 		dish: DISH_OVERRIDES[slug],
+		variant: VARIANTS[slug],
 		language: 'en',
 		ingredients,
 		steps,
@@ -131,7 +201,12 @@ const raws = readdirSync(contentDir)
 		return raw ? [{ id: `pdr-${basename(f, '.md')}`, raw }] : [];
 	});
 
-const { entries, report } = normalizeAll(raws, loadLibrary());
+const library = loadLibrary();
+const { entries, report } = normalizeAll(raws, library);
+for (const { recipe } of entries) {
+	const versions = library.filter((r) => r.dish === recipe.dish);
+	if (versions.length && !recipe.variant) recipe.variant = definingLabel(recipe, versions) ?? undefined;
+}
 writeCatalog(OUT, {
 	meta: {
 		name: 'Public Domain Recipes',

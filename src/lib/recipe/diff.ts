@@ -14,6 +14,8 @@ export interface DiffRow {
 	ingredients: (Ingredient | null)[];
 	/** How many versions use it. */
 	count: number;
+	/** Versions whose amount is far from the others', left out of the typical range and the average. */
+	outliers: number[];
 }
 
 /** A culinary role where versions use different ingredients: pick one, or several where they go together. */
@@ -35,6 +37,11 @@ export interface RecipeDiff {
 	extras: DiffRow[];
 	/** Every row, most-shared first. */
 	rows: DiffRow[];
+	/**
+	 * Per version, about how many times the others' amounts its amounts are, when they are
+	 * off by the same factor throughout (most likely a wrong serving count); else null.
+	 */
+	offScale: (number | null)[];
 }
 
 /** Roles whose ingredients add to each other in a dish rather than stand in for each other. */
@@ -74,7 +81,8 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 					role: ing.role ?? 'other',
 					amounts: versions.map(() => null),
 					ingredients: versions.map(() => null),
-					count: 0
+					count: 0,
+					outliers: []
 				};
 				rows.set(key, row);
 			}
@@ -96,6 +104,7 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 	});
 
 	const all = [...rows.values()].sort((a, b) => b.count - a.count || a.role.localeCompare(b.role));
+	const offScale = markOutliers(all, versions.length);
 	const n = versions.length;
 	const common = all.filter((r) => r.count === n);
 	const partial = all.filter((r) => r.count < n);
@@ -131,7 +140,8 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 		common,
 		slots,
 		extras: partial.filter((r) => !inSlot.has(r.key)),
-		rows: all
+		rows: all,
+		offScale
 	};
 }
 
@@ -197,19 +207,28 @@ export function rowValues(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingre
 	return { dim, values };
 }
 
-/** The spread of a row's amounts in one unit (0.25–2 tsp), or null when they can't be compared. */
-export function rowRange(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>): Amount | null {
+type RowLike = Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'> & { outliers?: number[] };
+
+/** The row's comparable values without its outliers (all of them when nothing else is left). */
+function typicalValues(row: RowLike, r: ReturnType<typeof rowValues>): number[] {
+	const values = r?.values.flatMap((x, v) => (x === null ? [] : [{ x, v }])) ?? [];
+	const typical = values.filter(({ v }) => !row.outliers?.includes(v));
+	return (typical.length ? typical : values).map(({ x }) => x);
+}
+
+/** The spread of a row's typical amounts in one unit (0.25–2 tsp), outliers left out, or null when they can't be compared. */
+export function rowRange(row: RowLike): Amount | null {
 	const r = rowValues(row);
-	const values = r?.values.filter((v) => v !== null) ?? [];
+	const values = typicalValues(row, r);
 	if (!r || !values.length) return null;
 	const [min, max] = [Math.min(...values), Math.max(...values)];
 	return fromBase(r.dim, min, max - min < min * 0.05 ? null : max);
 }
 
-/** The mean of a row's amounts in one unit, or null when they can't be compared. */
-export function rowMean(row: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>): Amount | null {
+/** The mean of a row's typical amounts in one unit, outliers left out, or null when they can't be compared. */
+export function rowMean(row: RowLike): Amount | null {
 	const r = rowValues(row);
-	const values = r?.values.filter((v) => v !== null) ?? [];
+	const values = typicalValues(row, r);
 	if (!r || !values.length) return null;
 	return fromBase(r.dim, values.reduce((s, v) => s + v, 0) / values.length, null);
 }
@@ -299,4 +318,65 @@ function rowKeys(perVersion: Ingredient[][]): (ing: Ingredient) => string {
 		if (m.clash || (!isLooseFamily(fam) && m.roles.size > 1)) return ing.key;
 		return fam;
 	};
+}
+
+const median = (xs: number[]) => {
+	const s = xs.toSorted((a, b) => a - b);
+	const m = s.length >> 1;
+	return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+};
+
+/**
+ * Finds amounts far from what the other versions use, and sets each row's `outliers`.
+ * A version whose amounts are off by about the same factor in most rows (four times the
+ * flour, milk and eggs: a recipe for one serving read as four) is off-scale, and its
+ * amounts are outliers wherever they fall outside the others' range. Otherwise an amount
+ * is an outlier when it is over three times, or under a third of, what at least three
+ * other versions use. Returns each version's factor when it is off-scale, else null.
+ */
+function markOutliers(rows: DiffRow[], n: number): (number | null)[] {
+	const values = rows.map((r) => rowValues(r)?.values.map((x) => (x != null && x > 0 ? x : null)) ?? []);
+	const others = (i: number, v: number, skip: (number | null)[]) =>
+		values[i].flatMap((x, w) => (w === v || x == null || skip[w] != null ? [] : [x]));
+	// One off-scale version at a time, the most extreme first, so it doesn't skew the others' medians.
+	const offScale: (number | null)[] = Array(n).fill(null);
+	for (;;) {
+		let worst: { v: number; log: number } | null = null;
+		for (let v = 0; v < n; v++) {
+			if (offScale[v] != null) continue;
+			const logs = values.flatMap((vals, i) => {
+				const rest = others(i, v, offScale);
+				return vals[v] == null || rest.length < 2 ? [] : [Math.log(vals[v]! / median(rest))];
+			});
+			if (logs.length < 3) continue;
+			const log = median(logs);
+			const agree = logs.filter((l) => Math.sign(l) === Math.sign(log) && Math.abs(l) > Math.log(1.5)).length;
+			if (Math.abs(log) > Math.log(3) && agree >= logs.length * 0.6 && (!worst || Math.abs(log) > Math.abs(worst.log))) worst = { v, log };
+		}
+		if (!worst) break;
+		offScale[worst.v] = Math.exp(worst.log);
+	}
+	rows.forEach((row, i) => {
+		row.outliers = values[i].flatMap((x, v) => {
+			if (x == null) return [];
+			const rest = others(i, v, offScale.map((f, w) => (w === v ? null : f)));
+			if (offScale[v] != null) return rest.length && (x > 1.5 * Math.max(...rest) || x < Math.min(...rest) / 1.5) ? [v] : [];
+			if (rest.length < 3) return [];
+			const m = median(rest);
+			return x > 3 * m || x < m / 3 ? [v] : [];
+		});
+	});
+	return offScale;
+}
+
+/**
+ * Whether a version seasons with a row's salt, pepper or spice in its steps though its
+ * ingredient list leaves it out ("season with salt and pepper to taste"): a gap in how
+ * the recipe was written down, not a difference in the dish.
+ */
+export function seasonedInSteps(recipe: Recipe, row: Pick<DiffRow, 'key' | 'role'>): boolean {
+	if (basicGroup(row) !== 'Salt, pepper and spices') return false;
+	const word = familyOf(row.key, row.role).split('-').at(-1)!;
+	const re = new RegExp(`\\b${word}s?\\b`, 'i');
+	return recipe.steps.some((s) => re.test(s.text));
 }

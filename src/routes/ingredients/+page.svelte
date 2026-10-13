@@ -5,6 +5,7 @@
 	import { liveQuery } from 'dexie';
 	import { db, type StoredRecipe } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
+	import { versionLabel } from '#lib/recipe/labels.ts';
 	import { searchByIngredients, type IngredientHit } from '#lib/recipe/ingredient-search.ts';
 
 	const recipes = liveQuery(() => db.recipes.toArray());
@@ -82,7 +83,7 @@
 	let showAllPartial = $state(false);
 	const PARTIAL = 8;
 
-	const variant = (r: StoredRecipe) => r.recipe.source.name?.replace(/^Kokpunkten – /, '') ?? r.recipe.title;
+	const variant = (r: StoredRecipe) => versionLabel(r.recipe);
 	const missing = (h: DishHit) => terms.filter((_, i) => !h.best.matches[i]);
 </script>
 
