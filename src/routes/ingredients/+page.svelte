@@ -165,9 +165,6 @@
 {/snippet}
 
 <style>
-	.small {
-		font-size: 0.85rem;
-	}
 	.input {
 		display: flex;
 		flex-wrap: wrap;
@@ -220,17 +217,6 @@
 	.versions {
 		margin-top: 0.5rem;
 		gap: 0.4rem;
-	}
-	.chip {
-		font-size: 0.85rem;
-		border: 1px solid var(--line);
-		border-radius: 1rem;
-		padding: 0.15rem 0.6rem;
-		color: inherit;
-		text-decoration: none;
-	}
-	.compare {
-		border-style: dashed;
 	}
 	.more {
 		margin-top: 0.6rem;

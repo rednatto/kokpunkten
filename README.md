@@ -5,7 +5,9 @@ Recipes, straight to the point. A mobile-first web app with no life stories: jus
 ## What works now
 
 - **Add recipes through your own AI assistant.** The app builds a prompt for a dish (or a URL or book page). You paste the assistant's JSON answer back in, and the app validates it with clear, per-field errors.
-- **Cooking view:** scale servings, convert to metric, check off ingredients and steps, run step timers, and keep the screen awake.
+- **Cooking view:** scale servings, switch units (metric, US cups, rough) and fractions or decimals, check off ingredients and steps, run step timers, and keep the screen awake.
+- **Compare versions of a dish:** merge them into your own mix (common ingredients, pick-one choices, extras), see every amount side by side in a table, or list what each version changes against another.
+- **Step diagram:** a flow, timeline or tree view of a recipe's steps, built from `steps[].uses`.
 - **Cook with what you have:** list a few ingredients (falukorv, potatis) to get the recipes that use them, the ones that use all of them first, with what else each needs.
 - **Your data:** favorites, a 1–5 rating and personal notes. Everything is stored on the device (IndexedDB); there is no sign-in yet.
 - Installable as an app (PWA) and works offline once loaded.
@@ -52,7 +54,8 @@ The app is a static single-page app (`adapter-static`). GitHub Pages answers dee
 ## Next
 
 1. Import from a recipe URL (schema.org Recipe JSON-LD, which needs a small server endpoint).
-2. Diff view: common ground and alternatives across the versions of one dish.
-3. Diagram view generated from `steps[].uses`.
-4. Optional sign-in and sync (Supabase Postgres), with a shared cache of imported recipes.
-5. More datasets: Wikibooks Cookbook (CC BY-SA, needs attribution and share-alike).
+2. Method diff: align steps across versions by what they use and by technique, and show what's added, missing, reordered, or changed in heat or time.
+3. Family-aware merge: merge substitutable ingredients (eggs and yolks) by family totals, round counts to something cookable, and flag outlier versions.
+4. Import clean-up: rewrite imported steps as plain imperatives, move asides into notes, join duplicate dishes, and give each version a distinguishing label.
+5. Optional sign-in and sync (Supabase Postgres), with a shared cache of imported recipes.
+6. More datasets: Wikibooks Cookbook (CC BY-SA, needs attribution and share-alike).

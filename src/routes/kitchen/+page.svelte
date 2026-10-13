@@ -17,8 +17,3 @@
 <p class="muted small">What to use when you're out of something, and what things weigh.</p>
 <KitchenHelp bind:tab />
 
-<style>
-	.small {
-		font-size: 0.85rem;
-	}
-</style>

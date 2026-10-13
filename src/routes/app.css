@@ -119,3 +119,104 @@ textarea {
 	align-items: center;
 	flex-wrap: wrap;
 }
+
+/* Keyboard focus and native controls follow the accent instead of browser blue or orange. */
+:root {
+	accent-color: var(--accent);
+}
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+.small {
+	font-size: 0.85rem;
+}
+
+/* A toggle button that is switched on. */
+.on {
+	background: var(--accent);
+	color: var(--accent-fg);
+}
+
+/* Small rounded links, e.g. the versions of a dish. */
+.chip {
+	font-size: 0.85rem;
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	padding: 0.15rem 0.6rem;
+	color: inherit;
+	text-decoration: none;
+}
+.chip.compare {
+	border-color: var(--accent);
+	background: var(--accent);
+	color: var(--accent-fg);
+	font-weight: 600;
+	padding: 0.3rem 0.85rem;
+}
+.chip.current {
+	border-color: var(--accent);
+	color: var(--accent);
+	font-weight: 600;
+}
+
+/* − 4 servings + */
+.stepper {
+	gap: 0.75rem;
+}
+.stepper button {
+	width: 2.5rem;
+	padding: 0;
+	font-size: 1.2rem;
+}
+
+/* A row of mutually exclusive choices, e.g. ½ | 0.5. Built from radio buttons. */
+.segmented {
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+	border: 1px solid var(--line);
+	border-radius: 0.6rem;
+	overflow: hidden;
+}
+.segmented label {
+	position: relative;
+	flex: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.25rem;
+	padding: 0 0.75rem;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+.segmented label + label {
+	border-left: 1px solid var(--line);
+}
+.segmented input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+}
+.segmented label:has(input:checked) {
+	background: var(--accent);
+	color: var(--accent-fg);
+	font-weight: 600;
+}
+.segmented label:has(input:focus-visible) {
+	outline: 2px solid currentColor;
+	outline-offset: -3px;
+}
+.segmented.vertical {
+	flex-direction: column;
+	display: flex;
+}
+.segmented.vertical label {
+	justify-content: flex-start;
+}
+.segmented.vertical label + label {
+	border-left: none;
+	border-top: 1px solid var(--line);
+}

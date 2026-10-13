@@ -173,9 +173,6 @@
 		background: var(--accent);
 		color: var(--accent-fg);
 	}
-	.small {
-		font-size: 0.85rem;
-	}
 	.scope {
 		margin: 0.25rem 0 0.5rem;
 	}

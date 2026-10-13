@@ -232,10 +232,11 @@
 			<div class="row rating" aria-label="Rating">
 				{#each [1, 2, 3, 4, 5] as n}
 					<button
-						class="ghost small dot"
+						class="ghost small star"
 						class:filled={(row.rating ?? 0) >= n}
 						aria-label="Rate {n} of 5"
-						onclick={() => update({ rating: row!.rating === n ? null : n })}>●</button>
+						aria-pressed={row.rating === n}
+						onclick={() => update({ rating: row!.rating === n ? null : n })}>{(row.rating ?? 0) >= n ? '★' : '☆'}</button>
 				{/each}
 			</div>
 		</div>
@@ -287,44 +288,12 @@
 		gap: 0.4rem;
 		margin-bottom: 0.75rem;
 	}
-	.chip {
-		font-size: 0.85rem;
-		border: 1px solid var(--line);
-		border-radius: 1rem;
-		padding: 0.15rem 0.6rem;
-		color: inherit;
-		text-decoration: none;
-	}
-	.chip.compare {
-		border-color: var(--accent);
-		background: var(--accent);
-		color: var(--accent-fg);
-		font-weight: 600;
-		padding: 0.3rem 0.85rem;
-	}
-	.chip.current {
-		border-color: var(--accent);
-		color: var(--accent);
-		font-weight: 600;
-	}
 	.controls {
 		justify-content: space-between;
 		gap: 0.75rem;
 	}
-	.stepper {
-		gap: 0.75rem;
-	}
-	.stepper button {
-		width: 2.5rem;
-		padding: 0;
-		font-size: 1.2rem;
-	}
 	.hint {
 		font-size: 0.85rem;
-	}
-	.on {
-		background: var(--accent);
-		color: var(--accent-fg);
 	}
 	.checklist,
 	.steps {
@@ -425,13 +394,13 @@
 	.rating {
 		gap: 0;
 	}
-	.dot {
+	.star {
 		border: none;
 		padding: 0 0.3rem;
-		color: var(--line);
-		font-size: 1.2rem;
+		color: var(--muted);
+		font-size: 1.3rem;
 	}
-	.dot.filled {
+	.star.filled {
 		color: var(--accent);
 	}
 	.delete {
