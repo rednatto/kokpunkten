@@ -1,4 +1,5 @@
 import { recipeSchema, type Ingredient, type Recipe, type Step } from '../recipe/schema.ts';
+import { DISH_ALIASES } from './dish-aliases.ts';
 import { parseIngredientLine } from './ingredient-line.ts';
 import { matchIngredient, slugify, words, type Vocabulary } from './vocabulary.ts';
 
@@ -47,27 +48,44 @@ export function plainText(s: string): string {
 		.trim();
 }
 
+/** "Shepherd's pie" is shepherds-pie, not shepherd-s-pie. */
+const dishSlug = (title: string) => slugify(title.replace(/['’](?=s\b)/gi, ''));
+
+/** Alias slug to dish slug, from DISH_ALIASES. */
+const ALIAS_INDEX = new Map(Object.entries(DISH_ALIASES).flatMap(([dish, names]) => names.map((n) => [dishSlug(n), dish])));
+
 /**
- * Finds a known dish for a title: the same slug, the singular or plural of it,
- * or a known dish that the title is the unique short form of ("carbonara" for "spaghetti-carbonara").
+ * Finds a known dish for a title: the same slug, the singular or plural of it, another name for it
+ * ("Spanish tortilla" for "tortilla-espanola"), or a known dish that the title is the unique short form of
+ * ("carbonara" for "spaghetti-carbonara").
  */
 export function matchDish(title: string, dishes: Iterable<string>): string {
-	const slug = slugify(title);
+	const slug = dishSlug(title);
 	const known = new Set(dishes);
-	for (const cand of [slug, `${slug}s`, slug.replace(/s$/, '')]) if (known.has(cand)) return cand;
+	for (const cand of [slug, `${slug}s`, slug.replace(/s$/, '')]) {
+		if (known.has(cand)) return cand;
+		const alias = ALIAS_INDEX.get(cand);
+		if (alias && known.has(alias)) return alias;
+	}
 	const longer = [...known].filter((d) => d.endsWith(`-${slug}`) || d.startsWith(`${slug}-`));
 	return longer.length === 1 ? longer[0] : slug;
 }
 
 const DURATION = /\b(\d+(?:[.,]\d+)?|an|half an?)\s*(?:(?:-|–|to)\s*(\d+(?:[.,]\d+)?)\s*)?(hours?|hrs?|h|minutes?|mins?)\b/gi;
 
-/** The longest time a step mentions, in minutes: "simmer for 20–25 minutes" gives 25. */
-export function stepMinutes(text: string): number | null {
-	let best: number | null = null;
+/**
+ * The longest time a step mentions, in minutes. A range keeps both ends, so the timer can start at the
+ * lower one: "simmer for 20–25 minutes" gives { min: 20, max: 25 }, "bake 1 hour" { min: 60, max: null }.
+ */
+export function stepDuration(text: string): { min: number; max: number | null } | null {
+	let best: { min: number; max: number | null } | null = null;
+	const n = (s: string) => (/^half/i.test(s) ? 0.5 : /^(an?|one)$/i.test(s) ? 1 : +s.replace(',', '.'));
 	for (const m of text.matchAll(DURATION)) {
-		const n = (s: string) => (/^half/i.test(s) ? 0.5 : /^(an?|one)$/i.test(s) ? 1 : +s.replace(',', '.'));
-		const value = n(m[2] ?? m[1]) * (/^h/i.test(m[3]) ? 60 : 1);
-		if (value > 0 && (best == null || value > best)) best = value;
+		const unit = /^h/i.test(m[3]) ? 60 : 1;
+		const lo = n(m[1]) * unit;
+		const hi = m[2] ? n(m[2]) * unit : null;
+		const d = hi != null && hi > lo && lo > 0 ? { min: lo, max: hi } : { min: hi ?? lo, max: null };
+		if (d.min > 0 && (best == null || (d.max ?? d.min) > (best.max ?? best.min))) best = d;
 	}
 	return best;
 }
@@ -94,6 +112,64 @@ export function stepHeat(text: string): Step['heat'] | null {
 const DESCRIBERS = new Set(
 	'fresh dried ground whole large small medium extra virgin plain sweet hot smoked grated chopped sliced black white red green yellow brown light dark raw cooked frozen canned'.split(' ')
 );
+
+/** Ingredients too common to say which earlier step a step builds on: oil in two pans is not one strand. */
+const SHARED_ROLES = new Set(['fat', 'salt', 'seasoning', 'spice', 'liquid', 'sweetener']);
+/** A step that starts something of its own: a new vessel, a parallel task, or equipment to get ready. */
+const STARTS_NEW =
+	/^(?:meanwhile|while\b|in (?:a|an|another)\b|prepare\b|preheat\b|(?:heat|warm) (?:up )?(?:the |a |an )?(?:oven|grill|pan|skillet|wok|pot|frying pan|griddle|barbecue|bbq)\b)|\b(?:another|a separate|a second|a clean)\s+(?:\w+\s+)?(?:bowl|pan|pot|saucepan|skillet|dish|tray|wok|casserole)\b/i;
+/** A step that works on what the step before it made, even when it only names new ingredients. */
+const CONTINUES =
+	/^(?:add|stir|mix in|pour|return|transfer|then|continue|reduce|cover|uncover|turn|flip|season|serve|top|garnish|sprinkle|fold|bring|let|leave|keep)\b|\b(?:the (?:mixture|dough|batter|sauce|pan|pot|saucepan|skillet|wok|bowl|dish|blender|rest)|remaining|reserved|serve)\b/i;
+/** A step whose result waits for later, so the next step does not carry on from it. */
+const PARKS = /\b(?:set|put|keep|leave) (?:it |them )?aside\b|\breserve\b[^.]*\.?\s*$/i;
+/** A step that gets a pan or the oven ready, so the step after it carries on from the one before. */
+const READIES = /^(?:pre)?heat\b|^warm\b|^grease\b|^line\b/i;
+/** A step that brings the separate parts together. */
+const COMBINES = /\b(?:everything|both mixtures|all the components)\b/i;
+
+/**
+ * What each step uses: the ingredients that first appear in it, the earlier steps that last handled an
+ * ingredient it names again, and the step before it when the text carries on from there ("Add the garlic",
+ * "let the mixture rest", a step that names nothing or names something already in use).
+ * A step that starts on its own does not hang off the one before: a new vessel ("In a pot…"), a parallel
+ * task ("Meanwhile…"), a step after one that sets its result aside, or one that only handles new
+ * ingredients ("Boil the spaghetti").
+ */
+export function linkSteps(texts: string[], ingredients: { id: string; role: string | null; lookFor: string[] }[]): string[][] {
+	const pending = new Set(ingredients.map((i) => i.id));
+	const lastStep = new Map<string, number>();
+	const consumed = new Set<number>();
+	const out: string[][] = [];
+	texts.forEach((text, n) => {
+		// "While the potatoes are frying, beat the eggs": the potatoes belong to another strand.
+		const own = text.replace(/^(?:while|as)\b[^,]*,\s*/i, '');
+		const said = ` ${words(own.replace(/[()]/g, ' ')).join(' ')} `;
+		const named = ingredients.filter((i) => i.lookFor.some((p) => said.includes(` ${p} `)));
+		const fresh = named.filter((i) => pending.has(i.id)).map((i) => i.id);
+		const after = new Set<number>();
+		for (const i of named) {
+			const last = lastStep.get(i.id);
+			if (last != null && !SHARED_ROLES.has(i.role ?? '')) after.add(last);
+		}
+		if (n > 0 && COMBINES.test(text)) {
+			for (let k = 0; k < n; k++) if (!consumed.has(k)) after.add(k);
+		} else if (n > 0 && !STARTS_NEW.test(text) && !PARKS.test(texts[n - 1])) {
+			// "Once it boils, add the rice": the condition says nothing about where the step starts.
+			const main = own.replace(/^(?:if|once|when|after)\b[^,]*,\s*/i, '');
+			if (CONTINUES.test(main) || fresh.length < named.length || !named.length) {
+				after.add(n - 1);
+				// "Heat a pan" made nothing to carry on from, so the step before it continues too.
+				if (n > 1 && READIES.test(texts[n - 1])) after.add(n - 2);
+			}
+		}
+		for (const i of named) lastStep.set(i.id, n);
+		fresh.forEach((id) => pending.delete(id));
+		after.forEach((k) => consumed.add(k));
+		out.push([...[...after].sort((a, b) => a - b).map((k) => `s${k + 1}`), ...fresh]);
+	});
+	return out;
+}
 
 /** Turns a raw recipe into the Kokpunkten format and validates it. */
 export function normalizeRecipe(raw: RawRecipe, opts: NormalizeOptions): NormalizeResult {
@@ -134,26 +210,25 @@ export function normalizeRecipe(raw: RawRecipe, opts: NormalizeOptions): Normali
 		lookFor.set(id, [...new Set([match?.phrase, own.at(-1), own.join(' '), first, ...alts].filter((s): s is string => !!s))]);
 	}
 
-	const pending = new Set(ingredients.map((i) => i.id));
-	const steps: Step[] = raw.steps
-		.map(plainText)
-		.filter(Boolean)
-		.map((text, n) => {
-			const said = ` ${words(text.replace(/[()]/g, ' ')).join(' ')} `;
-			// An ingredient goes in at the first step that names it; each step follows the one before.
-			const uses = [...pending].filter((id) => lookFor.get(id)!.some((p) => said.includes(` ${p} `)));
-			uses.forEach((id) => pending.delete(id));
-			return {
-				id: `s${n + 1}`,
-				text,
-				uses: n > 0 ? [`s${n}`, ...uses] : uses,
-				technique: [],
-				durationMin: stepMinutes(text),
-				heat: stepHeat(text),
-				tempC: stepTempC(text),
-				critical: null
-			};
-		});
+	const texts = raw.steps.map(plainText).filter(Boolean);
+	const links = linkSteps(
+		texts,
+		ingredients.map((i) => ({ id: i.id, role: i.role ?? null, lookFor: lookFor.get(i.id)! }))
+	);
+	const steps: Step[] = texts.map((text, n) => {
+		const duration = stepDuration(text);
+		return {
+			id: `s${n + 1}`,
+			text,
+			uses: links[n],
+			technique: [],
+			durationMin: duration?.min ?? null,
+			durationMaxMin: duration?.max ?? null,
+			heat: stepHeat(text),
+			tempC: stepTempC(text),
+			critical: null
+		};
+	});
 
 	let servings = raw.servings ?? null;
 	const tags = [...new Set((raw.tags ?? []).map((t) => t.trim().toLowerCase()).filter(Boolean))];
