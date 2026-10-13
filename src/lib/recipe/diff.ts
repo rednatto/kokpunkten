@@ -18,9 +18,11 @@ export interface DiffRow {
 	outliers: number[];
 }
 
-/** A culinary role where versions use different ingredients: pick one. */
+/** A culinary role where versions use different ingredients: pick one, or several where they go together. */
 export interface DiffSlot {
 	role: string;
+	/** True when the options stand in for each other; false when a cook can take any of them. */
+	pickOne: boolean;
 	options: { row: DiffRow; versions: number[] }[];
 }
 
@@ -41,6 +43,26 @@ export interface RecipeDiff {
 	 */
 	offScale: (number | null)[];
 }
+
+/** Roles whose ingredients add to each other in a dish rather than stand in for each other. */
+export const COMBINED_ROLES = new Set([
+	'vegetable',
+	'leafy-green',
+	'fruit',
+	'liquid',
+	'spice',
+	'herb',
+	'seasoning',
+	'aromatic',
+	'umami',
+	'acid',
+	'chili',
+	'garnish',
+	'topping',
+	'sweetener',
+	'nut',
+	'sauce'
+]);
 
 /** Lines up several versions of a dish by ingredient key and role, scaled to `servings`. */
 export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings ?? 4): RecipeDiff {
@@ -87,23 +109,29 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 	const common = all.filter((r) => r.count === n);
 	const partial = all.filter((r) => r.count < n);
 
-	// Within a role, versions that each use a different ingredient form a "pick one" slot.
+	// Within a role, the different ingredients versions use form a slot. It is "pick one" when
+	// they stand in for each other: no version uses two of them, and the role is one where
+	// ingredients replace each other (cured pork, cheese) rather than add up (vegetables).
+	// Otherwise the cook can take any of them; where versions combine them, only the main
+	// ingredients make the slot, so spices and other basics stay with the rest.
 	const slots: DiffSlot[] = [];
 	const inSlot = new Set<string>();
 	const byRole = Map.groupBy(partial, (r) => r.role);
+	const usedBy = (rows: DiffRow[]) => versions.map((_, v) => rows.filter((r) => r.ingredients[v]).length);
 	for (const [role, group] of byRole) {
 		if (group.length < 2) continue;
-		const perVersion = versions.map((_, v) => group.filter((r) => r.ingredients[v]).length);
-		if (perVersion.some((c) => c > 1)) continue;
-		if (perVersion.filter((c) => c === 1).length < 2) continue;
+		const together = usedBy(group).some((c) => c > 1);
+		const rows = together ? group.filter((r) => !basicGroup(r)) : group;
+		if (rows.length < 2 || usedBy(rows).filter((c) => c > 0).length < 2) continue;
 		slots.push({
 			role,
-			options: group.map((row) => ({
+			pickOne: !together && !COMBINED_ROLES.has(role),
+			options: rows.map((row) => ({
 				row,
 				versions: versions.flatMap((_, v) => (row.ingredients[v] ? [v] : []))
 			}))
 		});
-		group.forEach((r) => inSlot.add(r.key));
+		rows.forEach((r) => inSlot.add(r.key));
 	}
 
 	return {
