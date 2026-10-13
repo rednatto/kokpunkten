@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { formatMinutes } from '#lib/display.ts';
 	import { layers, schedule, stepGraph, stepLabel, tree } from '#lib/recipe/graph.ts';
 	import type { Recipe } from '#lib/recipe/schema.ts';
 	import { settings } from '#lib/settings.svelte.ts';
@@ -88,7 +89,7 @@
 						<span class="label">{label(g.step)}</span>
 						{#if g.adds.length}<span class="adds">+ {names(g.adds)}</span>{/if}
 						{#if g.step.durationMin || g.step.heat}
-							<span class="meta">{[g.step.durationMin && `${g.step.durationMin} min`, g.step.heat && `${g.step.heat} heat`].filter(Boolean).join(' · ')}</span>
+							<span class="meta">{[g.step.durationMin && formatMinutes(g.step.durationMin, g.step.durationMaxMin), g.step.heat && `${g.step.heat} heat`].filter(Boolean).join(' · ')}</span>
 						{/if}
 					</button>
 				{/each}
@@ -134,7 +135,7 @@
 					>
 						<strong class="mark">{done.has(g.step.id) ? '✓' : g.no}</strong>
 						{label(g.step, 36)}
-						{#if g.step.durationMin}<span class="meta">{g.step.durationMin} min</span>{/if}
+						{#if g.step.durationMin}<span class="meta">{formatMinutes(g.step.durationMin, g.step.durationMaxMin)}</span>{/if}
 					</button>
 				{/if}
 			{/each}

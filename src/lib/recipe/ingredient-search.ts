@@ -106,10 +106,14 @@ const words = (text: string) =>
 		.filter(Boolean)
 		.map(singular);
 
+/** The English word the library uses for a Swedish search term, or null when it isn't one. */
+export function fromSwedish(term: string): string | null {
+	return SWEDISH[term.trim().toLowerCase().replace(/\s+/g, ' ')] ?? null;
+}
+
 /** A search term as words to look for, with Swedish translated. Empty when nothing is left. */
 export function parseTerm(term: string): string[] {
-	const t = term.trim().toLowerCase().replace(/\s+/g, ' ');
-	return words(SWEDISH[t] ?? t);
+	return words(fromSwedish(term) ?? term);
 }
 
 /** Whether `needle` appears as consecutive words in `hay`, and not as the start of a derived product. */

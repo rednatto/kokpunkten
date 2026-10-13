@@ -153,6 +153,8 @@ export const stepSchema = z.preprocess(
 		uses: z.array(id).default([]),
 		technique: z.array(z.string().trim().min(1)).default([]),
 		durationMin: z.number().positive().nullish(),
+		/** The upper end when the source gives a range ("1–2 hours"); durationMin is then the lower end. */
+		durationMaxMin: z.number().positive().nullish(),
 		heat: z.enum(HEATS).nullish(),
 		tempC: z.number().nullish(),
 		critical: optText
@@ -235,6 +237,8 @@ export const recipeSchema = z
 						message: `"${ref}" is not an ingredient or an earlier step`
 					});
 			});
+			if (step.durationMin != null && step.durationMaxMin != null && step.durationMaxMin < step.durationMin)
+				ctx.addIssue({ code: 'custom', path: ['steps', i, 'durationMaxMin'], message: 'durationMaxMin is smaller than durationMin' });
 			known.add(step.id);
 		});
 	});
