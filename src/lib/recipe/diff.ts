@@ -221,7 +221,7 @@ const isMeasure = (d: Dimension) => d === 'mass' || d === 'volume';
  * Rows counted in pieces keep their own unit.
  */
 export function sharedDimension(rows: Pick<DiffRow, 'key' | 'role' | 'amounts' | 'ingredients'>[]): Dimension | null {
-	const native = rows.flatMap((r) => nativeValues(r).filter((n) => n !== null && isMeasure(n.dim)));
+	const native = rows.flatMap((r) => nativeValues(r).filter((n): n is NonNullable<typeof n> => n !== null && isMeasure(n.dim)));
 	const rank = (d: Dimension) => (d === 'mass' ? 0 : d === 'volume' ? 1 : 2);
 	const dims = [...Map.groupBy(native, (n) => n.dim)].toSorted((a, b) => b[1].length - a[1].length || rank(a[0]) - rank(b[0])).map(([d]) => d);
 	const lossless = (row: (typeof rows)[number], dim: Dimension) => {
