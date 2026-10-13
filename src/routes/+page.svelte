@@ -5,7 +5,18 @@
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 
 	// Summaries, not whole recipes: the list only needs names, cuisines and search words.
-	const recipes = liveQuery(() => db.summaries.toArray());
+	let rows = $state<RecipeSummary[]>();
+	let loadError = $state('');
+	$effect(() => {
+		const sub = liveQuery(() => db.summaries.toArray()).subscribe({
+			next: (v) => ((loadError = ''), (rows = v)),
+			error: (e: Error) => {
+				console.error(e);
+				loadError = `${e.name}: ${e.message}`;
+			}
+		});
+		return () => sub.unsubscribe();
+	});
 
 	let query = $state('');
 	let cuisine = $state('');
@@ -38,7 +49,7 @@
 		});
 	}
 
-	const dishes = $derived($recipes ? toDishes($recipes) : []);
+	const dishes = $derived(rows ? toDishes(rows) : []);
 	const allCuisines = $derived([...new Set(dishes.flatMap((d) => d.cuisines))].sort());
 	const shown = $derived.by(() => {
 		const terms = query.toLowerCase().split(/[\s,]+/).filter(Boolean);
@@ -62,9 +73,12 @@
 	}
 </script>
 
-{#if $recipes === undefined}
+{#if loadError}
+	<p role="alert">Couldn't read your recipes ({loadError}).</p>
+	<button class="small" onclick={() => location.reload()}>Reload</button>
+{:else if rows === undefined}
 	<p class="muted">Loading…</p>
-{:else if $recipes.length === 0}
+{:else if rows.length === 0}
 	<div class="empty">
 		<h1>No recipes yet</h1>
 		<p class="muted">Ask your AI assistant for a recipe in Kokpunkten's format, then paste the answer here.</p>

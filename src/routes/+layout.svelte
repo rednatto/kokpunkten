@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import favicon from '#lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
-	import { syncLibrary } from '#lib/library.ts';
+	import { syncLibrary, syncing } from '#lib/library.ts';
 	import { dbProblem, openDb, resetDb } from '#lib/db.ts';
 	import TimerTray from '#lib/components/TimerTray.svelte';
 	import type { LayoutProps } from './$types';
@@ -20,6 +20,7 @@
 		openDb()
 			.then(syncLibrary)
 			.catch((e: Error) => {
+				syncing.set(false);
 				console.error('Could not load the recipe library', e);
 				dbProblem.set({ kind: 'error', message: `Could not load the built-in recipes: ${e.name}: ${e.message}` });
 			});
@@ -47,6 +48,9 @@
 				{/if}
 			</div>
 		</div>
+	{/if}
+	{#if $syncing}
+		<p class="muted syncing" role="status">Updating the built-in recipes…</p>
 	{/if}
 	{@render children()}
 </main>
@@ -76,6 +80,10 @@
 		margin-bottom: 1rem;
 	}
 	.problem p {
+		margin: 0 0 0.5rem;
+	}
+	.syncing {
+		font-size: 0.85rem;
 		margin: 0 0 0.5rem;
 	}
 	main {
