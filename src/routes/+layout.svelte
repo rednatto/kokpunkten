@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { syncLibrary } from '#lib/library.ts';
 	import { dbProblem, openDb, resetDb } from '#lib/db.ts';
+	import TimerTray from '#lib/components/TimerTray.svelte';
 	import type { LayoutProps } from './$types';
 	import './app.css';
 
@@ -31,8 +32,9 @@
 
 <header class="bar">
 	<a href={resolve('/')} class="brand">Kokpunkten</a>
+	<TimerTray />
 	<div class="row">
-		<a href={resolve('/kitchen')} class="button ghost small">Swaps &amp; weights</a>
+		<a href={resolve('/kitchen')} class="button ghost small" aria-label="Swaps and weights">⚖<span class="wide">&nbsp;Swaps &amp; weights</span></a>
 		<a href={resolve('/add')} class="button small">+ Add</a>
 	</div>
 </header>
@@ -63,6 +65,15 @@
 		padding: calc(env(safe-area-inset-top) + 0.5rem) 1rem 0.5rem;
 		background: var(--bg);
 		border-bottom: 1px solid var(--line);
+	}
+	.bar > .row {
+		flex: none;
+	}
+	/* On a phone the timer chips need the room, so the lookup link shrinks to its icon. */
+	@media (max-width: 30rem) {
+		.wide {
+			display: none;
+		}
 	}
 	.brand {
 		font-weight: 700;
