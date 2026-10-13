@@ -50,4 +50,13 @@ describe('tree', () => {
 		expect(rows.map((c) => c.ingredient!.id)).toEqual(['i11', 'i12', 'i13', 'i14', 'i15', 'i16']);
 		expect(bechamel.col + bechamel.colSpan).toBe(t.cells.find((c) => c.step?.no === 5)!.col);
 	});
+
+	it('fills the ingredient columns beside a step that adds nothing, leaving no hole in the grid', () => {
+		const plain = stepGraph({ ...lasagna, steps: lasagna.steps.map((st) => (st.id === 's4' ? { ...st, uses: [] } : st)) });
+		const t2 = tree(plain);
+		const filled = Array.from({ length: t2.rows }, () => new Array(t2.cols).fill(0));
+		for (const c of t2.cells) for (let r = c.row; r < c.row + c.rowSpan; r++) for (let k = c.col; k < c.col + c.colSpan; k++) filled[r][k]++;
+		expect(t2.cells.some((c) => c.kind === 'blank')).toBe(true);
+		expect(filled.flat().every((n) => n === 1)).toBe(true);
+	});
 });

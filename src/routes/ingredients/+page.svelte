@@ -136,9 +136,9 @@
 
 {#snippet hit(h: DishHit)}
 	{@const r = h.best.item}
-	<li class="card">
+	<li class="card linked">
 		<div class="head">
-			<a href={resolve('/r/[id]', { id: r.id })} class="title">{r.favorite ? '★ ' : ''}{h.name}</a>
+			<a href={resolve('/r/[id]', { id: r.id })} class="title stretch">{r.favorite ? '★ ' : ''}{h.name}</a>
 			{#if r.rating}<span class="muted small">{r.rating}/5</span>{/if}
 		</div>
 		<p class="small uses">

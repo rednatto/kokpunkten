@@ -559,8 +559,8 @@
 		{#each versions as _, v}
 			{#if v !== base}
 				{@const changes = changesAgainst(v)}
-				<section class="card changes">
-					<h2><a href={resolve('/r/[id]', { id: rows[v].id })}>{label(v)}</a></h2>
+				<section class="card changes linked">
+					<h2><a href={resolve('/r/[id]', { id: rows[v].id })} class="stretch">{label(v)}</a></h2>
 					{#if sourceOf(v)}<p class="muted small source-line">{sourceOf(v)}</p>{/if}
 					{#if offScale(v)}<p class="small warn">Its amounts are {offScale(v)}, so its servings may be wrong.</p>{/if}
 					{#if changes.length}
