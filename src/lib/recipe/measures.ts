@@ -109,6 +109,34 @@ export const pieceGrams = (key: string): number | null => {
 	return k ? PIECE_GRAMS[k] : null;
 };
 
+/**
+ * Words in a recipe line that make one counted item something other than the usual piece,
+ * with what one weighs: a head of garlic is not a clove, a basil leaf is not a bunch.
+ */
+const ITEM_WORDS: { word: RegExp; keys: RegExp; grams: number }[] = [
+	{ word: /\bheads?\b/, keys: /^garlic$/, grams: 50 },
+	{ word: /\bsprigs?\b/, keys: /^(cilantro|flat-leaf-parsley|dill|basil|mint|thai-basil)$/, grams: 1 },
+	{ word: /\b(leaf|leaves)\b/, keys: /^(cilantro|flat-leaf-parsley|dill|basil|mint|thai-basil)$/, grams: 0.5 },
+	{ word: /\bslices?\b/, keys: /^ginger$/, grams: 3 },
+	{ word: /\bslices?\b/, keys: /(baguette|bread|pain-de-mie)$/, grams: 25 },
+	{ word: /\bloa(f|ves)\b/, keys: /baguette$/, grams: 250 },
+	{ word: /\bsticks?\b/, keys: /butter$/, grams: 113 }
+];
+
+/**
+ * Grams in one counted item as the recipe line names it ("1 head garlic", "12 basil
+ * leaves", "1 stick of butter"), else the usual piece weight. Null when unknown.
+ */
+export function itemGrams(ing: Pick<Ingredient, 'key' | 'name' | 'prep' | 'original'>): number | null {
+	const text = [ing.original, ing.name, ing.prep].filter(Boolean).join(' ').toLowerCase().replaceAll('flat-leaf', '');
+	// A bunch is the usual piece for herbs, whatever else the line says ("a bunch of coriander leaves").
+	if (/\bbunch(es)?\b/.test(text)) return pieceGrams(ing.key);
+	const key = pieceKey(ing.key) ?? ing.key;
+	// Herbs are bought by the bunch but counted by the leaf: "10 fresh basil" is ten leaves.
+	if (BUNCHES.has(key) && !ITEM_WORDS.some((w) => w.keys.test(key) && w.word.test(text))) return 0.5;
+	return ITEM_WORDS.find((w) => w.keys.test(key) && w.word.test(text))?.grams ?? pieceGrams(ing.key);
+}
+
 const BUNCHES = new Set(['cilantro', 'flat-leaf-parsley', 'dill', 'basil', 'mint', 'thai-basil']);
 
 /** What one of an ingredient's PIECE_GRAMS is called. */
@@ -119,7 +147,7 @@ export const pieceUnit = (key: string): 'piece' | 'clove' | 'bunch' | 'can' => {
 
 /** How a counted ingredient reads in grams, e.g. 2 carrots → "≈ 140 g". Null when unknown or not counted. */
 export function weightHint(ing: Ingredient, a: Amount): string | null {
-	const each = pieceGrams(ing.key);
+	const each = a.unit === 'piece' ? itemGrams(ing) : pieceGrams(ing.key);
 	if (!each || a.qty == null || !a.unit || !['piece', 'clove', 'bunch', 'can'].includes(a.unit)) return null;
 	const g = a.qty * each;
 	if (g < 5) return null;

@@ -48,6 +48,13 @@ describe('standard weights', () => {
 		expect(weightHint(ing('garlic', 'allium'), amt(3, 'clove'))).toBe('≈ 15 g');
 		expect(weightHint(ing('mystery', 'vegetable'), amt(2, 'piece'))).toBeNull();
 	});
+
+	it('weighs what the line counts: heads, leaves, sticks', () => {
+		expect(weightHint(ing('garlic', 'allium', 'head of garlic'), amt(1, 'piece'))).toBe('≈ 50 g');
+		expect(weightHint(ing('basil', 'herb', 'fresh basil leaves'), amt(12, 'piece'))).toBe('≈ 6 g');
+		expect(weightHint(ing('basil', 'herb', 'bunch of basil'), amt(1, 'piece'))).toBe('≈ 25 g');
+		expect(weightHint(ing('butter', 'fat', 'stick of butter'), amt(1, 'piece'))).toBe('≈ 115 g');
+	});
 });
 
 describe('US volumes for baking staples', () => {

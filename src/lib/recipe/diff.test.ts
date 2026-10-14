@@ -56,6 +56,18 @@ describe('diffRecipes', () => {
 		const garlic = diffRecipes(versions).rows.find((r) => r.key === 'garlic')!;
 		expect(garlic.amounts.map((a) => [a?.qty, a?.unit])).toEqual([[10, 'clove'], [20, 'clove'], [4, 'clove']]);
 	});
+
+	it('weighs pieces that are slices, sticks or leaves when versions count differently', () => {
+		const withIng = (title: string, ing: object) =>
+			recipeSchema.parse({ ...structuredClone(sampleRecipe), title, ingredients: [...sampleRecipe.ingredients, { id: 'i9', ...ing }] });
+		const row = (key: string, a: object, b: object) =>
+			diffRecipes([withIng('A', { key, name: key, ...a }), withIng('B', { key, name: key, ...b })]).rows.find((r) => r.key === key)!.amounts.map((x) => [x?.qty, x?.unit]);
+		expect(row('butter', { qty: 1, unit: 'piece', original: '1 stick of butter' }, { qty: 100, unit: 'g' })).toEqual([[113, 'g'], [100, 'g']]);
+		expect(row('ginger', { qty: 4, unit: 'piece', original: '4 thin slices ginger' }, { qty: 1, unit: 'tbsp' })).toEqual([[12, 'g'], [1, 'tbsp']]);
+		expect(row('basil', { qty: 12, unit: 'piece', original: '12 basil leaves' }, { qty: 10, unit: 'g' })).toEqual([[6, 'g'], [10, 'g']]);
+		// Versions that count the same way keep their own numbers.
+		expect(row('basil', { qty: 12, unit: 'piece', original: '12 basil leaves' }, { qty: 10, unit: 'piece', original: '10 fresh basil' })).toEqual([[12, 'piece'], [10, 'piece']]);
+	});
 });
 
 describe('amountRange', () => {

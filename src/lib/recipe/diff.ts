@@ -1,6 +1,6 @@
 import type { Ingredient, Recipe, Unit } from './schema.ts';
 import { familyName, familyOf, isLooseFamily, splitCompound } from './families.ts';
-import { gramsPerMl, PIECE_GRAMS, pieceKey } from './measures.ts';
+import { gramsPerMl, itemGrams, PIECE_GRAMS, pieceGrams, pieceUnit } from './measures.ts';
 import { basicGroup } from './table-tree.ts';
 import { MASS_G, VOLUME_ML, type Amount } from './units.ts';
 
@@ -87,11 +87,11 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 				rows.set(key, row);
 			}
 			if (key === ing.key && row.name === familyName(key)) row.name = ing.name; // prefer the plain ingredient's own name
-			const amount = inCloves(ing, {
+			const amount: Amount = {
 				qty: ing.qty == null ? null : ing.qty * factor,
 				qtyMax: ing.qtyMax == null ? null : ing.qtyMax * factor,
 				unit: ing.unit ?? null
-			});
+			};
 			if (row.ingredients[v] === null) {
 				row.count++;
 				row.ingredients[v] = ing;
@@ -103,6 +103,7 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 		}
 	});
 
+	for (const row of rows.values()) sameSizedPieces(row);
 	const all = [...rows.values()].sort((a, b) => b.count - a.count || a.role.localeCompare(b.role));
 	const offScale = markOutliers(all, versions.length);
 	const n = versions.length;
@@ -309,17 +310,25 @@ export function closestVersion(diff: RecipeDiff, picks: Map<string, string>, ext
 	return best;
 }
 
-/** About how many cloves a head of garlic has. */
-const CLOVES_PER_HEAD = 10;
-
 /**
- * Whole heads of garlic in cloves, so "1 head garlic" compares with "4 cloves" instead of
- * reading as one clove. Recipes store a head as one piece; the words say which it is.
+ * Recipes store "1 head garlic", "12 basil leaves" and "1 stick of butter" all as pieces.
+ * Where versions of a row count different things (a head against cloves, leaves against
+ * grams), those pieces become the ingredient's usual piece (10 cloves), or grams when that
+ * piece is much bigger (6 g basil, not ¼ bunch). Rows that agree are left as written.
  */
-function inCloves(ing: Ingredient, a: Amount): Amount {
-	if (a.unit !== 'piece' || a.qty == null || pieceKey(ing.key) !== 'garlic') return a;
-	if (!/\bheads?\b/i.test([ing.name, ing.prep, ing.original].filter(Boolean).join(' '))) return a;
-	return { unit: 'clove', qty: a.qty * CLOVES_PER_HEAD, qtyMax: a.qtyMax == null ? null : a.qtyMax * CLOVES_PER_HEAD };
+function sameSizedPieces(row: DiffRow) {
+	const sizes = row.ingredients.map((ing, v) => (ing && row.amounts[v]?.unit === 'piece' ? itemGrams(ing) : null));
+	const first = sizes.find((s) => s != null);
+	const mixed = row.amounts.some((a, v) => a?.qty != null && a.unit != null && (a.unit !== 'piece' || sizes[v] !== first));
+	if (!mixed) return;
+	const usual = pieceGrams(row.key);
+	row.amounts = row.amounts.map((a, v) => {
+		const each = sizes[v];
+		if (!a || a.qty == null || each == null || each === usual) return a;
+		const inPieces = usual != null && each >= usual / 4;
+		const f = inPieces ? each / usual : each;
+		return { unit: inPieces ? pieceUnit(row.key) : 'g', qty: a.qty * f, qtyMax: a.qtyMax == null ? null : a.qtyMax * f };
+	});
 }
 
 /** "Salt and pepper" as one ingredient becomes two, so each lines up with its own row. */
