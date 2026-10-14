@@ -33,4 +33,14 @@ describe('version labels', () => {
 		expect(versionLabels([roman, imported('Ada', 'pancetta'), imported('Bo', 'bacon')])).toEqual(['Roman classic', 'With pancetta', 'With bacon']);
 		expect(versionLabels([roman, imported('Ada', 'bacon'), imported('Bo', 'bacon')])).toEqual(['Roman classic', 'With bacon (Ada)', 'With bacon (Bo)']);
 	});
+
+	it('keeps the names of versions from different sites', () => {
+		const site = (name: string, swap: string) =>
+			version({ type: 'web', name, url: 'https://example.com' }, sampleRecipe.ingredients.map((i) => (i.id === 'i1' ? { ...i, key: swap, name: swap } : i)));
+		expect(versionLabels([roman, site('Saveur (Rita Sodi)', 'pancetta'), site('Serious Eats', 'pancetta')])).toEqual([
+			'Roman classic',
+			'Saveur (Rita Sodi)',
+			'Serious Eats'
+		]);
+	});
 });

@@ -37,15 +37,17 @@ export function definingLabel(r: Recipe, others: Recipe[]): string | null {
 }
 
 /**
- * Names for all versions of a dish, each different. A version named only by its site or
- * book (two "Public Domain Recipes") is named by what sets it apart; any names still
- * shared get the author, or a number, after them.
+ * Names for all versions of a dish, each different. Every version keeps its own name
+ * ("Saveur (Rita Sodi)") unless another version has the same one, as when two come from
+ * one site ("Public Domain Recipes"); those are named by what sets them apart. Any names
+ * still shared get the author, or a number, after them.
  */
 export function versionLabels(versions: Recipe[]): string[] {
+	const own = versions.map(versionLabel);
 	const labels = versions.map((r, v) => {
-		const own = versionLabel(r);
-		const generic = !r.variant && (own === r.source.name || own === r.title) && !OWN.test(r.source.name ?? '');
-		return (generic && definingLabel(r, versions.toSpliced(v, 1))) || own;
+		const shared = own.indexOf(own[v]) !== own.lastIndexOf(own[v]);
+		const named = r.variant || OWN.test(r.source.name ?? '');
+		return (shared && !named && definingLabel(r, versions.toSpliced(v, 1))) || own[v];
 	});
 	return labels.map((l, v) => {
 		if (labels.indexOf(l) === labels.lastIndexOf(l)) return l;
