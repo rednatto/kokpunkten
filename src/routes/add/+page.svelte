@@ -29,7 +29,7 @@
 		}
 		errors = [];
 		saving = true;
-		const ids = await addRecipes(res.recipes);
+		const ids = await addRecipes(res.recipes, dish);
 		await goto(ids.length === 1 ? resolve('/r/[id]', { id: ids[0] }) : resolve('/'));
 	}
 </script>

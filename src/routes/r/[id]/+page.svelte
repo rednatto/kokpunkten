@@ -4,7 +4,9 @@
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
 	import { onDestroy } from 'svelte';
-	import { db, deleteRecipes, updateRecipe, type StoredRecipe } from '#lib/db.ts';
+	import { db, deleteRecipes, dishNames, updateRecipe, type StoredRecipe } from '#lib/db.ts';
+	import { dishName } from '#lib/dish-names.ts';
+	import DishName from '#lib/components/DishName.svelte';
 	import { cuisineName, showAmount } from '#lib/display.ts';
 	import { versionLabel, versionLabels, versionSource } from '#lib/recipe/labels.ts';
 	import type { Ingredient } from '#lib/recipe/schema.ts';
@@ -49,6 +51,8 @@
 		return watch(() => (d ? db.recipes.where('recipe.dish').equals(d).sortBy('addedAt') : []), (rows) => (siblings = rows));
 	});
 	const siblingLabels = $derived(versionLabels(siblings.map((s) => s.recipe)));
+	// The dish's name heads the page, as in the list; the version's own title follows when it says more.
+	const name = $derived(recipe ? dishName(recipe.dish, (siblings.length ? siblings : [row!]).map((s) => s.recipe.title), $dishNames) : '');
 
 	/** Subscribes to a live database query; the returned cleanup lets $effect re-subscribe when inputs change. */
 	function watch<T>(query: () => Promise<T> | T, set: (value: T) => void) {
@@ -125,8 +129,9 @@
 {:else if row === null || !recipe}
 	<p>Recipe not found. <a href={resolve('/')}>Back to recipes</a></p>
 {:else}
-	<h1>{recipe.title}</h1>
+	<DishName slug={recipe.dish} {name} />
 	<p class="muted meta">
+		{#if recipe.title !== name}{recipe.title} ·{/if}
 		{#if recipe.source.url}
 			<a href={recipe.source.url} target="_blank" rel="noopener">{recipe.source.name ?? 'Source'}</a>
 		{:else}

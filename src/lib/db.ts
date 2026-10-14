@@ -1,5 +1,6 @@
-import Dexie, { type EntityTable } from 'dexie';
-import { writable } from 'svelte/store';
+import Dexie, { liveQuery, type EntityTable } from 'dexie';
+import { readable, writable } from 'svelte/store';
+import { DISH_NAMES, genericDishName } from './dish-names';
 import { versionLabel } from './recipe/labels';
 import type { Recipe } from './recipe/schema';
 
@@ -38,6 +39,8 @@ export const db = new Dexie('kokpunkten') as Dexie & {
 	recipes: EntityTable<StoredRecipe, 'id'>;
 	summaries: EntityTable<RecipeSummary, 'id'>;
 	meta: EntityTable<{ key: string; value: string }, 'key'>;
+	/** Names for dishes, given on add or by the cook; a dish without one goes by the library's name or its versions'. */
+	dishes: EntityTable<{ slug: string; name: string }, 'slug'>;
 };
 
 db.version(1).stores({
@@ -51,6 +54,9 @@ db.version(3)
 	.upgrade(async (tx) => {
 		await tx.table('summaries').bulkPut((await tx.table<StoredRecipe>('recipes').toArray()).map(summarize));
 	});
+db.version(4).stores({
+	dishes: 'slug'
+});
 
 /**
  * Why the database isn't usable, for the layout to show instead of an endless "Loading…".
@@ -129,7 +135,25 @@ export function updateRecipe(id: string, changes: Partial<Pick<StoredRecipe, 'fa
 	});
 }
 
-export async function addRecipes(recipes: Recipe[]): Promise<string[]> {
+/** The dishes' given names by slug, kept up to date, for `dishName`. */
+export const dishNames = readable(new Map<string, string>(), (set) => {
+	const sub = liveQuery(() => db.dishes.toArray()).subscribe({
+		next: (rows) => set(new Map(rows.map((d) => [d.slug, d.name]))),
+		error: (e: Error) => console.error('Could not read dish names', e)
+	});
+	return () => sub.unsubscribe();
+});
+
+/** Renames a dish everywhere it is listed; an empty name goes back to the one it would have had. */
+export function renameDish(slug: string, name: string) {
+	return name.trim() ? db.dishes.put({ slug, name: name.trim() }) : db.dishes.delete(slug);
+}
+
+/**
+ * Adds recipes. A new dish gets a plain name from its versions, not the first one's title with
+ * its source's extras; `typed` is the dish the cook asked their assistant for.
+ */
+export async function addRecipes(recipes: Recipe[], typed = ''): Promise<string[]> {
 	const now = Date.now();
 	const rows: StoredRecipe[] = recipes.map((recipe, i) => ({
 		id: crypto.randomUUID(),
@@ -139,7 +163,19 @@ export async function addRecipes(recipes: Recipe[]): Promise<string[]> {
 		rating: null,
 		note: ''
 	}));
-	await putRecipes(rows);
+	const slugs = [...new Set(recipes.map((r) => r.dish))].filter((d) => !DISH_NAMES[d]);
+	await db.transaction('rw', db.recipes, db.summaries, db.dishes, async () => {
+		const named = new Set((await db.dishes.bulkGet(slugs)).filter((d) => d).map((d) => d!.slug));
+		const existing = await db.summaries.where('dish').anyOf(slugs).toArray();
+		const names = slugs
+			.filter((d) => !named.has(d))
+			.map((d) => {
+				const titles = [...existing, ...recipes].filter((r) => r.dish === d).map((r) => r.title);
+				return { slug: d, name: genericDishName(d, titles, typed) };
+			});
+		await putRecipes(rows);
+		await db.dishes.bulkPut(names);
+	});
 	return rows.map((r) => r.id);
 }
 

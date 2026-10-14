@@ -4,8 +4,9 @@
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
 	import UnitControls from '#lib/components/UnitControls.svelte';
-	import { addRecipes, db, type StoredRecipe } from '#lib/db.ts';
-	import { DISH_NAMES } from '#lib/dish-names.ts';
+	import DishName from '#lib/components/DishName.svelte';
+	import { addRecipes, db, dishNames, type StoredRecipe } from '#lib/db.ts';
+	import { dishName } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
 	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, seasonedInSteps, sharedDimension, type DiffRow, type DiffSlot, type Dimension } from '#lib/recipe/diff.ts';
 	import { familyName } from '#lib/recipe/families.ts';
@@ -35,6 +36,7 @@
 	let servings = $state<number | null>(null);
 	const versions = $derived(rows?.map((r) => r.recipe) ?? []);
 	const n = $derived(versions.length);
+	const name = $derived(dishName(dish, versions.map((v) => v.title), $dishNames));
 	const diff = $derived(n ? diffRecipes(versions, servings ?? versions[0].servings) : null);
 	const labels = $derived(versionLabels(versions));
 	const label = (v: number) => labels[v] ?? '';
@@ -209,7 +211,7 @@
 				rows: chosen,
 				base: closest,
 				labels: versions.map((_, v) => label(v)),
-				title: `${DISH_NAMES[dish] ?? versions[0].title} – my mix`
+				title: `${name} – my mix`
 			});
 			return { mix, error: '' };
 		} catch (e) {
@@ -308,7 +310,7 @@
 	{#if backId}
 		<a class="back" href={resolve('/r/[id]', { id: backId })}>← Back to {backLabel}</a>
 	{/if}
-	<h1>{DISH_NAMES[dish] ?? versions[0].title}</h1>
+	<DishName slug={dish} {name} />
 	<p class="muted meta">Comparing {n} versions: {versions.map((_, v) => label(v)).join(' · ')}</p>
 
 	<div class="row controls">
