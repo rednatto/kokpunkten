@@ -107,18 +107,20 @@
 				<option value="">All cuisines</option>
 				{#each allCuisines as c}<option value={c}>{cuisineName(c)}</option>{/each}
 			</select>
-			<button class="ghost small" class:on={versionsOnly} aria-pressed={versionsOnly} onclick={() => (versionsOnly = !versionsOnly)}>⇄ Has versions</button>
 			<button class="ghost small" class:on={favoritesOnly} aria-pressed={favoritesOnly} onclick={() => (favoritesOnly = !favoritesOnly)}>★ Favorites</button>
 			<a href={resolve('/ingredients')} class="button ghost small">By ingredients</a>
 		</div>
 	</div>
 
-	<p class="muted small">{shown.length} {shown.length === 1 ? 'dish' : 'dishes'}</p>
+	<div class="count muted small">
+		<span>{shown.length} {shown.length === 1 ? 'dish' : 'dishes'}</span>
+		<label><input type="checkbox" bind:checked={versionsOnly} /> Only with versions</label>
+	</div>
 	<ul class="list">
 		{#each shown.slice(0, limit) as d (d.slug)}
-			<li class="card">
+			<li class="card linked">
 				<div class="head">
-					<a href={resolve('/r/[id]', { id: d.versions[0].id })} class="title">{d.favorite ? '★ ' : ''}{d.name}</a>
+					<a href={resolve('/r/[id]', { id: d.versions[0].id })} class="title stretch">{d.favorite ? '★ ' : ''}{d.name}</a>
 					<span class="muted small">{d.cuisines.map(cuisineName).join(', ')}</span>
 				</div>
 				{#if d.versions.length > 1}
@@ -151,6 +153,25 @@
 	.filters select {
 		flex: 1;
 		width: auto;
+	}
+	/* The versions filter is a quiet checkbox by the count: dishes with versions are already listed first. */
+	.count {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0.75rem 0 0.25rem;
+	}
+	.count label {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		cursor: pointer;
+	}
+	.count input {
+		width: 1rem;
+		height: 1rem;
+		margin: 0;
 	}
 	.list {
 		list-style: none;

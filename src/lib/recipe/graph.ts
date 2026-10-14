@@ -90,7 +90,8 @@ export function schedule(graph: GraphStep[]): { steps: Scheduled[]; total: numbe
 }
 
 export interface TreeCell {
-	kind: 'ingredient' | 'step';
+	/** A blank fills the ingredient columns beside a step that adds nothing, so the grid has no holes. */
+	kind: 'ingredient' | 'step' | 'blank';
 	ingredient?: Ingredient;
 	step?: GraphStep;
 	row: number;
@@ -123,7 +124,8 @@ export function tree(graph: GraphStep[]): { cells: TreeCell[]; rows: number; col
 		const first = row;
 		for (const c of children(g)) place(c, h(g));
 		for (const ing of g.adds) cells.push({ kind: 'ingredient', ingredient: ing, row: row++, rowSpan: 1, col: 0, colSpan: h(g) });
-		if (row === first) row++; // a step with no inputs still needs a row
+		// A step with no inputs still needs a row, with a blank where its ingredients would be.
+		if (row === first) cells.push({ kind: 'blank', row: row++, rowSpan: 1, col: 0, colSpan: h(g) });
 		cells.push({ kind: 'step', step: g, row: first, rowSpan: row - first, col: h(g), colSpan: endCol - h(g) });
 	};
 	for (const r of roots) place(r, cols);

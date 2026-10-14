@@ -52,6 +52,10 @@
 		return () => ro.disconnect();
 	});
 
+	// --- Tree: the grid is at least as wide as its narrowest columns, so its background
+	// (the lines between cells) stretches as far as the cells when the table scrolls sideways.
+	const stepCol = $derived(settings.diagramFull ? 9 : 4.75);
+
 	// --- Timeline: a tick every 5, 10, 15, 30 or 60 minutes, whichever gives about five.
 	const tick = $derived([5, 10, 15, 30, 60, 120].find((t) => plan.total / t <= 6) ?? 240);
 	const ticks = $derived(Array.from({ length: Math.floor(plan.total / tick) + 1 }, (_, n) => n * tick));
@@ -119,10 +123,15 @@
 {:else}
 	<p class="muted how">Read left to right: each step combines the rows it spans, until the last step brings everything together.</p>
 	<div class="tree-wrap">
-		<div class="tree" style:grid-template-columns="minmax(6rem, 1.2fr) repeat({table.cols - 1}, minmax({settings.diagramFull ? 9 : 4.75}rem, 1fr))" style:grid-template-rows="repeat({table.rows}, auto)">
+		<div
+			class="tree"
+			style:grid-template-columns="minmax(6rem, 1.2fr) repeat({table.cols - 1}, minmax({stepCol}rem, 1fr))"
+			style:min-width="calc({6 + (table.cols - 1) * stepCol}rem + {2 * table.cols + 2}px)" style:grid-template-rows="repeat({table.rows}, auto)">
 			{#each table.cells as c, n (n)}
 				{#if c.kind === 'ingredient'}
 					<div class="cell ing" style:grid-row="{c.row + 1} / span 1" style:grid-column="1 / span {c.colSpan}">{c.ingredient!.name}</div>
+				{:else if c.kind === 'blank'}
+					<div class="cell" style:grid-row="{c.row + 1} / span 1" style:grid-column="1 / span {c.colSpan}"></div>
 				{:else}
 					{@const g = c.step!}
 					<button

@@ -220,3 +220,22 @@ textarea {
 	border-left: none;
 	border-top: 1px solid var(--line);
 }
+
+/* A card that opens as a whole: its .stretch link covers the card, so tapping anywhere on it works,
+   not just on the title. Other links and buttons in the card sit above that cover and keep their own target. */
+.linked {
+	position: relative;
+}
+.linked .stretch::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+}
+.linked :is(a, button, input, select, label):not(.stretch) {
+	position: relative;
+	z-index: 1;
+}
+.linked:hover {
+	border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}

@@ -35,6 +35,13 @@
 	const ingName = $derived(new Map(recipe?.ingredients.map((i) => [i.id, i.name]) ?? []));
 	const stepNo = $derived(new Map(recipe?.steps.map((s, n) => [s.id, n + 1]) ?? []));
 
+	/** A tap on a step's text ticks it off; taps on its own controls, and selecting text, don't. */
+	function tapStep(e: MouseEvent, stepId: string) {
+		if ((e.target as Element).closest('button, a, input, select, label, summary, .timer')) return;
+		if (getSelection()?.toString()) return;
+		toggleDone(id, stepId);
+	}
+
 	const dish = $derived(recipe?.dish);
 	let siblings = $state<StoredRecipe[]>([]);
 	$effect(() => {
@@ -195,7 +202,9 @@
 	{/if}
 	<ol class="steps">
 		{#each recipe.steps as step (step.id)}
-			<li class:done={doneStep.has(step.id)}>
+			<!-- Tapping anywhere on a step ticks it off, like the ingredient rows; the number button is the keyboard control. -->
+			<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
+			<li class:done={doneStep.has(step.id)} onclick={(e) => tapStep(e, step.id)}>
 				<button class="num" onclick={() => toggleDone(id, step.id)} aria-pressed={doneStep.has(step.id)}>
 					{doneStep.has(step.id) ? '✓' : stepNo.get(step.id)}
 				</button>
@@ -339,6 +348,7 @@
 		text-decoration: line-through;
 	}
 	.steps li {
+		cursor: pointer;
 		display: flex;
 		gap: 0.75rem;
 		padding: 0.75rem 0;
