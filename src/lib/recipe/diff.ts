@@ -1,6 +1,6 @@
 import type { Ingredient, Recipe, Unit } from './schema.ts';
 import { familyName, familyOf, isLooseFamily, splitCompound } from './families.ts';
-import { gramsPerMl, PIECE_GRAMS } from './measures.ts';
+import { gramsPerMl, PIECE_GRAMS, pieceKey } from './measures.ts';
 import { basicGroup } from './table-tree.ts';
 import { MASS_G, VOLUME_ML, type Amount } from './units.ts';
 
@@ -87,11 +87,11 @@ export function diffRecipes(versions: Recipe[], servings = versions[0]?.servings
 				rows.set(key, row);
 			}
 			if (key === ing.key && row.name === familyName(key)) row.name = ing.name; // prefer the plain ingredient's own name
-			const amount: Amount = {
+			const amount = inCloves(ing, {
 				qty: ing.qty == null ? null : ing.qty * factor,
 				qtyMax: ing.qtyMax == null ? null : ing.qtyMax * factor,
 				unit: ing.unit ?? null
-			};
+			});
 			if (row.ingredients[v] === null) {
 				row.count++;
 				row.ingredients[v] = ing;
@@ -307,6 +307,19 @@ export function closestVersion(diff: RecipeDiff, picks: Map<string, string>, ext
 		if (score(v) > score(best)) best = v;
 	});
 	return best;
+}
+
+/** About how many cloves a head of garlic has. */
+const CLOVES_PER_HEAD = 10;
+
+/**
+ * Whole heads of garlic in cloves, so "1 head garlic" compares with "4 cloves" instead of
+ * reading as one clove. Recipes store a head as one piece; the words say which it is.
+ */
+function inCloves(ing: Ingredient, a: Amount): Amount {
+	if (a.unit !== 'piece' || a.qty == null || pieceKey(ing.key) !== 'garlic') return a;
+	if (!/\bheads?\b/i.test([ing.name, ing.prep, ing.original].filter(Boolean).join(' '))) return a;
+	return { unit: 'clove', qty: a.qty * CLOVES_PER_HEAD, qtyMax: a.qtyMax == null ? null : a.qtyMax * CLOVES_PER_HEAD };
 }
 
 /** "Salt and pepper" as one ingredient becomes two, so each lines up with its own row. */

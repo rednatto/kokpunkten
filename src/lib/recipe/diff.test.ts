@@ -44,6 +44,18 @@ describe('diffRecipes', () => {
 		expect(closestVersion(diff, new Map([['cured-pork', 'pancetta']]), new Set())).toBe(1);
 		expect(closestVersion(diff, new Map([['cured-pork', 'guanciale']]), new Set(['heavy-cream']))).toBe(2);
 	});
+
+	it('counts a head of garlic as cloves, not as one clove', () => {
+		const withGarlic = (title: string, garlic: object) =>
+			recipeSchema.parse({ ...structuredClone(sampleRecipe), title, ingredients: [...sampleRecipe.ingredients, { id: 'i9', key: 'garlic', role: 'allium', ...garlic }] });
+		const versions = [
+			withGarlic('Head', { name: 'garlic', qty: 1, unit: 'piece', original: '1 head garlic, halved' }),
+			withGarlic('Heads', { name: 'heads of garlic', qty: 2, unit: 'piece' }),
+			withGarlic('Cloves', { name: 'garlic', qty: 4, unit: 'clove' })
+		];
+		const garlic = diffRecipes(versions).rows.find((r) => r.key === 'garlic')!;
+		expect(garlic.amounts.map((a) => [a?.qty, a?.unit])).toEqual([[10, 'clove'], [20, 'clove'], [4, 'clove']]);
+	});
 });
 
 describe('amountRange', () => {
