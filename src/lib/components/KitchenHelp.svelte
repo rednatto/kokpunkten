@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { findSwaps, swapsFor } from '#lib/kitchen/swaps.ts';
+	import { findSwaps, swapsFor, swapsUsing, type Swappable } from '#lib/kitchen/swaps.ts';
 	import { KITCHEN_MEASURES, UNIT_RULES, WEIGHABLES, equivalents, type InputUnit, type Weighable } from '#lib/kitchen/weights.ts';
 	import { parseTerm } from '#lib/recipe/ingredient-search.ts';
 	import type { Recipe } from '#lib/recipe/schema.ts';
@@ -20,6 +20,8 @@
 	/** Over a recipe, its own swaps until the cook searches or asks for all of them. */
 	const recipeOnly = $derived(!showAll && !query.trim() && forRecipe.length > 0);
 	const swaps = $derived(recipeOnly ? forRecipe : findSwaps(query));
+	/** What the typed ingredient can stand in for, when the cook has it rather than lacks it. */
+	const standsIn = $derived(recipeOnly ? [] : swapsUsing(query));
 
 	const matchesQuery = (w: Weighable) => {
 		const q = parseTerm(query);
@@ -59,7 +61,7 @@
 	<button role="tab" aria-selected={tab === 'weights'} class:active={tab === 'weights'} onclick={() => (tab = 'weights')}>Weights</button>
 </div>
 
-<input type="search" bind:value={query} placeholder={tab === 'swaps' ? 'What are you out of? e.g. buttermilk, smör' : 'Ingredient, e.g. flour, potato'} aria-label="Ingredient" autocapitalize="off" />
+<input type="search" bind:value={query} placeholder={tab === 'swaps' ? 'Out of it, or have it? e.g. buttermilk, yogurt' : 'Ingredient, e.g. flour, potato'} aria-label="Ingredient" autocapitalize="off" />
 
 {#if tab === 'swaps'}
 	{#if recipeOnly}
@@ -67,26 +69,39 @@
 			For this recipe's ingredients · <button class="link" onclick={() => (showAll = true)}>Show all swaps</button>
 		</p>
 	{/if}
-	<ul class="list">
-		{#each swaps as s (s.name)}
-			<li class="card">
-				<div class="head">
-					<strong>{s.name}</strong>
-					{#if s.per}<span class="muted small">for {s.per}</span>{/if}
-				</div>
-				<ul class="swaps">
-					{#each s.swaps as w}
-						<li>
-							<span class="use">{w.use}</span>
-							{#if w.note}<span class="muted small note">{w.note}</span>{/if}
-						</li>
-					{/each}
-				</ul>
-			</li>
-		{:else}
-			<li class="muted">No common swap for that. Try a shorter word.</li>
-		{/each}
-	</ul>
+	{#snippet card(s: Swappable)}
+		<li class="card">
+			<div class="head">
+				<strong>{s.name}</strong>
+				{#if s.per}<span class="muted small">for {s.per}</span>{/if}
+			</div>
+			<ul class="swaps">
+				{#each s.swaps as w}
+					<li>
+						<span class="use">{w.use}</span>
+						{#if w.note}<span class="muted small note">{w.note}</span>{/if}
+					</li>
+				{/each}
+			</ul>
+		</li>
+	{/snippet}
+	{#if swaps.length || !standsIn.length}
+		<ul class="list">
+			{#each swaps as s (s.name)}
+				{@render card(s)}
+			{:else}
+				<li class="muted">No common swap for that. Try a shorter word.</li>
+			{/each}
+		</ul>
+	{/if}
+	{#if standsIn.length}
+		<h3 class="stands-in">{query.trim()} can stand in for</h3>
+		<ul class="list">
+			{#each standsIn as s (s.name)}
+				{@render card(s)}
+			{/each}
+		</ul>
+	{/if}
 {:else}
 	<div class="card convert">
 		<div class="row">
@@ -223,6 +238,9 @@
 	}
 	h3 {
 		font-size: 1rem;
+	}
+	.stands-in::first-letter {
+		text-transform: uppercase;
 	}
 	table {
 		width: 100%;

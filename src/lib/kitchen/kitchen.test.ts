@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { recipeSchema } from '../recipe/schema.ts';
-import { SWAPS, findSwaps, swapsFor } from './swaps.ts';
+import { SWAPS, findSwaps, swapsFor, swapsUsing } from './swaps.ts';
 import { WEIGHABLES, equivalents, toBase } from './weights.ts';
 
 const item = (key: string) => WEIGHABLES.find((w) => w.key === key)!;
@@ -20,6 +20,18 @@ describe('findSwaps', () => {
 	});
 	it('lists everything for an empty query', () => {
 		expect(findSwaps('  ')).toHaveLength(SWAPS.length);
+	});
+});
+
+describe('swapsUsing', () => {
+	it('finds what an ingredient can stand in for', () => {
+		const found = swapsUsing('yogurt');
+		expect(found.map((s) => s.name)).toContain('Buttermilk');
+		expect(found.find((s) => s.name === 'Buttermilk')!.swaps.map((w) => w.use)).toEqual(['½ dl plain yogurt + ½ dl milk']);
+	});
+	it('leaves out what the search already found by name', () => {
+		expect(swapsUsing('butter').map((s) => s.name)).not.toContain('Butter');
+		expect(swapsUsing('')).toEqual([]);
 	});
 });
 

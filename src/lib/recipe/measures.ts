@@ -1,5 +1,8 @@
+import { singular } from '../import/vocabulary.ts';
 import type { Ingredient } from './schema.ts';
 import { convert, formatQty, scaleAmount, type Amount } from './units.ts';
+
+const CANNED = /^(canned-|crushed-tomatoes$|coconut-milk$)/;
 
 /**
  * Typical weight in grams of one piece, clove, bunch or can, by ingredient key.
@@ -9,6 +12,7 @@ export const PIECE_GRAMS: Record<string, number> = {
 	'yellow-onion': 150,
 	'red-onion': 150,
 	'white-onion': 150,
+	'pearl-onion': 10,
 	shallot: 30,
 	garlic: 5,
 	carrot: 70,
@@ -44,6 +48,15 @@ export const PIECE_GRAMS: Record<string, number> = {
 	jalapeno: 15,
 	'serrano-chili': 6,
 	ginger: 30,
+	'button-mushroom': 20,
+	mushroom: 20,
+	shiitake: 15,
+	broccoli: 400,
+	cauliflower: 600,
+	'white-cabbage': 1000,
+	'green-cabbage': 1000,
+	'napa-cabbage': 1000,
+	'quail-egg': 10,
 	'chicken-breast': 180,
 	'chicken-thigh': 120,
 	'cod-fillet': 150,
@@ -64,9 +77,49 @@ export const PIECE_GRAMS: Record<string, number> = {
 	'coconut-milk': 400
 };
 
+/** Other names recipes use for an ingredient in PIECE_GRAMS. */
+const PIECE_ALIASES: Record<string, string> = {
+	onion: 'yellow-onion',
+	'spring-onion': 'scallion',
+	'green-onion': 'scallion',
+	'garlic-clove': 'garlic'
+};
+/** Words that make a piece weigh something else entirely: a dried chili is not a fresh one. */
+const NOT_A_PIECE = new Set(['dried', 'ground', 'powdered', 'smoked', 'pickled', 'candied', 'crystallized', 'minced', 'paste', 'juice', 'zest']);
+
+/**
+ * The PIECE_GRAMS key for an ingredient key, also for plurals and qualified names that
+ * recipes added by hand use: "carrots", "large-eggs", "roma-tomato". Null when unknown.
+ */
+export function pieceKey(key: string): string | null {
+	const known = (k: string) => (PIECE_GRAMS[k] ? k : PIECE_GRAMS[PIECE_ALIASES[k]] ? PIECE_ALIASES[k] : null);
+	if (known(key)) return known(key);
+	const parts = key.split('-').map(singular);
+	if (parts.some((p) => NOT_A_PIECE.has(p))) return null;
+	for (let i = 0; i < parts.length; i++) {
+		const k = known(parts.slice(i).join('-'));
+		if (k) return k;
+	}
+	return null;
+}
+
+/** Grams in one piece, clove, bunch or can of an ingredient, through `pieceKey`. */
+export const pieceGrams = (key: string): number | null => {
+	const k = pieceKey(key);
+	return k ? PIECE_GRAMS[k] : null;
+};
+
+const BUNCHES = new Set(['cilantro', 'flat-leaf-parsley', 'dill', 'basil', 'mint', 'thai-basil']);
+
+/** What one of an ingredient's PIECE_GRAMS is called. */
+export const pieceUnit = (key: string): 'piece' | 'clove' | 'bunch' | 'can' => {
+	const k = pieceKey(key) ?? key;
+	return k === 'garlic' ? 'clove' : BUNCHES.has(k) ? 'bunch' : CANNED.test(k) ? 'can' : 'piece';
+};
+
 /** How a counted ingredient reads in grams, e.g. 2 carrots → "≈ 140 g". Null when unknown or not counted. */
 export function weightHint(ing: Ingredient, a: Amount): string | null {
-	const each = PIECE_GRAMS[ing.key];
+	const each = pieceGrams(ing.key);
 	if (!each || a.qty == null || !a.unit || !['piece', 'clove', 'bunch', 'can'].includes(a.unit)) return null;
 	const g = a.qty * each;
 	if (g < 5) return null;
@@ -119,7 +172,6 @@ export function gramsPerMl(key: string, role?: string | null): number | null {
 	return null;
 }
 
-const CANNED = /^(canned-|crushed-tomatoes$|coconut-milk$)/;
 const PORTION_GRAMS: Record<string, number> = { pasta: 100, noodles: 90 };
 
 /** What the rough measures stand for, in grams or millilitres. */
@@ -138,7 +190,7 @@ export const ROUGH = {
 const half = (n: number) => Math.max(0.5, Math.round(n * 2) / 2);
 
 /**
- * Translates an amount into kitchen guesswork ("att höfta"): handfuls, glasses, cans,
+ * Translates an amount into kitchen guesswork, the "rough" units ("att höfta"): handfuls, glasses, cans,
  * portions or pieces. Returns null when there is no sensible rough measure, so the
  * caller can fall back to metric.
  */
@@ -162,8 +214,8 @@ export function roughAmount(ing: Ingredient, scaled: Amount): string | null {
 	if (CANNED.test(ing.key)) return `≈ ${formatQty(half(amount / ROUGH.can), 'can')} ${amount / ROUGH.can > 1.25 ? 'cans' : 'can'}`;
 
 	if (grams != null) {
-		const each = PIECE_GRAMS[ing.key];
-		if (each && grams / each >= 0.4) return `≈ ${formatQty(half(grams / each), 'piece')}`;
+		const each = pieceGrams(ing.key);
+		if (each && grams / each >= 0.4) return pieces(grams / each, pieceUnit(ing.key));
 		const portion = PORTION_GRAMS[role] ?? (role === 'rice' ? ROUGH.ricePortion : undefined);
 		if (portion) return `≈ ${formatQty(half(grams / portion), 'piece')} ${grams / portion > 1.25 ? 'portions' : 'portion'}`;
 		if (['fat', 'dairy'].includes(role) && /butter|ghee|lard/.test(ing.key)) return knobs(grams / ROUGH.knob);
@@ -182,6 +234,12 @@ export function roughAmount(ing: Ingredient, scaled: Amount): string | null {
 	return null;
 }
 
+/** "≈ 1 ½" (the name follows: carrot), "≈ 3 cloves" (garlic) or "≈ ½ bunch" (dill); big counts in whole pieces. */
+function pieces(n: number, unit: 'piece' | 'clove' | 'bunch' | 'can'): string {
+	const q = n >= 5 ? Math.round(n) : half(n);
+	const word = unit === 'piece' ? '' : ` ${q > 1 ? (unit === 'bunch' ? 'bunches' : `${unit}s`) : unit}`;
+	return `≈ ${formatQty(q, 'piece')}${word}`;
+}
 const knobs = (n: number) => (n <= 1.25 ? 'a knob' : `≈ ${formatQty(Math.round(n), 'piece')} knobs`);
 const handfuls = (n: number) => (n <= 1.25 ? 'a handful' : `≈ ${formatQty(half(n), 'piece')} handfuls`);
 

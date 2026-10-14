@@ -420,6 +420,21 @@ export function findSwaps(query: string, list: Swappable[] = SWAPS): Swappable[]
 		.map(([s]) => s);
 }
 
+/**
+ * The other way round: entries where what was typed is one of the swaps, so a cook with
+ * yogurt in the fridge finds that it stands in for buttermilk. Only the matching swaps are
+ * kept, and entries `findSwaps` already lists are left out.
+ */
+export function swapsUsing(query: string, list: Swappable[] = SWAPS): Swappable[] {
+	const q = parseTerm(query);
+	if (!q.length) return [];
+	const direct = new Set(findSwaps(query, list));
+	return list
+		.filter((s) => !direct.has(s))
+		.map((s) => ({ ...s, swaps: s.swaps.filter((w) => q.every((t) => startsAny(parseTerm(w.use), t))) }))
+		.filter((s) => s.swaps.length > 0);
+}
+
 /** Entries for what a recipe uses, in the recipe's order: a cook out of guanciale finds it first on carbonara. */
 export function swapsFor(recipe: Pick<Recipe, 'ingredients' | 'course'>, list: Swappable[] = SWAPS): Swappable[] {
 	const names = (s: Swappable) => [s.name, ...(s.aka ?? [])].map(parseTerm);

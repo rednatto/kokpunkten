@@ -6,10 +6,25 @@ import type { Amount } from './units';
 const ing = (key: string, role: string, name = key): Ingredient => ingredientSchema.parse({ id: 'i', key, role, name });
 const amt = (qty: number, unit: Unit): Amount => ({ qty, qtyMax: null, unit });
 
-describe('rough amounts (att höfta)', () => {
+describe('rough amounts', () => {
 	it('turns weights of produce into pieces', () => {
 		expect(roughAmount(ing('carrot', 'vegetable'), amt(140, 'g'))).toBe('≈ 2');
 		expect(roughAmount(ing('yellow-onion', 'allium'), amt(75, 'g'))).toBe('≈ ½');
+	});
+
+	it('counts cloves and bunches, and big counts in whole pieces', () => {
+		expect(roughAmount(ing('garlic', 'allium'), amt(15, 'g'))).toBe('≈ 3 cloves');
+		expect(roughAmount(ing('dill', 'herb'), amt(10, 'g'))).toBe('≈ ½ bunch');
+		expect(roughAmount(ing('cherry-tomatoes', 'vegetable'), amt(400, 'g'))).toBe('≈ 27');
+	});
+
+	it('finds piece weights for plural and qualified keys', () => {
+		expect(roughAmount(ing('carrots', 'vegetable'), amt(100, 'g'))).toBe('≈ 1 ½');
+		expect(roughAmount(ing('large-eggs', 'egg'), amt(100, 'g'))).toBe('≈ 2');
+		expect(roughAmount(ing('onion', 'allium'), amt(300, 'g'))).toBe('≈ 2');
+		expect(roughAmount(ing('green-onion', 'allium'), amt(30, 'g'))).toBe('≈ 2');
+		// A dried chili weighs next to nothing: no fresh-chili count for it.
+		expect(roughAmount(ing('dried-red-chili', 'chili'), amt(10, 'g'))).toBeNull();
 	});
 
 	it('uses portions, cans, knobs, handfuls and glasses', () => {
