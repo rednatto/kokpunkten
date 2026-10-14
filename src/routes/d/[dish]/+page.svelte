@@ -7,7 +7,7 @@
 	import { addRecipes, db, type StoredRecipe } from '#lib/db.ts';
 	import { DISH_NAMES } from '#lib/dish-names.ts';
 	import { showAmount } from '#lib/display.ts';
-	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, seasonedInSteps, type DiffRow, type DiffSlot } from '#lib/recipe/diff.ts';
+	import { baseValue, closestTo, diffRecipes, fromBase, rowMean, rowRange, rowValues, seasonedInSteps, sharedDimension, type DiffRow, type DiffSlot, type Dimension } from '#lib/recipe/diff.ts';
 	import { familyName } from '#lib/recipe/families.ts';
 	import { versionLabels, versionSource } from '#lib/recipe/labels.ts';
 	import { mixRecipe, roundAmount, type AmountSource } from '#lib/recipe/mix.ts';
@@ -63,11 +63,12 @@
 	}
 	/**
 	 * The spread across versions in one unit (0.25–2 tsp), with any amount that can't be
-	 * converted after it (1 lemon or 2 tbsp juice), else each distinct amount.
+	 * converted after it (1 lemon or 2 tbsp juice), else each distinct amount. `dim` puts rows
+	 * shown side by side in the same unit.
 	 */
-	function range(row: DiffRow): string {
-		const r = rowRange(row);
-		const left = r ? row.amounts.filter((a, v) => a?.qty != null && rowValues(row)!.values[v] == null && !row.outliers.includes(v)) : row.amounts;
+	function range(row: DiffRow, dim?: Dimension | null): string {
+		const r = rowRange(row, dim);
+		const left = r ? row.amounts.filter((a, v) => a?.qty != null && rowValues(row, dim)!.values[v] == null && !row.outliers.includes(v)) : row.amounts;
 		const others = [...new Set(left.map((a) => amount(row, a)).filter(Boolean))];
 		return [r ? rowAmount(row, r) : '', ...others].filter(Boolean).join(' or ');
 	}
@@ -218,13 +219,13 @@
 	});
 	const mix = $derived(mixed.mix);
 
-	// "Some add": the ingredients that make a difference stay in view, and the basics (salt,
-	// spices, oil) fold under the same headings as the table, so a big dish isn't 30 rows.
+	// "Some add": the ingredients that make a difference come first, and the basics (salt,
+	// spices, oil) go under the same headings as the table, each heading in one unit.
 	const extrasMain = $derived(diff?.extras.filter((r) => !basicGroup(r)) ?? []);
 	const extrasBasic = $derived(
 		tree.flatMap((g) => {
 			const rows = g.basic ? (diff?.extras ?? []).filter((r) => basicGroup(r) === g.title) : [];
-			return rows.length ? [{ title: g.title!, rows }] : [];
+			return rows.length ? [{ title: g.title!, rows, dim: sharedDimension(rows) }] : [];
 		})
 	);
 	const whoUses = (row: DiffRow) => row.ingredients.flatMap((i, v) => (i ? [label(v)] : [])).join(', ');
@@ -347,6 +348,7 @@
 				<h2>{diff.slots.every((s) => s.pickOne) ? 'Pick one, or none' : 'Pick what goes in'}</h2>
 				<p class="muted small">Not every version has one of each. Tap a picked option again to leave it out.</p>
 				{#each diff.slots as slot (slot.role)}
+					{@const slotDim = sharedDimension(slot.options.map((o) => o.row))}
 					<div class="slot">
 						<span class="muted small">{roleName(slot.role)} · {slot.pickOne ? 'pick one' : 'pick any'}</span>
 						<div class="row options" role={slot.pickOne ? 'radiogroup' : 'group'} aria-label={roleName(slot.role)}>
@@ -354,8 +356,8 @@
 								{@const on = chosen.has(opt.row.key)}
 								<button class="option" class:on class:multi={!slot.pickOne} aria-pressed={on} onclick={() => pickOption(slot, opt.row.key)}>
 									<strong>{#if !slot.pickOne}<span class="tick" aria-hidden="true">{on ? '☑' : '☐'}</span>{/if}{opt.row.name}</strong>
-									<span class="small">{range(opt.row)}{@render far(opt.row)}</span>
-									<span class="small who">{opt.versions.map(label).join(', ')}</span>
+									<span class="small">{range(opt.row, slotDim)}{@render far(opt.row)}</span>
+									<span class="small who">{opt.versions.length} of {n}: {opt.versions.map(label).join(', ')}</span>
 								</button>
 							{/each}
 						</div>
@@ -363,12 +365,12 @@
 				{/each}
 			{/if}
 
-			{#snippet extra(row: DiffRow)}
+			{#snippet extra(row: DiffRow, dim: Dimension | null = null)}
 				<li>
 					<label class="row extra">
 						<input type="checkbox" checked={chosen.has(row.key)} onchange={() => toggleRow(row.key)} />
 						<span>
-							<strong class="amount">{range(row)}</strong> {row.name}
+							<strong class="amount">{range(row, dim)}</strong> {row.name}
 							{@render far(row)}
 							<span class="muted small">· {row.count} of {n}: {whoUses(row)}</span>
 						</span>
@@ -383,14 +385,14 @@
 					</ul>
 				{/if}
 				{#each extrasBasic as g (g.title)}
-					{@const picked = g.rows.filter((r) => chosen.has(r.key))}
-					<details class="basics">
+					{@const picked = g.rows.filter((r) => chosen.has(r.key)).length}
+					<details class="basics" open>
 						<summary>
 							<strong>{g.title}</strong>
-							<span class="muted small">· {picked.length ? `${picked.map((r) => r.name).join(', ')} in` : 'none in'}, {g.rows.length} to choose from</span>
+							<span class="muted small">· {picked} of {g.rows.length} picked</span>
 						</summary>
 						<ul class="plain">
-							{#each g.rows as row (row.key)}{@render extra(row)}{/each}
+							{#each g.rows as row (row.key)}{@render extra(row, g.dim)}{/each}
 						</ul>
 					</details>
 				{/each}

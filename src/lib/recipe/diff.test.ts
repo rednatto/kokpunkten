@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { amountRange, closestVersion, diffRecipes, rowMean, rowRange, seasonedInSteps } from './diff';
+import { amountRange, closestVersion, diffRecipes, rowMean, rowRange, seasonedInSteps, sharedDimension } from './diff';
 import { recipeSchema } from './schema';
 import { sampleRecipe } from './sample';
 
@@ -72,6 +72,27 @@ describe('rowRange', () => {
 	it('turns grams of garlic into cloves when most versions count cloves', () => {
 		const r = rowRange(row('garlic', [[2, 'clove'], [4, 'clove'], [15, 'g']]))!;
 		expect(r).toEqual({ unit: 'clove', qty: 2, qtyMax: 4 });
+	});
+});
+
+describe('sharedDimension', () => {
+	const row = (key: string, amounts: ([number, string] | null)[]) => ({
+		key,
+		role: 'hard-cheese',
+		amounts: amounts.map((a) => (a ? ({ qty: a[0], qtyMax: null, unit: a[1] } as never) : null)),
+		ingredients: amounts.map((a) => (a ? ({ id: 'x', key, name: key, role: 'hard-cheese' } as never) : null))
+	});
+
+	it('shows cheeses side by side in grams, not millilitres and grams', () => {
+		const parmesan = row('parmesan', [[1, 'cup'], null, null]);
+		const pecorino = row('pecorino-romano', [null, [70, 'g'], [50, 'g']]);
+		const dim = sharedDimension([parmesan, pecorino]);
+		expect(dim).toBe('mass');
+		expect(rowRange(parmesan, dim)?.unit).toBe('g');
+	});
+
+	it('gives up when a row would lose an amount', () => {
+		expect(sharedDimension([row('mystery-thing', [[1, 'cup'], null]), row('other-thing', [null, [70, 'g']])])).toBeNull();
 	});
 });
 

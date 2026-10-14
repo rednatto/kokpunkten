@@ -21,25 +21,34 @@ export interface TreeGroup {
 /**
  * Headings for supporting ingredients, which always go at the bottom. An ingredient's
  * key decides first, since recipes tag roles unevenly (lemon zest as "acid", orange zest
- * as "aromatic"); the role tag is the fallback.
+ * as "aromatic") and imported ones often have none; the role tag is the fallback. The
+ * first heading whose keys match wins, so chili oil is oil and cayenne pepper is chili.
  */
 const BASICS: { title: string; keys: RegExp; roles: string[] }[] = [
-	{ title: 'Onion and garlic', keys: /^(garlic|garlic-cloves|.*onions?|shallots?|leeks?|scallions?|spring-onions?)$/, roles: ['allium'] },
+	{ title: 'Onion and garlic', keys: /^(garlic|garlic-cloves?|.*onions?|shallots?|leeks?|scallions?|spring-onions?)$/, roles: ['allium'] },
 	{ title: 'Zest, ginger and aromatics', keys: /(zest|peel|^ginger|lemongrass|galangal)$/, roles: ['aromatic'] },
 	{ title: 'Oil and fat', keys: /(-oil|^butter|^ghee|^lard|-fat)$/, roles: ['fat'] },
-	{ title: 'Salt, pepper and spices', keys: /(salt|pepper|peppercorns|^cumin|^paprika|^cinnamon|^nutmeg|^cloves)$/, roles: ['salt', 'seasoning', 'spice'] },
-	{ title: 'Herbs and garnish', keys: /(parsley|cilantro|coriander-leaves|basil|dill|chives|mint|thyme|oregano|rosemary|sage|tarragon|bay-leaf|bay-leaves)$/, roles: ['herb', 'garnish'] },
+	{
+		title: 'Chili',
+		keys: /(^|-)(chili|cayenne|jalapenos?|serranos?|habaneros?|scotch-bonnets?|gochugaru|aleppo-pepper|red-pepper-flakes?|pepper-flakes?|crushed-red-peppers?|hot-sauce|hot-pepper-sauce)(-|$)/,
+		roles: ['chili']
+	},
+	{ title: 'Salt, pepper and spices', keys: /(salt|pepper|peppercorns?|^cumin|^paprika|^cinnamon|^nutmeg|^cloves)(-powder)?$/, roles: ['salt', 'seasoning', 'spice'] },
+	{ title: 'Herbs and garnish', keys: /(parsley|cilantro|coriander-leaves|basil|dill|chives|mint|thyme|oregano|rosemary|sage|tarragon|bay-leaf|bay-leaves)(-flakes?|-leaves|-sprigs?)?$/, roles: ['herb', 'garnish'] },
 	{ title: 'Acid', keys: /(juice|vinegar)$/, roles: ['acid'] },
 	{ title: 'Stock, wine and liquids', keys: /(stock|broth|wine|water)$/, roles: ['stock', 'liquid', 'wine'] },
-	{ title: 'Sweeteners', keys: /(sugar|honey|syrup)$/, roles: ['sweetener'] },
-	{ title: 'Chili', keys: /(chili|chilies|chiles|chili-flakes|cayenne)$/, roles: ['chili'] }
+	{ title: 'Sweeteners', keys: /(sugar|honey|syrup)$/, roles: ['sweetener'] }
 ];
+
+/** Chili however a recipe spells it (chilli, chilies, chiles, chilly) reads as "chili". */
+const looseKey = (key: string) => key.replace(/(^|-)chil{1,2}(?:i|y|e)?(?:e?s)?(?=-|$)/g, '$1chili');
 
 /** The basics heading a row belongs under, or null for a main ingredient. */
 export function basicGroup(row: Pick<DiffRow, 'key' | 'role'>): string | null {
 	// Peppers that are vegetables (bell peppers) are not seasoning.
 	if (/bell-pepper|sweet-pepper/.test(row.key)) return null;
-	return BASICS.find((b) => b.keys.test(row.key))?.title ?? BASICS.find((b) => b.roles.includes(row.role))?.title ?? null;
+	const key = looseKey(row.key);
+	return BASICS.find((b) => b.keys.test(key))?.title ?? BASICS.find((b) => b.roles.includes(row.role))?.title ?? null;
 }
 
 const roleTitle = (role: string) => role.charAt(0).toUpperCase() + role.slice(1).replaceAll('-', ' ');
