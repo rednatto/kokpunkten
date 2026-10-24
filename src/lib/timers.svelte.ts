@@ -4,9 +4,10 @@
  */
 
 export interface StepTimer {
-	/** `${recipeId}:${stepId}` — one timer per step. */
+	/** `${recipeId}:${stepId}` — one timer per step — or `kitchen:…` for a timer of the cook's own. */
 	key: string;
-	recipeId: string;
+	/** null for a timer started from the tools, not from a recipe step. */
+	recipeId: string | null;
 	/** Recipe title and step number, so the indicator can say which timer this is. */
 	title: string;
 	step: number;
@@ -30,7 +31,7 @@ export const secondsLeft = (t: StepTimer) => Math.max(0, Math.round((t.endsAt - 
 export const isDone = (t: StepTimer) => clock.now >= t.endsAt;
 export const formatSeconds = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
-export function startTimer(t: Omit<StepTimer, 'key' | 'endsAt'> & { stepId: string }) {
+export function startTimer(t: Omit<StepTimer, 'key' | 'endsAt' | 'recipeId'> & { recipeId: string; stepId: string }) {
 	unlockAudio();
 	const key = timerKey(t.recipeId, t.stepId);
 	const next: StepTimer = {
@@ -45,6 +46,13 @@ export function startTimer(t: Omit<StepTimer, 'key' | 'endsAt'> & { stepId: stri
 	const i = timers.findIndex((x) => x.key === key);
 	if (i >= 0) timers[i] = next;
 	else timers.push(next);
+	changed();
+}
+
+/** A timer of the cook's own, not tied to a recipe step. */
+export function startKitchenTimer(minutes: number) {
+	unlockAudio();
+	timers.push({ key: `kitchen:${Date.now()}`, recipeId: null, title: `${minutes} min timer`, step: 0, minutes, endsAt: Date.now() + Math.round(minutes * 60) * 1000 });
 	changed();
 }
 

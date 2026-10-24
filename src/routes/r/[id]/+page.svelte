@@ -3,7 +3,6 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
-	import { onDestroy } from 'svelte';
 	import { db, deleteRecipes, dishNames, updateRecipe, type StoredRecipe } from '#lib/db.ts';
 	import { dishName } from '#lib/dish-names.ts';
 	import DishName from '#lib/components/DishName.svelte';
@@ -14,8 +13,7 @@
 	import { settings } from '#lib/settings.svelte.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
 	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
-	import UnitControls from '#lib/components/UnitControls.svelte';
-	import KitchenHelp from '#lib/components/KitchenHelp.svelte';
+	import { showingRecipes } from '#lib/tools.svelte.ts';
 	import { progress, setServings, toggleDone, toggleHave } from '#lib/cooking.svelte.ts';
 	import Timer from './Timer.svelte';
 
@@ -78,28 +76,8 @@
 		return settings.stepAmounts ? stepInputLabel(ing, inputs.get(step.id)?.get(ref), factor) : { amount: '', name: ing.name };
 	}
 
-	// Keep the screen on while cooking, where the browser supports it.
-	let wakeLock: WakeLockSentinel | null = null;
-	let awake = $state(false);
-	async function toggleAwake() {
-		if (wakeLock) {
-			await wakeLock.release();
-			wakeLock = null;
-			awake = false;
-			return;
-		}
-		try {
-			wakeLock = await navigator.wakeLock.request('screen');
-			awake = true;
-			wakeLock.addEventListener('release', () => {
-				wakeLock = null;
-				awake = false;
-			});
-		} catch {
-			awake = false;
-		}
-	}
-	onDestroy(() => wakeLock?.release());
+	// The header's swaps start with this recipe's ingredients.
+	$effect(() => (recipe ? showingRecipes([recipe], "this recipe's") : undefined));
 
 	let saveError = $state('');
 	async function update(changes: Partial<{ favorite: boolean; rating: number | null; note: string }>) {
@@ -116,14 +94,6 @@
 		if (!confirm('Delete this recipe from this device?')) return;
 		await deleteRecipes([id]);
 		await goto(resolve('/'));
-	}
-
-	// Swaps and weights open over the recipe, so its timers and checkmarks stay put.
-	let helpDialog = $state<HTMLDialogElement>();
-	let helpTab = $state<'swaps' | 'weights'>('swaps');
-	function openHelp(t: 'swaps' | 'weights') {
-		helpTab = t;
-		helpDialog?.showModal();
 	}
 </script>
 
@@ -165,24 +135,9 @@
 			<span><strong>{servings}</strong> servings</span>
 			<button class="ghost small" onclick={() => setServings(id, (servings ?? 0) + 1)} aria-label="More servings">+</button>
 		</div>
-		<UnitControls />
-		{#if 'wakeLock' in navigator}
-			<button class="ghost small" class:on={awake} onclick={toggleAwake}>{awake ? 'Screen stays on' : 'Keep screen on'}</button>
-		{/if}
 	</div>
 
-	<div class="row ing-head">
-		<h2>Ingredients</h2>
-		<button class="ghost small" onclick={() => openHelp('swaps')}>Swaps</button>
-		<button class="ghost small" onclick={() => openHelp('weights')}>Weights</button>
-	</div>
-	<dialog bind:this={helpDialog} class="help" closedby="any" aria-label="Swaps and weights">
-		<div class="help-head">
-			<strong>Swaps &amp; weights</strong>
-			<button class="ghost small" onclick={() => helpDialog?.close()} aria-label="Close">✕</button>
-		</div>
-		<KitchenHelp bind:tab={helpTab} {recipe} />
-	</dialog>
+	<h2>Ingredients</h2>
 	<ul class="checklist">
 		{#each recipe.ingredients as ing, n (ing.id)}
 			{@const amt = amountFor(ing)}
@@ -289,29 +244,6 @@
 	}
 	.ing-head h2 {
 		margin-right: auto;
-	}
-	.help {
-		width: min(40rem, calc(100vw - 1rem));
-		max-height: calc(100dvh - 2rem);
-		padding: 0.75rem 1rem 1.5rem;
-		border: 1px solid var(--line);
-		border-radius: 0.8rem;
-		background: var(--bg);
-		color: var(--fg);
-	}
-	.help::backdrop {
-		background: rgb(0 0 0 / 0.45);
-	}
-	.help-head {
-		position: sticky;
-		top: -0.75rem;
-		z-index: 1;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin: -0.75rem -1rem 0;
-		padding: 0.75rem 1rem 0.25rem;
-		background: var(--bg);
 	}
 	.meta {
 		margin: 0 0 0.75rem;
