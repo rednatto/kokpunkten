@@ -3,7 +3,6 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { liveQuery } from 'dexie';
-	import UnitControls from '#lib/components/UnitControls.svelte';
 	import DishName from '#lib/components/DishName.svelte';
 	import { addRecipes, db, dishNames, type StoredRecipe } from '#lib/db.ts';
 	import { dishName } from '#lib/dish-names.ts';
@@ -16,6 +15,7 @@
 	import type { Amount } from '#lib/recipe/units.ts';
 	import { scrollFade } from '#lib/scroll-fade.ts';
 	import { settings } from '#lib/settings.svelte.ts';
+	import { showingRecipes } from '#lib/tools.svelte.ts';
 
 	const dish = $derived(page.params.dish!);
 
@@ -36,6 +36,8 @@
 	let servings = $state<number | null>(null);
 	const versions = $derived(rows?.map((r) => r.recipe) ?? []);
 	const n = $derived(versions.length);
+	// The header's swaps start with what these versions use.
+	$effect(() => (n ? showingRecipes(versions, "this dish's") : undefined));
 	const name = $derived(dishName(dish, versions.map((v) => v.title), $dishNames));
 	const diff = $derived(n ? diffRecipes(versions, servings ?? versions[0].servings) : null);
 	const labels = $derived(versionLabels(versions));
@@ -319,7 +321,6 @@
 			<span><strong>{diff.servings}</strong> servings</span>
 			<button class="ghost small" onclick={() => (servings = diff.servings + 1)} aria-label="More servings">+</button>
 		</div>
-		<UnitControls />
 	</div>
 
 	<div class="tabs" role="tablist" aria-label="Comparison design">

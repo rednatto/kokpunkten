@@ -6,17 +6,27 @@
 	import { formatQty } from '#lib/recipe/units.ts';
 
 	let {
-		tab = $bindable('swaps'),
-		recipe
+		tab,
+		recipes = [],
+		scope = "this recipe's"
 	}: {
-		tab?: 'swaps' | 'weights';
-		/** The recipe open behind the dialog: swaps start with what it uses. */
-		recipe?: Recipe;
+		tab: 'swaps' | 'weights';
+		/** The recipes open behind the dialog: swaps start with what they use. */
+		recipes?: Pick<Recipe, 'ingredients' | 'course'>[];
+		scope?: string;
 	} = $props();
 
 	let query = $state('');
-	const forRecipe = $derived(recipe ? swapsFor(recipe) : []);
+	// Several versions of a dish count as one recipe with all their ingredients, in order.
+	const forRecipe = $derived(
+		recipes.length ? swapsFor({ ingredients: recipes.flatMap((r) => r.ingredients), course: [...new Set(recipes.flatMap((r) => r.course))] }) : []
+	);
 	let showAll = $state(false);
+	// Another page behind the dialog starts with its own swaps again.
+	$effect.pre(() => {
+		void recipes;
+		showAll = false;
+	});
 	/** Over a recipe, its own swaps until the cook searches or asks for all of them. */
 	const recipeOnly = $derived(!showAll && !query.trim() && forRecipe.length > 0);
 	const swaps = $derived(recipeOnly ? forRecipe : findSwaps(query));
@@ -56,17 +66,16 @@
 	const unitLabel = (u: InputUnit) => (u === 'each' ? (item.eachUnit === 'piece' ? 'pieces' : `${item.eachUnit === 'bunch' ? 'bunches' : `${item.eachUnit}s`}`) : u);
 </script>
 
-<div class="tabs" role="tablist" aria-label="Kitchen help">
-	<button role="tab" aria-selected={tab === 'swaps'} class:active={tab === 'swaps'} onclick={() => (tab = 'swaps')}>Swaps</button>
-	<button role="tab" aria-selected={tab === 'weights'} class:active={tab === 'weights'} onclick={() => (tab = 'weights')}>Weights</button>
-</div>
-
 <input type="search" bind:value={query} placeholder={tab === 'swaps' ? 'Out of it, or have it? e.g. buttermilk, yogurt' : 'Ingredient, e.g. flour, potato'} aria-label="Ingredient" autocapitalize="off" />
 
 {#if tab === 'swaps'}
 	{#if recipeOnly}
 		<p class="muted small scope">
-			For this recipe's ingredients · <button class="link" onclick={() => (showAll = true)}>Show all swaps</button>
+			For {scope} ingredients · <button class="link" onclick={() => (showAll = true)}>Show all swaps</button>
+		</p>
+	{:else if showAll && !query.trim() && forRecipe.length}
+		<p class="muted small scope">
+			All swaps · <button class="link" onclick={() => (showAll = false)}>Only {scope} ingredients</button>
 		</p>
 	{/if}
 	{#snippet card(s: Swappable)}
@@ -168,26 +177,6 @@
 {/if}
 
 <style>
-	.tabs {
-		display: flex;
-		margin: 0.5rem 0;
-		border: 1px solid var(--line);
-		border-radius: 0.6rem;
-		overflow: hidden;
-	}
-	.tabs button {
-		flex: 1;
-		justify-content: center;
-		font-weight: 500;
-		border: none;
-		border-radius: 0;
-		background: transparent;
-		color: var(--fg);
-	}
-	.tabs button.active {
-		background: var(--accent);
-		color: var(--accent-fg);
-	}
 	.scope {
 		margin: 0.25rem 0 0.5rem;
 	}

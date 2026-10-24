@@ -5,7 +5,8 @@ Recipes, straight to the point. A mobile-first web app with no life stories: jus
 ## What works now
 
 - **Add recipes through your own AI assistant.** The app builds a prompt for a dish (or a URL or book page). You paste the assistant's JSON answer back in, and the app validates it with clear, per-field errors.
-- **Cooking view:** scale servings, switch units (metric, US cups, rough) and fractions or decimals, check off ingredients and steps, run step timers, and keep the screen awake.
+- **Cooking view:** scale servings, check off ingredients and steps, and run step timers.
+- **Kitchen tools in the header, on every page:** swaps (a recipe's own first), weights, units (metric, US cups, rough) and fractions or decimals, timers of your own next to the running step timers, and keeping the screen awake.
 - **Compare versions of a dish:** merge them into your own mix (common ingredients, pick-one choices, extras), see every amount side by side in a table, or list what each version changes against another.
 - **Step diagram:** a flow, timeline or tree view of a recipe's steps, built from `steps[].uses`.
 - **Cook with what you have:** list a few ingredients (falukorv, potatis) to get the recipes that use them, the ones that use all of them first, with what else each needs.

@@ -1,25 +1,32 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import { openTools } from '#lib/tools.svelte.ts';
 	import { formatSeconds, isDone, secondsLeft, stopTimer, timers } from '#lib/timers.svelte.ts';
 
 	const running = $derived(timers.filter((t) => !isDone(t)));
 	const finished = $derived(timers.filter(isDone));
-	const here = (recipeId: string) => page.params.id === recipeId;
+	const here = (recipeId: string | null) => page.params.id === recipeId;
 </script>
 
 {#if running.length}
-	<!-- Running timers stay in the header on every page, linking back to their recipe. -->
+	<!-- Running timers stay in the header on every page, linking back to their recipe, or to the timers tool. -->
 	<nav class="tray" aria-label="Running timers">
 		{#each running as t (t.key)}
-			<a
-				href={resolve('/r/[id]', { id: t.recipeId })}
-				class="chip"
-				aria-label="{t.title}, step {t.step}: {formatSeconds(secondsLeft(t))} left"
-				title="{t.title}, step {t.step}"
-			>
-				⏱ <span class="step">{t.step}</span> · <span class="time">{formatSeconds(secondsLeft(t))}</span>
-			</a>
+			{#if t.recipeId}
+				<a
+					href={resolve('/r/[id]', { id: t.recipeId })}
+					class="chip"
+					aria-label="{t.title}, step {t.step}: {formatSeconds(secondsLeft(t))} left"
+					title="{t.title}, step {t.step}"
+				>
+					⏱ <span class="step">{t.step}</span> · <span class="time">{formatSeconds(secondsLeft(t))}</span>
+				</a>
+			{:else}
+				<button class="chip" onclick={() => openTools('timers')} aria-label="{t.title}: {formatSeconds(secondsLeft(t))} left" title={t.title}>
+					⏱ <span class="time">{formatSeconds(secondsLeft(t))}</span>
+				</button>
+			{/if}
 		{/each}
 	</nav>
 {/if}
@@ -31,9 +38,11 @@
 			<div class="alarm">
 				<span>
 					⏰ {t.minutes} min timer done
-					<small>
-						{#if here(t.recipeId)}step {t.step}{:else}<a href={resolve('/r/[id]', { id: t.recipeId })}>{t.title}, step {t.step}</a>{/if}
-					</small>
+					{#if t.recipeId}
+						<small>
+							{#if here(t.recipeId)}step {t.step}{:else}<a href={resolve('/r/[id]', { id: t.recipeId })}>{t.title}, step {t.step}</a>{/if}
+						</small>
+					{/if}
 				</span>
 				<button onclick={() => stopTimer(t.key)}>OK</button>
 			</div>
@@ -64,6 +73,7 @@
 		text-decoration: none;
 		font-weight: 700;
 		font-size: 0.9rem;
+		background: transparent;
 	}
 	.time {
 		font-variant-numeric: tabular-nums;

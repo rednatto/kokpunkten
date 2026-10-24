@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { page } from '$app/state';
 	import favicon from '#lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
 	import { syncLibrary, syncing } from '#lib/library.ts';
 	import { dbProblem, openDb, resetDb } from '#lib/db.ts';
 	import TimerTray from '#lib/components/TimerTray.svelte';
+	import Tools from '#lib/components/Tools.svelte';
+	import { openTools } from '#lib/tools.svelte.ts';
+	import { wake } from '#lib/wake.svelte.ts';
 	import type { LayoutProps } from './$types';
 	import './app.css';
 
@@ -36,13 +38,15 @@
 	<a href={resolve('/')} class="brand">Kokpunkten</a>
 	<TimerTray />
 	<div class="row">
-		<!-- A recipe has its own Swaps and Weights buttons, which open over it and know its ingredients. -->
-		{#if page.route.id !== '/r/[id]'}
-			<a href={resolve('/kitchen')} class="button ghost small" aria-label="Swaps and weights">⚖<span class="wide">&nbsp;Swaps &amp; weights</span></a>
-		{/if}
+		<!-- One menu on every page for swaps, weights, units, the screen and timers; it opens over the page, so checkmarks and timers stay put. -->
+		<button class="ghost small" onclick={() => openTools()} aria-label="Kitchen tools: swaps, weights, units, timers{wake.awake ? ', screen stays on' : ''}">
+			⚖<span class="wide">&nbsp;Tools</span>{#if wake.awake}<span class="sun" aria-hidden="true">☀</span>{/if}
+		</button>
 		<a href={resolve('/add')} class="button small">+ Add</a>
 	</div>
 </header>
+
+<Tools />
 
 <main>
 	{#if $dbProblem}
@@ -77,9 +81,13 @@
 	.bar > .row {
 		flex: none;
 	}
-	/* On a phone the timer chips need the room, so the lookup link shrinks to its icon. */
+	.sun {
+		margin-left: 0.2rem;
+		font-size: 0.8rem;
+	}
+	/* On a phone running timer chips need the room, so the tools button shrinks to its icon. */
 	@media (max-width: 30rem) {
-		.wide {
+		.bar:has(:global(.tray)) .wide {
 			display: none;
 		}
 	}

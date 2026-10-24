@@ -1,19 +1,14 @@
 <script lang="ts">
-	import { replaceState } from '$app/navigation';
+	import { resolve } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
-	import KitchenHelp from '#lib/components/KitchenHelp.svelte';
+	import { onMount } from 'svelte';
+	import { openTools } from '#lib/tools.svelte.ts';
 
-	/** The open tab lives in the URL (?tab=weights), so each can be bookmarked. */
-	let tab = $state<'swaps' | 'weights'>(page.url.searchParams.get('tab') === 'weights' ? 'weights' : 'swaps');
-	$effect(() => {
-		const url = new URL(page.url.href);
-		if (url.searchParams.get('tab') === tab || (tab === 'swaps' && !url.searchParams.has('tab'))) return;
-		url.searchParams.set('tab', tab);
-		replaceState(url, {});
+	// Swaps and weights live in the header's tools now; old links (?tab=weights) open them over the recipe list.
+	onMount(async () => {
+		const tab = page.url.searchParams.get('tab') === 'weights' ? 'weights' : 'swaps';
+		await goto(resolve('/'), { replaceState: true });
+		openTools(tab);
 	});
 </script>
-
-<h1>Swaps &amp; weights</h1>
-<p class="muted small">What to use when you're out of something, and what things weigh.</p>
-<KitchenHelp bind:tab />
-
