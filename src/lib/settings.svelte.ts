@@ -9,10 +9,12 @@ export interface Settings {
 	diagramView: 'flow' | 'timeline' | 'tree';
 	/** Show each step's whole text in the diagram instead of a short label. */
 	diagramFull: boolean;
+	/** Show how much of each ingredient goes in at each step, in the step list and the diagram. */
+	stepAmounts: boolean;
 }
 
 const KEY = 'kokpunkten.settings';
-const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge', diagramView: 'flow', diagramFull: false };
+const defaults: Settings = { units: 'metric', numbers: 'fraction', compareView: 'merge', diagramView: 'flow', diagramFull: false, stepAmounts: true };
 
 function load(): Settings {
 	try {

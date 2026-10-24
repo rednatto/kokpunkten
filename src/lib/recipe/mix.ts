@@ -1,6 +1,7 @@
 import { baseValue, COMBINED_ROLES, fromBase, rowMean, rowValues, type DiffRow, type RecipeDiff } from './diff.ts';
 import { gramsPerMl, PIECE_GRAMS } from './measures.ts';
 import { recipeSchema, type Ingredient, type Recipe, type Step } from './schema.ts';
+import { shareOf } from './step-amounts.ts';
 import { basicGroup } from './table-tree.ts';
 import type { Amount } from './units.ts';
 
@@ -83,7 +84,13 @@ export function mixRecipe(diff: RecipeDiff, choice: MixChoice): { recipe: Recipe
 			const mapped = newId.get(`${v}:${u}`) ?? stepId.get(`${v}:${u}`) ?? (v === base ? replaced.get(`${v}:${u}`)?.id : undefined);
 			return mapped ? [mapped] : [];
 		});
-		steps.push({ ...step, id, uses: [...new Set(uses)], ...extra });
+		// A step's share of a shared ingredient carries over to the mix's amount of it.
+		const amounts = step.amounts.flatMap((a) => {
+			const to = ingredients.find((i) => i.id === newId.get(`${v}:${a.ingredient}`));
+			const from = diff.versions[v].ingredients.find((i) => i.id === a.ingredient);
+			return to && from ? (shareOf(a, from, to) ?? []) : [];
+		}).filter((a, n, all) => all.findIndex((b) => b.ingredient === a.ingredient) === n);
+		steps.push({ ...step, id, uses: [...new Set(uses)], amounts, ...extra });
 		return id;
 	};
 

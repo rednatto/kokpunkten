@@ -20,9 +20,9 @@ export const sampleRecipe = {
 	],
 	steps: [
 		{ id: 's1', text: 'Fry the guanciale over medium heat until the fat renders and the edges crisp.', uses: ['i1'], technique: ['render'], durationMin: 8, heat: 'medium' },
-		{ id: 's2', text: 'Whisk the yolks with most of the cheese and plenty of pepper.', uses: ['i2', 'i3', 'i5'], technique: ['whisk'] },
+		{ id: 's2', text: 'Whisk the yolks with most of the cheese and plenty of pepper.', uses: ['i2', 'i3', 'i5'], amounts: [{ ingredient: 'i3', qty: 45, unit: 'g' }], technique: ['whisk'] },
 		{ id: 's3', text: 'Boil the pasta in well-salted water until al dente. Save 2 dl of the pasta water.', uses: ['i4'], technique: ['boil'], durationMin: 10 },
-		{ id: 's4', text: 'Off the heat, toss the pasta with the pork and its fat, then the egg mixture. Loosen with pasta water until glossy.', uses: ['s1', 's2', 's3'], technique: ['emulsify', 'temper'], critical: 'Keep it below about 70 °C or the yolks scramble.' }
+		{ id: 's4', text: 'Off the heat, toss the pasta with the pork and its fat, then the egg mixture. Loosen with pasta water until glossy. Serve with the rest of the cheese.', uses: ['s1', 's2', 's3', 'i3'], technique: ['emulsify', 'temper'], critical: 'Keep it below about 70 °C or the yolks scramble.' }
 	],
 	notes: {
 		techniques: 'The sauce is an emulsion of rendered pork fat, starchy pasta water and egg yolk. The starch keeps it stable.',

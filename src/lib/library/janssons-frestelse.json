@@ -107,6 +107,12 @@
 					"i2",
 					"i3"
 				],
+				"amounts": [
+					{
+						"ingredient": "i3",
+						"qty": 20
+					}
+				],
 				"technique": [
 					"sweat"
 				],
