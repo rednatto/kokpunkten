@@ -20,6 +20,7 @@ Recipes, straight to the point. A mobile-first web app with no life stories: jus
 - `dish`: a shared slug that groups versions of the same dish.
 - `ingredients[].key` and `role`: a canonical name and the culinary slot the ingredient fills. These let versions be compared, for example guanciale and pancetta both fill `cured-pork`.
 - `steps[].uses`: the ingredients and earlier steps a step consumes. These form a dependency graph for a diagram view.
+- `steps[].amounts`: how much of a shared ingredient a step takes ("2 tbsp of the oil"). A step that is the only one using an ingredient takes all of it, and the one step left without an entry takes the rest. The steps and the diagram show these amounts, scaled to the servings.
 
 ## Open recipe datasets
 

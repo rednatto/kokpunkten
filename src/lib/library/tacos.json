@@ -691,6 +691,12 @@
 					"i10",
 					"i11"
 				],
+				"amounts": [
+					{
+						"ingredient": "i5",
+						"qty": 0.5
+					}
+				],
 				"technique": [
 					"simmer",
 					"blend"

@@ -6,9 +6,11 @@
 	import { db, deleteRecipes, dishNames, updateRecipe, type StoredRecipe } from '#lib/db.ts';
 	import { dishName } from '#lib/dish-names.ts';
 	import DishName from '#lib/components/DishName.svelte';
-	import { cuisineName, showAmount } from '#lib/display.ts';
+	import { cuisineName, showAmount, stepInputLabel } from '#lib/display.ts';
 	import { versionLabel, versionLabels, versionSource } from '#lib/recipe/labels.ts';
-	import type { Ingredient } from '#lib/recipe/schema.ts';
+	import type { Ingredient, Step } from '#lib/recipe/schema.ts';
+	import { stepInputs } from '#lib/recipe/step-amounts.ts';
+	import { settings } from '#lib/settings.svelte.ts';
 	import { ingredientAmount } from '#lib/recipe/units.ts';
 	import RecipeDiagram from '#lib/components/RecipeDiagram.svelte';
 	import { showingRecipes } from '#lib/tools.svelte.ts';
@@ -32,7 +34,8 @@
 	const recipe = $derived(row?.recipe);
 	const servings = $derived(mine.servings ?? recipe?.servings ?? null);
 	const factor = $derived(recipe && servings ? servings / recipe.servings : 1);
-	const ingName = $derived(new Map(recipe?.ingredients.map((i) => [i.id, i.name]) ?? []));
+	const ingById = $derived(new Map(recipe?.ingredients.map((i) => [i.id, i]) ?? []));
+	const inputs = $derived(recipe ? stepInputs(recipe) : new Map());
 	const stepNo = $derived(new Map(recipe?.steps.map((s, n) => [s.id, n + 1]) ?? []));
 
 	/** A tap on a step's text ticks it off; taps on its own controls, and selecting text, don't. */
@@ -66,8 +69,11 @@
 
 	const amountFor = (ing: Ingredient) => showAmount(ing, ingredientAmount(ing, factor));
 
-	function usesLabel(ref: string) {
-		return ingName.get(ref) ?? `step ${stepNo.get(ref)}`;
+	/** An entry of a step's "uses" line: an ingredient, with how much of it goes in when amounts are shown, or an earlier step. */
+	function usesLabel(step: Step, ref: string): { amount: string; name: string } {
+		const ing = ingById.get(ref);
+		if (!ing) return { amount: '', name: `step ${stepNo.get(ref)}` };
+		return settings.stepAmounts ? stepInputLabel(ing, inputs.get(step.id)?.get(ref), factor) : { amount: '', name: ing.name };
 	}
 
 	// The header's swaps start with this recipe's ingredients.
@@ -153,11 +159,14 @@
 		{/each}
 	</ul>
 
-	<h2>Steps</h2>
+	<div class="row ing-head">
+		<h2>Steps</h2>
+		<label class="toggle"><input type="checkbox" bind:checked={settings.stepAmounts} /> Show amounts</label>
+	</div>
 	{#if recipe.steps.length > 1}
 		<details class="diagram">
 			<summary>Diagram</summary>
-			<RecipeDiagram {recipe} done={doneStep} ontoggle={(sid) => toggleDone(id, sid)} />
+			<RecipeDiagram {recipe} {factor} done={doneStep} ontoggle={(sid) => toggleDone(id, sid)} />
 		</details>
 	{/if}
 	<ol class="steps">
@@ -174,7 +183,11 @@
 					<div class="row tags">
 						{#if step.heat}<span class="tag">{step.heat} heat</span>{/if}
 						{#if step.tempC}<span class="tag">{step.tempC} °C</span>{/if}
-						{#if step.uses.length}<span class="muted uses">uses {step.uses.map(usesLabel).join(', ')}</span>{/if}
+						{#if step.uses.length}
+							<span class="muted uses">uses
+								{#each step.uses.map((u) => usesLabel(step, u)) as u, n}{#if n}{', '}{/if}{#if u.amount}<strong class="step-amount">{u.amount}</strong>{' '}{/if}{u.name}{/each}
+							</span>
+						{/if}
 					</div>
 					{#if step.durationMin}<Timer recipeId={id} stepId={step.id} title={recipe.title} step={stepNo.get(step.id) ?? 0} minutes={step.durationMin} maxMinutes={step.durationMaxMin} />{/if}
 				</div>
@@ -226,6 +239,12 @@
 {/if}
 
 <style>
+	.ing-head {
+		align-items: baseline;
+	}
+	.ing-head h2 {
+		margin-right: auto;
+	}
 	.meta {
 		margin: 0 0 0.75rem;
 	}
@@ -239,6 +258,26 @@
 	}
 	.hint {
 		font-size: 0.85rem;
+	}
+	.toggle {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.85rem;
+	}
+	.toggle input {
+		width: 1.1rem;
+		height: 1.1rem;
+		margin: 0;
+		accent-color: var(--accent);
+	}
+	.step-amount {
+		color: var(--fg);
+		font-weight: 600;
+		white-space: nowrap;
+	}
+	.done .step-amount {
+		color: var(--done);
 	}
 	.checklist,
 	.steps {

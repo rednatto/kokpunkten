@@ -93,6 +93,8 @@ export interface TreeCell {
 	/** A blank fills the ingredient columns beside a step that adds nothing, so the grid has no holes. */
 	kind: 'ingredient' | 'step' | 'blank';
 	ingredient?: Ingredient;
+	/** The step an ingredient cell goes into, by id. */
+	into?: string;
 	step?: GraphStep;
 	row: number;
 	rowSpan: number;
@@ -123,7 +125,7 @@ export function tree(graph: GraphStep[]): { cells: TreeCell[]; rows: number; col
 	const place = (g: GraphStep, endCol: number) => {
 		const first = row;
 		for (const c of children(g)) place(c, h(g));
-		for (const ing of g.adds) cells.push({ kind: 'ingredient', ingredient: ing, row: row++, rowSpan: 1, col: 0, colSpan: h(g) });
+		for (const ing of g.adds) cells.push({ kind: 'ingredient', ingredient: ing, into: g.step.id, row: row++, rowSpan: 1, col: 0, colSpan: h(g) });
 		// A step with no inputs still needs a row, with a blank where its ingredients would be.
 		if (row === first) cells.push({ kind: 'blank', row: row++, rowSpan: 1, col: 0, colSpan: h(g) });
 		cells.push({ kind: 'step', step: g, row: first, rowSpan: row - first, col: h(g), colSpan: endCol - h(g) });

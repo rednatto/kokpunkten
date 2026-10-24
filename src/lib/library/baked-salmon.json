@@ -262,6 +262,13 @@
 					"i2",
 					"i3"
 				],
+				"amounts": [
+					{
+						"ingredient": "i2",
+						"qty": 2,
+						"unit": "tbsp"
+					}
+				],
 				"technique": [
 					"season"
 				],

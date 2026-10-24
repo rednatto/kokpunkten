@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { formatMinutes } from '#lib/display.ts';
+	import { formatMinutes, stepInputLabel } from '#lib/display.ts';
 	import { layers, schedule, stepGraph, stepLabel, tree } from '#lib/recipe/graph.ts';
-	import type { Recipe } from '#lib/recipe/schema.ts';
+	import type { Ingredient, Recipe } from '#lib/recipe/schema.ts';
+	import { stepInputs } from '#lib/recipe/step-amounts.ts';
 	import { settings } from '#lib/settings.svelte.ts';
 
-	let { recipe, done, ontoggle }: { recipe: Recipe; done: Set<string>; ontoggle: (stepId: string) => void } = $props();
+	let { recipe, factor = 1, done, ontoggle }: { recipe: Recipe; factor?: number; done: Set<string>; ontoggle: (stepId: string) => void } = $props();
 
 	const graph = $derived(stepGraph(recipe));
 	const rows = $derived(layers(graph));
@@ -12,7 +13,9 @@
 	const table = $derived(tree(graph));
 	const sequential = $derived(plan.steps.reduce((sum, s) => sum + (s.end - s.start), 0));
 	const label = (step: Recipe['steps'][number], max?: number) => (settings.diagramFull ? step.text : stepLabel(step, max));
-	const names = (ings: { name: string }[]) => ings.map((i) => i.name).join(' · ');
+	const inputs = $derived(stepInputs(recipe));
+	/** An ingredient going into a step, with how much of it when amounts are shown. */
+	const input = (stepId: string, ing: Ingredient) => (settings.stepAmounts ? stepInputLabel(ing, inputs.get(stepId)?.get(ing.id), factor) : { amount: '', name: ing.name });
 
 	// --- Flow: cards in rows by depth, joined by curves measured from the rendered cards.
 	let box = $state<HTMLDivElement>();
@@ -45,6 +48,8 @@
 	$effect(() => {
 		void graph;
 		void settings.diagramFull;
+		void settings.stepAmounts;
+		void factor;
 		if (settings.diagramView !== 'flow' || !box) return;
 		const ro = new ResizeObserver(measure);
 		ro.observe(box);
@@ -61,6 +66,10 @@
 	const ticks = $derived(Array.from({ length: Math.floor(plan.total / tick) + 1 }, (_, n) => n * tick));
 	const pct = (min: number) => `${(min / (plan.total || 1)) * 100}%`;
 </script>
+
+{#snippet adds(stepId: string, ings: Ingredient[])}
+	<span class="adds">+ {#each ings as ing, n (ing.id)}{@const u = input(stepId, ing)}{#if n}{' · '}{/if}{#if u.amount}<strong>{u.amount}</strong>{' '}{/if}{u.name}{/each}</span>
+{/snippet}
 
 <div class="tabs" role="tablist" aria-label="Diagram design">
 	{#each [['flow', 'Flow'], ['timeline', 'Timeline'], ['tree', 'Tree']] as const as [value, name]}
@@ -91,7 +100,7 @@
 					<button class="node" class:done={done.has(g.step.id)} data-step={g.step.id} onclick={() => ontoggle(g.step.id)} aria-pressed={done.has(g.step.id)}>
 						<span class="no">{done.has(g.step.id) ? '✓' : g.no}</span>
 						<span class="label">{label(g.step)}</span>
-						{#if g.adds.length}<span class="adds">+ {names(g.adds)}</span>{/if}
+						{#if g.adds.length}{@render adds(g.step.id, g.adds)}{/if}
 						{#if g.step.durationMin || g.step.heat}
 							<span class="meta">{[g.step.durationMin && formatMinutes(g.step.durationMin, g.step.durationMaxMin), g.step.heat && `${g.step.heat} heat`].filter(Boolean).join(' · ')}</span>
 						{/if}
@@ -112,6 +121,7 @@
 		{#each plan.steps as s (s.step.id)}
 			<button class="bar-row" class:done={done.has(s.step.id)} onclick={() => ontoggle(s.step.id)} aria-pressed={done.has(s.step.id)}>
 				<span class="bar-label"><strong class="mark">{done.has(s.step.id) ? '✓' : s.no}</strong> {label(s.step, 48)}</span>
+				{#if settings.stepAmounts && s.adds.length}{@render adds(s.step.id, s.adds)}{/if}
 				<span class="track">
 					{#each ticks as t (t)}<span class="grid" style:left={pct(t)}></span>{/each}
 					<span class="bar" class:critical={s.critical} class:guessed={s.guessed} style:left={pct(s.start)} style:width={pct(s.end - s.start)}></span>
@@ -129,7 +139,10 @@
 			style:min-width="calc({6 + (table.cols - 1) * stepCol}rem + {2 * table.cols + 2}px)" style:grid-template-rows="repeat({table.rows}, auto)">
 			{#each table.cells as c, n (n)}
 				{#if c.kind === 'ingredient'}
-					<div class="cell ing" style:grid-row="{c.row + 1} / span 1" style:grid-column="1 / span {c.colSpan}">{c.ingredient!.name}</div>
+					{@const u = input(c.into!, c.ingredient!)}
+					<div class="cell ing" style:grid-row="{c.row + 1} / span 1" style:grid-column="1 / span {c.colSpan}">
+						{#if u.amount}<strong class="amount">{u.amount}</strong>{' '}{/if}{u.name}
+					</div>
 				{:else if c.kind === 'blank'}
 					<div class="cell" style:grid-row="{c.row + 1} / span 1" style:grid-column="1 / span {c.colSpan}"></div>
 				{:else}
@@ -281,6 +294,11 @@
 		color: var(--muted);
 		font-size: 0.75rem;
 	}
+	.adds strong,
+	.amount {
+		font-weight: 600;
+		white-space: nowrap;
+	}
 
 	/* Timeline */
 	.gantt {
@@ -310,6 +328,9 @@
 	}
 	.bar-label {
 		font-size: 0.8rem;
+	}
+	.bar-row .adds {
+		font-size: 0.75rem;
 	}
 	.track {
 		position: relative;

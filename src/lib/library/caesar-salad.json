@@ -134,6 +134,17 @@
 					"i3",
 					"i4"
 				],
+				"amounts": [
+					{
+						"ingredient": "i3",
+						"qty": 3,
+						"unit": "tbsp"
+					},
+					{
+						"ingredient": "i4",
+						"qty": 1
+					}
+				],
 				"technique": [
 					"fry"
 				],
@@ -350,6 +361,13 @@
 					"i5",
 					"i2",
 					"i3"
+				],
+				"amounts": [
+					{
+						"ingredient": "i2",
+						"qty": 2,
+						"unit": "tbsp"
+					}
 				],
 				"technique": [
 					"bake"

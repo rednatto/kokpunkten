@@ -257,6 +257,7 @@ export function normalizeRecipe(raw: RawRecipe, opts: NormalizeOptions): Normali
 			id: `s${n + 1}`,
 			text,
 			uses: links[n],
+			amounts: [],
 			technique: [],
 			durationMin: duration?.min ?? null,
 			durationMaxMin: duration?.max ?? null,

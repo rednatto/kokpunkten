@@ -145,12 +145,23 @@ function normalizeStep(v: unknown): unknown {
 	return step;
 }
 
+/** How much of a shared ingredient one step takes ("2 tbsp of the oil"), when several steps use it. */
+export const stepAmountSchema = z.object({
+	ingredient: id,
+	qty: z.number().positive(),
+	qtyMax: z.number().positive().nullish(),
+	/** Left out when it is the ingredient's own unit. */
+	unit: unit.nullish()
+});
+
 export const stepSchema = z.preprocess(
 	normalizeStep,
 	z.object({
 		id,
 		text: z.string().trim().min(1),
 		uses: z.array(id).default([]),
+		/** The part of each shared ingredient this step takes; a step that is the only one using an ingredient takes all of it. */
+		amounts: z.array(stepAmountSchema).default([]),
 		technique: z.array(z.string().trim().min(1)).default([]),
 		durationMin: z.number().positive().nullish(),
 		/** The upper end when the source gives a range ("1–2 hours"); durationMin is then the lower end. */
@@ -237,6 +248,14 @@ export const recipeSchema = z
 						message: `"${ref}" is not an ingredient or an earlier step`
 					});
 			});
+			step.amounts.forEach((a, j) => {
+				if (!step.uses.includes(a.ingredient) || !r.ingredients.some((ing) => ing.id === a.ingredient))
+					ctx.addIssue({
+						code: 'custom',
+						path: ['steps', i, 'amounts', j, 'ingredient'],
+						message: `"${a.ingredient}" is not an ingredient this step uses`
+					});
+			});
 			if (step.durationMin != null && step.durationMaxMin != null && step.durationMaxMin < step.durationMin)
 				ctx.addIssue({ code: 'custom', path: ['steps', i, 'durationMaxMin'], message: 'durationMaxMin is smaller than durationMin' });
 			known.add(step.id);
@@ -245,6 +264,7 @@ export const recipeSchema = z
 
 export type Ingredient = z.infer<typeof ingredientSchema>;
 export type Step = z.infer<typeof stepSchema>;
+export type StepAmount = z.infer<typeof stepAmountSchema>;
 export type Recipe = z.infer<typeof recipeSchema>;
 
 export type ParseResult =
