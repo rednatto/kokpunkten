@@ -28,6 +28,7 @@ Rules:
 - "original" is the ingredient line exactly as the source wrote it.
 - Write "name", step "text" and "notes" in ${language}. Each step is one or two short imperative sentences. No personal stories and no filler.
 - Step "uses" lists the ingredient ids and earlier step ids the step consumes. Every ingredient should be used by some step.
+- When several steps use the same ingredient ("half the butter", "2 tbsp of the oil", "the rest of the cheese"), give each of those steps "amounts": the part of the ingredient it takes, as {"ingredient": id, "qty", "unit"}. Work the split out from the step text and the ingredient line; the step that takes "the rest" may leave its entry out. A step that is the only one using an ingredient needs no "amounts" entry.
 - Put a step's time in "durationMin" when the source gives one. For a range ("1–2 hours") put the lower end in "durationMin" and the upper in "durationMaxMin".
 - Step "heat" is the stove level, one of: ${HEATS.join(', ')}. An oven, oil or water temperature goes in "tempC" as a number in °C (200, not "200 °C"); convert °F to °C.
 - "notes": explain the techniques and the chemistry involved (Maillard reaction, emulsions, gelatinisation…) and the spice profile, at most 3 sentences each. Leave a note out rather than guess.
@@ -38,7 +39,7 @@ Fields (required ones must always be present; leave out or use null for optional
 - Recipe, optional: "language", "time" {"prepMin", "cookMin", "totalMin"} as numbers of minutes, "cuisine", "course", "tags", "equipment" as arrays of strings, "notes" {"techniques", "chemistry", "spiceProfile", "variations"}.
 - "source", required: "type" (one of: web, book, personal, ai-generated). Optional: "url", "name", "author", "book" {"title", "author", "isbn", "page"}.
 - Ingredient, required: "id" (unique, e.g. "i1"), "key", "name". Optional: "role", "qty" and "qtyMax" (positive numbers: 1.5, not "1 1/2"; "qtyMax" only for ranges), "unit", "prep", "optional" (true/false), "group", "substitutes", "original".
-- Step, required: "id" (unique, e.g. "s1"), "text". Optional: "uses", "technique" (array of strings), "durationMin" and "durationMaxMin" (numbers), "heat", "tempC" (number), "critical" (what must not go wrong).
+- Step, required: "id" (unique, e.g. "s1"), "text". Optional: "uses", "amounts" (array of {"ingredient", "qty", "qtyMax", "unit"}; "unit" defaults to the ingredient's), "technique" (array of strings), "durationMin" and "durationMaxMin" (numbers), "heat", "tempC" (number), "critical" (what must not go wrong).
 - All numbers are plain JSON numbers without units or quotes.
 
 Example of one recipe object:

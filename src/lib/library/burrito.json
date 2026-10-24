@@ -187,6 +187,12 @@
 					"i6",
 					"i7"
 				],
+				"amounts": [
+					{
+						"ingredient": "i3",
+						"qty": 1
+					}
+				],
 				"technique": [
 					"marinate"
 				],

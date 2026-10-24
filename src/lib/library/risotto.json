@@ -187,6 +187,12 @@
 					"i5",
 					"i8"
 				],
+				"amounts": [
+					{
+						"ingredient": "i5",
+						"qty": 10
+					}
+				],
 				"technique": [
 					"saute"
 				],
@@ -199,6 +205,12 @@
 				"uses": [
 					"i5",
 					"i7"
+				],
+				"amounts": [
+					{
+						"ingredient": "i5",
+						"qty": 25
+					}
 				],
 				"technique": [
 					"sweat"

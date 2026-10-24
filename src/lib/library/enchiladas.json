@@ -164,6 +164,16 @@
 					"i4",
 					"i5"
 				],
+				"amounts": [
+					{
+						"ingredient": "i2",
+						"qty": 0.5
+					},
+					{
+						"ingredient": "i3",
+						"qty": 2
+					}
+				],
 				"technique": [
 					"poach",
 					"shred"

@@ -520,6 +520,16 @@
 					"i5",
 					"i7"
 				],
+				"amounts": [
+					{
+						"ingredient": "i4",
+						"qty": 1
+					},
+					{
+						"ingredient": "i5",
+						"qty": 1
+					}
+				],
 				"technique": [
 					"whisk"
 				]
