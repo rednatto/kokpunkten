@@ -162,6 +162,9 @@
 	<div class="row ing-head">
 		<h2>Steps</h2>
 		<label class="toggle"><input type="checkbox" bind:checked={settings.stepAmounts} /> Show amounts</label>
+		{#if recipe.steps.length > 1}
+			<label class="toggle" title="Show the full text of each step in the diagram"><input type="checkbox" bind:checked={settings.diagramFull} /> Show full text</label>
+		{/if}
 	</div>
 	{#if recipe.steps.length > 1}
 		<details class="diagram">
@@ -244,6 +247,9 @@
 	}
 	.ing-head h2 {
 		margin-right: auto;
+	}
+	.ing-head .toggle + .toggle {
+		margin-left: 0.5rem;
 	}
 	.meta {
 		margin: 0 0 0.75rem;

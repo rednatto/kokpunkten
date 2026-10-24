@@ -76,10 +76,6 @@
 		<button role="tab" aria-selected={settings.diagramView === value} class:active={settings.diagramView === value} onclick={() => (settings.diagramView = value)}>{name}</button>
 	{/each}
 </div>
-<label class="full">
-	<input type="checkbox" bind:checked={settings.diagramFull} />
-	Show the full text of each step
-</label>
 
 {#if settings.diagramView === 'flow'}
 	<p class="muted how">Each row can be done at the same time. Lines show what goes into what.</p>
@@ -197,19 +193,6 @@
 		justify-content: stretch;
 		color: var(--fg);
 		min-height: 0;
-	}
-	.full {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin: 0 0 0.6rem;
-		font-size: 0.85rem;
-	}
-	.full input {
-		width: 1.1rem;
-		height: 1.1rem;
-		margin: 0;
-		accent-color: var(--accent);
 	}
 	/* Done steps stay readable: muted text and a green tick, not a faded block. */
 	.done,
